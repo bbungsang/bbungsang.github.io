@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "python basic grammers"
+title:  "파이썬 기본 문법 - 문자열, 리스트, 튜플"
 ---
 
 ## 문자열
