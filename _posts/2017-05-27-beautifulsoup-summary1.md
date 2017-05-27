@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "파이썬 크롤링 라이브러리 - 뷰티풀수프"
+category: [django]
 ---
 
 ## 뷰티풀수프(BeautifulSoup)

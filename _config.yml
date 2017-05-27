@@ -1,14 +1,19 @@
 # Site settings
-title: Ion
-email: your-email@domain.com
+name: bbugnsang's boaring blog
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+
+paginate: 10 # 페이지 당 10개의 포스트를 보여줌
+# paginator 글로벌 변수 적용, paginator는 index.html에서만 작동함
+# 기존 모든 포스트를 나타내는 site.posts 에서 paginate에 따라 포스트 개수를 나누어 나타내는 paginator.posts를 사용함
+# paginator 는 previous_page 와 next_page 의 속성을 가짐, total_pages 는 페이지의 총 수
+gems: [jekyll-paginate]
+
+google_analytics:
+  ua: UA-100042262-1
 
 # Build settings
 markdown: kramdown
