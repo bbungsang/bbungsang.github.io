@@ -2,41 +2,58 @@
 layout: default
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  ul:first-child {
+    list-style-type: none;
+  }
+  .category-title a {
+    cursor: pointer;
+  }
+
+  .category-title .hide {
+    display: none;
+  }
+</style>
+
 
 <section id="one" >
-    <!-- <div class="container">
-        {% for post in site.categories.python limit:1 %}
-            <article>
-                <header>
-                    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-                </header>
-                <section class="post-content">
-                    {{ post.excerpt }}
-                </section>
-                <section class="special">
-                    <ul class="actions">
-                        <li><a href="{{ site.baseurl }}{{ post.url }}" class="button special">Read More</a></li>
-                    </ul>
-                </section>
-            </article>
-        {% endfor %}
-    </div> -->
+  <div class="container">
+      {% for post in site.categories.python limit:1 %}
+          <article>
+              <header>
+                  <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+              </header>
+              <section class="post-content">
+                  {{ post.excerpt }}
+              </section>
+              <section class="special">
+                  <ul class="actions">
+                      <li><a href="{{ site.baseurl }}{{ post.url }}" class="button special">Read More</a></li>
+                  </ul>
+              </section>
+          </article>
+      {% endfor %}
+  </div>
 </section>
 
 <section>
     <div class="container">
         <div class="features">
-          <a href="#" class="category-title"><h4>파이썬 기본 문법 정리</h4></a>
-          {% for post in site.categories.python offset:1 %}
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                  {{ post.title }}
-                  <small class="post-date">{{ post.date | date_to_string }}</small>
-                </a>
-              </li>
-            </ul>
-          {% endfor %}
+          <ul>
+            <li>
+              <a href="#" class="category-title"><h4>파이썬 기본 문법 정리</h4></a>
+              {% for post in site.categories.python offset:1 %}
+              <ul class="tags-exop-posts">
+                <li>
+                  <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                    <small class="post-date">{{ post.date | date_to_string }}</small>
+                  </a>
+                </li>
+              </ul>
+              {% endfor %}
+            </li>
+          </ul>
         </div>
     </div>
 </section>

@@ -1,0 +1,160 @@
+<html>
+    
+	<head>
+		<title>뿡상의 개발새발 공책</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.scrollzer.min.js"></script>
+		<script src="/js/jquery.scrolly.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
+		</noscript>
+	</head>
+
+    <body>
+        <div id="wrapper">
+        <!-- Header -->
+  <section id="header" class="skel-layers-fixed">
+      <header>
+          <span class="image photo"><img src="/images/avatar.jpg" alt="" /></span>
+          <h1 id="logo"><a href="/">Elena Kim</a></h1>
+          <p>
+            BBUNGSANG is my nickname :D<br />
+            <!-- I'd like to collect contents that studied here. -->
+          </p>
+      </header>
+      <nav id="nav">
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/python">Python</a></li>
+              <li><a href="/django">Django</a></li>
+              <li><a href="/algorithm">Algorithm</a></li>
+              <li><a href="/contact">Contact</a></li>
+          </ul>
+      </nav>
+      <footer>
+          <ul class="icons">
+              <!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
+              <li>
+                <a href="https://github.com/bbungsang" class="icon fa-facebook"><span class="label">Facebook</span></a>
+              </li>
+              <!-- <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
+              <li>
+                <a href="https://github.com/bbungsang" class="icon fa-github"><span class="label">Github</span></a>
+              </li>
+              <li>
+                <a href="#" class="icon fa-envelope"><span class="label">Email</span></a>
+              </li>
+          </ul>
+      </footer>
+  </section>
+
+
+            <!-- Main -->
+            <div id="main">
+                <section>
+  <div class="container">
+    <header class="major">
+      <h2>첫 장고 프로젝트!</h2>
+      <p class="post-meta">May 28, 2017</p>
+    </header>
+
+    <section class="post-content">
+      <h2 id="장고-설치-후-기본-골격을-만들어주는-스크립트-실행">장고 설치 후, 기본 골격을 만들어주는 스크립트 실행</h2>
+<h6 id="-모든-작업은-가상환경virtualenv-안에서-해야한다"># 모든 작업은 가상환경(virtualenv) 안에서 해야한다.</h6>
+<p>[맥 OS와 리눅스]</p>
+<ul>
+  <li>명령어 끝에 .(마침표) : 현재 디렉토리에 장고를 설치하라는 표시이다.</li>
+</ul>
+
+<blockquote>
+  <p><code class="highlighter-rouge">django-admin startproject mysite .</code> 실행 후, 디렉토리 구조</p>
+</blockquote>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>djangogirls
+├───manage.py -&gt; 사이트 관리를 도와줌, 다른 설치 작업 없이 바로 웹 서버를 시작할 수 있다.
+└───mysite
+        settings.py -&gt; 웹 설정이 있다.
+        urls.py -&gt; urlresolver가 사용하는 패턴 목록 포함, 즉 어디로 자원을 전달해야 하는지 판단한다.
+        wsgi.py
+        __init__.py
+</code></pre>
+</div>
+<ul>
+  <li>디렉토리와 파일명 매우 중요 따라서 마음대로 변경해서도 안되고 다른 곳으로 옮겨서는 안된다.<br /><br /></li>
+</ul>
+
+<h4 id="설정-변경">설정 변경</h4>
+<p>[mysite/settings.py]</p>
+
+<blockquote>
+  <p># 정확한 시간 넣기<br />
+TIME_ZONE = ‘Asia/Soeul’</p>
+</blockquote>
+
+<blockquote>
+  <p># 정적파일 경로 추가 <br />
+STATIC_URL = ‘/static’ <br />
+STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
+<br /><br /></p>
+</blockquote>
+
+<h4 id="데이터베이스-설정">데이터베이스 설정</h4>
+<p>[mysite/settings.py]</p>
+
+<blockquote>
+  <p># sqlite3 사용 전제</p>
+  <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.sqlite3'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'db.sqlite3'</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+  </div>
+  <h6 id="설정이-다-끝났으면-단-3step-만으로-웹어플리케이션을-실행할-수-있다">설정이 다 끝났으면 단 <em>3step</em> 만으로 웹어플리케이션을 실행할 수 있다.</h6>
+</blockquote>
+
+<blockquote>
+  <p>step1 : 데이터베이스를 생성하기 위해 콘솔 창에서 <code class="highlighter-rouge">python manage.py migrate</code> 를 실행해야하는데, 이 때, <code class="highlighter-rouge">djangogirs</code> 디렉토리 안에 있는 <code class="highlighter-rouge">manage.py</code> 가 필요하다.<br /><br />
+step2 : 콘솔창에 <code class="highlighter-rouge">python manage.py runserver</code> 명령을 실행한다.<br /><br />
+step3 : 끝으로, 브라우저에 <code class="highlighter-rouge">http://127.0.0.1:8000/</code>를 입력하면 <br /><br /></p>
+</blockquote>
+
+<p><img src="../images/it_worked.png" alt="it_worked" /></p>
+
+    </section>
+
+    <footer>
+      
+      <a href="/python/2017/05/27/python-basic-grammeres1.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/algorithm/2017/05/28/tryhelloworld-algorithm-level1-1.html" class="float-right">Next post &rarr;</a> 
+    </footer>
+  </div>
+</section>
+
+
+            </div>
+            <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+		</div>
+	</body>
+</html>

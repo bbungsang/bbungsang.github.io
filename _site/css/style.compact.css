@@ -522,7 +522,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
 #main > section:first-child { border-top: 0; }
 
 /* One */
-#one:before { background-image: url("../images/banner.jpg"); background-position: top right; background-repeat: no-repeat; background-size: cover; content: ''; display: block; height: 15em; width: 100%; }
+#one:before { background-image: url("../images/banner_flamingo.jpg"); background-position: top right; background-repeat: no-repeat; background-size: cover; content: ''; display: block; height: 15em; width: 100%; }
 
 /* Footer */
 #footer { background: #fafafa; border-top: 0; color: #c0c0c0; overflow: hidden; padding: 4em 0 2em 0; }

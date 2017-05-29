@@ -18,7 +18,7 @@ layout: default
 
 <section id="one" >
   <div class="container">
-      {% for post in site.categories.django limit:1 %}
+      {% for post in site.categories.algorithm limit:1 %}
           <article>
               <header>
                   <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
@@ -41,8 +41,8 @@ layout: default
       <div class="features">
         <ul>
           <li>
-            <a href="#" class="category-title"><h4>Do 장고걸스!</h4></a>
-            {% for post in site.categories.django offset:1 %}
+            <a href="#" class="category-title"><h4>Solve Algorithm!</h4></a>
+            {% for post in site.categories.algorithm offset:1 %}
             <ul class="tags-exop-posts">
               <li>
                 <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">

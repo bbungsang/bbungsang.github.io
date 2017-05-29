@@ -1,0 +1,260 @@
+<html>
+    
+	<head>
+		<title>뿡상의 개발새발 공책</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery.scrollzer.min.js"></script>
+		<script src="/js/jquery.scrolly.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/skel-layers.min.js"></script>
+		<script src="/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="/css/skel.css" />
+			<link rel="stylesheet" href="/css/style.css" />
+			<link rel="stylesheet" href="/css/style-xlarge.css" />
+		</noscript>
+	</head>
+
+    <body>
+        <div id="wrapper">
+        <!-- Header -->
+  <section id="header" class="skel-layers-fixed">
+      <header>
+          <span class="image photo"><img src="/images/avatar.jpg" alt="" /></span>
+          <h1 id="logo"><a href="/">Elena Kim</a></h1>
+          <p>
+            BBUNGSANG is my nickname :D<br />
+            <!-- I'd like to collect contents that studied here. -->
+          </p>
+      </header>
+      <nav id="nav">
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/python">Python</a></li>
+              <li><a href="/django">Django</a></li>
+              <li><a href="/algorithm">Algorithm</a></li>
+              <li><a href="/contact">Contact</a></li>
+          </ul>
+      </nav>
+      <footer>
+          <ul class="icons">
+              <!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
+              <li>
+                <a href="https://github.com/bbungsang" class="icon fa-facebook"><span class="label">Facebook</span></a>
+              </li>
+              <!-- <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
+              <li>
+                <a href="https://github.com/bbungsang" class="icon fa-github"><span class="label">Github</span></a>
+              </li>
+              <li>
+                <a href="#" class="icon fa-envelope"><span class="label">Email</span></a>
+              </li>
+          </ul>
+      </footer>
+  </section>
+
+
+            <!-- Main -->
+            <div id="main">
+                <section>
+  <div class="container">
+    <header class="major">
+      <h2>TryHelloWorld 알고리즘 레벨 1-1</h2>
+      <p class="post-meta">May 28, 2017</p>
+    </header>
+
+    <section class="post-content">
+      <h2 id="x만큼-간격이-있는-n개의-숫자"><strong>x만큼 간격이 있는 n개의 숫자</strong></h2>
+
+<p>number_generator함수는 x와 n을 입력 받습니다.
+2와 5를 입력 받으면 2부터 시작해서 2씩 증가하는 숫자를 5개 가지는 리스트를 만들어서 리턴합니다.
+[2,4,6,8,10]</p>
+
+<p>4와 3을 입력 받으면 4부터 시작해서 4씩 증가하는 숫자를 3개 가지는 리스트를 만들어서 리턴합니다.
+[4,8,12]</p>
+
+<p>이를 일반화 하면 x부터 시작해서 x씩 증가하는 숫자를 n개 가지는 리스트를 리턴하도록 함수 number_generator를 완성하면 됩니다.</p>
+
+<ul>
+  <li>내가 푼 것^0^;</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">number_generator</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">number_generator</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>다른 사람 풀이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">number_generator</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">number_generator</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<h2 id="핸드폰-번호-가리기"><strong>핸드폰 번호 가리기</strong></h2>
+
+<p>별이는 헬로월드텔레콤에서 고지서를 보내는 일을 하고 있습니다. 개인정보 보호를 위해 고객들의 전화번호는 맨 뒷자리 4자리를 제외한 나머지를 ` * ` 으로 바꿔야 합니다.
+전화번호를 문자열 s로 입력받는 hide_numbers함수를 완성해 별이를 도와주세요
+예를들어 s가 “ 01033334444 “ 면 ` <strong>**</strong><em>4444 <code class="highlighter-rouge">를 리턴하고, " 027778888 "인 경우는 </code> **</em>**8888 `을 리턴하면 됩니다</p>
+
+<ul>
+  <li>내가 푼 것^0^;</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">hide</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="s">'*'</span> <span class="o">*</span> <span class="n">hide</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">hide</span><span class="p">],</span> <span class="n">change</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"결과 : "</span> <span class="o">+</span> <span class="n">hide_numbers</span><span class="p">(</span><span class="s">'01033334444'</span><span class="p">));</span>
+</code></pre>
+</div>
+
+<h2 id="평균-구하기"><strong>평균 구하기</strong></h2>
+
+<p>def average(list):
+함수를 완성해서 매개변수 list의 평균값을 return하도록 만들어 보세요.
+어떠한 크기의 list가 와도 평균값을 구할 수 있어야 합니다.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    	<span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+
+    <span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">avg</span>
+
+<span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"평균값 : {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="nb">list</span><span class="p">)));</span>
+</code></pre>
+</div>
+
+<h3 id="자릿수-더하기">자릿수 더하기</h3>
+<p>sum_digit함수는 자연수를 전달 받아서 숫자의 각 자릿수의 합을 구해서 return합니다.
+예를들어 number = 123이면 1 + 2 + 3 = 6을 return하면 됩니다.
+sum_digit함수를 완성해보세요.</p>
+
+<ul>
+  <li>내가 푼 것^0^;</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum_digit</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">str_num</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="c"># bowl = ""</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">str_num</span><span class="p">)):</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">str_num</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="c"># if i == len(str_num) - 1:</span>
+        <span class="c">#     bowl += str_num[i] + "="</span>
+        <span class="c"># else:</span>
+        <span class="c">#     bowl += str_num[i] + "+"</span>
+
+    <span class="k">return</span> <span class="nb">sum</span>
+
+<span class="c"># 아래는 테스트로 출력해 보기 위한 코드입니다.</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"결과 : {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sum_digit</span><span class="p">(</span><span class="mi">123</span><span class="p">)));</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>다른 사람 풀이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum_digit</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">number</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_digit</span><span class="p">(</span><span class="n">number</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    	<span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+
+    <span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">avg</span>
+
+<span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"평균값 : {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">average</span><span class="p">(</span><span class="nb">list</span><span class="p">)));</span>
+</code></pre>
+</div>
+
+<h2 id="정수-제곱근-판별하기"><strong>정수 제곱근 판별하기</strong></h2>
+
+<p>nextSqaure함수는 정수 n을 매개변수로 입력받습니다.
+n이 임의의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 임의의 정수 x의 제곱이 아니라면 ‘no’을 리턴하는 함수를 완성하세요.
+예를들어 n이 121이라면 이는 정수 11의 제곱이므로 (11+1)의 제곱인 144를 리턴하고, 3이라면 ‘no’을 리턴하면 됩니다.</p>
+
+<ul>
+  <li>내가 푼 것^0^;</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">nextSqure</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+    <span class="n">sqrt</span> <span class="o">=</span> <span class="n">n</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sqrt</span> <span class="o">%</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">sqrt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="s">"no"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"결과 : {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nextSqure</span><span class="p">(</span><span class="mi">169</span><span class="p">)));</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>다른 사람 풀이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">nextSqure</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+    <span class="k">return</span> <span class="s">"no"</span> <span class="k">if</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</code></pre>
+</div>
+
+    </section>
+
+    <footer>
+      
+      <a href="/django/2017/05/28/first-django-project.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/algorithm/2017/05/28/tryhelloworld-algorithm-level1-2.html" class="float-right">Next post &rarr;</a> 
+    </footer>
+  </div>
+</section>
+
+
+            </div>
+            <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+		</div>
+	</body>
+</html>

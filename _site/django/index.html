@@ -35,7 +35,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/python">Python</a></li>
               <li><a href="/django">Django</a></li>
-              <li><a href="/">Algorithm</a></li>
+              <li><a href="/algorithm">Algorithm</a></li>
               <li><a href="/contact">Contact</a></li>
           </ul>
       </nav>
@@ -59,18 +59,72 @@
 
             <!-- Main -->
             <div id="main">
-                <section id="one" >
-    <div class="container">
-        
-    </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  ul:first-child {
+    list-style-type: none;
+  }
+  .category-title a {
+    cursor: pointer;
+  }
+
+  .category-title .hide {
+    display: none;
+  }
+</style>
+
+
+<section id="one" >
+  <div class="container">
+      
+          <article>
+              <header>
+                  <h2><a href="/django/2017/05/28/first-django-project.html">첫 장고 프로젝트!</a></h2>
+              </header>
+              <section class="post-content">
+                  <h2 id="장고-설치-후-기본-골격을-만들어주는-스크립트-실행">장고 설치 후, 기본 골격을 만들어주는 스크립트 실행</h2>
+<h6 id="-모든-작업은-가상환경virtualenv-안에서-해야한다"># 모든 작업은 가상환경(virtualenv) 안에서 해야한다.</h6>
+<p>[맥 OS와 리눅스]</p>
+<ul>
+  <li>명령어 끝에 .(마침표) : 현재 디렉토리에 장고를 설치하라는 표시이다.</li>
+</ul>
+
+
+              </section>
+              <section class="special">
+                  <ul class="actions">
+                      <li><a href="/django/2017/05/28/first-django-project.html" class="button special">Read More</a></li>
+                  </ul>
+              </section>
+          </article>
+      
+  </div>
 </section>
+
 <section>
-    <div class="container">
-        <div class="features">
-        
-        </div>
-    </div>
+  <div class="container">
+      <div class="features">
+        <ul>
+          <li>
+            <a href="#" class="category-title"><h4>Do 장고걸스!</h4></a>
+            
+          </li>
+        </ul>
+      </d
+  </div>
 </section>
+
+<script type="text/javascript">
+  $(".category-title").click(function(){
+    if ($(this).next().css('display') === 'block'){
+      $(this).next().slideUp()
+      $(this).children().css("color", "#393939")
+    }else{
+      $(this).next().slideDown('slow')
+      $(this).children().css("color", "#4acaa8")
+    }
+  })
+</script>
 
 
             </div>
