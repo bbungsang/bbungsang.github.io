@@ -4,99 +4,93 @@ title:  "TryHelloWorld 알고리즘 레벨 1-2"
 category: [algorithm]
 ---
 
-## **수박수박수박수박수박수?**
-
-water_melon함수는 정수 n을 매개변수로 입력받습니다.
-길이가 n이고, 수박수박수...와 같은 패턴을 유지하는 문자열을 리턴하도록 함수를 완성하세요.
-
-예를들어 n이 4이면 '수박수박'을 리턴하고 3이라면 '수박수'를 리턴하면 됩니다.
+## 짝수와 홀수
+evenOrOdd 메소드는 int형 num을 매개변수로 받습니다.<br>
+num이 짝수일 경우 "Even"을 반환하고 홀수인 경우 "Odd"를 반환하도록 evenOrOdd에 코드를 작성해 보세요.<br>
+num은 0이상의 정수이며, num이 음수인 경우는 없습니다.
 
 - 내가 푼 것 ^0^/
 
 ```python
-def water_melon(n):
-    bowl = []
-    su = "수"
-    bak = "박"
+def evenOrOdd(num):
+  return "Even" if num % 2 == 0 else "Odd"
 
-    for i in range(1, n+1):
-        if i % 2 == 0:
-            bowl.append(bak)
-        else:
-            bowl.append(su)
-
-    result = ''.join(bowl)
-
-    return result
-
-print("n이 3인 경우: " + water_melon(3));
-print("n이 4인 경우: " + water_melon(4));
+print("결과 : " + evenOrOdd(3))
+print("결과 : " + evenOrOdd(2))
 ```
 
 - 다른 사람 풀이
 
 ```python
-def water_melon(n):
-    s = "수박" * n
-    return s[:n]
+def evenOrOdd(num):
+    return num % 2 and "Odd" or "Even"
 ```
+<br><br>
 
-> 허무하게도 저렇게 간단한 방법이 있었다니... 분발해야겠다.
-
-
-
-## 서울에서 김서방 찾기
-findKim 함수는 String형 배열 seoul을 매개변수로 받습니다.
-
-seoul의 element중 "Kim"의 위치 x를 찾아, "김서방은 x에 있다"는 String을 반환하세요.
-seoul에 "Kim"은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.
+## 제일 작은 수 제거하기
+rm_small함수는 list타입 변수 mylist을 매개변수로 입력받습니다.<br>
+mylist 에서 가장 작은 수를 제거한 리스트를 리턴하고, mylist의 원소가 1개 이하인 경우는 []를 리턴하는 함수를 완성하세요.<br>
+예를들어 mylist가 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10, 8, 22]면 [10, 22]를 리턴 합니다.
 
 - 내가 푼 것 ^0^/
 
 ```python
-def findKim(seoul):
-    kimIdx = 0
-    for i in range(len(seoul)):
-        if seoul[i] == "Kim":
-            kimIdx = i
+def rm_small(mylist):
+    min = 0
+    if len(mylist) <= 1:
+    	mylist = []
+    else:
+        min = mylist[0]
 
-    return "김서방은 {}에 있다".format(kimIdx)
+        for i in range(len(mylist)):
+            if min > mylist[i]:
+                min = mylist[i]
 
-print(findKim(["Queen", "Tod", "Kim"]))
+        mylist.remove(min)
 
+    return mylist
+
+my_list = [1, 2, 3, 4]
+print("결과 {} ".format(rm_small(my_list)))
 ```
 
 - 다른 사람 풀이
 
 ```python
-def findKim(seoul):
-    return "김서방은 {}에 있다".format(seoul.index('Kim'))
+def rm_small(mylist):
+    return [i for i in mylist if i > min(mylist)]
+```
+
+```python
+def rm_small(mylist):
+    del(mylist[mylist.index(min(mylist))])
+    return mylist
 ```
 
 
-## 삼각형 출력하기
-printTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.
-다음을 참고해 `*(별)`로 높이가 num인 삼각형을 문자열로 리턴하는 printTriangle 메소드를 완성하세요
-printTriangle이 return하는 String은 개행문자('\n')로 끝나야 합니다.
+## 정수제곱근 판별하기
+nextSqaure함수는 정수 n을 매개변수로 입력받습니다.<br>
+n이 임의의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 임의의 정수 x의 제곱이 아니라면 'no'을 리턴하는 함수를 완성하세요.<br>
+예를들어 n이 121이라면 이는 정수 11의 제곱이므로 (11+1)의 제곱인 144를 리턴하고, 3이라면 'no'을 리턴하면 됩니다.
 
 - 내가 푼 것 ^0^/
 
 ```python
-def printTriangle(num):
-	star_list = []
-	for i in range(1, num + 1):
-            star_list.append("*" * i + "\n")
+def nextSqure(n):
+    sqrt = n ** (1/2)
+    if (sqrt % 1) == 0:
+    	return (sqrt + 1) ** 2
+    return "no"
 
-	return ''.join(star_list)
-
-print( printTriangle(5) )
+print("결과 : {}".format(nextSqure(169)));
 ```
 
 - 다른 사람 풀이
 
 ```python
-def printTriangle(num):
-    return ''.join(['*'*i + '\n' for i in range(1,num+1)])
+def nextSqure(n):
+    for x in range(1,n) :
+        if x ** 2 == n :
+            return (x+1) ** 2
+    return "no"
 ```
-
-> 내가 푸는 방식은 아무래도 파이써닉함에서 한참 벗어나는 것 같다. 알고리즘을 단계별로 차차 풀어나가고 다른 사람 풀이도 열심히 참고하여 문법을 익히는 게 우선인 듯 하다.
