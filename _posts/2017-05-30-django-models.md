@@ -1,3 +1,10 @@
+---
+layout: post
+tag: [django girls]
+title:  "장고 모델에 관한 고찰"
+category: [djangogirls]
+---
+
 ## 장고 모델
 > `User` <---> `Django` <---> `DataBase` <br>
 

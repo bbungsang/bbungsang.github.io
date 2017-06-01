@@ -2,7 +2,7 @@
 layout: post
 tag: [python_basic]
 title:  "파이썬 기본 문법 - 문자열, 리스트, 튜플"
-category: [python]
+category: [basic]
 ---
 
 ## 문자열

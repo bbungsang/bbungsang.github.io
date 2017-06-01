@@ -2,7 +2,7 @@
 layout: post
 tag: [python_basic]
 title:  "파이썬 크롤링 라이브러리 - 뷰티풀수프"
-category: [python]
+category: [library]
 ---
 
 ## 뷰티풀수프(BeautifulSoup)

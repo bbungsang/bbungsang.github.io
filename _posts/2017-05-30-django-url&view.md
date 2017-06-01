@@ -1,3 +1,10 @@
+---
+layout: post
+tag: [django girls]
+title:  "장고 URL과 뷰"
+category: [djangogirls]
+---
+
 ## URL
 - `www.naver.com` (포스트 네임으로 특정 한대 이상의 서버를 가리킴) \+ 폴더 파일 구조와 비슷한 URL 리소스
 - ?... `GET 인자` : 단순한 파라미터로 신경쓰지 않아도 된다.

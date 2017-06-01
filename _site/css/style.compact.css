@@ -353,11 +353,11 @@ input[type="radio"] + label:before { border-radius: 100%; }
 .image.photo img { border-radius: 100%; display: block; width: 100%; }
 
 /* List */
-ol { list-style: decimal; margin: 0 0 2.25em 0; padding-left: 1.25em; }
+ol { list-style: decimal; margin: 0 0 10px 0; padding-left: 1.25em; }
 
 ol li { padding-left: 0.25em; }
 
-ul { list-style: disc; margin: 0 0 2.25em 0; padding-left: 1em; }
+ul { list-style: disc; margin: 0 0 10px 0; padding-left: 1em; }
 
 ul li { padding-left: 0.5em; }
 

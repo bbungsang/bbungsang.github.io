@@ -16,7 +16,7 @@ layout: default
 </style>
 
 
-<section id="one" >
+<!-- <section id="one" >
   <div class="container">
       {% for post in site.categories.algorithm limit:1 %}
           <article>
@@ -34,7 +34,7 @@ layout: default
           </article>
       {% endfor %}
   </div>
-</section>
+</section> -->
 
 <section>
   <div class="container">
@@ -42,7 +42,7 @@ layout: default
         <ul>
           <li>
             <a href="#" class="category-title"><h4>Solve Algorithm!</h4></a>
-            {% for post in site.categories.algorithm offset:1 %}
+            {% for post in site.categories.algorithm %}
             <ul class="tags-exop-posts">
               <li>
                 <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">

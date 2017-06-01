@@ -2,6 +2,18 @@
 layout: default
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(".category-title").click(function(){
+    if ($(this).next().css('display') === 'block'){
+      $(this).next().slideUp()
+      $(this).children().css("color", "#393939")
+    }else{
+      $(this).next().slideDown('slow')
+      $(this).children().css("color", "#4acaa8")
+    }
+  })
+</script>
+
 <style>
   ul:first-child {
     list-style-type: none;
@@ -15,8 +27,7 @@ layout: default
   }
 </style>
 
-
-<section id="one" >
+<!-- <section id="one" >
   <div class="container">
       {% for post in site.categories.python limit:1 %}
           <article>
@@ -34,15 +45,15 @@ layout: default
           </article>
       {% endfor %}
   </div>
-</section>
+</section> -->
 
 <section>
     <div class="container">
         <div class="features">
           <ul>
             <li>
-              <a href="#" class="category-title"><h4>파이썬 기본 문법 정리</h4></a>
-              {% for post in site.categories.python offset:1 %}
+              <a href="#" class="category-title"><h4>파이썬 기본 문법</h4></a>
+              {% for post in site.categories.basic %}
               <ul class="tags-exop-posts">
                 <li>
                   <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
@@ -58,14 +69,4 @@ layout: default
     </div>
 </section>
 
-<script type="text/javascript">
-  $(".category-title").click(function(){
-    if ($(this).next().css('display') === 'block'){
-      $(this).next().slideUp()
-      $(this).children().css("color", "#393939")
-    }else{
-      $(this).next().slideDown('slow')
-      $(this).children().css("color", "#4acaa8")
-    }
-  })
-</script>
+{% include_relative library.html %}
