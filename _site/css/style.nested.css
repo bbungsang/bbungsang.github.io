@@ -56,10 +56,6 @@
   .container .content {
     padding-left: 235px;
     transition: padding-left 0.5s; }
-    .container .content .top-bar {
-      width: 100%;
-      height: 50px;
-      background: silver; }
   .container .active > .side-bar {
     margin-left: -190px;
     transition: margin-left 0.5s; }
