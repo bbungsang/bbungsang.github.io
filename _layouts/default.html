@@ -7,7 +7,16 @@
       <div class="wrapper">
         {% include /header.html %}
         <!-- Main -->
-        {{ content }}
+        <div class="content">
+          <div class="top-bar"></div>
+
+          <div class="main-wrap">
+            <div class="left-wrap"></div>
+            <div class="right-wrap">
+              {{ content }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

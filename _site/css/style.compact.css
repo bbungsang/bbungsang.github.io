@@ -21,6 +21,18 @@
 
 .container .content { padding-left: 235px; transition: padding-left 0.5s; }
 
+.container .content .top-bar { width: 100%; height: 50px; line-height: 50px; }
+
+.container .content .main-wrap { width: 100%; height: auto; }
+
+.container .content .main-wrap .left-wrap { width: 8%; height: 100%; float: left; }
+
+.container .content .main-wrap .right-wrap { width: 92%; height: 100%; float: left; }
+
+.container .content .main-wrap .right-wrap .intro { width: 100%; height: 200px; }
+
+.container .content .main-wrap .right-wrap .upload-list { width: 100%; height: auto; }
+
 .container .active > .side-bar { margin-left: -190px; transition: margin-left 0.5s; }
 
 .container .active > .content { padding-left: 50px; transition: padding-left 0.5s; }
