@@ -1,65 +1,69 @@
 <html>
-    
-	<head>
-		<title>뿡상의 개발새발 공책</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<script src="/js/jquery.min.js"></script>
-		<script src="/js/jquery.scrollzer.min.js"></script>
-		<script src="/js/jquery.scrolly.min.js"></script>
-		<script src="/js/skel.min.js"></script>
-		<script src="/js/skel-layers.min.js"></script>
-		<script src="/js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="/css/skel.css" />
-			<link rel="stylesheet" href="/css/style.css" />
-			<link rel="stylesheet" href="/css/style-xlarge.css" />
-		</noscript>
-	</head>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
 
-    <body>
-        <div id="wrapper">
-        <!-- Header -->
-  <section id="header" class="skel-layers-fixed">
-      <header>
-          <span class="image photo"><img src="/images/avatar.jpg" alt="" /></span>
-          <h1 id="logo"><a href="/">Elena Kim</a></h1>
-          <p>
-            BBUNGSANG is my nickname :D<br />
-            <!-- I'd like to collect contents that studied here. -->
-          </p>
-      </header>
-      <nav id="nav">
+<body>
+  <div id="wrapper">
+  <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하도록 해줌 -->
+      <div class="wrapper">
+        <div class="side-bar">
           <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/python/basic.html">Python</a></li>
-              <li><a href="/django/djangogirls.html">Django</a></li>
-              <li><a href="/algorithm">Algorithm</a></li>
-              <li><a href="/contact">Contact</a></li>
+            <li class="menu-head">
+                뿡상의 개발새발 공책
+                <a href="#" class="push_menu"><span class="glyphicon glyphicon-align-justify pull-right"></span></a>
+            </li>
+            <div class="menu">
+              <li>
+                <a href="#">
+                  Python
+                  <span class="glyphicon glyphicon-dashboard pull-right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">Django
+                  <span class="glyphicon glyphicon-star pull-right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">Algorithm
+                  <span class="glyphicon glyphicon-cog pull-right"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="active">
+                  Love snippet
+                  <span class="glyphicon glyphicon-heart pull-right"></span>
+                </a>
+              </li>
+            </div>
           </ul>
-      </nav>
-      <footer>
-          <ul class="icons">
-              <!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
-              <li>
-                <a href="https://github.com/bbungsang" class="icon fa-facebook"><span class="label">Facebook</span></a>
-              </li>
-              <!-- <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
-              <li>
-                <a href="https://github.com/bbungsang" class="icon fa-github"><span class="label">Github</span></a>
-              </li>
-              <li>
-                <a href="#" class="icon fa-envelope"><span class="label">Email</span></a>
-              </li>
-          </ul>
-      </footer>
-  </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 
 
-            <!-- Main -->
-            <div id="main">
-                <section>
+      <!-- Main -->
+      <div id="main">
+          <section>
   <div class="container">
     <header class="major">
       <h2>장고 URL과 뷰</h2>
@@ -135,9 +139,8 @@
   </div>
 </section>
 
-
-            </div>
-            <!-- 
+      </div>
+      <!-- 
   <section id="footer">
       <div class="container">
           <ul class="copyright">
@@ -149,6 +152,6 @@
       </div>
   </section>
  -->
-		</div>
-	</body>
+	</div>
+</body>
 </html>
