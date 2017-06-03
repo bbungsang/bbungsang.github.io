@@ -21,14 +21,3 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
   css_class: 'highlight'
-
-# Navigation (2nd level links supported)
-nav:
-  Home:
-    - '/'
-  Python:
-    - '/python/'
-    # - { Categories All: '/blog/categories/' }
-    - { python_basic: '/python/categories/#파이썬기본문법' }
-  Django:
-    - '/django/'

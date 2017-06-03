@@ -3,6 +3,77 @@
   width: 100%;
   overflow: hidden;
   display: inline-block;
+  /* Section/Article */
+  /* Code */
+  /* markdown grammer `` block */
+  /* Comment */
+  /* Error */
+  /* Generic */
+  /* Keyword */
+  /* Literal */
+  /* Name */
+  /* Operator */
+  /* Other */
+  /* Punctuation */
+  /* Comment.Multiline */
+  /* Comment.Preproc */
+  /* Comment.Single */
+  /* Comment.Special */
+  /* Generic.Deleted */
+  /* Generic.Emph */
+  /* Generic.Error */
+  /* Generic.Heading */
+  /* Generic.Inserted */
+  /* Generic.Output */
+  /* Generic.Prompt */
+  /* Generic.Strong */
+  /* Generic.Subheading */
+  /* Generic.Traceback */
+  /* Keyword.Constant */
+  /* Keyword.Declaration */
+  /* Keyword.Namespace */
+  /* Keyword.Pseudo */
+  /* Keyword.Reserved */
+  /* Keyword.Type */
+  /* Literal.Date */
+  /* Literal.Number */
+  /* Literal.String */
+  /* Name.Attribute */
+  /* Name.Builtin */
+  /* Name.Class */
+  /* Name.Constant */
+  /* Name.Decorator */
+  /* Name.Entity */
+  /* Name.Exception */
+  /* Name.Function */
+  /* Name.Label */
+  /* Name.Namespace */
+  /* Name.Other */
+  /* Name.Property */
+  /* Name.Tag */
+  /* Name.Variable */
+  /* Operator.Word */
+  /* Text.Whitespace */
+  /* Literal.Number.Float */
+  /* Literal.Number.Hex */
+  /* Literal.Number.Integer */
+  /* Literal.Number.Oct */
+  /* Literal.String.Backtick */
+  /* Literal.String.Char */
+  /* Literal.String.Doc */
+  /* Literal.String.Double */
+  /* Literal.String.Escape */
+  /* Literal.String.Heredoc */
+  /* Literal.String.Interpol */
+  /* Literal.String.Other */
+  /* Literal.String.Regex */
+  /* Literal.String.Single */
+  /* Literal.String.Symbol */
+  /* Name.Builtin.Pseudo */
+  /* Name.Variable.Class */
+  /* Name.Variable.Global */
+  /* Name.Variable.Instance */
+  /* Literal.Number.Integer.Long */
 }
 
 .container .side-bar {
@@ -97,7 +168,7 @@
 
 .container .content .main-wrap .right-wrap {
   width: 92%;
-  height: 100%;
+  height: auto;
   float: left;
 }
 
@@ -119,4 +190,300 @@
 .container .active > .content {
   padding-left: 50px;
   transition: padding-left 0.5s;
+}
+
+.container section.special, .container article.special {
+  text-align: center;
+}
+
+.container footer .float-left {
+  float: left;
+}
+
+.container footer .float-right {
+  float: right;
+}
+
+.container code {
+  font-family: 'Bitstream Vera Sans Mono','Courier', monospace;
+}
+
+.container .highlighter-rouge {
+  background: #FFCC97;
+  color: #24A6BD;
+  border-radius: 2px;
+}
+
+.container .highlight .c {
+  color: #586E75;
+}
+
+.container .highlight .err {
+  color: #93A1A1;
+}
+
+.container .highlight .g {
+  color: #93A1A1;
+}
+
+.container .highlight .k {
+  color: #859900;
+}
+
+.container .highlight .l {
+  color: #93A1A1;
+}
+
+.container .highlight .n {
+  color: #93A1A1;
+}
+
+.container .highlight .o {
+  color: #859900;
+}
+
+.container .highlight .x {
+  color: #CB4B16;
+}
+
+.container .highlight .p {
+  color: #93A1A1;
+}
+
+.container .highlight .cm {
+  color: #586E75;
+}
+
+.container .highlight .cp {
+  color: #859900;
+}
+
+.container .highlight .c1 {
+  color: #586E75;
+}
+
+.container .highlight .cs {
+  color: #859900;
+}
+
+.container .highlight .gd {
+  color: #2AA198;
+}
+
+.container .highlight .ge {
+  color: #93A1A1;
+  font-style: italic;
+}
+
+.container .highlight .gr {
+  color: #DC322F;
+}
+
+.container .highlight .gh {
+  color: #CB4B16;
+}
+
+.container .highlight .gi {
+  color: #859900;
+}
+
+.container .highlight .go {
+  color: #93A1A1;
+}
+
+.container .highlight .gp {
+  color: #93A1A1;
+}
+
+.container .highlight .gs {
+  color: #93A1A1;
+  font-weight: bold;
+}
+
+.container .highlight .gu {
+  color: #CB4B16;
+}
+
+.container .highlight .gt {
+  color: #93A1A1;
+}
+
+.container .highlight .kc {
+  color: #CB4B16;
+}
+
+.container .highlight .kd {
+  color: #268BD2;
+}
+
+.container .highlight .kn {
+  color: #859900;
+}
+
+.container .highlight .kp {
+  color: #859900;
+}
+
+.container .highlight .kr {
+  color: #268BD2;
+}
+
+.container .highlight .kt {
+  color: #DC322F;
+}
+
+.container .highlight .ld {
+  color: #93A1A1;
+}
+
+.container .highlight .m {
+  color: #2AA198;
+}
+
+.container .highlight .s {
+  color: #2AA198;
+}
+
+.container .highlight .na {
+  color: #93A1A1;
+}
+
+.container .highlight .nb {
+  color: #B58900;
+}
+
+.container .highlight .nc {
+  color: #268BD2;
+}
+
+.container .highlight .no {
+  color: #CB4B16;
+}
+
+.container .highlight .nd {
+  color: #268BD2;
+}
+
+.container .highlight .ni {
+  color: #CB4B16;
+}
+
+.container .highlight .ne {
+  color: #CB4B16;
+}
+
+.container .highlight .nf {
+  color: #268BD2;
+}
+
+.container .highlight .nl {
+  color: #93A1A1;
+}
+
+.container .highlight .nn {
+  color: #93A1A1;
+}
+
+.container .highlight .nx {
+  color: #555;
+}
+
+.container .highlight .py {
+  color: #93A1A1;
+}
+
+.container .highlight .nt {
+  color: #268BD2;
+}
+
+.container .highlight .nv {
+  color: #268BD2;
+}
+
+.container .highlight .ow {
+  color: #859900;
+}
+
+.container .highlight .w {
+  color: #93A1A1;
+}
+
+.container .highlight .mf {
+  color: #2AA198;
+}
+
+.container .highlight .mh {
+  color: #2AA198;
+}
+
+.container .highlight .mi {
+  color: #2AA198;
+}
+
+.container .highlight .mo {
+  color: #2AA198;
+}
+
+.container .highlight .sb {
+  color: #586E75;
+}
+
+.container .highlight .sc {
+  color: #2AA198;
+}
+
+.container .highlight .sd {
+  color: #93A1A1;
+}
+
+.container .highlight .s2 {
+  color: #2AA198;
+}
+
+.container .highlight .se {
+  color: #CB4B16;
+}
+
+.container .highlight .sh {
+  color: #93A1A1;
+}
+
+.container .highlight .si {
+  color: #2AA198;
+}
+
+.container .highlight .sx {
+  color: #2AA198;
+}
+
+.container .highlight .sr {
+  color: #DC322F;
+}
+
+.container .highlight .s1 {
+  color: #2AA198;
+}
+
+.container .highlight .ss {
+  color: #2AA198;
+}
+
+.container .highlight .bp {
+  color: #268BD2;
+}
+
+.container .highlight .vc {
+  color: #268BD2;
+}
+
+.container .highlight .vg {
+  color: #268BD2;
+}
+
+.container .highlight .vi {
+  color: #268BD2;
+}
+
+.container .highlight .il {
+  color: #2AA198;
 }
