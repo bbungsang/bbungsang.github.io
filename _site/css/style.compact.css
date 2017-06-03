@@ -39,6 +39,8 @@
 
 .container section.special, .container article.special { text-align: center; }
 
+.container footer { padding-bottom: 100px; }
+
 .container footer .float-left { float: left; }
 
 .container footer .float-right { float: right; }
