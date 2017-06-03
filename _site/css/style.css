@@ -6,7 +6,7 @@
 }
 
 .container .side-bar {
-  background: #74AFAD;
+  background: #CC9999;
   position: absolute;
   height: 100%;
   width: 240px;
@@ -57,7 +57,7 @@
 
 .container .side-bar ul .menu li a.active {
   padding-left: 18px;
-  background: #D9853B;
+  background: #74AFAD;
   border-left: 3px solid #ECECEA;
 }
 
@@ -66,16 +66,22 @@
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 7px solid #D9853B;
-  margin-top: -10px;
-  margin-left: 180px;
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-left: 7px solid #74AFAD;
+  margin-top: -11px;
+  margin-left: 218px;
 }
 
 .container .content {
   padding-left: 235px;
   transition: padding-left 0.5s;
+}
+
+.container .content .top-bar {
+  width: 100%;
+  height: 50px;
+  background: silver;
 }
 
 .container .active > .side-bar {

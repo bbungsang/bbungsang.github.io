@@ -1,14 +1,16 @@
 <html>
 {% include /head.html %}
 <body>
-  <div id="wrapper">
-  {% include /header.html %}
-
-      <!-- Main -->
-      <div id="main">
-          {{ content }}
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        {% include /header.html %}
+        <!-- Main -->
+        {{ content }}
       </div>
-      <!-- {% include /footer.html %} -->
-	</div>
+    </div>
+  </div>
+  <!-- {% include /footer.html %} -->
 </body>
 </html>
