@@ -91,12 +91,12 @@
 }
 
 .container h3 {
-  font-size: 32px;
-  color: #00CCFF;
+  font-size: 28px;
+  color: #FF9966;
 }
 
 .container .side-bar {
-  background: #CC9999;
+  background: #FF9966;
   position: absolute;
   height: 1600px;
   width: 272px;
