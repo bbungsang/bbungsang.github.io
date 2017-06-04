@@ -4,7 +4,7 @@ layout: default
 
 <section class="intro">
   <header>
-    <h2>뿡상의 개발새발 공책</h2>
+    <h1>뿡상의 개발새발 공책</h1>
     <p>
       Change will not come if we wait for some other person<br />
       or some other time.<br />
@@ -20,16 +20,14 @@ layout: default
 </section>
 
 <section class="upload-list">
-  <a href="{{ site.baseurl }}/blog">
-    <h3>Things I Upload</h3>
-    <hr noshade>
-  </a>
+  <h3>Things I Upload</h3>
+  <hr noshade>
   <div class="features">
   {% for post in site.posts offset:1 %}
     <article>
       <section class="excerpt">
         <header>
-          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
+          <h4><a href="{{ site.baseurl }}{{ post.url }}">- {{ post.title }}</a></h4>
         </header>
       </section>
     </article>
