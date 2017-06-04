@@ -2,6 +2,9 @@
 layout: post
 title: "장고 튜토리얼 파트1-2"
 category: [tutorial]
+tags:
+  - Django
+  - tutorial
 ---
 
 ### The development server

@@ -2,6 +2,9 @@
 layout: post
 title:  "TryHelloWorld 알고리즘 레벨 1-1"
 category: [algorithm]
+tags:
+  - Alogorithm
+  - Level1
 ---
 
 ## **x만큼 간격이 있는 n개의 숫자**

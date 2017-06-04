@@ -1,8 +1,11 @@
 ---
 layout: post
-tag: [django girls]
 title:  "첫 장고 프로젝트!"
 category: [djangogirls]
+tags:
+  - Django
+  - 장고걸스
+  - Blog
 ---
 
 

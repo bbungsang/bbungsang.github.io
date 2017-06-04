@@ -1,8 +1,11 @@
 ---
 layout: post
-tag: [django girls]
-title:  "장고 모델에 관한 고찰"
+title:  "장고 모델"
 category: [djangogirls]
+tags:
+  - Django
+  - 장고걸스
+  - Models
 ---
 
 ## 장고 모델

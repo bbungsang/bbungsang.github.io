@@ -2,6 +2,9 @@
 layout: post
 title:  "장고 튜토리얼 파트1-1"
 category: [tutorial]
+tags:
+  - Django
+  - tutorial
 ---
 
 ## [장고 튜토리얼] 어플리케이션 만들기 part1

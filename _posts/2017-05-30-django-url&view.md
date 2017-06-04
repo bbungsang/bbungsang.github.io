@@ -1,8 +1,11 @@
 ---
 layout: post
-tag: [django girls]
 title:  "장고 URL과 뷰"
 category: [djangogirls]
+tags:
+  - Django
+  - URL
+  - Views
 ---
 
 ## URL

@@ -2,6 +2,9 @@
 layout: post
 title:  "TryHelloWorld 알고리즘 레벨 1-2"
 category: [algorithm]
+tags:
+  - Alogorithm
+  - Level1
 ---
 
 ## 짝수와 홀수
