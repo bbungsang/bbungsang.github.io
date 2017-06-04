@@ -1,0 +1,190 @@
+<html>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="side-bar">
+    <ul>
+      <li class="menu-head">
+        뿡상의 개발새발 공책
+        <a href="#" class="push_menu"><span class="glyphicon glyphicon-align-justify pull-right"></span></a>
+      </li>
+      <div class="menu">
+        <li>
+          <a href="/">
+            Home
+            <span class="glyphicon glyphicon-home pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/python/basic.html">
+            Python
+            <span class="glyphicon glyphicon-dashboard pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/django/djangogirls.html">
+            Django
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/algorithm">
+            Algorithm
+            <span class="glyphicon glyphicon-cog pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/etc/jekyll.html">
+            etc
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            Love snippet
+            <span class="glyphicon glyphicon-heart pull-right"></span>
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+
+        <!-- Main -->
+        <div class="content">
+          <div class="top-bar"></div>
+
+          <div class="main-wrap">
+            <div class="left-wrap"></div>
+            <div class="right-wrap">
+              <section>
+  <div class="container">
+    <header class="major">
+      <h1>Jekyll 블로그 태그 기능</h1>
+      <span class="post-date">
+        31 May 2017
+      </span><br>
+      <img src="/images/tags.png" alt="Tags: " class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#Jekyll">Jekyll</a>,
+  
+  <a href="/tags/#블로그">블로그</a>
+  
+</div>
+<br/>
+
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <ul>
+  <li>블로그 root 폴더에 <code class="highlighter-rouge">tags.md</code>를 넣어준다. 이 <code class="highlighter-rouge">tags.md</code>는 모든 태그들을 출력해준다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">bbungsang</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span>
+<span class="err">├───</span> <span class="n">_includes</span>
+<span class="err">├───</span> <span class="n">_layouts</span>
+<span class="err">├───</span> <span class="n">_posts</span>
+<span class="err">├───</span> <span class="n">css</span>
+<span class="err">├───</span> <span class="p">[</span><span class="n">tags</span><span class="o">.</span><span class="n">md</span><span class="p">]</span>
+<span class="err">└───</span> <span class="o">...</span>
+</code></pre>
+</div>
+
+<h3 id="tagsmd">tags.md</h3>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">---</span>
+<span class="n">layout</span><span class="p">:</span> <span class="n">page</span>
+<span class="n">permalink</span><span class="p">:</span> <span class="o">/</span><span class="n">tags</span><span class="o">/</span>
+<span class="n">title</span><span class="p">:</span> <span class="n">Tags</span>
+<span class="o">---</span>
+
+<span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">"tag-cloud"</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">span</span> <span class="n">style</span><span class="o">=</span><span class="s">"font-size: 70</span><span class="si">%</span><span class="s">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"#next"</span><span class="o">&gt;</span>
+      <span class="nb">next</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span>
+  <span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s">"archives"</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"archive-group"</span><span class="o">&gt;</span>
+    
+    <span class="o">&lt;</span><span class="n">h3</span> <span class="nb">id</span><span class="o">=</span><span class="s">"#next"</span><span class="o">&gt;</span><span class="nb">next</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">name</span><span class="o">=</span><span class="s">"next"</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    
+  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="_includestagshtml">_includes/tags.html</h3>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s">"/images/tag-256.png"</span> <span class="n">alt</span><span class="o">=</span><span class="s">"Tags: "</span> <span class="n">class</span><span class="o">=</span><span class="s">"tag-img"</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">"post-tags"</span><span class="o">&gt;</span>
+  
+  
+  <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/tags/#Jekyll"</span><span class="o">&gt;</span><span class="n">Jekyll</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="p">,</span>
+  
+  <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">"/tags/#블로그"</span><span class="o">&gt;</span><span class="err">블로그</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+  
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+</code></pre>
+</div>
+
+    </section>
+
+    <footer>
+      
+      <a href="/djangogirls/2017/05/30/django-url&view.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/tutorial/2017/06/02/django-tutorial-part1-1.html" class="float-right">Next post &rarr;</a> 
+    </footer>
+  </div>
+</section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+</body>
+</html>

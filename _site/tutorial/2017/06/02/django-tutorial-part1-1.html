@@ -1,0 +1,176 @@
+<html>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="side-bar">
+    <ul>
+      <li class="menu-head">
+        뿡상의 개발새발 공책
+        <a href="#" class="push_menu"><span class="glyphicon glyphicon-align-justify pull-right"></span></a>
+      </li>
+      <div class="menu">
+        <li>
+          <a href="/">
+            Home
+            <span class="glyphicon glyphicon-home pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/python/basic.html">
+            Python
+            <span class="glyphicon glyphicon-dashboard pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/django/djangogirls.html">
+            Django
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/algorithm">
+            Algorithm
+            <span class="glyphicon glyphicon-cog pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/etc/jekyll.html">
+            etc
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            Love snippet
+            <span class="glyphicon glyphicon-heart pull-right"></span>
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+
+        <!-- Main -->
+        <div class="content">
+          <div class="top-bar"></div>
+
+          <div class="main-wrap">
+            <div class="left-wrap"></div>
+            <div class="right-wrap">
+              <section>
+  <div class="container">
+    <header class="major">
+      <h1>장고 튜토리얼 파트1-1</h1>
+      <span class="post-date">
+        02 Jun 2017
+      </span><br>
+      <img src="/images/tags.png" alt="Tags: " class="tag-img"/>
+<div class="post-tags">
+  
+  
+</div>
+<br/>
+
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <h2 id="장고-튜토리얼-어플리케이션-만들기-part1">[장고 튜토리얼] 어플리케이션 만들기 part1</h2>
+<ul>
+  <li>이번 튜토리얼을 통해서 우리는 당신에게 기본 투표어플리케이션 만들기를 보여줄거에요.</li>
+  <li>이 어플리케이션은 사람들이 투표를 하고, 투표 결과를 볼 수 있는 사이트와 당신이 추가, 변경 그리고 삭제를 할 수 있는 관리자 사이트의 2개 파트로 구성되어있습니다.</li>
+  <li>우리는 당신이 장고를 이미 설치했다고 가정하고, 또한 당신은 장고가 설치되었으며, 아래의 명령 프롬프트를 따라함으로써 장고 버전을 말할 수 있을겁니다.<br /></li>
+</ul>
+
+<blockquote>
+  <p><code class="highlighter-rouge">python -m django --version</code></p>
+</blockquote>
+
+<ul>
+  <li>만약 장고가 설치되어있다면, 당신은 장고 버전이 보여야만합니다. 그렇지 않다면, ‘No module named django’라는 에러 사항을 얻게될거에요.</li>
+  <li>이 튜토리얼은 장고 1.11 그리고 파이썬 3.4 혹은 최신버전으로 쓰여졌고, 장고 버전이 적절하지 않다면, 이 페이지의 오른쪽 아래에 버전 전환기를 사용함으로써 장고의 버전에 대한 튜토리얼을 참고하실 수 있습니다. 원하지 않다면 장고 최신버전을 업데이트하세요. <br /></li>
+</ul>
+
+<h3 id="creating-a-project">Creating a project</h3>
+<ul>
+  <li>이 어플리케이션 만들기가 당신의 첫 장고 프로젝트라면, 당신은 초기 설정에 주의해야합니다. 당신은 장고 프로젝트를 설계하는 몇 몇의 코드를 자동 생성해야 할 것입니다.</li>
+  <li>데이터베이스, 컨피그레이션, 장고 특정 옵션들, 그리고 어플리케이션 설정들을 포함하는 장고 인스턴스에 대한 설정 모음이 바로 이에 해당하는 것입니다.</li>
+  <li>커맨드란에 당신이 코드를 저장하고자 하는 디렉토리로 이동하여 아래와 같이 명령어를 입력하세요.<br /></li>
+</ul>
+
+<blockquote>
+  <p><code class="highlighter-rouge">django-admin startproject mysite</code></p>
+</blockquote>
+
+<ul>
+  <li>당신의 현재 디렉토리에 mysite 디렉토리가 생성될 것입니다.</li>
+  <li>생성된 startproject 로 무엇이 있는지 한 번 봐보세요.
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">mysite</span><span class="o">/</span>
+  <span class="n">manage</span><span class="o">.</span><span class="n">py</span>
+  <span class="n">mysite</span><span class="o">/</span>
+      <span class="n">__init__</span><span class="o">.</span><span class="n">py</span>
+      <span class="n">settings</span><span class="o">.</span><span class="n">py</span>
+      <span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+      <span class="n">wsgi</span><span class="o">.</span><span class="n">py</span>
+</code></pre>
+    </div>
+  </li>
+  <li>바깥에 위치한 <code class="highlighter-rouge">mysite(루트디렉토리)</code>는 단지 당신의 프로젝트에 대한 상자일 뿐입니다. 이 디렉토리의 이름은 장고에게 전혀 영향이 없습니다. 따라서 당신은 언제든 이 디렉토리의 이름을 다시 지을 수 있습니다.</li>
+  <li><code class="highlighter-rouge">manage.py</code> : 장고 프로젝트와 상호작용하는 커맨드라인 유틸리티입니다.</li>
+  <li>내부에 위치한 <code class="highlighter-rouge">mysite</code>는 당신 프로젝트에 대한 실질적인 파이썬 패키지입니다. 따라서 이 디렉토리의 이름은 내부 요소를 호출하여 사용해야할 파이썬 패키지의 이름입니다.</li>
+  <li><code class="highlighter-rouge">mysite/setting.py</code> : 장고 프로젝트의 환경설정하는 파일입니다.</li>
+  <li><code class="highlighter-rouge">mysite/urls.py</code> : 이 장고 프로젝트에 대한 URL 선언을 다루는 파일입니다.</li>
+  <li><code class="highlighter-rouge">mysite/wsgi.py</code> : 장고 프로젝트를 제공하는 웹 서버에 대한 진입 지점입니다.<br /></li>
+</ul>
+
+    </section>
+
+    <footer>
+      
+      <a href="/jekyll/2017/05/31/jekyll-blog-tags.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/tutorial/2017/06/02/django-tutorial-part1-2.html" class="float-right">Next post &rarr;</a> 
+    </footer>
+  </div>
+</section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+</body>
+</html>

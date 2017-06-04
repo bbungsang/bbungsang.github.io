@@ -1,0 +1,202 @@
+<html>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="side-bar">
+    <ul>
+      <li class="menu-head">
+        뿡상의 개발새발 공책
+        <a href="#" class="push_menu"><span class="glyphicon glyphicon-align-justify pull-right"></span></a>
+      </li>
+      <div class="menu">
+        <li>
+          <a href="/">
+            Home
+            <span class="glyphicon glyphicon-home pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/python/basic.html">
+            Python
+            <span class="glyphicon glyphicon-dashboard pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/django/djangogirls.html">
+            Django
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/algorithm">
+            Algorithm
+            <span class="glyphicon glyphicon-cog pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/etc/jekyll.html">
+            etc
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            Love snippet
+            <span class="glyphicon glyphicon-heart pull-right"></span>
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+
+        <!-- Main -->
+        <div class="content">
+          <div class="top-bar"></div>
+
+          <div class="main-wrap">
+            <div class="left-wrap"></div>
+            <div class="right-wrap">
+              <section>
+  <div class="container">
+    <header class="major">
+      <h1>장고 튜토리얼 파트1-2</h1>
+      <span class="post-date">
+        02 Jun 2017
+      </span><br>
+      <img src="/images/tags.png" alt="Tags: " class="tag-img"/>
+<div class="post-tags">
+  
+  
+</div>
+<br/>
+
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <h3 id="the-development-server">The development server</h3>
+<ul>
+  <li>바깥의 <code class="highlighter-rouge">mysite</code> 디렉토리로 이동하세요. 만약 이미 그 지점에 있다면 아래와 같이 명령어를 입력해주세요.<br />
+    <blockquote>
+      <p><code class="highlighter-rouge">python manage.py runserver</code></p>
+    </blockquote>
+  </li>
+  <li>입력후, <code class="highlighter-rouge">http://127.0.0.1:8000</code>의 주소를 당신의 브라우저에 입력해보세요. <code class="highlighter-rouge">"Welcome to Django” page, in pleasant, light-blue pastel. It worked!</code>라는 페이지를 보게될 것입니다.</li>
+  <li>지금 당신은 작업을 할 프로젝트 환경을 설정한 것 입니다.</li>
+  <li>장고는 어플리케이션의 기본 디렉토리 구조를 자동으로 만드는 유틸리티를 제공합니다. 따라서 당신이 디렉토리들을 만드는 것보다는 코드를 작성하는 것에 초점을 맞추고 있습니다.</li>
+  <li>어플리케이션을 생성하기 위해서 당신은 <code class="highlighter-rouge">manage.py</code>와 같은 디렉토리의 명령어 입력창에 다음과 같이 입력합니다.<br /></li>
+</ul>
+
+<blockquote>
+  <p><code class="highlighter-rouge">python manage.py startapp polls</code></p>
+</blockquote>
+
+<ul>
+  <li>이러한 레이아웃과 같은 <code class="highlighter-rouge">polls</code> 디렉토리를 생성할 것입니다.
+<code class="highlighter-rouge">python
+polls/
+__init__.py
+admin.py
+apps.py
+migrations/
+    __init__.py
+models.py
+tests.py
+views.py
+</code><br /><br /></li>
+</ul>
+
+<h4 id="첫번-째-view-작성하기">첫번 째 View 작성하기</h4>
+<p>[polls.views.py]</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"Hello, world. You're at the polls index"</span><span class="p">)</span>
+</code></pre>
+</div>
+<ul>
+  <li>이것은 장고에서 가장 간단한 뷰 입니다. 뷰를 호출하기 위해서 URL을 매핑해야하는데 여기에서 우리는 URLconf가 필요합니다.</li>
+  <li>polls 디렉토리에서 URLconf를 생성하기 위해서 어플리케이션 디렉토리에서 urls.py를 생성하고 다음과 같이 코드를 작성합니다.</li>
+</ul>
+
+<p>[polls/urls.py]</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">urls</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="n">url</span><span class="p">(</span><span class="s">r'^$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'index'</span><span class="p">)</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+<ul>
+  <li>polls.urls 모듈을 root URLconf 로 지정하기 위해 mysite/urls.py 에서 다음과 같이 include()를 삽입해야합니다.</li>
+</ul>
+
+<p>[mysite/urls.py]</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">url</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="n">url</span><span class="p">(</span><span class="s">r'^polls/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'polls.urls'</span><span class="p">)),</span>
+  <span class="n">url</span><span class="p">(</span><span class="s">r'^admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+<ul>
+  <li><code class="highlighter-rouge">include()</code> 함수는 다른 URLconf를 참조하도록 허용합니다. include()를 사용한 url 패턴에서 ‘/’ 다음에 정규표현식 ‘$’를 사용하지 않았다는 점을 주의하세요.</li>
+  <li>당신이 다른 URL 패턴을 포함시키고자 할 때 항상 include()를 사용하지만 admin.site.urls 는 이에 예외 사항입니다.</li>
+</ul>
+
+    </section>
+
+    <footer>
+      
+      <a href="/tutorial/2017/06/02/django-tutorial-part1-1.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/tutorial/2017/06/03/django-tutorial-part3-2.html" class="float-right">Next post &rarr;</a> 
+    </footer>
+  </div>
+</section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+</body>
+</html>
