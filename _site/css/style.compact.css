@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
-.container { width: 100% !important; overflow: hidden; display: inline-block; font-family: "Helvetica", "Arial", sans-serif; font-size: 20px; color: #9a9a9a; line-height: 30px; /* Post */ /* Section/Article */ /* Image */ /* Code */ /* markdown grammer `` block */ /* Comment */ /* Error */ /* Generic */ /* Keyword */ /* Literal */ /* Name */ /* Operator */ /* Other */ /* Punctuation */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */ /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */ /* Generic.Traceback */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */ /* Literal.Date */ /* Literal.Number */ /* Literal.String */ /* Name.Attribute */ /* Name.Builtin */ /* Name.Class */ /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */ /* Name.Function */ /* Name.Label */ /* Name.Namespace */ /* Name.Other */ /* Name.Property */ /* Name.Tag */ /* Name.Variable */ /* Operator.Word */ /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */ /* Literal.Number.Oct */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */ /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */ /* Name.Builtin.Pseudo */ /* Name.Variable.Class */ /* Name.Variable.Global */ /* Name.Variable.Instance */ /* Literal.Number.Integer.Long */ }
+.container { width: 100% !important; overflow: hidden; display: inline-block; font-family: "Arial", sans-serif; font-size: 18px; color: #3A3A3A; line-height: 30px; /* Post */ /* Section/Article */ /* Image */ /* Code */ /* markdown grammer `` block */ /* Comment */ /* Error */ /* Generic */ /* Keyword */ /* Literal */ /* Name */ /* Operator */ /* Other */ /* Punctuation */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */ /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */ /* Generic.Traceback */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */ /* Literal.Date */ /* Literal.Number */ /* Literal.String */ /* Name.Attribute */ /* Name.Builtin */ /* Name.Class */ /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */ /* Name.Function */ /* Name.Label */ /* Name.Namespace */ /* Name.Other */ /* Name.Property */ /* Name.Tag */ /* Name.Variable */ /* Operator.Word */ /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */ /* Literal.Number.Oct */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */ /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */ /* Name.Builtin.Pseudo */ /* Name.Variable.Class */ /* Name.Variable.Global */ /* Name.Variable.Instance */ /* Literal.Number.Integer.Long */ }
 
 .container section { width: 85%; }
 
@@ -15,7 +15,9 @@
 
 .container h2, .container h3 { color: #FF9966; }
 
-.container .side-bar { background: #74AFAD; position: absolute; height: 2400px; width: 272px; color: #fff; transition: margin-left 0.5s; }
+.container h4 { color: #ABABAB; }
+
+.container .side-bar { background: #74AFAD; position: absolute; height: auto; width: 272px; color: #fff; transition: margin-left 0.5s; }
 
 .container .side-bar ul { list-style: none; padding: 0px; }
 
@@ -39,9 +41,19 @@
 
 .container .side-bar ul .menu li a.active:before { content: ""; position: absolute; width: 0; height: 0; border-top: 27px solid transparent; border-bottom: 27px solid transparent; border-left: 7px solid #FF9966; margin-top: -11px; margin-left: 250px; }
 
-.container .content { padding-left: 235px; transition: padding-left 0.5s; }
+.container .content { padding-left: 220px; transition: padding-left 0.5s; }
 
-.container .content .top-bar { background: #FF9966; width: 100%; height: 45px; line-height: 50px; }
+.container .content .top-bar { background: #FF9966; width: 100%; height: 45px; line-height: 45px; }
+
+.container .content .top-bar .title { font-family: 'Bungee Hairline', 'Architects Daughter', 'Bubbler One'; font-weight: bold; color: #fff; font-size: 22px; float: left; padding-left: 80px; }
+
+.container .content .top-bar .search { height: 45px; width: 240px; float: right; padding: 8px; }
+
+.container .content .top-bar .search .search-icon { width: 32px; height: 45px; color: #fff; font-size: 26px; padding-top: 2px; float: left; }
+
+.container .content .top-bar .search input[type=text] { width: 80px; height: 30px; color: #fff; border-radius: 5px; border: 2px solid #fff; background: #FF9966; -webkit-transition: width 0.4s ease-in-out; transition: width 0.4s ease-in-out; }
+
+.container .content .top-bar .search input[type=text]:focus { width: 180px; }
 
 .container .content .main-wrap { width: 100%; height: auto; margin-top: 70px; margin-left: 120px; }
 
