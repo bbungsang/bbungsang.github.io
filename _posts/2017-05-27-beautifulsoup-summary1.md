@@ -41,8 +41,9 @@ soup.get_text()
 뷰티플수프는 파이썬 기본 라이브러리에 있는 HTML 해석기를 지원하지만, 또한 제 3의 해석기도 지원한다. 그 대표적인 해석기로 lxml 해석기가 있다.
 
 #### 각 해석기의 장단점
+
 해석기 | 장점 | 단점
--|-|-
+-----|-----|-----
 BeautifulSoup(markup, 'html.parser') | 적절한 속도 | 특정 버전에서만 관대함
 BeautifulSoup(markup, 'lxml') | 아주 빠름 | 외부 C 라이브러리 의존
 BeautifulSoup('lxml', 'lxml') | 아주 빠르고 유일하게 XML 해석기 지원 | 외부 C 라이브러리 의존
@@ -62,4 +63,5 @@ tag = soup.b
 
 - `<태그객체>.attrs`로 접근하면 `{'class' : 'boldest' }` 딕셔너리 형태로 반환된다.
 
-- `<태그객체>.string.replace_with(NotBold)` 문자열을 다른 문자열로 바꾼다 `<b class='boldest'>NotBold</b>`
+- `<태그객체>.string.replace_with(NotBold)` 문자열을 다른 문자열로 바꾼다 <br>
+`<b class='boldest'>NotBold</b>`

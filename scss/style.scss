@@ -12,8 +12,21 @@
   color: rgb(154, 154, 154);
   line-height: 30px;
 
+  /* Post */
   section {
     width: 85%;
+  }
+
+  table {
+    width: 100%;
+
+    th {
+        border-bottom: 2px solid rgb(154, 154, 154);
+    }
+
+    td {
+        border-bottom: 1px solid rgb(154, 154, 154);
+    }
   }
 
   a {
@@ -25,17 +38,12 @@
     color: #00CCFF;
   }
 
-  h2 {
-
-  }
-
-  h3 {
-    font-size: 28px;
+  h2, h3 {
     color: #FF9966;
   }
 
   .side-bar {
-    background: #FF9966;
+    background: #74AFAD;
     position: absolute;
     height: 2400px;
     width: 272px;
@@ -103,7 +111,7 @@
 
         a.active {
             padding-left: 18px;
-            background: #74AFAD;
+            background: #FF9966;
             border-left: 3px solid #ECECEA;
         }
 
@@ -115,7 +123,7 @@
           border-top: 27px solid transparent;
           border-bottom: 27px solid transparent;
 
-        	border-left: 7px solid #74AFAD;
+        	border-left: 7px solid #FF9966;
           margin-top: -11px;
           margin-left: 250px;
         }
@@ -129,7 +137,7 @@
     transition: padding-left 0.5s;
 
     .top-bar {
-      background: #74AFAD;
+      background: #FF9966;
       width: 100%;
       height: 45px;
       line-height: 50px;
@@ -188,7 +196,7 @@
 
   /* Code */
   .highlight {
-    background-color: #F5D6FF;
+    background-color: #FFFFC5;
     padding: 7px 7px 7px 10px;
     border: 1px solid #ddd;
     -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
@@ -199,12 +207,12 @@
   }
 
   code {
-	  font-family:'Courier', monospace;
+	  font-family:'Arial', 'Times New Roman', 'Courier', monospace;
     font-size: 18px;
   }
 
-	.highlighter-rouge { background: #FFCC97; color: #24A6BD; border-radius: 2px; } /* markdown grammer `` block */
-	.highlight .c { color: #586E75 } /* Comment */
+	.highlighter-rouge { background: #FF9966; color: #fff; border-radius: 3px; } /* markdown grammer `` block */
+	.highlight .c { color: #9B7CC9 } /* Comment */
 	.highlight .err { color: #93A1A1 } /* Error */
 	.highlight .g { color: #93A1A1 } /* Generic */
 	.highlight .k { color: #859900 } /* Keyword */

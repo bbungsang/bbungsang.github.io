@@ -29,8 +29,8 @@ print("결과 : " + evenOrOdd(2))
 def evenOrOdd(num):
     return num % 2 and "Odd" or "Even"
 ```
-<br><br>
 
+<br><br>
 ## 제일 작은 수 제거하기
 rm_small함수는 list타입 변수 mylist을 매개변수로 입력받습니다.<br>
 mylist 에서 가장 작은 수를 제거한 리스트를 리턴하고, mylist의 원소가 1개 이하인 경우는 []를 리턴하는 함수를 완성하세요.<br>
@@ -71,7 +71,7 @@ def rm_small(mylist):
     return mylist
 ```
 
-
+<br><br>
 ## 정수제곱근 판별하기
 nextSqaure함수는 정수 n을 매개변수로 입력받습니다.<br>
 n이 임의의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 임의의 정수 x의 제곱이 아니라면 'no'을 리턴하는 함수를 완성하세요.<br>

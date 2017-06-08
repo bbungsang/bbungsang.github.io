@@ -7,6 +7,7 @@
   font-size: 20px;
   color: #9a9a9a;
   line-height: 30px;
+  /* Post */
   /* Section/Article */
   /* Image */
   /* Code */
@@ -81,16 +82,21 @@
   /* Literal.Number.Integer.Long */ }
   .container section {
     width: 85%; }
+  .container table {
+    width: 100%; }
+    .container table th {
+      border-bottom: 2px solid #9a9a9a; }
+    .container table td {
+      border-bottom: 1px solid #9a9a9a; }
   .container a {
     color: #9a9a9a; }
   .container h1 {
     font-size: 42px;
     color: #00CCFF; }
-  .container h3 {
-    font-size: 28px;
+  .container h2, .container h3 {
     color: #FF9966; }
   .container .side-bar {
-    background: #FF9966;
+    background: #74AFAD;
     position: absolute;
     height: 2400px;
     width: 272px;
@@ -139,7 +145,7 @@
         padding-left: 17px; }
       .container .side-bar ul .menu li a.active {
         padding-left: 18px;
-        background: #74AFAD;
+        background: #FF9966;
         border-left: 3px solid #ECECEA; }
       .container .side-bar ul .menu li a.active:before {
         content: "";
@@ -148,14 +154,14 @@
         height: 0;
         border-top: 27px solid transparent;
         border-bottom: 27px solid transparent;
-        border-left: 7px solid #74AFAD;
+        border-left: 7px solid #FF9966;
         margin-top: -11px;
         margin-left: 250px; }
   .container .content {
     padding-left: 235px;
     transition: padding-left 0.5s; }
     .container .content .top-bar {
-      background: #74AFAD;
+      background: #FF9966;
       width: 100%;
       height: 45px;
       line-height: 50px; }
@@ -190,7 +196,7 @@
     height: 200px;
     border-radius: 10px; }
   .container .highlight {
-    background-color: #F5D6FF;
+    background-color: #FFFFC5;
     padding: 7px 7px 7px 10px;
     border: 1px solid #ddd;
     -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
@@ -199,14 +205,14 @@
     margin: 20px 0 20px 0;
     overflow: scroll; }
   .container code {
-    font-family: 'Courier', monospace;
+    font-family: 'Arial', 'Times New Roman', 'Courier', monospace;
     font-size: 18px; }
   .container .highlighter-rouge {
-    background: #FFCC97;
-    color: #24A6BD;
-    border-radius: 2px; }
+    background: #FF9966;
+    color: #fff;
+    border-radius: 3px; }
   .container .highlight .c {
-    color: #586E75; }
+    color: #9B7CC9; }
   .container .highlight .err {
     color: #93A1A1; }
   .container .highlight .g {

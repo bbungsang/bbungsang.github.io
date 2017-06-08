@@ -112,47 +112,7 @@
     </header>
     <hr noshade>
     <section class="post-content">
-      <h2 id="자릿수더하기"><strong>자릿수더하기</strong></h2>
-<p>sum_digit함수는 자연수를 전달 받아서 숫자의 각 자릿수의 합을 구해서 return합니다.<br />
-예를들어 number = 123이면 1 + 2 + 3 = 6을 return하면 됩니다.<br />
-sum_digit함수를 완성해보세요.</p>
-
-<ul>
-  <li>내가 푼 것 ^0^/</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum_digit</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="n">str_num</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-    <span class="c"># bowl = ""</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">str_num</span><span class="p">)):</span>
-        <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">str_num</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="c"># if i == len(str_num) - 1:</span>
-        <span class="c">#     bowl += str_num[i] + "="</span>
-        <span class="c"># else:</span>
-        <span class="c">#     bowl += str_num[i] + "+"</span>
-
-    <span class="k">return</span> <span class="nb">sum</span>
-
-<span class="k">print</span><span class="p">(</span><span class="s">"결과 : {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sum_digit</span><span class="p">(</span><span class="mi">6783</span><span class="p">)));</span>   
-</code></pre>
-</div>
-
-<ul>
-  <li>다른 사람 풀이</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum_digit</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">number</span><span class="p">;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_digit</span><span class="p">(</span><span class="n">number</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
-</code></pre>
-</div>
-<blockquote>
-  <p>얼.. 재귀함수..0V0b</p>
-</blockquote>
-
-<h2 id="스트링을-숫자로-바꾸기"><strong>스트링을 숫자로 바꾸기</strong></h2>
+      <h2 id="스트링을-숫자로-바꾸기">스트링을 숫자로 바꾸기</h2>
 <p>strToInt 메소드는 String형 str을 매개변수로 받습니다.<br />
 str을 숫자로 변환한 결과를 반환하도록 strToInt를 완성하세요.<br />
 예를들어 str이 “1234”이면 1234를 반환하고, “-1234”이면 -1234를 반환하면 됩니다.<br />
@@ -172,8 +132,8 @@ str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력�
 </code></pre>
 </div>
 
-<h2 id="수박수박수박수박수박수"><strong>수박수박수박수박수박수?</strong></h2>
-
+<p><br /><br /></p>
+<h2 id="수박수박수박수박수박수">수박수박수박수박수박수?</h2>
 <p>water_melon함수는 정수 n을 매개변수로 입력받습니다.<br />
 길이가 n이고, 수박수박수…와 같은 패턴을 유지하는 문자열을 리턴하도록 함수를 완성하세요.<br />
 예를들어 n이 4이면 ‘수박수박’을 리턴하고 3이라면 ‘수박수’를 리턴하면 됩니다.</p>
@@ -216,6 +176,7 @@ str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력�
   <p>허무하게도 저렇게 간단한 방법이 있었다니… 분발해야겠다.</p>
 </blockquote>
 
+<p><br /><br /></p>
 <h2 id="서울에서-김서방-찾기">서울에서 김서방 찾기</h2>
 <p>findKim 함수는 String형 배열 seoul을 매개변수로 받습니다.<br />
 seoul의 element중 “Kim”의 위치 x를 찾아, “김서방은 x에 있다”는 String을 반환하세요.<br />
@@ -247,9 +208,10 @@ seoul에 “Kim”은 오직 한 번만 나타나며 잘못된 값이 입력되�
 </code></pre>
 </div>
 
+<p><br /><br /></p>
 <h2 id="삼각형-출력하기">삼각형 출력하기</h2>
 <p>printTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.<br />
-다음을 참고해 <code class="highlighter-rouge">*(별)</code>로 높이가 num인 삼각형을 문자열로 리턴하는 printTriangle 메소드를 완성하세요.<br />
+다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는 printTriangle 메소드를 완성하세요.<br />
 printTriangle이 return하는 String은 개행문자(‘\n’)로 끝나야 합니다.</p>
 
 <ul>
@@ -276,12 +238,14 @@ printTriangle이 return하는 String은 개행문자(‘\n’)로 끝나야 합�
 </code></pre>
 </div>
 
-<blockquote>
-  <p>내가 푸는 방식은 아무래도 파이써닉함에서 한참 벗어나는 것 같다. 알고리즘을 단계별로 차차 풀어나가고 다른 사람 풀이도 열심히 참고하여 문법을 익히는 게 우선인 듯 하다.</p>
-</blockquote>
+<p><br /><br /></p>
+<h4 id="소감"><em>소감</em></h4>
+<ul>
+  <li>내가 푸는 방식은 아무래도 파이써닉함에서 한참 벗어나는 것 같다. 알고리즘을 단계별로 차차 풀어나가고 다른 사람 풀이도 열심히 참고하여 문법을 익히는 게 우선인 듯 하다.</li>
+</ul>
 
     </section>
-
+    <br><br>
     <footer>
       
       <a href="/algorithm/2017/05/28/tryhelloworld-algorithm-level1-2.html" class="float-left">&larr; Previous post</a> 

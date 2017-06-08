@@ -1,0 +1,247 @@
+<html>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="side-bar">
+    <ul>
+      <li class="menu-head">
+        <a href="#" class="push_menu">
+          <!-- <span class="glyphicon glyphicon-align-justify pull-right"></span> -->
+          <div class="bar-wrap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+          </div>
+        </a>
+      </li>
+      <li class="menu-intro">
+        <span class="image photo"><img src="/images/itsme.png" class="main-img" /></span>
+        <h3 id="logo"><a href="/">Elena Kim</a></h3>
+        <p>
+          틀린 부분이 있거나 문의사항이<br>
+          있으면 언제든지 말씀해주세요 :D
+        </p>
+      </li>
+      <div class="menu">
+        <li>
+          <a href="/">
+            Home
+            <span class="glyphicon glyphicon-home pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/python/basic.html">
+            Python
+            <span class="glyphicon glyphicon-flash pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/django/djangogirls.html">
+            Django
+            <span class="glyphicon glyphicon-grain pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/algorithm">
+            Algorithm
+            <span class="glyphicon glyphicon-education pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/etc/jekyll.html">
+            etc
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            Love snippet
+            <span class="glyphicon glyphicon-heart pull-right"></span>
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+
+        <!-- Main -->
+        <div class="content">
+          <div class="top-bar"></div>
+
+          <div class="main-wrap">
+            <section>
+  <div class="container">
+    <header class="major">
+      <h1>TryHelloWorld 알고리즘 레벨 1-4</h1>
+      <span class="post-date">
+        06 Jun 2017
+      </span><br>
+      <img src="/images/tags.png" alt="Tags: " class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#Alogorithm">Alogorithm</a>,
+  
+  <a href="/tags/#Level1">Level1</a>
+  
+</div>
+<br/>
+
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <h2 id="문자열-다루기-기본">문자열 다루기 기본</h2>
+<p>alpha_string46함수는 문자열 s를 매개변수로 입력받습니다.<br />
+s의 길이가 4혹은 6이고, 숫자로만 구성되있는지 확인해주는 함수를 완성하세요.<br />
+예를들어 s가 “a234”이면 False를 리턴하고 “1234”라면 True를 리턴하면 됩니다<br /></p>
+
+<ul>
+  <li>내가 푼 것 ^0^/</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">alpha_string46</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">num_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="n">num_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">num_list</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+<span class="k">print</span><span class="p">(</span> <span class="n">alpha_string46</span><span class="p">(</span><span class="s">"a23415"</span><span class="p">)</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">alpha_string46</span><span class="p">(</span><span class="s">"031779"</span><span class="p">)</span> <span class="p">)</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>다른 사람 풀이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">alpha_string46</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</code></pre>
+</div>
+<p><br /><br /></p>
+<h2 id="문자열-내-p와-y의-개수">문자열 내 p와 y의 개수</h2>
+<p>numPY함수는 대문자와 소문자가 섞여있는 문자열 s를 매개변수로 입력받습니다.<br />
+s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 리턴하도록 함수를 완성하세요. ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다.<br />
+예를들어 s가 “pPoooyY”면 True를 리턴하고 “Pyy”라면 False를 리턴합니다.<br /></p>
+
+<ul>
+  <li>내가 푼 것 ^0^/</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">numPY</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+	<span class="n">p_count</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">y_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">"p"</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s">"P"</span><span class="p">:</span>
+			<span class="n">p_count</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">"y"</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="s">"Y"</span><span class="p">:</span>
+			<span class="n">y_count</span> <span class="o">+=</span> <span class="mi">1</span>
+	<span class="k">print</span><span class="p">(</span><span class="n">p_count</span><span class="p">,</span> <span class="n">y_count</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">p_count</span> <span class="o">==</span> <span class="n">y_count</span><span class="p">:</span>
+		<span class="k">return</span> <span class="bp">True</span>
+	<span class="k">return</span> <span class="bp">False</span>
+
+<span class="k">print</span><span class="p">(</span> <span class="n">numPY</span><span class="p">(</span><span class="s">"YbYYYpppEPRm"</span><span class="p">)</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">numPY</span><span class="p">(</span><span class="s">"Pyy"</span><span class="p">)</span> <span class="p">)</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>다른 사람 풀이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">numPY</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'p'</span><span class="p">)</span> <span class="o">==</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
+</code></pre>
+</div>
+<p><br /><br /></p>
+<h4 id="소감"><em>소감</em></h4>
+<ul>
+  <li>이번 알고리즘은 내 기준에서 매우 어려웠다. 코드 엄청 긴 것 보소&gt;.0 그에 비해 다른 사람이 한 줄로 풀어낸 것을 보노라면 어김없이 현타가 찾아온다.</li>
+</ul>
+
+    </section>
+    <br><br>
+    <footer>
+      
+      <a href="/2017/06/06/jekyll-blog-comment.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/algorithm/2017/06/07/tryhelloword-algorithm-level1-5.html" class="float-right">Next post &rarr;</a> 
+      <br><br>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </div>
+</section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+</body>
+</html>

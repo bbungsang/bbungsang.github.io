@@ -147,30 +147,33 @@
 <p>뷰티플수프는 파이썬 기본 라이브러리에 있는 HTML 해석기를 지원하지만, 또한 제 3의 해석기도 지원한다. 그 대표적인 해석기로 lxml 해석기가 있다.</p>
 
 <h4 id="각-해석기의-장단점">각 해석기의 장단점</h4>
-<p>해석기 | 장점 | 단점</p>
-<ul>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>BeautifulSoup(markup, ‘html.parser’)</td>
-          <td>적절한 속도</td>
-          <td>특정 버전에서만 관대함</td>
-        </tr>
-        <tr>
-          <td>BeautifulSoup(markup, ‘lxml’)</td>
-          <td>아주 빠름</td>
-          <td>외부 C 라이브러리 의존</td>
-        </tr>
-        <tr>
-          <td>BeautifulSoup(‘lxml’, ‘lxml’)</td>
-          <td>아주 빠르고 유일하게 XML 해석기 지원</td>
-          <td>외부 C 라이브러리 의존</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>해석기</th>
+      <th>장점</th>
+      <th>단점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BeautifulSoup(markup, ‘html.parser’)</td>
+      <td>적절한 속도</td>
+      <td>특정 버전에서만 관대함</td>
+    </tr>
+    <tr>
+      <td>BeautifulSoup(markup, ‘lxml’)</td>
+      <td>아주 빠름</td>
+      <td>외부 C 라이브러리 의존</td>
+    </tr>
+    <tr>
+      <td>BeautifulSoup(‘lxml’, ‘lxml’)</td>
+      <td>아주 빠르고 유일하게 XML 해석기 지원</td>
+      <td>외부 C 라이브러리 의존</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="객체의-종류">객체의 종류</h2>
 <h4 id="태그">태그</h4>
@@ -192,12 +195,13 @@ tag = soup.b
     <p><code class="highlighter-rouge">&lt;태그객체&gt;.attrs</code>로 접근하면 <code class="highlighter-rouge"><span class="p">{</span><span class="err">'class'</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">'boldest'</span><span class="w"> </span><span class="p">}</span></code> 딕셔너리 형태로 반환된다.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">&lt;태그객체&gt;.string.replace_with(NotBold)</code> 문자열을 다른 문자열로 바꾼다 <code class="highlighter-rouge">&lt;b class='boldest'&gt;NotBold&lt;/b&gt;</code></p>
+    <p><code class="highlighter-rouge">&lt;태그객체&gt;.string.replace_with(NotBold)</code> 문자열을 다른 문자열로 바꾼다 <br />
+<code class="highlighter-rouge">&lt;b class='boldest'&gt;NotBold&lt;/b&gt;</code></p>
   </li>
 </ul>
 
     </section>
-
+    <br><br>
     <footer>
       
       
