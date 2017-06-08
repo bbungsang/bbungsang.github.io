@@ -5,6 +5,7 @@ category: [algorithm]
 tags:
   - Alogorithm
   - Level1
+comments: true
 ---
 
 ## **x만큼 간격이 있는 n개의 숫자**

@@ -5,6 +5,7 @@ category: [jekyll]
 tags:
   - Jekyll
   - 블로그
+comments: true
 ---
 
 - 블로그 root 폴더에 `tags.md`를 넣어준다. 이 `tags.md`는 모든 태그들을 출력해준다.

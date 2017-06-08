@@ -6,6 +6,7 @@ tags:
   - Python
   - 리스트
   - 튜플
+comments: true
 ---
 
 ## 문자열

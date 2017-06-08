@@ -5,6 +5,7 @@ category: [algorithm]
 tags:
   - Alogorithm
   - Level1
+comments: true
 ---
 
 ## 짝수와 홀수

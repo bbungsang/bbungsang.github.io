@@ -6,6 +6,7 @@ tags:
   - Django
   - URL
   - Views
+comments: true
 ---
 
 ## URL

@@ -5,6 +5,7 @@ category: [library]
 tags:
   - Python
   - BeautifulSoup
+comments: true
 ---
 
 ## 뷰티풀수프(BeautifulSoup)

@@ -20,6 +20,8 @@ layout: default
       <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
       {% if page.next %}
       <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+      <br><br>
+      {% include /comments.html %}
     </footer>
   </div>
 </section>

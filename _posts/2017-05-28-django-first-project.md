@@ -6,6 +6,7 @@ tags:
   - Django
   - 장고걸스
   - Blog
+comments: true
 ---
 
 

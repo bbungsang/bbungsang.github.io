@@ -12,6 +12,10 @@
   color: rgb(154, 154, 154);
   line-height: 30px;
 
+  section {
+    width: 85%;
+  }
+
   a {
     color: rgb(154, 154, 154);
   }
@@ -33,7 +37,7 @@
   .side-bar {
     background: #FF9966;
     position: absolute;
-    height: 1600px;
+    height: 2400px;
     width: 272px;
     color: #fff;
     transition: margin-left 0.5s;

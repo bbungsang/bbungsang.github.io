@@ -6,6 +6,7 @@ tags:
   - Django
   - 장고걸스
   - Models
+comments: true
 ---
 
 ## 장고 모델

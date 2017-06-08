@@ -5,6 +5,7 @@ category: [tutorial]
 tags:
   - Django
   - tutorial
+comments: true
 ---
 
 #### \# vote

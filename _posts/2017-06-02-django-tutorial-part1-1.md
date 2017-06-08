@@ -5,6 +5,7 @@ category: [tutorial]
 tags:
   - Django
   - tutorial
+comments: true
 ---
 
 ## [장고 튜토리얼] 어플리케이션 만들기 part1
