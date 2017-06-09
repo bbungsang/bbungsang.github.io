@@ -2,6 +2,19 @@
 layout: default
 ---
 
+<style>
+  ul:first-child {
+    list-style-type: none;
+  }
+  .category-title a {
+    cursor: pointer;
+  }
+
+  .category-title .hide {
+    display: none;
+  }
+</style>
+
 <section class="intro">
   <header>
     <h1>뿡상의 개발새발 공책</h1>
@@ -22,15 +35,100 @@ layout: default
 <section class="upload-list">
   <h3>Things I Upload</h3>
   <hr noshade>
-  <div class="features">
-  {% for post in site.posts %}
-    <article>
-      <section class="excerpt">
-        <header>
-          <h4><a href="{{ site.baseurl }}{{ post.url }}">- {{ post.title }}</a></h4>
-        </header>
-      </section>
-    </article>
-  {% endfor %}
-  </div>
-</section>
+
+  <!-- python -->
+  <section>
+    <div class="container">
+      <div class="features">
+        <ul>
+          <li>
+            <a href="#" class="category-title"><h3>파이썬 기본 문법</h3></a>
+            {% for post in site.categories.basic %}
+            <ul class="tags-exop-posts">
+              <li>
+                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+                  {{ post.title }}
+                  <small class="post-date">{{ post.date | date_to_string }}</small>
+                </a>
+              </li>
+            </ul>
+            {% endfor %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  {% include_relative python/library.html %}
+
+  <!-- django -->
+  <section>
+    <div class="container">
+        <div class="features">
+          <ul>
+            <li>
+              <a href="#" class="category-title"><h3>Do 장고걸스!</h3></a>
+              {% for post in site.categories.djangogirls %}
+              <ul class="tags-exop-posts">
+                <li>
+                  <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                    <small class="post-date">{{ post.date | date_to_string }}</small>
+                  </a>
+                </li>
+              </ul>
+              {% endfor %}
+            </li>
+          </ul>
+        </d
+    </div>
+  </section>
+  {% include_relative django/travel.html %}
+  {% include_relative django/tutorial.html %}
+
+  <!-- algorithm -->
+  <section>
+    <div class="container">
+        <div class="features">
+          <ul>
+            <li>
+              <a href="#" class="category-title">
+                <h3>Solve Algorithm!</h3>
+              </a>
+              {% for post in site.categories.tryhelloworld %}
+              <ul class="tags-exop-posts">
+                <li>
+                  <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                    <small class="post-date">{{ post.date | date_to_string }}</small>
+                  </a>
+                </li>
+              </ul>
+              {% endfor %}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  <!-- ETC -->
+  <section>
+    <div class="container">
+        <div class="features">
+          <ul>
+            <li>
+              <a href="#" class="category-title"><h3>지킬 블로그 꾸미기</h3></a>
+              {% for post in site.categories.jekyll %}
+              <ul class="tags-exop-posts">
+                <li>
+                  <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                    <small class="post-date">{{ post.date | date_to_string }}</small>
+                  </a>
+                </li>
+              </ul>
+              {% endfor %}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>

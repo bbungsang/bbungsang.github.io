@@ -35,11 +35,13 @@
 
   h1 {
     font-size: 42px;
+    font-weight: bold;
     color: #00CCFF;
   }
 
   h2, h3 {
     color: #FF9966;
+    font-weight: bold;
   }
 
   h4 {
@@ -132,6 +134,35 @@
           margin-left: 250px;
         }
       }
+
+      // .search {
+      //   height: 40px;
+      //   padding: 10px;
+      //
+      //   .search-icon {
+      //     width: 32px;
+      //     height: 35px;
+      //     color: #fff;
+      //     font-size: 26px;
+      //     padding-top: 2px;
+      //     float: left;
+      //   }
+      //
+      //   input[type=text] {
+      //     width: 80px;
+      //     height: 30px;
+      //     color: #fff;
+      //     border-radius: 5px;
+      //     border: 2px solid #fff;
+      //     background: #74AFAD;
+      //     -webkit-transition: width 0.4s ease-in-out;
+      //     transition: width 0.4s ease-in-out;
+      //   }
+      //
+      //   input[type=text]:focus {
+      //       width: 190px;
+      //   }
+      // }
     }
   }
 
@@ -152,37 +183,16 @@
         color: #fff;
         font-size: 22px;
         float: left;
-        padding-left: 80px;
+        padding-left: 75px;
       }
 
-      .search {
-        height: 45px;
-        width: 240px;
+      .contact {
         float: right;
-        padding: 8px;
+        height: 45px;
+        padding-right: 20px;
 
-        .search-icon {
-          width: 32px;
-          height: 45px;
-          color: #fff;
-          font-size: 26px;
-          padding-top: 2px;
-          float: left;
-        }
-
-        input[type=text] {
-          width: 80px;
-          height: 30px;
-          color: #fff;
-          border-radius: 5px;
-          border: 2px solid #fff;
-          background: #FF9966;
-          -webkit-transition: width 0.4s ease-in-out;
-          transition: width 0.4s ease-in-out;
-        }
-
-        input[type=text]:focus {
-            width: 180px;
+        a {
+          text-decoration: none;
         }
       }
     }
@@ -219,10 +229,20 @@
 
   /* Section/Article */
 	section, article {
+    ul {
+      padding: 5px;
+    }
+
 		&.special {
 			text-align: center;
 		}
 	}
+
+  .post-date {
+    font-family: 'Bubbler One';
+    font-size: 18px;
+    // font-weight: bold;
+  }
 
 	footer {
 		.float-left { float: left; }

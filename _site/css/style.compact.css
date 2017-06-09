@@ -11,9 +11,9 @@
 
 .container a { color: #9a9a9a; }
 
-.container h1 { font-size: 42px; color: #00CCFF; }
+.container h1 { font-size: 42px; font-weight: bold; color: #00CCFF; }
 
-.container h2, .container h3 { color: #FF9966; }
+.container h2, .container h3 { color: #FF9966; font-weight: bold; }
 
 .container h4 { color: #ABABAB; }
 
@@ -45,15 +45,11 @@
 
 .container .content .top-bar { background: #FF9966; width: 100%; height: 45px; line-height: 45px; }
 
-.container .content .top-bar .title { font-family: 'Bungee Hairline', 'Architects Daughter', 'Bubbler One'; font-weight: bold; color: #fff; font-size: 22px; float: left; padding-left: 80px; }
+.container .content .top-bar .title { font-family: 'Bungee Hairline', 'Architects Daughter', 'Bubbler One'; font-weight: bold; color: #fff; font-size: 22px; float: left; padding-left: 75px; }
 
-.container .content .top-bar .search { height: 45px; width: 240px; float: right; padding: 8px; }
+.container .content .top-bar .contact { float: right; height: 45px; padding-right: 20px; }
 
-.container .content .top-bar .search .search-icon { width: 32px; height: 45px; color: #fff; font-size: 26px; padding-top: 2px; float: left; }
-
-.container .content .top-bar .search input[type=text] { width: 80px; height: 30px; color: #fff; border-radius: 5px; border: 2px solid #fff; background: #FF9966; -webkit-transition: width 0.4s ease-in-out; transition: width 0.4s ease-in-out; }
-
-.container .content .top-bar .search input[type=text]:focus { width: 180px; }
+.container .content .top-bar .contact a { text-decoration: none; }
 
 .container .content .main-wrap { width: 100%; height: auto; margin-top: 70px; margin-left: 120px; }
 
@@ -65,7 +61,11 @@
 
 .container .active > .content { padding-left: 50px; transition: padding-left 0.5s; }
 
+.container section ul, .container article ul { padding: 5px; }
+
 .container section.special, .container article.special { text-align: center; }
+
+.container .post-date { font-family: 'Bubbler One'; font-size: 18px; }
 
 .container footer { padding-bottom: 100px; }
 
