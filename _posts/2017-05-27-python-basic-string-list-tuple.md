@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "파이썬 기본 문법 - 문자열, 리스트, 튜플"
+title:  "문자열, List, Tuple"
 category: [basic]
 tags:
   - Python
-  - 리스트
-  - 튜플
+  - List
+  - Tuple
 comments: true
 ---
 
@@ -26,6 +26,7 @@ comments: true
 `<문자열 변수>.lower()`
 - 소문자로 변환
 
+<br>
 ## List
 - 리스트는 순차적인 데이터를 나타내는 데 유용하며, 문자여로가 달리 원소를 변경할 수 있다.
 
@@ -60,6 +61,7 @@ sample_list = ['a', 'b', 'c']
 
 - **count :** 리스트 안의 값을 센다.
 
+<br>
 ## Tuple
 리스트와 비슷하나, 내부 항목의 삭제나 수정이 불가능하다.
 
@@ -77,6 +79,7 @@ fruits = 'apple', 'banana',
   - 리스트보다 적은 메모리 사용
   - 정의 후에는 변하지 않는 내부 값
 
+<br>
 ### *실습*
 1 . 문자열 'Fastcampus'를 리스트, 튜플 타이으로 형편환하여 새 변수에 할당한다.
 

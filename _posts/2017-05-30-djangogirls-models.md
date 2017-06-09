@@ -4,7 +4,7 @@ title:  "장고 모델"
 category: [djangogirls]
 tags:
   - Django
-  - 장고걸스
+  - Djangogirls
   - Models
 comments: true
 ---
@@ -19,19 +19,22 @@ comments: true
 - 원래 DB Table을 만들고 조회/추가/수정/삭제 하기 위해서는 SQL을 써야만 한다. 하지만 장고가 지원해주는 Django Model을 쓰면, 직접 SQL을 작성하지 않고도 모델을 통해 SQL을 작성할 수 있다.
 - 장고 모델은 파이썬 클래스 문법형태로 정의한다.<br><br>
 
-#### 블로그에 어떤 내용을 저장할 것인지 설계하기
-Post \# 저장 단위에 대한 이름<br>
------- 속성 ------<br>
-title \# 제목<br>
-text \# 내용<br>
-author \# 작성자<br>
-created_date \# 생성날짜<br>
-published_date \# 발행날짜 <br><br>
+#### **\<블로그에 어떤 내용을 저장할 것인지 설계하기>**
+- 다음은 모델 클래스명, 사용할 필드, 필드 목적에 대하여 설계한 것이다.
 
-#### 어플리케이션 제작하기
+**Post** \# 저장 단위에 대한 이름<br>
+------ 속성 ------<br>
+**title** \# 제목<br>
+**text** \# 내용<br>
+**author** \# 작성자<br>
+**created_date** \# 생성날짜<br>
+**published_date** \# 발행날짜 <br><br>
+
+#### **\<어플리케이션 제작하기>**
 `python manage.py startapp <생성할 앱의 이름>`<br>
-manage.py 명령어를 입력할 시, 항상 manage.py 가 있는 디렉토리에서 입력할 것. <br>
-어플리케이션을 생성하면 장고에게 사용함을 알려줘야 한다. <br>
+- manage.py 명령어를 입력할 시, 항상 manage.py 가 있는 디렉토리에서 입력할 것.
+- 어플리케이션을 생성하면 장고에게 사용함을 알려줘야 한다.
+
 [settings.py]
 ```python
 INSTALLED_APPS = [
@@ -64,8 +67,8 @@ class Post(models.Model):
 \# 즉, 마이그레이션은 이를 통해 테이블을 어떤식으로 적용할 것인지에 대한 일종의 지시서와 같은 것이다.<br>
 마이그레이션 파일을 테이블에 적용 : `python manage.py migrate blog`<br><br>
 \# 마이그레이트는 마이그레이션 생성에 전혀 이상이 없으면, 이를 그대로 데이터베이스에 반영하겠다는 뜻이다.
-<br><br>
 
+<br>
 ## Django 관리자
 [blog/admin.py]
 ```python
@@ -74,6 +77,5 @@ from .models import Post # 같은 경로의 models.py에서 Post 테이블을 �
 
 admin.site.register(Post) # 이 등록만으로도 장고에서 모델로 사용할 수 있음.
 ```
-python manage.py runserver `0:9000` : 9000번 포트에서 열겠다는 표현.
-
-슈퍼유저를 생성해야한다. `python manage.py createsuperuser`
+- python manage.py runserver `0:9000` : 9000번 포트에서 열겠다는 표현.
+- 슈퍼유저를 생성해야한다. `python manage.py createsuperuser`

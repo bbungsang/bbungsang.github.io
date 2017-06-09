@@ -124,13 +124,13 @@
       <h1>첫 장고 프로젝트!</h1>
       <div class="post-date">
         <small>28 May 2017</small><br>
-        <img src="/images/tags.png" alt="Tags: " class="tag-img"/>
+        <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
   <a href="/tags/#Django">Django</a>,
   
-  <a href="/tags/#장고걸스">장고걸스</a>,
+  <a href="/tags/#Djangogirls">Djangogirls</a>,
   
   <a href="/tags/#Blog">Blog</a>
   
@@ -141,18 +141,19 @@
     </header>
     <hr noshade>
     <section class="post-content">
-      <h2 id="장고-설치-후-기본-골격을-만들어주는-스크립트-실행">장고 설치 후, 기본 골격을 만들어주는 스크립트 실행</h2>
-<h6 id="장고-소스-코드-py-를-만들고-장고-스타일로-디렉토리를-구성한다는-의미다">장고 소스 코드 .py 를 만들고 장고 스타일로 디렉토리를 구성한다는 의미다.</h6>
-<h6 id="-모든-작업은-가상환경virtualenv-안에서-해야한다"># 모든 작업은 가상환경(virtualenv) 안에서 해야한다.</h6>
+      <h2 id="장고-설치-후-기본-골격-만들어주는-스크립트-실행">장고 설치 후, 기본 골격 만들어주는 스크립트 실행</h2>
+<blockquote>
+  <h4 id="--장고-소스-코드-py-를-만들고-장고-스타일로-디렉토리를-구성한다는-의미다">- 장고 소스 코드 .py 를 만들고 장고 스타일로 디렉토리를 구성한다는 의미다.</h4>
+  <h4 id="--모든-작업은-가상환경virtualenv-안에서-해야한다">- 모든 작업은 가상환경(virtualenv) 안에서 해야한다.</h4>
+</blockquote>
 
-<p>[맥 OS와 리눅스]</p>
+<p><br /></p>
+<h3 id="맥-os와-리눅스에서-프로젝트-생성하기">[맥 OS와 리눅스]에서 프로젝트 생성하기</h3>
 <ul>
   <li>명령어 끝에 .(마침표) : 현재 디렉토리에 장고를 설치하라는 표시이다.</li>
 </ul>
 
-<blockquote>
-  <p><code class="highlighter-rouge">django-admin startproject &lt;프로젝트명&gt; .</code></p>
-</blockquote>
+<p><code class="highlighter-rouge">django-admin startproject &lt;프로젝트명&gt; .</code></p>
 
 <ul>
   <li>이를 통해 <code class="highlighter-rouge">장고 rule</code>에 따른 새로운 프로젝트 디렉토리와 파일들을 생성해준다.</li>
@@ -162,18 +163,20 @@
 ├───manage.py -&gt; 사이트 관리를 도와줌, 다른 설치 작업 없이 바로 웹 서버를 시작할 수 있다.
 └───mysite
         settings.py -&gt; 웹 설정이 있다.
-        urls.py -&gt; urlresolver가 사용하는 패턴 목록 포함, 즉 어디로 자원을 전달해야 하는지 판단한다.
+        urls.py -&gt; urlresolver가 사용하는 패턴 목록 포함, 즉 어디로 자원을 전달해야 하는지 판단
         wsgi.py
         __init__.py
 </code></pre>
 </div>
 <ul>
-  <li>디렉토리와 파일명 매우 중요 따라서 마음대로 변경하거나 다른 곳으로 옮겨서는 안된다.<br /><br /></li>
+  <li>디렉토리와 파일명 매우 중요하기 때문에 마음대로 변경하거나 다른 곳으로 옮겨서는 안된다.<br /></li>
 </ul>
 
-<h4 id="설정-변경">설정 변경</h4>
-<p>**[<프로젝트디렉토리>/settings.py]**<br />
-현재 장고 프로젝트를 진행하기 위한 기본 설정이 담겨있는 코드이다. 추가적인 설정이 필요하다.</프로젝트디렉토리></p>
+<h3 id="설정-변경">설정 변경</h3>
+<p><strong>[&lt;프로젝트디렉토리&gt;/settings.py]</strong> <br /></p>
+<ul>
+  <li>현재 장고 프로젝트를 진행하기 위한 기본 설정이 담겨있는 코드이다. 추가적인 설정이 필요하다.</li>
+</ul>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">join</span>
@@ -210,35 +213,36 @@ STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)<br /></p>
 
 <blockquote>
   <p># sqlite3 사용 전제</p>
-  <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
         <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.sqlite3'</span><span class="p">,</span>
         <span class="s">'NAME'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'db.sqlite3'</span><span class="p">),</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
-  </div>
-</blockquote>
+</div>
 
 <p><br /></p>
 
-<h6 id="설정이-다-끝났으면-단-3step-만으로-웹어플리케이션을-실행할-수-있다">설정이 다 끝났으면 단 <em>3step</em> 만으로 웹어플리케이션을 실행할 수 있다.</h6>
+<h3 id="설정이-다-끝났으면-단-3step-만으로-웹어플리케이션을-실행할-수-있다">설정이 다 끝났으면 단 <em>3step</em> 만으로 웹어플리케이션을 실행할 수 있다.</h3>
 <p>그 전에 장고에는 2가지의 migration 과정이 있는데, <br />
 [manage.py]에서 <code class="highlighter-rouge">makemigration</code>, <code class="highlighter-rouge">migrate</code> 이다.</p>
 
 <blockquote>
   <p>step1 : 데이터베이스를 생성하기 위해 콘솔 창에서 <code class="highlighter-rouge">python manage.py migrate</code> 를 실행해야하는데, 이 때, <code class="highlighter-rouge">djangogirs</code> 디렉토리 안에 있는 <code class="highlighter-rouge">manage.py</code> 가 필요하다.<br /><br />
 step2 : 콘솔창에 <code class="highlighter-rouge">python manage.py runserver</code> 명령을 실행한다.<br /><br />
-step3 : 끝으로, 브라우저에 <code class="highlighter-rouge">http://127.0.0.1:8000/</code>를 입력하면 아래 이미지와 같이 개발 서버가 뜬다.<br /><br /></p>
+step3 : 끝으로, 브라우저에 <code class="highlighter-rouge">http://127.0.0.1:8000/</code>를 입력하면 개발 서버가 뜬다.<br /><br /></p>
 </blockquote>
 
-<p><img src="./images/it_worked.png" alt="it_worked" /></p>
+<!-- ![it_worked](./images/it_worked.png) -->
 
     </section>
     <br><br>
     <footer>
       
-      <a href="/basic/2017/05/27/python-basic-grammeres1.html" class="float-left">&larr; Previous post</a> 
+      <a href="/library/2017/05/27/python-beautifulsoup1.html" class="float-left">&larr; Previous post</a> 
       
       <a href="/tryhelloworld/2017/05/28/tryhelloworld-algorithm-level1-1.html" class="float-right">Next post &rarr;</a> 
       <br><br>

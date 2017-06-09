@@ -5,6 +5,7 @@ category: [library]
 tags:
   - Python
   - BeautifulSoup
+  - Crawling
 comments: true
 ---
 
@@ -36,23 +37,26 @@ for link in soup.find_all('a'):
 soup.get_text()
 # 페이지 텍스트 모두 파싱
 ```
-<br><br>
+<br>
 ## 해석기
 뷰티플수프는 파이썬 기본 라이브러리에 있는 HTML 해석기를 지원하지만, 또한 제 3의 해석기도 지원한다. 그 대표적인 해석기로 lxml 해석기가 있다.
 
-#### 각 해석기의 장단점
+#### <각 해석기의 장단점\>
+- **BeautifulSoup(markup, 'html.parser')**
+  - 장점 : 적절한 속도
+  - 단점 : 특정 버전에서만 관대함
+- **BeautifulSoup(markup, 'lxml')**
+  - 장점 : 아주 빠름
+  - 단점 : 외부 C 라이브러리 의존
+- **BeautifulSoup('lxml', 'lxml')**
+  - 아주 빠르고 유일하게 XML 해석기 지원
+  - 외부 C 라이브러리 의존
 
-해석기 | 장점 | 단점
------|-----|-----
-BeautifulSoup(markup, 'html.parser') | 적절한 속도 | 특정 버전에서만 관대함
-BeautifulSoup(markup, 'lxml') | 아주 빠름 | 외부 C 라이브러리 의존
-BeautifulSoup('lxml', 'lxml') | 아주 빠르고 유일하게 XML 해석기 지원 | 외부 C 라이브러리 의존
-
+<br>
 ## 객체의 종류
-#### 태그
-태그객체 생성  
-
+### 태그
 ```html
+<!-- 태그 객체 생성 -->
 soup = BeautifulSoup('<b class="boldest">Bold</b>')
 tag = soup.b
 ```

@@ -121,10 +121,255 @@
             <section>
   <div class="container">
     <header class="major">
+      <h1>[지킬블로그만들기] 태그 기능 달기</h1>
+      <div class="post-date">
+        <small>31 May 2017</small><br>
+        <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#Jekyll">Jekyll</a>
+  
+</div>
+<br/>
+
+      </div>
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <h3 id="1-블로그-루트-폴더에-tagsmd-넣기">1. 블로그 루트 폴더에 tags.md 넣기</h3>
+<ul>
+  <li>이 tags.md 는 모든 태그들을 출력해준다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">bbungsang</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span>
+<span class="err">├───</span> <span class="n">_includes</span>
+<span class="err">├───</span> <span class="n">_layouts</span>
+<span class="err">├───</span> <span class="n">_posts</span>
+<span class="err">├───</span> <span class="n">css</span>
+<span class="err">├───</span> <span class="p">[</span><span class="n">tags</span><span class="o">.</span><span class="n">md</span><span class="p">]</span>
+<span class="err">└───</span> <span class="o">...</span>
+</code></pre>
+</div>
+<!-- ---
+layout: page
+permalink: /tags/
+title: Tags
+---
+
+<ul class="tag-cloud">
+
+  <span style="font-size: 84%">
+    <a href="#Python">
+      Python
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 77%">
+    <a href="#List">
+      List
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Tuple">
+      Tuple
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#BeautifulSoup">
+      BeautifulSoup
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Crawling">
+      Crawling
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 110%">
+    <a href="#Django">
+      Django
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 77%">
+    <a href="#Djangogirls">
+      Djangogirls
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Blog">
+      Blog
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 88%">
+    <a href="#Alogorithm">
+      Alogorithm
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 88%">
+    <a href="#Level1">
+      Level1
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Models">
+      Models
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#URL">
+      URL
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Views">
+      Views
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Jekyll">
+      Jekyll
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 81%">
+    <a href="#tutorial">
+      tutorial
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 88%">
+    <a href="#AskDjango">
+      AskDjango
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 77%">
+    <a href="#URLConf">
+      URLConf
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#템플릿">
+      템플릿
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#정규표현식">
+      정규표현식
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 77%">
+    <a href="#View">
+      View
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 77%">
+    <a href="#FBVCBV">
+      FBVCBV
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Migrations">
+      Migrations
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Fields">
+      Fields
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Dictionary">
+      Dictionary
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Comprehension">
+      Comprehension
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Iterator">
+      Iterator
+    </a> &nbsp;&nbsp;
+  </span>
+
+  <span style="font-size: 73%">
+    <a href="#Generator">
+      Generator
+    </a> &nbsp;&nbsp;
+  </span>
+
+</ul> -->
+
+<p><br /></p>
+<h3 id="2-_includestagshtml-추가해주기">2. _includes/tags.html 추가해주기</h3>
+<ul>
+  <li>포스트 상단에 태그들을 출력해 주는 페이지다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/tag-256.png"</span> <span class="na">alt=</span><span class="s">"Tags: "</span> <span class="na">class=</span><span class="s">"tag-img"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-tags"</span><span class="nt">&gt;</span>
+  
+  
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/tags/#Jekyll"</span><span class="nt">&gt;</span>Jekyll<span class="nt">&lt;/a&gt;</span>
+  
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;br/&gt;</span>
+</code></pre>
+</div>
+
+<p><br /></p>
+<h3 id="3-_layoutsposthtml-에-include-해주기">3. _layouts/post.html 에 include 해주기</h3>
+<ul>
+  <li>포스트에 태그가 나오도록 위의 tags.html 파일을 include 해준다.</li>
+</ul>
+
+<!-- ---
+layout: default
+---
+
+<div class="post">
+  <h1 class="post-title">[지킬블로그만들기] 태그 기능 달기</h1>
+  <span class="post-date">31 May 2017</span>
+  <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#Jekyll">Jekyll</a>
+  
+</div>
+<br/>
+
+  <br/>
+  <section>
+  <div class="container">
+    <header class="major">
       <h1>장고 URL과 뷰</h1>
       <div class="post-date">
         <small>30 May 2017</small><br>
-        <img src="/images/tags.png" alt="Tags: " class="tag-img"/>
+        <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
@@ -171,21 +416,20 @@
 <span class="c"># 또한 blog/ 뒤에 $를 붙이지 않도록 주의한다. blog/urls.py 에서 특정 view 함수를 연결할 때에만 붙여준다.</span>
 </code></pre>
 </div>
-<p><br /></p>
-<blockquote>
-  <p><code class="highlighter-rouge">^post/(]d+)/$</code></p>
-</blockquote>
 
-<p><strong>^post/</strong> : url이 <code class="highlighter-rouge">post/</code> 로 <em>시작</em> <br />
+<h4 id="사용된-정규표현식">[사용된 정규표현식]</h4>
+<p><code class="highlighter-rouge">^post/(]d+)/$</code><br />
+<strong>^post/</strong> : url이 <code class="highlighter-rouge">post/</code> 로 <em>시작</em> <br />
 <strong>(\d+)</strong> : <code class="highlighter-rouge">숫자</code>가 한 개 이상 <br />
 <strong>/$</strong> : url 마지막이 <code class="highlighter-rouge">/</code> 로 <em>끝남</em></p>
 
+<p><br /></p>
 <h2 id="뷰view">뷰(view)</h2>
 <ul>
   <li>어플리케이션의 ‘로직’을 넣는 곳. url과 연결되어있는 함수기반, 클래스기반. <br /></li>
 </ul>
 
-<h6 id="렌더">렌더</h6>
+<h3 id="렌더">렌더</h3>
 <p>장고에서 지원해주는 템플릿 기반 시스템, 복잡한 문자열을 보다 쉽게 작업할 수 있도록 도와줌</p>
 
 <p>[blog/view.py]</p>
@@ -203,7 +447,61 @@
     <br><br>
     <footer>
       
-      <a href="/djangogirls/2017/05/30/django-models.html" class="float-left">&larr; Previous post</a> 
+      <a href="/djangogirls/2017/05/30/djangogirls-models.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/jekyll/2017/05/31/jekyll-blog-tags.html" class="float-right">Next post &rarr;</a> 
+      <br><br>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </div>
+</section>
+
+</div>
+[...] -->
+
+<p><br /></p>
+<h3 id="4-사용하기">4. 사용하기</h3>
+<ul>
+  <li>아래와 같이 포스트에 태그를 붙일 수 있다.</li>
+</ul>
+
+<!-- ---
+layout: post
+title: Jekyll 블로그 태그 기능 붙이기
+comments: true
+tags:
+- Jekyll
+- 블로그
+- Github
+--- -->
+
+    </section>
+    <br><br>
+    <footer>
+      
+      <a href="/djangogirls/2017/05/30/djangogirls-url&view.html" class="float-left">&larr; Previous post</a> 
       
       <a href="/tutorial/2017/06/02/django-tutorial-part1-1.html" class="float-right">Next post &rarr;</a> 
       <br><br>

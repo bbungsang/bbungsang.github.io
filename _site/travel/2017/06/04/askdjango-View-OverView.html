@@ -121,16 +121,20 @@
             <section>
   <div class="container">
     <header class="major">
-      <h1>장고 튜토리얼 파트1-2</h1>
+      <h1>[장고 기본편] 4. View</h1>
       <div class="post-date">
-        <small>02 Jun 2017</small><br>
+        <small>04 Jun 2017</small><br>
         <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
   <a href="/tags/#Django">Django</a>,
   
-  <a href="/tags/#tutorial">tutorial</a>
+  <a href="/tags/#AskDjango">AskDjango</a>,
+  
+  <a href="/tags/#View">View</a>,
+  
+  <a href="/tags/#FBVCBV">FBVCBV</a>
   
 </div>
 <br/>
@@ -139,87 +143,81 @@
     </header>
     <hr noshade>
     <section class="post-content">
-      <h3 id="the-development-server">The development server</h3>
+      <blockquote>
+  <p>| ٩(๑òωó๑)۶ 아, 아, 마이크 테스트 |<br />
+이 마크다운은 이진석 선생님의 ‘Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)’를 토대로 작성되었습니다.</p>
+</blockquote>
+
+<h2 id="view">View</h2>
 <ul>
-  <li>바깥의 <code class="highlighter-rouge">mysite</code> 디렉토리로 이동하세요. 만약 이미 그 지점에 있다면 아래와 같이 명령어를 입력해주세요.<br />
-    <blockquote>
-      <p><code class="highlighter-rouge">python manage.py runserver</code></p>
-    </blockquote>
+  <li>URLConf로부터 받은 객체
+    <ul>
+      <li>첫번째 인자로 <code class="highlighter-rouge">HttpRequest</code> 인스턴스를 받는다.</li>
+      <li>또한 반드시 <code class="highlighter-rouge">HttpRequest</code> 인스턴스를 리턴해야한다.</li>
+    </ul>
   </li>
-  <li>입력후, <code class="highlighter-rouge">http://127.0.0.1:8000</code>의 주소를 당신의 브라우저에 입력해보세요. <code class="highlighter-rouge">"Welcome to Django” page, in pleasant, light-blue pastel. It worked!</code>라는 페이지를 보게될 것입니다.</li>
-  <li>지금 당신은 작업을 할 프로젝트 환경을 설정한 것 입니다.</li>
-  <li>장고는 어플리케이션의 기본 디렉토리 구조를 자동으로 만드는 유틸리티를 제공합니다. 따라서 당신이 디렉토리들을 만드는 것보다는 코드를 작성하는 것에 초점을 맞추고 있습니다.</li>
-  <li>어플리케이션을 생성하기 위해서 당신은 <code class="highlighter-rouge">manage.py</code>와 같은 디렉토리의 명령어 입력창에 다음과 같이 입력합니다.<br /></li>
+  <li>뷰는 크게 <code class="highlighter-rouge">함수기반 뷰</code>와 <code class="highlighter-rouge">클래스기반 뷰</code>로 구분된다.</li>
 </ul>
 
 <blockquote>
-  <p><code class="highlighter-rouge">python manage.py startapp polls</code></p>
+  <p><em>Function Based View</em> 예시</p>
 </blockquote>
 
-<ul>
-  <li>이러한 레이아웃과 같은 <code class="highlighter-rouge">polls</code> 디렉토리를 생성할 것입니다.
-<code class="highlighter-rouge">python
-polls/
-__init__.py
-admin.py
-apps.py
-migrations/
-    __init__.py
-models.py
-tests.py
-views.py
-</code><br /><br /></li>
-</ul>
-
-<h4 id="첫번-째-view-작성하기">첫번 째 View 작성하기</h4>
-<p>[polls.views.py]</p>
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
 
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"Hello, world. You're at the polls index"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">post_list</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="s">'Hello'</span>
+  <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">'''
+    &lt;h1&gt;{}, World!&lt;/h1&gt;
+  '''</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">))</span>
 </code></pre>
 </div>
-<ul>
-  <li>이것은 장고에서 가장 간단한 뷰 입니다. 뷰를 호출하기 위해서 URL을 매핑해야하는데 여기에서 우리는 URLconf가 필요합니다.</li>
-  <li>polls 디렉토리에서 URLconf를 생성하기 위해서 어플리케이션 디렉토리에서 urls.py를 생성하고 다음과 같이 코드를 작성합니다.</li>
-</ul>
 
-<p>[polls/urls.py]</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">urls</span>
+<blockquote>
+  <p><em>Class Based View</em> 예시</p>
+</blockquote>
 
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">View</span>
+<span class="c"># 뷰 사용패턴을 일반화시켜놓은 뷰의 모음</span>
 
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r'^$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'index'</span><span class="p">)</span>
-<span class="p">]</span>
+<span class="k">class</span> <span class="nc">SampleTemplateView</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="nd">@classmethod</span>
+  <span class="k">def</span> <span class="nf">as_view</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">template_name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">view_fn</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">template_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">view_fn</span>
+
+<span class="n">fbv_view</span> <span class="o">=</span> <span class="n">SampleTemplateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s">'myapp/sample_template.html'</span><span class="p">)</span>
+<span class="c"># as_view() 클래스 함수를 통해 함수기반 뷰에 입각한 객체 생성, 즉 클래스를 통해 함수를 호출</span>
 </code></pre>
 </div>
+<p><br /></p>
+
+<h3 id="template-공통">Template 공통</h3>
+<p>[myapp/templates/myapp/post_form.html]<br /></p>
 <ul>
-  <li>polls.urls 모듈을 root URLconf 로 지정하기 위해 mysite/urls.py 에서 다음과 같이 include()를 삽입해야합니다.</li>
+  <li>table 태그 위에 <code class="highlighter-rouge">csrf_token</code> 가 와야하는데 지킬 서버에서 오류를 일으키기 때문에 따로 기재합니다.</li>
 </ul>
 
-<p>[mysite/urls.py]</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">url</span>
-<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
-
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r'^polls/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'polls.urls'</span><span class="p">)),</span>
-  <span class="n">url</span><span class="p">(</span><span class="s">r'^admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
-<span class="p">]</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s">""</span> <span class="n">method</span><span class="o">=</span><span class="s">"post"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span>
+        
+  <span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
 </code></pre>
 </div>
-<ul>
-  <li><code class="highlighter-rouge">include()</code> 함수는 다른 URLconf를 참조하도록 허용합니다. include()를 사용한 url 패턴에서 ‘/’ 다음에 정규표현식 ‘$’를 사용하지 않았다는 점을 주의하세요.</li>
-  <li>당신이 다른 URL 패턴을 포함시키고자 할 때 항상 include()를 사용하지만 admin.site.urls 는 이에 예외 사항입니다.</li>
-</ul>
+<p><br />
+뷰에 대한 더 자세한 내용이 궁금하다면 <a href="https://bbungsang.github.io/tutorial/2017/06/03/django-tutorial-part3-2.html">Click!</a></p>
 
     </section>
     <br><br>
     <footer>
       
-      <a href="/tutorial/2017/06/02/django-tutorial-part1-1.html" class="float-left">&larr; Previous post</a> 
+      <a href="/travel/2017/06/04/askdjango-URLConf-RegularExpression.html" class="float-left">&larr; Previous post</a> 
       
-      <a href="/tutorial/2017/06/03/django-tutorial-part3-2.html" class="float-right">Next post &rarr;</a> 
+      <a href="/2017/06/06/jekyll-blog-comment.html" class="float-right">Next post &rarr;</a> 
       <br><br>
       
   <div id="disqus_thread"></div>

@@ -1,0 +1,333 @@
+<html>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="side-bar">
+    <ul>
+      <li class="menu-head">
+        <a href="#" class="push_menu">
+          <!-- <span class="glyphicon glyphicon-align-justify pull-right"></span> -->
+          <div class="bar-wrap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+          </div>
+        </a>
+      </li>
+      <li class="menu-intro">
+        <span class="image photo"><img src="/images/itsme.png" class="main-img" /></span>
+        <h3 id="logo"><a href="/">Elena Kim</a></h3>
+        <p>
+          틀린 부분이 있거나 문의사항이<br>
+          있으면 언제든지 말씀해주세요 :D
+        </p>
+      </li>
+      <div class="menu">
+        <li>
+          <a href="/">
+            Home
+            <span class="glyphicon glyphicon-home pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/python/basic.html">
+            Python
+            <span class="glyphicon glyphicon-flash pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/django/djangogirls.html">
+            Django
+            <span class="glyphicon glyphicon-grain pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/algorithm/tryhelloworld.html">
+            Algorithm
+            <span class="glyphicon glyphicon-education pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/etc/jekyll.html">
+            etc
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            Love snippet
+            <span class="glyphicon glyphicon-heart pull-right"></span>
+          </a>
+        </li>
+      </div>
+      <!-- <div class="search">
+        <li>
+          <div class="search-icon">
+            <span class="glyphicon glyphicon-search"></span>
+          </div>
+          <input type="text" name="search">
+        </li>
+      </div> -->
+    </ul>
+  </div>
+</body>
+
+        <!-- Main -->
+        <div class="content">
+          <div class="top-bar">
+            <div class="title">
+              Bbungsang's Boaring Note
+            </div>
+            <div class="contact">
+              <a href="https://github.com/bbungsang/">
+                <img src="/images/github.png" alt="" width="30px">
+              </a>
+              <a href="#">
+                <img src="/images/email.png" alt="" width="30px">
+              </a>
+              <a href="#">
+                <img src="/images/facebook.png" alt="" width="30px">
+              </a>
+            </div>
+          </div>
+
+          <div class="main-wrap">
+            <section>
+  <div class="container">
+    <header class="major">
+      <h1>[장고 기본편] 5. Model</h1>
+      <div class="post-date">
+        <small>08 Jun 2017</small><br>
+        <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#Django">Django</a>,
+  
+  <a href="/tags/#AskDjango">AskDjango</a>,
+  
+  <a href="/tags/#Migrations">Migrations</a>,
+  
+  <a href="/tags/#Fields">Fields</a>
+  
+</div>
+<br/>
+
+      </div>
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <blockquote>
+  <p>| ٩(๑òωó๑)۶ 아, 아, 마이크 테스트 |<br />
+이 마크다운은 이진석 선생님의 ‘Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)’를 토대로 작성되었습니다.</p>
+</blockquote>
+
+<p><br /></p>
+<h1 id="migrations">Migrations</h1>
+<ul>
+  <li>초기에 테이블 최초 생성만 가능하고 변경된 내용은 반영하지 않는 <code class="highlighter-rouge">syncdb</code> 명령어가 있었지만, django-south 프로젝트가 킥스타터 펀딩을 통해, Django 1.7에 마이그레이션을 포함하였다.</li>
+  <li>모델 변경내역 히스토리 관리가 가능</li>
+  <li>모델의 변경내열을 데이터베이스 스키마(데이터베이스 데이터 구조)로 반영시키는 효율적인 방법을 제공</li>
+</ul>
+
+<p><br /></p>
+<h4 id="관련-명령어">관련 명령어</h4>
+<p># ‘python manage.py’ 는 공통이므로 생략하겠습니다.</p>
+<ul>
+  <li><code class="highlighter-rouge">makemigrations &lt;app-name&gt;</code> : 마이그레이션 파일(초안) 생성</li>
+  <li><code class="highlighter-rouge">migrate &lt;app-name&gt;</code> : 해당 마이그레이션 파일을 DB에 반영</li>
+</ul>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>[모델 내역 #4]            
+[모델 내역 #3]                        [DB Schema #3]
+[모델 내역 #2] ---&gt; [변경 내역 #2] ---&gt; [DB Schema #2]
+[모델 내역 #1]      [변경 내역 #1]      [DB Schema #1]
+&lt;Django 모델&gt;     &lt;마이그레이션파일&gt;       &lt;데이터베이스&gt;
+</code></pre>
+</div>
+<ul>
+  <li>내역이 하나 생기면 알아서 데이터베이스에 반영되면 좋겠지만, 장고는 2단계를 거친다.</li>
+  <li>1단계: makemigrations 명령으로 (어떤식으로 데이터베이스 내용을 변경시키겠다는)작업지시서 생성
+    <ul>
+      <li>이 작업 후에 개발자는 필히 해당 파일을 열어서 확인하는 과정이 필요하다.</li>
+      <li>반영이 안 된 마이그레이션은 제거해도 무관하다.</li>
+    </ul>
+  </li>
+  <li>2단계: migrate 명령으로 데이터베이스에 반영</li>
+  <li>왜 굳이 2단계인가?
+    <ul>
+      <li>모델 내역 그대로 데이터베이스 반영되는 것은 매우 위험한 일이 될 수 있다.</li>
+      <li>어떤 작업을 수행할 것인지에 대한 내역서를 만드는 것은 일종의 안정장치이다.</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">showmigrations &lt;app-name&gt;</code> : 마이그레이션 적용 현황</li>
+  <li><code class="highlighter-rouge">sqlmigrate &lt;app-name&gt; &lt;migration-number&gt;</code> : 지정 마이그레이션에 대한 SQL을 볼 수 있다.</li>
+</ul>
+
+<p><br /></p>
+<h6 id="마이그레이션-되돌리기">마이그레이션 되돌리기</h6>
+<ol>
+  <li><code class="highlighter-rouge">./manage.py migrate &lt;app-name&gt; &lt;migration-number&gt;</code> 명령어 입력.</li>
+  <li>되돌린만큼의 마이그레이션을 삭제한다.</li>
+  <li><code class="highlighter-rouge">./manage.py showmigrations</code>을 통해서 지워졌는지 확인</li>
+</ol>
+
+<p><br /></p>
+<h4 id="migrate-forwardbackward"><strong>Migrate</strong> (Forward/Backward)</h4>
+<blockquote>
+  <p>Forward/Backward 명령어가 따로 있는 것이 아니라 <code class="highlighter-rouge">migrate</code> 명령어 하나로 다 해결할 수 있다.</p>
+</blockquote>
+
+<ul>
+  <li><code class="highlighter-rouge">./manage.py migrate &lt;app-name&gt;</code>
+    <ul>
+      <li>미적용 마이그레이션 파일부터 최근 마이그레이션 파일까지 “Forward 마이그레이션”이 순차적으로 수행</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">./manage.py migrate &lt;app-name&gt; &lt;migration-file-name&gt;</code>
+    <ul>
+      <li>지정된 마이그레이션 파일이 현재 적용된 마이그레이션보다 이전이라면 이후의 마이그레이션을 취소하고 마지막 상태의 마이그레이션을 지정된 마이그레이션으로 사용하겠다는 뜻(Backward)</li>
+      <li>그 반대로 이후의 마이그레이션이라면 해당 마이그레이션만 수행하겠다는 의미이다.(Forward)</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">./manage.py migrate zero</code>
+    <ul>
+      <li>모든 마이그레이션을 취소하겠다는 의미이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+<h3 id="id-필드"><strong>id 필드</strong></h3>
+<ul>
+  <li>모든 데이터베이스 테이블에는 각 Row의 식별기준인 <code class="highlighter-rouge">기본키(Primary Key)</code>가 필요하다.
+    <ul>
+      <li>즉, 중복되는 데이터가 없다.(데이터베이스의 무결성)</li>
+    </ul>
+  </li>
+  <li>Django 에서는 기본키로 id 필드(AutoField)가 디폴드로 지정되어 있다.</li>
+  <li>기본키는 줄여서 <code class="highlighter-rouge">pk</code>로 접근 가능</li>
+</ul>
+
+<p><br /></p>
+<h3 id="기존에-없는-필수필드를-추가하고-마이그레이션-할-때">기존에 없는 필수필드를 추가하고 마이그레이션 할 때</h3>
+<ul>
+  <li>여기에서 필수필드란? blank, null 옵션을 주지 않은 것</li>
+  <li>필수필드이기 때문에 이전 데이터가 해당 컬럼값을 가지고 있지 않다면, 반드시 넣어줘야한다.</li>
+  <li>따라서 마이그레이션을 할 때, 아래와 같은 질의를 던진다.
+    <ul>
+      <li>선택1) 지금 값을 입력</li>
+      <li>선택2) 모델 클래스를 수정하고 다시 명령어를 수행</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>You are trying to add a non-nullable field 'author' to post without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option:
+
+# 추가한 필수 필드에 어떤 값을 채워넣어야할 지 모르겠으니
+1)장고 모델의 디폴트 값을 제공해주겠다.
+2)사용자가 임의로 값을 지정을 하든, 옵션 필드로 변경을 하든 하겠다.
+를 선택하시오
+</code></pre>
+</div>
+<h6 id="1번-선택-시--">1번 선택 시 :-)</h6>
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+&gt;&gt;&gt; 'anonymous'
+</code></pre>
+</div>
+<ul>
+  <li>빈 컬럼에 대하여 ‘anonymous’ 값을 주겠다.</li>
+  <li>반드시 필드 타입에 맞춰서 줄 것</li>
+</ul>
+
+<p><br /></p>
+<h3 id="결론"><em>결론</em></h3>
+<p>마이그레이션은 모든 테이블 Row에 대한 컬럼이 추가되므로 데이터 양이 방대하면 문제가 발생할 수 있다. 애초에 설계를 신중하게 하는 것을 지향할 것</p>
+
+    </section>
+    <br><br>
+    <footer>
+      
+      <a href="/tryhelloworld/2017/06/07/tryhelloword-algorithm-level1-5.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/basic/2017/06/09/python-basic-comprehension.html" class="float-right">Next post &rarr;</a> 
+      <br><br>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </div>
+</section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+</body>
+</html>
