@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[장고 기본편] 5. Model"
+title:  "[장고 기본편] 6. Migrations"
 category: [travel]
 tags:
   - Django
