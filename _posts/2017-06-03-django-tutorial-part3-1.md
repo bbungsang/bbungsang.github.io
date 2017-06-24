@@ -48,7 +48,7 @@ from . import views # from polls import views
 urlpatterns = [
   url(r'^$', views.index, name='index'),
 ```
-- name 의 value(index) 는 `{% url %}`로 템플릿의 태그에 쓰인다.
+- name 의 value(index) 는 {% raw %} {% url %} {% endraw %}로 템플릿의 태그에 쓰인다.
 
 **[polls/index.html]**
 ```html
@@ -116,4 +116,4 @@ urlpatterns = [
 </form>
 {% endraw %}
 ```
-- 이름 인자를 polls.urls.py 에서 정의했기 떄문에, `{%  url %}` 템플릿 태그를 사용함으로써 url 설정에 정의된 URL 경로에 대한 의존을 제거할 수 있다.
+- 이름 인자를 polls.urls.py 에서 정의했기 떄문에, {% raw %}{%  url %}{% endraw %} 템플릿 태그를 사용함으로써 url 설정에 정의된 URL 경로에 대한 의존을 제거할 수 있다.

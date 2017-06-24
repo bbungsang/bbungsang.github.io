@@ -230,9 +230,8 @@
     font-family: 'Arial', 'Times New Roman', 'Courier', monospace;
     font-size: 18px; }
   .container .highlighter-rouge {
-    background: #FF9966;
-    color: #fff;
-    border-radius: 3px; }
+    font-family: 'Courier';
+    font-size: 16px; }
   .container .highlight .c {
     color: #9B7CC9; }
   .container .highlight .err {

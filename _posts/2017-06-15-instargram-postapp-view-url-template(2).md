@@ -70,34 +70,40 @@ urlpatterns = [
 
 [common/base.html]
 ```python
+{% raw %}
 ... html 구성하는 기본 태그들
 <body>
   {% block content %}
   {% endblock %}
 </body>
+{% endraw %}
 ```
 - base.html 을 상속 받을 페이지에 'extends'를 통해서 상속시킨다.
 
 [post_list.html], [post_detail] 등 자식 페이지들
-```python
+```html
+{% raw %}
 {% extends 'common/base.html' %}
 {% block content %}
   #... 깃 코드 참조
 {% endblock %}
+{% endraw %}
 ```
 
 ### post_list와 post_detail이 공통으로 사용할 페이지 post.html
 - tempaltes 디렉토리 아래 include 디렉토리 생성 후, post.html 작성
 
 [include/post.html]
-```python
+```html
 #... 템플릿 언어를 활용해서 작성, 깃 코드 참조
 ```
 
 [post_list.html], [post_detail] 에 include
-```python
+```html
+{% raw %}
 ...
 {% include 'include/post.html' %}
+{% endraw %}
 ```
 - 'include'를 통해 post.html 을 포함시킨다.
 

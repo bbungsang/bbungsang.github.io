@@ -10,7 +10,7 @@ comments: true
 ### 1. 블로그 루트 폴더에 tags.md 넣기
 - 이 tags.md 는 모든 태그들을 출력해준다.
 
-```python
+```
 bbungsang.github.io
 ├─── _includes
 ├─── _layouts
@@ -19,7 +19,9 @@ bbungsang.github.io
 ├─── [tags.md]
 └─── ...
 ```
-<!-- ---
+```html
+{% raw %}
+---
 layout: page
 permalink: /tags/
 title: Tags
@@ -33,13 +35,16 @@ title: Tags
     </a> &nbsp;&nbsp;
   </span>
 {% endfor %}
-</ul> -->
+</ul>
+{% endraw %}
+```
 
 <br>
 ### 2. \_includes/tags.html 추가해주기
 - 포스트 상단에 태그들을 출력해 주는 페이지다.
 
 ```html
+{% raw %}
 <img src="/images/tag-256.png" alt="Tags: " class="tag-img"/>
 <div class="post-tags">
   {% if post %}
@@ -51,14 +56,16 @@ title: Tags
   <a href="/tags/#{{tag|slugize}}">{{tag}}</a>{% unless forloop.last %},{% endunless %}
   {% endfor %}
 </div>
-<br/>
+{% endraw %}
 ```
 
 <br>
 ### 3. \_layouts/post.html 에 include 해주기
 - 포스트에 태그가 나오도록 위의 tags.html 파일을 include 해준다.
 
-<!-- ---
+```html
+{% raw %}
+---
 layout: default
 ---
 
@@ -69,18 +76,9 @@ layout: default
   <br/>
   {{ content }}
 </div>
-[...] -->
+{% endraw %}
+```
 
 <br>
 ### 4. 사용하기
 - 아래와 같이 포스트에 태그를 붙일 수 있다.
-
-<!-- ---
-layout: post
-title: Jekyll 블로그 태그 기능 붙이기
-comments: true
-tags:
-- Jekyll
-- 블로그
-- Github
---- -->

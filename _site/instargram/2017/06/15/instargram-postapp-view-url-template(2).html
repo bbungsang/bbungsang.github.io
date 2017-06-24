@@ -1,0 +1,315 @@
+<html>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="side-bar">
+    <ul>
+      <li class="menu-head">
+        <a href="#" class="push_menu">
+          <!-- <span class="glyphicon glyphicon-align-justify pull-right"></span> -->
+          <div class="bar-wrap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+          </div>
+        </a>
+      </li>
+      <li class="menu-intro">
+        <span class="image photo"><img src="/images/itsme.png" class="main-img" /></span>
+        <h3 id="logo"><a href="/">Elena Kim</a></h3>
+        <p>
+          틀린 부분이 있거나 문의사항이<br>
+          있으면 언제든지 말씀해주세요 :D
+        </p>
+      </li>
+      <div class="menu">
+        <li>
+          <a href="/">
+            Home
+            <span class="glyphicon glyphicon-home pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/python/basic.html">
+            Python
+            <span class="glyphicon glyphicon-flash pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/django/djangogirls.html">
+            Django
+            <span class="glyphicon glyphicon-grain pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/algorithm/tryhelloworld.html">
+            Algorithm
+            <span class="glyphicon glyphicon-education pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/etc/jekyll.html">
+            etc
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            Love snippet
+            <span class="glyphicon glyphicon-heart pull-right"></span>
+          </a>
+        </li>
+      </div>
+      <!-- <div class="search">
+        <li>
+          <div class="search-icon">
+            <span class="glyphicon glyphicon-search"></span>
+          </div>
+          <input type="text" name="search">
+        </li>
+      </div> -->
+    </ul>
+  </div>
+</body>
+
+        <!-- Main -->
+        <div class="content">
+          <div class="top-bar">
+            <div class="title">
+              Bbungsang's Boaring Note
+            </div>
+            <div class="contact">
+              <a href="https://github.com/bbungsang/">
+                <img src="/images/github.png" alt="" width="30px">
+              </a>
+              <a href="#">
+                <img src="/images/email.png" alt="" width="30px">
+              </a>
+              <a href="#">
+                <img src="/images/facebook.png" alt="" width="30px">
+              </a>
+            </div>
+          </div>
+
+          <div class="main-wrap">
+            <section>
+  <div class="container">
+    <header class="major">
+      <h1>[인스타그램] post앱 뷰, URL, 템플릿(2) - post_detail</h1>
+      <div class="post-date">
+        <small>15 Jun 2017</small><br>
+        <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#django">django</a>,
+  
+  <a href="/tags/#instargram">instargram</a>
+  
+</div>
+<br/>
+
+      </div>
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <h3 id="post_detail-뷰-구상하기">post_detail 뷰 구상하기</h3>
+<ul>
+  <li>Post 모델에 해당 데이터가 존재하면, 인자로 받은 pk와 동일한 값이 포함된 Row 데이터를 post 변수에 할당한다.</li>
+  <li>데이터가 존재하지 않으면, post/post_list.html 로 돌아간다.</li>
+  <li>render() 를 통하여 post 의 값을 딕셔너리 형태로 post_detail.html 에 전달한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">post_detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">post_pk</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">post_pk</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">Post</span><span class="o">.</span><span class="n">DoseNotExist</span><span class="p">:</span>
+
+        <span class="c"># redirect('post:post_list') 과 같은 역할을 한다.</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'post:post_list'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="c"># 템플릿을 반환하는 방법은 간단하게 render() 를 사용하는 방식과, template_get() 을 사용하는 약간 복잡한 방법이 있다.</span>
+    <span class="c">### 1. render()</span>
+    <span class="s">'''
+    return render(
+        request,
+        'post/post_detail.html',
+        {
+            'post': post,
+        },
+    )
+    '''</span>
+
+    <span class="c">### 2. template_get()</span>
+    <span class="s">'''
+    template_get() 에 의해 반환된 템플릿 객체는 render(context=None, request=None) 를 제공해야한다.
+    context 는 반드시 딕셔너리 형태여야 한다.
+    render() 를 사용해서 template 을 string 으로 변환되면 HttpResponse 형태로 반환한다.
+    '''</span>
+
+    <span class="c"># get_template() 를 통해 post/post_detail.html 템플릿을 로드한다.</span>
+    <span class="n">template</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s">'post/post_detail.html'</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'post'</span><span class="p">:</span> <span class="n">post</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c"># 템플릿 객체를 render() 를 통해서 string 으로 변환하고 render_to_string 변수에 할당한다.</span>
+    <span class="n">render_to_string</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">render_to_string</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="post_detail-url-구상하기">post_detail URL 구상하기</h3>
+<ul>
+  <li>Post 모델로부터 불러온 pk 값을 매개로 정규표현식을 통해 post_detail URL 을 만든다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">...</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="o">...</span>
+  <span class="n">url</span><span class="p">(</span><span class="s">r'^(?P&lt;post_pk&gt;</span><span class="err">\</span><span class="s">d+)/$'</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">post_detail</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'post_detail'</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="o">...</span>
+</code></pre>
+</div>
+
+<h3 id="기본-골격이-되는-부모페이지-basehtml">기본 골격이 되는 부모페이지 base.html</h3>
+<ul>
+  <li>templates 디렉토리 하위에 common 디렉토리 생성 후, base.html 을 생성한다.</li>
+</ul>
+
+<p>[common/base.html]</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="o">...</span> <span class="n">html</span> <span class="err">구성하는</span> <span class="err">기본</span> <span class="err">태그들</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">content</span> <span class="o">%</span><span class="p">}</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+</code></pre>
+</div>
+<ul>
+  <li>base.html 을 상속 받을 페이지에 ‘extends’를 통해서 상속시킨다.</li>
+</ul>
+
+<p>[post_list.html], [post_detail] 등 자식 페이지들</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+{% extends 'common/base.html' %}
+{% block content %}
+  #... 깃 코드 참조
+{% endblock %}
+
+</code></pre>
+</div>
+
+<h3 id="post_list와-post_detail이-공통으로-사용할-페이지-posthtml">post_list와 post_detail이 공통으로 사용할 페이지 post.html</h3>
+<ul>
+  <li>tempaltes 디렉토리 아래 include 디렉토리 생성 후, post.html 작성</li>
+</ul>
+
+<p>[include/post.html]</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>#... 템플릿 언어를 활용해서 작성, 깃 코드 참조
+</code></pre>
+</div>
+
+<p>[post_list.html], [post_detail] 에 include</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+...
+{% include 'include/post.html' %}
+
+</code></pre>
+</div>
+<ul>
+  <li>‘include’를 통해 post.html 을 포함시킨다.</li>
+</ul>
+
+<blockquote>
+  <p>Git Code Address ヾ(๑ㆁᗜㆁ๑)ﾉ</p>
+  <ul>
+    <li><a href="https://github.com/bbungsang/Instargram-project/blob/master/instargram/post/views.py">post/veiws.py</a></li>
+    <li><a href="https://github.com/bbungsang/Instargram-project/blob/master/instargram/post/urls.py">post/urls.py</a></li>
+    <li><a href="https://github.com/bbungsang/Instargram-project/tree/master/instargram/templates">templates</a></li>
+  </ul>
+</blockquote>
+
+    </section>
+    <br><br>
+    <footer>
+      
+      <a href="/instargram/2017/06/15/instargram-postapp-view-url-template(1).html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/instargram/2017/06/16/instargram-memberapp-login.html" class="float-right">Next post &rarr;</a> 
+      <br><br>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </div>
+</section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+</body>
+</html>
