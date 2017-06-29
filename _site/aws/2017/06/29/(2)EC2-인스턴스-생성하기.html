@@ -118,91 +118,110 @@
           </div>
 
           <div class="main-wrap">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<style>
-  ul:first-child {
-    list-style-type: none;
-  }
-  .category-title a {
-    cursor: pointer;
-  }
-
-  .category-title .hide {
-    display: none;
-  }
-</style>
-
-<section>
+            <section>
   <div class="container">
-      <div class="features">
-        <ul>
-          <li>
-            <a href="#" class="category-title"><h3>지킬 블로그 꾸미기</h3></a>
-            
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="/jekyll/2017/06/06/jekyll-blog-comment.3.html">
-                  [Jekyll 블로그] Disqus 댓글 기능 달기
-                  <small class="post-date">06 Jun 2017</small>
-                </a>
-              </li>
-            </ul>
-            
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="/jekyll/2017/05/31/jekyll-blog-tags.html">
-                  [지킬블로그만들기] 태그 기능 달기
-                  <small class="post-date">31 May 2017</small>
-                </a>
-              </li>
-            </ul>
-            
-          </li>
-        </ul>
+    <header class="major">
+      <h1>[AWS] 2. EC2 인스턴스 생성하기</h1>
+      <div class="post-date">
+        <small>29 Jun 2017</small><br>
+        <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#aws">aws</a>,
+  
+  <a href="/tags/#django">django</a>,
+  
+  <a href="/tags/#key pair">key pair</a>
+  
+</div>
+<br/>
+
       </div>
-    </div>
-  </section>
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <h2 id="개념-짚고가기">개념 짚고가기</h2>
+<ul>
+  <li><strong>Ubuntu Linux</strong> : 서버의 <code class="highlighter-rouge">OS</code></li>
+  <li><strong>Nginx</strong> : <code class="highlighter-rouge">웹 서버</code>, 클라이언트로부터 HTTP 요청을 받아 정적인 페이지를 돌려준다.</li>
+  <li><strong>Django</strong> : <code class="highlighter-rouge">웹 어플리케이션</code>, 웹 요청에 대해 동적데이터를 돌려준다.</li>
+  <li><strong>uWSGI</strong> : 웹 서버에서 받은 요청을 웹 어플리케이션에서 처리하도록 도와준다.</li>
+</ul>
 
-<section>
-  <div class="container">
-      <div class="features">
-        <ul>
-          <li>
-            <a href="#" class="category-title"><h3>아마존 웹 서비스</h3></a>
-            
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="/aws/2017/06/29/(3)SSH-Linux-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4.html">
-                  [AWS] 3. SSH을 이용하여 Linux 인스턴스에 연결하기
-                  <small class="post-date">29 Jun 2017</small>
-                </a>
-              </li>
-            </ul>
-            
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="/aws/2017/06/29/(2)EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html">
-                  [AWS] 2. EC2 인스턴스 생성하기
-                  <small class="post-date">29 Jun 2017</small>
-                </a>
-              </li>
-            </ul>
-            
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="/aws/2017/06/29/(1)django-settings-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0.html">
-                  [AWS] 1. 장고 settings 설정하기
-                  <small class="post-date">29 Jun 2017</small>
-                </a>
-              </li>
-            </ul>
-            
-          </li>
-        </ul>
-      </d
+<h2 id="instance-생성하기">Instance 생성하기</h2>
+<blockquote>
+  <h4 id="ec2elastic-compute-cloud">EC2(Elastic Compute Cloud)</h4>
+  <p>아마존이 가지고 있는 컴퓨팅 자원 중에서 일부분만 사용자에게 제공하여 웹 규모의 작업을 할 수 있도록 한다.</p>
+</blockquote>
+
+<p><br /></p>
+<h4 id="key-pairs-생성">Key Pairs 생성</h4>
+
+<ul>
+  <li>
+    <p>AWS services ➜ EC2 ➜ Launch Instance</p>
+  </li>
+  <li>Step1: Choose an Amazon Machine Image
+    <ul>
+      <li>Ubuntu Server 16.04 (HVM), SSD Volume Type 을 선택한다.</li>
+    </ul>
+  </li>
+  <li>Step2: Choose an Instance Type
+    <ul>
+      <li>t2.micro 을 선택을 끝으로 Review and Launch 클릭</li>
+    </ul>
+  </li>
+  <li>Step7에서 Launch 클릭: Select an existing key pair or create a new key pair
+    <ul>
+      <li>인스턴스에 접근하기 위해서 public key 와 private key(key pair) 가 필요하다. <br /></li>
+      <li>public key 의 경우 해당 서버에 이미 저장되어 있을 것이다. <br /></li>
+      <li>key pair 를 만든 순간 private 키를 단 한 번만 제공한다. 따라서 local에 저장해놓는 것을 권장한다. <br /></li>
+      <li>Create a new key pair ➜ Key pair name(아무거나) ➜ Download Key Pair(다운로드 폴더에 <code class="highlighter-rouge">Key-pair-name.pem</code>의 형태로 저장될 것이다.)</li>
+    </ul>
+  </li>
+  <li>다운받은 .pem 파일을 ~/.ssh 폴더에 넣기
+    <ul>
+      <li>mv bbungsang.pem ~/.ssh</li>
+    </ul>
+  </li>
+  <li>Launch Instances 클릭하면, 생성되는 중인 인스턴스를 확인할 수 있다.</li>
+</ul>
+
+    </section>
+    <br><br>
+    <footer>
+      
+      <a href="/aws/2017/06/29/(1)django-settings-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/aws/2017/06/29/(3)SSH-Linux-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4.html" class="float-right">Next post &rarr;</a> 
+      <br><br>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
   </div>
 </section>
-
 
           </div>
         </div>

@@ -1,0 +1,278 @@
+<html>
+<head>
+	<title>뿡상의 개발새발 공책</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <!-- 사이드바 이동하게 해줌 -->
+      <div class="wrapper">
+        <script>
+  $(document).ready(function(){
+    $(".push_menu").click(function(){
+         $(".wrapper").toggleClass("active");
+    });
+  });
+</script>
+<body>
+  <div class="side-bar">
+    <ul>
+      <li class="menu-head">
+        <a href="#" class="push_menu">
+          <!-- <span class="glyphicon glyphicon-align-justify pull-right"></span> -->
+          <div class="bar-wrap">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+          </div>
+        </a>
+      </li>
+      <li class="menu-intro">
+        <span class="image photo"><img src="/images/itsme.png" class="main-img" /></span>
+        <h3 id="logo"><a href="/">Elena Kim</a></h3>
+        <p>
+          틀린 부분이 있거나 문의사항이<br>
+          있으면 언제든지 말씀해주세요 :D
+        </p>
+      </li>
+      <div class="menu">
+        <li>
+          <a href="/">
+            Home
+            <span class="glyphicon glyphicon-home pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/python/basic.html">
+            Python
+            <span class="glyphicon glyphicon-flash pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/django/djangogirls.html">
+            Django
+            <span class="glyphicon glyphicon-grain pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/algorithm/tryhelloworld.html">
+            Algorithm
+            <span class="glyphicon glyphicon-education pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="/etc/jekyll.html">
+            etc
+            <span class="glyphicon glyphicon-star pull-right"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="active">
+            Love snippet
+            <span class="glyphicon glyphicon-heart pull-right"></span>
+          </a>
+        </li>
+      </div>
+      <!-- <div class="search">
+        <li>
+          <div class="search-icon">
+            <span class="glyphicon glyphicon-search"></span>
+          </div>
+          <input type="text" name="search">
+        </li>
+      </div> -->
+    </ul>
+  </div>
+</body>
+
+        <!-- Main -->
+        <div class="content">
+          <div class="top-bar">
+            <div class="title">
+              Bbungsang's Boaring Note
+            </div>
+            <div class="contact">
+              <a href="https://github.com/bbungsang/">
+                <img src="/images/github.png" alt="" width="30px">
+              </a>
+              <a href="#">
+                <img src="/images/email.png" alt="" width="30px">
+              </a>
+              <a href="#">
+                <img src="/images/facebook.png" alt="" width="30px">
+              </a>
+            </div>
+          </div>
+
+          <div class="main-wrap">
+            <section>
+  <div class="container">
+    <header class="major">
+      <h1>[AWS] 1. 장고 settings 설정하기</h1>
+      <div class="post-date">
+        <small>29 Jun 2017</small><br>
+        <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#aws">aws</a>,
+  
+  <a href="/tags/#django">django</a>,
+  
+  <a href="/tags/#json">json</a>
+  
+</div>
+<br/>
+
+      </div>
+    </header>
+    <hr noshade>
+    <section class="post-content">
+      <h2 id="1-가상-환경-만든-후-장고-프로젝트-실행하기">1. 가상 환경 만든 후, 장고 프로젝트 실행하기</h2>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">pyenv</span> <span class="n">virtualenv</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">3</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
+<span class="c"># 해당 디렉토리 이동 후 가상 환경 적용</span>
+<span class="o">&gt;</span> <span class="n">pyenv</span> <span class="n">local</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
+<span class="c"># 장고 설치 후 프로젝트 생성하기</span>
+<span class="o">&gt;</span> <span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startproject</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
+</code></pre>
+</div>
+<p><br /></p>
+<h2 id="2-settings-설정하기">2. settings 설정하기</h2>
+<h4 id="디렉토리-구조">디렉토리 구조</h4>
+
+<pre><code class="language-txt">project_folder/
+    .config_secret/
+        settings_common.json
+        settings_debug.json
+        settings_deploy.json
+    .config
+        # 기존 settings.py 는 제거한다.
+        settings
+            __init__
+            base.py
+            debug.py
+        [...]
+    django_app/
+    [...]
+</code></pre>
+<p><br /></p>
+<h4 id="config_secret-의-json-파일">.config_secret 의 json 파일</h4>
+<ul>
+  <li><code class="highlighter-rouge">배포 환경</code>과 <code class="highlighter-rouge">로컬 환경</code>에서 사용할 시크릿 값 설정</li>
+  <li>
+    <주의> json 파일의 경우, 마지막 항목에 `,`를 붙이지 않는다.
+</주의>
+  </li>
+  <li><a href="">settings_common.json/settings_debug.json/
+settings_deploy.json</a></li>
+</ul>
+
+<p><br /></p>
+<h4 id="기존의-settingspy-를-가져오되-아래와-같이-설정을-추가">기존의 settings.py 를 가져오되 아래와 같이 설정을 추가</h4>
+<p><strong>[base.py]</strong></p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Build paths inside the project like this: os.path.join(BASE_DIR, ...)</span>
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))))</span>
+<span class="n">ROOT_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
+
+<span class="c"># .config_secret 디렉토리, 하위 파일 경로 설정</span>
+<span class="n">CONFIG_SECRET_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="p">,</span> <span class="s">'.config_secret'</span><span class="p">)</span>
+<span class="n">CONFIG_SECRET_COMMON_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CONFIG_SECRET_DIR</span><span class="p">,</span> <span class="s">'settings_common.json'</span><span class="p">)</span>
+<span class="n">CONFIG_SECRET_DEBUG_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CONFIG_SECRET_DIR</span><span class="p">,</span> <span class="s">'settings_debug.json'</span><span class="p">)</span>
+<span class="n">CONFIG_SECRET_DEPLOY_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CONFIG_SECRET_DIR</span><span class="p">,</span> <span class="s">'settings_deploy.json'</span><span class="p">)</span>
+
+<span class="c"># config_secret 변수에 CONFIG_SECRET_COMMON_FILE 경로의 파일을 읽은 값을 할당</span>
+<span class="n">config_secret_common</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">CONFIG_SECRET_COMMON_FILE</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="c"># SECURITY WARNING: keep the secret key used in production secret!</span>
+<span class="c"># config_secret_common 내의 django 키값 안의 secret_key 값 할당</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">config_secret_common</span><span class="p">[</span><span class="s">'django'</span><span class="p">][</span><span class="s">'secret_key'</span><span class="p">]</span>
+
+<span class="c"># debug.py 에서 명시해주므로 아래 코드는 주석 처리한다.</span>
+<span class="c"># DEBUG = True</span>
+<span class="c"># ALLOWED_HOSTS = []</span>
+</code></pre>
+</div>
+<p><strong>[debug.py]</strong></p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">config_secret_debug</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">CONFIG_SECRET_DEBUG_FILE</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="n">config_secret_debug</span><span class="p">[</span><span class="s">'django'</span><span class="p">][</span><span class="s">'allowed_hosts'</span><span class="p">]</span>
+</code></pre>
+</div>
+<ul>
+  <li><em>DEBUG</em> 와 <em>ALLOWED_HOSTS</em> 에 따라서 runserver 명령어가 달라진다.</li>
+  <li><code class="highlighter-rouge">./manage.py runserver</code> ➜ <br />
+<code class="highlighter-rouge">./manage.py runserver --settings=config.settings.base</code> ➜ <br />
+<code class="highlighter-rouge">./manage.py runserver --settings=config.settings.debug</code></li>
+</ul>
+
+    </section>
+    <br><br>
+    <footer>
+      
+      <a href="/instargram/2017/06/16/instargram-memberapp-login.html" class="float-left">&larr; Previous post</a> 
+      
+      <a href="/aws/2017/06/29/(2)EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html" class="float-right">Next post &rarr;</a> 
+      <br><br>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </div>
+</section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+  <section id="footer">
+      <div class="container">
+          <ul class="copyright">
+              <li>&copy; Untitled. All rights reserved.</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
+              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
+          </ul>
+      </div>
+  </section>
+ -->
+</body>
+</html>
