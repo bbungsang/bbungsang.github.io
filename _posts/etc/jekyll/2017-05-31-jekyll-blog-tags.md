@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[지킬블로그만들기] 태그 기능 달기"
+title:  "[지킬 블로그] 태그 기능 달기"
 category: [jekyll]
 tags:
   - Jekyll

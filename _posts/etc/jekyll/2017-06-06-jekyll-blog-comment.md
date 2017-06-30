@@ -1,14 +1,13 @@
-<!-- ---
+---
 layout: post
-title:  [Jekyll 블로그] Disqus 댓글 기능
+title:  "[지킬 블로그] Disqus 댓글 기능 달기"
 category: [jekyll]
 tags:
   - Jekyll
-  - Disqus
 comments: true
---- -->
+---
 
-# 지킬 블로그 댓글 기능 달기
+### 지킬 블로그 댓글 기능 달기
 Disqus는 정적인 Jekyll에서 동적 기능인 댓글을 사용할 수 있게 한다.
 
 ### Step1) Disqus 가입하기
@@ -25,9 +24,10 @@ Disqus는 정적인 Jekyll에서 동적 기능인 댓글을 사용할 수 있게
 - Jekyll 항목을 선택하고, 아래와 같은 Universal Code를 얻는다.
 
 - `_includes` 디렉토리에 comments.html 을 생성하고 얻은 코드를
-`{% if page.comments %}` 와 `{% endif %}` 사이에 붙여넣는다.
+{% raw %}`{% if page.comments %}` 와 `{% endif %}` 사이에 붙여넣는다.{% endraw %}
 
-<!-- ```python
+```python
+{% raw %}
 {% if page.comments %}
   <div id="disqus_thread"></div>
   <script>
@@ -48,22 +48,29 @@ Disqus는 정적인 Jekyll에서 동적 기능인 댓글을 사용할 수 있게
   ...
 
 {% endif %}
-``` -->
+{% endraw %}
+```
+
 - `_layouts` 디렉토리의 `post.html` 에서 댓글 기능을 붙일 위치에 다음과 같이 include를 한다.
+
 ```python
+{% raw %}
 <div>
   {{ content }}
   {% include comments.html %}
 </div>
+{% endraw %}
 ```
 
 ### Step4) 포스트에 Disqus 사용하기
 Disqus를 사용하려면, YAML frontmatter에 아래와 같이 comments: true를 삽입하면 된다. comments: false나 comments: 자체를 넣지 않으면 Disqus가 나타나지 않는다.
 
 ```python
+{% raw %}
 ---
 layout: default
 comments: true
 # other options
 ---
+{% endraw %}
 ```

@@ -121,16 +121,14 @@
             <section>
   <div class="container">
     <header class="major">
-      <h1>[Jekyll 블로그] Disqus 댓글 기능 달기</h1>
+      <h1>[지킬 블로그] Disqus 댓글 기능 달기</h1>
       <div class="post-date">
         <small>06 Jun 2017</small><br>
         <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
-  <a href="/tags/#Jekyll">Jekyll</a>,
-  
-  <a href="/tags/#Disqus">Disqus</a>
+  <a href="/tags/#Jekyll">Jekyll</a>
   
 </div>
 <br/>
@@ -139,7 +137,8 @@
     </header>
     <hr noshade>
     <section class="post-content">
-      <p>Disqus는 정적인 Jekyll에서 동적 기능인 댓글을 사용할 수 있게 한다.</p>
+      <h3 id="지킬-블로그-댓글-기능-달기">지킬 블로그 댓글 기능 달기</h3>
+<p>Disqus는 정적인 Jekyll에서 동적 기능인 댓글을 사용할 수 있게 한다.</p>
 
 <h3 id="step1-disqus-가입하기">Step1) Disqus 가입하기</h3>
 <p><a href="https://disqus.com/">Disqus</a> 에서 회원가입 하고, 이메일로 verify를 한다.</p>
@@ -168,25 +167,27 @@
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page.comments</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-  </span><span class="err">&lt;div</span><span class="w"> </span><span class="err">id=</span><span class="s2">"disqus_thread"</span><span class="err">&gt;&lt;/div&gt;</span><span class="w">
-  </span><span class="err">&lt;script&gt;</span><span class="w">
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">comments</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s">"disqus_thread"</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
 
-  </span><span class="err">/**</span><span class="w">
-  </span><span class="err">*</span><span class="w">  </span><span class="err">RECOMMENDED</span><span class="w"> </span><span class="err">CONFIGURATION</span><span class="w"> </span><span class="err">VARIABLES:</span><span class="w"> </span><span class="err">EDIT</span><span class="w"> </span><span class="err">AND</span><span class="w"> </span><span class="err">UNCOMMENT</span><span class="w"> </span><span class="err">THE</span><span class="w"> </span><span class="err">SECTION</span><span class="w"> </span><span class="err">BELOW</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">INSERT</span><span class="w"> </span><span class="err">DYNAMIC</span><span class="w"> </span><span class="err">VALUES</span><span class="w"> </span><span class="err">FROM</span><span class="w"> </span><span class="err">YOUR</span><span class="w"> </span><span class="err">PLATFORM</span><span class="w"> </span><span class="err">OR</span><span class="w"> </span><span class="err">CMS.</span><span class="w">
-  </span><span class="err">*</span><span class="w">  </span><span class="err">LEARN</span><span class="w"> </span><span class="err">WHY</span><span class="w"> </span><span class="err">DEFINING</span><span class="w"> </span><span class="err">THESE</span><span class="w"> </span><span class="err">VARIABLES</span><span class="w"> </span><span class="err">IS</span><span class="w"> </span><span class="err">IMPORTANT:</span><span class="w"> </span><span class="err">https://disqus.com/admin/universalcode/#configuration-variables*/</span><span class="w">
-  </span><span class="err">/*</span><span class="w">
-  </span><span class="err">var</span><span class="w"> </span><span class="err">disqus_config</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">function</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="err">this.page.url</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">PAGE_URL;</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Replace</span><span class="w"> </span><span class="err">PAGE_URL</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">page's</span><span class="w"> </span><span class="err">canonical</span><span class="w"> </span><span class="err">URL</span><span class="w"> </span><span class="err">variable</span><span class="w">
-  </span><span class="err">this.page.identifier</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">PAGE_IDENTIFIER;</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Replace</span><span class="w"> </span><span class="err">PAGE_IDENTIFIER</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">page's</span><span class="w"> </span><span class="err">unique</span><span class="w"> </span><span class="err">identifier</span><span class="w"> </span><span class="err">variable</span><span class="w">
-  </span><span class="p">}</span><span class="err">;</span><span class="w">
-  </span><span class="err">*/</span><span class="w">
-  </span><span class="err">(function()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">DON'T</span><span class="w"> </span><span class="err">EDIT</span><span class="w"> </span><span class="err">BELOW</span><span class="w"> </span><span class="err">THIS</span><span class="w"> </span><span class="err">LINE</span><span class="w">
-  </span><span class="err">var</span><span class="w"> </span><span class="err">d</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">document,</span><span class="w"> </span><span class="err">s</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">d.createElement('script');</span><span class="w">
-  </span><span class="err">...</span><span class="w">
-</span><span class="err">{%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+  <span class="o">/**</span>
+  <span class="o">*</span>  <span class="n">RECOMMENDED</span> <span class="n">CONFIGURATION</span> <span class="n">VARIABLES</span><span class="p">:</span> <span class="n">EDIT</span> <span class="n">AND</span> <span class="n">UNCOMMENT</span> <span class="n">THE</span> <span class="n">SECTION</span> <span class="n">BELOW</span> <span class="n">TO</span> <span class="n">INSERT</span> <span class="n">DYNAMIC</span> <span class="n">VALUES</span> <span class="n">FROM</span> <span class="n">YOUR</span> <span class="n">PLATFORM</span> <span class="n">OR</span> <span class="n">CMS</span><span class="o">.</span>
+  <span class="o">*</span>  <span class="n">LEARN</span> <span class="n">WHY</span> <span class="n">DEFINING</span> <span class="n">THESE</span> <span class="n">VARIABLES</span> <span class="n">IS</span> <span class="n">IMPORTANT</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">disqus</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">universalcode</span><span class="o">/</span><span class="c">#configuration-variables*/</span>
+  <span class="o">/*</span>
+  <span class="n">var</span> <span class="n">disqus_config</span> <span class="o">=</span> <span class="n">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="n">this</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">PAGE_URL</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Replace</span> <span class="n">PAGE_URL</span> <span class="k">with</span> <span class="n">your</span> <span class="n">page</span><span class="s">'s canonical URL variable</span><span class="err">
+</span><span class="s">  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page'</span><span class="n">s</span> <span class="n">unique</span> <span class="n">identifier</span> <span class="n">variable</span>
+  <span class="p">};</span>
+  <span class="o">*/</span>
+  <span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span> <span class="o">//</span> <span class="n">DON</span><span class="s">'T EDIT BELOW THIS LINE</span><span class="err">
+</span><span class="s">  var d = document, s = d.createElement('</span><span class="n">script</span><span class="s">');</span><span class="err">
+</span><span class="s">  s.src =</span><span class="err">
 
+</span><span class="s">  ...</span><span class="err">
+
+</span><span class="s">{</span><span class="si">% </span><span class="s">endif </span><span class="si">%</span><span class="s">}</span><span class="err">
 
 </span></code></pre>
 </div>
@@ -195,11 +196,11 @@
   <li><code class="highlighter-rouge">_layouts</code> 디렉토리의 <code class="highlighter-rouge">post.html</code> 에서 댓글 기능을 붙일 위치에 다음과 같이 include를 한다.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-&lt;div&gt;
-  {{ content }}
-  {% include comments.html %}
-&lt;/div&gt;
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+  <span class="p">{{</span> <span class="n">content</span> <span class="p">}}</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="n">comments</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 
 </code></pre>
 </div>
@@ -207,13 +208,23 @@
 <h3 id="step4-포스트에-disqus-사용하기">Step4) 포스트에 Disqus 사용하기</h3>
 <p>Disqus를 사용하려면, YAML frontmatter에 아래와 같이 comments: true를 삽입하면 된다. comments: false나 comments: 자체를 넣지 않으면 Disqus가 나타나지 않는다.</p>
 
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="o">---</span>
+<span class="n">layout</span><span class="p">:</span> <span class="n">default</span>
+<span class="n">comments</span><span class="p">:</span> <span class="n">true</span>
+<span class="c"># other options</span>
+<span class="o">---</span>
+
+</code></pre>
+</div>
+
     </section>
     <br><br>
     <footer>
       
-      <a href="/travel/2017/06/04/askdjango-View-OverView.html" class="float-left">&larr; Previous post</a> 
+      <a href="/tryhelloworld/2017/06/06/tryhelloworld-algorithm-level1-4.html" class="float-left">&larr; Previous post</a> 
       
-      <a href="/2017/06/06/jekyll-blog-comment.html" class="float-right">Next post &rarr;</a> 
+      <a href="/tryhelloworld/2017/06/07/tryhelloworld-algorithm-level1-5.html" class="float-right">Next post &rarr;</a> 
       <br><br>
       
   <div id="disqus_thread"></div>
