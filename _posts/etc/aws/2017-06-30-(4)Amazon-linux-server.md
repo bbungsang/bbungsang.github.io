@@ -9,7 +9,7 @@ comments: true
 ---
 ## AWS 서버 실행하기
 
-[터미널]
+서버 실행 at 터미널
 > ssh -i ~/.ssh/bbungsang.pem ubuntu@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com
 
 <br>

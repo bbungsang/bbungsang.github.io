@@ -232,6 +232,7 @@
 
 .container .content .top-bar .contact a {
   text-decoration: none;
+  padding-right: 10px;
 }
 
 .container .content .main-wrap {

@@ -181,7 +181,8 @@
         height: 45px;
         padding-right: 20px; }
         .container .content .top-bar .contact a {
-          text-decoration: none; }
+          text-decoration: none;
+          padding-right: 10px; }
     .container .content .main-wrap {
       width: 100%;
       height: auto;

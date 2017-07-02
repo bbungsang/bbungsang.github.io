@@ -49,7 +49,7 @@
 
 .container .content .top-bar .contact { float: right; height: 45px; padding-right: 20px; }
 
-.container .content .top-bar .contact a { text-decoration: none; }
+.container .content .top-bar .contact a { text-decoration: none; padding-right: 10px; }
 
 .container .content .main-wrap { width: 100%; height: auto; margin-top: 70px; margin-left: 120px; }
 
