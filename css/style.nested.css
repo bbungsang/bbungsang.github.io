@@ -11,7 +11,6 @@
   /* Section/Article */
   /* Image */
   /* Code */
-  /* markdown grammer `` block */
   /* Comment */
   /* Error */
   /* Generic */
@@ -219,22 +218,18 @@
     height: 200px;
     border-radius: 10px; }
   .container .highlight {
-    background-color: #FFFFC5;
-    padding: 7px 7px 7px 10px;
-    border: 1px solid #ddd;
-    -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
-    margin: 20px 0 20px 0;
-    overflow: scroll; }
+    background-color: #222;
+    padding: 5px 10px;
+    margin: 20px 0; }
+  .container .highlight pre {
+    word-break: break-all;
+    word-wrap: break-word; }
   .container code {
-    font-family: 'Arial', 'Times New Roman', 'Courier', monospace;
-    font-size: 18px; }
-  .container .highlighter-rouge {
-    font-family: 'Courier';
-    font-size: 16px; }
-  .container .highlight .c {
-    color: #9B7CC9; }
+    font-family: 'Courier', monospace;
+    font-size: 14px;
+    color: #999; }
+  .container .highlight .c, .container .highlight .c1 {
+    color: #586E75; }
   .container .highlight .err {
     color: #93A1A1; }
   .container .highlight .g {

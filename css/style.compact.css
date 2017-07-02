@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
-.container { width: 100% !important; overflow: hidden; display: inline-block; font-family: "Arial", sans-serif; font-size: 18px; color: #3A3A3A; line-height: 30px; /* Post */ /* Section/Article */ /* Image */ /* Code */ /* markdown grammer `` block */ /* Comment */ /* Error */ /* Generic */ /* Keyword */ /* Literal */ /* Name */ /* Operator */ /* Other */ /* Punctuation */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */ /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */ /* Generic.Traceback */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */ /* Literal.Date */ /* Literal.Number */ /* Literal.String */ /* Name.Attribute */ /* Name.Builtin */ /* Name.Class */ /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */ /* Name.Function */ /* Name.Label */ /* Name.Namespace */ /* Name.Other */ /* Name.Property */ /* Name.Tag */ /* Name.Variable */ /* Operator.Word */ /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */ /* Literal.Number.Oct */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */ /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */ /* Name.Builtin.Pseudo */ /* Name.Variable.Class */ /* Name.Variable.Global */ /* Name.Variable.Instance */ /* Literal.Number.Integer.Long */ }
+.container { width: 100% !important; overflow: hidden; display: inline-block; font-family: "Arial", sans-serif; font-size: 18px; color: #3A3A3A; line-height: 30px; /* Post */ /* Section/Article */ /* Image */ /* Code */ /* Comment */ /* Error */ /* Generic */ /* Keyword */ /* Literal */ /* Name */ /* Operator */ /* Other */ /* Punctuation */ /* Comment.Multiline */ /* Comment.Preproc */ /* Comment.Single */ /* Comment.Special */ /* Generic.Deleted */ /* Generic.Emph */ /* Generic.Error */ /* Generic.Heading */ /* Generic.Inserted */ /* Generic.Output */ /* Generic.Prompt */ /* Generic.Strong */ /* Generic.Subheading */ /* Generic.Traceback */ /* Keyword.Constant */ /* Keyword.Declaration */ /* Keyword.Namespace */ /* Keyword.Pseudo */ /* Keyword.Reserved */ /* Keyword.Type */ /* Literal.Date */ /* Literal.Number */ /* Literal.String */ /* Name.Attribute */ /* Name.Builtin */ /* Name.Class */ /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */ /* Name.Function */ /* Name.Label */ /* Name.Namespace */ /* Name.Other */ /* Name.Property */ /* Name.Tag */ /* Name.Variable */ /* Operator.Word */ /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */ /* Literal.Number.Oct */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */ /* Literal.String.Heredoc */ /* Literal.String.Interpol */ /* Literal.String.Other */ /* Literal.String.Regex */ /* Literal.String.Single */ /* Literal.String.Symbol */ /* Name.Builtin.Pseudo */ /* Name.Variable.Class */ /* Name.Variable.Global */ /* Name.Variable.Instance */ /* Literal.Number.Integer.Long */ }
 
 .container section { width: 85%; }
 
@@ -75,13 +75,13 @@
 
 .container .main-img { display: block; width: 200px; height: 200px; border-radius: 10px; }
 
-.container .highlight { background-color: #FFFFC5; padding: 7px 7px 7px 10px; border: 1px solid #ddd; -moz-box-shadow: 3px 3px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 3px 3px rgba(0, 0, 0, 0.1); box-shadow: 3px 3px rgba(0, 0, 0, 0.1); margin: 20px 0 20px 0; overflow: scroll; }
+.container .highlight { background-color: #222; padding: 5px 10px; margin: 20px 0; }
 
-.container code { font-family: 'Arial', 'Times New Roman', 'Courier', monospace; font-size: 18px; }
+.container .highlight pre { word-break: break-all; word-wrap: break-word; }
 
-.container .highlighter-rouge { font-family: 'Courier'; font-size: 16px; }
+.container code { font-family: 'Courier', monospace; font-size: 14px; color: #999; }
 
-.container .highlight .c { color: #9B7CC9; }
+.container .highlight .c, .container .highlight .c1 { color: #586E75; }
 
 .container .highlight .err { color: #93A1A1; }
 
