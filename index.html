@@ -101,6 +101,40 @@ layout: default
     </li>
   </ul> -->
 
+  <!-- server -->
+  <ul class="category-list">
+    <li class="category-title">
+      <a href="#"><h3>Server</h3></a>
+      {% for post in site.categories.server %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            - {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
+
+  <!-- server -->
+  <ul class="category-list">
+    <li class="category-title">
+      <a href="#"><h3>자스알못의 JavaScript 개념 정리</h3></a>
+      {% for post in site.categories.javascript %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            - {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
+
   <!-- algorithm -->
   <ul class="category-list">
     <li class="category-title">

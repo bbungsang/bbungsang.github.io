@@ -131,131 +131,95 @@
 <script src="/js/common-scripts.js"></script>
 
     <div class="empty"></div>
-      <div id="content" class="content">
-  <!-- python -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="/files/algorithm/tryhelloworld.html"><h3>Solve 알고리즘!</h3></a>
-      
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="/tryhelloworld/2017/06/12/tryhelloworld-algorithm-level1-7.html">
-            - TryHelloWorld 알고리즘 레벨 1-7
-            <small class="post-date">12 Jun 2017</small>
-          </a>
-        </li>
-      </ul>
-      
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="/tryhelloworld/2017/06/11/tryhelloworld-algorithm-level1-6.html">
-            - TryHelloWorld 알고리즘 레벨 1-6
-            <small class="post-date">11 Jun 2017</small>
-          </a>
-        </li>
-      </ul>
-      
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="/tryhelloworld/2017/06/07/tryhelloworld-algorithm-level1-5.html">
-            - TryHelloWorld 알고리즘 레벨 1-5
-            <small class="post-date">07 Jun 2017</small>
-          </a>
-        </li>
-      </ul>
-      
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="/tryhelloworld/2017/06/06/tryhelloworld-algorithm-level1-4.html">
-            - TryHelloWorld 알고리즘 레벨 1-4
-            <small class="post-date">06 Jun 2017</small>
-          </a>
-        </li>
-      </ul>
-      
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="/tryhelloworld/2017/05/29/tryhelloworld-algorithm-level1-3.html">
-            - TryHelloWorld 알고리즘 레벨 1-3
-            <small class="post-date">29 May 2017</small>
-          </a>
-        </li>
-      </ul>
-      
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="/tryhelloworld/2017/05/28/tryhelloworld-algorithm-level1-2.html">
-            - TryHelloWorld 알고리즘 레벨 1-2
-            <small class="post-date">28 May 2017</small>
-          </a>
-        </li>
-      </ul>
-      
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="/tryhelloworld/2017/05/28/tryhelloworld-algorithm-level1-1.html">
-            - TryHelloWorld 알고리즘 레벨 1-1
-            <small class="post-date">28 May 2017</small>
-          </a>
-        </li>
-      </ul>
-      
-    </li>
-  </ul>
+        <div id="markdown" class="markdown">
+    <article class="markdown-body">
+      <header class="major">
+        <div class="h1">WSGI와 uWSGI</div>
+        <div class="date-tags">
+          20 Jul 2017
+          <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#Nginx">Nginx</a>,
+  
+  <a href="/tags/#WSGI">WSGI</a>
+  
 </div>
-<div id="widget" class="widget">
-  <div class="recent-post-title">
-    <img src="images/rocket.png" width="27px">
-    최신 글 바로가기
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/javascript/2017/08/29/matchMedia.html">
-      - 자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/two-scoops/2017/08/09/ch10-class-based-view.html">
-      - [10장] 클래스 기반 뷰
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/two-scoops/2017/08/02/ch9-func-based-view.html">
-      - [9장] 함수 기반 뷰
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/two-scoops/2017/08/02/ch8-fbv-and-cbv.html">
-      - [8장] 함수 기반 뷰와 클래스 기반 뷰
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/server/2017/07/20/wsgi.html">
-      - WSGI와 uWSGI
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/server/2017/07/20/nginx-1.html">
-      - NGINX (1)
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/docker/2017/07/03/what-is-docker.html">
-      - 도커(Docker)란?
-    </a>
-  </div>
-  
+<br/>
 
-  <div class="calendar">
+        </div>
+      </header>
+      <hr noshade style="width: 100%; float: left;">
+      <section class="post-content">
+        <h2 id="cgicommon-gateway-interface">CGI(Common Gateway Interface)</h2>
+<ul>
+  <li><code class="highlighter-rouge">웹 서버</code>는 Static Contents, 즉 내용에 변화가 없는 그대로의 정적인 것을 전달하는 역할을 한다.</li>
+  <li>만약 클라이언트로부터 요청을 전달받을 때마다 달라지는 현재 시간 혹은 예약 현황 등 (Dynamic Contents)을 응답해야한다면, 해당 요청에 맞게 데이터를 만들어주는 <code class="highlighter-rouge">백엔드</code>에게 요청을 전달해야한다.</li>
+  <li>요청에 따라서 데이터를 만들어주는 것을 <code class="highlighter-rouge">프로그램</code>(장고 어플리케이션)이라 부르며, <strong>CGI는 웹서버와 프로그램 사이에서 Interface(규칙)을 제공</strong> 한다.</li>
+</ul>
 
+<h2 id="wsgiweb-server-gateway-interface">WSGI(Web Server Gateway Interface)</h2>
+<ul>
+  <li>CGI의 일종으로, 웹 서버와 <code class="highlighter-rouge">파이썬으로 작성된</code> Web Application 또는 Framework의 인터페이스를 정의해놓은 규칙이다.</li>
+  <li>CGI가 느리고 제약 사항이 많았으며 Python App에서는 CGI, mod_python, Fast CGI 등 한정적인 인터페이스만을 사용하기 때문에 WSGI가 <code class="highlighter-rouge">웹 서버와 파이썬 어플리케이션의 표준 인터페이스</code>로 개발되었다.</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/wsgi.png" alt="wsgi structure" class="center-image" width="350px" /></p>
+
+<h3 id="web-server-와-web-app">Web Server 와 Web App</h3>
+<ul>
+  <li>Web Server : Apache, Nginx 등</li>
+  <li>Web App : Django, Flask 등</li>
+  <li>웹 서버는 웹 어플리케이션을 실행한다. Request는 App 단에서 실행되며, Response는 Callback 함수를 통해 서버로 되돌려보내진다.</li>
+</ul>
+
+<h3 id="wsgi-왜-필요할까">WSGI, 왜 필요할까?</h3>
+<ul>
+  <li>WSGI는 많은 요청을 다룰 수 있도록 설계되어있다. 하지만 Framework는 스스로 그 많은 요청을 실행하고 처리하지 못하기 때문에 WSGI라는 중간 단계를 거칠 수 밖에 없다.</li>
+  <li>또한 WSGI는 Python Web의 개발 속도를 올려준다. 즉, Python Web은 불가피하게 CGI를 사용할 수 밖에 없는데, 그 중에서 WSGI는 기초적인 것들만 알아도 사용할 수 있기 때문에 별도로 사용법을 익혀야하는 시간을 줄일 수 있다.</li>
+</ul>
+
+<h2 id="uwsgi">uWSGI</h2>
+<ul>
+  <li>Python WSGI의 종류(그 밖에 Bjoern, Mod_wsgi, Cunicorn가 있다.) 중 하나이며,</li>
+  <li>Hosting Server에서 Full Stack 개발이 가능하도록 개발이 되었기 때문에 확장성이 뛰어나며 강력하다.</li>
+  <li>Objective-C, C, C++ 등과 다양한 언어 위에서 작동하지만 너무 무거울 수 있다.</li>
+</ul>
+
+<h3 id="왜-nginx와-같이-사용하는가">왜 Nginx와 같이 사용하는가?</h3>
+<ul>
+  <li>uWSGI만으로 서비스를 제공하는 것이 가능한가? 가능하다!</li>
+  <li>그렇다면 왜 Nginx와 같이 사용하는가? Nginx가 가진 향상된 Static Contents(CSS, JavaScript 등) 핸들링을 통해서 서버에 발생되는 부하를 줄일 수 있다.</li>
+</ul>
+
+<p><a href="http://localhost:4000/server/2017/07/20/nginx-1.html" class="a-tag-deco">Nginx란?</a></p>
+
+      </section>
+      <br><br>
+      <footer>
+        
+        <a href="/server/2017/07/20/nginx-1.html" class="float-left">&larr; Previous post</a> 
+        
+        <a href="/two-scoops/2017/08/02/ch8-fbv-and-cbv.html" class="float-right">Next post &rarr;</a> 
+        <br><br>
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      </footer>
+    </article>
   </div>
-</div>
 
   </div>
 </body>

@@ -5,6 +5,10 @@
 
 .markdown .image-size { width: 200px; }
 
+.markdown .a-tag-deco { font-size: 20px; font-weight: bold; border: 1px solid #3DDAD7; border-radius: 15px; color: #3DDAD7; padding: 5px; }
+
+.markdown .a-tag-deco:hover { color: #fff; background: #3DDAD7; }
+
 .markdown .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
 
 .markdown table { width: 100%; }
