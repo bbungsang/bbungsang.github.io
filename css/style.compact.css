@@ -11,13 +11,13 @@
 
 .container a { color: #9a9a9a; }
 
-.container h1 { font-size: 42px; font-weight: bold; color: #00CCFF; }
+.container h1 { font-size: 42px; font-weight: bold; color: #135589; }
 
-.container h2, .container h3 { color: #FF9966; font-weight: bold; }
+.container h2, .container h3 { color: #E2B49A; font-weight: bold; }
 
-.container h4 { color: #ABABAB; }
+.container h4 { color: #193446; }
 
-.container .side-bar { background: #74AFAD; position: absolute; height: auto; width: 272px; color: #fff; transition: margin-left 0.5s; }
+.container .side-bar { background: #E9C77B; position: absolute; height: auto; width: 272px; color: #fff; transition: margin-left 0.5s; }
 
 .container .side-bar ul { list-style: none; padding: 0px; }
 
@@ -37,13 +37,13 @@
 
 .container .side-bar ul .menu li a:hover { border-left: 3px solid #ECECEA; padding-left: 17px; }
 
-.container .side-bar ul .menu li a.active { padding-left: 18px; background: #FF9966; border-left: 3px solid #ECECEA; }
+.container .side-bar ul .menu li a.active { padding-left: 18px; background: #E2B49A; border-left: 3px solid #ECECEA; }
 
-.container .side-bar ul .menu li a.active:before { content: ""; position: absolute; width: 0; height: 0; border-top: 27px solid transparent; border-bottom: 27px solid transparent; border-left: 7px solid #FF9966; margin-top: -11px; margin-left: 250px; }
+.container .side-bar ul .menu li a.active:before { content: ""; position: absolute; width: 0; height: 0; border-top: 27px solid transparent; border-bottom: 27px solid transparent; border-left: 7px solid #E2B49A; margin-top: -11px; margin-left: 250px; }
 
 .container .content { padding-left: 220px; transition: padding-left 0.5s; }
 
-.container .content .top-bar { background: #FF9966; width: 100%; height: 45px; line-height: 45px; }
+.container .content .top-bar { background: #9AABB9; width: 100%; height: 45px; line-height: 45px; }
 
 .container .content .top-bar .title { font-family: 'Bungee Hairline', 'Architects Daughter', 'Bubbler One'; font-weight: bold; color: #fff; font-size: 22px; float: left; padding-left: 75px; }
 
@@ -73,7 +73,7 @@
 
 .container footer .float-right { float: right; }
 
-.container .main-img { display: block; width: 200px; height: 200px; border-radius: 10px; }
+.container .main-img { display: block; width: 200px; height: 175px; border-radius: 10px; }
 
 .container .highlight { background-color: #222; padding: 5px 10px; margin: 20px 0; }
 

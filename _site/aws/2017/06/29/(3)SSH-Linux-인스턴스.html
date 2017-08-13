@@ -41,7 +41,7 @@
         </a>
       </li>
       <li class="menu-intro">
-        <span class="image photo"><img src="/images/itsme.png" class="main-img" /></span>
+        <span class="image photo"><img src="/images/itsme.jpg" class="main-img" /></span>
         <h3 id="logo"><a href="/">Elena Kim</a></h3>
         <p>
           틀린 부분이 있거나 문의사항이<br>
@@ -144,8 +144,8 @@
       <h2 id="ssh-를-사용하여-linux-인스턴스에-연결하기">SSH 를 사용하여 Linux 인스턴스에 연결하기</h2>
 <p>그 전에 SSH 클라이언트를 설치한다. Linux 의 경우 기본적으로 포함되어 있다.</p>
 <ol>
-  <li>private key(.pem) 과 <em>user_name@public_dns_name</em> 을 지정한다.</li>
-  <li>Amazon Linux 의 경우 사용자 이름은 ec2_user, Ubuntu 의 경우 사용자 이름은 ubuntu 또는 root 이다.</li>
+  <li>private key(.pem) 와 <em>user_name@public_dns_name</em> 을 지정한다.</li>
+  <li>Amazon Linux 의 경우, 사용자 이름은 <code class="highlighter-rouge">ec2_user</code> Ubuntu 의 경우, 사용자 이름은 <code class="highlighter-rouge">ubuntu</code> 또는 <code class="highlighter-rouge">root</code> 이다.</li>
 </ol>
 
 <blockquote>
@@ -155,9 +155,7 @@
 <p><code class="highlighter-rouge">ssh -i /path/key_pair_name.pem ubuntu@ec2-198-51-100-1.compute-1.amazonaws.com(형태의 public_dns_name)</code>
 <br /><br />
 [UNPROTECTED PRIVATE KEY FILE ERROR]</p>
-<div class="language-text highlighter-rouge"><pre class="highlight"><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ WARNING: UNPROTECTED PRIVATE KEY FILE! @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>WARNING: UNPROTECTED PRIVATE KEY FILE!
 
 [...]
 </code></pre>
@@ -167,14 +165,55 @@
   <li><code class="highlighter-rouge">chmod 400 bbungsang.pem</code></li>
 </ul>
 
-<p>다시 <code class="highlighter-rouge">ssh -i /path/key_pair_name.pem ubuntu@ec2-198-51-100-1.compute-1.amazonaws.com(형태의 public_dns_name)</code> 을 입력하면, 아마존 웹 서버 구동 성공!!</p>
+<p>다시 <code class="highlighter-rouge">ssh -i /path/key_pair_name.pem ubuntu@ec2-198-51-100-1.compute-1.amazonaws.com</code> 을 입력하면, 아마존 웹 서버 구동 성공!!</p>
+
+<h2 id="aws-명령어-입력하기">AWS 명령어 입력하기</h2>
+<ul>
+  <li>지금까지 UI 를 통해서 만든 인스턴스와 같이 AWS 에서 제공해주는 기능을 커맨드 라인을 통해서 실행할 수 있다.</li>
+  <li>이를 위해서는 <code class="highlighter-rouge">aws cli</code> 를 설치해야 한다.  (cli = command line interface)</li>
+</ul>
+
+<blockquote>
+  <p>finger printer(지문)</p>
+  <ul>
+    <li>공개키로 만들어낸 특정 문자열, 본래 공개키의 길이는 엄청 길다. 이를 사람이 눈으로 보고 비교할 만큼 쉽게 쓰기 위해서 있는 것이다.</li>
+    <li>EC2 Key Pair 에 명시되어 있다.</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>aws ec2 get-console-output –instance-id <해당 인터페이스의="" 아이디=""></해당></li>
+  <li>하지만 에러가 난다. UI 상에선 로그인 과정을 거쳐서 특정 유저에게 접근 권한을 부여하지만, 커맨드 라인에서는 이와 같은 과정이 없기 때문에 access key 가 필요하다.</li>
+</ul>
+
+<blockquote>
+  <p>access key 생성</p>
+  <ul>
+    <li>AWS 페이지의 I AM 에서 Add User 를 통해서 유저를 생성한다.</li>
+    <li>[Set permissions for EC2-User] : Attach existing policies directly 클릭</li>
+    <li>[Policy type] 목록 : AmazonEC2FullAccess 선택</li>
+    <li>secret key 는 생성 후 단 한 번만 제공해준다. 따라서 따로 저장해두는 것을 권장한다.</li>
+    <li>[커맨드 라인] : aws configure 을 입력 후,</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <div class="language-text highlighter-rouge"><pre class="highlight"><code>AWS Access Key ID : 생성된 access key
+AWS Secret Access Key : 생성된 secret key
+Default region name : ap-northeast-2
+Default output format : json
+</code></pre>
+  </div>
+</blockquote>
+
 
     </section>
     <br><br>
     <footer>
       
-      <a href="/aws/2017/06/29/(2)EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html" class="float-left">&larr; Previous post</a> 
+      <a href="/aws/2017/06/29/(2)EC2-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html" class="float-left">&larr; Previous post</a> 
       
+      <a href="/aws/2017/06/30/(4)Amazon-linux-server.html" class="float-right">Next post &rarr;</a> 
       <br><br>
       
   <div id="disqus_thread"></div>

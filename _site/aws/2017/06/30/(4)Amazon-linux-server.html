@@ -121,18 +121,16 @@
             <section>
   <div class="container">
     <header class="major">
-      <h1>파이썬 크롤링 라이브러리 - 뷰티풀수프</h1>
+      <h1>[AWS] 4. AWS 서버 다루기</h1>
       <div class="post-date">
-        <small>27 May 2017</small><br>
+        <small>30 Jun 2017</small><br>
         <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
-  <a href="/tags/#Python">Python</a>,
+  <a href="/tags/#aws">aws</a>,
   
-  <a href="/tags/#BeautifulSoup">BeautifulSoup</a>,
-  
-  <a href="/tags/#Crawling">Crawling</a>
+  <a href="/tags/#django">django</a>
   
 </div>
 <br/>
@@ -141,94 +139,93 @@
     </header>
     <hr noshade>
     <section class="post-content">
-      <h2 id="뷰티풀수프beautifulsoup">뷰티풀수프(BeautifulSoup)</h2>
-<ul>
-  <li>뷰티풀수프는 HTML과 XML로부터 데이터를 뽑기위한 라이브러리이다.</li>
-  <li>문서를 뷰티풀수프에 넣으면 객체가 나오는데, 이 객체는 문서롤 내포한 데이터 구조로 나타낸다.<br /><br /></li>
-</ul>
+      <h2 id="aws-서버-실행하기">AWS 서버 실행하기</h2>
 
-<h4 id="데이터-구조를-파싱하는-방법">데이터 구조를 파싱하는 방법</h4>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">soup</span><span class="o">.</span><span class="n">title</span>
-<span class="c"># &lt;title&gt;The bbungsnag's story&lt;/title&gt;</span>
-
-<span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">string</span>
-<span class="c"># The bbugnsang's story</span>
-
-<span class="n">soup</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span>
-<span class="c"># return class value</span>
-
-<span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
-<span class="c"># a 태그에 해당하는 모든 값을 리스트로 반환</span>
-
-<span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">'bbungsang'</span><span class="p">)</span>
-<span class="c"># id='bbungsang'에 해당하는 a 태그 값 파싱</span>
-
-<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">'a'</span><span class="p">):</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'href'</span><span class="p">))</span>
-<span class="c"># a href 값 연속해서 파싱</span>
-
-<span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
-<span class="c"># 페이지 텍스트 모두 파싱</span>
-</code></pre>
-</div>
-<p><br /></p>
-<h2 id="해석기">해석기</h2>
-<p>뷰티플수프는 파이썬 기본 라이브러리에 있는 HTML 해석기를 지원하지만, 또한 제 3의 해석기도 지원한다. 그 대표적인 해석기로 lxml 해석기가 있다.</p>
-
-<h4 id="각-해석기의-장단점">&lt;각 해석기의 장단점&gt;</h4>
-<ul>
-  <li><strong>BeautifulSoup(markup, ‘html.parser’)</strong>
-    <ul>
-      <li>장점 : 적절한 속도</li>
-      <li>단점 : 특정 버전에서만 관대함</li>
-    </ul>
-  </li>
-  <li><strong>BeautifulSoup(markup, ‘lxml’)</strong>
-    <ul>
-      <li>장점 : 아주 빠름</li>
-      <li>단점 : 외부 C 라이브러리 의존</li>
-    </ul>
-  </li>
-  <li><strong>BeautifulSoup(‘lxml’, ‘lxml’)</strong>
-    <ul>
-      <li>아주 빠르고 유일하게 XML 해석기 지원</li>
-      <li>외부 C 라이브러리 의존</li>
-    </ul>
-  </li>
-</ul>
+<p>서버 실행 at 터미널</p>
+<blockquote>
+  <p>ssh -i ~/.ssh/bbungsang.pem ubuntu@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com</p>
+</blockquote>
 
 <p><br /></p>
-<h2 id="객체의-종류">객체의 종류</h2>
-<h3 id="태그">태그</h3>
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- 태그 객체 생성 --&gt;</span>
-soup = BeautifulSoup('<span class="nt">&lt;b</span> <span class="na">class=</span><span class="s">"boldest"</span><span class="nt">&gt;</span>Bold<span class="nt">&lt;/b&gt;</span>')
-tag = soup.b
+
+<h5 id="--해당-서버에-처음-접속한-것이라면-마치-처음으로-우분투-리눅스-운영체제를-실행하는-것과-같은-것이므로-필요한-패키지를-설치해야한다">- 해당 서버에 처음 접속한 것이라면 마치 처음으로 우분투 리눅스 운영체제를 실행하는 것과 같은 것이므로 필요한 패키지를 설치해야한다.</h5>
+
+<h4 id="python-pip-설치">python-pip 설치</h4>
+<p>sudo apt-get install python-pip</p>
+
+<h4 id="zsh-설치">zsh 설치</h4>
+<p>sudo apt-get install zsh</p>
+
+<h4 id="oh-my-zsh-설치">oh-my-zsh 설치</h4>
+<p>sudo curl -l http://install.ohmyz.sh | sh</p>
+
+<h4 id="default-shell-변경">Default shell 변경</h4>
+<p>sudo chsh ubuntu -s /usr/bin/zsh</p>
+
+<h4 id="pyenv-requirements-설치">pyenv requirements 설치</h4>
+<p>sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils</p>
+
+<h4 id="pyenv-설치">pyenv 설치</h4>
+<p>curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash</p>
+
+<h4 id="pyenv-설정을-zshrc-에-기록">pyenv 설정을 .zshrc 에 기록</h4>
+<p>vi ~/.zshrc <br />
+export PATH=”/home/ubuntu/.pyenv/bin:$PATH” <br />
+eval “$(pyenv init -)” <br />
+eval “$(pyenv virtualenv-init -)”</p>
+
+<h3 id="aws-cli-통해서-로컬에-인스턴스-파일-전송하기">aws cli 통해서 로컬에 인스턴스 파일 전송하기</h3>
+<p>로컬 컴퓨터와 Linux 인스턴스 간에 파일을 전송하는 방법은 SCP(Secure Copy)를 사용하는 것이다.</p>
+
+<ol>
+  <li>
+    <p>(선택사항) <code class="highlighter-rouge">aws ec2 get-console-output --instance-id &lt;해당 인터페이스의 아이디&gt;</code> 을 통해 얻은 SSH HOST KEY FINGERPRINTS 와 aws 페이지의 finger prints 와 비교한다.</p>
+  </li>
+  <li>
+    <p>명령 쉘에서 지정한 private key 파일의 위치로 이동한다.</p>
+  </li>
+  <li>
+    <p>chomod 를 사용하여 private key 파일을 공개적으로 볼 수 있는지 확인한다. <code class="highlighter-rouge">chmod 400 my-key-pair.pem</code></p>
+  </li>
+  <li>
+    <p>인스턴스의 Public DNS 를 사용하여 인스턴스 파일을 전송한다.</p>
+    <ul>
+      <li><code class="highlighter-rouge">scp -i ~/.ssh/bbungsang.pem -r /home/bbungsang/deploy-ec2 ubuntu@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com:/srv/deploy_ec2</code></li>
+      <li>그 전에, AWS 서버의 root 위치의 /srv/ 의 사용자 권한을 살펴보고 권한자가 root 라면, <code class="highlighter-rouge">sudo chown -R ubuntu:ubuntu /srv/</code> 를 통해서 권한을 바꿔준다. 이를 통해서 ubuntu 계정이 접근하면, 쓰기 권한을 받을 수 있다.</li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote>
+  <p>명령어 살펴보기  (๑•̀ㅂ•́)و✧</p>
+  <ul>
+    <li>scp -i ~/.ssh/bbungsang.pem -r /home/bbungsang/deploy-ec2 ubuntu@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com:/srv/deploy_ec2</li>
+    <li>scp 는 원래 파일 1개만 업로드한다. 하지만 폴더 자체를 업로드하고 싶다면, 옵션 사항을 주면 된다.</li>
+    <li><strong>-r .</strong> : <code class="highlighter-rouge">r</code> 은 recursive <code class="highlighter-rouge">.</code> 은 앞에 설정한 현재 폴더를 가리킨다.</li>
+    <li>현재 폴더의 모든 내용을 ubuntu server 의 deploy_ec2 라는 폴더 안에 업로드한다는 의미를 가지고 있다.</li>
+  </ul>
+</blockquote>
+
+<h3 id="간단한-명령어로-로컬-인스턴스-파일-전송하기">간단한 명령어로 로컬 인스턴스 파일 전송하기</h3>
+<p>[~/.zshrc]</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="n">alias</span> <span class="n">con</span><span class="o">-</span><span class="n">ec2</span><span class="o">=</span><span class="s">"ssh -i ~/.ssh/bbungsang.pem ubuntu@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com"</span>
+<span class="n">alias</span> <span class="n">delete</span><span class="o">-</span><span class="n">ec2</span><span class="o">=</span><span class="s">"scp -i ~/.ssh/bbungsang.pem /home/bbungsang/deploy-ec2 ubuntu@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com rm -rf /srv/deploy_ec2"</span>
+<span class="n">alias</span> <span class="n">scp</span><span class="o">-</span><span class="n">ec2</span><span class="o">-</span><span class="n">ori</span><span class="o">=</span><span class="s">"scp -i ~/.ssh/bbungsang.pem -r /home/bbungsang/deploy-ec2 ubuntu@ec2-11-111-111-11.ap-northeast-2.compute.amazonaws.com:/srv/deploy_ec2"</span>
+<span class="n">alias</span> <span class="n">scp</span><span class="o">-</span><span class="n">ec2</span><span class="o">=</span><span class="s">"delete-ec2 &amp;&amp; scp-ec2-ori"</span>
 </code></pre>
 </div>
-
 <ul>
-  <li>
-    <p>태그마다 이름이 있고 <code class="highlighter-rouge">&lt;태그객체&gt;.name</code>으로 접근한다.</p>
-  </li>
-  <li>
-    <p>태그는 속성을 여러개 가질 수 있다. <code class="highlighter-rouge">&lt;태그객체&gt;['class']</code> 으로 접근하면 해당 값인 <code class="highlighter-rouge">boldest</code>가 반환된다.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">&lt;태그객체&gt;.attrs</code>로 접근하면 <code class="highlighter-rouge"><span class="p">{</span><span class="err">'class'</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">'boldest'</span><span class="w"> </span><span class="p">}</span></code> 딕셔너리 형태로 반환된다.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">&lt;태그객체&gt;.string.replace_with(NotBold)</code> 문자열을 다른 문자열로 바꾼다 <br />
-<code class="highlighter-rouge">&lt;b class='boldest'&gt;NotBold&lt;/b&gt;</code></p>
-  </li>
+  <li>‘con-ec2’, ‘scp-ec2’ 의 간단한 명령어를 통해서 서버 실행과 인스턴스 파일 업로드가 가능해진다.</li>
 </ul>
 
     </section>
     <br><br>
     <footer>
       
-      <a href="/basic/2017/05/27/python-basic-string-list-tuple.html" class="float-left">&larr; Previous post</a> 
+      <a href="/aws/2017/06/29/(3)SSH-Linux-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B3.html" class="float-left">&larr; Previous post</a> 
       
-      <a href="/tryhelloworld/2017/05/28/tryhelloworld-algorithm-level1-1.html" class="float-right">Next post &rarr;</a> 
       <br><br>
       
   <div id="disqus_thread"></div>
