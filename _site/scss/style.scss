@@ -4,6 +4,7 @@
 
 .container {
   width: 100% !important;
+  // height: 100%;
   overflow: hidden;
   display: inline-block;
 
@@ -34,24 +35,24 @@
   }
 
   h1 {
-    font-size: 42px;
     font-weight: bold;
     color: #135589;
   }
 
-  h2, h3 {
-    color: #E2B49A;
-    font-weight: bold;
+  h3 {
+    color: #D1A827;
   }
 
   h4 {
-    color: #193446;
+    font-size: 20px;
+    font-weight: bold;
+    color: #687672;
   }
 
   .side-bar {
     background: #E9C77B;
     position: absolute;
-    height: auto;
+    height: 100%;
     width: 272px;
     color: #fff;
     transition: margin-left 0.5s;
@@ -207,11 +208,28 @@
       .intro {
           width: 100%;
           height: 320px;
+
+          .words-en {
+            font-size: 16px;
+            font-family: 'Architects Daughter';
+          }
+
+          .words-ko {
+            color: #9AABB9;
+            font-size: 20px;
+            font-family: 'Nanum Brush Script';
+          }
         }
 
       .upload-list {
         width: 100%;
         height: auto;
+
+        .thigs-i-upload {
+          font-weight: bold;
+          font-family: 'Bubbler One';
+          color: #135589;
+        }
       }
     }
   }
@@ -255,7 +273,7 @@
 	.main-img {
 		display: block;
 		width: 200px;
-    height: 175px;
+    height: 170px;
     border-radius: 10px;
 	}
 

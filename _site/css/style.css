@@ -102,24 +102,24 @@
 }
 
 .container h1 {
-  font-size: 42px;
   font-weight: bold;
   color: #135589;
 }
 
-.container h2, .container h3 {
-  color: #E2B49A;
-  font-weight: bold;
+.container h3 {
+  color: #D1A827;
 }
 
 .container h4 {
-  color: #193446;
+  font-size: 20px;
+  font-weight: bold;
+  color: #687672;
 }
 
 .container .side-bar {
   background: #E9C77B;
   position: absolute;
-  height: auto;
+  height: 100%;
   width: 272px;
   color: #fff;
   transition: margin-left 0.5s;
@@ -246,9 +246,26 @@
   height: 320px;
 }
 
+.container .content .main-wrap .intro .words-en {
+  font-size: 16px;
+  font-family: 'Architects Daughter';
+}
+
+.container .content .main-wrap .intro .words-ko {
+  color: #9AABB9;
+  font-size: 20px;
+  font-family: 'Nanum Brush Script';
+}
+
 .container .content .main-wrap .upload-list {
   width: 100%;
   height: auto;
+}
+
+.container .content .main-wrap .upload-list .thigs-i-upload {
+  font-weight: bold;
+  font-family: 'Bubbler One';
+  color: #135589;
 }
 
 .container .active > .side-bar {
@@ -289,7 +306,7 @@
 .container .main-img {
   display: block;
   width: 200px;
-  height: 175px;
+  height: 170px;
   border-radius: 10px;
 }
 
