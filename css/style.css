@@ -1,6 +1,6 @@
 #container {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 #container .empty {
@@ -13,7 +13,42 @@
   width: 100%;
   height: auto;
   padding-left: 70px;
+  padding-bottom: 10px;
   float: left;
-  font-size: 16px;
-  color: #68dff0;
+  font-size: 18px;
+}
+
+#container .category-list .category-title h3 {
+  padding-left: 25px;
+  color: #2096BA;
+}
+
+#container .category-list .category-title ul a.post-title {
+  color: #709FB0;
+}
+
+#container .category-list .category-title ul a:hover {
+  color: #2096BA;
+}
+
+#container .float-left {
+  float: left;
+  padding: 5px 14px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+#container .float-left:hover {
+  background: #ddd;
+}
+
+#container .float-right {
+  float: right;
+  padding: 5px 14px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+#container .float-right:hover {
+  background: #ddd;
 }
