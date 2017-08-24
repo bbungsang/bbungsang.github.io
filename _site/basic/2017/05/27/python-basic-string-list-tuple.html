@@ -1,10 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>뿡상의 개발새발 공책</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/post.css" />
 	<link rel="stylesheet" href="/css/etc.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- font -->
@@ -13,120 +15,118 @@
 	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css?family=Nanum Brush Script' rel='stylesheet'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap core CSS -->
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Custom styles for this template -->
+	<link href="/css/style-header.css" rel="stylesheet">
+	<link href="/css/style-responsive.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <!-- 사이드바 이동하게 해줌 -->
-      <div class="wrapper">
-        <script>
-  $(document).ready(function(){
-    $(".push_menu").click(function(){
-         $(".wrapper").toggleClass("active");
-    });
-  });
-</script>
-<body>
-  <div class="side-bar">
-    <ul>
-      <li class="menu-head">
-        <a href="#" class="push_menu">
-          <!-- <span class="glyphicon glyphicon-align-justify pull-right"></span> -->
-          <div class="bar-wrap">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-            <div class="bar4"></div>
-          </div>
-        </a>
-      </li>
-      <li class="menu-intro">
-        <span class="image photo"><img src="/images/itsme.jpg" class="main-img" /></span>
-        <h3 id="logo"><a href="/">Elena Kim</a></h3>
-        <p>
-          틀린 부분이 있거나 문의사항이<br>
-          있으면 언제든지 말씀해주세요 :D
-        </p>
-      </li>
-      <div class="menu">
-        <li>
-          <a href="/">
-            Home
-            <span class="glyphicon glyphicon-home pull-right"></span>
-          </a>
-        </li>
-        <li>
-          <a href="/python/basic.html">
-            Python
-            <span class="glyphicon glyphicon-flash pull-right"></span>
-          </a>
-        </li>
-        <li>
-          <a href="/django/djangogirls.html">
-            Django
-            <span class="glyphicon glyphicon-grain pull-right"></span>
-          </a>
-        </li>
-        <li>
-          <a href="/algorithm/tryhelloworld.html">
-            Algorithm
-            <span class="glyphicon glyphicon-education pull-right"></span>
-          </a>
-        </li>
-        <li>
-          <a href="/study/two-scoops.html">
-            Study
-            <span class="glyphicon glyphicon-paperclip pull-right"></span>
-          </a>
-        </li>
-        <li>
-          <a href="/etc/jekyll.html">
-            etc
-            <span class="glyphicon glyphicon-star pull-right"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="active">
-            Love snippet
-            <span class="glyphicon glyphicon-heart pull-right"></span>
-          </a>
-        </li>
-      </div>
-      <!-- <div class="search">
-        <li>
-          <div class="search-icon">
-            <span class="glyphicon glyphicon-search"></span>
-          </div>
-          <input type="text" name="search">
-        </li>
-      </div> -->
-    </ul>
-  </div>
+  <div id="container">
+        <div id="top-wrap">
+      <header class="header black-bg">
+        <!-- Menubar Button -->
+        <div class="sidebar-toggle-box">
+          <div class="fa fa-bars tooltips" data-placement="right"></div>
+        </div>
+        <!-- Logo -->
+        <a href="" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
+        <div class="nav notify-row" id="top_menu">
+        </div>
+        <div class="top-menu">
+        	<ul class="nav pull-right top-menu">
+            <li><a class="logout" href="https://github.com/bbungsang"><img src="/images/github.png" width="22px"></a></li>
+            <li><a class="logout" href="#"><img src="/images/facebook.png" width="22px"></a></li>
+        	</ul>
+        </div>
+      </header>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+        <div id="sidebar"  class="nav-collapse ">
+          <!-- sidebar menu start-->
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="profile.html"><img src="/images/ui-sam.jpg" class="img-circle" width="60"></a></p>
+        	  <h5 class="centered">Elena Kim</h5>
+            <li class="sub-menu">
+              <a href="javascript:;" >
+                <span class="glyphicon glyphicon-flash"></span>
+                Python
+              </a>
+              <ul class="sub">
+                <li><a href="/files/python/basic.html">문법</a></li>
+                <li><a href="/files/python/library.html">라이브러리</a></li>
+              </ul>
+            </li>
+
+            <li class="sub-menu">
+              <a href="javascript:;" >
+                <span class="glyphicon glyphicon-grain"></span>
+                Django
+              </a>
+              <ul class="sub">
+                <li><a href="/files/django/djangogirls.html">Do 장고걸스!</a></li>
+                <li><a href="/files/django/travel.html">Ask 장고 여행블로그 만들기</a></li>
+                <li><a href="/files/django/tutorial.html">장고 튜토리얼</a></li>
+                <li><a href="/files/django/instargram.html">인스타그램 프로젝트</a></li>
+              </ul>
+            </li>
+
+            <li class="sub-menu">
+              <a href="javascript:;" >
+                <span class="glyphicon glyphicon-tint"></span>
+                Algorithm
+              </a>
+              <ul class="sub">
+                <li><a href="/files/algorithm/tryhelloworld.html">Try Hello World</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;" >
+                <span class="glyphicon glyphicon-heart-empty"></span>
+                Study
+              </a>
+              <ul class="sub">
+                <li><a href="/files/study/two-scoops.html">두숟갈 스터디</a></li>
+                <li><a href="#">DRF</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;" >
+                <span class="glyphicon glyphicon-star"></span>
+                etc
+              </a>
+              <ul class="sub">
+                <li><a href="/files/etc/aws.html">AWS</a></li>
+                <li><a href="/fiels/etc/mentoring.html">개발자 멘토링</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="/js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="/js/jquery.scrollTo.min.js"></script>
+
+  <!--common script for all pages-->
+  <script src="/js/common-scripts.js"></script>
 </body>
+</html>
 
-        <!-- Main -->
-        <div class="content">
-          <div class="top-bar">
-            <div class="title">
-              Bbungsang's Boaring Note
-            </div>
-            <div class="contact">
-              <a href="https://github.com/bbungsang/">
-                <img src="/images/github.png" alt="" width="30px">
-              </a>
-              <a href="#">
-                <img src="/images/email.png" alt="" width="30px">
-              </a>
-              <a href="#">
-                <img src="/images/facebook.png" alt="" width="30px">
-              </a>
-            </div>
-          </div>
-
-          <div class="main-wrap">
-            <section>
-  <div class="container">
+      <div class="main">
     <header class="major">
       <h1>문자열, List, Tuple</h1>
       <div class="post-date">
@@ -274,15 +274,6 @@
   <div id="disqus_thread"></div>
   <script>
 
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
   (function() { // DON'T EDIT BELOW THIS LINE
   var d = document, s = d.createElement('script');
   s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
@@ -295,24 +286,7 @@
 
     </footer>
   </div>
-</section>
 
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-  <!-- 
-  <section id="footer">
-      <div class="container">
-          <ul class="copyright">
-              <li>&copy; Untitled. All rights reserved.</li>
-              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-              <li>Demo Images: <a href="https://unsplash.com/">Unsplash</a></li>
-              <li>Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
-          </ul>
-      </div>
-  </section>
- -->
 </body>
 </html>

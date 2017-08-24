@@ -1,162 +1,169 @@
 ---
 layout: default
 ---
-
-<style>
-  ul:first-child {
-    list-style-type: none;
-  }
-  .category-title a {
-    cursor: pointer;
-  }
-
-  .category-title .hide {
-    display: none;
-  }
-</style>
-
-<!-- <section class="intro">
-  <h1>뿡상의 심심한 개발로그</h1>
-  <p class="words-en">
-    Change will not come if we wait for some other person<br />
-    or some other time.<br />
-    We are the ones we've been waiting for.<br />
-    We are the change that we seek.
-  </p>
-  <p class="words-ko">
-    다른 사람이 가져오는 변화나 좋은 시기를 기다리기만 한다면 변화는 오지 않을 것이다.<br />
-    우리 자신이 바로 우리가 기다리던 사람이다.<br />
-    우리 자신이 바로 우리가 찾는 변화다.
-  </p>
-</section> -->
-
-<section class="upload-list">
-  <h2 class="thigs-i-upload">Things I Upload</h2>
-  <hr noshade>
+  <div class="empty"></div>
 
   <!-- python -->
-  <section>
-    <div class="container">
-      <div class="features">
-        <ul>
-          <li>
-            <a href="#" class="category-title"><h3>파이썬 문법</h3></a>
-            {% for post in site.categories.basic %}
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                  {{ post.title }}
-                  <small class="post-date">{{ post.date | date_to_string }}</small>
-                </a>
-              </li>
-            </ul>
-            {% endfor %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  {% include_relative python/library.html %}
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>파이썬 문법</h3></a>
+      {% for post in site.categories.basic %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
+
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>파이썬 라이브러리</h3></a>
+      {% for post in site.categories.library %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
 
   <!-- django -->
-  <section>
-    <div class="container">
-      <div class="features">
-        <ul>
-          <li>
-            <a href="#" class="category-title"><h3>Do 장고걸스!</h3></a>
-            {% for post in site.categories.djangogirls %}
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                  {{ post.title }}
-                  <small class="post-date">{{ post.date | date_to_string }}</small>
-                </a>
-              </li>
-            </ul>
-            {% endfor %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  {% include_relative django/travel.html %}
-  {% include_relative django/tutorial.html %}
-  {% include_relative django/instargram.html %}
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>Do 장고걸스!</h3></a>
+      {% for post in site.categories.djangogirls %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
+
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>여행 블로그</h3></a>
+      {% for post in site.categories.travel %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
+
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>인스타그램 프로젝트</h3></a>
+      {% for post in site.categories.instargram %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
+
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>장고 튜토리얼</h3></a>
+      {% for post in site.categories.tutorial %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
 
   <!-- algorithm -->
-  <section>
-    <div class="container">
-      <div class="features">
-        <ul>
-          <li>
-            <a href="#" class="category-title">
-              <h3>Solve Algorithm!</h3>
-            </a>
-            {% for post in site.categories.tryhelloworld %}
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                  {{ post.title }}
-                  <small class="post-date">{{ post.date | date_to_string }}</small>
-                </a>
-              </li>
-            </ul>
-            {% endfor %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>Solve Algorithm!</h3></a>
+      {% for post in site.categories.tryhelloworld %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
 
   <!-- study -->
-  <section>
-    <div class="container">
-      <div class="features">
-        <ul>
-          <li>
-            <a href="#" class="category-title">
-              <h3>두숟갈 스터디</h3>
-            </a>
-            {% for post in site.categories.two-scoops %}
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                  {{ post.title }}
-                  <small class="post-date">{{ post.date | date_to_string }}</small>
-                </a>
-              </li>
-            </ul>
-            {% endfor %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>두숟갈 스터디</h3></a>
+      {% for post in site.categories.two-scoops %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
 
   <!-- etc -->
-  <section>
-    <div class="container">
-      <div class="features">
-        <ul>
-          <li>
-            <a href="#" class="category-title"><h3>지킬 블로그 꾸미기</h3></a>
-            {% for post in site.categories.jekyll %}
-            <ul class="tags-exop-posts">
-              <li>
-                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                  {{ post.title }}
-                  <small class="post-date">{{ post.date | date_to_string }}</small>
-                </a>
-              </li>
-            </ul>
-            {% endfor %}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  {% include_relative etc/aws.html %}
-  {% include_relative etc/mentoring.html %}
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>아마존 웹 서비스</h3></a>
+      {% for post in site.categories.aws %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
 
-    <br><br>
+  <ul class="category-list">
+    <li>
+      <a href="#" class="category-title"><h3>개발자 멘토링</h3></a>
+      {% for post in site.categories.mentoring %}
+      <ul class="tags-exop-posts">
+        <li>
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small class="post-date">{{ post.date | date_to_string }}</small>
+          </a>
+        </li>
+      </ul>
+      {% endfor %}
+    </li>
+  </ul>
