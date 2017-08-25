@@ -4,7 +4,7 @@
   }
 
   #container .category-list {
-    margin-left: 155px;
+    margin-left: 190px;
     float: left;
   }
 
@@ -12,6 +12,22 @@
     margin-left: 170px;
     width: 73%;
     float: left;
+  }
+}
+
+@media (max-width: 432px) {
+  .top-menu {
+    /*visibility: hidden;*/
+    display: none;
+  }
+
+  #container .category-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  #container .category-list ul {
+    margin: 0;
   }
 }
 
