@@ -4,14 +4,19 @@
   }
 
   #container .category-list {
-    margin-left: 190px;
+    margin: 0 220px;
+    padding-left: 20px;
     float: left;
   }
 
   .main {
-    margin-left: 170px;
-    width: 73%;
-    float: left;
+    margin: 0 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  #container .category-list {
+    
   }
 }
 
@@ -23,12 +28,22 @@
 
   #container .category-list {
     margin: 0;
+  }
+
+  #container .category-list h3 {
+    margin: 0;
     padding: 0;
   }
 
   #container .category-list ul {
     margin: 0;
+    padding-left: 10px;
   }
+
+  .main {
+    margin: 0 30px;
+  }
+
 }
 
 @media screen and (max-height: 450px) {

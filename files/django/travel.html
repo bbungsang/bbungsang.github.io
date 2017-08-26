@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<div class="category-list">
-  <ul>
+<div class="category">
+  <ul class="category-list">
     <li class="category-title">
-      <h3>여행 블로그</h3>
+      <a href="{{ site.baseurl }}/files/django/travel.html"><h3>여행 블로그</h3></a>
       {% for post in site.categories.travel %}
       <ul class="tags-exop-posts">
         <li>
