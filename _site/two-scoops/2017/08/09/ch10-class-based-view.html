@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="container" class="container">
     
 <div id="top-wrap">
   <header class="header black-bg">
@@ -126,12 +126,13 @@
 <script src="/js/common-scripts.js"></script>
 
     <div class="empty"></div>
-      <div class="main">
-    <header class="major">
-      <h1>[10장] 클래스 기반 뷰</h1>
-      <div class="post-date">
-        <small>09 Aug 2017</small><br>
-        <img src="/images/tags.png" class="tag-img"/>
+        <div id="markdown" class="markdown">
+    <div class="md-content">
+      <header class="major">
+        <div class="h1">[10장] 클래스 기반 뷰</div>
+        <div class="date-tags">
+          09 Aug 2017
+          <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
@@ -140,11 +141,11 @@
 </div>
 <br/>
 
-      </div>
-    </header>
-    <hr noshade>
-    <section class="post-content">
-      <h2 id="장고의-뷰">장고의 뷰</h2>
+        </div>
+      </header>
+      <hr noshade>
+      <section class="post-content">
+        <h2 id="장고의-뷰">장고의 뷰</h2>
 <ul>
   <li>장고의 뷰는 요청 객체를 받고 응답 객체를 반환하는 내장 함수이다.</li>
   <li><code class="highlighter-rouge">함수 기반 뷰</code>는 뷰 함수 자체가 내장 함수이고,</li>
@@ -281,14 +282,14 @@ class PostCreate(LoginRequiredMixin, CreateView):
   <p><strong>➜</strong> 책이 잘못된 듯;</p>
 </blockquote>
 
-    </section>
-    <br><br>
-    <footer>
-      
-      <a href="/two-scoops/2017/08/02/ch9-func-based-view.html" class="float-left">&larr; Previous post</a> 
-      
+      </section>
       <br><br>
-      
+      <footer>
+        
+        <a href="/two-scoops/2017/08/02/ch9-func-based-view.html" class="float-left">&larr; Previous post</a> 
+        
+        <br><br>
+        
   <div id="disqus_thread"></div>
   <script>
 
@@ -302,7 +303,8 @@ class PostCreate(LoginRequiredMixin, CreateView):
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-    </footer>
+      </footer>
+    </div>
   </div>
 
   </div>

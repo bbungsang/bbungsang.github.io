@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="container" class="container">
     
 <div id="top-wrap">
   <header class="header black-bg">
@@ -126,12 +126,13 @@
 <script src="/js/common-scripts.js"></script>
 
     <div class="empty"></div>
-      <div class="main">
-    <header class="major">
-      <h1>장고 튜토리얼 파트3-2</h1>
-      <div class="post-date">
-        <small>03 Jun 2017</small><br>
-        <img src="/images/tags.png" class="tag-img"/>
+        <div id="markdown" class="markdown">
+    <div class="md-content">
+      <header class="major">
+        <div class="h1">장고 튜토리얼 파트3-2</div>
+        <div class="date-tags">
+          03 Jun 2017
+          <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
@@ -142,11 +143,11 @@
 </div>
 <br/>
 
-      </div>
-    </header>
-    <hr noshade>
-    <section class="post-content">
-      <h4 id="-vote"># vote</h4>
+        </div>
+      </header>
+      <hr noshade>
+      <section class="post-content">
+        <h4 id="-vote"># vote</h4>
 <p><strong>[polls/views.py]</strong></p>
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span><span class="p">,</span> <span class="n">render</span>
 <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span><span class="p">,</span> <span class="n">HttpResponse</span>
@@ -217,15 +218,15 @@
 </div>
 <p><strong>[polls/results.html]</strong></p>
 
-    </section>
-    <br><br>
-    <footer>
-      
-      <a href="/tutorial/2017/06/03/django-tutorial-part3-1.html" class="float-left">&larr; Previous post</a> 
-      
-      <a href="/travel/2017/06/04/aksdjango-DjangoApp-URLConf-Template.html" class="float-right">Next post &rarr;</a> 
+      </section>
       <br><br>
-      
+      <footer>
+        
+        <a href="/tutorial/2017/06/03/django-tutorial-part3-1.html" class="float-left">&larr; Previous post</a> 
+        
+        <a href="/travel/2017/06/04/aksdjango-DjangoApp-URLConf-Template.html" class="float-right">Next post &rarr;</a> 
+        <br><br>
+        
   <div id="disqus_thread"></div>
   <script>
 
@@ -239,7 +240,8 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-    </footer>
+      </footer>
+    </div>
   </div>
 
   </div>

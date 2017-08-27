@@ -48,24 +48,45 @@ var Script = function () {
         $(window).on('resize', responsiveView);
     });
 
+    // sidebar 에 따라서 #content 과 #main margin-left 변경
     $('.fa-bars').click(function () {
         if ($('#sidebar > ul').is(":visible") === true) {
-            $('#main-content').css({
-                'margin-left': '0px'
+            $('#sidebar').css({ // 사이드바가 없을 때
+                'margin-left': '-210px',
+                'transition': '0.5s'
             });
-            $('#sidebar').css({
-                'margin-left': '-210px'
+            $('#content').css({
+              'margin-left': '10px',
+              'width': '69.5%',
+              'transition': '0.5s'
             });
+            $('#widget').css({
+              'width': '29%'
+            });
+            // $('#markdown').css({
+            //     'background': 'blue',
+            //     'transition': '0.5s'
+            // });
             $('#sidebar > ul').hide();
             $("#container").addClass("sidebar-closed");
         } else {
-            $('#main-content').css({
-                'margin-left': '210px'
-            });
             $('#sidebar > ul').show();
             $('#sidebar').css({
-                'margin-left': '0'
+                'margin-left': '0',
+                'transition': '0.5s'
             });
+            $('#content').css({
+              'margin-left': '220px',
+              'width': '59%',
+              'transition': '0.5s'
+            });
+            $('#widget').css({
+              'width': '25%'
+            });
+            // $('#markdown').css({
+            //   'background': 'red',
+            //   'width': '100%',
+            // });
             $("#container").removeClass("sidebar-closed");
         }
     });

@@ -1,8 +1,10 @@
 @import 'variables';
 
-#container {
+.container {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 
   .empty {
     width: 100%;
@@ -10,59 +12,45 @@
     float: left;
   }
 
-  .category-list {
+  .content {
     width: 100%;
     height: auto;
     float: left;
-    padding: 0 35px;
 
-    font-size: 18px;
+    .category-list {
+      width: 100%;
+      height: auto;
+      float: left;
 
-    .category-title {
+      font-size: 17px;
 
-      h3 {
-        font-size: 24px;
-        color: #135589;
-        font-weight: bold;
-        margin: 30px 0 10px 0;
-      }
+      .category-title {
+        width: 100%;
+        height: auto;
+        float: left;
 
-      ul {
-        margin: 0;
-        padding-left: 10px;
-
-        a.post-title {
-          color: #709FB0;
+        h3 {
+          font-size: 24px;
+          color: #135589;
+          font-weight: bold;
+          margin: 30px 0 10px 0;
         }
 
-        a:hover {
-          color: #2096BA;
+        ul {
+          margin: 0;
+          padding-left: 5px;
+
+          a.post-title {
+            color: #709FB0;
+          }
+
+          a:hover {
+            color: #2096BA;
+            font-size: 18px;
+            transition: 0.5s;
+          }
         }
       }
     }
-  }
-
-  .float-left {
-    float: left;
-
-    padding: 5px 14px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-  }
-
-  .float-left:hover {
-    background: #ddd;
-  }
-
-  .float-right {
-    float: right;
-
-    padding: 5px 14px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-  }
-
-  .float-right:hover {
-    background: #ddd;
   }
 }

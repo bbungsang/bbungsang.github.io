@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="container" class="container">
     
 <div id="top-wrap">
   <header class="header black-bg">
@@ -126,12 +126,13 @@
 <script src="/js/common-scripts.js"></script>
 
     <div class="empty"></div>
-      <div class="main">
-    <header class="major">
-      <h1>[AWS] 1. 장고 settings 설정하기</h1>
-      <div class="post-date">
-        <small>29 Jun 2017</small><br>
-        <img src="/images/tags.png" class="tag-img"/>
+        <div id="markdown" class="markdown">
+    <div class="md-content">
+      <header class="major">
+        <div class="h1">[AWS] 1. 장고 settings 설정하기</div>
+        <div class="date-tags">
+          29 Jun 2017
+          <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
@@ -144,11 +145,11 @@
 </div>
 <br/>
 
-      </div>
-    </header>
-    <hr noshade>
-    <section class="post-content">
-      <h2 id="1-가상-환경-만든-후-장고-프로젝트-실행하기">1. 가상 환경 만든 후, 장고 프로젝트 실행하기</h2>
+        </div>
+      </header>
+      <hr noshade>
+      <section class="post-content">
+        <h2 id="1-가상-환경-만든-후-장고-프로젝트-실행하기">1. 가상 환경 만든 후, 장고 프로젝트 실행하기</h2>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">pyenv</span> <span class="n">virtualenv</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">3</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
 <span class="c"># 해당 디렉토리 이동 후 가상 환경 적용</span>
@@ -229,15 +230,15 @@ settings_deploy.json</a></li>
 <code class="highlighter-rouge">./manage.py runserver --settings=config.settings.debug</code></li>
 </ul>
 
-    </section>
-    <br><br>
-    <footer>
-      
-      <a href="/instargram/2017/06/16/instargram-memberapp-login.html" class="float-left">&larr; Previous post</a> 
-      
-      <a href="/aws/2017/06/29/(2)EC2-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html" class="float-right">Next post &rarr;</a> 
+      </section>
       <br><br>
-      
+      <footer>
+        
+        <a href="/instargram/2017/06/16/instargram-memberapp-login.html" class="float-left">&larr; Previous post</a> 
+        
+        <a href="/aws/2017/06/29/(2)EC2-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html" class="float-right">Next post &rarr;</a> 
+        <br><br>
+        
   <div id="disqus_thread"></div>
   <script>
 
@@ -251,7 +252,8 @@ settings_deploy.json</a></li>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-    </footer>
+      </footer>
+    </div>
   </div>
 
   </div>

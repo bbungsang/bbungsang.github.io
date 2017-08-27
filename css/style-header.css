@@ -6,7 +6,7 @@ body {
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
-    font-size:13px;
+    font-size: 13px;
 }
 
 ul li {
@@ -112,7 +112,7 @@ ul.sidebar-menu li ul.sub li:last-child{
 
 ul.sidebar-menu li ul.sub li a {
     font-size: 16px;
-    padding: 6px 0;
+    /*padding: 6px 0;*/
     line-height: 35px;
     height: 35px;
     -webkit-transition: all 0.3s ease;
@@ -214,8 +214,8 @@ ul.sidebar-menu li a.active i {
 .wrapper {
     display: inline-block;
     margin-top: 60px;
-    padding-left: 15px;
-    padding-right: 15px;
+    /*padding-left: 15px;
+    padding-right: 15px;*/
     padding-bottom: 15px;
     padding-top: 0px;
     width: 100%;
@@ -225,7 +225,7 @@ a.logo {
     font-size: 20px;
     color: #ffffff;
     float: left;
-    margin-top: 17px;
+    margin-top: 16px;
     text-transform: uppercase;
 }
 

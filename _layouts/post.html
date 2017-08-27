@@ -1,27 +1,27 @@
 ---
 layout: default
 ---
-
-
-  <div class="main">
-    <header class="major">
-      <h1>{{ page.title }}</h1>
-      <div class="post-date">
-        <small>{{ page.date | date_to_string }}</small><br>
-        {% include post_tags.html %}
-      </div>
-    </header>
-    <hr noshade>
-    <section class="post-content">
-      {{ content }}
-    </section>
-    <br><br>
-    <footer>
-      {% if page.previous %}
-      <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
-      {% if page.next %}
-      <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+  <div id="markdown" class="markdown">
+    <div class="md-content">
+      <header class="major">
+        <div class="h1">{{ page.title }}</div>
+        <div class="date-tags">
+          {{ page.date | date_to_string }}
+          {% include post_tags.html %}
+        </div>
+      </header>
+      <hr noshade>
+      <section class="post-content">
+        {{ content }}
+      </section>
       <br><br>
-      {% include /comments.html %}
-    </footer>
+      <footer>
+        {% if page.previous %}
+        <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
+        {% if page.next %}
+        <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
+        <br><br>
+        {% include /comments.html %}
+      </footer>
+    </div>
   </div>

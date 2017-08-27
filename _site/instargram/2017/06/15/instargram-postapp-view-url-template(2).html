@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="container" class="container">
     
 <div id="top-wrap">
   <header class="header black-bg">
@@ -126,12 +126,13 @@
 <script src="/js/common-scripts.js"></script>
 
     <div class="empty"></div>
-      <div class="main">
-    <header class="major">
-      <h1>[인스타그램] post앱 뷰, URL, 템플릿(2) - post_detail</h1>
-      <div class="post-date">
-        <small>15 Jun 2017</small><br>
-        <img src="/images/tags.png" class="tag-img"/>
+        <div id="markdown" class="markdown">
+    <div class="md-content">
+      <header class="major">
+        <div class="h1">[인스타그램] post앱 뷰, URL, 템플릿(2) - post_detail</div>
+        <div class="date-tags">
+          15 Jun 2017
+          <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
@@ -142,11 +143,11 @@
 </div>
 <br/>
 
-      </div>
-    </header>
-    <hr noshade>
-    <section class="post-content">
-      <h3 id="post_detail-뷰-구상하기">post_detail 뷰 구상하기</h3>
+        </div>
+      </header>
+      <hr noshade>
+      <section class="post-content">
+        <h3 id="post_detail-뷰-구상하기">post_detail 뷰 구상하기</h3>
 <ul>
   <li>Post 모델에 해당 데이터가 존재하면, 인자로 받은 pk와 동일한 값이 포함된 Row 데이터를 post 변수에 할당한다.</li>
   <li>데이터가 존재하지 않으면, post/post_list.html 로 돌아간다.</li>
@@ -266,15 +267,15 @@
   </ul>
 </blockquote>
 
-    </section>
-    <br><br>
-    <footer>
-      
-      <a href="/instargram/2017/06/15/instargram-postapp-view-url-template(1).html" class="float-left">&larr; Previous post</a> 
-      
-      <a href="/instargram/2017/06/16/instargram-memberapp-login.html" class="float-right">Next post &rarr;</a> 
+      </section>
       <br><br>
-      
+      <footer>
+        
+        <a href="/instargram/2017/06/15/instargram-postapp-view-url-template(1).html" class="float-left">&larr; Previous post</a> 
+        
+        <a href="/instargram/2017/06/16/instargram-memberapp-login.html" class="float-right">Next post &rarr;</a> 
+        <br><br>
+        
   <div id="disqus_thread"></div>
   <script>
 
@@ -288,7 +289,8 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-    </footer>
+      </footer>
+    </div>
   </div>
 
   </div>
