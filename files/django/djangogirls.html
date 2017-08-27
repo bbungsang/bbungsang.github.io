@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<div class="category">
+<div id="content" class="content">
+  <!-- python -->
   <ul class="category-list">
     <li class="category-title">
       <a href="{{ site.baseurl }}/files/django/djangogirls.html"><h3>Do 장고걸스!</h3></a>
@@ -10,7 +11,7 @@ layout: default
       <ul class="tags-exop-posts">
         <li>
           <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
+            - {{ post.title }}
             <small class="post-date">{{ post.date | date_to_string }}</small>
           </a>
         </li>
@@ -18,4 +19,21 @@ layout: default
       {% endfor %}
     </li>
   </ul>
+</div>
+<div id="widget" class="widget">
+  <div class="recent-post-title">
+    <img src="images/rocket.png" width="27px">
+    최신 글 바로가기
+  </div>
+  {% for post in site.posts | limit:7 %}
+  <div class="recent-posts">
+    <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+      - {{ post.title }}
+    </a>
+  </div>
+  {% endfor %}
+
+  <div class="calendar">
+
+  </div>
 </div>
