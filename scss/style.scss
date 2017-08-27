@@ -16,6 +16,7 @@
     width: 100%;
     height: auto;
     float: left;
+    margin-bottom: 20px;
 
     .category-list {
       width: 100%;
@@ -30,10 +31,11 @@
         float: left;
 
         h3 {
-          font-size: 24px;
-          color: #135589;
+          font-family: 'Nanum Barun Gothic', sans-serif;
+          font-size: 22px;
+          color: #6B82A8;
           font-weight: bold;
-          margin: 30px 0 10px 0;
+          margin: 30px 0 10px 5px;
         }
 
         ul {
@@ -41,11 +43,11 @@
           padding-left: 5px;
 
           a.post-title {
-            color: #709FB0;
+            color: #A6A6A6;
           }
 
           a:hover {
-            color: #2096BA;
+            color: #FBB79E;
             font-size: 18px;
             transition: 0.5s;
           }

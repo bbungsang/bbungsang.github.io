@@ -37,15 +37,16 @@
 
   .container .widget .recent-post-title {
     width: 95%;
-    height: 55px;
-    line-height: 55px;
-    background: #F2AD9F;
+    height: 50px;
+    line-height: 50px;
+    background: #FBB79E;
     margin: 0 auto;
     float: center;
 
     text-align: center;
     font-size: 18px;
     color: #fff;
+    /*font-family: 'Nanum Brush Script';*/
   }
 
   .container .widget .recent-posts {
@@ -78,6 +79,10 @@
     margin: 0 !important;
   }
 
+  .container .widget {
+    display: none;
+  }
+
   /*.container .markdown .md-content {
     width: 100%;
     height: auto;
@@ -86,7 +91,7 @@
   }*/
 }
 
-@media (max-width: 432px) {
+@media (max-width: 538px) {
   .container {
     width: 100%;
     margin: 0;
