@@ -103,7 +103,7 @@
   .markdown .date-tags {
     font-size: 16px;
     width: 100%;
-    height: 50px;
+    height: 20px;
     float: left; }
   .markdown .float-left {
     float: left;
@@ -125,13 +125,15 @@
     width: 100%;
     height: auto;
     float: left; }
-  .markdown .post-content ul {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    color: black; }
-    .markdown .post-content ul li {
-      list-style-type: disc; }
+  .markdown .post-content {
+    float: left; }
+    .markdown .post-content ul {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+      color: black; }
+      .markdown .post-content ul li {
+        list-style-type: disc; }
   .markdown .highlight {
     background-color: #222;
     padding: 5px 10px;

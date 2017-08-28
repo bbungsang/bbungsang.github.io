@@ -19,7 +19,7 @@
 
 .markdown .h1 { width: 100%; margin: 0; padding-bottom: 15px; font-weight: bold; color: #135589; float: left; }
 
-.markdown .date-tags { font-size: 16px; width: 100%; height: 50px; float: left; }
+.markdown .date-tags { font-size: 16px; width: 100%; height: 20px; float: left; }
 
 .markdown .float-left { float: left; padding: 5px; border: 1px solid #ddd; border-radius: 10px; background: #ddd; }
 
@@ -30,6 +30,8 @@
 .markdown .float-right:hover { background: skyblue; }
 
 .markdown blockquote { width: 100%; height: auto; float: left; }
+
+.markdown .post-content { float: left; }
 
 .markdown .post-content ul { margin: 10px; padding: 10px; font-size: 16px; color: black; }
 
