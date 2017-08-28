@@ -6,6 +6,14 @@
   height: auto;
   padding-top: 80px;
 
+  .markdown-body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 980px;
+		margin: 0 auto;
+		padding: 45px;
+	}
+
   /* Post */
   table {
     width: 100%;
@@ -77,9 +85,9 @@
       padding: 10px;
 
       font-size: 16px;
+      color: black;
     }
   }
-
 
   .highlight {
     background-color: $darkerGray;
@@ -95,8 +103,10 @@
   code {
     font-family: 'Courier', monospace;
     font-size: 14px;
-    color: #999
+    color: #999;
   }
+
+  code.highlight-rouge { color: #6C4F70 }
 
   .highlight .c, .highlight .c1 { color: #586E75 } /* Comment */
   .highlight .err { color: #93A1A1 } /* Error */

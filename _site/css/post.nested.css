@@ -72,6 +72,12 @@
   /* Name.Variable.Global */
   /* Name.Variable.Instance */
   /* Literal.Number.Integer.Long */ }
+  .markdown .markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px; }
   .markdown table {
     width: 100%; }
     .markdown table th {
@@ -115,7 +121,8 @@
   .markdown .post-content ul {
     margin: 10px;
     padding: 10px;
-    font-size: 16px; }
+    font-size: 16px;
+    color: black; }
   .markdown .highlight {
     background-color: #222;
     padding: 5px 10px;
@@ -127,6 +134,8 @@
     font-family: 'Courier', monospace;
     font-size: 14px;
     color: #999; }
+  .markdown code.highlight-rouge {
+    color: #6C4F70; }
   .markdown .highlight .c, .markdown .highlight .c1 {
     color: #586E75; }
   .markdown .highlight .err {
