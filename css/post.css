@@ -74,6 +74,15 @@
   /* Literal.Number.Integer.Long */
 }
 
+.markdown .center-image {
+  margin: 0 auto;
+  display: block;
+}
+
+.markdown .image-size {
+  width: 200px;
+}
+
 .markdown .markdown-body {
   box-sizing: border-box;
   min-width: 200px;
@@ -96,6 +105,10 @@
 
 .markdown a {
   color: #9a9a9a;
+}
+
+.markdown h2 {
+  color: #709FB0;
 }
 
 .markdown .h1 {
@@ -151,6 +164,10 @@
   color: black;
 }
 
+.markdown .post-content ul li {
+  list-style-type: disc;
+}
+
 .markdown .highlight {
   background-color: #222;
   padding: 5px 10px;
@@ -168,8 +185,8 @@
   color: #999;
 }
 
-.markdown code.highlight-rouge {
-  color: #6C4F70;
+.markdown .highlighter-rouge {
+  color: #3DDAD7;
 }
 
 .markdown .highlight .c, .markdown .highlight .c1 {

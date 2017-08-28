@@ -39,7 +39,7 @@
       <div class="fa fa-bars tooltips" data-placement="right"></div>
     </div>
     <!-- Logo -->
-    <a href="" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
+    <a href="/" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
     <div class="nav notify-row" id="top_menu">
     </div>
     <div class="top-menu">
@@ -176,128 +176,128 @@
 <h4 id="fbv">FBV</h4>
 <p>뷰 자체에서 페이스북 사용자 정보를 받고, 로그인까지 실행한다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>def facebook_login(request):
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">facebook_login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 
-    # 페이스북 로그인 버튼의 URL 을 통하여 facebook_login view 가 처음 호출될 때, 'code' request GET parameter 받으며, 'code' 가 없으면 오류 발생한다.
-    code = request.GET.get('code')
+    <span class="c"># 페이스북 로그인 버튼의 URL 을 통하여 facebook_login view 가 처음 호출될 때, 'code' request GET parameter 받으며, 'code' 가 없으면 오류 발생한다.</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'code'</span><span class="p">)</span>
 
-    ##
-    # 액세스 토큰 얻기
-    ##
+    <span class="c">##</span>
+    <span class="c"># 액세스 토큰 얻기</span>
+    <span class="c">##</span>
 
-    # code 인자를 받아서 Access Token 교환을 URL 에 요청후, 해당 Access Token 을 받는다.
-    def get_access_token(code):
+    <span class="c"># code 인자를 받아서 Access Token 교환을 URL 에 요청후, 해당 Access Token 을 받는다.</span>
+    <span class="k">def</span> <span class="nf">get_access_token</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
 
-        # Access Token 을 교환할 URL
-        exchange_access_token_url = 'https://graph.facebook.com/v2.9/oauth/access_token'
+        <span class="c"># Access Token 을 교환할 URL</span>
+        <span class="n">exchange_access_token_url</span> <span class="o">=</span> <span class="s">'https://graph.facebook.com/v2.9/oauth/access_token'</span>
 
-        # 이전에 요청했던 URL 과 같은 값 생성(Access Token 요청시 필요)
-        redirect_uri = '{}{}'.format(
-            settings.SITE_URL,
-            request.path,
-        )
+        <span class="c"># 이전에 요청했던 URL 과 같은 값 생성(Access Token 요청시 필요)</span>
+        <span class="n">redirect_uri</span> <span class="o">=</span> <span class="s">'{}{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">settings</span><span class="o">.</span><span class="n">SITE_URL</span><span class="p">,</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+        <span class="p">)</span>
 
-        # Access Token 요청시 필요한 파라미터
-        exchange_access_token_url_params = {
-            'client_id': settings.FACEBOOK_APP_ID,
-            'redirect_uri': redirect_uri,
-            'client_secret': settings.FACEBOOK_SECRET_CODE,
-            'code': code,
-        }
-        print(exchange_access_token_url_params)
+        <span class="c"># Access Token 요청시 필요한 파라미터</span>
+        <span class="n">exchange_access_token_url_params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'client_id'</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">FACEBOOK_APP_ID</span><span class="p">,</span>
+            <span class="s">'redirect_uri'</span><span class="p">:</span> <span class="n">redirect_uri</span><span class="p">,</span>
+            <span class="s">'client_secret'</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">FACEBOOK_SECRET_CODE</span><span class="p">,</span>
+            <span class="s">'code'</span><span class="p">:</span> <span class="n">code</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">exchange_access_token_url_params</span><span class="p">)</span>
 
-        # Access Token 을 요청한다.
-        response = requests.get(
-            exchange_access_token_url,
-            params=exchange_access_token_url_params,
-        )
-        result = response.json()
-        print(result)
+        <span class="c"># Access Token 을 요청한다.</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">exchange_access_token_url</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="n">exchange_access_token_url_params</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
-        # 응답받은 결과값에 'access_token'이라는 key 가 존재하면,
-        if 'access_token' in result:
-            # access_token key 의 value 를 반환한다.
-            return result['access_token']
-        elif 'error' in result:
-            raise Exception(result)
-        else:
-            raise Exception('Unknown error')
+        <span class="c"># 응답받은 결과값에 'access_token'이라는 key 가 존재하면,</span>
+        <span class="k">if</span> <span class="s">'access_token'</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="c"># access_token key 의 value 를 반환한다.</span>
+            <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="s">'access_token'</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="s">'error'</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="s">'Unknown error'</span><span class="p">)</span>
 
-    ##
-    # 액세스 토큰이 올바른지 검사
-    ##
-    def debug_token(token):
-        app_access_token = '{}|{}'.format(
-            settings.FACEBOOK_APP_ID,
-            settings.FACEBOOK_SECRET_CODE,
-        )
+    <span class="c">##</span>
+    <span class="c"># 액세스 토큰이 올바른지 검사</span>
+    <span class="c">##</span>
+    <span class="k">def</span> <span class="nf">debug_token</span><span class="p">(</span><span class="n">token</span><span class="p">):</span>
+        <span class="n">app_access_token</span> <span class="o">=</span> <span class="s">'{}|{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">settings</span><span class="o">.</span><span class="n">FACEBOOK_APP_ID</span><span class="p">,</span>
+            <span class="n">settings</span><span class="o">.</span><span class="n">FACEBOOK_SECRET_CODE</span><span class="p">,</span>
+        <span class="p">)</span>
 
-        debug_token_url = 'https://graph.facebook.com/debug_token'
-        debug_token_url_params = {
-            'input_token': token,
-            'access_token': app_access_token
-        }
+        <span class="n">debug_token_url</span> <span class="o">=</span> <span class="s">'https://graph.facebook.com/debug_token'</span>
+        <span class="n">debug_token_url_params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'input_token'</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
+            <span class="s">'access_token'</span><span class="p">:</span> <span class="n">app_access_token</span>
+        <span class="p">}</span>
 
-        response = requests.get(debug_token_url, debug_token_url_params)
-        result = response.json()
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">debug_token_url</span><span class="p">,</span> <span class="n">debug_token_url_params</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-        if 'error' in result['data']:
-            raise DebugTokenException(result)
-        else:
-            return result
+        <span class="k">if</span> <span class="s">'error'</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s">'data'</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">DebugTokenException</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">result</span>
 
 
-    ##
-    # 에러 메세지를 request 에 추가, 이전 페이지로 redirect
-    ##
-    def add_message_and_redirect_referer():
-        error_message = 'Facebook login error'
-        messages.error(request, error_message)
+    <span class="c">##</span>
+    <span class="c"># 에러 메세지를 request 에 추가, 이전 페이지로 redirect</span>
+    <span class="c">##</span>
+    <span class="k">def</span> <span class="nf">add_message_and_redirect_referer</span><span class="p">():</span>
+        <span class="n">error_message</span> <span class="o">=</span> <span class="s">'Facebook login error'</span>
+        <span class="n">messages</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">error_message</span><span class="p">)</span>
 
-        # 이전 URL 로 리다이렉트
-        return redirect(request.META['HTTP_REFERER'])
+        <span class="c"># 이전 URL 로 리다이렉트</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s">'HTTP_REFERER'</span><span class="p">])</span>
 
-    ##
-    # 발급받은 Access Token 을 이용하여 User 정보에 접근
-    ##
-    def get_user_info(user_id, token):
-        url_user_info = 'https://graph.facebook.com/v2.9/{user_id}'.format(user_id=user_id)
-        url_user_info_params = {
-            'access_token': token,
-            'fields': ','.join([
-                'id',
-                'name',
-                'email',
-            ])
-        }
-        response = requests.get(url_user_info, params=url_user_info_params)
-        result = response.json()
-        return result
+    <span class="c">##</span>
+    <span class="c"># 발급받은 Access Token 을 이용하여 User 정보에 접근</span>
+    <span class="c">##</span>
+    <span class="k">def</span> <span class="nf">get_user_info</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+        <span class="n">url_user_info</span> <span class="o">=</span> <span class="s">'https://graph.facebook.com/v2.9/{user_id}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">)</span>
+        <span class="n">url_user_info_params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'access_token'</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
+            <span class="s">'fields'</span><span class="p">:</span> <span class="s">','</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+                <span class="s">'id'</span><span class="p">,</span>
+                <span class="s">'name'</span><span class="p">,</span>
+                <span class="s">'email'</span><span class="p">,</span>
+            <span class="p">])</span>
+        <span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_user_info</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">url_user_info_params</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span>
 
-    ##
-    # 페이스북 로그인을 위해 정의한 함수 실행하기
-    ##
+    <span class="c">##</span>
+    <span class="c"># 페이스북 로그인을 위해 정의한 함수 실행하기</span>
+    <span class="c">##</span>
 
-    # code 가 없으면 에러 메세지를 request 에 추가하고 이전 페이지로 redirect
-    if not code:
-        return add_message_and_redirect_referer()
+    <span class="c"># code 가 없으면 에러 메세지를 request 에 추가하고 이전 페이지로 redirect</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">code</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">add_message_and_redirect_referer</span><span class="p">()</span>
 
-    try:
-        access_token = get_access_token(code)
-        debug_result = debug_token(access_token)
-        user_info = get_user_info(user_id=debug_result['data']['user_id'], token=access_token)
-        user = User.objects.get_or_create_facebook_user(user_info)
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">access_token</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+        <span class="n">debug_result</span> <span class="o">=</span> <span class="n">debug_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>
+        <span class="n">user_info</span> <span class="o">=</span> <span class="n">get_user_info</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">debug_result</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'user_id'</span><span class="p">],</span> <span class="n">token</span><span class="o">=</span><span class="n">access_token</span><span class="p">)</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create_facebook_user</span><span class="p">(</span><span class="n">user_info</span><span class="p">)</span>
 
-        django_login(request, user)
-        return redirect('books:main')
-    except GetAccessTokenException as e:
-        print(e.code)
-        print(e.message)
-        return add_message_and_redirect_referer()
-    except DebugTokenException as e:
-        print(e.code)
-        print(e.message)
-        return add_message_and_redirect_referer()
+        <span class="n">django_login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'books:main'</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">GetAccessTokenException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">add_message_and_redirect_referer</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">DebugTokenException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">add_message_and_redirect_referer</span><span class="p">()</span>
 
 </code></pre>
 </div>
@@ -305,31 +305,31 @@
 <h4 id="cbv">CBV</h4>
 <p><code class="highlighter-rouge">apiView</code>를 상속해서 token 값을 반환한다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class FaceBookLogin(APIView):
-    def post(self, request):
-        access_token = access_token_test(request)
-        debug_result = debug_token(access_token)
-        print(debug_result)
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FaceBookLogin</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token_test</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="n">debug_result</span> <span class="o">=</span> <span class="n">debug_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">debug_result</span><span class="p">)</span>
 
-        def get_user_info(user_id, token):
-            url_user_info = 'https://graph.facebook.com/v2.9/{user_id}'.format(user_id=user_id)
-            url_user_info_params = {
-                'access_token': token,
-                'fields': ','.join([
-                    'id',
-                    'name',
-                    'picture',
-                ])
-            }
-            response = requests.get(url_user_info, params=url_user_info_params)
-            result = response.json()
-            print(result)
-            return result
+        <span class="k">def</span> <span class="nf">get_user_info</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
+            <span class="n">url_user_info</span> <span class="o">=</span> <span class="s">'https://graph.facebook.com/v2.9/{user_id}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_id</span><span class="p">)</span>
+            <span class="n">url_user_info_params</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">'access_token'</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span>
+                <span class="s">'fields'</span><span class="p">:</span> <span class="s">','</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+                    <span class="s">'id'</span><span class="p">,</span>
+                    <span class="s">'name'</span><span class="p">,</span>
+                    <span class="s">'picture'</span><span class="p">,</span>
+                <span class="p">])</span>
+            <span class="p">}</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_user_info</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">url_user_info_params</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">result</span>
 
-        user_info = get_user_info(user_id=debug_result['data']['user_id'], token=access_token)
-        user = MyUser.objects.get_or_create_facebook_user(user_info)
-        token, created = user.get_user_token(user.pk)
-        return Response({'token': token.key})
+        <span class="n">user_info</span> <span class="o">=</span> <span class="n">get_user_info</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">debug_result</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'user_id'</span><span class="p">],</span> <span class="n">token</span><span class="o">=</span><span class="n">access_token</span><span class="p">)</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">MyUser</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create_facebook_user</span><span class="p">(</span><span class="n">user_info</span><span class="p">)</span>
+        <span class="n">token</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">get_user_token</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s">'token'</span><span class="p">:</span> <span class="n">token</span><span class="o">.</span><span class="n">key</span><span class="p">})</span>
 </code></pre>
 </div>
 
@@ -358,34 +358,34 @@
 <h4 id="느슨한-결합-유지하기">느슨한 결합 유지하기</h4>
 <p>[app-name/views.py]</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[import...]
-class TasteListView(ListView):
-	model = Tasting
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">import</span><span class="o">...</span><span class="p">]</span>
+<span class="k">class</span> <span class="nc">TasteListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Tasting</span>
 
-class TasteDetailView(DetailView):
-	model = Tasting
+<span class="k">class</span> <span class="nc">TasteDetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Tasting</span>
 
-[...]
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
 </code></pre>
 </div>
 
 <p>[app-name/urls.py]</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[import...]
-urlpatterns = [
-	url(
-		regex=r'^$',
-		view=views.TasteListVeiw.as_view(),
-		name='list',
-	),
-	url(
-		regex=r'^(?P&lt;pk&gt;\d+)/$',
-		view=views.TasteDetailVeiw.as_view(),
-		name='detail',
-	),
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">import</span><span class="o">...</span><span class="p">]</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="n">url</span><span class="p">(</span>
+		<span class="n">regex</span><span class="o">=</span><span class="s">r'^$'</span><span class="p">,</span>
+		<span class="n">view</span><span class="o">=</span><span class="n">views</span><span class="o">.</span><span class="n">TasteListVeiw</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span>
+		<span class="n">name</span><span class="o">=</span><span class="s">'list'</span><span class="p">,</span>
+	<span class="p">),</span>
+	<span class="n">url</span><span class="p">(</span>
+		<span class="n">regex</span><span class="o">=</span><span class="s">r'^(?P&lt;pk&gt;</span><span class="err">\</span><span class="s">d+)/$'</span><span class="p">,</span>
+		<span class="n">view</span><span class="o">=</span><span class="n">views</span><span class="o">.</span><span class="n">TasteDetailVeiw</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span>
+		<span class="n">name</span><span class="o">=</span><span class="s">'detail'</span><span class="p">,</span>
+	<span class="p">),</span>
 
-	[...]
-]
+	<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="p">]</span>
 </code></pre>
 </div>
 <ul>
@@ -429,15 +429,16 @@ urlpatterns = [
 </ul>
 
 <h4 id="뷰의-기본-형태">뷰의 기본 형태</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code># 함수 기반 뷰
-def function_based_view(request):
-	return HttpResponse("FBV")
 
-# 클래스 기반 뷰
-class ClassBasedView(View):
-	def get(self, request, *args, **kwargs):
-		# 비지니스 로직
-	return HttpResponse("CBV")
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># 함수 기반 뷰</span>
+<span class="k">def</span> <span class="nf">function_based_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+	<span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"FBV"</span><span class="p">)</span>
+
+<span class="c"># 클래스 기반 뷰</span>
+<span class="k">class</span> <span class="nc">ClassBasedView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="c"># 비지니스 로직</span>
+	<span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"CBV"</span><span class="p">)</span>
 </code></pre>
 </div>
 <ul>
@@ -448,7 +449,7 @@ class ClassBasedView(View):
       <br><br>
       <footer>
         
-        <a href="/aws/2017/06/30/(4)Amazon-linux-server.html" class="float-left">&larr; Previous post</a> 
+        <a href="/docker/2017/07/03/what-is-docker.html" class="float-left">&larr; Previous post</a> 
         
         <a href="/two-scoops/2017/08/02/ch9-func-based-view.html" class="float-right">Next post &rarr;</a> 
         <br><br>

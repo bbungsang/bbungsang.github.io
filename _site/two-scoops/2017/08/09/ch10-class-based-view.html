@@ -39,7 +39,7 @@
       <div class="fa fa-bars tooltips" data-placement="right"></div>
     </div>
     <!-- Logo -->
-    <a href="" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
+    <a href="/" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
     <div class="nav notify-row" id="top_menu">
     </div>
     <div class="top-menu">
@@ -217,32 +217,32 @@
 
 <p>[데코레이터 사용]</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>from django.views.generic import CreateView
-from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import login_required
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
+<span class="kn">from</span> <span class="nn">django.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
 
-from .models import Post
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
 
 
-class PostCreate(CreateView):
-	model = Post
+<span class="k">class</span> <span class="nc">PostCreate</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
 
-	@method_decorator(login_required(login_url='/member/login/'))
-	def dispatch(self, *args, **kwargs):
-		return super(PostCreate, self).dispatch(*args, **kwargs)
+	<span class="nd">@method_decorator</span><span class="p">(</span><span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s">'/member/login/'</span><span class="p">))</span>
+	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">PostCreate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre>
 </div>
 
 <p>[믹스인 사용]</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>from django.views.generic import CreateView
-from brace.views import LoginRequiredMixin
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
+<span class="kn">from</span> <span class="nn">brace.views</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span>
 
-from .models import Post
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
 
 
-class PostCreate(LoginRequiredMixin, CreateView):
-	model = Post
+<span class="k">class</span> <span class="nc">PostCreate</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
 </code></pre>
 </div>
 

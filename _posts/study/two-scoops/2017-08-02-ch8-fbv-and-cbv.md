@@ -27,7 +27,7 @@ comments: true
 #### FBV
 뷰 자체에서 페이스북 사용자 정보를 받고, 로그인까지 실행한다.
 
-```
+```python
 def facebook_login(request):
 
     # 페이스북 로그인 버튼의 URL 을 통하여 facebook_login view 가 처음 호출될 때, 'code' request GET parameter 받으며, 'code' 가 없으면 오류 발생한다.
@@ -156,7 +156,7 @@ def facebook_login(request):
 #### CBV
 `apiView`를 상속해서 token 값을 반환한다.
 
-```
+```python
 class FaceBookLogin(APIView):
     def post(self, request):
         access_token = access_token_test(request)
@@ -203,7 +203,7 @@ class FaceBookLogin(APIView):
 #### 느슨한 결합 유지하기
 [app-name/views.py]
 
-```
+```python
 [import...]
 class TasteListView(ListView):
 	model = Tasting
@@ -216,7 +216,7 @@ class TasteDetailView(DetailView):
 
 [app-name/urls.py]
 
-```
+```python
 [import...]
 urlpatterns = [
 	url(
@@ -262,7 +262,8 @@ urlpatterns = [
 - 클래스 기반 뷰의 경우 함수 기반 뷰와 매우 다를 것으로 착각하기 쉽지만, URLConf에서 View.as_view()라는 클래스 메서드는 실제로 호출 가능한 뷰 인스턴스를 반환한다. 즉, 요청/응답 과정을 처리하는 콜백 함수 자체가 함수 기반 뷰와 동일하게 작동한다.
 
 #### 뷰의 기본 형태
-```
+
+```python
 # 함수 기반 뷰
 def function_based_view(request):
 	return HttpResponse("FBV")

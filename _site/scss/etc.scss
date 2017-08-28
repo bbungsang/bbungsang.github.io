@@ -1,18 +1,24 @@
-// for tag cloud and archives
 .tag-cloud {
   list-style: none;
-  padding: 0;
+  padding: 20px;
   text-align: justify;
   font-size: 16px;
+  float: left;
 
-  li {
-    display: inline-block;
-    margin: 0 12px 12px 0;
+  a {
+    margin-top: 10px;
+    padding: 3px;
+    border-radius: 7px;
+    background: #ddd;
+  }
+
+  a:hover {
+    background: skyblue;
   }
 }
 
 #archives {
-  padding: 5px;
+  padding: 20px;
 }
 
 .archive-group {

@@ -1,8 +1,10 @@
-.tag-cloud { list-style: none; padding: 0; text-align: justify; font-size: 16px; }
+.tag-cloud { list-style: none; padding: 20px; text-align: justify; font-size: 16px; float: left; }
 
-.tag-cloud li { display: inline-block; margin: 0 12px 12px 0; }
+.tag-cloud a { margin-top: 10px; padding: 3px; border-radius: 7px; background: #ddd; }
 
-#archives { padding: 5px; }
+.tag-cloud a:hover { background: skyblue; }
+
+#archives { padding: 20px; }
 
 .archive-group { margin: 5px; border-top: 1px solid #ddd; }
 

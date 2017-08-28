@@ -59,7 +59,7 @@ comments: true
 
 [데코레이터 사용]
 
-```
+```python
 from django.views.generic import CreateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -77,7 +77,7 @@ class PostCreate(CreateView):
 
 [믹스인 사용]
 
-```
+```python
 from django.views.generic import CreateView
 from brace.views import LoginRequiredMixin
 

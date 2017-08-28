@@ -6,6 +6,15 @@
   height: auto;
   padding-top: 80px;
 
+  .center-image {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .image-size {
+    width: 200px;
+  }
+
   .markdown-body {
 		box-sizing: border-box;
 		min-width: 200px;
@@ -29,6 +38,14 @@
 
   a {
     color: rgb(154, 154, 154);
+  }
+
+  h2 {
+    color: #709FB0;
+  }
+
+  h3 {
+
   }
 
   .h1 {
@@ -86,6 +103,10 @@
 
       font-size: 16px;
       color: black;
+
+      li {
+        list-style-type: disc;
+      }
     }
   }
 
@@ -106,8 +127,7 @@
     color: #999;
   }
 
-  code.highlight-rouge { color: #6C4F70 }
-
+  .highlighter-rouge { color: #3DDAD7 }
   .highlight .c, .highlight .c1 { color: #586E75 } /* Comment */
   .highlight .err { color: #93A1A1 } /* Error */
   .highlight .g { color: #93A1A1 } /* Generic */
