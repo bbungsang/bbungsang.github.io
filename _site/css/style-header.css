@@ -125,7 +125,7 @@ ul.sidebar-menu li ul.sub li a {
 }
 
 ul.sidebar-menu li ul.sub li a:hover {
-	color: white;
+	color: #ddd;
 	background: transparent;
 }
 
