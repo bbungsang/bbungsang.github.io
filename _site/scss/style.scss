@@ -21,7 +21,45 @@
     float: left;
     margin-bottom: 20px;
 
+    .tags {
+      width: 100%;
+      height: auto;
+      float: left;
+      margin: 10px 0;
+
+      .tag-cloud {
+        // height: 33px;
+        // line-height: 33px;
+        // list-style: none;
+        // text-align: justify;
+        // margin: 0;
+        // float: left;
+
+        .tag-elements {
+          float: left;
+          margin: 0 2px 9px 0;
+
+          a {
+            margin-top: 10px;
+            padding: 3px;
+            border-radius: 7px;
+            background: #ddd;
+
+            .im-tag {
+              font-size: 14px;
+              margin-top: 10px;
+            }
+          }
+        }
+
+        a:hover {
+          background: skyblue;
+        }
+      }
+    }
+
     .category-list {
+      border-top: 2px solid #ddd;
       width: 100%;
       height: auto;
       float: left;
@@ -37,7 +75,7 @@
           font-family: 'Nanum Barun Gothic', sans-serif;
           font-size: 22px;
           color: #3C455C;
-          // font-weight: bold;
+          font-weight: bold;
           margin: 30px 0 10px 5px;
         }
 

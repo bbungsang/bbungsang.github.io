@@ -5,15 +5,17 @@ layout: default
 <div id="content" class="content">
   <div class="tags">
     <div class="tag-cloud">
-        {% for tag in site.categories %}
-          {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-          {% if thecycle == 'odd' %}
-          <a href="#{{ tag[0] | slugify }}" style="font-size: 14px; margin: 0 10px;">
-            <img src="./images/tag-img.png" width="20px">
-            {{ tag[0] }}
-          </a>
-          {% endif %}
-        {% endfor %}
+    {% for tag in site.categories %}
+      {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+      {% if thecycle == 'odd' %}
+      <div class="tag-elements">
+        <a href="#{{ tag[0] | slugify }}" style="font-size: 14px; margin: 0 10px;">
+          <img src="./images/tag-img.png" width="20px">
+          {{ tag[0] }}
+        </a>
+      </div>
+      {% endif %}
+    {% endfor %}
     </div>
   </div>
 
