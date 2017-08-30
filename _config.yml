@@ -19,7 +19,7 @@ google_analytics:
 Search:
   - '/search/'
 
-url: https://bbungsang.github.io
+url: https://bbungsang.github.io/
 
 paginate: 7
 paginate_path: /page:num/
