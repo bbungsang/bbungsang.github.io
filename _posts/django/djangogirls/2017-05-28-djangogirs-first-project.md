@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "첫 장고 프로젝트!"
-category: [djangogirls]
+category: [Do 장고걸스!, djangogirls]
 tags:
   - Django
   - Djangogirls

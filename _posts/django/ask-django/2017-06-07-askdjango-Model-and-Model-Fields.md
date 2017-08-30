@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[장고 기본편] 5. Model"
-category: [travel]
+category: [여행 블로그 만들기, travel]
 tags:
   - Django
   - AskDjango

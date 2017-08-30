@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "문자열, List, Tuple"
-category: [basic]
+category: [파이썬 문법, basic]
 tags:
   - Python
   - List

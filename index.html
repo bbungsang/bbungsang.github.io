@@ -3,202 +3,38 @@ layout: default
 ---
 
 <div id="content" class="content">
-  <!-- python -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/python/basic.html"><h3>파이썬 문법</h3></a>
-      {% for post in site.categories.basic %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
+  <div class="tags">
+    <div class="tag-cloud">
+        {% for tag in site.categories %}
+          {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+          {% if thecycle == 'odd' %}
+          <a href="#{{ tag[0] | slugify }}" style="font-size: 14px; margin: 0 10px;">
+            <img src="./images/tag-img.png" width="20px">
+            {{ tag[0] }}
           </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
+          {% endif %}
+        {% endfor %}
+    </div>
+  </div>
 
   <ul class="category-list">
     <li class="category-title">
-      <a href="{{ site.baseurl }}/files/python/library.html"><h3>파이썬 라이브러리</h3></a>
-      {% for post in site.categories.library %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
+      {% for tag in site.categories %}
+      {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+      {% if thecycle == 'odd' %}
+        <a><h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h3></a>
+        <ul class="tags-expo-posts">
+          {% for post in tag[1] %}
+            <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          <li>
+            {{ post.title }}
+          <small class="post-date">{{ post.date | date_to_string }}</small>
+          </li>
           </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <!-- django -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/django/djangogirls.html"><h3>Do 장고걸스!</h3></a>
-      {% for post in site.categories.djangogirls %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/django/travel.html"><h3>여행 블로그</h3></a>
-      {% for post in site.categories.travel %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/django/instargram.html"><h3>인스타그램 프로젝트</h3></a>
-      {% for post in site.categories.instargram %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <!-- <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/django/tutorial.html"><h3>장고 튜토리얼</h3></a>
-      {% for post in site.categories.tutorial %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul> -->
-
-  <!-- server -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="#"><h3>Server</h3></a>
-      {% for post in site.categories.server %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <!-- server -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="#"><h3>자스알못의 JavaScript 개념 정리</h3></a>
-      {% for post in site.categories.javascript %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <!-- algorithm -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/algorithm/tryhelloworld.html"><h3>Solve Algorithm!</h3></a>
-      {% for post in site.categories.tryhelloworld %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <!-- study -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/study/two-scoops.html"><h3>두숟갈 스터디</h3></a>
-      {% for post in site.categories.two-scoops %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <!-- etc -->
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/etc/aws.html"><h3>아마존 웹 서비스</h3></a>
-      {% for post in site.categories.aws %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
-    </li>
-  </ul>
-
-  <ul class="category-list">
-    <li class="category-title">
-      <a href="{{ site.baseurl }}/files/etc/mentoring.html"><h3>개발자 멘토링</h3></a>
-      {% for post in site.categories.mentoring %}
-      <ul class="tags-exop-posts">
-        <li>
-          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
-          </a>
-        </li>
-      </ul>
-      {% endfor %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% endfor %}
     </li>
   </ul>
 </div>

@@ -1,13 +1,3 @@
----
-layout: post
-title:  "장고 튜토리얼 파트3-2"
-category: [tutorial]
-tags:
-  - Django
-  - tutorial
-comments: true
----
-
 #### \# vote
 **[polls/views.py]**
 ```python

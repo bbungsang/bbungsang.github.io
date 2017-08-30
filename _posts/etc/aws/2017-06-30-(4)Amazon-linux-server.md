@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[AWS] 4. AWS 서버 다루기"
-category: [aws]
+category: [AWS, aws]
 tags:
   - aws
   - django

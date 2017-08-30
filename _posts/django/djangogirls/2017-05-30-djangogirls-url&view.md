@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "장고 URL과 뷰"
-category: [djangogirls]
+category: [Do 장고걸스!, djangogirls]
 tags:
   - Django
   - URL

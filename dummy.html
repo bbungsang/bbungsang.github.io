@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<div id="content" class="content">
+  <!-- python -->
+  <ul class="category-list">
+    {% for post in site.posts | limit:7 %}
+    <li>
+	  	<h2>
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h2>
+      <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line"> <i>{{ post.date | date_to_string }}</i> </time>
+	  	<p>{{ post.content | strip_html | truncatewords:50 }}</p>
+	  </li>
+    {% endfor %}
+  </ul>
+</div>
+<div id="widget" class="widget">
+  <div class="recent-post-title">
+    <!-- <img src="images/rocket.png" width="27px"> -->
+    최신 글 바로가기
+  </div>
+  {% for post in site.posts | limit:7 %}
+  <div class="recent-posts">
+    <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+      - {{ post.title }}
+    </a>
+  </div>
+  {% endfor %}
+
+  <div class="calendar">
+
+  </div>
+</div>

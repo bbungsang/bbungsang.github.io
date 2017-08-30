@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[인스타그램] 커스텀 유저 돌리기"
-category: [instargram]
+category: [인스타그램, instargram]
 tags:
   - django
   - instargram

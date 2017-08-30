@@ -1,12 +1,3 @@
----
-layout: post
-title:  "[지킬 블로그] 태그 기능 달기"
-category: [jekyll]
-tags:
-  - Jekyll
-comments: true
----
-
 ### 1. 블로그 루트 폴더에 tags.md 넣기
 - 이 tags.md 는 모든 태그들을 출력해준다.
 

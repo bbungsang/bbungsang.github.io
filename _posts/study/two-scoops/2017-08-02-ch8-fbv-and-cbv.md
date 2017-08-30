@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[8장] 함수 기반 뷰와 클래스 기반 뷰"
-category: [two-scoops]
+category: [두숟갈 스터디, two-scoops]
 tags:
   - Django
 comments: true

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[10장] 클래스 기반 뷰"
-category: [two-scoops]
+category: [두숟갈 스터디, two-scoops]
 tags:
   - Django
 comments: true

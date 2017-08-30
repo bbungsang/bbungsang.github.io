@@ -1,13 +1,3 @@
----
-layout: post
-title: "장고 튜토리얼 파트1-2"
-category: [tutorial]
-tags:
-  - Django
-  - tutorial
-comments: true
----
-
 ### The development server
 - 바깥의 `mysite` 디렉토리로 이동하세요. 만약 이미 그 지점에 있다면 아래와 같이 명령어를 입력해주세요.<br>
 > `python manage.py runserver`

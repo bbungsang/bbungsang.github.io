@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "파이썬 크롤링 라이브러리 - 뷰티풀수프"
-category: [library]
+category: [파이썬 라이브러리, library]
 tags:
   - Python
   - BeautifulSoup

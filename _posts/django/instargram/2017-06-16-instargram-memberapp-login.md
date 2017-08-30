@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[인스타그램] 로그인 기능 구현하기"
-category: [instargram]
+category: [인스타그램, instargram]
 tags:
   - django
   - instargram

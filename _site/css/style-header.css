@@ -46,15 +46,13 @@ hr {
 }
 
 ul.top-menu > li > .logout {
-	color: #f2f2f2;
-	font-size: 12px;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
-	border: 1px solid #64c3c2 !important;
+	border: 1px solid #AFA5CF !important;
 	padding: 5px;
 	margin-right: 10px;
-	background: #68dff0;
-	margin-top: 15px;
+	background: #CBBFF0;
+	margin-top: 12px;
 }
 
 /*-- sidebar navigation --*/
@@ -62,7 +60,7 @@ ul.top-menu > li > .logout {
     width: 210px;
     height: 100%;
     position: fixed;
-    background: #9AABB9;
+    background: #4C586F;
 }
 
 #sidebar h5 {
@@ -100,7 +98,7 @@ ul.sidebar-menu {
 }
 
 ul.sidebar-menu li ul.sub li{
-    background: #9AABB9;
+    /*background: #4C586F;*/
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -169,7 +167,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #68dff0;
+    background: #7BD4CC;
     color: #fff;
     display: block;
 
@@ -207,7 +205,7 @@ ul.sidebar-menu li a.active i {
 }
 
 .black-bg {
-    background: #ffd777;
+    background: #7BD4CC;
     border-bottom: 1px solid #A0C1B8;
 }
 

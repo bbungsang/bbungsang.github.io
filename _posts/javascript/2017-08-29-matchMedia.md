@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()"
-category: [javascript]
+category: [JavaScript, javascript]
 tags:
   - JavaScript
   - CSS

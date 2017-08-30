@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[AWS] 1. 장고 settings 설정하기"
-category: [aws]
+category: [AWS, aws]
 tags:
   - aws
   - django

@@ -1,13 +1,3 @@
----
-layout: post
-title:  "장고 튜토리얼 파트3-1"
-category: [tutorial]
-tags:
-  - Django
-  - tutorial
-comments: true
----
-
 ## Overview
 - `view`는 장고 어플리케이션에서 특정한 함수와 특정한 템플릿을 가지는 웹 페이지의 형태이다.
 

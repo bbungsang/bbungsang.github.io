@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[장고 기본편] 3. URLConf와 정규표현식"
-category: [travel]
+category: [여행 블로그 만들기, travel]
 tags:
   - Django
   - AskDjango

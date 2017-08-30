@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[지킬 블로그] Disqus 댓글 기능 달기"
-category: [jekyll]
+category: [지킬 블로그 꾸미기, jekyll]
 tags:
   - Jekyll
 comments: true

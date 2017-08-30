@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[인스타그램] post앱 모델"
-category: [instargram]
+category: [인스타그램, instargram]
 tags:
   - django
   - instargram

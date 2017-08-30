@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TryHelloWorld 알고리즘 레벨 1-4"
-category: [tryhelloworld]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

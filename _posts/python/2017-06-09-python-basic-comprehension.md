@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "컴프리헨션(Comprehension)"
-category: [basic]
+category: [파이썬 문법, basic]
 tags:
   - Python
   - List

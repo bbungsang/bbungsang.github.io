@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/etc.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
 	<!-- font -->
 	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
@@ -25,4 +26,7 @@
 	<!-- Custom styles for this template -->
 	<link href="{{ site.baseurl }}/css/style-header.css" rel="stylesheet">
 	<link href="{{ site.baseurl }}/css/style-responsive.css" rel="stylesheet">
+{% if site.google_analytics.id %}
+	{% include search.html %}
+{% endif %}
 </head>

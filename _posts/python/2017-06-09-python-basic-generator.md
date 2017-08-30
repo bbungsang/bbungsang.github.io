@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "제너레이터(Generator)"
-category: [basic]
+category: [파이썬 문법, basic]
 tags:
   - Python
   - Iterator

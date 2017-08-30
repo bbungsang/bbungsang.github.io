@@ -1,0 +1,70 @@
+<h4 id="-vote"># vote</h4>
+<p><strong>[polls/views.py]</strong></p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span><span class="p">,</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span><span class="p">,</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">Question</span>
+
+<span class="o">...</span>
+
+  <span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+      <span class="n">question</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">question_id</span><span class="p">)</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">'hi'</span><span class="p">)</span>
+      <span class="k">try</span><span class="p">:</span>
+          <span class="n">selected_choice</span> <span class="o">=</span> <span class="n">question</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">'choice'</span><span class="p">])</span>
+
+      <span class="k">except</span> <span class="p">(</span><span class="nb">KeyError</span><span class="p">,</span> <span class="n">Choice</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+          <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'polls/detail.html'</span><span class="p">,</span> <span class="p">{</span>
+              <span class="s">'question'</span><span class="p">:</span> <span class="n">question</span><span class="p">,</span>
+              <span class="s">'error_message'</span><span class="p">:</span> <span class="s">"You didn't select a choice"</span><span class="p">,</span>
+          <span class="p">})</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">selected_choice</span><span class="o">.</span><span class="n">votes</span> <span class="o">+=</span> <span class="mi">1</span>
+          <span class="n">selected_choice</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+          <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">'results'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="nb">id</span><span class="p">,)))</span>
+</code></pre>
+</div>
+<ul>
+  <li>requst.POST[‘choice’] 는 선택된 choice의 ID 값을 string 으로  반환한다. request.POST value는 항상 string 형이다.</li>
+  <li>choice count 를 증가시킨 후에 코드는 HttpResponseRedirect 를 반환한다.</li>
+  <li>HttpResponseRedirect 는 한 개의 인자(사용자에게 재반응하여 보여주는 URL)만 취한다.</li>
+  <li>POST 형식으로 전달한 뒤에 항상 HttpResponseRedirect 로 반환되어야한다. 장고라서가 아니라 웹 개발의 좋은 관행이다.</li>
+  <li>reverse() 는 이 예제에서 HttpResponseRedirect 생성자에 대해 사용된 것이다.</li>
+  <li>이 함수는 view 함수에 대응한 URL이 hardcode 하는 것을 피하도록 해준다.</li>
+  <li>우리가 제어를 통과하고 URL pattern의 다양한 부분에 대한 뷰 함수의 이름을 고려한다.</li>
+</ul>
+
+<p><strong>[polls/urls.py]</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span> <span class="c"># from polls import views</span>
+
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<span class="o">...</span>
+
+  <span class="n">url</span><span class="p">(</span><span class="s">r'^(?P&lt;question_id&gt;</span><span class="err">\</span><span class="s">d+)/vote/$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">vote</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'vote'</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+<p><br /><br /></p>
+<h4 id="-results"># results</h4>
+<p><strong>[polls/views.py]</strong></p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+    <span class="n">question</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">question_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'polls/results.html'</span><span class="p">,</span> <span class="p">{</span><span class="s">'question'</span><span class="p">:</span> <span class="n">question</span><span class="p">})</span>
+</code></pre>
+</div>
+<p><strong>[polls/urls.py]</strong></p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span> <span class="c"># from polls import views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<span class="o">...</span>
+  <span class="n">url</span><span class="p">(</span><span class="s">r'^(?P&lt;question_id&gt;</span><span class="err">\</span><span class="s">d+)/results/$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">results</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'results'</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+<p><strong>[polls/results.html]</strong></p>

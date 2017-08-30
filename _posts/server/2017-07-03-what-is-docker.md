@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "도커(Docker)란?"
-category: [docker]
+category: [도커, docker]
 tags:
   - Docker
 comments: true
