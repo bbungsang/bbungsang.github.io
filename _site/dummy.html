@@ -139,12 +139,32 @@
     
     <li>
 	  	<h2>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">
+          [15장] 장고 템플릿과 Jinja2
+        </a>
+      </h2>
+      <time datetime="2017-08-30T00:00:00+09:00" class="by-line"> <i>30 Aug 2017</i> </time>
+	  	<p>장고 템플릿과 Jinja2 장고 템플릿 시스템에서 장고 템플릿 언어(Django Template Language, DTL)과 Jinja2를 내장하여 지원하고 있다. 문법적 차이점 Jinja2는 DTL의 영향을 많이 받았기 때문에 문법적으로 매우 유사하다. 하지만 차이도 반드시 존재한다. 용례 DTL Jinja2 메서드 호출 {{ user.get_info }} {{ user.get_info() }} 인자 필터 {{ toppings | join:”, “ }}...</p>
+	  </li>
+    
+    <li>
+	  	<h2>
         <a class="post-title" href="/javascript/2017/08/29/matchMedia.html">
           자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()
         </a>
       </h2>
       <time datetime="2017-08-29T00:00:00+09:00" class="by-line"> <i>29 Aug 2017</i> </time>
 	  	<p>자바스크립트에서 CSS 미디어쿼리 사용하기 웹사이트를 반응형으로 만들기위해서 CSS 미디어쿼리 를 사용해야 한다. CSS 미디어쿼리를 사용하면 다양한 크기의 디바이스가 존재하는 상황에서도 모두 적절한 화면을 제공할 수 있다. 내 이야기 반응형에 자바스크립트가 적용되는 경우, oo 사이즈에서는 A 자바스크립트가 적용돼야하지만 xx 사이즈에서도 해당 자바스크립트가 적용될 경우 화면이 굉장히 부자연스러워질 수 있다. 나 같은...</p>
+	  </li>
+    
+    <li>
+	  	<h2>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/23/ch12-django-form-patterns.html">
+          [12장] 폼 패턴들
+        </a>
+      </h2>
+      <time datetime="2017-08-23T00:00:00+09:00" class="by-line"> <i>23 Aug 2017</i> </time>
+	  	<p>패턴 1: 간단한 모델폼과 기본 유효성 검사기 제네릭 뷰 뷰에서 모델에 기반을 둔 ModelForm 을 자동 생성한다. 생성된 ModelForm 이 모델의 기본 필드 유효성 검사기를 이용하게 된다. 유효성 검사기 [core/validators.py] from django.core.exceptions import ValidationError def validate_tasty(value): """ 단어가 'Tasty'로 시작되지 않으면 ValidationError 발생 """ if not value.startswith('Tasty'): msg = 'Must...</p>
 	  </li>
     
     <li>
@@ -179,32 +199,12 @@
     
     <li>
 	  	<h2>
-        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/wsgi.html">
-          WSGI와 uWSGI
+        <a class="post-title" href="/%EB%8F%84%EC%BB%A4/docker/2017/07/21/docker-command.html">
+          도커 명령어
         </a>
       </h2>
-      <time datetime="2017-07-20T00:00:00+09:00" class="by-line"> <i>20 Jul 2017</i> </time>
-	  	<p>CGI(Common Gateway Interface) 웹 서버는 Static Contents, 즉 내용에 변화가 없는 그대로의 정적인 것을 전달하는 역할을 한다. 만약 클라이언트로부터 요청을 전달받을 때마다 달라지는 현재 시간 혹은 예약 현황 등 (Dynamic Contents)을 응답해야한다면, 해당 요청에 맞게 데이터를 만들어주는 백엔드에게 요청을 전달해야한다. 요청에 따라서 데이터를 만들어주는 것을 프로그램(장고 어플리케이션)이라 부르며, CGI는 웹서버와...</p>
-	  </li>
-    
-    <li>
-	  	<h2>
-        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/nginx-1.html">
-          NGINX (1)
-        </a>
-      </h2>
-      <time datetime="2017-07-20T00:00:00+09:00" class="by-line"> <i>20 Jul 2017</i> </time>
-	  	<p>웹(Web)이란? www 는 ‘World Wide Web’의 약자로 네트워크 체계 중 하나인 인터넷 에서 동작하는 통신 규약 중 하나이다. 즉 인터넷은 네트워크 체계 중 하나이고, 웹은 인터넷에서 작동되는 하나의 개념인 것이다. (인터넷에서 작동되는 규약으로는 FTP, EMAIL 등이 있다.) 인터넷 != 웹 이지만 대부분 인터넷 == 웹 으로 알고 있는 까닭은 웹이...</p>
-	  </li>
-    
-    <li>
-	  	<h2>
-        <a class="post-title" href="/%EB%8F%84%EC%BB%A4/docker/2017/07/03/what-is-docker.html">
-          도커(Docker)란?
-        </a>
-      </h2>
-      <time datetime="2017-07-03T00:00:00+09:00" class="by-line"> <i>03 Jul 2017</i> </time>
-	  	<p>리눅스 컨테이너 기반의 오픈소스 가상화 플랫폼 컨테이너 일반적으로 알고 있는 컨테이너와 같이 다양한 프로그램 및 실행 환경을 컨테이너 로 추상화하고, 각각 동일한 인터페이스 를 제공하여 프로그램의 배포 및 관리를 단순하게 해준다. 격리된 공간 에서 프로세스가 동작하는 가상화 기술 [기존 가상화 기술] OS 를 가상화, VMware, VirtualBoxa 등 전가상화(Full Virtualization) :...</p>
+      <time datetime="2017-07-21T00:00:00+09:00" class="by-line"> <i>21 Jul 2017</i> </time>
+	  	<p>Project Root Directory 바로 하위 Dockerfile 은 eb deploy 할 때, 자동으로 docker build 가 실행된다. sudo 없이 명령어 사용하기 docker는 기본적으로 root 권한이 필요하다. root가 아닌 사용자가 sudo 없이 명령어를 사용하려면 해당 사용자를 docker 그룹에 추가해야한다. &gt;&gt;&gt; sudo usermod -aG docker $USER(현재 사용자) / bbungsang('bbungsang'이라는 사용자) 설치 확인하기 &gt;&gt;&gt;...</p>
 	  </li>
     
   </ul>
@@ -216,8 +216,20 @@
   </div>
   
   <div class="recent-posts">
+    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">
+      - [15장] 장고 템플릿과 Jinja2
+    </a>
+  </div>
+  
+  <div class="recent-posts">
     <a class="post-title" href="/javascript/2017/08/29/matchMedia.html">
       - 자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()
+    </a>
+  </div>
+  
+  <div class="recent-posts">
+    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/23/ch12-django-form-patterns.html">
+      - [12장] 폼 패턴들
     </a>
   </div>
   
@@ -240,20 +252,8 @@
   </div>
   
   <div class="recent-posts">
-    <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/wsgi.html">
-      - WSGI와 uWSGI
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/nginx-1.html">
-      - NGINX (1)
-    </a>
-  </div>
-  
-  <div class="recent-posts">
-    <a class="post-title" href="/%EB%8F%84%EC%BB%A4/docker/2017/07/03/what-is-docker.html">
-      - 도커(Docker)란?
+    <a class="post-title" href="/%EB%8F%84%EC%BB%A4/docker/2017/07/21/docker-command.html">
+      - 도커 명령어
     </a>
   </div>
   

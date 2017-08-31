@@ -7,16 +7,16 @@ tags:
 comments: true
 ---
 
-#### 리눅스 컨테이너 기반의 오픈소스 가상화 플랫폼
+#### 도커는 리눅스 컨테이너 기반의 오픈소스 가상화 플랫폼이다.
 
 ## 컨테이너
-- 일반적으로 알고 있는 컨테이너와 같이 다양한 프로그램 및 실행 환경을 **컨테이너** 로 `추상화`하고, 각각 **동일한 인터페이스** 를 제공하여 프로그램의 배포 및 관리를 단순하게 해준다.
-- **격리된 공간** 에서 프로세스가 동작하는 `가상화` 기술
+- 일반적으로 알고있는 컨테이너와 같이 다양한 프로그램 및 실행 환경을 **컨테이너** 로 `추상화`하고, 각각 **동일한 인터페이스** 를 제공하여 프로그램의 배포 및 관리를 단순하게 해준다.
+- 즉, **격리된 공간** 에서 프로세스가 동작하는 `가상화` 기술이다.
 
-![docker container]({{site.url}}/assets/docker-works.png){: .center-image}
+![docker container]({{site.url}}/assets/docker-works.png){: .center-image }
 
 #### [기존 가상화 기술]
-- **OS** 를 가상화, VMware, VirtualBoxa 등
+- **OS** 를 가상화, VMware, VirtualBox 등
 - *전가상화(Full Virtualization)* : 호스트 OS 위에 게스트 OS 전체를 가상화하여 사용하는 방식, 무겁고 느리다.
 
 #### [클라우드 서비스 가상화 기술]
@@ -57,8 +57,11 @@ comments: true
 [도커 명령어]
 
 ```
->>> docker run ubuntu:16.04 # 이미지 생성
->>> docker run --rm -it ubuntu:16.04 /bin/bash # 생성한 이미지 실행
+# 이미지 생성
+>>> docker run ubuntu:16.04
+# 생성한 이미지 실행
+>>> docker run --rm -it ubuntu:16.04 /bin/bash
+#
 >>> docker ps
 >>> docker cp . <image-name>:/srv/used-book-store
 >>> docker stop <imgae-name>
@@ -67,7 +70,7 @@ comments: true
 >>> docker run --rm -it updated_ubuntu /bin/bash
 ```
 
-![docer logo]({{site.url}}/assets/docker-logo.png){: .center-image width="400px"}
+![docer logo]({{site.url}}/assets/docker-logo.png){: .center-image }
 
 > 최근 도커 사용 경향 (≧ω≦)ゞ <br>
 - 서버 1개가 받아들이는 용량은 한정되어있다. 따라서 호스트 안 쪽에서 여러 컨테이너가 작동될 수 있지만, 최근 컨테이너 하나만 작동시키는 경향을 따르고 있다. 즉, **서버 1개에 1개의 프로세서**가 작동시키는 방식이 대세이다. <br>
