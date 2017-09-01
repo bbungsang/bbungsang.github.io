@@ -31,7 +31,6 @@
       .container .content .tags .tag-cloud a:hover {
         background: skyblue; }
     .container .content .category-list {
-      border-top: 2px solid #ddd;
       width: 100%;
       height: auto;
       float: left;
@@ -41,10 +40,8 @@
         height: auto;
         float: left; }
         .container .content .category-list .category-title h3 {
-          font-family: 'Nanum Barun Gothic', sans-serif;
           font-size: 22px;
-          color: #3C455C;
-          font-weight: bold;
+          color: #428bca;
           margin: 30px 0 10px 5px; }
         .container .content .category-list .category-title ul {
           margin: 0;

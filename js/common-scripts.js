@@ -62,12 +62,12 @@ var Script = function () {
         if ($('#sidebar > ul').is(":visible") === true) {
           $('#sidebar').css({ // 사이드바가 없을 때
               'margin-left': '-210px',
-              'transition': '0.5s'
+              'transition': '0.2s'
           });
           $('#content').css({
             'margin-left': '10px',
             'width': '69.5%',
-            'transition': '0.5s'
+            'transition': '0.2s'
           });
           $('#widget').css({
             'width': '29%'

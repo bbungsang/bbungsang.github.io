@@ -10,10 +10,9 @@ comments: true
 ---
 
 ## 장고 설치 후, 기본 골격 만들어주는 스크립트 실행
-> #### - 장고 소스 코드 .py 를 만들고 장고 스타일로 디렉토리를 구성한다는 의미다.
-> #### - 모든 작업은 가상환경(virtualenv) 안에서 해야한다.
+- 장고 소스 코드 .py 를 만들고 장고 스타일로 디렉토리를 구성한다는 의미다.
+- 모든 작업은 가상환경(virtualenv) 안에서 해야한다.
 
-<br>
 ### [맥 OS와 리눅스]에서 프로젝트 생성하기
 - 명령어 끝에 .(마침표) : 현재 디렉토리에 장고를 설치하라는 표시이다.
 
@@ -30,10 +29,11 @@ djangogirls
         wsgi.py
         __init__.py
 ```
+
 - 디렉토리와 파일명 매우 중요하기 때문에 마음대로 변경하거나 다른 곳으로 옮겨서는 안된다.<br>
 
 ### 설정 변경
-**[\<프로젝트디렉토리>/settings.py]** <br>
+**[\<프로젝트디렉토리>/settings.py]**
 - 현재 장고 프로젝트를 진행하기 위한 기본 설정이 담겨있는 코드이다. 추가적인 설정이 필요하다.
 
 ```python
@@ -46,22 +46,26 @@ BASE_DIR = join(abspath(__file__), '..', '..')
 # .. => /home/bbungsang/projects/django_/
 ```
 
-\# 정확한 시간 넣기<br>
+#### 정확한 시간 넣기
 
-> TIME_ZONE = 'Asia/Soeul'<br>
+```docker
+TIME_ZONE = 'Asia/Soeul'
+```
+
 - django 내에서 날짜/시간을 보여주고 저장할 때의 Time Zone
 
-\# 정적파일 경로 추가 <br>
+#### 정적파일 경로 추가
 
-> STATIC_URL = '/static' <br>
-> STATIC_ROOT = os.path.join(BASE_DIR, 'static')<br>
+```docker
+STATIC_URL = '/static' <br>
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')<br>
+```
+
 - 위와 같이 이 경로는 `/home/bbungsang/projects/django_/static` 을 의미한다.
 
-<br>
+### 데이터베이스 설정
 
-#### 데이터베이스 설정
-
-> \# sqlite3 사용 전제
+#### sqlite3 사용 전제
 
 ```python
 DATABASES = {
@@ -71,8 +75,6 @@ DATABASES = {
     }
 }
 ```
-
-<br>
 
 ### 설정이 다 끝났으면 단 *3step* 만으로 웹어플리케이션을 실행할 수 있다.
 그 전에 장고에는 2가지의 migration 과정이 있는데, <br>

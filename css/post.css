@@ -2,6 +2,7 @@
 .markdown {
   height: auto;
   padding-top: 80px;
+  font-size: 15px;
   /* Post */
   /* Code */
   /* Comment */
@@ -100,6 +101,11 @@
   padding: 45px;
 }
 
+.markdown .markdown-body .post-content {
+  width: 100%;
+  float: left;
+}
+
 .markdown table {
   width: 100%;
 }
@@ -116,8 +122,8 @@
   color: #9a9a9a;
 }
 
-.markdown h2 {
-  color: #709FB0;
+.markdown h3 {
+  color: #7BD4CC;
 }
 
 .markdown .h1 {
@@ -134,6 +140,7 @@
   width: 100%;
   height: 20px;
   float: left;
+  margin-bottom: 30px;
 }
 
 .markdown .float-left {
@@ -172,7 +179,7 @@
 
 .markdown .post-content ul {
   margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 16px;
   color: black;
 }

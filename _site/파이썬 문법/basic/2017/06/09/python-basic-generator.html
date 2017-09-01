@@ -38,7 +38,7 @@
   <header id="header" class="header black-bg">
     <!-- Menubar Button -->
     <div class="sidebar-toggle-box">
-      <div class="fa fa-bars tooltips" data-placement="right"></div>
+      <div class="fa fa-bars" data-placement="right"></div>
     </div>
     <!-- Logo -->
     <a href="/" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
@@ -154,15 +154,13 @@
 
         </div>
       </header>
-      <hr noshade style="width: 100%; float: left;">
+      <!-- <hr noshade style="width: 100%; float: left;"> -->
       <section class="post-content">
         <blockquote>
-  <p>٩(๑òωó๑)۶ 아, 아, 마이크 테스트<br />
-이 마크다운은 빌루바노빅의 ‘Introducing Python’을 토대로 작성되었습니다.
+  <p>이 마크다운은 <strong>빌루바노빅</strong> 의 <strong>Introducing Python</strong> 을 토대로 작성되었습니다.
 제 기준 헷갈리는 개념을 위주로 다른 문서를 참고하여 이해하기 쉽도록 내용을 더하였습니다.</p>
 </blockquote>
 
-<p><br /></p>
 <h2 id="제너레이터">제너레이터</h2>
 <ul>
   <li>파이썬의 <code class="highlighter-rouge">iterator</code>를 생성하는 객체로, 전체 시퀀스를 한 번에 메모리에 저장하고 정렬할 필요 없이 잠재적으로 아주 큰 시퀀스를 순회할 수 있다.</li>
@@ -200,7 +198,6 @@
 </code></pre>
 </div>
 
-<p><br /><br /></p>
 <h4 id="제너레이터-컴프리헨션">제너레이터 컴프리헨션</h4>
 <ul>
   <li>제너레이터 함수를 더 쉽게 사용할 수 있도록 한다. 리스트 컴프리헨션과 비슷하지만 [] 대신 () 를 사용한다.</li>
@@ -214,9 +211,8 @@
 </code></pre>
 </div>
 
-<p><br /><br /></p>
 <h3 id="왜-제너레이터를-사용하는가">왜 제너레이터를 사용하는가?</h3>
-<p># 출처: http://bluese05.tistory.com/56</p>
+<p>(참고 사이트: http://bluese05.tistory.com/56)</p>
 <h4 id="1-메모리를-효율적으로-사용할-수-있다">1. 메모리를 효율적으로 사용할 수 있다.</h4>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span> <span class="p">)</span>    <span class="c"># list</span>

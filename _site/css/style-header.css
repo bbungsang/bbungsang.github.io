@@ -255,14 +255,22 @@ a.logo span {
 /*--sidebar toggle--*/
 .sidebar-toggle-box {
     float: left;
-    padding-right: 15px;
-    margin-top: 20px;
+    margin: 15px 15px 0 5px;
 }
 
 .sidebar-toggle-box .fa-bars {
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
+    color: #747474;
+    border: 1px solid #747474;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+.sidebar-toggle-box .fa-bars:hover {
+  background: #747474;
+  color: #fff;
 }
 
 

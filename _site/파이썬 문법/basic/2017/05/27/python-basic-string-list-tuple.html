@@ -38,7 +38,7 @@
   <header id="header" class="header black-bg">
     <!-- Menubar Button -->
     <div class="sidebar-toggle-box">
-      <div class="fa fa-bars tooltips" data-placement="right"></div>
+      <div class="fa fa-bars" data-placement="right"></div>
     </div>
     <!-- Logo -->
     <a href="/" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
@@ -154,7 +154,7 @@
 
         </div>
       </header>
-      <hr noshade style="width: 100%; float: left;">
+      <!-- <hr noshade style="width: 100%; float: left;"> -->
       <section class="post-content">
         <h2 id="문자열">문자열</h2>
 
@@ -171,15 +171,30 @@
   <li>리스트를 하나의 문자열로 결합한다.</li>
 </ul>
 
+<h3 id="replace">Replace</h3>
+<p><code class="highlighter-rouge">&lt;문자열 변수&gt;.replace('변수에 속한 문자열', '대체할 문자열')</code></p>
+<ul>
+  <li>변수에 속한 문자열을 대체할 문자열로 바꿔준다.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; test = 'Show Me The 머니'
+&gt;&gt;&gt; result = test.replace('머니', 'Money')
+&gt;&gt;&gt; result
+'Show Me The Money'
+</code></pre>
+</div>
+
 <h3 id="대소문자">대소문자</h3>
 <p><code class="highlighter-rouge">&lt;문자열 변수&gt;.upper()</code></p>
 <ul>
-  <li>대문자로 변환
-<code class="highlighter-rouge">&lt;문자열 변수&gt;.lower()</code></li>
+  <li>대문자로 변환</li>
+</ul>
+
+<p><code class="highlighter-rouge">&lt;문자열 변수&gt;.lower()</code></p>
+<ul>
   <li>소문자로 변환</li>
 </ul>
 
-<p><br /></p>
 <h2 id="list">List</h2>
 <ul>
   <li>리스트는 순차적인 데이터를 나타내는 데 유용하며, 문자여로가 달리 원소를 변경할 수 있다.</li>
@@ -231,7 +246,6 @@
   <li><strong>count :</strong> 리스트 안의 값을 센다.</li>
 </ul>
 
-<p><br /></p>
 <h2 id="tuple">Tuple</h2>
 <p>리스트와 비슷하나, 내부 항목의 삭제나 수정이 불가능하다.</p>
 
@@ -256,7 +270,6 @@
   </li>
 </ul>
 
-<p><br /></p>
 <h3 id="실습"><em>실습</em></h3>
 <p>1 . 문자열 ‘Fastcampus’를 리스트, 튜플 타이으로 형편환하여 새 변수에 할당한다.</p>
 

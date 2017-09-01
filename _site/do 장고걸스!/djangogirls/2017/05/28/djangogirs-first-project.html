@@ -38,7 +38,7 @@
   <header id="header" class="header black-bg">
     <!-- Menubar Button -->
     <div class="sidebar-toggle-box">
-      <div class="fa fa-bars tooltips" data-placement="right"></div>
+      <div class="fa fa-bars" data-placement="right"></div>
     </div>
     <!-- Logo -->
     <a href="/" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
@@ -154,15 +154,14 @@
 
         </div>
       </header>
-      <hr noshade style="width: 100%; float: left;">
+      <!-- <hr noshade style="width: 100%; float: left;"> -->
       <section class="post-content">
         <h2 id="장고-설치-후-기본-골격-만들어주는-스크립트-실행">장고 설치 후, 기본 골격 만들어주는 스크립트 실행</h2>
-<blockquote>
-  <h4 id="--장고-소스-코드-py-를-만들고-장고-스타일로-디렉토리를-구성한다는-의미다">- 장고 소스 코드 .py 를 만들고 장고 스타일로 디렉토리를 구성한다는 의미다.</h4>
-  <h4 id="--모든-작업은-가상환경virtualenv-안에서-해야한다">- 모든 작업은 가상환경(virtualenv) 안에서 해야한다.</h4>
-</blockquote>
+<ul>
+  <li>장고 소스 코드 .py 를 만들고 장고 스타일로 디렉토리를 구성한다는 의미다.</li>
+  <li>모든 작업은 가상환경(virtualenv) 안에서 해야한다.</li>
+</ul>
 
-<p><br /></p>
 <h3 id="맥-os와-리눅스에서-프로젝트-생성하기">[맥 OS와 리눅스]에서 프로젝트 생성하기</h3>
 <ul>
   <li>명령어 끝에 .(마침표) : 현재 디렉토리에 장고를 설치하라는 표시이다.</li>
@@ -183,12 +182,13 @@
         __init__.py
 </code></pre>
 </div>
+
 <ul>
   <li>디렉토리와 파일명 매우 중요하기 때문에 마음대로 변경하거나 다른 곳으로 옮겨서는 안된다.<br /></li>
 </ul>
 
 <h3 id="설정-변경">설정 변경</h3>
-<p><strong>[&lt;프로젝트디렉토리&gt;/settings.py]</strong> <br /></p>
+<p><strong>[&lt;프로젝트디렉토리&gt;/settings.py]</strong></p>
 <ul>
   <li>현재 장고 프로젝트를 진행하기 위한 기본 설정이 담겨있는 코드이다. 추가적인 설정이 필요하다.</li>
 </ul>
@@ -203,32 +203,28 @@
 </code></pre>
 </div>
 
-<p># 정확한 시간 넣기<br /></p>
+<h4 id="정확한-시간-넣기">정확한 시간 넣기</h4>
 
-<blockquote>
-  <p>TIME_ZONE = ‘Asia/Soeul’<br /></p>
-  <ul>
-    <li>django 내에서 날짜/시간을 보여주고 저장할 때의 Time Zone</li>
-  </ul>
-</blockquote>
+<pre><code class="language-docker">TIME_ZONE = 'Asia/Soeul'
+</code></pre>
 
-<p># 정적파일 경로 추가 <br /></p>
+<ul>
+  <li>django 내에서 날짜/시간을 보여주고 저장할 때의 Time Zone</li>
+</ul>
 
-<blockquote>
-  <p>STATIC_URL = ‘/static’ <br />
-STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)<br /></p>
-  <ul>
-    <li>위와 같이 이 경로는 <code class="highlighter-rouge">/home/bbungsang/projects/django_/static</code> 을 의미한다.</li>
-  </ul>
-</blockquote>
+<h4 id="정적파일-경로-추가">정적파일 경로 추가</h4>
 
-<p><br /></p>
+<pre><code class="language-docker">STATIC_URL = '/static' &lt;br&gt;
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')&lt;br&gt;
+</code></pre>
 
-<h4 id="데이터베이스-설정">데이터베이스 설정</h4>
+<ul>
+  <li>위와 같이 이 경로는 <code class="highlighter-rouge">/home/bbungsang/projects/django_/static</code> 을 의미한다.</li>
+</ul>
 
-<blockquote>
-  <p># sqlite3 사용 전제</p>
-</blockquote>
+<h3 id="데이터베이스-설정">데이터베이스 설정</h3>
+
+<h4 id="sqlite3-사용-전제">sqlite3 사용 전제</h4>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
@@ -238,8 +234,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)<br /></p>
 <span class="p">}</span>
 </code></pre>
 </div>
-
-<p><br /></p>
 
 <h3 id="설정이-다-끝났으면-단-3step-만으로-웹어플리케이션을-실행할-수-있다">설정이 다 끝났으면 단 <em>3step</em> 만으로 웹어플리케이션을 실행할 수 있다.</h3>
 <p>그 전에 장고에는 2가지의 migration 과정이 있는데, <br />
@@ -257,9 +251,9 @@ step3 : 끝으로, 브라우저에 <code class="highlighter-rouge">http://127.0.
       <br><br>
       <footer>
         
-        <a href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-algorithm-level1-2.html" class="float-left">&larr; Previous post</a> 
+        <a href="/solve%20algorithm!/algorithm/2017/05/28/tryhelloworld-level1-1-4.html" class="float-left">&larr; Previous post</a> 
         
-        <a href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-algorithm-level1-3.html" class="float-right">Next post &rarr;</a> 
+        <a href="/solve%20algorithm!/algorithm/2017/05/29/tryhelloworld-level1-2-1.html" class="float-right">Next post &rarr;</a> 
         <br><br>
         
   <div id="disqus_thread"></div>

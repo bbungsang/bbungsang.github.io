@@ -38,7 +38,7 @@
   <header id="header" class="header black-bg">
     <!-- Menubar Button -->
     <div class="sidebar-toggle-box">
-      <div class="fa fa-bars tooltips" data-placement="right"></div>
+      <div class="fa fa-bars" data-placement="right"></div>
     </div>
     <!-- Logo -->
     <a href="/" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
@@ -156,22 +156,19 @@
 
         </div>
       </header>
-      <hr noshade style="width: 100%; float: left;">
+      <!-- <hr noshade style="width: 100%; float: left;"> -->
       <section class="post-content">
         <blockquote>
-  <p>٩(๑òωó๑)۶ 아, 아, 마이크 테스트<br />
-이 마크다운은 빌루바노빅의 ‘Introducing Python’을 토대로 작성되었습니다.
+  <p>이 마크다운은 <strong>빌루바노빅</strong> 의 <strong>Introducing Python</strong> 을 토대로 작성되었습니다.
 제 기준 헷갈리는 개념을 위주로 다른 문서를 참고하여 이해하기 쉽도록 내용을 더하였습니다.</p>
 </blockquote>
 
-<p><br /></p>
 <h2 id="컴프리헨션">컴프리헨션</h2>
 <ul>
   <li>사전적 의미 : 이해력</li>
-  <li>컴퓨터적 의미 : 함축, 하나 이상의 이터레이터(리스트, 튜플…)로 부터 코드를 절약한 자료구조를 만드는 방법</li>
+  <li>컴퓨터적 의미 : 함축, 하나 이상의 이터레이터로 부터 코드를 절약한 자료구조를 만드는 방법</li>
 </ul>
 
-<p><br /></p>
 <h4 id="리스트-컴프리헨션">리스트 컴프리헨션</h4>
 <blockquote>
   <p>1부터 5까지 정수 리스트를 만드는 데에는 아래와 같은 방법들이 있다.</p>
@@ -191,8 +188,7 @@
 </code></pre>
 </div>
 <ul>
-  <li>이들 접근 방식은 동일한 결과를 생성한다. 하지만 <strong>리스트 컴프리헨션</strong> 을 사용해서 리스트를 만드는 것이 조금 더 파이써닉한 방법이라고 할 수 있다.
-<br /><br /></li>
+  <li>이들 접근 방식은 동일한 결과를 생성한다. 하지만 <strong>리스트 컴프리헨션</strong> 을 사용해서 리스트를 만드는 것이 조금 더 파이써닉한 방법이라고 할 수 있다.</li>
 </ul>
 
 <blockquote>
@@ -204,8 +200,7 @@
 </div>
 <ul>
   <li>리스트에 대한 값을 생성하는 <code class="highlighter-rouge">첫 번째 num</code> 변수(표현식)는 루프의 결과에 주어진 연산식을 적용하여 num_list 변수에 넣어준다.</li>
-  <li><code class="highlighter-rouge">두 번째 num</code> 변수는 단순히 for문의 일부이다.
-<br /><br /></li>
+  <li><code class="highlighter-rouge">두 번째 num</code> 변수는 단순히 for문의 일부이다.</li>
 </ul>
 
 <blockquote>
@@ -218,8 +213,7 @@
 </code></pre>
 </div>
 <ul>
-  <li><code class="highlighter-rouge">num % 2 == 1</code> 은 홀수일 때 True 짝수일 때 False를 도출하여 True 값인 홀수를 생성한다.
-<br /><br /></li>
+  <li><code class="highlighter-rouge">num % 2 == 1</code> 은 홀수일 때 True 짝수일 때 False를 도출하여 True 값인 홀수를 생성한다.</li>
 </ul>
 
 <blockquote>
@@ -240,7 +234,6 @@
 </code></pre>
 </div>
 
-<p><br /></p>
 <h4 id="딕셔너리-컴프리헨션">딕셔너리 컴프리헨션</h4>
 <ul>
   <li>딕셔너리 형태로 값을 반환받는 것을 제외하고 리스트 컴프리헨션과 거의 흡사하다.</li>
@@ -263,7 +256,6 @@
   <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">letter:</span><span class="w"> </span><span class="err">word.count(letter)</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">letter</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">set(word)</span><span class="p">}</span></code> 면 시간 낭비를 줄이고 조금 더 파이써닉하게 처리할 수 있다.</li>
 </ul>
 
-<p><br /></p>
 <h4 id="결론"><em>결론</em></h4>
 <ul>
   <li>컴프리헨션은 이전 예제보다 간단하지 않지만, 더 많은 것을 간단한 원리로 표현할 수 있도록 해준다.</li>

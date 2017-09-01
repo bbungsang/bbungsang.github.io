@@ -38,7 +38,7 @@
   <header id="header" class="header black-bg">
     <!-- Menubar Button -->
     <div class="sidebar-toggle-box">
-      <div class="fa fa-bars tooltips" data-placement="right"></div>
+      <div class="fa fa-bars" data-placement="right"></div>
     </div>
     <!-- Logo -->
     <a href="/" class="logo"><b>BBUNGSANG'S BOARING NOTE</b></a>
@@ -154,7 +154,7 @@
 
         </div>
       </header>
-      <hr noshade style="width: 100%; float: left;">
+      <!-- <hr noshade style="width: 100%; float: left;"> -->
       <section class="post-content">
         <h2 id="url">URL</h2>
 <ul>
@@ -188,12 +188,13 @@
 </div>
 
 <h4 id="사용된-정규표현식">[사용된 정규표현식]</h4>
-<p><code class="highlighter-rouge">^post/(]d+)/$</code><br />
-<strong>^post/</strong> : url이 <code class="highlighter-rouge">post/</code> 로 <em>시작</em> <br />
-<strong>(\d+)</strong> : <code class="highlighter-rouge">숫자</code>가 한 개 이상 <br />
-<strong>/$</strong> : url 마지막이 <code class="highlighter-rouge">/</code> 로 <em>끝남</em></p>
+<p><code class="highlighter-rouge">^post/(]d+)/$</code></p>
+<ul>
+  <li><strong>^post/</strong> : url이 <strong>post/</strong> 로 <em>시작</em> <br /></li>
+  <li><strong>(\d+)</strong> : <strong>숫자</strong> 가 한 개 이상 <br /></li>
+  <li><strong>/$</strong> : url 마지막이 <strong>/</strong> 로 <em>끝남</em></li>
+</ul>
 
-<p><br /></p>
 <h2 id="뷰view">뷰(view)</h2>
 <ul>
   <li>어플리케이션의 ‘로직’을 넣는 곳. url과 연결되어있는 함수기반, 클래스기반. <br /></li>
