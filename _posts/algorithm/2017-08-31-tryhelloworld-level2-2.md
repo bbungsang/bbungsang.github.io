@@ -48,7 +48,7 @@ print(Jaden_Case("3people is not sTudent"))
 
 - 다른 사람 풀이
 
-```
+```python
 def Jaden_Case(s):
     answer =[]
     for i in range(len(s.split())):

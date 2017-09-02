@@ -1,8 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 
 body {
     color: #797979;
-	  /*background: #f2f2f2;*/
+	  /*background: #f4f4f4;*/
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
@@ -43,16 +45,23 @@ hr {
 
 .centered {
 	text-align: center;
+  margin: 10px 0;
+}
+
+.contact {
+  margin: 0 3px;
 }
 
 ul.top-menu > li > .logout {
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border: 1px solid #AFA5CF !important;
+	/*border-radius: 4px;*/
+	/*-webkit-border-radius: 4px;*/
+	/*border: 1px solid #AFA5CF !important;*/
 	padding: 5px;
 	margin-right: 10px;
-	background: #CBBFF0;
-	margin-top: 12px;
+	/*background: #CBBFF0;*/
+  color:#747474;
+	margin-top: 15px;
+  font-family: 'Nanum Gothic Coding';
 }
 
 /*-- sidebar navigation --*/
@@ -60,12 +69,13 @@ ul.top-menu > li > .logout {
     width: 210px;
     height: 100%;
     position: fixed;
-    background: #4C586F;
+    background: #f4f4f4;
 }
 
 #sidebar h5 {
-	color: #f2f2f2;
+	color: #747474;;
 	font-weight: 700;
+  margin-bottom: 20px;
 }
 
 #sidebar ul li {
@@ -119,7 +129,7 @@ ul.sidebar-menu li ul.sub li a {
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    color: #fff;
+    color: #747474;
 }
 
 ul.sidebar-menu li ul.sub li a:hover {
@@ -146,6 +156,7 @@ ul.sidebar-menu li{
 
 ul.sidebar-menu li.sub-menu{
     line-height: 15px;
+    border-top: 1px solid #ddd;
 }
 
 ul.sidebar-menu li a span{
@@ -153,7 +164,7 @@ ul.sidebar-menu li a span{
 }
 
 ul.sidebar-menu li a{
-    color: #fff;
+    color: #747474;
     text-decoration: none;
     display: block;
     padding: 15px 0 15px 10px;
@@ -167,8 +178,8 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #7BD4CC;
-    color: #fff;
+    /*background: #7BD4CC;*/
+    color: #7BD4CC;
     display: block;
 
     -webkit-transition: all 0.3s ease;
@@ -202,10 +213,11 @@ ul.sidebar-menu li a.active i {
     left: 0;
     right: 0;
     z-index: 1002;
+    box-shadow: 0 2px 2px -2px gray;
 }
 
 .black-bg {
-    background: #7BD4CC;
+    background: #fff;
     border-bottom: 1px solid #A0C1B8;
 }
 
@@ -219,16 +231,22 @@ ul.sidebar-menu li a.active i {
     width: 100%;
 }
 
-a.logo {
-    font-size: 20px;
-    color: #fff;
-    float: left;
-    margin-top: 17px;
-    text-transform: uppercase;
+a.front-logo {
+  font-size: 28px;
+  font-family: 'Patrick Hand SC';
+  font-weight: bold;
+  color: #7BD4CC;
+  float: left;
+  margin-right: 10px;
+  margin-top: 7px;
 }
 
-a.logo b {
-    font-weight: 900;
+a.back-logo {
+  font-size: 18px;
+  font-family: 'Bubbler One', sans-serif;
+  color: #7BD4CC;
+  float: left;
+  margin-top: 18px;
 }
 
 a.logo:hover, a.logo:focus {

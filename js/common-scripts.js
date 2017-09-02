@@ -65,17 +65,10 @@ var Script = function () {
               'transition': '0.2s'
           });
           $('#content').css({
-            'margin-left': '10px',
-            'width': '69.5%',
+            'margin-left': '100px',
+            'width': '91%',
             'transition': '0.2s'
           });
-          $('#widget').css({
-            'width': '29%'
-          });
-          // $('#markdown').css({
-          //     'background': 'blue',
-          //     'transition': '0.5s'
-          // });
           $('#sidebar > ul').hide();
           $("#container").addClass("sidebar-closed");
         } else {
@@ -86,16 +79,9 @@ var Script = function () {
           });
           $('#content').css({
             'margin-left': '220px',
-            'width': '59%',
+            'width': '80%',
             'transition': '0.5s'
           });
-          $('#widget').css({
-            'width': '25%'
-          });
-          // $('#markdown').css({
-          //   'background': 'red',
-          //   'width': '100%',
-          // });
           $("#container").removeClass("sidebar-closed");
         }
       });

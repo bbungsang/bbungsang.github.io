@@ -1,8 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
+
 .markdown {
   height: auto;
   padding-top: 80px;
   font-size: 15px;
+  font-family: 'Jeju Myeongjo', sans-serif;
   /* Post */
   /* Code */
   /* Comment */
