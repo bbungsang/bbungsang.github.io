@@ -16,7 +16,7 @@ comments: true
 
 예를들어 N이 7일 경우 아래 그림이 타일을 배치할 수 있는 한 경우입니다.
 
-![tiles]({{site.url}}/assets/tiles.png)
+![tiles]({{site.url}}/assets/tiles.png){: .image-center }
 
 단, 리턴하는 숫자가 매우 커질 수도 있으므로 숫자가 5자리를 넘어간다면 맨 끝자리 5자리만 리턴하세요.
 
