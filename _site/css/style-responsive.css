@@ -14,8 +14,8 @@
 
   /* 최신 글 바로가기 */
   .container .recent-posts {
-    margin: 0;
-    padding: 30px 30px 0 30px;
+    margin: 0 auto;
+    padding: 30px 75px 0 13px;
     float: left;
   }
 
@@ -37,7 +37,7 @@
   /* 포스트 전체 목록 */
   .container .category-list {
     margin: 0;
-    padding-left: 30px;
+    padding-left: 15px;
     float: left;
   }
 

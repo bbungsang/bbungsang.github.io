@@ -66,8 +66,8 @@ var Script = function () {
           });
           $('#content').css({
             'margin-left': '100px',
-            'width': '91%',
-            'transition': '0.2s'
+            'width': '89%',
+            'transition': '0.3s'
           });
           $('#sidebar > ul').hide();
           $("#container").addClass("sidebar-closed");

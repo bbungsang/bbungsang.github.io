@@ -60,11 +60,21 @@
       float: left;
 
       .recent-post-title {
+        border-top: 3px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 5px 0;
+        margin-bottom: 10px;
 
+        a {
+          font-family: 'Nanum Gothic Coding';
+          color: #3ddad7;
+          padding: 5px 10px;
+          font-size: 17px;
+        }
       }
 
-      .recent-posts {
-
+      .posts {
+        padding: 3px 10px;
       }
     }
 

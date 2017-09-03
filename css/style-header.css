@@ -53,15 +53,16 @@ hr {
 }
 
 ul.top-menu > li > .logout {
-	/*border-radius: 4px;*/
-	/*-webkit-border-radius: 4px;*/
-	/*border: 1px solid #AFA5CF !important;*/
-	padding: 5px;
-	margin-right: 10px;
-	/*background: #CBBFF0;*/
   color:#747474;
-	margin-top: 15px;
+  height: 59px;
+  line-height: 43px;
   font-family: 'Nanum Gothic Coding';
+}
+
+ul.top-menu > li > .logout:hover {
+  background: #fafafa;
+  border-bottom: 4px solid #3ddad7;
+  transition: 0.2s;
 }
 
 /*-- sidebar navigation --*/
@@ -232,21 +233,21 @@ ul.sidebar-menu li a.active i {
 }
 
 a.front-logo {
-  font-size: 28px;
+  font-size: 32px;
   font-family: 'Patrick Hand SC';
   font-weight: bold;
-  color: #7BD4CC;
+  color: #3ddad7;
   float: left;
   margin-right: 10px;
-  margin-top: 7px;
+  margin-top: 4px;
 }
 
 a.back-logo {
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'Bubbler One', sans-serif;
-  color: #7BD4CC;
+  color: #3ddad7;
   float: left;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 a.logo:hover, a.logo:focus {
@@ -280,14 +281,14 @@ a.logo span {
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
-    color: #747474;
-    border: 1px solid #747474;
+    color: #9aacb8;
+    border: 1px solid #9aacb8;
     border-radius: 3px;
     padding: 5px 10px;
 }
 
 .sidebar-toggle-box .fa-bars:hover {
-  background: #747474;
+  background: #9aacb8;
   color: #fff;
 }
 

@@ -20,20 +20,3 @@ layout: default
       </li>
     </ul>
   </div>
-  <div id="widget" class="widget">
-    <div class="recent-post-title">
-      <img src="images/rocket.png" width="27px">
-      최신 글 바로가기
-    </div>
-    {% for post in site.posts | limit:7 %}
-    <div class="recent-posts">
-      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        - {{ post.title }}
-      </a>
-    </div>
-    {% endfor %}
-
-    <div class="calendar">
-
-    </div>
-  </div>
