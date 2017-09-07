@@ -60,13 +60,14 @@
       float: left;
 
       .recent-post-title {
+        background: #fafafa;
         border-top: 3px solid #ddd;
         border-bottom: 1px solid #ddd;
         padding: 5px 0;
         margin-bottom: 10px;
 
         a {
-          font-family: 'Nanum Gothic Coding';
+          font-family: '맑은 고딕';
           color: #3ddad7;
           padding: 5px 10px;
           font-size: 17px;
@@ -86,9 +87,6 @@
       font-size: 17px;
 
       .category-title {
-        width: 100%;
-        height: auto;
-        float: left;
 
         h3 {
           // font-family: 'Nanum Barun Gothic', sans-serif;
@@ -109,6 +107,19 @@
           a:hover {
             color: #3C455C;
             transition: 0.5s;
+          }
+
+          .read-more-btn {
+            margin: 5px;
+            padding: 3px 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #fafafa;
+            color: #D9418C;
+          }
+
+          .read-more-btn:hover {
+            background: skyblue;
           }
         }
       }

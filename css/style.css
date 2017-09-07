@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container {
   width: 100%;
   height: 100%;
@@ -58,6 +59,7 @@
 }
 
 .container .content .recent-posts .recent-post-title {
+  background: #fafafa;
   border-top: 3px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding: 5px 0;
@@ -65,7 +67,7 @@
 }
 
 .container .content .recent-posts .recent-post-title a {
-  font-family: 'Nanum Gothic Coding';
+  font-family: '맑은 고딕';
   color: #3ddad7;
   padding: 5px 10px;
   font-size: 17px;
@@ -80,12 +82,6 @@
   height: auto;
   float: left;
   font-size: 17px;
-}
-
-.container .content .category-list .category-title {
-  width: 100%;
-  height: auto;
-  float: left;
 }
 
 .container .content .category-list .category-title h3 {
@@ -106,4 +102,17 @@
 .container .content .category-list .category-title ul a:hover {
   color: #3C455C;
   transition: 0.5s;
+}
+
+.container .content .category-list .category-title ul .read-more-btn {
+  margin: 5px;
+  padding: 3px 5px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  color: #D9418C;
+}
+
+.container .content .category-list .category-title ul .read-more-btn:hover {
+  background: skyblue;
 }

@@ -3,17 +3,18 @@ layout: default
 ---
 
 <div id="content" class="content">
-  <!-- python -->
   <ul class="category-list">
     <li class="category-title">
-      <a href="{{ site.baseurl }}/files/etc/aws.html"><h3>아마존 웹 서비스</h3></a>
       {% for post in site.categories.aws %}
       <ul class="tags-exop-posts">
         <li>
           <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-            - {{ post.title }}
-            <small class="post-date">{{ post.date | date_to_string }}</small>
+            <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
           </a>
+          <p class="" style="font-size: 14px; margin-bottom: 40px;">
+            {{ post.content | strip_html | truncatewords: 40 }}
+            <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">Read More</a>
+          </p>
         </li>
       </ul>
       {% endfor %}
