@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'variables';
 
 
@@ -6,7 +6,7 @@
   height: auto;
   padding-top: 80px;
   font-size: 15px;
-  font-family: 'Jeju Myeongjo', sans-serif;
+  // font-family: 'Jeju Myeongjo', sans-serif;
 
   // .center-image {
   //   margin: 0 auto;
@@ -147,7 +147,7 @@
     color: #999;
   }
 
-  .highlighter-rouge { color: #3DDAD7 }
+  .highlighter-rouge { color: #D9418C; font-size: 15px; font-family: 'Roboto', sans-serif; }
   .highlight .c, .highlight .c1 { color: #586E75 } /* Comment */
   .highlight .err { color: #93A1A1 } /* Error */
   .highlight .g { color: #93A1A1 } /* Generic */

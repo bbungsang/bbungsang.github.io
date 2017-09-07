@@ -56,7 +56,7 @@ ul.top-menu > li > .logout {
   color:#747474;
   height: 59px;
   line-height: 43px;
-  font-family: 'Nanum Gothic Coding';
+  /*font-family: 'Nanum Gothic Coding';*/
 }
 
 ul.top-menu > li > .logout:hover {

@@ -1,9 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 .markdown {
   height: auto;
   padding-top: 80px;
   font-size: 15px;
-  font-family: 'Jeju Myeongjo', sans-serif;
   /* Post */
   /* Code */
   /* Comment */
@@ -159,7 +158,9 @@
     font-size: 14px;
     color: #999; }
   .markdown .highlighter-rouge {
-    color: #3DDAD7; }
+    color: #D9418C;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif; }
   .markdown .highlight .c, .markdown .highlight .c1 {
     color: #586E75; }
   .markdown .highlight .err {
