@@ -6,14 +6,13 @@ layout: default
     <!-- python -->
     <ul class="category-list">
       <li class="category-title">
-        <a href="{{ site.baseurl }}/files/python/basic.html"><h3>파이썬 문법</h3></a>
         {% for post in site.categories.basic %}
         <ul class="tags-exop-posts">
           <li>
             <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-              - {{ post.title }}
-              <small class="post-date">{{ post.date | date_to_string }}</small>
+              <h3>{{ post.title }} | {{ post.date | date_to_string }}</h3>
             </a>
+            <p class="nice-text">{{ post.content | strip_html | truncatewords: 50 }}</p>
           </li>
         </ul>
         {% endfor %}

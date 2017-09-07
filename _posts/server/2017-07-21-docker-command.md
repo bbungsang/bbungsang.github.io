@@ -138,3 +138,7 @@ RUN             /root/.pyenv/versions/elass/bin/pip install uwsgi
 RUN             apt-get -y install nginx
 RUN             apt-get -y install supervisor
 ```
+
+> **[dockerfile 작성후 이미지 빌드 명령어]** <br>
+> `docker build -t eb_ubuntu . -f .dockerfiles/Dockerfile.ubuntu` <br>
+> - docker build -t <사용할 이미지 이름> <프로젝트 경로( . : 커맨드라인을 실행하는 현재 위치)> -f \<Dockerfile이 존재하는 경로>
