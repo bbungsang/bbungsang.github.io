@@ -26,7 +26,7 @@
         .container .content .tags .tag-cloud .tag-elements a {
           font-size: 12px;
           color: #747474;
-          margin: 10px 5px !important;
+          margin: 10px 5px;
           padding: 3px;
           border-radius: 7px;
           border: 1px solid #e6e6e6;
@@ -52,30 +52,34 @@
           padding: 5px 10px;
           font-size: 17px; }
       .container .content .recent-posts .posts {
-        padding: 3px 10px; }
-    .container .content .category-list {
+        padding: 3px 10px;
+        border-bottom: 1px solid #ddd; }
+    .container .content ul.category-list {
       width: 100%;
       height: auto;
       float: left;
-      font-size: 17px; }
-      .container .content .category-list .category-title h3 {
+      font-size: 17px;
+      margin: 0;
+      left: 0; }
+      .container .content ul.category-list .category-title h3 {
         font-size: 22px;
         color: #428bca;
-        margin: 30px 0 10px 5px; }
-      .container .content .category-list .category-title ul {
+        margin: 30px 0 10px 0; }
+      .container .content ul.category-list .category-title ul {
         margin: 0;
+        padding: 0;
         padding-left: 5px; }
-        .container .content .category-list .category-title ul a.post-title {
-          color: #A6A6A6; }
-        .container .content .category-list .category-title ul a:hover {
-          color: #3C455C;
+        .container .content ul.category-list .category-title ul a.post-title {
+          color: #000; }
+        .container .content ul.category-list .category-title ul a:hover {
+          color: #3ddad7;
           transition: 0.5s; }
-        .container .content .category-list .category-title ul .read-more-btn {
+        .container .content ul.category-list .category-title ul .read-more-btn {
           margin: 5px;
           padding: 3px 5px;
           border: 1px solid #ddd;
           border-radius: 10px;
           background: #fafafa;
           color: #D9418C; }
-        .container .content .category-list .category-title ul .read-more-btn:hover {
+        .container .content ul.category-list .category-title ul .read-more-btn:hover {
           background: skyblue; }

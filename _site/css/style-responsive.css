@@ -34,17 +34,6 @@
     color: #ddd;
   }
 
-  /* 포스트 전체 목록 */
-  .container .category-list {
-    margin: 0 auto;
-    padding: 15px 75px 0 13px;
-    float: left;
-  }
-
-  .markdown {
-    margin: 0 220px;
-  }
-
   /* right sidebar */
   .container .content {
     width: 80%;
@@ -54,7 +43,7 @@
   }
 
   .center-image {
-    width: 430px;
+    width: 500px;
     margin: 0 auto;
     display: block;
   }
@@ -120,7 +109,7 @@
 
   .container .category-list {
     margin: 0;
-    padding: 0 15px !important;
+    padding: 0 15px;
   }
 
   .container .category-list h3 {
@@ -141,7 +130,7 @@
   }
 
   .center-image {
-    width: 350px;
+    width: 300px;
     margin: 0 auto;
     display: block;
   }

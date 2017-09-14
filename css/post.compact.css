@@ -7,7 +7,7 @@
 
 .markdown .a-tag-deco:hover { color: #fff; background: #3DDAD7; }
 
-.markdown .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+.markdown .markdown-body { box-sizing: border-box; min-width: 300px; max-width: 980px; margin: 0 auto; padding: 20px; }
 
 .markdown .markdown-body .post-content { width: 100%; float: left; }
 

@@ -35,7 +35,7 @@
           a {
             font-size: 12px;
             color: #747474;
-            margin: 10px 5px !important;
+            margin: 10px 5px;
             padding: 3px;
             border-radius: 7px;
             border: 1px solid #e6e6e6;
@@ -76,15 +76,18 @@
 
       .posts {
         padding: 3px 10px;
+        border-bottom: 1px solid #ddd;
       }
     }
 
-    .category-list {
+    ul.category-list {
       // border-top: 2px solid #ddd;
       width: 100%;
       height: auto;
       float: left;
       font-size: 17px;
+      margin: 0;
+      left: 0;
 
       .category-title {
 
@@ -93,19 +96,20 @@
           font-size: 22px;
           color: #428bca;
           // font-weight: bold;
-          margin: 30px 0 10px 5px;
+          margin: 30px 0 10px 0;
         }
 
         ul {
           margin: 0;
+          padding: 0;
           padding-left: 5px;
 
           a.post-title {
-            color: #A6A6A6;
+            color: #000;
           }
 
           a:hover {
-            color: #3C455C;
+            color: #3ddad7;
             transition: 0.5s;
           }
 
