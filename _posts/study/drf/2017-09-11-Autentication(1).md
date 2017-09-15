@@ -4,6 +4,7 @@ title:  "[DRF] Authentication 적용하기"
 category: [DRF, drf]
 tags:
   - Django
+  - REST API
 comments: true
 ---
 
@@ -49,7 +50,7 @@ class ExampleView(APIView):
     	[...]
 ```
 
-- DEFAULT_AUTHENTICATION_CLASSES를 설정하면, 설정한 기본 인증 제도 하에 이 DRF를 실행하겠다는 의미를 전제하고 있다. 즉, 기본적으로 SessionAuthentication(모든 페이지에 세션 인증 반영)을 설정했고, 특정 페이지만 TokenAuthentication으로 인증할 경우, 해당 View에 별도로 선언해야 한다.
+- `DEFAULT_AUTHENTICATION_CLASSES`를 설정하면, 설정한 기본 인증 제도 하에 이 DRF를 실행하겠다는 의미를 전제하고 있다. 즉, 기본적으로 SessionAuthentication(모든 페이지에 세션 인증 반영)을 설정했고, 특정 페이지만 TokenAuthentication으로 인증할 경우, 해당 View에 별도로 선언해야 한다.
 
 ### FBV
 

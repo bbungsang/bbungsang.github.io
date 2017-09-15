@@ -4,6 +4,7 @@ title:  "[DRF] Authentication API Reference"
 category: [DRF, drf]
 tags:
   - Django
+  - REST API
 comments: true
 ---
 

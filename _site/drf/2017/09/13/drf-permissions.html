@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>뿡상의 개발공부로그</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/base.css" />
+
+	<link rel="stylesheet" href="/css/etc.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+	<!-- font -->
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap core CSS -->
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Custom styles for this template -->
+	<link href="/css/style-header.css" rel="stylesheet">
+	<link href="/css/style-responsive.css" rel="stylesheet">
+
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', UA-100042262-1, 'auto'); // config google_analytics ua에 저장한 추적 ID가 들어감
+	    ga('send', 'pageview');
+	</script>
+
+	<script src="/dest/jekyll-search.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: true,
+        exclude: ['Welcome']
+      })
+</script>
+
+
+</head>
+
+<body>
+  <div id="container" class="container">
+    
+<div id="top-wrap">
+  <header id="header" class="header black-bg">
+    <!-- Menubar Button -->
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars" data-placement="right"></div>
+    </div>
+    <!-- Logo -->
+    <a href="/" class="front-logo">bbungsang </a>
+    <a href="">  </a>
+    <a href="/" class="back-logo"> Devlog</a>
+    <div class="nav notify-row" id="top_menu">
+    </div>
+    <div class="top-menu">
+    	<ul class="nav pull-right top-menu">
+        <li>
+          <a class="logout" href="https://github.com/bbungsang">
+            <!-- <img src="/images/github.png" width="24px"> -->
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a class="logout" href="#">
+            <!-- <img src="/images/facebook.png" width="24px"> -->
+            Facebook
+          </a>
+        </li>
+    	</ul>
+    </div>
+  </header>
+
+  <!-- **********************************************************************************************************************************************************
+  MAIN SIDEBAR MENU
+  *********************************************************************************************************************************************************** -->
+  <!--sidebar start-->
+  <aside>
+    <div id="sidebar"  class="nav-collapse">
+      <!-- sidebar menu start-->
+      <ul class="sidebar-menu" id="nav-accordion">
+        <p class="centered"><a href="#"><img src="/images/meme.png" class="img-circle" width="90px"></a></p>
+    	  <h5 class="centered">Elena Kim</h5>
+        <p class="centered">
+          <a href="#" class="contact"><img src="/images/facebook.png" width="20px"></a>
+          <a href="https://github.com/bbungsang" class="contact"><img src="/images/github.png" width="20px"></a>
+          <a href="#" class="contact"><img src="/images/google.png" width="20px"></a>
+        </p>
+        <li class="sub-menu">
+          <a href="javascript:;" >
+            <!-- <span class="glyphicon glyphicon-flash"></span> -->
+            <span class="glyphicon glyphicon-plus-sign plus-button pull-right"></span>
+            Python
+          </a>
+          <ul class="sub">
+            <li><a href="/files/python/basic.html">문법</a></li>
+            <li><a href="/files/python/library.html">라이브러리</a></li>
+          </ul>
+        </li>
+
+        <li class="sub-menu">
+          <a href="javascript:;" >
+            <!-- <span class="glyphicon glyphicon-grain"></span> -->
+            <span class="glyphicon glyphicon-plus-sign plus-button pull-right"></span>
+            Django
+          </a>
+          <ul class="sub">
+            <li><a href="/files/django/djangogirls.html">Do 장고걸스!</a></li>
+            <li><a href="/files/django/travel.html">Ask 장고 여행블로그</a></li>
+            <!-- <li><a href="/files/django/tutorial.html">장고 튜토리얼</a></li> -->
+            <li><a href="/files/django/instargram.html">인스타그램</a></li>
+          </ul>
+        </li>
+
+        <li class="sub-menu">
+          <a href="javascript:;" >
+            <!-- <span class="glyphicon glyphicon-tint"></span> -->
+            <span class="glyphicon glyphicon-plus-sign plus-button pull-right"></span>
+            Algorithm
+          </a>
+          <ul class="sub">
+            <li><a href="/files/algorithm/tryhelloworld.html">Try Hello World</a></li>
+          </ul>
+        </li>
+        <li class="sub-menu">
+          <a href="javascript:;" >
+            <!-- <span class="glyphicon glyphicon-heart-empty"></span> -->
+            <span class="glyphicon glyphicon-plus-sign plus-button pull-right"></span>
+            Study
+          </a>
+          <ul class="sub">
+            <li><a href="/files/study/two-scoops.html">두숟갈 스터디</a></li>
+            <li><a href="#">DRF</a></li>
+          </ul>
+        </li>
+        <li class="sub-menu">
+          <a href="javascript:;" >
+            <!-- <span class="glyphicon glyphicon-star"></span> -->
+            <span class="glyphicon glyphicon-plus-sign plus-button pull-right"></span>
+            etc
+          </a>
+          <ul class="sub">
+            <li><a href="/files/etc/aws.html">AWS</a></li>
+            <li><a href="/files/etc/mentoring.html">개발자 멘토링</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery-1.8.3.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script class="include" type="text/javascript" src="/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/js/jquery.scrollTo.min.js"></script>
+
+<!--common script for all pages-->
+<script src="/js/common-scripts.js"></script>
+
+    <div class="empty"></div>
+        <div id="markdown" class="markdown">
+    <article class="markdown-body">
+      <header class="major">
+        <div class="h1">[DRF] Permissions</div>
+        <div class="date-tags">
+          13 Sep 2017
+          <img src="/images/tags.png" class="tag-img"/>
+<div class="post-tags">
+  
+  
+  <a href="/tags/#Django">Django</a>,
+  
+  <a href="/tags/#REST API">REST API</a>
+  
+</div>
+<br/>
+
+        </div>
+      </header>
+      <!-- <hr noshade style="width: 100%; float: left;"> -->
+      <section class="post-content">
+        <ul>
+  <li><a href="https://github.com/django-rest-framework-study/weeklystudy/blob/master/week1/drf-authentication.md">Authentication</a>과 Permissions는 접근을 수락할 것인지 거부할 것인지를 결정한다.</li>
+  <li>Permissions는 보통 다른 인스턴스 정보를 가진 사용자가 나의 인스턴스만 접근할 수 있는 페이지에 접근하려할 때 사용된다.</li>
+  <li>Permissions는 항상 다른 코드가 실행되기 전, <strong>View가 시작될 때 체크</strong> 하며, <code class="highlighter-rouge">요청에 대한 허용 여부를 판단</code>하기 위해  <code class="highlighter-rouge">request.user</code>와 <code class="highlighter-rouge">request.auth</code>의 인증 정보를 사용한다.</li>
+</ul>
+
+<h2 id="사용-권한-형태">사용 권한 형태</h2>
+<ul>
+  <li>가장 간단한 사용 권한 형태는 인증된 모든 사용자에게 액세스를 허용하고, 인증되지 않은 모든 사용자에 대한 액세스를 거부하는 것이다. 이것은 DRF의 <code class="highlighter-rouge">IsAuthenticated</code> 클래스에 해당한다.</li>
+  <li>강도가 더 낮은 사용 권한으로 DRF의 <code class="highlighter-rouge">IsAutenticatedOrReadOnly</code>가 있는데, 해당 사용 권한은 인증된 사용자일 경우 모든 권한(생성/조회/수정/삭제)를 허용하고, 인증되지 않은 사용자는 조회만 허용하도록 하는 것이다.</li>
+</ul>
+
+<h2 id="사용-권한-검사-실패">사용 권한 검사 실패</h2>
+<p>권한 검사가 실패하면, <code class="highlighter-rouge">exceptions.PermissionDenied</code> 또는 <code class="highlighter-rouge">exceptions.NotAuthenticated</code> 예외가 발생하고 <strong>View가 실행되지 않는다.</strong></p>
+
+<h3 id="권한-검사-실패-status">권한 검사 실패 Status</h3>
+<ul>
+  <li><strong>HTTP 403 Forbidden</strong> : 요청이 성공적으로 인증되었으나 사용 권한이 거부된 것 또는 요청이 성공적으로 인증되지 않았고 최상위 Authentication 클래스가 WWW-Authenticate 헤더를 사용하지 않은 것.</li>
+  <li><strong>HTTP 401 Unauthorized response</strong> : 요청이 성공적으로 인증되지 않았고 최상위 클래스가 WWW-Authenticate 헤더를 사용하지 않은 것</li>
+</ul>
+
+<h2 id="object-level-permissions">Object Level Permissions</h2>
+<p>Permissions는 object-level permissioning을 제공한다.</p>
+
+<ul>
+  <li>사용자가 모델 인스턴스에 대한 접근 및 조작 허용 여부를 결정할 때 사용된다.</li>
+  <li><code class="highlighter-rouge">.get_object ()</code>가 호출 될 때, DRF의 View에 의해 실행되며, View의 사용 권한과 같이 유저가 지정된 객체를 조작 할 수 없는 경우에 exceptions.PermissionDenied 예외가 발생한다.</li>
+  <li>하지만 성능상의 이유로 제네릭 뷰는 object-level permissions를 자동으로 적용하지 않는다. 그렇기 때문에 object-level permissions를 사용하려면 쿼리셋을 적절하게 필터링해야 한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">())</span>
+    
+    <span class="c"># View에서 get_object()를 override하여 내용을 변경할 때,</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">check_object_permissions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="c"># 를 명시적으로 호출해야 한다.</span>
+    
+    <span class="k">return</span> <span class="n">obj</span>
+</code></pre>
+</div>
+
+<h2 id="permissions-적용하기">Permissions 적용하기</h2>
+<p><strong>1. 우선 <code class="highlighter-rouge">settings</code>에 Permissions를 사용할 것이라는 내용을 선언해야 한다.</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'DEFAULT_PERMISSION_CLASSES'</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s">'rest_framework.permissions.IsAuthenticated'</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>2-1. CBV인 APIView에서 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">DEFAULT_PERMISSION_CLASSES</code>를 설정하면, 설정한 permission을 기본으로 사용 권한 검사를 하겠다는 의미이며, 특정 페이지에 대해서 다른 사용 권한을 부여하고 싶다면, 해당 View에 별도로 선언해야 한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">IsAuthenticated</span><span class="p">,)</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'status'</span><span class="p">:</span> <span class="s">'request was permitted'</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p><strong>2-2. FBV인 경우, <code class="highlighter-rouge">@api_view</code> 데코레이터를 활용하여 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nd">@api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">])</span>
+<span class="nd">@permission_classes</span><span class="p">((</span><span class="n">IsAuthenticated</span><span class="p">,</span> <span class="p">))</span>
+<span class="k">def</span> <span class="nf">example_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'status'</span><span class="p">:</span> <span class="s">'request was permitted'</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>인증되지 않은 유저가 뷰를 실행시킬 때,</p>
+
+<p><img src="http://localhost:4000/assets/non_permission.png" alt="" class="center-image" /></p>
+
+<h2 id="api-reference">API Reference</h2>
+<h3 id="allowany">AllowAny</h3>
+<ul>
+  <li>요청이 인증되었거나 인증되지 않았는지 여부와 관계가 없다.</li>
+  <li>의도를 명시화 시키는 목적으로 주로 쓰인다.</li>
+</ul>
+
+<h3 id="isauthenticated">IsAuthenticated</h3>
+<ul>
+  <li>인증되지 않은 사용자의 사용 권한을 거부한다.</li>
+  <li>등록된 사용자만 API에 액세스할 수 있도록 할 때 적합하다.</li>
+</ul>
+
+<h3 id="isadminuser">IsAdminUser</h3>
+<ul>
+  <li>user.is_staff가 True 인 경우를 제외하고 모든 사용자에 대한 권한을 거부한다.</li>
+  <li>관리자만 접근할 수 있는 페이지에 대한 API 액세스에 적합하다.</li>
+</ul>
+
+<h3 id="isauthenticatedorreadonly">IsAuthenticatedOrReadOnly</h3>
+<ul>
+  <li>인증된 사용자일 경우 모든 권한(생성/조회/수정/삭제)를 허용하고, 인증되지 않은 사용자는 조회만 허용한다.</li>
+</ul>
+
+<p>[…]</p>
+
+<h3 id="custom-permissions">Custom permissions</h3>
+<p>커스텀 사용 권한을 적용하기 위해서, BasePermission과 아래의 메서드를 오버라이드해야 한다.</p>
+
+<ul>
+  <li>.has_permissions(self, request, view)</li>
+  <li>.has_object_permissions(self, request, view, obj)</li>
+</ul>
+
+<p>위 메서드는 액세스가 허용되면 True를 그렇지 않으면 False를 반환한다.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">BlacklistPermission</span><span class="p">(</span><span class="n">permissions</span><span class="o">.</span><span class="n">BasePermission</span><span class="p">):</span>
+    <span class="s">"""
+    Global permission check for blacklisted IPs.
+    """</span>
+
+    <span class="k">def</span> <span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+    	
+    	<span class="c"># The IP address of the client.</span>
+		<span class="n">ip_addr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s">'REMOTE_ADDR'</span><span class="p">]</span>
+		<span class="n">blacklisted</span> <span class="o">=</span> <span class="n">Blacklist</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">ip_addr</span><span class="o">=</span><span class="n">ip_addr</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+		<span class="k">return</span> <span class="ow">not</span> <span class="n">blacklisted</span>
+</code></pre>
+</div>
+
+<p>요청이 읽기 모드인지 쓰기모드인지 테스트하고자 한다면, ‘GET’, ‘OPTIONS’와 ‘HEAD’와 같은 튜플 형태의 <code class="highlighter-rouge">SAVE_METHODS</code>와 비교하여 요청 메서드를 점검해야 한다.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">permissions</span><span class="o">.</span><span class="n">SAFE_METHODS</span><span class="p">:</span>
+    <span class="c"># Check permissions for read-only request</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c"># Check permissions for write request</span>
+</code></pre>
+</div>
+
+<h2 id="참고자료">참고자료</h2>
+<ul>
+  <li><a href="">Django rest framework 공식문서 - Permissions</a></li>
+</ul>
+
+      </section>
+      <br><br>
+      <footer>
+        
+        <a href="/drf/2017/09/12/authentication-jwt.html" class="float-left">&larr; Previous post</a> 
+        
+        <br><br>
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+      </footer>
+    </article>
+  </div>
+
+  </div>
+</body>
+</html>
