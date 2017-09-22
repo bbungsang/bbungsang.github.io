@@ -208,17 +208,7 @@
         <ul>
   <li>Authentication은 View의 시작, Permission이 수행되기 전에 실행된다.</li>
   <li>인증 스키마는 클래스 단위로 정의되며, 각 클래스에 대해 인증을 시도한다. 성공적으로 인증을 한 클래스의 반환 값을 사용하여 <code class="highlighter-rouge">request.user</code> 및 <code class="highlighter-rouge">request.auth</code>를 설정한다.</li>
-  <li><strong>클래스가 인증되지 않으면</strong> request.user(User와 관련이 있다.)는 <code class="highlighter-rouge">AnonymousUser 인스턴스</code>로 설정되고, request.auth(Token과 관련이 있다.)는 <code class="highlighter-rouge">None</code>으로 설정된다.</li>
-</ul>
-
-<h2 id="authentication의-조건">Authentication의 조건</h2>
-<p>일반적으로 우리가 제작한 API 데이터를 누구나 편집하거나 삭제할 수 있으며 아무런 제한이 없다. 그렇기 때문에 다음과 같은 추가 기능이 필요하다.</p>
-
-<ul>
-  <li>가공된 데이터는, 데이터를 제작한 사람과 늘 관련이 있다.</li>
-  <li>오직 인증된 유저만 데이터를 가공할 수 있다.</li>
-  <li>데이터를 제작한 사람만 수정하거나 삭제할 수 있다.</li>
-  <li>인증되지 않은 요청들(로그인 안 한 유저 혹은 해당 데이터 작성자가 아닌 유저)은 ‘읽기 전용’으로만 접근해야한다.</li>
+  <li><strong>클래스가 인증되지 않으면</strong> request.user(User 인스턴스와 관련이 있음)는 <code class="highlighter-rouge">AnonymousUser 인스턴스</code>로 설정되고, request.auth(Token과 관련이 있음)는 <code class="highlighter-rouge">None</code>으로 설정된다.</li>
 </ul>
 
 <h2 id="authentication-설정하기">Authentication 설정하기</h2>
@@ -237,7 +227,7 @@
 
 <h2 id="api-뷰에-authentication-적용하기">API 뷰에 Authentication 적용하기</h2>
 
-<h3 id="cbv">CBV</h3>
+<h3 id="cbvclass">CBV(Class)</h3>
 
 <p><code class="highlighter-rouge">APIView</code>에서 <code class="highlighter-rouge">authentication_classes</code>를 통해 튜플 형태의 단위별 Authentication을 설정할 수 있다.</p>
 
@@ -245,17 +235,17 @@
 	<span class="c"># 첫 번째 인증 클래스는 응답 유형을 결정할 때 사용한다.</span>
     <span class="n">authentication_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">SessionAuthentication</span><span class="p">,</span> <span class="n">BasicAuthentication</span><span class="p">)</span>
     <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">IsAuthenticated</span><span class="p">,)</span>
-
+    
     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
     	<span class="p">[</span><span class="o">...</span><span class="p">]</span>
 </code></pre>
 </div>
 
 <ul>
-  <li><code class="highlighter-rouge">DEFAULT_AUTHENTICATION_CLASSES</code>를 설정하면, 설정한 기본 인증 제도 하에 이 DRF를 실행하겠다는 의미를 전제하고 있다. 즉, 기본적으로 SessionAuthentication(모든 페이지에 세션 인증 반영)을 설정했고, 특정 페이지만 TokenAuthentication으로 인증할 경우, 해당 View에 별도로 선언해야 한다.</li>
+  <li>DEFAULT_AUTHENTICATION_CLASSES를 설정하면, 설정한 기본 인증 제도 하에 이 DRF를 실행하겠다는 의미를 전제하고 있다. 즉, 기본적으로 SessionAuthentication(모든 페이지에 세션 인증 반영)을 설정했고, 특정 페이지만 TokenAuthentication으로 인증할 경우, 해당 View에 별도로 선언해야 한다.</li>
 </ul>
 
-<h3 id="fbv">FBV</h3>
+<h3 id="fbvfunction">FBV(Function)</h3>
 
 <p>또는 <code class="highlighter-rouge">@api_view</code> 데코레이터를 통해 FBV에서 설정할 수도 있다.</p>
 
@@ -281,6 +271,253 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
 
 <ul>
   <li><strong>HTTp 403 Permissions Denied</strong> : <code class="highlighter-rouge">WWW-Authenticate</code> 헤더가 포함되지 않는다. 요청은 성공적으로 인증됐지만 요청을 수행할 수 있는 사용 권한이 거부 된 경우 사용된다.</li>
+</ul>
+
+<h1 id="api-reference">API Reference</h1>
+<h2 id="basicauthentication">BasicAuthentication</h2>
+<ul>
+  <li>이 인증 체계는 username과 password에 대해 HTTP 기본 인증을 사용한다. 하지만 기본 인증은 일반적으로 테스트에 적합하다.</li>
+  <li>인증을 성공하면, <code class="highlighter-rouge">request.user</code>는 <code class="highlighter-rouge">장고 User 인스턴스</code>가 될 것이고, <code class="highlighter-rouge">request.auth</code>는 <code class="highlighter-rouge">None</code>이 될 것이다.</li>
+  <li>인증되지 않은 요청에 대하여 권한이 거부되면 HTTP 401 Unauthorized 응답을 WWW-Authenticate 헤더와 같이 돌려받는다.</li>
+</ul>
+
+<h2 id="sessionsauthentication">SessionsAuthentication</h2>
+<h3 id="전통적인-인증-방식세션-인증-방식">전통적인 인증 방식(세션 인증 방식)</h3>
+<ul>
+  <li>세션 인증 체계는 장고 기본 세션 백엔드를 사용한다.</li>
+  <li>성공적으로 인증이 이뤄졌다면, <code class="highlighter-rouge">request.user</code>는 <code class="highlighter-rouge">장고 유저 인스턴스</code>가 될 것이고 <code class="highlighter-rouge">request.auth</code>는 <code class="highlighter-rouge">None</code>이 될 것이다.</li>
+  <li>인증되지 않은 요청에 대하여 권한이 거부되면, HTTP 403 Forbidden 응답을 돌려받는다.</li>
+  <li>만약 세션 인증을 AJAX 스타일의 API와 사용한다면, PUT, PATCH, POST 또는 DELETE 요청과 같은 안전하지 않은 HTTP 메서드 호출을 할 경우 CSRF token을 포함시켜야 한다.</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/session-login.png" alt="" class="center-image" /></p>
+
+<ul>
+  <li>
+    <ol>
+      <li>사용자는 username과 password를 로그인 폼을 통해 제출한다.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>서버는 Request에 대하여 DB를 순회하여 일치하는 user 정보가 있는지를 검증한다. Request가 유효하면 세션을 생성하고 세션 정보를 Response 헤더에 포함시켜 반환한다.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>클라이언트는 인증된 사용자만 접근할 수 있는 페이지에 액세스할 때, 모든 Request 헤더에 세션 정보를 포함시킨다.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>만약 세션 정보가 유효하면 서버측에서 사용자의 접근을 허용하고 그에 따른 렌더링된 HTML 내용을 반환한다.</li>
+    </ol>
+  </li>
+</ul>
+
+<p><strong>세션 로그인의 문제점</strong></p>
+
+<ul>
+  <li>서버 확장시 세션 정보의 동기화 문제가 발생한다.
+    <ul>
+      <li>서버 1에서 로그인을 성공했어도, 새로고침을 통해 서버2로 접근하게 되면 서버는 인증이 안됐다고 판단한다.</li>
+    </ul>
+  </li>
+  <li>서버 세션 저장소의 부하
+    <ul>
+      <li>세션은 정보를 서버에 저장한다. 하지만 세션을 각 서버에 저장하지 않고 세션 전용 DB 서버에 저장해도 문제가 생긴다. 모든 요청 시 DB 서버에 조회를 해야하기 때문에 DB 부하를 일으킬 수 있다.</li>
+    </ul>
+  </li>
+  <li>웹&amp;앱 간의 상이한 쿠키-세션 처리 로직
+    <ul>
+      <li>웹과 앱의 쿠키 처리 방법이 다르고, 다른 Client가 생겨나면 그에 맞는 쿠키-세션을 처리해야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="tokenauthentication">TokenAuthentication</h2>
+<p>세션의 문제를 해결하는 최선의 방법은 토큰이다.</p>
+
+<p><img src="http://localhost:4000/assets/token-login.png" alt="" class="center-image" /></p>
+
+<blockquote>
+  <p><strong>토큰 기반 인증을 왜 사용할까? : 프론트엔드 프로젝트와 백엔드의 독립적인 개발</strong></p>
+
+  <ul>
+    <li>토큰 기반 인증에서 <code class="highlighter-rouge">토큰</code>은 요청 <code class="highlighter-rouge">헤더</code>를 통해 전달된다. 이를 <code class="highlighter-rouge">Stateless</code>라고 하는데, JSON형태의 HTTP 요청을 만들 수 있는 클라이언트라면 누구든지 서버로 요청을 보낼 수 있다는 것을 의미한다.</li>
+    <li>대부분의 웹 어플리케이션 내에서 <code class="highlighter-rouge">View</code>는 백엔드에서 렌더링이 되고, 그 결과가 브라우저로 반환되는데, 이는 프론트엔드의 로직이 백엔드 코드와 의존성이 있다는 것을 의미한다.</li>
+    <li>토큰 기반 인증에서 백엔드 코드는 렌더링된 HTML 대신 <code class="highlighter-rouge">JSON 응답을 반환</code>할 것이고, 프론트엔드는 반환된 HTML을 받아쓰는 것이 아닌, 경량화되고 압축된 버전의 독립적인 코드를 <code class="highlighter-rouge">CDN</code>에 넣어둘 수 있게된다.</li>
+    <li>즉, 사용자가 웹 페이지에 접속하면 HTML 컨텐츠는 CDN에서 제공되고, 페이지 내용은 인증 헤더의 토큰을 사용하는 API 서버에 의해 생성되어 프론트엔드와 백엔드의 독립적인 운용을 가능케한다.</li>
+    <li>토큰 기반 인증에서 토큰은 헤더 내에 포함되기 때문에 CSRF를 방지할 수 있다.</li>
+  </ul>
+</blockquote>
+
+<p><strong>1. 토큰 인증 체계를 사용하기 위해서는 <code class="highlighter-rouge">settings</code>의 <code class="highlighter-rouge">INSTALLED_APPS 설정</code>에 <code class="highlighter-rouge">rest_framework.authtoken</code>을 추가해야 한다.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>INSTALLED_APPS = (
+    [...]
+    'rest_framework.authtoken'
+)
+</code></pre>
+</div>
+
+<p><strong>2. rest_framework.authtoken 앱은 <code class="highlighter-rouge">Django 데이터베이스 마이그레이션을 제공</code>하기 때문에 설정을 변경한 후에 <code class="highlighter-rouge">migrate를 실행</code>해야 한다.</strong></p>
+
+<p><img src="http://localhost:4000/assets/after_add_authtoken_migration.png" alt="" class="center-image" /></p>
+
+<ul>
+  <li>python manage.py migrate 명령어 실행</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/authtoken_running_migrations.png" alt="" class="center-image" /></p>
+
+<ul>
+  <li>migrate 실행 후 아래와 같이 데이터베이스 테이블이 생성된 것을 확인할 수 있다.</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/db_table_list.png" alt="" class="center-image" /></p>
+
+<ul>
+  <li>Token 테이블의 필드들</li>
+</ul>
+
+<p><img src="http://localhost:4000/assets/db_authtoken_token_fields.png" alt="" class="center-image" /></p>
+
+<p><strong>3. 토큰 생성하기</strong></p>
+
+<p>유저에 대하여 토큰을 생성해야하는데, <strong>MyUser 모델에 토큰을 생성하는 함수를 정의</strong> 하고 로그인 시 새로운 유저라면 토큰을 생성하고, 기존 유저라면 기존 토큰 값을 가져오도록 하려고 한다.</p>
+
+<p>[MyUser 모델]</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyUser</span><span class="p">(</span><span class="n">AbstractUser</span><span class="p">):</span>
+	<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+	
+    <span class="k">def</span> <span class="nf">get_user_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_pk</span><span class="p">):</span>
+    	<span class="k">return</span> <span class="n">Token</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_pk</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>[Login 시리얼라이저]</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoginSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">Serializer</span><span class="p">):</span>
+    <span class="s">""" 로그인 """</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span> <span class="n">write_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">write_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">user_type</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+        
+        <span class="n">token</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">get_user_token</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'token'</span><span class="p">:</span> <span class="n">token</span><span class="o">.</span><span class="n">key</span><span class="p">,</span>
+            <span class="s">'user'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">'user_pk'</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+                <span class="s">'username'</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+                <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">ret</span>
+</code></pre>
+</div>
+
+<p>[Login 뷰]</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoginView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="s">""" 로그인 """</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">serializer</span> <span class="o">=</span> <span class="n">LoginSerializer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">raise_exception</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">serializer</span><span class="o">.</span><span class="n">validated_data</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>포스트맨으로 로그인 실행 예</p>
+
+<p><img src="http://localhost:4000/assets/login_token_value.png" alt="" class="center-image" /></p>
+
+<ul>
+  <li>성공적으로 인증이 이뤄졌다면, <code class="highlighter-rouge">request.user</code>는 <code class="highlighter-rouge">장고 유저 인스턴스</code>가 될 것이고 <code class="highlighter-rouge">request.auth</code>는 <code class="highlighter-rouge">rest_framework.authtoken.models.Token의 인스턴스</code>가 될 것이다.</li>
+</ul>
+
+<p><strong>4. 클라이언트가 인증하려면 토큰 키가 인증 HTTP 헤더에 포함되어야한다. 키에는 두 문자열을 공백으로 구분하여 문자열 리터럴 “Token”을 접두어로 사용해야한다.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b
+</code></pre>
+</div>
+
+<p><strong>5. View에서 토큰 기반 인증을 사용하기 위해서는 Settings에 토큰 기반  인증을 사용할 것임을 선언해야 한다. 그렇지 않다면 Header에 아무리 토큰을 실어도 request.user가 AnonymousUser로 인식된다.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+</code></pre>
+</div>
+
+<p><strong>6. 인증이 필요한 뷰 실행</strong></p>
+
+<p><img src="http://localhost:4000/assets/register_tutor.png" alt="" class="center-image" /></p>
+
+<ul>
+  <li>헤더에 토큰을 실지 않으면 MyUser가 필요한 코드를 실행할 때, ‘MyUser matching query does not exist’ 오류를 뿜뿜한다.</li>
+  <li>토큰 인증을 기반으로 유저를 인증하는 것인데 토큰이 존재하지 않는 것이면 당연히 유저 또한 MyUser 테이블에 존재하지 않는 것이기 때문이다.</li>
+</ul>
+
+<hr />
+
+<h1 id="ajax로-프론트와-통신하기">AJAX로 프론트와 통신하기</h1>
+
+<p>[login.js]</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code> 
+ <span class="err">$</span><span class="o">(</span><span class="s">"#loginForm"</span><span class="o">).</span><span class="na">submit</span><span class="o">(</span><span class="n">function</span><span class="o">(</span><span class="n">event</span><span class="o">){</span>
+    <span class="n">var</span> <span class="n">username</span> <span class="o">=</span> <span class="err">$</span><span class="o">(</span><span class="s">"input#username"</span><span class="o">).</span><span class="na">val</span><span class="o">();</span>
+    <span class="n">var</span> <span class="n">password</span> <span class="o">=</span> <span class="err">$</span><span class="o">(</span><span class="s">"input#password"</span><span class="o">).</span><span class="na">val</span><span class="o">();</span>
+
+    <span class="n">logIn</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">password</span><span class="o">);</span>
+  <span class="o">})</span>
+
+  <span class="n">function</span> <span class="nf">logIn</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">var</span> <span class="n">token</span> <span class="o">=</span> <span class="err">''</span><span class="o">;</span>
+    <span class="err">$</span><span class="o">.</span><span class="na">ajax</span><span class="o">({</span>
+      <span class="nl">type:</span> <span class="s">"POST"</span><span class="o">,</span>
+      <span class="nl">url:</span> <span class="s">"{% url 'member:api_login' %}"</span><span class="o">,</span>
+      <span class="nl">data:</span> <span class="o">{</span><span class="err">'</span><span class="n">username</span><span class="err">'</span><span class="o">:</span> <span class="n">username</span><span class="o">,</span> <span class="err">'</span><span class="n">password</span><span class="err">'</span><span class="o">:</span> <span class="n">password</span><span class="o">,</span> <span class="err">'</span><span class="n">csrfmiddlewaretoken</span><span class="err">'</span><span class="o">:</span> <span class="err">'</span><span class="o">{{</span> <span class="n">csrf_token</span> <span class="o">}}</span><span class="err">'</span><span class="o">},</span>
+      <span class="nl">dataType:</span> <span class="s">"json"</span><span class="o">,</span>
+      <span class="nl">success:</span> <span class="n">function</span> <span class="o">(</span><span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">token</span><span class="o">;</span>
+        <span class="n">localStorage</span><span class="o">.</span><span class="na">setItem</span><span class="o">(</span><span class="err">'</span><span class="n">token</span><span class="err">'</span><span class="o">,</span> <span class="n">token</span><span class="o">);</span>
+        <span class="err">$</span><span class="o">(</span><span class="s">"#result"</span><span class="o">).</span><span class="na">html</span><span class="o">(</span>
+          <span class="s">"{ token: "</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">token</span> <span class="o">+</span> <span class="s">" }"</span>
+        <span class="o">);</span>
+      <span class="o">},</span>
+      <span class="nl">error:</span> <span class="n">function</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">status</span><span class="o">,</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="err">$</span><span class="o">(</span><span class="s">"#result"</span><span class="o">).</span><span class="na">html</span><span class="o">(</span><span class="n">error</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">});</span>
+    <span class="n">event</span><span class="o">.</span><span class="na">preventDefault</span><span class="o">();</span>
+  <span class="o">}</span>
+  
+</code></pre>
+</div>
+
+<ul>
+  <li>submit을 할 경우, 폼의 value를 ‘username’, ‘password’ 변수에 각각 할당하고, 인자로 logIn() 함수를 실행한다.</li>
+</ul>
+
+<p>로그인 실행 후, <code class="highlighter-rouge">Local Storage</code>에 토큰 담기</p>
+
+<p><img src="http://localhost:4000/assets/token_login.png" alt="" class="center-image" /></p>
+
+<h2 id="참고자료">참고자료</h2>
+<ul>
+  <li><a href="http://www.django-rest-framework.org/api-guide/authentication/">Django rest framework 공식문서 - Authentication</a></li>
+  <li><a href="http://behonestar.tistory.com/37">토큰 기반 인증</a></li>
 </ul>
 
       </section>
