@@ -187,16 +187,18 @@
         <div id="markdown" class="markdown">
     <article class="markdown-body">
       <header class="major">
-        <div class="h1">[Try Hello World] Level2 2016년</div>
+        <div class="h1">장고 폼</div>
         <div class="date-tags">
-          19 Jun 2017
+          23 Jun 2017
           <img src="/images/tags.png" class="tag-img"/>
 <div class="post-tags">
   
   
-  <a href="/tags/#Alogorithm">Alogorithm</a>,
+  <a href="/tags/#Django">Django</a>,
   
-  <a href="/tags/#Level2">Level2</a>
+  <a href="/tags/#Djangogirls">Djangogirls</a>,
+  
+  <a href="/tags/#Form">Form</a>
   
 </div>
 <br/>
@@ -205,55 +207,43 @@
       </header>
       <!-- <hr noshade style="width: 100%; float: left;"> -->
       <section class="post-content">
-        <h2 id="2016년">2016년</h2>
+        <p>장고 폼은 HTML의 복잡한 태그 없이 아주 간단히 양식을 만들 수 있고, <code class="highlighter-rouge">ModelForm</code>을 통하여 자동으로 모델에 결과물을 저장할 수 있다. 또한 장고 폼은 입력받은 데이터에 대한 유효성 검사를 하는 데 최상의 도구이다.</p>
 
-<p>2016년 1월 1일은 금요일입니다. 2016년 A월 B일은 무슨 요일일까요? 두 수 A,B를 입력받아 A월 B일이 무슨 요일인지 출력하는 getDayName 함수를 완성하세요.</p>
+<h3 id="blog-디렉토리-안에-폼-파일-만들기">blog 디렉토리 안에 폼 파일 만들기</h3>
 
-<p>요일의 이름은 일요일부터 토요일까지 각각</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>blog
+└── forms.py
+</code></pre>
+</div>
 
-<p><code class="highlighter-rouge">SUN,MON,TUE,WED,THU,FRI,SAT</code></p>
+<p>[blog/forms.py]</p>
 
-<p>를 출력해주면 됩니다. 예를 들어 A=5, B=24가 입력된다면 5월 24일은 화요일이므로 <code class="highlighter-rouge">TUE</code> 를 반환하면 됩니다.</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
 
-<ul>
-  <li>내 풀이</li>
-</ul>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="k">class</span> <span class="nc">PostForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
 
-<span class="k">def</span> <span class="nf">getDayName</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-    <span class="n">week_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">'MON'</span><span class="p">,</span> <span class="s">'TUE'</span><span class="p">,</span> <span class="s">'WED'</span><span class="p">,</span> <span class="s">'THU'</span><span class="p">,</span> <span class="s">'FRI'</span><span class="p">,</span> <span class="s">'SAT'</span><span class="p">,</span> <span class="s">'SUN'</span><span class="p">]</span>
-    <span class="n">week_int</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">week_list</span><span class="p">[</span><span class="n">week_int</span><span class="p">]</span>
-
-<span class="c">#아래 코드는 테스트를 위한 출력 코드입니다.</span>
-<span class="k">print</span><span class="p">(</span><span class="n">getDayName</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'text'</span><span class="p">,)</span>
 </code></pre>
 </div>
 
 <ul>
-  <li>다른 사람 풀이</li>
+  <li>PostForm은 만들 폼의 이름이고, ModelForm을 사용하기 위해 (forms.ModelForm)을 상속받는다.</li>
+  <li><code class="highlighter-rouge">class Meta</code> 에서 model 변수를 통해 Post 모델을 사용할 것임을 명시하고, 폼에 쓰일 필드로 ‘title’과 ‘text’를 튜플 형태로 fields 변수에 할당한다.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getDayName</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
-    <span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="s">'FRI'</span><span class="p">,</span> <span class="s">'SAT'</span><span class="p">,</span> <span class="s">'SUN'</span><span class="p">,</span> <span class="s">'MON'</span><span class="p">,</span> <span class="s">'TUE'</span><span class="p">,</span> <span class="s">'WED'</span><span class="p">,</span> <span class="s">'THU'</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">days</span><span class="p">[(</span><span class="nb">sum</span><span class="p">(</span><span class="n">months</span><span class="p">[:</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="n">b</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">7</span><span class="p">]</span>
-</code></pre>
-</div>
-
-<h2 id="소감"><em>소감</em></h2>
-<ul>
-  <li>다른 사람의 경우 내장 함수 안 쓰고 푼 좋은 예인 것 같다.</li>
-</ul>
+<h3 id="템플릿에서-폼-사용하기">템플릿에서 폼 사용하기</h3>
 
       </section>
       <br><br>
       <footer>
         
-        <a href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/16/instargram-memberapp-login.html" class="float-left">&larr; Previous post</a> 
+        <a href="/solve%20algorithm!/algorithm/2017/06/19/tryhelloworld-level2-1.html" class="float-left">&larr; Previous post</a> 
         
-        <a href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/06/23/djangogirls-django-form.html" class="float-right">Next post &rarr;</a> 
+        <a href="/aws/2017/06/29/(1)django-settings-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html" class="float-right">Next post &rarr;</a> 
         <br><br>
         
   <div id="disqus_thread"></div>

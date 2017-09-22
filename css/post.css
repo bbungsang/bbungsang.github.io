@@ -124,6 +124,7 @@
 
 .markdown h3 {
   color: #3ddad7;
+  margin-top: 30px;
 }
 
 .markdown .h1 {
@@ -178,7 +179,6 @@
 }
 
 .markdown .post-content ul {
-  margin: 10px;
   padding: 10px 20px;
   font-size: 16px;
   color: black;

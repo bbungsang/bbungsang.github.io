@@ -61,11 +61,6 @@
     margin: 0 auto;
   }
 
-  .container .markdown ul {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
   /* 최신 글 바로가기 */
   .container .recent-posts {
     margin: 0;
