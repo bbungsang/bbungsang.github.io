@@ -122,9 +122,18 @@
   color: #9a9a9a;
 }
 
+.markdown h2 {
+  color: #444444;
+  font-size: 26px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
 .markdown h3 {
   color: #3ddad7;
-  margin-top: 30px;
+  margin-top: 24px;
+  font-size: 20px;
 }
 
 .markdown .h1 {
@@ -172,6 +181,10 @@
   width: 100%;
   height: auto;
   float: left;
+}
+
+.markdown a {
+  color: #2096ba;
 }
 
 .markdown .post-content {

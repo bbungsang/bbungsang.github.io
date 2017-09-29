@@ -55,9 +55,18 @@
     color: rgb(154, 154, 154);
   }
 
+  h2 {
+    color: #444444;
+    font-size: 26px;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
   h3 {
     color: #3ddad7;
-    margin-top: 30px;
+    margin-top: 24px;
+    font-size: 20px;
   }
 
   .h1 {
@@ -107,6 +116,10 @@
     width: 100%;
     height: auto;
     float: left;
+  }
+
+  a {
+    color: #2096ba;
   }
 
   .post-content {
