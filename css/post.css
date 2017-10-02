@@ -122,20 +122,6 @@
   color: #9a9a9a;
 }
 
-.markdown h2 {
-  color: #444444;
-  font-size: 26px;
-  margin-top: 30px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.markdown h3 {
-  color: #3ddad7;
-  margin-top: 24px;
-  font-size: 20px;
-}
-
 .markdown .h1 {
   width: 100%;
   margin: 0;
@@ -143,6 +129,27 @@
   font-weight: bold;
   color: #135589;
   float: left;
+}
+
+.markdown h2 {
+  width: 100%;
+  color: #444444;
+  font-size: 26px;
+  margin: 30px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown h3 {
+  width: 100%;
+  color: #3ddad7;
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+.markdown h4 {
+  color: #444444;
+  margin-top: 25px;
 }
 
 .markdown .date-tags {
@@ -180,6 +187,9 @@
 .markdown blockquote {
   width: 100%;
   height: auto;
+  background: #fafafa;
+  font-size: 15px;
+  margin: 15px 0;
   float: left;
 }
 
@@ -192,6 +202,9 @@
 }
 
 .markdown .post-content ul {
+  width: 100%;
+  height: auto;
+  float: left;
   padding: 10px 20px;
   font-size: 16px;
   color: black;
@@ -201,20 +214,18 @@
   list-style-type: disc;
 }
 
-.markdown .highlight {
+.markdown pre.highlight {
+  width: 100%;
   background-color: #222;
   padding: 5px 10px;
   margin: 20px 0;
-}
-
-.markdown .highlight pre {
   word-break: break-all;
   word-wrap: break-word;
 }
 
 .markdown code {
   font-family: 'Courier', monospace;
-  font-size: 14px;
+  font-size: 15px;
   color: #999;
 }
 

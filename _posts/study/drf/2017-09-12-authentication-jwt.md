@@ -8,7 +8,7 @@ tags:
 comments: true
 ---
 
-REST API 인증이 핫해지면서 많이 언급되는 것이 `OAuth`인데, 최근에 회자되고 있는 것이 `JWT(JSON Web Token)`이라는 표준이다.
+> REST API 인증이 핫해지면서 많이 언급되는 것이 `OAuth`인데, 최근에 회자되고 있는 것이 `JWT(JSON Web Token)`이라는 표준이다.
 
 ## OAuth 기반 토큰
 - OAuth에 의해서 발급되는 `access_token`은 무작위로 나열되는 문자열로, 토큰 자체에는 특별한 정보를 가지고 있지 않다.
@@ -20,7 +20,7 @@ REST API 인증이 핫해지면서 많이 언급되는 것이 `OAuth`인데, 최
 - Claim은 사용자에 대한 프로퍼티나 속성을 뜻한다.
 - 해당 토큰을 이용해서 요청을 받는 서버 입장에서는 서비스를 호출한 사용자에 대한 추가 정보가 이미 토큰 안에 포함돼있기 때문에 다른 곳에서 가져올 필요가 없다.
 - 인증 단계에서 토큰을 생성 혹은 조회하여 해당하는 토큰 값을 가져오는 것이 아니고, username, email 등의 `user 정보`를 가져온다.
-- 즉 토큰 내에 유저 정보가 존재하기 때문에 토큰을 별도로 서버에서 유지할 필요가 없으며, 사용자 정보를 호출하기 위해 계정 시스템을 거칠 필요가 없다.
+- 즉 토큰 내에 유저 정보가 존재하기 때문에 토큰을 별도로 서버에서 유지할 필요가 없으며, 사용자 정보를 호출하기 위해 **계정 시스템을 거칠 필요가 없다.**
 
 ![](/assets/claim-token.png){: .center-image }
 
@@ -31,9 +31,9 @@ REST API 인증이 핫해지면서 많이 언급되는 것이 `OAuth`인데, 최
 
 ```json
 {
-	"username": "bbungsang",
-	"email": "bbungsang@bbungsang.com",
-	"nickname": "뿡상"
+    "username": "bbungsang",
+    "email": "bbungsang@bbungsang.com",
+    "nickname": "뿡상"
 }
 ```
 
@@ -63,19 +63,19 @@ JWT는 `.`로 구분된 3개의 Base64 문자열이다.(XML 기반 표준과 비
 
 ```
 {
-  "alg": "HS256",
-  "typ": "JWT"
+    "alg": "HS256",
+    "typ": "JWT"
 }
-``` 
+```
 
 #### Payload
 Claim이 들어있으며, Claim은 Entity와 추가 메타데이터에 대한 설명으로 Reserved, Public, Private 3가지 유형이 존재한다.
 
 ```
 {
-	"sub": "1234567890",
-	"username": "bbungsang",
-	"admin": true
+    "sub": "1234567890",
+    "username": "bbungsang",
+    "admin": true
 }
 ```
 
@@ -90,6 +90,7 @@ HMACSHA256(
   secret)
 ```
 
-jwt.io Debugger
-
+<br>
 ![](/assets/jwt-example.png){: .center-image }
+
+<p align="center">jwt.io Debugger</p><br>

@@ -22,7 +22,7 @@ comments: true
 
 ### 권한 검사 실패 Status
 - **HTTP 403 Forbidden** : 요청이 성공적으로 인증되었으나 사용 권한이 거부된 것 또는 요청이 성공적으로 인증되지 않았고 최상위 Authentication 클래스가 WWW-Authenticate 헤더를 사용하지 않은 것.
-- **HTTP 401 Unauthorized response** : 요청이 성공적으로 인증되지 않았고 최상위 클래스가 WWW-Authenticate 헤더를 사용하지 않은 것 
+- **HTTP 401 Unauthorized response** : 요청이 성공적으로 인증되지 않았고 최상위 클래스가 WWW-Authenticate 헤더를 사용하지 않은 것
 
 ## Object Level Permissions
 Permissions는 object-level permissioning을 제공한다.
@@ -34,14 +34,15 @@ Permissions는 object-level permissioning을 제공한다.
 ```python
 def get_object(self):
     obj = get_object_or_404(self.get_queryset())
-    
+
     # View에서 get_object()를 override하여 내용을 변경할 때,
     self.check_object_permissions(self.request, obj) # 를 명시적으로 호출해야 한다.
-    
+
     return obj
 ```
 
 ## Permissions 적용하기
+
 **1. 우선 `settings`에 Permissions를 사용할 것이라는 내용을 선언해야 한다.**
 
 ```python
@@ -52,6 +53,7 @@ REST_FRAMEWORK = {
 }
 ```
 
+<br>
 **2-1. CBV인 APIView에서 다음과 같이 사용 권한을 반영할 수 있다.**
 
 - `DEFAULT_PERMISSION_CLASSES`를 설정하면, 설정한 permission을 기본으로 사용 권한 검사를 하겠다는 의미이며, 특정 페이지에 대해서 다른 사용 권한을 부여하고 싶다면, 해당 View에 별도로 선언해야 한다.
@@ -67,6 +69,7 @@ class ExampleView(APIView):
         return Response(content)
 ```
 
+<br>
 **2-2. FBV인 경우, `@api_view` 데코레이터를 활용하여 다음과 같이 사용 권한을 반영할 수 있다.**
 
 ```python
@@ -79,9 +82,10 @@ def example_view(request, format=None):
     return Response(content)
 ```
 
-인증되지 않은 유저가 뷰를 실행시킬 때,
+<br>
+![]({{site.url}}/assets/non_permission.png){: .center-image}
 
-![]({{site.url}}/assets/non_permission.png){: .center-image }
+<p align="center">인증되지 않은 유저가 뷰를 실행시킬 때</p>
 
 ## API Reference
 ### AllowAny
@@ -116,13 +120,14 @@ class BlacklistPermission(permissions.BasePermission):
     """
 
     def has_permission(self, request, view):
-    	
+
     	# The IP address of the client.
 		ip_addr = request.META['REMOTE_ADDR']
 		blacklisted = Blacklist.objects.filter(ip_addr=ip_addr).exists()
 		return not blacklisted
 ```
 
+<br>
 요청이 읽기 모드인지 쓰기모드인지 테스트하고자 한다면, 'GET', 'OPTIONS'와 'HEAD'와 같은 튜플 형태의 `SAVE_METHODS`와 비교하여 요청 메서드를 점검해야 한다.
 
 ```python

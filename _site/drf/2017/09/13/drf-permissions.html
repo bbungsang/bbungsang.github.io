@@ -10,7 +10,6 @@
 
 	<link rel="stylesheet" href="/css/style.css" />
 	<link rel="stylesheet" href="/css/post.css" />
-	<link rel="stylesheet" href="/css/base.css" />
 
 	<link rel="stylesheet" href="/css/etc.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,7 +31,6 @@
 	<link href="/css/style-header.css" rel="stylesheet">
 	<link href="/css/style-responsive.css" rel="stylesheet">
 
-	
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -42,24 +40,6 @@
 	  ga('create', UA-100042262-1, 'auto'); // config google_analytics ua에 저장한 추적 ID가 들어감
 	    ga('send', 'pageview');
 	</script>
-
-	<script src="/dest/jekyll-search.js" type="text/javascript"></script>
-
-
-<script type="text/javascript">
-      SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '/search.json',
-        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 10,
-        fuzzy: true,
-        exclude: ['Welcome']
-      })
-</script>
-
-
 </head>
 
 <body>
@@ -237,15 +217,16 @@
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">obj</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">())</span>
-    
+
     <span class="c"># View에서 get_object()를 override하여 내용을 변경할 때,</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_object_permissions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="c"># 를 명시적으로 호출해야 한다.</span>
-    
+
     <span class="k">return</span> <span class="n">obj</span>
 </code></pre>
 </div>
 
 <h2 id="permissions-적용하기">Permissions 적용하기</h2>
+
 <p><strong>1. 우선 <code class="highlighter-rouge">settings</code>에 Permissions를 사용할 것이라는 내용을 선언해야 한다.</strong></p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
@@ -256,7 +237,8 @@
 </code></pre>
 </div>
 
-<p><strong>2-1. CBV인 APIView에서 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
+<p><br />
+<strong>2-1. CBV인 APIView에서 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
 
 <ul>
   <li><code class="highlighter-rouge">DEFAULT_PERMISSION_CLASSES</code>를 설정하면, 설정한 permission을 기본으로 사용 권한 검사를 하겠다는 의미이며, 특정 페이지에 대해서 다른 사용 권한을 부여하고 싶다면, 해당 View에 별도로 선언해야 한다.</li>
@@ -273,7 +255,8 @@
 </code></pre>
 </div>
 
-<p><strong>2-2. FBV인 경우, <code class="highlighter-rouge">@api_view</code> 데코레이터를 활용하여 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
+<p><br />
+<strong>2-2. FBV인 경우, <code class="highlighter-rouge">@api_view</code> 데코레이터를 활용하여 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nd">@api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">])</span>
 <span class="nd">@permission_classes</span><span class="p">((</span><span class="n">IsAuthenticated</span><span class="p">,</span> <span class="p">))</span>
@@ -285,9 +268,10 @@
 </code></pre>
 </div>
 
-<p>인증되지 않은 유저가 뷰를 실행시킬 때,</p>
+<p><br />
+<img src="http://localhost:4000/assets/non_permission.png" alt="" class="center-image" /></p>
 
-<p><img src="http://localhost:4000/assets/non_permission.png" alt="" class="center-image" /></p>
+<p align="center">인증되지 않은 유저가 뷰를 실행시킬 때</p>
 
 <h2 id="api-reference">API Reference</h2>
 <h3 id="allowany">AllowAny</h3>
@@ -331,7 +315,7 @@
     """</span>
 
     <span class="k">def</span> <span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
-    	
+
     	<span class="c"># The IP address of the client.</span>
 		<span class="n">ip_addr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s">'REMOTE_ADDR'</span><span class="p">]</span>
 		<span class="n">blacklisted</span> <span class="o">=</span> <span class="n">Blacklist</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">ip_addr</span><span class="o">=</span><span class="n">ip_addr</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
@@ -339,7 +323,8 @@
 </code></pre>
 </div>
 
-<p>요청이 읽기 모드인지 쓰기모드인지 테스트하고자 한다면, ‘GET’, ‘OPTIONS’와 ‘HEAD’와 같은 튜플 형태의 <code class="highlighter-rouge">SAVE_METHODS</code>와 비교하여 요청 메서드를 점검해야 한다.</p>
+<p><br />
+요청이 읽기 모드인지 쓰기모드인지 테스트하고자 한다면, ‘GET’, ‘OPTIONS’와 ‘HEAD’와 같은 튜플 형태의 <code class="highlighter-rouge">SAVE_METHODS</code>와 비교하여 요청 메서드를 점검해야 한다.</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">permissions</span><span class="o">.</span><span class="n">SAFE_METHODS</span><span class="p">:</span>
     <span class="c"># Check permissions for read-only request</span>
