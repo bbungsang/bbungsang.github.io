@@ -17,11 +17,31 @@ layout: default
       </section>
       <br><br>
       <footer>
-        {% if page.previous %}
-        <a href="{{ page.previous.url }}" class="float-left">&larr; Previous post</a> {% endif %}
-        {% if page.next %}
-        <a href="{{ page.next.url }}" class="float-right">Next post &rarr;</a> {% endif %}
-        <br><br>
+        <section class="my-intro">
+          <img src="{{ site.baseurl }}/images/itsme.png">
+          <article>
+            <p>뿡상</p>
+            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+          </article>
+        </section>
+        <ul class="other-posts">
+          {% if page.previous %}
+          <li class="prev-or-next">
+            <a href="{{ page.previous.url }}">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              {{ page.previous.title | strip_html | truncatewords: 5 }}
+            </a>
+          </li>
+          {% endif %}
+          {% if page.next %}
+          <li class="prev-or-next" align="right">
+            <a href="{{ page.next.url }}">
+              {{ page.next.title | strip_html | truncatewords: 5 }}
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
         {% include /comments.html %}
       </footer>
     </article>

@@ -1,10 +1,17 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+/* NanumBarunpen 웹폰트 적용 */
+@font-face {
+  font-family: NanumBarunpen;
+  src: url("/font/NanumBarunpen.woff") format("woff");
+}
+
 .markdown {
   height: auto;
   padding-top: 80px;
   font-size: 15px;
   /* Post */
-  /* Code */
+  /*-- Code --*/
   /* Comment */
   /* Error */
   /* Generic */
@@ -160,39 +167,6 @@
   margin-bottom: 30px;
 }
 
-.markdown .float-left {
-  float: left;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: #ddd;
-}
-
-.markdown .float-left:hover {
-  background: skyblue;
-}
-
-.markdown .float-right {
-  float: right;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: #ddd;
-}
-
-.markdown .float-right:hover {
-  background: skyblue;
-}
-
-.markdown blockquote {
-  width: 100%;
-  height: auto;
-  background: #fafafa;
-  font-size: 15px;
-  margin: 15px 0;
-  float: left;
-}
-
 .markdown a {
   color: #2096ba;
 }
@@ -212,6 +186,84 @@
 
 .markdown .post-content ul li {
   list-style-type: disc;
+}
+
+.markdown blockquote {
+  width: 100%;
+  height: auto;
+  background: #fafafa;
+  font-size: 15px;
+  margin: 15px 0;
+  float: left;
+}
+
+.markdown footer {
+  font-family: 'Nanumbarunpen';
+}
+
+.markdown footer .my-intro {
+  width: 100%;
+  height: auto;
+  margin: 15px 0;
+  padding: 15px 0;
+  float: left;
+}
+
+.markdown footer .my-intro img {
+  width: 10%;
+  border-radius: 100%;
+  margin: 0 1.5%;
+  float: left;
+}
+
+.markdown footer .my-intro article {
+  width: 87%;
+  padding: 0.5% 0 0 1.5%;
+  float: left;
+}
+
+.markdown footer .my-intro article p {
+  margin: 0;
+  font-size: 18px;
+  color: #444444;
+}
+
+.markdown footer .other-posts {
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+
+.markdown footer .other-posts .prev-or-next {
+  width: 50%;
+  float: left;
+}
+
+.markdown footer .other-posts .prev-or-next a {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  color: #797979;
+  cursor: pointer;
+}
+
+.markdown footer .other-posts .prev-or-next a span {
+  color: #ddd;
+  font-size: 18px;
+}
+
+.markdown footer .other-posts .prev-or-next a:hover {
+  color: #3ddad7;
+  border: 1px solid #3ddad7;
+  transition: 0.3s;
+}
+
+.markdown footer .other-posts .prev-or-next a:hover span {
+  color: #3ddad7;
 }
 
 .markdown pre.highlight {

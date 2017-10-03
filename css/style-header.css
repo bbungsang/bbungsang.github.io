@@ -1,37 +1,41 @@
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
+/* NanumBarunpen 웹폰트 적용 */
+@font-face {
+  font-family: NanumBarunpen;
+  src: url("/font/NanumBarunpen.woff") format('woff');
+}
 
 body {
-    color: #797979;
-	  /*background: #f4f4f4;*/
-    font-family: 'Ruda', sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
-    font-size: 13px;
+  color: #797979;
+  font-family: 'Ruda', sans-serif;
+  padding: 0px !important;
+  margin: 0px !important;
+  font-size: 13px;
 }
 
 ul li {
-    list-style: none;
+  list-style: none;
 }
 
 a, a:hover, a:focus {
-    text-decoration: none;
-    outline: none;
+  text-decoration: none;
+  outline: none;
 }
-::selection {
 
-    background: #68dff0;
-    color: #fff;
+::selection {
+  background: #68dff0;
+  color: #fff;
 }
+
 ::-moz-selection {
-    background: #68dff0;
-    color: #fff;
+  background: #68dff0;
+  color: #fff;
 }
 
 #top-wrap {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 hr {
@@ -42,7 +46,6 @@ hr {
 }
 
 /*-- Profile Photo --*/
-
 .centered {
 	text-align: center;
   margin: 10px 0;
@@ -55,8 +58,9 @@ hr {
 ul.top-menu > li > .logout {
   color:#747474;
   height: 59px;
-  line-height: 43px;
-  /*font-family: 'Nanum Gothic Coding';*/
+  line-height: 40px;
+  font-size: 14px;
+  font-family: 'Nanumbarunpen';
 }
 
 ul.top-menu > li > .logout:hover {
@@ -67,10 +71,10 @@ ul.top-menu > li > .logout:hover {
 
 /*-- sidebar navigation --*/
 #sidebar {
-    width: 210px;
-    height: 100%;
-    position: fixed;
-    background: #f4f4f4;
+  width: 210px;
+  height: 100%;
+  position: fixed;
+  background: #f4f4f4;
 }
 
 #sidebar h5 {
@@ -206,15 +210,13 @@ ul.sidebar-menu li a.active i {
 
 /* MAIN CONTENT CONFIGURATION */
 .header {
-    min-height: 60px;
-    padding: 0 15px;
-
-    position: fixed;
-    /*top: 0;*/
-    left: 0;
-    right: 0;
-    z-index: 1002;
-    box-shadow: 0 2px 2px -2px gray;
+  min-height: 60px;
+  padding-left: 15px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  box-shadow: 0 2px 2px -2px gray;
 }
 
 .black-bg {
