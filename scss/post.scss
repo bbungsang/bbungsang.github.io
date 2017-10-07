@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
 /* NanumBarunpen 웹폰트 적용 */
 @font-face {
   font-family: NanumBarunpen;
@@ -215,7 +213,7 @@
     color: #999;
   }
 
-  .highlighter-rouge { color: #D9418C; font-size: 15px; font-family: 'Roboto', sans-serif; }
+  .highlighter-rouge { color: #D9418C; font-size: 15px; }
   .highlight .c, .highlight .c1 { color: #586E75 } /* Comment */
   .highlight .err { color: #93A1A1 } /* Error */
   .highlight .g { color: #93A1A1 } /* Generic */

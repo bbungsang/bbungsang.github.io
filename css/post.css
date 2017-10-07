@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 /* NanumBarunpen 웹폰트 적용 */
 @font-face {
   font-family: NanumBarunpen;
@@ -284,7 +283,6 @@
 .markdown .highlighter-rouge {
   color: #D9418C;
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .markdown .highlight .c, .markdown .highlight .c1 {
