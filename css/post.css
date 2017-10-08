@@ -113,7 +113,8 @@
 }
 
 .markdown table {
-  width: 100%;
+  width: 90%;
+  margin: 10px 5% 30px 5%;
 }
 
 .markdown table th {
