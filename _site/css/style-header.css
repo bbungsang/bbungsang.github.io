@@ -249,15 +249,10 @@ a.back-logo {
   margin-top: 16px;
 }
 
-a.logo:hover, a.logo:focus {
+a.front-logo:hover, a.back-logo:hover {
     text-decoration: none;
     outline: none;
 }
-
-a.logo span {
-    color: #68dff0;
-}
-
 
 /*notification*/
 #top_menu .nav > li, ul.top-menu > li {

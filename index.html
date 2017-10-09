@@ -37,7 +37,7 @@ layout: default
       {% for tag in site.categories %}
       {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
       {% if thecycle == 'odd' %}
-        <a><h3 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h3></a>
+        <h3 id="{{ tag[0] | slugify }}"><a>{{ tag[0] }}</a></h3>
         <ul class="tags-expo-posts">
           {% for post in tag[1] %}
             <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">

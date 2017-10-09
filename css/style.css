@@ -5,11 +5,15 @@
   src: url("/font/NanumBarunpen.woff") format("woff");
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 100% !important;
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
 }
 
 .container .empty {
@@ -40,7 +44,8 @@
 }
 
 .container .content .tags .tag-cloud .tag-elements a {
-  font-size: 12px;
+  text-decoration: none;
+  font-size: 14px;
   color: #747474;
   margin: 10px 5px;
   padding: 3px;
@@ -62,6 +67,7 @@
   width: 100%;
   height: auto;
   float: left;
+  font-family: 'Nanumbarunpen';
 }
 
 .container .content .recent-posts .recent-post-title {
@@ -73,7 +79,7 @@
 }
 
 .container .content .recent-posts .recent-post-title a {
-  font-family: '맑은 고딕';
+  text-decoration: none;
   color: #3ddad7;
   padding: 5px 10px;
   font-size: 17px;
@@ -93,10 +99,19 @@
   left: 0;
 }
 
+.container .content ul.category-list .category-title {
+  font-family: 'Nanumbarunpen';
+}
+
 .container .content ul.category-list .category-title h3 {
   font-size: 22px;
   color: #428bca;
   margin: 30px 0 10px 0;
+}
+
+.container .content ul.category-list .category-title h3 a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .container .content ul.category-list .category-title ul {
@@ -110,6 +125,7 @@
 }
 
 .container .content ul.category-list .category-title ul a:hover {
+  text-decoration: none;
   color: #3ddad7;
   transition: 0.5s;
 }

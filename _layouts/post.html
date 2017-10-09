@@ -17,13 +17,6 @@ layout: default
       </section>
       <br><br>
       <footer>
-        <section class="my-intro">
-          <img src="{{ site.baseurl }}/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
         <ul class="other-posts">
           {% if page.previous %}
           <li class="prev-or-next">
@@ -42,6 +35,13 @@ layout: default
           </li>
           {% endif %}
         </ul>
+        <section class="my-intro">
+          <img src="{{ site.baseurl }}/images/itsme.png">
+          <article>
+            <p>뿡상</p>
+            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+          </article>
+        </section>
         {% include /comments.html %}
       </footer>
     </article>
