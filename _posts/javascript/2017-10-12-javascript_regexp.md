@@ -35,14 +35,14 @@ comments: true
 |\S|공백 문자가 아닌 모든 문자||
 |[...]|대괄호 안의 모든 문자||
 
-### 직접 자바스크립트에서 활용한 예시
+### 자바스크립트 정규표현식 활용 예시
 
 ![]({{site.url}}/assets/regexp1.png){: .center-image} <br>
 ![]({{site.url}}/assets/regexp2.png){: .center-image}
 
 > 배경 : 검색한 결과를 readonly 옵션이 있는 input 창에 세팅 <br>
 > 이슈 : 검색어에 해당하는 키워드에 `b태그`가 삽입되어 있다. <br>
-> 하려는 일 : 세팅되는 b태그 제거 
+> 하려는 일 : 세팅되는 b태그 제거 <br>
 > 해결 방법 : 자바스크립트 정규표현식 활용
 
 ```javascript
