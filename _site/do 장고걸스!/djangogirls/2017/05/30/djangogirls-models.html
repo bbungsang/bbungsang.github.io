@@ -161,28 +161,28 @@
   </article>
   <article class="markdown-body">
     <section class="post-content">
-      <h2 id="장고-모델">장고 모델</h2>
-
-<blockquote>
-  <p><code class="highlighter-rouge">User</code> &lt;—&gt; <code class="highlighter-rouge">Django</code> &lt;—&gt; <code class="highlighter-rouge">DataBase</code></p>
+      <blockquote>
+  <p><a href="https://tutorial.djangogirls.org/ko/">장고걸스 튜토리얼</a>을 토대로 작성한 것입니다. 이 장은 장고 어플리케이션을 생성하고 모델과 장고 어드민을 작성합니다.</p>
 </blockquote>
 
+<h2 id="장고-모델">장고 모델</h2>
+
+<p><img src="http://localhost:4000/assets/django_model.png" alt="" class="center-image" /></p>
+
 <ul>
-  <li>User가 데이터를 요청하면, Django가 클라이언트로부터 입력받은 정보를 DataBase에 전달한다.</li>
+  <li>User가 데이터를 요청하면, Django가 입력받은 정보를 Database에 전달한다.</li>
   <li>DataBase가 데이터를 꺼내어 응답하면, 그 응답을 다시 Django가 User에게 전달한다.</li>
-  <li>장고 프로젝트는 SQLite3 DB가 기본으로 설정되어 있다. (실 서비스에서는 그다지 적합하지는 않다.)</li>
-  <li>원래 DB Table을 만들고 조회/추가/수정/삭제 하기 위해서는 SQL을 써야만 한다. 하지만 장고가 지원해주는 Django Model을 쓰면, 직접 SQL을 작성하지 않고도 <a href="">ORM</a>을 통해 SQL을 작성할 수 있다.</li>
-  <li>장고 모델은 파이썬 클래스 문법형태로 정의한다.</li>
+  <li>장고 프로젝트는 SQLite3 DB가 기본으로 설정되어 있다. (실서비스에서는 그다지 적합하지 않다.)</li>
+  <li>원래 DB Table을 만들고 조회/추가/수정/삭제 하기 위해서는 SQL을 써야만 한다. 하지만 장고가 지원해주는 Django Model을 쓰면, 직접 SQL을 작성하지 않고도 <a href="https://tutorial.djangogirls.org/ko/django_orm/">ORM</a>을 통해 SQL을 작성할 수 있다.</li>
+  <li>장고 모델은 <code class="highlighter-rouge">파이썬 클래스 문법 형태</code>로 정의한다.</li>
 </ul>
 
 <h3 id="블로그에-어떤-내용을-저장할-것인지-설계하기">블로그에 어떤 내용을 저장할 것인지 설계하기</h3>
-<ul>
-  <li>다음은 모델 클래스명, 사용할 필드, 필드 목적에 대하여 설계한 것이다.</li>
-</ul>
+<p>다음은 모델 클래스명, 사용할 필드, 필드 목적에 대하여 설계한 것이다.</p>
 
-<pre><code class="language-docker">Post        # 저장 단위에 대한 이름
+<pre><code class="language-docker">Post        # 저장 단위에 대한 이름(모델명)
 --- 속성 ---
-title       # 제목
+title       # 제목(필드명)
 text        # 내용
 author      # 작성자
 created_at  # 생성 날짜
@@ -191,13 +191,14 @@ pub_at      # 발행 날짜
 </code></pre>
 
 <h3 id="어플리케이션-제작하기">어플리케이션 제작하기</h3>
-<p><code class="highlighter-rouge">python manage.py startapp &lt;생성할 앱의 이름&gt;</code></p>
-<ul>
-  <li>manage.py 명령어를 입력할 시, 항상 manage.py 가 있는 디렉토리에서 입력해야 한다.</li>
-  <li>어플리케이션 생성후, settings의 INSTALLED_APPS에 명시함으로써 Django에게 해당 어플리케이션을 <code class="highlighter-rouge">사용할 것</code>임을 알려줘야 한다.</li>
-</ul>
 
-<p>[settings.py]</p>
+<p class="quote">
+  python manage.py startapp [생성할 앱의 이름]
+</p>
+
+<p>manage.py 명령어를 입력할 시, 항상 <code class="highlighter-rouge">manage.py가 있는 디렉토리</code>에서 입력해야 한다.</p>
+
+<p><strong>[settings.py]</strong></p>
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s">'django.contrib.admin'</span><span class="p">,</span>
   <span class="s">'django.contrib.auth'</span><span class="p">,</span> <span class="o">...</span>
@@ -206,7 +207,9 @@ pub_at      # 발행 날짜
 </code></pre>
 </div>
 
-<p>[models.py]</p>
+<p>어플리케이션 생성후, <code class="highlighter-rouge">settings</code>의 <code class="highlighter-rouge">INSTALLED_APPS</code>에 명시함으로써 Django에게 해당 어플리케이션을 사용할 것임을 알려줘야 한다.</p>
+
+<p><strong>[models.py]</strong></p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
@@ -227,30 +230,30 @@ pub_at      # 발행 날짜
 </code></pre>
 </div>
 
-<ul>
-  <li>코드를 작성했다고 해서 데이터베이스가 바로 생성되는 것은 아니다. 반드시 마이그레이션 작업을 해야 데이터베이스가 생성된다.</li>
-</ul>
+<p>코드를 작성했다고 해서 데이터베이스가 바로 생성되는 것은 아니다. 반드시 마이그레이션 작업을 해야 데이터베이스가 생성된다.</p>
 
-<h4 id="모델의-마이그레이션-파일-생성">[모델의 마이그레이션 파일 생성]</h4>
-<p><br />
-<code class="highlighter-rouge">python manage.py makemigrations blog</code></p>
-<ul>
-  <li>blog 앱을 타겟으로 마이그레이션 맵을 만들겠다는 명령어이다.</li>
-</ul>
+<h3 id="모델의-마이그레이션-파일-생성하기">모델의 마이그레이션 파일 생성하기</h3>
 
-<p>마이그레이션 파일을 테이블에 적용 : <code class="highlighter-rouge">python manage.py migrate blog</code></p>
-<ul>
-  <li>migrate는 마이그레이션 생성에 전혀 이상이 없으면, 이를 그대로 데이터베이스에 반영하겠다는 뜻이다.</li>
-</ul>
+<p class="quote">
+  python manage.py <b>makemigrations</b> blog
+</p>
+
+<p>blog 앱을 타겟으로 마이그레이션 맵을 만들겠다는 명령어이다.</p>
+
+<p class="quote">
+  python manage.py <b>migrate</b> blog
+</p>
+
+<p>마이그레이션 파일을 테이블에 적용, 마이그레이션 생성에 전혀 이상이 없으면, 이를 그대로 데이터베이스에 반영하겠다는 뜻이다.</p>
 
 <h2 id="django-관리자">Django 관리자</h2>
 
-<p>[blog/admin.py]</p>
+<p><strong>[blog/admin.py]</strong></p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span> <span class="c"># 같은 경로의 models.py에서 Post 테이블을 불러옴.</span>
 
-<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Post</span><span class="p">)</span> <span class="c"># 이 등록만으로도 장고 Admin에서 Post 모델을 사용할 수 있음.</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Post</span><span class="p">)</span> <span class="c"># 이 등록만으로도 장고 Admin에서 Post 모델을 사용할 수 있다.</span>
 </code></pre>
 </div>
 
@@ -262,17 +265,24 @@ pub_at      # 발행 날짜
     </section>
     <br><br>
     <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
       <ul class="other-posts">
         
         <li class="prev-or-next">
-          <a href="/solve%20algorithm!/algorithm/2017/05/30/tryhelloworld-level1-3-2.html">
+          <a href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/28/djangogirs-first-project.html">
             <span class="glyphicon glyphicon-chevron-left"></span>
-            [Try Hello World] Level1 수박수박수박수박수박수?...
+            첫 장고 프로젝트!
           </a>
         </li>
         
         
-        <li class="prev-or-next" align="right">
+        <li class="prev-or-next" align="right" style="float: right;">
           <a href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/30/djangogirls-url&view.html">
             장고 URL과 뷰
             <span class="glyphicon glyphicon-chevron-right"></span>

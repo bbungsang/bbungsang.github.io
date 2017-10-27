@@ -7,15 +7,21 @@ layout: default
   <p class="post-head">Do 장고걸스!</p>
   <ul class="post-list">
     {% for post in site.categories.djangogirls %}
-    <li class="post-wrap">
-      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
-      </a>
-      <p class="post-content">
-        {{ post.content | strip_html | truncatewords: 40 }}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a>
-      </p>
+    <a href="{{ site.baseurl }}{{ post.url }}">
+    <li class="post-wrap" style="background: #844d0b;">
+      <div class="img-wrap" style="background: url('../images/djangogirls_logo.png'); background-position: right; background-size: 153px auto; background-repeat: no-repeat;">
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
+        </a>
+        <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+          <p class="post-content">
+            {{ post.content | strip_html | truncatewords: 25 }}
+            <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a> -->
+          </p>
+        </a>
+      </div>
     </li>
+    </a>
     {% endfor %}
   </ul>
 
@@ -23,14 +29,18 @@ layout: default
   <p class="post-head">인스타그램</p>
   <ul class="post-list">
     {% for post in site.categories.instargram %}
-    <li class="post-wrap">
-      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
-      </a>
-      <p class="post-content">
-        {{ post.content | strip_html | truncatewords: 40 }}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a>
-      </p>
+    <li class="post-wrap" style="background: #274155;">
+      <div class="img-wrap" style="background: url('../images/instagram.png'); background-position: right; background-size: 153px auto; background-repeat: no-repeat;">
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
+        </a>
+        <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+          <p class="post-content">
+            {{ post.content | strip_html | truncatewords: 25 }}
+            <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a> -->
+          </p>
+        </a>
+      </div>
     </li>
     {% endfor %}
   </ul>
@@ -39,14 +49,18 @@ layout: default
   <p class="post-head">[Ask Django] 여행 블로그</p>
   <ul class="post-list">
     {% for post in site.categories.travel %}
-    <li class="post-wrap">
-      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
-      </a>
-      <p class="post-content">
-        {{ post.content | strip_html | truncatewords: 40 }}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a>
-      </p>
+    <li class="post-wrap" style="background: #00447a;">
+      <div class="img-wrap" style="background: url('../images/askdjango.png'); background-position: right; background-size: 153px auto; background-repeat: no-repeat;">
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
+        </a>
+        <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+          <p class="post-content">
+            {{ post.content | strip_html | truncatewords: 25 }}
+            <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a> -->
+          </p>
+        </a>
+      </div>
     </li>
     {% endfor %}
   </ul>

@@ -1,5 +1,6 @@
 .list-container {
-  padding: 45px 0; }
+  padding: 45px 0;
+  background: #f2f2f2; }
   .list-container .post-head {
     margin: 25px 25px 0 25px;
     padding: 5px;
@@ -11,24 +12,24 @@
     padding: 0 30px; }
     .list-container .post-list .post-wrap {
       margin: 10px 0;
-      padding: 10px 10px;
-      background: #fafafa; }
+      padding: 3px 10px;
+      background: rgba(0, 0, 0, 0.5); }
       .list-container .post-list .post-wrap .post-title {
         text-decoration: none;
-        color: #8d8d8d; }
+        color: #aed9da; }
       .list-container .post-list .post-wrap .post-content {
-        padding: 0;
-        margin: 0;
-        font-size: 14px; }
-      .list-container .post-list .post-wrap .read-more-btn {
-        text-align: center;
-        border: 1px solid #818181;
-        display: block;
-        padding: 5px;
-        margin-top: 10px;
-        text-decoration: none;
-        color: #818181;
-        border-radius: 5px; }
-        .list-container .post-list .post-wrap .read-more-btn:hover {
-          border: 1px solid #00c3bd;
-          color: #00c3bd; }
+        padding-right: 150px;
+        font-size: 14px;
+        color: #ddd; }
+        .list-container .post-list .post-wrap .post-content .read-more-btn {
+          text-align: center;
+          border: 1px solid #fafafa;
+          display: block;
+          padding: 5px;
+          margin-top: 10px;
+          text-decoration: none;
+          color: #fafafa;
+          border-radius: 5px; }
+          .list-container .post-list .post-wrap .post-content .read-more-btn:hover {
+            border: 1px solid #00c3bd;
+            color: #00c3bd; }
