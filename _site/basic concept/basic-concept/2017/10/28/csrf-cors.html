@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>뿡상의 개발공부로그</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    <a href="/">
+      bbungsang
+      <i>devlog</i>
+    </a>
+  </li>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
+  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
+</ul>
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/meme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <button class="resume">미정</button>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.left = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.left = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      CORS와 CSRF(1)
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#CORS">
+          <img src="/images/tag_img.png">
+          CORS
+        </a>
+      
+        <a href="/tags/#CSRF">
+          <img src="/images/tag_img.png">
+          CSRF
+        </a>
+      
+        <a href="/tags/#HTTP">
+          <img src="/images/tag_img.png">
+          HTTP
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <blockquote>
+  <p><code class="highlighter-rouge">CORS</code>와 <code class="highlighter-rouge">CSRF</code>, 비슷한 이름으로 완전히 다른 개념임에도 불구하고 헷갈렸었다. 하지만 <a href="https://beomi.github.io/">준범님</a>의 친절한 설명으로 이해에 큰 도움이 되었다.</p>
+</blockquote>
+
+<h2 id="corscross-origin-resourc-sharing">CORS(Cross Origin Resourc Sharing)</h2>
+<p>단어 그대로, 전송되는 도메인(내 사이트)으로부터 다른 도메인의 CSS, 이미지 등의 리소스를 요청하기 위해 <code class="highlighter-rouge">cross-origin HTTP 요청</code>을 사용한다.</p>
+
+<p>이전에는 보안상의 이유로 브라우저들은 cross-origin HTTP 요청(AJAX)을 제한했다.  <code class="highlighter-rouge">동일 출처 정책(Same Origin Policy)</code>을 두어 다른 도메인 서버에 요청하는 것을 차단하였다. 즉, 한 도메인끼리 HTTP 요청을 보내는 것만 가능했다. 이를 다른 말로 샌드박스(Sand Box)라고 하는데, 아이들이 다치지 않고 그 안에서만 놀수 있도록 만든 ‘모래 놀이통’에서 따온 말이다.</p>
+
+<p>AJAX는 자원 요청시 XMLHttpRequest를 통해서 처리하기 때문에 크로스 도메인 문제가 발생하면 아래와 같은 오류 메세지를 호출할 것이다.</p>
+
+<p class="quote">
+"교차 원본 요청 차단: 동일 출처 정책으로 인해 http://www.othersite.com 에 있는 원격 자원을 읽을 수 없습니다. 자원을 같은 도메인으로 이동시키거나 CORS를 활성화하여 해결할 수 있습니다."
+</p>
+
+<p>이를 개선시키기 위해 CORS가 등장한 것이다.</p>
+
+<p><img src="http://localhost:4000/assets/cors_ex.png" alt="" class="center-image" /></p>
+
+<p>서버의 수정없이 클라이언트 측에서 이를 해결할 수 있으나 100% 해결은 불편한 부분이 다소 존재한다. 따라서 서버 측에서 크로스 도메일을 허용하여 문제를 해결하는 방법을 사용한다.</p>
+
+<p>CORS는 웹 페이지의 제한된 자원을 외부의 도메인에서의 요청을 허용해주는 메커니즘이다. 이는 브라우저와 서버간의 Cross-Origin HTTP 요청 혀용 여부를 안전하게 결정하도록 방법을 정의하여 <code class="highlighter-rouge">Access-Control-Allow-</code>로 시작하는 HTTP 헤더를 쉽게 관리를 가능하도록 한다.</p>
+
+<p>크로스 도메인 요청을 허용할 웹 서버에서 허용하는 도메인을 별도로 지정해주면 된다.</p>
+
+<h3 id="장고에서-cors-적용하기">장고에서 CORS 적용하기</h3>
+
+<p><strong>Step 1. 설치하기</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; pip install django-cors-headers
+</code></pre>
+</div>
+
+<p><strong>Step 2. 앱 등록하기</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">[</span><span class="o">...</span><span class="p">],</span>
+    <span class="s">'corsheaders'</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre>
+</div>
+
+<p><strong>Step 3. 미들웨어 등록하기</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">MIDDLEWARE_CLASSES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">'django.middleware.common.CommonMiddleware'</span><span class="p">,</span>
+    <span class="s">'corsheaders.middleware.CorsMiddleware'</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre>
+</div>
+
+<p><strong>Step 4. Credentials을 참으로 설정하기</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">CORS_ALLOW_CREDENTIALS</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre>
+</div>
+
+<p><strong>Step 5. 허용할 Origin 설정하기</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">CORS_ORIGIN_WHITELIST</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">'www.mysite.com'</span><span class="p">,</span>
+    <span class="s">'www.othersite.com'</span><span class="p">,</span>
+    <span class="s">'www.etcsite.com'</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre>
+</div>
+
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
+        
+        <li class="prev-or-next">
+          <a href="/computer%20science/css/2017/10/19/inheritance.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            상속(Inheritance)
+          </a>
+        </li>
+        
+        
+      </ul>
+      <!-- <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section> -->
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>
