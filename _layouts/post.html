@@ -2,7 +2,6 @@
 layout: default
 ---
 
-{% include header.html %}
 <section class="markdown">
   <article class="md-head">
     <div class="title">
@@ -22,7 +21,7 @@ layout: default
       {% endfor %}
     </div>
   </article>
-  <article class="md-body">
+  <article class="markdown-body">
     <section class="post-content">
       {{ content }}
     </section>
@@ -46,13 +45,13 @@ layout: default
         </li>
         {% endif %}
       </ul>
-      <section class="my-intro">
+      <!-- <section class="my-intro">
         <img src="{{ site.baseurl }}/images/itsme.png">
         <article>
           <p>뿡상</p>
           궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
         </article>
-      </section>
+      </section> -->
       {% include /comments.html %}
     </footer>
   </article>

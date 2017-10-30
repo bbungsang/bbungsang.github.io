@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<section class="list-container">
+  <!-- algorithm -->
+  <p class="post-head">Solve! Algorithm</p>
+  <ul class="post-list">
+    {% for post in site.categories.algorithm %}
+    <li class="post-wrap">
+      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
+      </a>
+      <p class="post-content">
+        {{ post.content | strip_html | truncatewords: 40 }}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">Read More</a>
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

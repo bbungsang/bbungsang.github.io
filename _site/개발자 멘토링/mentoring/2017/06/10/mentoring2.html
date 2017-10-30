@@ -22,17 +22,13 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="/css/common.css" />
 	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/main.css" />
 	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/list.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
-	<!-- <link rel="stylesheet" href="/css/style.css" />
-	<link rel="stylesheet" href="/css/post.css" />
-	<link rel="stylesheet" href="/css/etc.css" />
-	<link href="/css/style-header.css" rel="stylesheet">
-	<link href="/css/style-responsive.css" rel="stylesheet"> -->
 	<!--external css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
 
 	<!-- font -->
@@ -48,9 +44,7 @@
 
 <body>
   <div id="container" class="container">
-    <link rel="stylesheet" href="/css/main.css" />
-
-<ul class="top_menu">
+    <ul class="top_menu">
   <li class=" menu_list sidebar-toggle-box">
     <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
       <i class="im im-menu"></i>
@@ -58,11 +52,13 @@
   </li>
 
   <li class="menu_list logo">
-    bbungsang
-    <i>devlog</i>
+    <a href="/">
+      bbungsang
+      <i>devlog</i>
+    </a>
   </li>
-  <a href="#"><li class="menu_ele">Facebook</li></a>
-  <a href="#"><li class="menu_ele">GitHub</li></a>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
+  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
 </ul>
 
 <!-- 사이드 메뉴바 -->
@@ -79,34 +75,37 @@
   </div>
   <ul class="menu-ele">
     <li>
-      <a href="https://github.com/bbungsang">
+      <a href="/files/python.html">
         <span class="bar-left"></span>
         파이썬
         <span class="bar-right"></span>
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="/files/django.html">
         <span class="bar-left"></span>
         장고
         <span class="bar-right"></span>
       </a>
-    </li><li>
-      <a href="#">
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
         <span class="bar-left"></span>
         알고리즘
         <span class="bar-right"></span>
       </a>
-    </li><li>
-      <a href="#">
+    </li>
+    <li>
+      <a href="/files/server.html">
         <span class="bar-left"></span>
-        스터디
+        서버
         <span class="bar-right"></span>
       </a>
-    </li><li>
-      <a href="#">
+    </li>
+    <li>
+      <a href="/files/study.html">
         <span class="bar-left"></span>
-        기타
+        스터디
         <span class="bar-right"></span>
       </a>
     </li>
@@ -135,7 +134,7 @@
 </script>
 
 
-<section class="markdown">
+    <section class="markdown">
   <article class="md-head">
     <div class="title">
       여자개발자모임터 10주년
@@ -145,7 +144,7 @@
       
     </div>
   </article>
-  <article class="md-body">
+  <article class="markdown-body">
     <section class="post-content">
       <blockquote>
   <p>2017/06/10 여자개발자모임터 10주년 행사에 참가하여 들은 강연에 대한 개인적인 느낌점을 작성한 것입니다.</p>
@@ -230,13 +229,13 @@
         </li>
         
       </ul>
-      <section class="my-intro">
+      <!-- <section class="my-intro">
         <img src="/images/itsme.png">
         <article>
           <p>뿡상</p>
           궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
         </article>
-      </section>
+      </section> -->
       
   <div id="disqus_thread"></div>
   <script>

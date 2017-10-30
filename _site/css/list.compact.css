@@ -1,0 +1,15 @@
+.list-container { padding: 45px 0; }
+
+.list-container .post-head { margin: 25px 25px 0 25px; padding: 5px; font-size: 24px; font-weight: bold; color: #00c3bd; font-family: 'Nanumbarunpen'; }
+
+.list-container .post-list { padding: 0 30px; }
+
+.list-container .post-list .post-wrap { margin: 10px 0; padding: 10px 10px; background: #fafafa; }
+
+.list-container .post-list .post-wrap .post-title { text-decoration: none; color: #8d8d8d; }
+
+.list-container .post-list .post-wrap .post-content { padding: 0; margin: 0; font-size: 14px; }
+
+.list-container .post-list .post-wrap .read-more-btn { text-align: center; border: 1px solid #818181; display: block; padding: 5px; margin-top: 10px; text-decoration: none; color: #818181; border-radius: 5px; }
+
+.list-container .post-list .post-wrap .read-more-btn:hover { border: 1px solid #00c3bd; color: #00c3bd; }

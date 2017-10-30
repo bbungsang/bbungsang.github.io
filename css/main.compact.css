@@ -9,9 +9,11 @@
 
 .container .top_menu .menu_btn:hover { background: rgba(255, 255, 255, 0.3); }
 
-.container .top_menu .logo { width: 140px; margin-left: 20px; line-height: 42px; font-family: 'Gloria Hallelujah'; color: #fafafa; font-size: 18px; }
+.container .top_menu .logo { width: 140px; margin-left: 20px; line-height: 42px; font-size: 18px; }
 
-.container .top_menu .logo i { color: #00c3bd; font-size: 12px; font-family: 'Georgia'; }
+.container .top_menu .logo a { font-family: 'Gloria Hallelujah'; color: #fafafa; text-decoration: none; }
+
+.container .top_menu .logo a i { color: #00c3bd; font-size: 12px; font-family: 'Georgia'; }
 
 .container .top_menu .menu_ele { float: right; padding: 0 2.5%; height: 48px; line-height: 48px; color: #fafafa; font-size: 15px; cursor: pointer; font-family: 'Nanumbarunpen'; appearance: none; }
 
