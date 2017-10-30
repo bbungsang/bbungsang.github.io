@@ -20,7 +20,9 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/post.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!-- <link rel="stylesheet" href="/css/style.css" />
@@ -46,32 +48,126 @@
 
 <body>
   <div id="container" class="container">
-      <div id="markdown" class="markdown">
-    <article class="markdown-body">
-      <header class="major">
-        <div class="h1">[장고 기본편] 5. Model</div>
-        <div class="date-tags">
-          07 Jun 2017
-          <img src="/images/tags.png" class="tag-img"/>
-<div class="post-tags">
-  
-  
-  <a href="/tags/#Django">Django</a>,
-  
-  <a href="/tags/#AskDjango">AskDjango</a>,
-  
-  <a href="/tags/#View">View</a>,
-  
-  <a href="/tags/#FBVCBV">FBVCBV</a>
-  
-</div>
-<br/>
+    <link rel="stylesheet" href="/css/main.css" />
 
-        </div>
-      </header>
-      <!-- <hr noshade style="width: 100%; float: left;"> -->
-      <section class="post-content">
-        <blockquote>
+<ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    bbungsang
+    <i>devlog</i>
+  </li>
+  <a href="#"><li class="menu_ele">Facebook</li></a>
+  <a href="#"><li class="menu_ele">GitHub</li></a>
+</ul>
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/meme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <button class="resume">미정</button>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="https://github.com/bbungsang">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        기타
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.left = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.left = "-240px";
+    }
+  });
+</script>
+
+
+<section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [장고 기본편] 5. Model
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Django">
+          <img src="/images/tag_img.png">
+          Django
+        </a>
+      
+        <a href="/tags/#AskDjango">
+          <img src="/images/tag_img.png">
+          AskDjango
+        </a>
+      
+        <a href="/tags/#View">
+          <img src="/images/tag_img.png">
+          View
+        </a>
+      
+        <a href="/tags/#FBVCBV">
+          <img src="/images/tag_img.png">
+          FBVCBV
+        </a>
+      
+    </div>
+  </article>
+  <article class="md-body">
+    <section class="post-content">
+      <blockquote>
   <p>| ٩(๑òωó๑)۶ 아, 아, 마이크 테스트 |<br />
 이 마크다운은 이진석 선생님의 ‘Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)’를 토대로 작성되었습니다.</p>
 </blockquote>
@@ -152,35 +248,35 @@
   </li>
 </ul>
 
-      </section>
-      <br><br>
-      <footer>
-        <ul class="other-posts">
-          
-          <li class="prev-or-next">
-            <a href="/solve%20algorithm!/algorithm/2017/06/07/tryhelloworld-level1-5-2.html">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              [Try Hello World] Level1 같은...
-            </a>
-          </li>
-          
-          
-          <li class="prev-or-next" align="right">
-            <a href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/08/askdjango-Migrations.html">
-              [장고 기본편] 6. Migrations
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-          </li>
-          
-        </ul>
-        <section class="my-intro">
-          <img src="/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
         
+        <li class="prev-or-next">
+          <a href="/solve%20algorithm!/algorithm/2017/06/07/tryhelloworld-level1-5-2.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [Try Hello World] Level1 같은...
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right">
+          <a href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/08/askdjango-Migrations.html">
+            [장고 기본편] 6. Migrations
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section>
+      
   <div id="disqus_thread"></div>
   <script>
 
@@ -194,9 +290,9 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-      </footer>
-    </article>
-  </div>
+    </footer>
+  </article>
+</section>
 
   </div>
 </body>

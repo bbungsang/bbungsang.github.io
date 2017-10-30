@@ -1,99 +1,87 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  padding: 0;
-  list-style: none;
-}
-
-@font-face {
-  font-family: NanumBarunpen;
-  src: url("/font/NanumBarunpen.woff") format('woff');
-}
-
 .container {
   width: 100%;
   position: relative;
   height: 100vh;
 
-  .banner_wrap {
-    background-color: #636d79;
-    background-image: url('../images/animals.jpg');
-    background-position: center;
-    background-size: 720px auto;
-    background-repeat: no-repeat;
-    height: 420px;
+  .top_menu {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #fafafa;
+    background: rgba(48, 55, 63, 0.5);
+    box-shadow: 0 2px 2px -2px gray;
+    position: fixed;
+    z-index: 2;
 
-    .top_menu {
-      width: 100%;
+    .menu_list {
+      float: left;
+    }
+
+    .menu_btn {
+      background: transparent;
+      border: none;
+      border-top: 1px solid #fafafa;
+      border-left: 1px solid #fafafa;
+      border-right: 1px solid #fafafa;
+      cursor: pointer;
+      padding: 0 10px;
       height: 50px;
-      border-bottom: 1px solid #fafafa;
-      // background: rgba(225, 225, 225, 0.2);
-      // box-shadow: 0 2px 2px -2px gray;
-      // position: fixed;
+      color: #fafafa;
 
-      .menu_list {
-        float: left;
-      }
-
-      .menu_btn {
-        background: transparent;
-        border: none;
-        border-top: 1px solid #fafafa;
-        border-left: 1px solid #fafafa;
-        border-right: 1px solid #fafafa;
-        cursor: pointer;
-        padding: 0 10px;
-        height: 50px;
-        color: #fafafa;
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.3);
-        }
-      }
-
-      .logo {
-        width: 140px;
-        margin-left: 20px;
-        line-height: 42px;
-        font-family: 'Gloria Hallelujah';
-        color: #fafafa;
-        font-size: 18px;
-
-        i {
-          color: #00c3bd;
-          font-size: 12px;
-          font-family: 'Georgia';
-        }
-      }
-
-      .menu_ele {
-        float: right;
-        padding: 0 2.5%;
-        height: 48px;
-        line-height: 48px;
-        color: #fafafa;
-        font-size: 15px;
-        cursor: pointer;
-        font-family: 'Nanumbarunpen';
-
-        appearance: none;
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-bottom: 4px solid #00c3bd;
-          transition: 0.2s;
-          color: #00c3bd;
-        }
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
       }
     }
+
+    .logo {
+      width: 140px;
+      margin-left: 20px;
+      line-height: 42px;
+      font-family: 'Gloria Hallelujah';
+      color: #fafafa;
+      font-size: 18px;
+
+      i {
+        color: #00c3bd;
+        font-size: 12px;
+        font-family: 'Georgia';
+      }
+    }
+
+    .menu_ele {
+      float: right;
+      padding: 0 2.5%;
+      height: 48px;
+      line-height: 48px;
+      color: #fafafa;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: 'Nanumbarunpen';
+
+      appearance: none;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom: 4px solid #00c3bd;
+        transition: 0.2s;
+        color: #00c3bd;
+      }
+    }
+  }
+
+  @media (max-width: 619px) {
+    .banner_wrap > article.posts {
+      font-size: 11px;
+    }
+  }
+
+  .banner_wrap {
+    background-color: #30373f;
+    background-image: url('../images/animals.jpg');
+    background-position: center;
+    background-size: 665px auto;
+    background-repeat: no-repeat;
+    height: 365px;
+    padding-top: 50px;
 
     .r_post_title {
       width: 80%;
@@ -101,11 +89,10 @@ li {
       padding: 0 2.5%;
       height: 40px;
       line-height: 40px;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.5);
       font-size: 17px;
       color: #00c3bd;
       font-family: 'Nanumbarunpen';
-      // border-top: 2px solid #fafafa;
       border-bottom: 1px solid #fafafa;
     }
 
@@ -116,8 +103,8 @@ li {
       padding: 0 2.5%;
       height: 35px;
       line-height: 35px;
-      font-size: 1.5vw;
-      background: rgba(0, 0, 0, 0.4);
+      font-size: 17px;
+      background: rgba(0, 0, 0, 0.2);
       border-bottom: 1px solid #ddd;
 
       &:nth-last-child(1) {
@@ -127,6 +114,10 @@ li {
       a {
         text-decoration: none;
         color: #fafafa;
+
+        &:hover {
+          color: #d2d2d2;
+        }
       }
     }
   }
@@ -150,7 +141,6 @@ li {
   }
 
   .tags {
-    width: 90%;
     padding: 0 5% 15px 5%;
     background: #f2f2f2;
 
@@ -172,7 +162,7 @@ li {
 
         img {
           width: 20px;
-          margin: 3px 5px;
+          margin: 3px 5px 3px 0;
           float: left;
         }
       }

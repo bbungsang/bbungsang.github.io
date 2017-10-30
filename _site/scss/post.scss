@@ -1,38 +1,48 @@
-/* NanumBarunpen 웹폰트 적용 */
-@font-face {
-  font-family: NanumBarunpen;
-  src: url("/font/NanumBarunpen.woff") format('woff');
-}
-
 .markdown {
   height: auto;
   padding-top: 80px;
   font-size: 15px;
 
-  .image-size {
-    width: 200px;
+  .md-head {
+    padding: 0 15px;
+    font-family: "Nanumbarunpen";
+
+    .title {
+      margin: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .tag-wrap {
+      margin: 10px;
+      height: 27px;
+      line-height: 27px;
+
+      a {
+        display: inline-block;
+        color: #fafafa;
+        text-decoration: none;
+        font-size: 13px;
+        padding: 0 10px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.4);
+
+        img {
+          width: 20px;
+          margin: 3px 5px 3px 0;
+          float: left;
+        }
+
+        &:hover {
+          background: #00c3bd;
+        }
+      }
+    }
   }
 
-  .a-tag-deco {
-    font-size: 20px;
-    font-weight: bold;
-    border: 1px solid #3DDAD7;
-    border-radius: 15px;
-    color: #3DDAD7;
-    padding: 5px;
-  }
-
-  .a-tag-deco:hover {
-    color: #fff;
-    background: #3DDAD7;
-  }
-
-  .markdown-body {
-		box-sizing: border-box;
-		min-width: 300px;
-		max-width: 980px;
-		margin: 0 auto;
-		padding: 20px;
+  .md-body {
+		padding: 25px;
 
     .post-content {
       width: 100%;
@@ -41,6 +51,11 @@
 	}
 
   /* Post */
+  .center-image {
+    width: 70%;
+    margin: 15px 15%;
+  }
+
   table {
     width: 90%;
     margin: 10px 5% 30px 5%;
@@ -56,15 +71,6 @@
 
   a {
     color: rgb(154, 154, 154);
-  }
-
-  .h1 {
-    width: 100%;
-    margin: 0;
-    padding-bottom: 15px;
-    font-weight: bold;
-    color: #135589;
-    float: left;
   }
 
   h2 {
@@ -88,15 +94,6 @@
     margin-top: 25px;
   }
 
-  .date-tags {
-    // font-family: 'Bubbler One';
-    font-size: 16px;
-    width: 100%;
-    height: 20px;
-    float: left;
-    margin-bottom: 30px;
-  }
-
   a {
     color: #2096ba;
   }
@@ -104,17 +101,8 @@
   .post-content {
     float: left;
 
-    ul {
-      width: 100%;
-      height: auto;
-      float: left;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: black;
-
-      li {
-        list-style-type: disc;
-      }
+    li {
+      list-style-type: disc;
     }
   }
 
@@ -202,8 +190,6 @@
   pre.highlight {
     width: 100%;
     background-color: #222;
-    padding: 5px 10px;
-    margin: 20px 0;
     word-break: break-all;
     word-wrap: break-word;
   }

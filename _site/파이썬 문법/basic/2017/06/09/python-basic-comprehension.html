@@ -20,7 +20,9 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/post.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!-- <link rel="stylesheet" href="/css/style.css" />
@@ -46,32 +48,126 @@
 
 <body>
   <div id="container" class="container">
-      <div id="markdown" class="markdown">
-    <article class="markdown-body">
-      <header class="major">
-        <div class="h1">컴프리헨션(Comprehension)</div>
-        <div class="date-tags">
-          09 Jun 2017
-          <img src="/images/tags.png" class="tag-img"/>
-<div class="post-tags">
-  
-  
-  <a href="/tags/#Python">Python</a>,
-  
-  <a href="/tags/#List">List</a>,
-  
-  <a href="/tags/#Dictionary">Dictionary</a>,
-  
-  <a href="/tags/#Comprehension">Comprehension</a>
-  
-</div>
-<br/>
+    <link rel="stylesheet" href="/css/main.css" />
 
-        </div>
-      </header>
-      <!-- <hr noshade style="width: 100%; float: left;"> -->
-      <section class="post-content">
-        <blockquote>
+<ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    bbungsang
+    <i>devlog</i>
+  </li>
+  <a href="#"><li class="menu_ele">Facebook</li></a>
+  <a href="#"><li class="menu_ele">GitHub</li></a>
+</ul>
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/meme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <button class="resume">미정</button>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="https://github.com/bbungsang">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        기타
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.left = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.left = "-240px";
+    }
+  });
+</script>
+
+
+<section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      컴프리헨션(Comprehension)
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Python">
+          <img src="/images/tag_img.png">
+          Python
+        </a>
+      
+        <a href="/tags/#List">
+          <img src="/images/tag_img.png">
+          List
+        </a>
+      
+        <a href="/tags/#Dictionary">
+          <img src="/images/tag_img.png">
+          Dictionary
+        </a>
+      
+        <a href="/tags/#Comprehension">
+          <img src="/images/tag_img.png">
+          Comprehension
+        </a>
+      
+    </div>
+  </article>
+  <article class="md-body">
+    <section class="post-content">
+      <blockquote>
   <p>이 마크다운은 <strong>빌루바노빅</strong> 의 <strong>Introducing Python</strong> 을 토대로 작성되었습니다.
 제 기준 헷갈리는 개념을 위주로 다른 문서를 참고하여 이해하기 쉽도록 내용을 더하였습니다.</p>
 </blockquote>
@@ -174,35 +270,35 @@
   <li>컴프리헨션은 이전 예제보다 간단하지 않지만, 더 많은 것을 간단한 원리로 표현할 수 있도록 해준다.</li>
 </ul>
 
-      </section>
-      <br><br>
-      <footer>
-        <ul class="other-posts">
-          
-          <li class="prev-or-next">
-            <a href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/08/askdjango-Migrations.html">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              [장고 기본편] 6. Migrations
-            </a>
-          </li>
-          
-          
-          <li class="prev-or-next" align="right">
-            <a href="/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%AC%B8%EB%B2%95/basic/2017/06/09/python-basic-generator.html">
-              제너레이터(Generator)
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-          </li>
-          
-        </ul>
-        <section class="my-intro">
-          <img src="/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
         
+        <li class="prev-or-next">
+          <a href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/08/askdjango-Migrations.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [장고 기본편] 6. Migrations
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right">
+          <a href="/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%AC%B8%EB%B2%95/basic/2017/06/09/python-basic-generator.html">
+            제너레이터(Generator)
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section>
+      
   <div id="disqus_thread"></div>
   <script>
 
@@ -216,9 +312,9 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-      </footer>
-    </article>
-  </div>
+    </footer>
+  </article>
+</section>
 
   </div>
 </body>

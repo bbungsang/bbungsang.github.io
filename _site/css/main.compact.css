@@ -1,51 +1,47 @@
 @charset "UTF-8";
-body { margin: 0; padding: 0; }
-
-ul { padding: 0; margin: 0; }
-
-li { padding: 0; list-style: none; }
-
-@font-face { font-family: NanumBarunpen; src: url("/font/NanumBarunpen.woff") format("woff"); }
-
 .container { width: 100%; position: relative; height: 100vh; }
 
-.container .banner_wrap { background-color: #636d79; background-image: url("../images/animals.jpg"); background-position: center; background-size: 720px auto; background-repeat: no-repeat; height: 420px; }
+.container .top_menu { width: 100%; height: 50px; border-bottom: 1px solid #fafafa; background: rgba(48, 55, 63, 0.5); box-shadow: 0 2px 2px -2px gray; position: fixed; z-index: 2; }
 
-.container .banner_wrap .top_menu { width: 100%; height: 50px; border-bottom: 1px solid #fafafa; }
+.container .top_menu .menu_list { float: left; }
 
-.container .banner_wrap .top_menu .menu_list { float: left; }
+.container .top_menu .menu_btn { background: transparent; border: none; border-top: 1px solid #fafafa; border-left: 1px solid #fafafa; border-right: 1px solid #fafafa; cursor: pointer; padding: 0 10px; height: 50px; color: #fafafa; }
 
-.container .banner_wrap .top_menu .menu_btn { background: transparent; border: none; border-top: 1px solid #fafafa; border-left: 1px solid #fafafa; border-right: 1px solid #fafafa; cursor: pointer; padding: 0 10px; height: 50px; color: #fafafa; }
+.container .top_menu .menu_btn:hover { background: rgba(255, 255, 255, 0.3); }
 
-.container .banner_wrap .top_menu .menu_btn:hover { background: rgba(255, 255, 255, 0.3); }
+.container .top_menu .logo { width: 140px; margin-left: 20px; line-height: 42px; font-family: 'Gloria Hallelujah'; color: #fafafa; font-size: 18px; }
 
-.container .banner_wrap .top_menu .logo { width: 140px; margin-left: 20px; line-height: 42px; font-family: 'Gloria Hallelujah'; color: #fafafa; font-size: 18px; }
+.container .top_menu .logo i { color: #00c3bd; font-size: 12px; font-family: 'Georgia'; }
 
-.container .banner_wrap .top_menu .logo i { color: #00c3bd; font-size: 12px; font-family: 'Georgia'; }
+.container .top_menu .menu_ele { float: right; padding: 0 2.5%; height: 48px; line-height: 48px; color: #fafafa; font-size: 15px; cursor: pointer; font-family: 'Nanumbarunpen'; appearance: none; }
 
-.container .banner_wrap .top_menu .menu_ele { float: right; padding: 0 2.5%; height: 48px; line-height: 48px; color: #fafafa; font-size: 15px; cursor: pointer; font-family: 'Nanumbarunpen'; appearance: none; }
+.container .top_menu .menu_ele:hover { background: rgba(255, 255, 255, 0.1); border-bottom: 4px solid #00c3bd; transition: 0.2s; color: #00c3bd; }
 
-.container .banner_wrap .top_menu .menu_ele:hover { background: rgba(255, 255, 255, 0.1); border-bottom: 4px solid #00c3bd; transition: 0.2s; color: #00c3bd; }
+@media (max-width: 619px) { .container .banner_wrap > article.posts { font-size: 11px; } }
 
-.container .banner_wrap .r_post_title { width: 80%; margin: 35px 7.5% 0 7.5%; padding: 0 2.5%; height: 40px; line-height: 40px; background: rgba(0, 0, 0, 0.7); font-size: 17px; color: #00c3bd; font-family: 'Nanumbarunpen'; border-bottom: 1px solid #fafafa; }
+.container .banner_wrap { background-color: #30373f; background-image: url("../images/animals.jpg"); background-position: center; background-size: 665px auto; background-repeat: no-repeat; height: 365px; padding-top: 50px; }
 
-.container .banner_wrap .posts { display: inline-block; width: 80%; margin: 0 7.5%; padding: 0 2.5%; height: 35px; line-height: 35px; font-size: 1.5vw; background: rgba(0, 0, 0, 0.4); border-bottom: 1px solid #ddd; }
+.container .banner_wrap .r_post_title { width: 80%; margin: 35px 7.5% 0 7.5%; padding: 0 2.5%; height: 40px; line-height: 40px; background: rgba(0, 0, 0, 0.5); font-size: 17px; color: #00c3bd; font-family: 'Nanumbarunpen'; border-bottom: 1px solid #fafafa; }
+
+.container .banner_wrap .posts { display: inline-block; width: 80%; margin: 0 7.5%; padding: 0 2.5%; height: 35px; line-height: 35px; font-size: 17px; background: rgba(0, 0, 0, 0.2); border-bottom: 1px solid #ddd; }
 
 .container .banner_wrap .posts:nth-last-child(1) { border-bottom: none; }
 
 .container .banner_wrap .posts a { text-decoration: none; color: #fafafa; }
 
+.container .banner_wrap .posts a:hover { color: #d2d2d2; }
+
 .container .tag_title { padding: 35px 0 20px 0; text-align: center; text-shadow: 100px; color: #333333; font-family: 'Bungee Hairline'; font-size: 20px; font-weight: bold; background: #f2f2f2; }
 
 .container .tag_title p { font-family: 'Nanumbarunpen'; color: #8d8d8d; margin: 5px 0; font-size: 15px; }
 
-.container .tags { width: 90%; padding: 0 5% 15px 5%; background: #f2f2f2; }
+.container .tags { padding: 0 5% 15px 5%; background: #f2f2f2; }
 
 .container .tags .tag_element { display: inline-block; position: relative; margin: 4px; height: 27px; line-height: 27px; border: 1px solid #fafafa; border-radius: 5px; background: rgba(0, 0, 0, 0.4); }
 
 .container .tags .tag_element a { display: inline-block; color: #fafafa; text-decoration: none; font-size: 13px; }
 
-.container .tags .tag_element a img { width: 20px; margin: 3px 5px; float: left; }
+.container .tags .tag_element a img { width: 20px; margin: 3px 5px 3px 0; float: left; }
 
 .container .tags .tag_element:hover { background: #00c3bd; }
 

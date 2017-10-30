@@ -1,50 +1,25 @@
 @charset "UTF-8";
-body {
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  padding: 0;
-  list-style: none;
-}
-
-@font-face {
-  font-family: NanumBarunpen;
-  src: url("/font/NanumBarunpen.woff") format("woff");
-}
-
 .container {
   width: 100%;
   position: relative;
   height: 100vh;
 }
 
-.container .banner_wrap {
-  background-color: #636d79;
-  background-image: url("../images/animals.jpg");
-  background-position: center;
-  background-size: 720px auto;
-  background-repeat: no-repeat;
-  height: 420px;
-}
-
-.container .banner_wrap .top_menu {
+.container .top_menu {
   width: 100%;
   height: 50px;
   border-bottom: 1px solid #fafafa;
+  background: rgba(48, 55, 63, 0.5);
+  box-shadow: 0 2px 2px -2px gray;
+  position: fixed;
+  z-index: 2;
 }
 
-.container .banner_wrap .top_menu .menu_list {
+.container .top_menu .menu_list {
   float: left;
 }
 
-.container .banner_wrap .top_menu .menu_btn {
+.container .top_menu .menu_btn {
   background: transparent;
   border: none;
   border-top: 1px solid #fafafa;
@@ -56,11 +31,11 @@ li {
   color: #fafafa;
 }
 
-.container .banner_wrap .top_menu .menu_btn:hover {
+.container .top_menu .menu_btn:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.container .banner_wrap .top_menu .logo {
+.container .top_menu .logo {
   width: 140px;
   margin-left: 20px;
   line-height: 42px;
@@ -69,13 +44,13 @@ li {
   font-size: 18px;
 }
 
-.container .banner_wrap .top_menu .logo i {
+.container .top_menu .logo i {
   color: #00c3bd;
   font-size: 12px;
   font-family: 'Georgia';
 }
 
-.container .banner_wrap .top_menu .menu_ele {
+.container .top_menu .menu_ele {
   float: right;
   padding: 0 2.5%;
   height: 48px;
@@ -87,11 +62,27 @@ li {
   appearance: none;
 }
 
-.container .banner_wrap .top_menu .menu_ele:hover {
+.container .top_menu .menu_ele:hover {
   background: rgba(255, 255, 255, 0.1);
   border-bottom: 4px solid #00c3bd;
   transition: 0.2s;
   color: #00c3bd;
+}
+
+@media (max-width: 619px) {
+  .container .banner_wrap > article.posts {
+    font-size: 11px;
+  }
+}
+
+.container .banner_wrap {
+  background-color: #30373f;
+  background-image: url("../images/animals.jpg");
+  background-position: center;
+  background-size: 665px auto;
+  background-repeat: no-repeat;
+  height: 365px;
+  padding-top: 50px;
 }
 
 .container .banner_wrap .r_post_title {
@@ -100,7 +91,7 @@ li {
   padding: 0 2.5%;
   height: 40px;
   line-height: 40px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   font-size: 17px;
   color: #00c3bd;
   font-family: 'Nanumbarunpen';
@@ -114,8 +105,8 @@ li {
   padding: 0 2.5%;
   height: 35px;
   line-height: 35px;
-  font-size: 1.5vw;
-  background: rgba(0, 0, 0, 0.4);
+  font-size: 17px;
+  background: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid #ddd;
 }
 
@@ -126,6 +117,10 @@ li {
 .container .banner_wrap .posts a {
   text-decoration: none;
   color: #fafafa;
+}
+
+.container .banner_wrap .posts a:hover {
+  color: #d2d2d2;
 }
 
 .container .tag_title {
@@ -147,7 +142,6 @@ li {
 }
 
 .container .tags {
-  width: 90%;
   padding: 0 5% 15px 5%;
   background: #f2f2f2;
 }
@@ -172,7 +166,7 @@ li {
 
 .container .tags .tag_element a img {
   width: 20px;
-  margin: 3px 5px;
+  margin: 3px 5px 3px 0;
   float: left;
 }
 

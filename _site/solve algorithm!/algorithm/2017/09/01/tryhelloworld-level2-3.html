@@ -20,7 +20,9 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/post.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!-- <link rel="stylesheet" href="/css/style.css" />
@@ -46,28 +48,116 @@
 
 <body>
   <div id="container" class="container">
-      <div id="markdown" class="markdown">
-    <article class="markdown-body">
-      <header class="major">
-        <div class="h1">[Try Hello World] Level2 하샤드수</div>
-        <div class="date-tags">
-          01 Sep 2017
-          <img src="/images/tags.png" class="tag-img"/>
-<div class="post-tags">
-  
-  
-  <a href="/tags/#Alogorithm">Alogorithm</a>,
-  
-  <a href="/tags/#Level2">Level2</a>
-  
-</div>
-<br/>
+    <link rel="stylesheet" href="/css/main.css" />
 
-        </div>
-      </header>
-      <!-- <hr noshade style="width: 100%; float: left;"> -->
-      <section class="post-content">
-        <h2 id="하샤드수">하샤드수</h2>
+<ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    bbungsang
+    <i>devlog</i>
+  </li>
+  <a href="#"><li class="menu_ele">Facebook</li></a>
+  <a href="#"><li class="menu_ele">GitHub</li></a>
+</ul>
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/meme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <button class="resume">미정</button>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="https://github.com/bbungsang">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        기타
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.left = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.left = "-240px";
+    }
+  });
+</script>
+
+
+<section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [Try Hello World] Level2 하샤드수
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Alogorithm">
+          <img src="/images/tag_img.png">
+          Alogorithm
+        </a>
+      
+        <a href="/tags/#Level2">
+          <img src="/images/tag_img.png">
+          Level2
+        </a>
+      
+    </div>
+  </article>
+  <article class="md-body">
+    <section class="post-content">
+      <h2 id="하샤드수">하샤드수</h2>
 <p>양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다.</p>
 
 <p>예를들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다.</p>
@@ -101,35 +191,35 @@
 </code></pre>
 </div>
 
-      </section>
-      <br><br>
-      <footer>
-        <ul class="other-posts">
-          
-          <li class="prev-or-next">
-            <a href="/solve%20algorithm!/algorithm/2017/08/31/tryhelloworld-level2-2.html">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              [Try Hello World] Level2 JadenCase문자열...
-            </a>
-          </li>
-          
-          
-          <li class="prev-or-next" align="right">
-            <a href="/solve%20algorithm!/algorithm/2017/09/01/tryhelloworld-level5-1.html">
-              [Try Hello World] Level5 2...
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-          </li>
-          
-        </ul>
-        <section class="my-intro">
-          <img src="/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
         
+        <li class="prev-or-next">
+          <a href="/solve%20algorithm!/algorithm/2017/08/31/tryhelloworld-level2-2.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [Try Hello World] Level2 JadenCase문자열...
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right">
+          <a href="/solve%20algorithm!/algorithm/2017/09/01/tryhelloworld-level5-1.html">
+            [Try Hello World] Level5 2...
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section>
+      
   <div id="disqus_thread"></div>
   <script>
 
@@ -143,9 +233,9 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-      </footer>
-    </article>
-  </div>
+    </footer>
+  </article>
+</section>
 
   </div>
 </body>

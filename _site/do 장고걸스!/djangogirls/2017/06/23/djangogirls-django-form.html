@@ -20,7 +20,9 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/post.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!-- <link rel="stylesheet" href="/css/style.css" />
@@ -46,30 +48,121 @@
 
 <body>
   <div id="container" class="container">
-      <div id="markdown" class="markdown">
-    <article class="markdown-body">
-      <header class="major">
-        <div class="h1">장고 폼</div>
-        <div class="date-tags">
-          23 Jun 2017
-          <img src="/images/tags.png" class="tag-img"/>
-<div class="post-tags">
-  
-  
-  <a href="/tags/#Django">Django</a>,
-  
-  <a href="/tags/#Djangogirls">Djangogirls</a>,
-  
-  <a href="/tags/#Form">Form</a>
-  
-</div>
-<br/>
+    <link rel="stylesheet" href="/css/main.css" />
 
-        </div>
-      </header>
-      <!-- <hr noshade style="width: 100%; float: left;"> -->
-      <section class="post-content">
-        <p>장고 폼은 HTML의 복잡한 태그 없이 아주 간단히 양식을 만들 수 있고, <code class="highlighter-rouge">ModelForm</code>을 통하여 자동으로 모델에 결과물을 저장할 수 있다. 또한 장고 폼은 입력받은 데이터에 대한 유효성 검사를 하는 데 최상의 도구이다.</p>
+<ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    bbungsang
+    <i>devlog</i>
+  </li>
+  <a href="#"><li class="menu_ele">Facebook</li></a>
+  <a href="#"><li class="menu_ele">GitHub</li></a>
+</ul>
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/meme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <button class="resume">미정</button>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="https://github.com/bbungsang">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        기타
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.left = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.left = "-240px";
+    }
+  });
+</script>
+
+
+<section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      장고 폼
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Django">
+          <img src="/images/tag_img.png">
+          Django
+        </a>
+      
+        <a href="/tags/#Djangogirls">
+          <img src="/images/tag_img.png">
+          Djangogirls
+        </a>
+      
+        <a href="/tags/#Form">
+          <img src="/images/tag_img.png">
+          Form
+        </a>
+      
+    </div>
+  </article>
+  <article class="md-body">
+    <section class="post-content">
+      <p>장고 폼은 HTML의 복잡한 태그 없이 아주 간단히 양식을 만들 수 있고, <code class="highlighter-rouge">ModelForm</code>을 통하여 자동으로 모델에 결과물을 저장할 수 있다. 또한 장고 폼은 입력받은 데이터에 대한 유효성 검사를 하는 데 최상의 도구이다.</p>
 
 <h3 id="blog-디렉토리-안에-폼-파일-만들기">blog 디렉토리 안에 폼 파일 만들기</h3>
 
@@ -99,35 +192,35 @@
 
 <h3 id="템플릿에서-폼-사용하기">템플릿에서 폼 사용하기</h3>
 
-      </section>
-      <br><br>
-      <footer>
-        <ul class="other-posts">
-          
-          <li class="prev-or-next">
-            <a href="/solve%20algorithm!/algorithm/2017/06/19/tryhelloworld-level2-1.html">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              [Try Hello World] Level2 2016년...
-            </a>
-          </li>
-          
-          
-          <li class="prev-or-next" align="right">
-            <a href="/aws/2017/06/29/(1)django-settings-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html">
-              [AWS] 1. 장고 settings 설정하기...
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-          </li>
-          
-        </ul>
-        <section class="my-intro">
-          <img src="/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
         
+        <li class="prev-or-next">
+          <a href="/solve%20algorithm!/algorithm/2017/06/19/tryhelloworld-level2-1.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [Try Hello World] Level2 2016년...
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right">
+          <a href="/aws/2017/06/29/(1)django-settings-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html">
+            [AWS] 1. 장고 settings 설정하기...
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section>
+      
   <div id="disqus_thread"></div>
   <script>
 
@@ -141,9 +234,9 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-      </footer>
-    </article>
-  </div>
+    </footer>
+  </article>
+</section>
 
   </div>
 </body>

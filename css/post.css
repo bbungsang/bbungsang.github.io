@@ -1,10 +1,3 @@
-@charset "UTF-8";
-/* NanumBarunpen 웹폰트 적용 */
-@font-face {
-  font-family: NanumBarunpen;
-  src: url("/font/NanumBarunpen.woff") format("woff");
-}
-
 .markdown {
   height: auto;
   padding-top: 80px;
@@ -81,35 +74,56 @@
   /* Literal.Number.Integer.Long */
 }
 
-.markdown .image-size {
-  width: 200px;
+.markdown .md-head {
+  padding: 0 15px;
+  font-family: "Nanumbarunpen";
 }
 
-.markdown .a-tag-deco {
-  font-size: 20px;
+.markdown .md-head .title {
+  margin: 10px;
+  font-size: 28px;
   font-weight: bold;
-  border: 1px solid #3DDAD7;
-  border-radius: 15px;
-  color: #3DDAD7;
-  padding: 5px;
+  position: relative;
 }
 
-.markdown .a-tag-deco:hover {
-  color: #fff;
-  background: #3DDAD7;
+.markdown .md-head .tag-wrap {
+  margin: 10px;
+  height: 27px;
+  line-height: 27px;
 }
 
-.markdown .markdown-body {
-  box-sizing: border-box;
-  min-width: 300px;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 20px;
+.markdown .md-head .tag-wrap a {
+  display: inline-block;
+  color: #fafafa;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.markdown .markdown-body .post-content {
+.markdown .md-head .tag-wrap a img {
+  width: 20px;
+  margin: 3px 5px 3px 0;
+  float: left;
+}
+
+.markdown .md-head .tag-wrap a:hover {
+  background: #00c3bd;
+}
+
+.markdown .md-body {
+  padding: 25px;
+}
+
+.markdown .md-body .post-content {
   width: 100%;
   float: left;
+}
+
+.markdown .center-image {
+  width: 70%;
+  margin: 15px 15%;
 }
 
 .markdown table {
@@ -127,15 +141,6 @@
 
 .markdown a {
   color: #9a9a9a;
-}
-
-.markdown .h1 {
-  width: 100%;
-  margin: 0;
-  padding-bottom: 15px;
-  font-weight: bold;
-  color: #135589;
-  float: left;
 }
 
 .markdown h2 {
@@ -159,14 +164,6 @@
   margin-top: 25px;
 }
 
-.markdown .date-tags {
-  font-size: 16px;
-  width: 100%;
-  height: 20px;
-  float: left;
-  margin-bottom: 30px;
-}
-
 .markdown a {
   color: #2096ba;
 }
@@ -175,16 +172,7 @@
   float: left;
 }
 
-.markdown .post-content ul {
-  width: 100%;
-  height: auto;
-  float: left;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: black;
-}
-
-.markdown .post-content ul li {
+.markdown .post-content li {
   list-style-type: disc;
 }
 
@@ -271,8 +259,6 @@
 .markdown pre.highlight {
   width: 100%;
   background-color: #222;
-  padding: 5px 10px;
-  margin: 20px 0;
   word-break: break-all;
   word-wrap: break-word;
 }

@@ -20,7 +20,9 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/post.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!-- <link rel="stylesheet" href="/css/style.css" />
@@ -46,28 +48,116 @@
 
 <body>
   <div id="container" class="container">
-      <div id="markdown" class="markdown">
-    <article class="markdown-body">
-      <header class="major">
-        <div class="h1">자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()</div>
-        <div class="date-tags">
-          29 Aug 2017
-          <img src="/images/tags.png" class="tag-img"/>
-<div class="post-tags">
-  
-  
-  <a href="/tags/#JavaScript">JavaScript</a>,
-  
-  <a href="/tags/#CSS">CSS</a>
-  
-</div>
-<br/>
+    <link rel="stylesheet" href="/css/main.css" />
 
-        </div>
-      </header>
-      <!-- <hr noshade style="width: 100%; float: left;"> -->
-      <section class="post-content">
-        <blockquote>
+<ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    bbungsang
+    <i>devlog</i>
+  </li>
+  <a href="#"><li class="menu_ele">Facebook</li></a>
+  <a href="#"><li class="menu_ele">GitHub</li></a>
+</ul>
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/meme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <button class="resume">미정</button>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="https://github.com/bbungsang">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        기타
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.left = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.left = "-240px";
+    }
+  });
+</script>
+
+
+<section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#JavaScript">
+          <img src="/images/tag_img.png">
+          JavaScript
+        </a>
+      
+        <a href="/tags/#CSS">
+          <img src="/images/tag_img.png">
+          CSS
+        </a>
+      
+    </div>
+  </article>
+  <article class="md-body">
+    <section class="post-content">
+      <blockquote>
   <p>웹사이트를 반응형으로 만들기위해서 <strong>CSS 미디어쿼리</strong> 를 사용해야 하는데, CSS 미디어쿼리는 다양한 크기의 디바이스가 존재하는 상황에서도 모두 적절한 화면을 제공하게 해준다.</p>
 </blockquote>
 
@@ -153,35 +243,35 @@ m.matches // true
 </code></pre>
 </div>
 
-      </section>
-      <br><br>
-      <footer>
-        <ul class="other-posts">
-          
-          <li class="prev-or-next">
-            <a href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/23/ch12-django-form-patterns.html">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              [12장] 폼 패턴들
-            </a>
-          </li>
-          
-          
-          <li class="prev-or-next" align="right">
-            <a href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">
-              [15장] 장고 템플릿과 Jinja2
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-          </li>
-          
-        </ul>
-        <section class="my-intro">
-          <img src="/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
         
+        <li class="prev-or-next">
+          <a href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/23/ch12-django-form-patterns.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [12장] 폼 패턴들
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right">
+          <a href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">
+            [15장] 장고 템플릿과 Jinja2
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section>
+      
   <div id="disqus_thread"></div>
   <script>
 
@@ -195,9 +285,9 @@ m.matches // true
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-      </footer>
-    </article>
-  </div>
+    </footer>
+  </article>
+</section>
 
   </div>
 </body>

@@ -2,47 +2,58 @@
 layout: default
 ---
 
-  <div id="markdown" class="markdown">
-    <article class="markdown-body">
-      <header class="major">
-        <div class="h1">{{ page.title }}</div>
-        <div class="date-tags">
-          {{ page.date | date_to_string }}
-          {% include post_tags.html %}
-        </div>
-      </header>
-      <!-- <hr noshade style="width: 100%; float: left;"> -->
-      <section class="post-content">
-        {{ content }}
+{% include header.html %}
+<section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      {{ page.title }}
+    </div>
+    <div class="tag-wrap">
+      {% if post %}
+        {% assign tags = post.tags %}
+      {% else %}
+        {% assign tags = page.tags %}
+      {% endif %}
+      {% for tag in tags %}
+        <a href="/tags/#{{tag|slugize}}">
+          <img src="{{ site.baseurl }}/images/tag_img.png">
+          {{tag}}
+        </a>
+      {% endfor %}
+    </div>
+  </article>
+  <article class="md-body">
+    <section class="post-content">
+      {{ content }}
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
+        {% if page.previous %}
+        <li class="prev-or-next">
+          <a href="{{ page.previous.url }}">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            {{ page.previous.title | strip_html | truncatewords: 5 }}
+          </a>
+        </li>
+        {% endif %}
+        {% if page.next %}
+        <li class="prev-or-next" align="right">
+          <a href="{{ page.next.url }}">
+            {{ page.next.title | strip_html | truncatewords: 5 }}
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+      <section class="my-intro">
+        <img src="{{ site.baseurl }}/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
       </section>
-      <br><br>
-      <footer>
-        <ul class="other-posts">
-          {% if page.previous %}
-          <li class="prev-or-next">
-            <a href="{{ page.previous.url }}">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              {{ page.previous.title | strip_html | truncatewords: 5 }}
-            </a>
-          </li>
-          {% endif %}
-          {% if page.next %}
-          <li class="prev-or-next" align="right">
-            <a href="{{ page.next.url }}">
-              {{ page.next.title | strip_html | truncatewords: 5 }}
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-        <section class="my-intro">
-          <img src="{{ site.baseurl }}/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
-        {% include /comments.html %}
-      </footer>
-    </article>
-  </div>
+      {% include /comments.html %}
+    </footer>
+  </article>
+</section>

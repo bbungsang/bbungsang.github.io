@@ -20,7 +20,9 @@
 	<link rel="shortcut icon" href="/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/post.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!-- <link rel="stylesheet" href="/css/style.css" />
@@ -46,28 +48,116 @@
 
 <body>
   <div id="container" class="container">
-      <div id="markdown" class="markdown">
-    <article class="markdown-body">
-      <header class="major">
-        <div class="h1">[DRF] Authentication</div>
-        <div class="date-tags">
-          11 Sep 2017
-          <img src="/images/tags.png" class="tag-img"/>
-<div class="post-tags">
-  
-  
-  <a href="/tags/#Django">Django</a>,
-  
-  <a href="/tags/#REST API">REST API</a>
-  
-</div>
-<br/>
+    <link rel="stylesheet" href="/css/main.css" />
 
-        </div>
-      </header>
-      <!-- <hr noshade style="width: 100%; float: left;"> -->
-      <section class="post-content">
-        <ul>
+<ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    bbungsang
+    <i>devlog</i>
+  </li>
+  <a href="#"><li class="menu_ele">Facebook</li></a>
+  <a href="#"><li class="menu_ele">GitHub</li></a>
+</ul>
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/meme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <button class="resume">미정</button>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="https://github.com/bbungsang">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li><li>
+      <a href="#">
+        <span class="bar-left"></span>
+        기타
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.left = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.left = "-240px";
+    }
+  });
+</script>
+
+
+<section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [DRF] Authentication
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Django">
+          <img src="/images/tag_img.png">
+          Django
+        </a>
+      
+        <a href="/tags/#REST API">
+          <img src="/images/tag_img.png">
+          REST API
+        </a>
+      
+    </div>
+  </article>
+  <article class="md-body">
+    <section class="post-content">
+      <ul>
   <li>Authentication은 View의 시작, Permission이 수행되기 전에 실행된다.</li>
   <li>인증 스키마는 클래스 단위로 정의되며, 각 클래스에 대해 인증을 시도한다. 성공적으로 인증을 한 클래스의 반환 값을 사용하여 <code class="highlighter-rouge">request.user</code> 및 <code class="highlighter-rouge">request.auth</code>를 설정한다.</li>
   <li><strong>클래스가 인증되지 않으면</strong> request.user(User 인스턴스와 관련이 있음)는 <code class="highlighter-rouge">AnonymousUser 인스턴스</code>로 설정되고, request.auth(Token과 관련이 있음)는 <code class="highlighter-rouge">None</code>으로 설정된다.</li>
@@ -360,35 +450,35 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
   <li><a href="http://behonestar.tistory.com/37">토큰 기반 인증</a></li>
 </ul>
 
-      </section>
-      <br><br>
-      <footer>
-        <ul class="other-posts">
-          
-          <li class="prev-or-next">
-            <a href="/solve%20algorithm!/algorithm/2017/09/02/tryhelloworld-level2-5.html">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              [Try Hello World] Level2 이상한...
-            </a>
-          </li>
-          
-          
-          <li class="prev-or-next" align="right">
-            <a href="/drf/2017/09/12/authentication-jwt.html">
-              [DRF] JWT(Json Web Token)
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-          </li>
-          
-        </ul>
-        <section class="my-intro">
-          <img src="/images/itsme.png">
-          <article>
-            <p>뿡상</p>
-            궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-          </article>
-        </section>
+    </section>
+    <br><br>
+    <footer>
+      <ul class="other-posts">
         
+        <li class="prev-or-next">
+          <a href="/solve%20algorithm!/algorithm/2017/09/02/tryhelloworld-level2-5.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [Try Hello World] Level2 이상한...
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right">
+          <a href="/drf/2017/09/12/authentication-jwt.html">
+            [DRF] JWT(Json Web Token)
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section>
+      
   <div id="disqus_thread"></div>
   <script>
 
@@ -402,9 +492,9 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
-      </footer>
-    </article>
-  </div>
+    </footer>
+  </article>
+</section>
 
   </div>
 </body>
