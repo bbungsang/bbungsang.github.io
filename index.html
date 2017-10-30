@@ -10,6 +10,7 @@ layout: default
   <article class="posts">
     <a class="post_title" href="{{ site.baseurl }}{{ post.url }}">
       - {{ post.title }}
+      <small class="post-date" style="font-size: 12px; color: #aed9da;">{{ post.date | date_to_string }}</small>
     </a>
   </article>
   {% endfor %}
