@@ -12,13 +12,16 @@
     padding: 0 30px; }
     .list-container .post-list .post-wrap {
       margin: 10px 0;
-      padding: 3px 10px;
       background: rgba(0, 0, 0, 0.5); }
       .list-container .post-list .post-wrap .post-title {
+        margin: 0;
         text-decoration: none;
         color: #aed9da; }
+        .list-container .post-list .post-wrap .post-title h3 {
+          padding: 15px 15px 0 15px;
+          margin: 0; }
       .list-container .post-list .post-wrap .post-content {
-        padding-right: 150px;
+        padding: 0 150px 15px 15px;
         font-size: 14px;
         color: #ddd; }
         .list-container .post-list .post-wrap .post-content .read-more-btn {

@@ -16,16 +16,21 @@
 
     .post-wrap {
       margin: 10px 0;
-      padding: 3px 10px;
       background: rgba(0, 0, 0, 0.5);
 
       .post-title {
+        margin: 0;
         text-decoration: none;
         color: #aed9da;
+
+        h3 {
+          padding: 15px 15px 0 15px;
+          margin: 0;
+        }
       }
 
       .post-content {
-        padding-right: 150px;
+        padding: 0 150px 15px 15px;
         font-size: 14px;
         color: #ddd;
 
