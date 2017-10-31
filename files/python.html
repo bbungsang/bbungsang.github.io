@@ -7,14 +7,18 @@ layout: default
   <p class="post-head">파이썬 문법</p>
   <ul class="post-list">
     {% for post in site.categories.basic %}
-    <li class="post-wrap">
-      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
-      </a>
-      <p class="post-content">
-        {{ post.content | strip_html | truncatewords: 40 }}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a>
-      </p>
+    <li class="post-wrap" style="background: #072033;">
+      <div class="img-wrap" style="background: url('../images/python_logo.png'); background-position: right; background-size: 153px auto; background-repeat: no-repeat;">
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          <h3>{{ post.title }} | {{ post.date | date_to_string }}</h3>
+        </a>
+        <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+          <p class="post-content">
+            {{ post.content | strip_html | truncatewords: 25 }}
+            <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a> -->
+          </p>
+        </a>
+      </div>
     </li>
     {% endfor %}
   </ul>
@@ -23,14 +27,18 @@ layout: default
   <p class="post-head">파이썬 라이브러리</p>
   <ul class="post-list">
     {% for post in site.categories.library %}
-    <li class="post-wrap">
-      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-        <h3 style="padding: 0; margin: 10px 0 10px 0;">{{ post.title }} | {{ post.date | date_to_string }}</h3>
-      </a>
-      <p class="post-content">
-        {{ post.content | strip_html | truncatewords: 40 }}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">Read More</a>
-      </p>
+    <li class="post-wrap" style="background: #888989;">
+      <div class="img-wrap" style="background: url('../images/bs4.jpg'); background-position: right; background-size: 153px auto; background-repeat: no-repeat;">
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          <h3>{{ post.title }} | {{ post.date | date_to_string }}</h3>
+        </a>
+        <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+          <p class="post-content">
+            {{ post.content | strip_html | truncatewords: 25 }}
+            <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a> -->
+          </p>
+        </a>
+      </div>
     </li>
     {% endfor %}
   </ul>
