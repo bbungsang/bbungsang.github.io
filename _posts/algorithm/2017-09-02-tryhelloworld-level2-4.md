@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level2 자연수를 뒤집어 리스트로 만들기"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level2

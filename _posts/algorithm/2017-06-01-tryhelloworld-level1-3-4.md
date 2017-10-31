@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 삼각형 출력하기"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

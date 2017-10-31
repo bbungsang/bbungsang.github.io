@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 문자열 내 p와 y의 개수"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

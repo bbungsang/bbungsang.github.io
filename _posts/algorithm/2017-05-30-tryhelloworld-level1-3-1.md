@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 스트링을 숫자로 바꾸기"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

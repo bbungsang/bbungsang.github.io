@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 딕셔너리 정렬"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

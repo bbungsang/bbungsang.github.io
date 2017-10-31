@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 문자열 다루기 기본"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

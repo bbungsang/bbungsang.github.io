@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 최대공약수와 최소공배수"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

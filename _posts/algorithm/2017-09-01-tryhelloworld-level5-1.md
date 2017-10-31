@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level5 2 x n 타일링"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level5

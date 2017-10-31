@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 수박수박수박수박수박수?"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 핸드폰 번호 가리기"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

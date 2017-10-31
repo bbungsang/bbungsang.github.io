@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 약수의 합"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

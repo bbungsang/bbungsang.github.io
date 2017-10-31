@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level2 하샤드수"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level2

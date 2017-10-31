@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level2 JadenCase문자열 만들기"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level2

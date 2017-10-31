@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level2 이상한 문자 만들기"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level2

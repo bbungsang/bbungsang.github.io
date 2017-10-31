@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 서울에서 김서방 찾기"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

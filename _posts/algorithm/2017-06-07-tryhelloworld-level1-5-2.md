@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 같은 숫자는 싫어"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1

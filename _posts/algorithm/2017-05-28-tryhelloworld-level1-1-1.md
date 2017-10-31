@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Try Hello World] Level1 x만큼 간격이 있는 n개의 숫자"
-category: [Solve Algorithm!, algorithm]
+category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
   - Level1
