@@ -4,7 +4,7 @@ layout: default
 
 <section class="list-container">
   <!-- tryhelloworld -->
-  <p class="post-head">Try Hello Word</p>
+  <p class="post-head">Try Hello World</p>
   <ul class="post-list">
     {% for post in site.categories.tryhelloworld %}
     <li class="post-wrap" style="background: #161616">
@@ -24,7 +24,7 @@ layout: default
   </ul>
 
   <!-- algorithm -->
-  <p class="post-head">Solve! Algorithm</p>
+  <!-- <p class="post-head">Solve! Algorithm</p>
   <ul class="post-list">
     {% for post in site.categories.algorithm %}
     <li class="post-wrap" style="background: #737373">
@@ -35,11 +35,10 @@ layout: default
         <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
           <p class="post-content">
             {{ post.content | strip_html | truncatewords: 30 }}
-            <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more-btn">READ MORE</a> -->
           </p>
         </a>
       </div>
     </li>
     {% endfor %}
-  </ul>
+  </ul> -->
 </section>
