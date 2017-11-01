@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "상속(Inheritance)"
-category: [Computer Science, css]
+category: [컴퓨터 사이언스, css]
 tags:
   - OOP
   - 오버로딩
@@ -17,7 +17,7 @@ comments: true
 ```docker
 A laptop is a computer (O)
 A desktop is a computer (O)
-A laptop is a desktop (X) 
+A laptop is a desktop (X)
 ```
 
 노트북은 컴퓨터의 일종으로 컴퓨터가 가지고 있는 모든 속성을 가지고 있다. 데스크탑과 노트북은 많은 특성들을 공유하지만 공유하지 않는 부분도 존재하기 때문에 **데스크탑을 노트북이라고 할 수 없다.** <br>
@@ -28,7 +28,7 @@ A laptop is a desktop (X)
 이 때, 공유되는 특성을 부모 클래스에 정의하고, 그렇지 않은 특성만 각자 클래스에 따로 정의한다.
 
 ## 오버로딩과 오버라이딩
-### 오버로딩 
+### 오버로딩
 같은 공간 안에 같은 이름의 함수를 정의하는 것, 하지만 파이썬에서는 절대 오버로딩을 인정하지 않는다. 에러는 발생하지 않지만 나중에 선언한 하나의 메서드만 인정한다.
 
 > In Python you have to write a single constructor that catches all cases using default arguments <br>
@@ -42,13 +42,13 @@ class Computer:
         self.cpu = cpu
         self.ram = ram
         self.hard_disk = hard_disk
-    
+
     def calculate(self, a, b):
         print("overloading test", a+b)
-    
+
     def calculate(self, ):
         print("computer calculating")
-        
+
 com = Computer("i7", "12GB", "1TB")
 com.calculate()
 com.calculate(2, 3)
@@ -67,7 +67,7 @@ class Computer {
     public void calculrate() {
         System.out.println("computer calculating");
     }
-    
+
     public void calculrate(int a, int b) {
         System.out.println("overloading test " + result);
     }
@@ -95,7 +95,7 @@ class Computer:
         self.cpu = cpu
         self.ram = ram
         self.hard_disk = hard_disk
-        
+
     def calculate(self, ):
         print("computer calculating")
 
@@ -104,7 +104,7 @@ class Laptop(Computer):
     def __init__(self, cpu, ram, hard_disk, touch_pad="normal"):
         Computer.__init__(self, cpu, ram, hard_disk)
         self.touch_pad = touch_pad
-        
+
     def calculate(self):
         print("laptop calculating, a little bit slow")
 ```
@@ -120,7 +120,7 @@ class Laptop(Computer):
 laptop calculating, a little bit slow
 ```
 
-## has-a 
+## has-a
 현재는 잘 쓰이지 않지만 옛날에는 이 조건에서도 상속을 사용했었음을 알아야 할 필요가 있다.
 
 ```docker
@@ -133,26 +133,26 @@ A policeman has a gun
 class Gun:
     def __init__(self, kind):
         self.kind = kind
-    
+
     # 총알이 나가는 것
     def bbangya(self):
         print("빵야~ 빵야~")
-        
+
 # 객체 합성(객체 속의 객체) != 상속
 class Police:
     def __init__(self, gun_kind=''):
         if gun_kind:
             # 총(의 종류)을 가지고 있다면, 총 객체를 만들어서 인스턴스 멤버로 가짐.
-            self.gun = Gun(gun_kind) 
+            self.gun = Gun(gun_kind)
         else:
             # 총이라는 멤버 이름은 존재하지만 'None'으로 빈 값을 세팅, 나중에 총을 가질 여지가 있음.
             self.gun = None
-        
+
         # 총이 없는 경찰에게 총을 얻도록,
         # 총을 가진 경찰에게 다른 종류의 총을 얻도록.    
         def get_gun(self, gun_kind            
             self.gun = Gun(gun_kind)
-    
+
         # 경찰관이 총을 겨누는 것
         def shoot(self):
             if self.gun: # 인스턴스 멤버로 해당 객체(Gun)를 가지고 있다면,
@@ -174,7 +174,7 @@ class Police:
 
 >>> p2.get_gun("기관총")
 >>> p2.shoot()
-빵야~ 빵야~ 
+빵야~ 빵야~
 ```
 
 위와 같이 객체를 핸들링하는 것을 `객체 합성`이라고 하며 이럴 경우(has-a) 상속을 사용하는 것은 부적절하다.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Programmers Summer Coding] 직사각형 만들기"
-category: [Solve Algorithm!, algorithm]
+<!-- category: [Solve Algorithm!, algorithm] -->
 tags:
   - Alogorithm
 comments: true
@@ -44,4 +44,3 @@ def make_rectangle(q_list=[]):
 input_list = [1, 4], [3, 4], [3, 10]
 make_rectangle(input_list)  
 ```
-

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[데이터베이스] 이상과 함수적 종속"
-category: [Database, Normalization]
+category: [데이터베이스, database]
 tags:
   - 데이터베이스
   - 정규화

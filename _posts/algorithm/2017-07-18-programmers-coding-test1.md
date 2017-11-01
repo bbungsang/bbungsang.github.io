@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Programmers Summer Coding] 원형으로 연결되어 있는 n개의 스티커"
-category: [Solve Algorithm!, algorithm]
+<!-- category: [Solve Algorithm!, algorithm] -->
 tags:
   - Alogorithm
 comments: true
@@ -11,7 +11,7 @@ N개의 스티커가 원형으로 연결되어 있다. 다음 그림은 N = 8인
 
 ![circle-sticker]({{site.url}}/assets/circle-sticker.jpg ){: .center-image }
 
-원형으로 연결된 스티커에서 몇 장의 스티커를 뜯어내어 뜯어낸 스티커에 적힌 숫자의 합이 최대가 되도록 한다. 
+원형으로 연결된 스티커에서 몇 장의 스티커를 뜯어내어 뜯어낸 스티커에 적힌 숫자의 합이 최대가 되도록 한다.
 
 단 스티커 한 장을 뜯어내면 양쪽으로 인접해있는 스티커는 찢어져서 사용할 수 없다.
 
@@ -25,7 +25,7 @@ N개의 스티커가 원형으로 연결되어 있다. 다음 그림은 N = 8인
 | sticker | answer |
 |:--|:--:|
 | [14, 6, 5, 11, 3, 9, 2, 10] | 36 |    
-| [1, 3, 2, 5, 4] | 8  | 
+| [1, 3, 2, 5, 4] | 8  |
 
 - 6, 11, 9, 10이 적힌 스티커를 떼어 냈을 때 36으로 최대가 됨
 - 3, 5가 적힌 스티커를 떼어 냈을 때 8로 최대가 됨

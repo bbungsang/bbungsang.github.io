@@ -1,0 +1,39 @@
+<p>직사각형을 만드는 데 필요한 4개의 점 중 3개의 좌표가 주어질 때, 나머지 한 점의 좌표를 반환하는 solution 함수를 완성해 주세요.</p>
+
+<p>단, 직사각형의 각 변은 x축, 혹은 y축에 평행하며, 반드시 직사각형을 만들 수 있는 경우만 입력으로 주어집니다.</p>
+
+<p><strong>입출력 예</strong></p>
+
+<p>입력 : [[1, 4], [3, 4], [3, 10]]<br />
+출력 : [1, 10]
+<br /><br />
+입력 : [[1, 1], [2, 2], [1, 2]]<br />
+출력 : [2, 1]</p>
+
+<ul>
+  <li>내 풀이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">make_rectangle</span><span class="p">(</span><span class="n">q_list</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">bowl</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">q_list</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">q_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">bowl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+
+    <span class="n">x_value</span> <span class="o">=</span> <span class="n">bowl</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">y_value</span> <span class="o">=</span> <span class="n">bowl</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x_value</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x_value</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">result_x</span> <span class="o">=</span> <span class="n">x_value</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">y_value</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">y_value</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">result_y</span> <span class="o">=</span> <span class="n">y_value</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">result_x</span><span class="p">,</span> <span class="n">result_y</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">input_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">make_rectangle</span><span class="p">(</span><span class="n">input_list</span><span class="p">)</span>  
+</code></pre>
+</div>

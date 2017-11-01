@@ -168,7 +168,7 @@
 
 <pre><code class="language-docker">A laptop is a computer (O)
 A desktop is a computer (O)
-A laptop is a desktop (X) 
+A laptop is a desktop (X)
 </code></pre>
 
 <p>노트북은 컴퓨터의 일종으로 컴퓨터가 가지고 있는 모든 속성을 가지고 있다. 데스크탑과 노트북은 많은 특성들을 공유하지만 공유하지 않는 부분도 존재하기 때문에 <strong>데스크탑을 노트북이라고 할 수 없다.</strong> <br />
@@ -194,13 +194,13 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
         <span class="bp">self</span><span class="o">.</span><span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ram</span> <span class="o">=</span> <span class="n">ram</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hard_disk</span> <span class="o">=</span> <span class="n">hard_disk</span>
-    
+
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"overloading test"</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
-    
+
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"computer calculating"</span><span class="p">)</span>
-        
+
 <span class="n">com</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">(</span><span class="s">"i7"</span><span class="p">,</span> <span class="s">"12GB"</span><span class="p">,</span> <span class="s">"1TB"</span><span class="p">)</span>
 <span class="n">com</span><span class="o">.</span><span class="n">calculate</span><span class="p">()</span>
 <span class="n">com</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -219,7 +219,7 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">calculrate</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"computer calculating"</span><span class="o">);</span>
     <span class="o">}</span>
-    
+
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">calculrate</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"overloading test "</span> <span class="o">+</span> <span class="n">result</span><span class="o">);</span>
     <span class="o">}</span>
@@ -247,7 +247,7 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
         <span class="bp">self</span><span class="o">.</span><span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ram</span> <span class="o">=</span> <span class="n">ram</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hard_disk</span> <span class="o">=</span> <span class="n">hard_disk</span>
-        
+
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"computer calculating"</span><span class="p">)</span>
 
@@ -256,7 +256,7 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cpu</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">hard_disk</span><span class="p">,</span> <span class="n">touch_pad</span><span class="o">=</span><span class="s">"normal"</span><span class="p">):</span>
         <span class="n">Computer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cpu</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">hard_disk</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">touch_pad</span> <span class="o">=</span> <span class="n">touch_pad</span>
-        
+
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"laptop calculating, a little bit slow"</span><span class="p">)</span>
 </code></pre>
@@ -286,26 +286,26 @@ laptop calculating, a little bit slow
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Gun</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">kind</span>
-    
+
     <span class="c"># 총알이 나가는 것</span>
     <span class="k">def</span> <span class="nf">bbangya</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"빵야~ 빵야~"</span><span class="p">)</span>
-        
+
 <span class="c"># 객체 합성(객체 속의 객체) != 상속</span>
 <span class="k">class</span> <span class="nc">Police</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gun_kind</span><span class="o">=</span><span class="s">''</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">gun_kind</span><span class="p">:</span>
             <span class="c"># 총(의 종류)을 가지고 있다면, 총 객체를 만들어서 인스턴스 멤버로 가짐.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">gun</span> <span class="o">=</span> <span class="n">Gun</span><span class="p">(</span><span class="n">gun_kind</span><span class="p">)</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">gun</span> <span class="o">=</span> <span class="n">Gun</span><span class="p">(</span><span class="n">gun_kind</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c"># 총이라는 멤버 이름은 존재하지만 'None'으로 빈 값을 세팅, 나중에 총을 가질 여지가 있음.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">gun</span> <span class="o">=</span> <span class="bp">None</span>
-        
+
         <span class="c"># 총이 없는 경찰에게 총을 얻도록,</span>
         <span class="c"># 총을 가진 경찰에게 다른 종류의 총을 얻도록.    </span>
         <span class="k">def</span> <span class="nf">get_gun</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gun_kind</span>            
             <span class="bp">self</span><span class="o">.</span><span class="n">gun</span> <span class="o">=</span> <span class="n">Gun</span><span class="p">(</span><span class="n">gun_kind</span><span class="p">)</span>
-    
+
         <span class="c"># 경찰관이 총을 겨누는 것</span>
         <span class="k">def</span> <span class="nf">shoot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gun</span><span class="p">:</span> <span class="c"># 인스턴스 멤버로 해당 객체(Gun)를 가지고 있다면,</span>
@@ -327,7 +327,7 @@ laptop calculating, a little bit slow
 
 &gt;&gt;&gt; p2.get_gun("기관총")
 &gt;&gt;&gt; p2.shoot()
-빵야~ 빵야~ 
+빵야~ 빵야~
 </code></pre>
 </div>
 
