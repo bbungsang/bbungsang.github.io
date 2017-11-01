@@ -4,7 +4,7 @@ title:  "[Try Hello World] Level2 콜라츠 추측"
 category: [Solve Algorithm!, tryhelloworld]
 tags:
   - Alogorithm
-  - Level1
+  - Level2
 comments: true
 ---
 
