@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Programmers Summer Coding] 직사각형 만들기"
-<!-- category: [Solve Algorithm!, algorithm] -->
+category: [Solve Algorithm!]
 tags:
   - Alogorithm
 comments: true

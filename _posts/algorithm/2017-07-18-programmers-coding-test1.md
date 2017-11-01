@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Programmers Summer Coding] 원형으로 연결되어 있는 n개의 스티커"
-<!-- category: [Solve Algorithm!, algorithm] -->
+category: [Solve Algorithm!]
 tags:
   - Alogorithm
 comments: true
