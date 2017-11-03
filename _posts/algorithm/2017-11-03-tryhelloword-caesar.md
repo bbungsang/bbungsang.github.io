@@ -36,11 +36,11 @@ def caesar(st, n):
                 s[i] = upper[n-(26-upper.index(s[i]))]
             else:
                 s[i] = upper[upper.index(s[i])+n]
-            elif s[i] in lower:
-                if lower.index(s[i])+n > 25:
-                    s[i] = lower[n-(26-lower.index(s[i]))]
-                else:
-                    s[i] = lower[lower.index(s[i])+n]
+        elif s[i] in lower:
+            if lower.index(s[i])+n > 25:
+                s[i] = lower[n-(26-lower.index(s[i]))]
+            else:
+                s[i] = lower[lower.index(s[i])+n]
     return "".join(s)
 
 # 실행을 위한 테스트 코드입니다.
