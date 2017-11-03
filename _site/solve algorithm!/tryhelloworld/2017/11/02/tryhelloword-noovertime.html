@@ -156,7 +156,42 @@
   </article>
   <article class="markdown-body">
     <section class="post-content">
-      <p>회사원인 수민이는 많은 일이 쌓여 있습니다. 수민이는 야근을 최소화하기 위해 남은 일의 작업량을 숫자로 메기고, 일에 대한 야근 지수를 줄이기로 결정했습니다. 야근 지수는 남은 일의 작업량을 제곱하여 더한 값을 의미합니다. 수민이는 1시간 동안 남은 일 중 하나를 골라 작업량 1만큼 처리할 수 있습니다. 수민이의 퇴근까지 남은 N 시간과 각 일에 대한 작업량이 있을 때, noOvertime 함수를 제작하여 수민이의 야근 지수를 최소화 한 결과를 출력해 주세요. 예를 들어, N=4 일 때, 남은 일의 작업량이 [4, 3, 3] 이라면 야근 지수를 최소화하기 위해 일을 한 결과는 [2, 2, 2]가 되고 야근 지수는 22 + 22 + 22 = 12가 되어 12를 반환해 줍니다.</p>
+      <p>회사원인 수민이는 많은 일이 쌓여 있습니다. 수민이는 야근을 최소화하기 위해 남은 일의 작업량을 숫자로 메기고, 일에 대한 야근 지수를 줄이기로 결정했습니다.</p>
+
+<p>야근 지수는 남은 일의 작업량을 제곱하여 더한 값을 의미합니다. 수민이는 1시간 동안 남은 일 중 하나를 골라 작업량 1만큼 처리할 수 있습니다. 수민이의 퇴근까지 남은 N 시간과 각 일에 대한 작업량이 있을 때, noOvertime 함수를 제작하여 수민이의 야근 지수를 최소화 한 결과를 출력해 주세요.</p>
+
+<p>예를 들어, N=4 일 때, 남은 일의 작업량이 [4, 3, 3] 이라면 야근 지수를 최소화하기 위해 일을 한 결과는 [2, 2, 2]가 되고 야근 지수는 22 + 22 + 22 = 12가 되어 12를 반환해 줍니다.</p>
+
+<h3 id="내-코드">내 코드</h3>
+
+<p>[파이썬]</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">noOvertime</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">works</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">getMaxNum</span><span class="p">(</span><span class="n">works</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">works</span><span class="p">))</span>
+    
+<span class="k">def</span> <span class="nf">getMaxNum</span><span class="p">(</span><span class="n">works</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">works</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">works</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">works</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">works</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">works</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">works</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">works</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">works</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">works</span>
+    
+<span class="c"># 실행을 위한 테스트 코드입니다.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">noOvertime</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">]))</span>
+</code></pre>
+</div>
+
+<p>[자바]</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
+
+<h3 id="느낀점">느낀점</h3>
+<p>파이썬에서 제공해주는 <code class="highlighter-rouge">index()</code>라는 편리한 메서드를 알게되었다.</p>
 
     </section>
     <br><br>
@@ -177,6 +212,13 @@
           </a>
         </li>
         
+        
+        <li class="prev-or-next" align="right" style="float: right;">
+          <a href="/solve%20algorithm!/tryhelloworld/2017/11/03/tryhelloword-caesar.html">
+            [Try Hello World] Level3 시저...
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
         
       </ul>
       <!-- <section class="my-intro">
