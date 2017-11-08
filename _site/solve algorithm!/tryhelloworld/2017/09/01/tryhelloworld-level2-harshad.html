@@ -165,30 +165,82 @@
 
 <p>예를들어 n이 10, 12, 18이면 True를 리턴 11, 13이면 False를 리턴하면 됩니다.</p>
 
-<ul>
-  <li>내 풀이</li>
-</ul>
+<h3 id="내-풀이">내 풀이</h3>
+
+<p>[파이썬]</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
 
-<span class="k">def</span> <span class="nf">Harshad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-	<span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">==</span> <span class="mi">0</span>
 
-<span class="c"># 아래는 테스트로 출력해 보기 위한 코드입니다.</span>
+<span class="k">def</span> <span class="nf">Harshad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="c"># 실행을 위한 코드입니다.</span>
 <span class="k">print</span><span class="p">(</span><span class="n">Harshad</span><span class="p">(</span><span class="mi">18</span><span class="p">))</span>
 </code></pre>
 </div>
 
-<ul>
-  <li>다른 사람 풀이</li>
-</ul>
+<p>[자바]</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HarshadNumber</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isHarshad</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
+        <span class="n">String</span> <span class="n">str_num</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">num_arr</span> <span class="o">=</span> <span class="n">str_num</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">sum_num</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">num_arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">sum_num</span> <span class="o">+=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num_arr</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="n">sum_num</span> <span class="o">==</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+	
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span>  <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="n">HarshadNumber</span> <span class="n">sn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HarshadNumber</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sn</span><span class="o">.</span><span class="na">isHarshad</span><span class="o">(</span><span class="mi">11</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="다른-사람-풀이">다른 사람 풀이</h3>
+
+<p>[파이썬]</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Harshad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">Harshad</span><span class="p">(</span><span class="mi">18</span><span class="p">))</span>
 </code></pre>
 </div>
+
+<p>[자바]</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HarshadNumber</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isHarshad</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
+        <span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">temp</span><span class="o">=</span><span class="n">num</span><span class="o">;</span>
+        <span class="k">do</span><span class="o">{</span>
+            <span class="n">sum</span><span class="o">+=</span><span class="n">temp</span><span class="o">%</span><span class="mi">10</span><span class="o">;</span>
+            <span class="n">temp</span><span class="o">/=</span><span class="mi">10</span><span class="o">;</span>
+        <span class="o">}</span><span class="k">while</span><span class="o">(</span><span class="n">temp</span><span class="o">%</span><span class="mi">10</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">);</span>
+            <span class="k">return</span> <span class="n">num</span><span class="o">%</span><span class="n">sum</span><span class="o">==</span><span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span>  <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="n">HarshadNumber</span> <span class="n">sn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HarshadNumber</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sn</span><span class="o">.</span><span class="na">isHarshad</span><span class="o">(</span><span class="mi">110</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="느낀점">느낀점</h3>
+
+<blockquote>
+  <p><strong>reduce()</strong> reduce(sum, [1, 2, 3, 4, 5])<br />
+<strong>sum()</strong> sum([1, 2, 3, 4, 5])</p>
+</blockquote>
+
+<p>원소의 합을 구할 때 요즘 좋다고 하는 람다를 써야할지, 내장 함수인 sum() 써야할지 아니면 성능적으로 큰 차이가 없는데 괜한 고민을 하는 건지 의문이 든다.</p>
+
+<p>자바에서 <code class="highlighter-rouge">do while</code>문에 대한 쓰임을 이해할 수 있었다.</p>
 
     </section>
     <br><br>
