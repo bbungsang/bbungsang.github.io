@@ -28,7 +28,7 @@ def get_gcd(x, y):
         x, y = y, x%y
     return x
     
-# 실행을 위한 테스트 코드
+# 테스트를 위한 실행 코드
 print(my_nlcm([2, 6, 8, 14]))
 {% endraw %}
 ```

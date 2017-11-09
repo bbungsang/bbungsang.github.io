@@ -34,7 +34,7 @@ def number_expression(num):
                 break
     return count
 
-# 실행을 위한 테스트 코드
+# 테스트를 위한 실행 코드
 print(number_expression(5));
 ```
 

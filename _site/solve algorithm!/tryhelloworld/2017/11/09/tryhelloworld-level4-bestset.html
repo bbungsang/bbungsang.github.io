@@ -137,7 +137,7 @@
     <section class="markdown">
   <article class="md-head">
     <div class="title">
-      [Try Hello World] Level3 멀리 뛰기
+      [Try Hello World] Level4 최고의 집합
     </div>
     <div class="tag-wrap">
       
@@ -147,59 +147,34 @@
           Alogorithm
         </a>
       
-        <a href="/tags/#Level3">
+        <a href="/tags/#Level4">
           <img src="/images/tag_img.png">
-          Level3
+          Level4
         </a>
       
     </div>
   </article>
   <article class="markdown-body">
     <section class="post-content">
-      <h2 id="멀리-뛰기">멀리 뛰기</h2>
-<p>효진이는 멀리 뛰기를 연습하고 있습니다. 효진이는 한번에 1칸, 또는 2칸을 뛸 수 있습니다. 칸이 총 4개 있을 때, 효진이는 <br />
-(1칸, 1칸, 1칸, 1칸) <br />
-(1칸, 2칸, 1칸) <br />
-(1칸, 1칸, 2칸) <br />
-(2칸, 1칸, 1칸) <br />
-(2칸, 2칸) <br />
-의 5가지 방법으로 맨 끝 칸에 도달할 수 있습니다. 멀리뛰기에 사용될 칸의 수 n이 주어질 때, 효진이가 끝에 도달하는 방법이 몇 가지인지 출력하는 jumpCase 함수를 완성하세요. 예를 들어 4가 입력된다면, 5를 반환해 주면 됩니다.</p>
+      <h2 id="최고의-집합">최고의 집합</h2>
+<p>자연수 N개로 이루어진 집합 중에, 각 원소의 합이 S가 되는 수의 집합은 여러 가지가 존재합니다. 최고의 집합은, 위의 조건을 만족하는 집합 중 각 원소의 곱이 최대가 되는 집합을 의미합니다.</p>
+
+<p>집합 원소의 개수 n과 원소들의 합 s가 주어지면, 최고의 집합을 찾아 원소를 오름차순으로 반환해주는 bestSet 함수를 만들어 보세요.</p>
+
+<p>만약 조건을 만족하는 집합이 없을 때는 배열 맨 앞에 –1을 담아 반환하면 됩니다. 예를 들어 n=3, s=13이면 [4,4,5]가 반환됩니다.
+(자바는 집합이 없는 경우 크기가 1인 배열에 -1을 담아 반환해주세요.)</p>
 
 <h3 id="내-풀이">내 풀이</h3>
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">jumpCase</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-        <span class="n">num</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">b</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">bestSet</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="o">//</span><span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">s</span><span class="o">%</span><span class="n">n</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[[</span><span class="n">s</span><span class="o">//</span><span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)][</span><span class="n">rem</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">rem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="o">%</span><span class="n">n</span><span class="p">)]</span>
 
 <span class="c"># 테스트를 위한 실행 코드</span>
-<span class="k">print</span><span class="p">(</span><span class="n">jumpCase</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-</code></pre>
-</div>
+<span class="k">print</span><span class="p">(</span><span class="n">bestSet</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
 
-<p>[자바]</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">JumpCase</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">jumpCase</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
-            <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="n">a</span><span class="o">;</span>
-            <span class="n">num</span><span class="o">--;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">b</span><span class="o">;</span>
-    <span class="o">}</span>
-      
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JumpCase</span> <span class="n">j</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JumpCase</span><span class="o">();</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">j</span><span class="o">.</span><span class="na">jumpCase</span><span class="o">(</span><span class="mi">4</span><span class="o">));</span>
-    <span class="o">}</span>
-<span class="o">}</span>
 </code></pre>
 </div>
 
@@ -216,16 +191,16 @@
       <ul class="other-posts">
         
         <li class="prev-or-next">
-          <a href="/solve%20algorithm!/tryhelloworld/2017/11/08/tryhelloworld-level3-nlcm.html">
+          <a href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level3-jumpcase.html">
             <span class="glyphicon glyphicon-chevron-left"></span>
-            [Try Hello World] Level3 N개의...
+            [Try Hello World] Level3 멀리...
           </a>
         </li>
         
         
         <li class="prev-or-next" align="right" style="float: right;">
-          <a href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-bestset.html">
-            [Try Hello World] Level4 최고의...
+          <a href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html">
+            [Try Hello World] Level4 숫자의...
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
         </li>
