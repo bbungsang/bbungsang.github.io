@@ -33,6 +33,51 @@ board =  [[7, 6, 9, 6], [9, 3, 2, 2], [3, 8, 7, 10], [1, 1, 4, 1]]
 print(hopscotch(board, 4))
 ```
 
+[자바]
+
+```java
+{% raw %}
+class Hopscotch {
+    public int get_max(int[] li) {
+        int temp = 0;
+        for(int i=0; i<li.length; i++){
+            for(int j=i+1; j<li.length; j++){
+                if(li[i] < li[j]) {
+                    temp = li[i];
+                    li[i] = li[j];
+                    li[j] = temp;
+                }
+            }
+        }
+        return li[0];
+    }
+    public int hopscotch(int[][] board, int size) {
+        int[] result = {0, 0, 0, 0};
+        int [] tmp = board[0];
+        int[] bowl = new int[3];
+        for(int i=1; i<board.length; i++) {
+            for(int j=0; j<board[0].length; j++) {
+                System.arraycopy(tmp, (int)Math.floor((3-j)/3), bowl, 0, 1);
+                System.arraycopy(tmp, (int)Math.floor((7-j)/3), bowl, 1, 1);
+                System.arraycopy(tmp, (int)Math.floor((11-j)/3), bowl, 2, 1);
+                result[j] = board[i][j] + get_max(bowl);
+            }
+            System.arraycopy(result, 0, tmp, 0, tmp.length);;
+        }
+        return get_max(result);
+    }
+    public static void main(String[] args) {
+        Hopscotch c = new Hopscotch();
+        int[][] test = {{ 1, 2, 3, 5 }, { 5, 6, 7, 8 }, { 4, 3, 2, 1 }};
+        // 아래는 테스트로 출력해 보기 위한 코드입니다.
+        System.out.println(c.hopscotch(test, 3));
+    }
+}
+{% endraw %}
+```
+
+위 코드는 다른 사람의 파이썬 풀이 방식을 적용하여 푼 것이다.
+
 ### 다른 사람 풀이
 
 [파이썬]
