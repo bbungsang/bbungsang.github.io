@@ -4,8 +4,6 @@ title:  "문자열, List, Tuple"
 category: [파이썬 문법, basic]
 tags:
   - Python
-  - List
-  - Tuple
 comments: true
 ---
 

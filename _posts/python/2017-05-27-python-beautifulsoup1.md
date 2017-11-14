@@ -4,8 +4,6 @@ title:  "파이썬 크롤링 라이브러리 - 뷰티풀수프"
 category: [파이썬 라이브러리, library]
 tags:
   - Python
-  - BeautifulSoup
-  - Crawling
 comments: true
 ---
 

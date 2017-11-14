@@ -4,9 +4,6 @@ title:  "컴프리헨션(Comprehension)"
 category: [파이썬 문법, basic]
 tags:
   - Python
-  - List
-  - Dictionary
-  - Comprehension
 comments: true
 ---
 
