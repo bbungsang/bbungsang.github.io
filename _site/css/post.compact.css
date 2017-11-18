@@ -18,11 +18,11 @@
 
 .markdown .center-image { width: 70%; margin: 15px 15%; }
 
-.markdown table { width: 90%; margin: 10px 5% 30px 5%; }
+.markdown table { margin: 20px 5%; border-collapse: collapse; }
 
-.markdown table th { border-bottom: 2px solid #9a9a9a; }
+.markdown table th { padding: 5px 10px; border: 1px solid #ddd; font-weight: 400; }
 
-.markdown table td { border-bottom: 1px solid #9a9a9a; }
+.markdown table td { padding: 5px 10px; border: 1px solid #ddd; }
 
 .markdown a { color: #9a9a9a; }
 
