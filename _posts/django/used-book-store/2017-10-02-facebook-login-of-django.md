@@ -4,7 +4,7 @@ title:  "페이스북 로그인 플로우 직접 빌드 in Django"
 category: [Django Project, Used Book Store]
 tags:
   - Django
-  - Facebook Login
+  - Social Login
 comments: true
 ---
 
@@ -21,8 +21,8 @@ comments: true
 
 - 페이스북 로그인을 클릭하면 페이스북 로그인 대화 상자가 호출되고, 인증 성공시 페이스북 로그인 뷰를 실행하게 된다.
 - 엔드포인트 필수 매개변수로는 `client_id`, `redirect_uri`가 있다.
-- **client_id**는 앱 등록후 발급받은 앱 ID이며, **redirect_uri**는 인증 성공후 장고 어플리케이션에서 회원가입 혹은 로그인을 하도록 리다이렉트 할 URL이다. 
-- 예를 들어 내 사이트의 경우, **http://localhost:8000/member/login/facebook**에서 페이스북 로그인 뷰를 실행하므로 이 주소가 **redirect_uri**가 된다. 
+- **client_id**는 앱 등록후 발급받은 앱 ID이며, **redirect_uri**는 인증 성공후 장고 어플리케이션에서 회원가입 혹은 로그인을 하도록 리다이렉트 할 URL이다.
+- 예를 들어 내 사이트의 경우, **http://localhost:8000/member/login/facebook**에서 페이스북 로그인 뷰를 실행하므로 이 주소가 **redirect_uri**가 된다.
 - {% raw %}`{{ facebook_app_id }}`와 `{{ site_url }}`은 `context_processor`에 별도로 지정해 놓은 장고 템플릿 태그이다. {% endraw %}
 
 #### 내 프로젝트 디렉토리 구조(페이스북 로그인 위주)
@@ -66,16 +66,16 @@ def get_facebook_access_token(request, code):
         'client_secret': settings.FACEBOOK_SECRET_CODE,
         'code': code,
     }
-    
+
     # requests를 사용하여 GET 요청
     response = requests.get(
         exchange_access_token_url,
         params=exchange_access_token_url_params,
     )
-    
+
     # 응답받은 데이터 json 형태로 변형
     result = response.json()
-    
+
     # 응답받은 결과값에 'access_token'이라는 key가 존재하면,
     if 'access_token' in result:
         # access_token key의 value를 반환
@@ -117,7 +117,7 @@ def debug_token(input_token):
 
     if 'error' in result['data']:
         raise DebugTokenException(result)
-        
+
     return result
 ```
 
@@ -126,18 +126,18 @@ def debug_token(input_token):
 ```json
 {
     "data": {
-        "app_id": 138483919580948, 
-        "application": "봉자달봉중고서점", 
-        "expires_at": 1352419328, 
-        "is_valid": true, 
-        "issued_at": 1347235328, 
+        "app_id": 138483919580948,
+        "application": "봉자달봉중고서점",
+        "expires_at": 1352419328,
+        "is_valid": true,
+        "issued_at": 1347235328,
         "metadata": {
             "sso": "iphone-safari"
-        }, 
+        },
         "scopes": [
-            "email", 
+            "email",
             "publish_actions"
-        ], 
+        ],
         "user_id": 1207059
     }
 }
@@ -188,14 +188,14 @@ class MyUserManager(DefaultUserManager):
 			self.model.USER_TYPE_FACEBOOK,
 			user_info['id']
 		)
-	
+
 	user, user_created = self.get_or_create(
 		username=username,
 		user_type=self.model.USER_TYPE_FACEBOOK,
 		my_photo=my_photo['data']['url'],
 		nickname=nickname,
 	)
-	
+
 	return user
 ```
 

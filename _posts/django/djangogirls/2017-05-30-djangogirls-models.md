@@ -5,7 +5,6 @@ category: [Do 장고걸스!, djangogirls]
 tags:
   - Django
   - Djangogirls
-  - Models
 comments: true
 ---
 

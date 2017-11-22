@@ -4,14 +4,11 @@ title:  "[장고 기본편] 3. URLConf와 정규표현식"
 category: [여행 블로그 만들기, travel]
 tags:
   - Django
-  - AskDjango
-  - URLConf
-  - 정규표현식
+  - Travel Blog
 comments: true
 ---
 
->| ٩(๑òωó๑)۶ 아, 아, 마이크 테스트 |<br>
-이 마크다운은 이진석 선생님의 'Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)'를 토대로 작성되었습니다.
+>이 마크다운은 이진석 선생님의 'Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)'를 토대로 작성되었습니다.
 
 - 프로젝트/settings.py 최상위 URLConf 모듈을 지정한다.
 

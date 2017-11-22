@@ -4,8 +4,7 @@ title:  "장고 URL과 뷰"
 category: [Do 장고걸스!, djangogirls]
 tags:
   - Django
-  - URL
-  - Views
+  - Djangogirls
 comments: true
 ---
 

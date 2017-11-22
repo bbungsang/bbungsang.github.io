@@ -4,14 +4,11 @@ title:  "[장고 기본편] 5. Model"
 category: [여행 블로그 만들기, travel]
 tags:
   - Django
-  - AskDjango
-  - View
-  - FBVCBV
+  - Travel Blog
 comments: true
 ---
 
->| ٩(๑òωó๑)۶ 아, 아, 마이크 테스트 |<br>
-이 마크다운은 이진석 선생님의 'Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)'를 토대로 작성되었습니다.
+>이 마크다운은 이진석 선생님의 'Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)'를 토대로 작성되었습니다.
 
 ## SQL(Structured Query Language)
 - Query : 정보 수집 요청에 쓰이는 컴퓨터 언어
