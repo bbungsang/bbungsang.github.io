@@ -3,8 +3,8 @@ layout: post
 title:  "[AWS] 4. AWS 서버 다루기"
 category: [AWS, aws]
 tags:
-  - aws
-  - django
+  - AWS
+  - Django
 comments: true
 ---
 ## AWS 서버 실행하기

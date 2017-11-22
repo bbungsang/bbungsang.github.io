@@ -4,8 +4,6 @@ title:  "상속(Inheritance)"
 category: [컴퓨터 사이언스, css]
 tags:
   - OOP
-  - 오버로딩
-  - 오버라이딩
 comments: true
 ---
 

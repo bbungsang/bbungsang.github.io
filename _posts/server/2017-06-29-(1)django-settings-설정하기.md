@@ -3,9 +3,8 @@ layout: post
 title:  "[AWS] 1. 장고 settings 설정하기"
 category: [AWS, aws]
 tags:
-  - aws
-  - django
-  - json
+  - AWS
+  - Django
 comments: true
 ---
 
