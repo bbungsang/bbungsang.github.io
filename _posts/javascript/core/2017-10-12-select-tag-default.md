@@ -8,10 +8,10 @@ tags:
 comments: true
 ---
 
-> **배경** : 책 카테고리에 대해서 select, option 태그 적용<br>
-> **이슈** : 어떤 책이든지 상관없이 첫 번째 option의 value인 '언어'만 세팅된다.<br>
-> **하려는 일** : 책 제목에 따라서 option의 value를 다르게 세팅<br>
-> **해결 방법** : if문 분기 처리 + include() + `selectedIndex` 활용
+> **배경 :** 책 카테고리에 대해서 select, option 태그 적용<br>
+> **이슈 :** 어떤 책이든지 상관없이 첫 번째 option의 value인 '언어'만 세팅된다.<br>
+> **하려는 일 :** 책 제목에 따라서 option의 value를 다르게 세팅<br>
+> **해결 방법 :** if문 분기 처리 + include() + `selectedIndex` 활용
 
 ![]({{site.url}}/assets/select1.png){: .center-image}
 

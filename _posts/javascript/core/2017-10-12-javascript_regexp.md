@@ -40,10 +40,10 @@ comments: true
 ![]({{site.url}}/assets/regexp1.png){: .center-image} <br>
 ![]({{site.url}}/assets/regexp2.png){: .center-image}
 
-> 배경 : 검색한 결과를 readonly 옵션이 있는 input 창에 세팅 <br>
-> 이슈 : 검색어에 해당하는 키워드에 `b태그`가 삽입되어 있다. <br>
-> 하려는 일 : 세팅되는 b태그 제거 <br>
-> 해결 방법 : 자바스크립트 정규표현식 활용
+> **배경 :** 검색한 결과를 readonly 옵션이 있는 input 창에 세팅 <br>
+> **이슈 :** 검색어에 해당하는 키워드에 `b태그`가 삽입되어 있다. <br>
+> **하려는 일 :** 세팅되는 b태그 제거 <br>
+> **해결 방법 :** 자바스크립트 정규표현식 활용
 
 ```javascript
 var obj = eval("(" + $('input:checkbox:checked').val() + ")");
