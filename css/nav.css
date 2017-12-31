@@ -40,16 +40,20 @@
   color: #959595;
 }
 
-.sidenav .intro-me .my-content .resume {
+.sidenav .intro-me .my-content .home {
   margin-top: 15px;
   width: 120px;
   height: 32px;
   border: 1px solid #00c3bd;
   border-radius: 16px;
   background: #fafafa;
+}
+
+.sidenav .intro-me .my-content .home a {
   color: #00c3bd;
   font-size: 14px;
   font-family: 'Nanumbarunpen';
+  text-decoration: none;
 }
 
 .sidenav ul.menu-ele {

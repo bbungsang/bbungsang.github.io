@@ -45,15 +45,6 @@
   background: #00c3bd;
 }
 
-.markdown .markdown-body {
-  padding: 25px;
-}
-
-.markdown .markdown-body .post-content {
-  width: 100%;
-  float: left;
-}
-
 .markdown .center-image {
   width: 70%;
   margin: 15px 15%;
@@ -105,11 +96,33 @@
   text-decoration: none;
 }
 
-.markdown .post-content ul {
-  margin: 0 25px;
+.markdown hr {
+  border: 1px solid #ddd;
+  margin: 50px 20px;
 }
 
-.markdown .post-content ul li {
+.markdown .markdown-body {
+  padding: 30px;
+}
+
+.markdown .markdown-body .post-content p {
+  font-family: 'Nanumbarunpen';
+  color: #818181;
+  font-size: 16px;
+}
+
+.markdown .markdown-body .post-content p em {
+  color: #333;
+}
+
+.markdown .markdown-body .post-content ul {
+  margin: 0 25px;
+  font-family: 'Nanumbarunpen';
+  color: #818181;
+  font-size: 16px;
+}
+
+.markdown .markdown-body .post-content ul li {
   list-style-type: disc;
   margin: 10px 0;
 }
@@ -206,8 +219,7 @@
 .markdown pre {
   border-radius: 3px;
   background-color: #222;
-  padding: 10px;
-  margin: 20px 0;
+  padding: 10px 20px;
   word-wrap: break-word;
   white-space: pre-wrap;
   /* Comment */
@@ -565,4 +577,5 @@
   font-size: 15px;
   background: #f2f2f2;
   border-radius: 3px;
+  margin: 0 5px;
 }

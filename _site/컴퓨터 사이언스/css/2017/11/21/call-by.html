@@ -44,7 +44,9 @@
 
 <body>
   <div id="container" class="container">
-    <ul class="top_menu">
+    <button class="menu-btn" id="menuBtn" title="메뉴토글버튼"><img src="/images/code.png" alt=""></button>
+
+<!-- <ul class="top_menu">
   <li class=" menu_list sidebar-toggle-box">
     <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
       <i class="im im-menu"></i>
@@ -59,7 +61,7 @@
   </li>
   <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
   <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul>
+</ul> -->
 
 <!-- 사이드 메뉴바 -->
 <div id="mySidenav" class="sidenav">
@@ -70,7 +72,9 @@
     <div class="my-content">
       Please contact me if you have any questions
       <p>- Elena.Kim -</p>
-      <button class="resume">미정</button>
+      <button class="home">
+        <a href="/">홈으로</a>
+      </button>
     </div>
   </div>
   <ul class="menu-ele">
@@ -152,7 +156,7 @@
   <article class="markdown-body">
     <section class="post-content">
       <h3 id="call-by-value값에-의한-호출">Call By Value(값에 의한 호출)</h3>
-<p>함수로 인자를 전달할 때 전달 될 인자를 <code class="highlighter-rouge">복사</code>하며, 복사된 값은 함수 내에서 <code class="highlighter-rouge">지역적으로 사용</code>되는 특징을 가지고 있다. Caller는 인자값을 복사 방식으로 넘겨 주었으므로 Callee 내에서 어떤 작업을 하더라도 <em>Caller는 영향을 받지 않는다.</em> 즉, 다른 메모리에 각각 저장되고, 함수가 종료됨과 동시에 함수의 변수는 소멸하게 되어 서로 직접적인 연관이 없다.
+<p>함수로 인자를 전달할 때 전달 될 인자를 <code class="highlighter-rouge">복사</code>하며, 복사된 값은 함수 내에서 <code class="highlighter-rouge">지역적으로 사용</code>되는 특징을 가지고 있다. Caller는 인자값을 복사 방식으로 넘겨주므로 Callee 내에서 어떤 작업을 하더라도 <em>Caller는 영향을 받지 않는다.</em> 즉, 다른 메모리에 각각 저장되고, 함수가 종료됨과 동시에 함수의 변수는 소멸하게 되어 서로 직접적인 연관이 없다.
 하지만 인자를 전달할 때마다 메모리의 공간을 할당하여 메모리 공간에 대한 문제점이 있을 수 있다.</p>
 
 <h3 id="call-by-reference참조에-의한-호출">Call By Reference(참조에 의한 호출)</h3>
@@ -169,7 +173,7 @@
         <span class="n">count</span><span class="o">++;</span>
     <span class="o">}</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call_by_ref</span><span class="o">(</span><span class="n">CallBy</span> <span class="n">cb</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// 실행 메서드 클래스의 주소 값을 인자로 전달 받고, 같은 메모리 내 'count'의 값을 변경 </span>
+        <span class="c1">// 실행 메서드 클래스의 주소 값을 인자로 전달 받고, 같은 메모리 내 'count'의 값을 변경</span>
         <span class="n">cb</span><span class="o">.</span><span class="na">count</span><span class="o">++;</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -180,11 +184,11 @@
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">CallBy</span> <span class="n">cb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CallBy</span><span class="o">();</span>
         <span class="n">Update</span> <span class="o">=</span> <span class="n">update</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Update</span><span class="o">();</span>
-        
+
         <span class="c1">// Call By Value</span>
         <span class="n">update</span><span class="o">.</span><span class="na">call_by_val</span><span class="o">(</span><span class="n">cb</span><span class="o">.</span><span class="na">count</span><span class="o">);</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%s %d"</span><span class="o">,</span> <span class="s">"[Call By Value] count:"</span><span class="o">,</span> <span class="n">cb</span><span class="o">.</span><span class="na">count</span><span class="o">));</span>
-        
+
         <span class="c1">// Call By Reference</span>
         <span class="n">update</span><span class="o">.</span><span class="na">call_by_ref</span><span class="o">(</span><span class="n">cb</span><span class="o">);</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%s %d"</span><span class="o">,</span> <span class="s">"[Call By Reference] count:"</span><span class="o">,</span> <span class="n">cb</span><span class="o">.</span><span class="na">count</span><span class="o">));</span>
@@ -200,18 +204,18 @@
 <p>결론적으로 두 메서드가 모두 Call By Value이지만 참조 자료형을 넘겼을 경우, 해당 객체의 메모리 주소 값을 넘겨서 메서드가 인자로 넘긴 객체 내부 멤버에 영향력을 가하게 되므로 Call By Reference처럼 보이는 것이다.</p>
 
 <h3 id="call-by-assignmentassignment에-의한-함수-호출-방식">Call By Assignment(assignment에 의한 함수 호출 방식)</h3>
-<p><strong>파이썬</strong>에서 모든 것은 객체이고 객체에는 <code class="highlighter-rouge">Immutable Object, Mutable Object</code> 2가지 종류가 있다. (파이썬은 call by reference도 아니고 call by value도 아니다.)</p>
+<p><strong>파이썬</strong>에서 모든 것은 객체이고 객체에는 <code class="highlighter-rouge">Immutable Object, Mutable Object</code> 2가지 종류가 있다. <em>(파이썬은 call by reference도 아니고 call by value도 아니다.)</em></p>
 
 <p class="quote">
 	<b>Immutable Object</b> <br />
 	- int, float, str, tuple <br />
-	- 처음에는 무조건 reference처럼 (받은 인자의 주소 값을)가리키고 있지만 값이 변경되면, 내부 공간에 별도로 공간을 할당하여 해당 메모리를 가리킨다. <br />
+	- 처음에는 무조건 reference처럼(받은 인자의 주소 값을) 가리키고 있지만 값이 변경되면, 내부 공간에 별도로 공간을 할당하여 해당 메모리를 가리킨다. <br />
 	- 동작이 끝나면 메서드 공간이 사라진다. (Call By Value와 유사) <br />
 	- 즉, 함수 내에서 formal parameter 값이 바뀌어도 actual parameter에는 영향이 없다. <br /><br />
 
 	<b>Mutable Object</b> <br />
 	- list, dict, set <br />
-	- 인자로 object reference가 전달되어 actual parameter의 값에 영향을 미친다. 
+	- 인자로 object reference가 전달되어 actual parameter의 값에 영향을 미친다.
 </p>
 
 <p>아래 예제를 살펴보자.</p>
@@ -219,7 +223,7 @@
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">val</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="s">'new value'</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"메서드 내 a의 id"</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-    
+
 <span class="n">a</span> <span class="o">=</span> <span class="s">'old_value'</span>
 <span class="n">val</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"메서드 실행 전 a의 id"</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
@@ -230,7 +234,7 @@
 <span class="c"># 메서드 내 값 변경후 a의 id 4396828528</span>
 <span class="c"># 메서드 실행 전 a의 id 4368663920</span>
 <span class="c"># Out[3]: ('메서드 실행 후', 'old_value') # 값이 안 바뀜</span>
-    
+
 <span class="k">def</span> <span class="nf">ref</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
     <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">'new value1'</span> <span class="c"># 변경</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"메서드 내 변경된 b의 id"</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>

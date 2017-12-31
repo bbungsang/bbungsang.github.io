@@ -38,16 +38,20 @@
         color: #959595;
       }
 
-      .resume {
+      .home {
         margin-top: 15px;
         width: 120px;
         height: 32px;
         border: 1px solid #00c3bd;
         border-radius: 16px;
         background: #fafafa;
-        color: #00c3bd;
-        font-size: 14px;
-        font-family: 'Nanumbarunpen';
+
+        a {
+          color: #00c3bd;
+          font-size: 14px;
+          font-family: 'Nanumbarunpen';
+          text-decoration: none;
+        }
       }
     }
   }

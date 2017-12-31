@@ -44,7 +44,9 @@
 
 <body>
   <div id="container" class="container">
-    <ul class="top_menu">
+    <button class="menu-btn" id="menuBtn" title="메뉴토글버튼"><img src="/images/code.png" alt=""></button>
+
+<!-- <ul class="top_menu">
   <li class=" menu_list sidebar-toggle-box">
     <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
       <i class="im im-menu"></i>
@@ -59,7 +61,7 @@
   </li>
   <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
   <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul>
+</ul> -->
 
 <!-- 사이드 메뉴바 -->
 <div id="mySidenav" class="sidenav">
@@ -70,7 +72,9 @@
     <div class="my-content">
       Please contact me if you have any questions
       <p>- Elena.Kim -</p>
-      <button class="resume">미정</button>
+      <button class="home">
+        <a href="/">홈으로</a>
+      </button>
     </div>
   </div>
   <ul class="menu-ele">
@@ -160,8 +164,7 @@
   <p>이 마크다운은 이진석 선생님의 ‘Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)’를 토대로 작성되었습니다.</p>
 </blockquote>
 
-<p><br /></p>
-<h1 id="migrations">Migrations</h1>
+<h2 id="migrations">Migrations</h2>
 <ul>
   <li>초기에 테이블 최초 생성만 가능하고 변경된 내용은 반영하지 않는 <code class="highlighter-rouge">syncdb</code> 명령어가 있었지만, django-south 프로젝트가 킥스타터 펀딩을 통해, Django 1.7에 마이그레이션을 포함하였다.</li>
   <li>모델 변경내역 히스토리 관리가 가능</li>
@@ -169,7 +172,7 @@
 </ul>
 
 <p><br /></p>
-<h4 id="관련-명령어">관련 명령어</h4>
+<h2 id="관련-명령어">관련 명령어</h2>
 <p># ‘python manage.py’ 는 공통이므로 생략하겠습니다.</p>
 <ul>
   <li><code class="highlighter-rouge">makemigrations &lt;app-name&gt;</code> : 마이그레이션 파일(초안) 생성</li>
@@ -202,16 +205,12 @@
   <li><code class="highlighter-rouge">sqlmigrate &lt;app-name&gt; &lt;migration-number&gt;</code> : 지정 마이그레이션에 대한 SQL을 볼 수 있다.</li>
 </ul>
 
-<p><br /></p>
-<h6 id="마이그레이션-되돌리기">마이그레이션 되돌리기</h6>
-<ol>
-  <li><code class="highlighter-rouge">./manage.py migrate &lt;app-name&gt; &lt;migration-number&gt;</code> 명령어 입력.</li>
-  <li>되돌린만큼의 마이그레이션을 삭제한다.</li>
-  <li><code class="highlighter-rouge">./manage.py showmigrations</code>을 통해서 지워졌는지 확인</li>
-</ol>
+<h3 id="마이그레이션-되돌리기">마이그레이션 되돌리기</h3>
+<p><strong>1.</strong> <code class="highlighter-rouge">./manage.py migrate &lt;app-name&gt; &lt;migration-number&gt;</code> 명령어 입력. <br />
+<strong>2.</strong> 되돌린만큼의 마이그레이션을 삭제한다. <br />
+<strong>3.</strong> <code class="highlighter-rouge">./manage.py showmigrations</code>을 통해서 지워졌는지 확인</p>
 
-<p><br /></p>
-<h4 id="migrate-forwardbackward"><strong>Migrate</strong> (Forward/Backward)</h4>
+<h3 id="migrate-forwardbackward"><strong>Migrate</strong> (Forward/Backward)</h3>
 <blockquote>
   <p>Forward/Backward 명령어가 따로 있는 것이 아니라 <code class="highlighter-rouge">migrate</code> 명령어 하나로 다 해결할 수 있다.</p>
 </blockquote>
@@ -235,7 +234,6 @@
   </li>
 </ul>
 
-<p><br /></p>
 <h3 id="id-필드"><strong>id 필드</strong></h3>
 <ul>
   <li>모든 데이터베이스 테이블에는 각 Row의 식별기준인 <code class="highlighter-rouge">기본키(Primary Key)</code>가 필요하다.
@@ -247,10 +245,9 @@
   <li>기본키는 줄여서 <code class="highlighter-rouge">pk</code>로 접근 가능</li>
 </ul>
 
-<p><br /></p>
 <h3 id="기존에-없는-필수필드를-추가하고-마이그레이션-할-때">기존에 없는 필수필드를 추가하고 마이그레이션 할 때</h3>
 <ul>
-  <li>여기에서 필수필드란? blank, null 옵션을 주지 않은 것</li>
+  <li>여기에서 필수필드란? blank, null 옵션을 주지 않은 것이다.</li>
   <li>필수필드이기 때문에 이전 데이터가 해당 컬럼값을 가지고 있지 않다면, 반드시 넣어줘야한다.</li>
   <li>따라서 마이그레이션을 할 때, 아래와 같은 질의를 던진다.
     <ul>
@@ -272,7 +269,7 @@ Select an option:
 를 선택하시오
 </code></pre>
 </div>
-<h6 id="1번-선택-시--">1번 선택 시 :-)</h6>
+<h3 id="1번-선택-시--">1번 선택 시 :-)</h3>
 <div class="language-text highlighter-rouge"><pre class="highlight"><code>Select an option: 1
 Please enter the default value now, as valid Python
 The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
@@ -281,13 +278,13 @@ Type 'exit' to exit this prompt
 </code></pre>
 </div>
 <ul>
-  <li>빈 컬럼에 대하여 ‘anonymous’ 값을 주겠다.</li>
-  <li>반드시 필드 타입에 맞춰서 줄 것</li>
+  <li>빈 컬럼에 대하여 ‘anonymous’ 값을 주겠다는 의미로,</li>
+  <li>반드시 필드 타입에 맞춰서 줘야한다.</li>
 </ul>
 
 <p><br /></p>
 <h3 id="결론"><em>결론</em></h3>
-<p>마이그레이션은 모든 테이블 Row에 대한 컬럼이 추가되므로 데이터 양이 방대하면 문제가 발생할 수 있다. 애초에 설계를 신중하게 하는 것을 지향할 것</p>
+<p>마이그레이션은 모든 테이블 Row에 대한 컬럼이 추가되므로 데이터 양이 방대하면 문제가 발생할 수 있다. 애초에 설계를 신중하게 하는 것을 지향하자.</p>
 
     </section>
     <br><br>

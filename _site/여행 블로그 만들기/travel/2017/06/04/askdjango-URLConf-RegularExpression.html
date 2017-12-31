@@ -44,7 +44,9 @@
 
 <body>
   <div id="container" class="container">
-    <ul class="top_menu">
+    <button class="menu-btn" id="menuBtn" title="메뉴토글버튼"><img src="/images/code.png" alt=""></button>
+
+<!-- <ul class="top_menu">
   <li class=" menu_list sidebar-toggle-box">
     <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
       <i class="im im-menu"></i>
@@ -59,7 +61,7 @@
   </li>
   <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
   <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul>
+</ul> -->
 
 <!-- 사이드 메뉴바 -->
 <div id="mySidenav" class="sidenav">
@@ -70,7 +72,9 @@
     <div class="my-content">
       Please contact me if you have any questions
       <p>- Elena.Kim -</p>
-      <button class="resume">미정</button>
+      <button class="home">
+        <a href="/">홈으로</a>
+      </button>
     </div>
   </div>
   <ul class="menu-ele">
@@ -160,13 +164,7 @@
   <p>이 마크다운은 이진석 선생님의 ‘Ask Django VOD 장고 기본편(Feat.여행 블로그 만들기)’를 토대로 작성되었습니다.</p>
 </blockquote>
 
-<ul>
-  <li>프로젝트/settings.py 최상위 URLConf 모듈을 지정한다.</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s">'mysite/urls'</span> <span class="c"># mysite/urls.py</span>
-</code></pre>
-</div>
+<h2 id="urlconf">URLConf</h2>
 <ul>
   <li>장고서버로 HTTP 요청이 들어올 때마다, URL 매핑 리스트를 처음부터 끝까지 순차적으로 검색한다.</li>
   <li>적합한 URL 을 찾지 못 하면, 404 Page Not Found 페이지를 보여준다.</li>
@@ -184,8 +182,8 @@
 <span class="p">]</span>
 </code></pre>
 </div>
-<h3 id="정규표현식-풀이">정규표현식 풀이</h3>
-<p>***r’^(?P<id>\d+)/$'***</id></p>
+<h2 id="정규표현식-풀이">정규표현식 풀이</h2>
+<p><code class="highlighter-rouge">r'^(?P&lt;id&gt;\d+)/$'</code></p>
 <ul>
   <li><code class="highlighter-rouge">^</code>와 <code class="highlighter-rouge">$</code> : 시작과 끝을 표현한다.</li>
   <li><code class="highlighter-rouge">(?P)</code> : 이 영역의 문자열에 정규표현식을 적용해서</li>
@@ -194,7 +192,7 @@
   <li><em>id 변수명으로 넘어간 인자의 모든 값들은 모두 문자열 타입이다.</em></li>
 </ul>
 
-<p>[Example]</p>
+<p>[예시]</p>
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># [어플리케이션/urls.py]</span>
 
 <span class="n">url</span><span class="p">(</span><span class="s">r'^sum/(?P&lt;x&gt;</span><span class="err">\</span><span class="s">d+)/(?P&lt;y&gt;</span><span class="err">\</span><span class="s">d+)/$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">mysum</span><span class="p">)</span>
@@ -208,15 +206,17 @@
 <span class="c"># request와 url 경로를 통해 전달받은 x, y값을 인자를 받아서 x + y의 값으로 응답한다.</span>
 </code></pre>
 </div>
-<p><br /><br /></p>
-<h2 id="정리--프로젝트와-앱을-생성하기까지"><em>정리 : 프로젝트와 앱을 생성하기까지</em></h2>
-<ol>
-  <li>프로젝트 생성 : <code class="highlighter-rouge">django-admin startproject &lt;프로젝트명&gt;</code></li>
-  <li>프로젝트 디렉토리의 settings.py 설정</li>
-  <li>앱 생성 : <code class="highlighter-rouge">python manage.py startapp &lt;앱이름&gt;</code></li>
-  <li>프로젝트/settings.py의 INSTALLED_APPS에 어플리케이션 등록</li>
-  <li>앱/urls.py 파일 생성 후, 프로젝트/urls.py 에서 앱 URLConf 설정 include</li>
-</ol>
+
+<h3 id="프로젝트와-앱을-생성하기까지">프로젝트와 앱을 생성하기까지</h3>
+<p><em>1.</em> 프로젝트 생성 : <code class="highlighter-rouge">django-admin startproject &lt;프로젝트명&gt;</code></p>
+
+<p><em>2.</em> 프로젝트 디렉토리의 settings.py 설정</p>
+
+<p><em>3.</em> 앱 생성 : <code class="highlighter-rouge">python manage.py startapp &lt;앱이름&gt;</code></p>
+
+<p><em>4.</em> 프로젝트/settings.py의 INSTALLED_APPS에 어플리케이션 등록</p>
+
+<p><em>5.</em> 앱/urls.py 파일 생성 후, 프로젝트/urls.py 에서 앱 URLConf 설정 include</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">urls</span>
 

@@ -42,15 +42,6 @@
     }
   }
 
-  .markdown-body {
-		padding: 25px;
-
-    .post-content {
-      width: 100%;
-      float: left;
-    }
-	}
-
   /* Post */
   .center-image {
     width: 70%;
@@ -103,14 +94,36 @@
     text-decoration: none;
   }
 
-  .post-content {
+  hr {
+    border: 1px solid #ddd;
+    margin: 50px 20px;
+  }
 
-    ul {
-      margin: 0 25px;
+  .markdown-body {
+    padding: 30px;
 
-      li {
-        list-style-type: disc;
-        margin: 10px 0;
+    .post-content {
+
+      p {
+        font-family: 'Nanumbarunpen';
+        color: #818181;
+        font-size: 16px;
+
+        em {
+          color: #333;
+        }
+      }
+
+      ul {
+        margin: 0 25px;
+        font-family: 'Nanumbarunpen';
+        color: #818181;
+        font-size: 16px;
+
+        li {
+          list-style-type: disc;
+          margin: 10px 0;
+        }
       }
     }
   }
@@ -208,8 +221,7 @@
   pre {
     border-radius: 3px;
     background-color: #222;
-    padding: 10px;
-    margin: 20px 0;
+    padding: 10px 20px;
     word-wrap: break-word;
     white-space: pre-wrap;
 
@@ -294,5 +306,6 @@
     font-size: 15px;
     background: #f2f2f2;
     border-radius: 3px;
+    margin: 0 5px;
   }
 }

@@ -44,7 +44,9 @@
 
 <body>
   <div id="container" class="container">
-    <ul class="top_menu">
+    <button class="menu-btn" id="menuBtn" title="메뉴토글버튼"><img src="/images/code.png" alt=""></button>
+
+<!-- <ul class="top_menu">
   <li class=" menu_list sidebar-toggle-box">
     <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
       <i class="im im-menu"></i>
@@ -59,7 +61,7 @@
   </li>
   <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
   <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul>
+</ul> -->
 
 <!-- 사이드 메뉴바 -->
 <div id="mySidenav" class="sidenav">
@@ -70,7 +72,9 @@
     <div class="my-content">
       Please contact me if you have any questions
       <p>- Elena.Kim -</p>
-      <button class="resume">미정</button>
+      <button class="home">
+        <a href="/">홈으로</a>
+      </button>
     </div>
   </div>
   <ul class="menu-ele">
@@ -176,8 +180,8 @@
     </ul>
   </li>
   <li>SQL을 직접 작성하지 않아도 장고 모델을 통해 데이터베이스로의 접근이 가능하다.</li>
-  <li>즉, <code class="highlighter-rouge">Model</code>은 <파이썬 클래스=""> 와 <데이터베이스 테이블=""> 을 매핑한다.
-</데이터베이스></파이썬>    <ul>
+  <li>즉, <code class="highlighter-rouge">Model</code>은 <strong>파이썬 클래스</strong>와 <strong>데이터베이스 테이블</strong>을 매핑한다.
+    <ul>
       <li>Model Instance : DB 테이블의 Row</li>
       <li>예를 들어 blog앱 Post모델이면, 데이터베이스의 blog_post테이블과 매핑하고, blog앱 Comment모델이면, blog_comment테이블과 매핑을 한다.</li>
     </ul>

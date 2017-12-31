@@ -1,150 +1,79 @@
-@charset "UTF-8";
-.container {
-  width: 100%;
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 7px 10px;
+  background: #333;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  z-index: 3; }
+  .menu-btn img {
+    width: 30px; }
+
+.top-wrap {
   position: relative;
-  height: 100vh; }
-  .container .top_menu {
-    width: 100%;
-    height: 50px;
-    border-bottom: 1px solid #fafafa;
-    background: rgba(48, 55, 63, 0.5);
-    box-shadow: 0 2px 2px -2px gray;
-    position: fixed;
-    z-index: 2; }
-    .container .top_menu .menu_list {
-      float: left; }
-    .container .top_menu .menu_btn {
-      background: transparent;
-      border: none;
-      border-top: 1px solid #fafafa;
-      border-left: 1px solid #fafafa;
-      border-right: 1px solid #fafafa;
-      cursor: pointer;
-      padding: 0 10px;
-      height: 50px;
-      color: #fafafa; }
-      .container .top_menu .menu_btn:hover {
-        background: rgba(255, 255, 255, 0.3); }
-    .container .top_menu .logo {
-      width: 140px;
-      margin-left: 20px;
-      line-height: 42px;
-      font-size: 18px; }
-      .container .top_menu .logo a {
-        font-family: 'Gloria Hallelujah';
-        color: #fafafa;
-        text-decoration: none; }
-        .container .top_menu .logo a i {
-          color: #00c3bd;
-          font-size: 12px;
-          font-family: 'Georgia'; }
-    .container .top_menu .menu_ele {
-      float: right;
-      padding: 0 2.5%;
-      height: 48px;
-      line-height: 48px;
-      color: #fafafa;
-      font-size: 15px;
-      cursor: pointer;
-      font-family: 'Nanumbarunpen';
-      appearance: none; }
-      .container .top_menu .menu_ele:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-bottom: 4px solid #00c3bd;
-        transition: 0.2s;
-        color: #00c3bd; }
-  @media (max-width: 619px) {
-    .container .banner_wrap > article.posts {
-      font-size: 11px; } }
-  .container .banner_wrap {
-    background-color: #30373f;
-    background-image: url("../images/animals.jpg");
-    background-position: center;
-    background-size: 665px auto;
-    background-repeat: no-repeat;
-    height: 365px;
-    padding-top: 50px; }
-    .container .banner_wrap .r_post_title {
-      width: 80%;
-      margin: 35px 7.5% 0 7.5%;
-      padding: 0 2.5%;
-      height: 40px;
-      line-height: 40px;
-      background: rgba(0, 0, 0, 0.5);
-      font-size: 17px;
-      color: #00c3bd;
-      font-family: 'Nanumbarunpen';
-      border-bottom: 1px solid #fafafa; }
-    .container .banner_wrap .posts {
-      display: inline-block;
-      width: 80%;
-      margin: 0 7.5%;
-      padding: 0 2.5%;
-      height: 35px;
-      line-height: 35px;
-      font-size: 17px;
-      background: rgba(0, 0, 0, 0.2);
-      border-bottom: 1px solid #ddd; }
-      .container .banner_wrap .posts:nth-last-child(1) {
-        border-bottom: none; }
-      .container .banner_wrap .posts a {
-        text-decoration: none;
-        color: #fafafa; }
-        .container .banner_wrap .posts a:hover {
-          color: #d2d2d2; }
-  .container .tag_title {
-    padding: 35px 0 20px 0;
-    text-align: center;
-    text-shadow: 100px;
-    color: #333333;
-    font-family: 'Bungee Hairline';
-    font-size: 20px;
-    font-weight: bold;
-    background: #f2f2f2; }
-    .container .tag_title p {
-      font-family: 'Nanumbarunpen';
-      color: #8d8d8d;
-      margin: 5px 0;
-      font-size: 15px; }
-  .container .tags {
-    padding: 0 5% 15px 5%;
-    background: #f2f2f2; }
-    .container .tags .tag_element {
-      display: inline-block;
-      position: relative;
-      margin: 4px;
-      height: 27px;
-      line-height: 27px;
-      border: 1px solid #fafafa;
-      border-radius: 5px;
-      background: rgba(0, 0, 0, 0.4); }
-      .container .tags .tag_element a {
-        display: inline-block;
-        color: #fafafa;
-        text-decoration: none;
-        font-size: 13px; }
-        .container .tags .tag_element a img {
-          width: 20px;
-          margin: 3px 5px 3px 0;
-          float: left; }
-      .container .tags .tag_element:hover {
-        background: #00c3bd; }
-  .container .category-list {
-    background: #f2f2f2;
+  height: 450px; }
+  .top-wrap .background {
+    height: 380px;
+    padding-top: calc(50%/1000*100%);
+    background: url("/images/mac_bg.jpg") center center/cover no-repeat; }
+  .top-wrap .photo {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 320px;
+    right: 50%;
+    margin-right: -60px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 99;
+    background: #333;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    text-align: center; }
+    .top-wrap .photo img {
+      width: 80px;
+      margin-top: 20px; }
+
+.desc {
+  text-align: center;
+  color: #8d8d8d; }
+  .desc h1 {
+    color: #333;
+    font-family: 'Patrick Hand SC';
+    margin: 5px;
+    font-size: 34px; }
+  .desc h3 {
+    color: #666;
     font-family: 'Nanumbarunpen';
-    padding: 15px 30px; }
-    .container .category-list h3 {
-      font-size: 22px;
-      margin: 0;
-      padding: 10px 0; }
-    .container .category-list .category-title .tags-expo-posts {
-      margin-bottom: 30px; }
-      .container .category-list .category-title .tags-expo-posts a {
-        text-decoration: none;
-        color: #8d8d8d;
-        font-size: 16px;
-        font-family: '맑은고딕'; }
-        .container .category-list .category-title .tags-expo-posts a li {
-          padding: 2px 0; }
-          .container .category-list .category-title .tags-expo-posts a li:hover {
-            color: #00c3bd; }
+    margin: 10px 0 15px 0; }
+  .desc .icons {
+    display: inline-block;
+    margin: 0 10px; }
+  .desc a {
+    color: #666;
+    text-decoration: none; }
+
+.post-wrap {
+  margin: 50px 10%; }
+  .post-wrap .posts {
+    padding: 35px 0;
+    border-bottom: 1px solid #ddd; }
+    .post-wrap .posts:nth-last-child(1) {
+      border-bottom: none; }
+    .post-wrap .posts .post-title {
+      display: block;
+      font-size: 24px;
+      text-decoration: none;
+      color: #000; }
+    .post-wrap .posts .post-content {
+      font-family: "Nanumbarunpen";
+      font-weight: 100px;
+      font-style: normal;
+      font-size: 17px;
+      line-height: 1.5;
+      color: #666665; }
+    .post-wrap .posts .post-date {
+      font-size: 14px;
+      color: #aed9da;
+      line-height: 30px; }

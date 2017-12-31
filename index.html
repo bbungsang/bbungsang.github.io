@@ -2,7 +2,31 @@
 layout: default
 ---
 
-<section class="banner_wrap">
+<section class="top-wrap">
+  <article class="background"></article>
+  <a href="#" class="photo"><img src="/images/code.png" alt=""></a>
+</section>
+<section class="desc">
+  <h1>bbungsang devlog</h1>
+  <h3>뿡상 개발 로그</h2>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149" class="icons"><img src="/images/facebook.png" width="20px"></a>
+  ·
+  <a href="https://github.com/bbungsang" class="icons"><img src="/images/github.png" width="20px"></a>
+  ·
+  <a href="#" class="icons">About</a>
+</section>
+
+<section class="post-wrap">
+  {% for post in site.posts|limit:10 %}
+  <article class="posts">
+    <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    <p class="post-content">{{ post.content | strip_html | truncate: "250" }}</p>
+    <small class="post-date">{{ post.date | date_to_string }}</small>
+  </article>
+  {% endfor %}
+</section>
+
+<!-- <section class="banner_wrap">
   <article class="r_post_title">
     최근 포스트 목록
   </article>
@@ -15,7 +39,6 @@ layout: default
   </article>
   {% endfor %}
 </section>
-
 <section class="tag_title">
   POST TAGS LIST
   <p>태그 목록</p>
@@ -52,4 +75,4 @@ layout: default
       {% endif %}
       {% endfor %}
   </li>
-</ul>
+</ul> -->
