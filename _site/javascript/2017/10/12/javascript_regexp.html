@@ -67,17 +67,22 @@
 <div id="mySidenav" class="sidenav">
   <div class="intro-me">
     <div class="my-photo">
-      <img src="/images/meme.png">
+      <img src="/images/itsme.png">
     </div>
     <div class="my-content">
       Please contact me if you have any questions
       <p>- Elena.Kim -</p>
-      <button class="home">
-        <a href="/">홈으로</a>
-      </button>
+      <a href="/" class="home">홈으로</a>
     </div>
   </div>
   <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
     <li>
       <a href="/files/python.html">
         <span class="bar-left"></span>
@@ -278,10 +283,10 @@
 <img src="http://localhost:4000/assets/regexp2.png" alt="" class="center-image" /></p>
 
 <blockquote>
-  <p>배경 : 검색한 결과를 readonly 옵션이 있는 input 창에 세팅 <br />
-이슈 : 검색어에 해당하는 키워드에 <code class="highlighter-rouge">b태그</code>가 삽입되어 있다. <br />
-하려는 일 : 세팅되는 b태그 제거 <br />
-해결 방법 : 자바스크립트 정규표현식 활용</p>
+  <p><strong>배경 :</strong> 검색한 결과를 readonly 옵션이 있는 input 창에 세팅 <br />
+<strong>이슈 :</strong> 검색어에 해당하는 키워드에 <code class="highlighter-rouge">b태그</code>가 삽입되어 있다. <br />
+<strong>하려는 일 :</strong> 세팅되는 b태그 제거 <br />
+<strong>해결 방법 :</strong> 자바스크립트 정규표현식 활용</p>
 </blockquote>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">"("</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'input:checkbox:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>

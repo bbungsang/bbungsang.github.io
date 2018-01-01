@@ -6,13 +6,11 @@
 
 .sidenav .intro-me .my-photo img { width: 50px; border-radius: 100%; }
 
-.sidenav .intro-me .my-content { margin: 0 30px; font-style: italic; font-size: 13px; color: #666666; }
+.sidenav .intro-me .my-content { margin: 0 30px; font-size: 13px; color: #666666; }
 
-.sidenav .intro-me .my-content p { margin: 3px 0; color: #959595; }
+.sidenav .intro-me .my-content p { font-style: italic; margin: 3px 0; color: #959595; }
 
-.sidenav .intro-me .my-content .home { margin-top: 15px; width: 120px; height: 32px; border: 1px solid #00c3bd; border-radius: 16px; background: #fafafa; }
-
-.sidenav .intro-me .my-content .home a { color: #00c3bd; font-size: 14px; font-family: 'Nanumbarunpen'; text-decoration: none; }
+.sidenav .intro-me .my-content .home { display: inline-block; width: 100px; height: 25px; line-height: 25px; margin-top: 20px; border: 1px solid #f37931; border-radius: 16px; background: #fafafa; color: #f37931; font-size: 14px; font-family: 'Nanumbarunpen'; text-decoration: none; font-style: normal; }
 
 .sidenav ul.menu-ele { width: 100%; text-align: center; }
 
@@ -20,6 +18,6 @@
 
 .sidenav ul.menu-ele li a { text-decoration: none; color: #333; font-family: 'Nanumbarunpen'; }
 
-.sidenav ul.menu-ele li a:hover { color: #00c3bd; transition: 0.2s; }
+.sidenav ul.menu-ele li a:hover { color: #f37931; transition: 0.2s; }
 
-.sidenav ul.menu-ele li a:hover span { display: inline-block; width: 30px; border-bottom: 1px solid #00c3bd; margin: 0 5px 5px 5px; transition: 0.2s; }
+.sidenav ul.menu-ele li a:hover span { display: inline-block; width: 30px; border-bottom: 1px solid #f37931; margin: 0 5px 5px 5px; transition: 0.2s; }

@@ -1,8 +1,8 @@
 .markdown { height: auto; padding-top: 80px; font-size: 15px; background: #fff; /* Post */ /*-- Code --*/ }
 
-.markdown .md-head { padding: 0 15px; font-family: "Nanumbarunpen"; }
+.markdown .md-head { padding: 0 15px; }
 
-.markdown .md-head .title { margin: 10px; font-size: 28px; font-weight: bold; position: relative; }
+.markdown .md-head .title { margin: 10px; font-size: 36px; font-weight: bold; position: relative; }
 
 .markdown .md-head .tag-wrap { margin: 10px; height: 27px; line-height: 27px; }
 
@@ -10,9 +10,9 @@
 
 .markdown .md-head .tag-wrap a img { width: 20px; margin: 3px 5px 3px 0; float: left; }
 
-.markdown .md-head .tag-wrap a:hover { background: #00c3bd; }
+.markdown .md-head .tag-wrap a:hover { background: #f37931; }
 
-.markdown .center-image { width: 70%; margin: 15px 15%; }
+.markdown .center-image { width: 70%; max-width: 445px; display: table; margin-left: auto; margin-right: auto; margin-bottom: 35px; }
 
 .markdown table { margin: 20px 5%; border-collapse: collapse; }
 
@@ -22,11 +22,11 @@
 
 .markdown a { color: #9a9a9a; }
 
-.markdown h2 { width: 100%; color: #444444; font-size: 26px; margin: 30px 0; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+.markdown h2 { color: #444444; font-size: 28px; margin: 50px 0 25px 0; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
 
-.markdown h3 { width: 100%; color: #3ddad7; margin-top: 25px; font-size: 20px; }
+.markdown h3 { width: 100%; color: #78757a; margin: 35px 0 20px 0; font-size: 22px; }
 
-.markdown h4 { color: #444444; margin-top: 25px; }
+.markdown h4 { color: #6c3789; font-size: 17px; margin-top: 25px; }
 
 .markdown a { color: #2096ba; text-decoration: none; }
 
@@ -34,15 +34,17 @@
 
 .markdown .markdown-body { padding: 30px; }
 
-.markdown .markdown-body .post-content p { font-family: 'Nanumbarunpen'; color: #818181; font-size: 16px; }
+.markdown .markdown-body .post-content { font-family: 'NanumSquareRound'; line-height: 25px; }
+
+.markdown .markdown-body .post-content p { color: #5d5d5d; font-size: 16px; font-weight: lighter; }
 
 .markdown .markdown-body .post-content p em { color: #333; }
 
-.markdown .markdown-body .post-content ul { margin: 0 25px; font-family: 'Nanumbarunpen'; color: #818181; font-size: 16px; }
+.markdown .markdown-body .post-content ul { margin: 0 25px; color: #818181; font-size: 16px; }
 
 .markdown .markdown-body .post-content ul li { list-style-type: disc; margin: 10px 0; }
 
-.markdown blockquote { height: auto; background: #fafafa; border-left: 5px solid #ddd; font-size: 15px; padding: 5px 15px; margin: 15px 0; }
+.markdown blockquote { line-height: 20px; background: #fafafa; border-left: 5px solid #ddd; font-size: 15px; padding: 5px 15px; margin: 15px 0; }
 
 .markdown .quote { height: auto; background: #edfafd; border-left: 5px solid #56b1bf; font-size: 15px; padding: 15px; margin: 15px 0; }
 
@@ -208,4 +210,4 @@
 
 .markdown pre .il { color: #2AA198; }
 
-.markdown .highlighter-rouge { color: #D9418C; font-size: 15px; background: #f2f2f2; border-radius: 3px; margin: 0 5px; }
+.markdown .highlighter-rouge { color: #f37931; font-weight: normal; font-family: 'Courier'; font-size: 15px; background: #f2f2f2; border-radius: 3px; margin: 0 5px; }

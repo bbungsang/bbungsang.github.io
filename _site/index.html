@@ -67,17 +67,22 @@
 <div id="mySidenav" class="sidenav">
   <div class="intro-me">
     <div class="my-photo">
-      <img src="/images/meme.png">
+      <img src="/images/itsme.png">
     </div>
     <div class="my-content">
       Please contact me if you have any questions
       <p>- Elena.Kim -</p>
-      <button class="home">
-        <a href="/">홈으로</a>
-      </button>
+      <a href="/" class="home">홈으로</a>
     </div>
   </div>
   <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
     <li>
       <a href="/files/python.html">
         <span class="bar-left"></span>
@@ -139,10 +144,24 @@
 
 
     <section class="top-wrap">
-  <article class="background"></article>
-  <a href="#" class="photo"><img src="/images/code.png" alt=""></a>
+  <article class="background">
+    <div class="words">
+      <li class="en">
+        BBUNGSANG
+        <p>DEV LOG</p>
+      </li>
+      <li class="ko">뿡상 개발 로그</li>
+      <li>
+        <a href="https://www.facebook.com/profile.php?id=100003805377149" class="icons"><img src="/images/facebook.png" width="20px"></a>
+        ·
+        <a href="https://github.com/bbungsang" class="icons"><img src="/images/github.png" width="20px"></a>
+        <!-- <a href="#" class="icons"><img src="/images/gmail.png" width="23px"></a> -->
+      </li>
+    </div>
+  </article>
+  <!-- <a href="#" class="photo"><img src="/images/code.png" alt=""></a> -->
 </section>
-<section class="desc">
+<!-- <section class="desc">
   <h1>bbungsang devlog</h1>
   <h3>뿡상 개발 로그</h2>
   <a href="https://www.facebook.com/profile.php?id=100003805377149" class="icons"><img src="/images/facebook.png" width="20px"></a>
@@ -150,9 +169,18 @@
   <a href="https://github.com/bbungsang" class="icons"><img src="/images/github.png" width="20px"></a>
   ·
   <a href="#" class="icons">About</a>
-</section>
+</section> -->
 
 <section class="post-wrap">
+  
+  <article class="posts">
+    <a class="post-title" href="/typescript/2017/12/30/about-typescript.html">About TypeScript</a>
+    <p class="post-content">What’s TypeScript?
+HTML5의 등장은 Flash, Silverlight, ActiveX 등 Plug-in에 의존하는 기존의 구축 방식을 JavaScript로 대체시켰다. 이는 과거에 서버에서 담당하는 많은 업무를 클라이언트 측으로 이동시켰고, JavaScript의 위상은 높아지게 하였다.
+
+JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 익숙한 개발자에게 혼란과 디버그, 테스트 공수가...</p>
+    <small class="post-date">30 Dec 2017</small>
+  </article>
   
   <article class="posts">
     <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html">[Try Hello World] Level5 124 나라의 숫자</a>
@@ -261,19 +289,18 @@ def cae...</p>
     <small class="post-date">03 Nov 2017</small>
   </article>
   
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/02/tryhelloword-noovertime.html">[Try Hello World] Level3 야근 지수</a>
-    <p class="post-content">회사원인 수민이는 많은 일이 쌓여 있습니다. 수민이는 야근을 최소화하기 위해 남은 일의 작업량을 숫자로 메기고, 일에 대한 야근 지수를 줄이기로 결정했습니다.
-
-야근 지수는 남은 일의 작업량을 제곱하여 더한 값을 의미합니다. 수민이는 1시간 동안 남은 일 중 하나를 골라 작업량 1만큼 처리할 수 있습니다. 수민이의 퇴근까지 남은 N 시간과 각 일에 대한 작업량이 있을 때, noOvertime 함수를 제작하여 수민이의 야근 지수를 최소화 한...</p>
-    <small class="post-date">02 Nov 2017</small>
-  </article>
-  
 </section>
 
 <!-- <section class="banner_wrap">
   <article class="r_post_title">
     최근 포스트 목록
+  </article>
+  
+  <article class="posts">
+    <a class="post_title" href="/typescript/2017/12/30/about-typescript.html">
+      - About TypeScript
+      <small class="post-date" style="font-size: 12px; color: #aed9da;">30 Dec 2017</small>
+    </a>
   </article>
   
   <article class="posts">
@@ -314,13 +341,6 @@ def cae...</p>
   <article class="posts">
     <a class="post_title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html">
       - [Try Hello World] Level4 숫자의 표현
-      <small class="post-date" style="font-size: 12px; color: #aed9da;">09 Nov 2017</small>
-    </a>
-  </article>
-  
-  <article class="posts">
-    <a class="post_title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level3-jumpcase.html">
-      - [Try Hello World] Level3 멀리 뛰기
       <small class="post-date" style="font-size: 12px; color: #aed9da;">09 Nov 2017</small>
     </a>
   </article>
@@ -377,19 +397,6 @@ def cae...</p>
       <a href="#do-장고걸스" style="font-size: 14px; margin: 0 10px;">
         <img src="/images/tag_img.png">
         Do 장고걸스!
-      </a>
-    </div>
-    
-  
-    
-    
-  
-    
-    
-    <div class="tag_element">
-      <a href="#여행-블로그-만들기" style="font-size: 14px; margin: 0 10px;">
-        <img src="/images/tag_img.png">
-        여행 블로그 만들기
       </a>
     </div>
     
@@ -546,6 +553,19 @@ def cae...</p>
       <a href="#it-기본개념" style="font-size: 14px; margin: 0 10px;">
         <img src="/images/tag_img.png">
         IT/기본개념
+      </a>
+    </div>
+    
+  
+    
+    
+  
+    
+    
+    <div class="tag_element">
+      <a href="#typescript" style="font-size: 14px; margin: 0 10px;">
+        <img src="/images/tag_img.png">
+        TypeScript
       </a>
     </div>
     
@@ -925,52 +945,6 @@ def cae...</p>
       
     
     
-      <h3 id="여행-블로그-만들기"><a>여행 블로그 만들기</a></h3>
-      <ul class="tags-expo-posts">
-        
-        <a class="post-title" href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/08/askdjango-Migrations.html">
-          <li>
-            [장고 기본편] 6. Migrations
-          <small class="post-date">08 Jun 2017</small>
-          </li>
-        </a>
-        
-        <a class="post-title" href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/07/askdjango-Model-and-Model-Fields.html">
-          <li>
-            [장고 기본편] 5. Model
-          <small class="post-date">07 Jun 2017</small>
-          </li>
-        </a>
-        
-        <a class="post-title" href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/04/askdjango-View-OverView.html">
-          <li>
-            [장고 기본편] 4. View
-          <small class="post-date">04 Jun 2017</small>
-          </li>
-        </a>
-        
-        <a class="post-title" href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/04/askdjango-URLConf-RegularExpression.html">
-          <li>
-            [장고 기본편] 3. URLConf와 정규표현식
-          <small class="post-date">04 Jun 2017</small>
-          </li>
-        </a>
-        
-        <a class="post-title" href="/%EC%97%AC%ED%96%89%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/travel/2017/06/04/aksdjango-DjangoApp-URLConf-Template.html">
-          <li>
-            [장고 기본편] 2. DjangoApp, URLConf, Template
-          <small class="post-date">04 Jun 2017</small>
-          </li>
-        </a>
-        
-      </ul>
-      
-      
-    
-    
-      
-    
-    
       <h3 id="지킬-블로그-꾸미기"><a>지킬 블로그 꾸미기</a></h3>
       <ul class="tags-expo-posts">
         
@@ -1337,6 +1311,24 @@ def cae...</p>
           <li>
             CORS와 CSRF(1)
           <small class="post-date">28 Oct 2017</small>
+          </li>
+        </a>
+        
+      </ul>
+      
+      
+    
+    
+      
+    
+    
+      <h3 id="typescript"><a>TypeScript</a></h3>
+      <ul class="tags-expo-posts">
+        
+        <a class="post-title" href="/typescript/2017/12/30/about-typescript.html">
+          <li>
+            About TypeScript
+          <small class="post-date">30 Dec 2017</small>
           </li>
         </a>
         

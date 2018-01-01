@@ -67,17 +67,22 @@
 <div id="mySidenav" class="sidenav">
   <div class="intro-me">
     <div class="my-photo">
-      <img src="/images/meme.png">
+      <img src="/images/itsme.png">
     </div>
     <div class="my-content">
       Please contact me if you have any questions
       <p>- Elena.Kim -</p>
-      <button class="home">
-        <a href="/">홈으로</a>
-      </button>
+      <a href="/" class="home">홈으로</a>
     </div>
   </div>
   <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
     <li>
       <a href="/files/python.html">
         <span class="bar-left"></span>
@@ -161,13 +166,13 @@
   <article class="markdown-body">
     <section class="post-content">
       <blockquote>
-  <p>웹사이트를 반응형으로 만들기위해서 <strong>CSS 미디어쿼리</strong> 를 사용해야 하는데, CSS 미디어쿼리는 다양한 크기의 디바이스가 존재하는 상황에서도 모두 적절한 화면을 제공하게 해준다.</p>
+  <p>웹 사이트를 반응형으로 만들기위해서 <strong>CSS 미디어쿼리</strong>를 사용해야 하는데, CSS 미디어쿼리는 다양한 크기의 디바이스가 존재하는 상황에서도 모두 적절한 화면을 제공하게 해준다.</p>
 </blockquote>
 
 <ul>
   <li>oo 사이즈에서는 A 자바스크립트가 적용돼야하지만 xx 사이즈에서도 동일한 자바스크립트가 적용될 경우, 화면이 굉장히 부자연스러워질 수 있다.</li>
-  <li>내 블로그를 예로 들자면, <code class="highlighter-rouge">사이드바</code>가 화면(15인치 풀스크린)에 나타나면 그만큼 본문이 옆으로 밀리고, <code class="highlighter-rouge">사이드바</code>가 사라지면 영역이 본래 크기로 돌아가게 하기 위해서 자바스크립트를 사용했다.</li>
-  <li>화면이 작아질 경우, <code class="highlighter-rouge">사이드바</code>(좌우)가 <code class="highlighter-rouge">드롭다운 형태</code>(상하)로 바뀌게 되는데, 위아래로 메뉴가 이동할 때마다 화면이 좌우로도 움직이는 문제가 발생,</li>
+  <li>내 블로그의 경우, <code class="highlighter-rouge">사이드바</code>가 화면(15인치 풀스크린)에 나타나면 그 만큼 본문이 옆으로 밀리고, <code class="highlighter-rouge">사이드바</code>가 사라지면 영역이 본래 크기로 돌아가게 하기 위해서 자바스크립트를 사용했다.</li>
+  <li>화면이 작아지면 <code class="highlighter-rouge">사이드바</code>(좌우)가 <code class="highlighter-rouge">드롭다운 형태</code>(상하)로 바뀌게 되는데, 위아래로 메뉴가 이동할 때마다 화면이 좌우로도 움직이는 문제가 발생.</li>
   <li>그 까닭은 자바스크립트를 화면이 클 때, 작을 때의 분기처리를 하지않았기 때문이었다.</li>
   <li>그렇다면 자바스크립트는 @media를 어떻게 쓰는걸까?</li>
 </ul>

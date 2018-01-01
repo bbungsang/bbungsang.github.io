@@ -4,7 +4,6 @@
     width: 90%;
     margin: 0 5%;
     font-size: 24px;
-    font-family: 'Nanumbarunpen';
     font-weight: bold; }
   .list-container .post-list {
     width: 90%;
@@ -24,7 +23,7 @@
         text-decoration: none;
         margin: 10px 0; }
         .list-container .post-list .post-wrap .post-title:hover {
-          color: #00c3bd; }
+          color: #f37931; }
       .list-container .post-list .post-wrap .tag-wrap {
         height: 21px;
         line-height: 21px; }
@@ -35,7 +34,7 @@
           font-size: 14px;
           padding: 0 5px;
           border-radius: 5px;
-          background: #00c3bd; }
+          background: #f37931; }
           .list-container .post-list .post-wrap .tag-wrap a img {
             width: 16px;
             margin: 3px 5px 3px 0;
@@ -50,8 +49,8 @@
     margin: 0 5%; }
     .tag-container .tag-category .tag-category-title {
       font-size: 24px;
-      font-family: 'Nanumbarunpen';
-      font-weight: bold; }
+      font-weight: bold;
+      margin-top: 65px; }
     .tag-container .tag-category .tag-category-list {
       margin: 10px 0;
       padding: 5px 0;
@@ -63,7 +62,7 @@
       .tag-container .tag-category .tag-category-list .post-title {
         display: block;
         margin: 15px 0;
-        color: #00c3bd;
+        color: #f37931;
         font-size: 17px;
         text-decoration: none;
         margin: 10px 0; }

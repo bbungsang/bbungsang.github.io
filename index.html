@@ -3,10 +3,24 @@ layout: default
 ---
 
 <section class="top-wrap">
-  <article class="background"></article>
-  <a href="#" class="photo"><img src="/images/code.png" alt=""></a>
+  <article class="background">
+    <div class="words">
+      <li class="en">
+        BBUNGSANG
+        <p>DEV LOG</p>
+      </li>
+      <li class="ko">뿡상 개발 로그</li>
+      <li>
+        <a href="https://www.facebook.com/profile.php?id=100003805377149" class="icons"><img src="/images/facebook.png" width="20px"></a>
+        ·
+        <a href="https://github.com/bbungsang" class="icons"><img src="/images/github.png" width="20px"></a>
+        <!-- <a href="#" class="icons"><img src="/images/gmail.png" width="23px"></a> -->
+      </li>
+    </div>
+  </article>
+  <!-- <a href="#" class="photo"><img src="/images/code.png" alt=""></a> -->
 </section>
-<section class="desc">
+<!-- <section class="desc">
   <h1>bbungsang devlog</h1>
   <h3>뿡상 개발 로그</h2>
   <a href="https://www.facebook.com/profile.php?id=100003805377149" class="icons"><img src="/images/facebook.png" width="20px"></a>
@@ -14,7 +28,7 @@ layout: default
   <a href="https://github.com/bbungsang" class="icons"><img src="/images/github.png" width="20px"></a>
   ·
   <a href="#" class="icons">About</a>
-</section>
+</section> -->
 
 <section class="post-wrap">
   {% for post in site.posts|limit:10 %}

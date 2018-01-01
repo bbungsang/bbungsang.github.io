@@ -28,30 +28,29 @@
 
     .my-content {
       margin: 0 30px;
-      font-style: italic;
-      // font-family: 'Architects Daughter';
       font-size: 13px;
       color: #666666;
 
       p {
+        font-style: italic;
         margin: 3px 0;
         color: #959595;
       }
 
       .home {
-        margin-top: 15px;
-        width: 120px;
-        height: 32px;
-        border: 1px solid #00c3bd;
+        display: inline-block;
+        width: 100px;
+        height: 25px;
+        line-height: 25px;
+        margin-top: 20px;
+        border: 1px solid #f37931;
         border-radius: 16px;
         background: #fafafa;
-
-        a {
-          color: #00c3bd;
-          font-size: 14px;
-          font-family: 'Nanumbarunpen';
-          text-decoration: none;
-        }
+        color: #f37931;
+        font-size: 14px;
+        font-family: 'Nanumbarunpen';
+        text-decoration: none;
+        font-style: normal;
       }
     }
   }
@@ -70,13 +69,13 @@
         font-family: 'Nanumbarunpen';
 
         &:hover {
-          color: #00c3bd;
+          color: #f37931;
           transition: 0.2s;
 
           span {
             display: inline-block;
             width: 30px;
-            border-bottom: 1px solid #00c3bd;
+            border-bottom: 1px solid #f37931;
             margin: 0 5px 5px 5px;
             transition: 0.2s;
           }
