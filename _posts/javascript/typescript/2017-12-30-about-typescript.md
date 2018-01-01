@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "About TypeScript"
+title:  "[TypeScript] About TypeScript"
 category: [TypeScript, typescript]
 tags:
   - JavaScript
@@ -9,9 +9,9 @@ comments: true
 ---
 
 ## What's TypeScript?
-`HTML5`의 등장은 Flash, Silverlight, ActiveX 등 Plug-in에 의존하는 기존의 구축 방식을 `JavaScript`로 대체시켰다. 이는 과거에 서버에서 담당하는 많은 업무를 클라이언트 측으로 이동시켰고, JavaScript의 위상은 높아지게 하였다.
+`HTML5`의 등장은 Flash, Silverlight, ActiveX 등 Plug-in에 의존하는 기존의 구축 방식을 `JavaScript`로 대체시켰다. 이는 과거에 서버에서 담당하는 많은 업무를 클라이언트 측으로 이동시켰고, JavaScript의 위상을 높아지게 하였다.
 
-JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 익숙한 개발자에게 혼란과 디버그, 테스트 공수가 증가하는 등의 문제를 야기시킬 수 있기 때문에 대규모 개발 시에는 주의해야 한다.
+JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 익숙한 개발자에게 혼란과 디버그, 테스트 공수가 증가하는 등의 문제를 야기시킬 수 있기 때문에 대규모 개발시에는 주의해야 한다.
 
 > #### JavaScript의 다른 객체지향 언어와 구별되는 대표적인 특징
 - Prototype-based Object Oriented Language
