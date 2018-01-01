@@ -171,7 +171,7 @@
   <p>TypeScript의 클래스는 ECMAScript 6의 클래스와 상당히 유사하지만 몇 가지 고유 기능이 존재한다.</p>
 </blockquote>
 
-<h2 id="typescript의-class">TypeScript의 Class</h2>
+<h2 id="typescript-class의-고유-기능">TypeScript Class의 고유 기능</h2>
 <h3 id="1-멤버-변수">1. 멤버 변수</h3>
 <h4 id="ecmascript-6">ECMAScript 6</h4>
 <p>클래스는 <code class="highlighter-rouge">메소드만을 포함</code>할 수 있으며(즉, 클래스 바디에 멤버 변수를 정의할 수 없고)  반드시 생성자 내부에 멤버 변수를 정의하고 초기화한다.</p>
@@ -195,8 +195,47 @@
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">pocketmon</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pocketmon</span><span class="p">(</span><span class="s1">'피카츄'</span><span class="p">,</span> <span class="s1">'라이츄'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">pocketmon</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pocketmon</span><span class="p">(</span><span class="s1">'피카츄'</span><span class="p">,</span> <span class="s1">'라이츄'</span><span class="p">);</span>
 <span class="nx">pocketmon</span><span class="p">.</span><span class="nx">evolution</span><span class="p">();</span> <span class="c1">// 실행 결과: 피카츄가 진화하면 라이츄!!</span>
+</code></pre>
+</div>
+
+<h3 id="2-접근-제한자">2. 접근 제한자</h3>
+<p>Typescript 클래스는 클래스 기반 객체지향 언어가 지원하는 public, private, protected 접근 제한자를 지원하며 의미 또한 동일하다.</p>
+
+<p>하지만, 접근 제한자를 명시하지 않았을 경우, 클래스 기반 객체지향 언어는 암묵적으로 protected로 지정되어 패키지 레벨로 공개되지만 TypeScript의 경우 암묵적으로 <code class="highlighter-rouge">public</code>이 지정된다.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Pikachu</span> <span class="p">{</span>
+  <span class="kr">public</span> <span class="nx">name</span><span class="err">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="kr">protected</span> <span class="nx">attack</span><span class="err">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="kr">private</span> <span class="nx">secret</span><span class="err">:</span> <span class="nx">string</span><span class="p">;</span>
+
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">attack</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">secret</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">attack</span> <span class="o">=</span> <span class="nx">attack</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">secret</span> <span class="o">=</span> <span class="nx">secret</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">pikachu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pikachu</span><span class="p">(</span><span class="s1">'피카츄'</span><span class="p">,</span> <span class="s1">'백만볼트'</span><span class="p">,</span> <span class="s1">'인기투표 1위'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pikachu</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pikachu</span><span class="p">.</span><span class="nx">attack</span><span class="p">);</span> <span class="c1">// Error: Property 'attack' is protected and only accessible within class 'Pikachu' and its subclasses.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pikachu</span><span class="p">.</span><span class="nx">secret</span><span class="p">);</span> <span class="c1">// Error: Property 'secret' is private and only accessible within class 'Pikachu'.</span>
+</code></pre>
+</div>
+
+<p>자식 클래스의 경우, 접근 제한자 private의 프로퍼티는 접근 불가능하다.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Pichu</span> <span class="kr">extends</span> <span class="nx">Pikachu</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">attack</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">secret</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">attack</span><span class="p">,</span> <span class="nx">secret</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">attack</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">secret</span><span class="p">);</span> <span class="c1">// Error: Property 'secret' is private and only accessible within class 'Pikachu'.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">pichu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pichu</span><span class="p">(</span><span class="s1">'피츄'</span><span class="p">,</span> <span class="s1">'십만볼트'</span><span class="p">,</span> <span class="s1">'귀여워서 사망'</span><span class="p">)</span>
 </code></pre>
 </div>
 

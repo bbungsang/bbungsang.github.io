@@ -61,7 +61,7 @@
     margin: 35px 0 20px 0;
     font-size: 22px; }
   .markdown h4 {
-    color: #6c3789;
+    color: #f37931;
     font-size: 17px;
     margin-top: 25px; }
   .markdown a {
@@ -368,7 +368,7 @@
     .markdown pre .il {
       color: #2AA198; }
   .markdown .highlighter-rouge {
-    color: #f37931;
+    color: #8041D9;
     font-weight: normal;
     font-family: 'Courier';
     font-size: 15px;

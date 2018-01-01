@@ -26,7 +26,7 @@
 
 .markdown h3 { width: 100%; color: #78757a; margin: 35px 0 20px 0; font-size: 22px; }
 
-.markdown h4 { color: #6c3789; font-size: 17px; margin-top: 25px; }
+.markdown h4 { color: #f37931; font-size: 17px; margin-top: 25px; }
 
 .markdown a { color: #2096ba; text-decoration: none; }
 
@@ -210,4 +210,4 @@
 
 .markdown pre .il { color: #2AA198; }
 
-.markdown .highlighter-rouge { color: #f37931; font-weight: normal; font-family: 'Courier'; font-size: 15px; background: #f2f2f2; border-radius: 3px; margin: 0 5px; }
+.markdown .highlighter-rouge { color: #8041D9; font-weight: normal; font-family: 'Courier'; font-size: 15px; background: #f2f2f2; border-radius: 3px; margin: 0 5px; }
