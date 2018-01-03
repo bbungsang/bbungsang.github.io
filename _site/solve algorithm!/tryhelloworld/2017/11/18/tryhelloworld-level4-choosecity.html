@@ -193,7 +193,7 @@
 
 <p><strong>[파이썬 1]</strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">copy</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">copy</span>
 
 <span class="k">def</span> <span class="nf">my_choose_city1</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
     <span class="n">tmp</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
@@ -207,8 +207,7 @@
 
 <span class="c"># 테스트 코드</span>
 <span class="k">print</span><span class="p">(</span><span class="n">chooseCity</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">이동 거리 += 인구수 * 절대값(자기 자신의 위치 - 이동할 도시의 위치)</code>이다. 이동 거리를 구하면 인구수가 무의미해지기 때문에 인구수에 해당하는 인덱스에 이동 거리 값으로 치환했다. 각각의 이동 거리를 다 구하고 치환시킨 후, 이동 거리가 작은 값을 기준으로 분류한다. sorted()는 기본적으로 0번 인덱스를 기준으로 정렬하기 때문에 이동 거리가 같은 값일 경우, 위치가 낮은 순으로 정렬할 것이다. 최종적으로 city의 0번 인덱스의 0번 인덱스, 1이 답에 해당한다.</p>
 
@@ -216,7 +215,7 @@
 
 <p><strong>[파이썬 2]</strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_choose_city2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">city</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_choose_city2</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">city</span><span class="p">):</span>
     <span class="n">city</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c"># sort()는 기본적으로 0번 인덱스를 기준으로 정렬</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">city</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="n">city</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
@@ -226,8 +225,7 @@
         <span class="k">if</span> <span class="n">right</span> <span class="o">&gt;</span> <span class="n">left</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">city</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">result</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이 풀이 방식은 <a href="https://pignuante.github.io/2017-06-21/TryHelloWorldLevel4_2/">Pignuante</a>님이 푼 원리를 참고한 것이다.</p>
 
@@ -241,7 +239,7 @@
 
 <p><strong>[파이썬]</strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">other_choose_city</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">city</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">other_choose_city</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">city</span><span class="p">):</span>
     <span class="n">city</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">city</span><span class="p">])</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
@@ -250,8 +248,7 @@
         <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">total</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span> 
             <span class="k">break</span>
     <span class="k">return</span> <span class="n">city</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
     </section>

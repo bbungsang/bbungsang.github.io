@@ -167,13 +167,12 @@
     <section class="post-content">
       <h2 id="1-가상-환경-만든-후-장고-프로젝트-실행하기">1. 가상 환경 만든 후, 장고 프로젝트 실행하기</h2>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">pyenv</span> <span class="n">virtualenv</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">3</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="n">pyenv</span> <span class="n">virtualenv</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">3</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
 <span class="c"># 해당 디렉토리 이동 후 가상 환경 적용</span>
 <span class="o">&gt;</span> <span class="n">pyenv</span> <span class="n">local</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
 <span class="c"># 장고 설치 후 프로젝트 생성하기</span>
 <span class="o">&gt;</span> <span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startproject</span> <span class="n">deploy</span><span class="o">-</span><span class="n">ec2</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><br /></p>
 <h2 id="2-settings-설정하기">2. settings 설정하기</h2>
 <h4 id="디렉토리-구조">디렉토리 구조</h4>
@@ -208,7 +207,7 @@ settings_deploy.json</a></li>
 <p><br /></p>
 <h4 id="기존의-settingspy-를-가져오되-아래와-같이-설정을-추가">기존의 settings.py 를 가져오되 아래와 같이 설정을 추가</h4>
 <p><strong>[base.py]</strong></p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Build paths inside the project like this: os.path.join(BASE_DIR, ...)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build paths inside the project like this: os.path.join(BASE_DIR, ...)</span>
 <span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">))))</span>
 <span class="n">ROOT_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
 
@@ -228,17 +227,15 @@ settings_deploy.json</a></li>
 <span class="c"># debug.py 에서 명시해주므로 아래 코드는 주석 처리한다.</span>
 <span class="c"># DEBUG = True</span>
 <span class="c"># ALLOWED_HOSTS = []</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><strong>[debug.py]</strong></p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">config_secret_debug</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">CONFIG_SECRET_DEBUG_FILE</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 <span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="n">config_secret_debug</span><span class="p">[</span><span class="s">'django'</span><span class="p">][</span><span class="s">'allowed_hosts'</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li><em>DEBUG</em> 와 <em>ALLOWED_HOSTS</em> 에 따라서 runserver 명령어가 달라진다.</li>
   <li><code class="highlighter-rouge">./manage.py runserver</code> ➜ <br />
@@ -260,7 +257,7 @@ settings_deploy.json</a></li>
         
         
         <li class="prev-or-next" align="right" style="float: right;">
-          <a href="/aws/2017/06/29/(2)EC2-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html">
+          <a href="/aws/2017/06/29/(2)EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html">
             [AWS] 2. EC2 인스턴스 생성하기...
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>

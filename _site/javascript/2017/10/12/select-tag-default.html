@@ -176,7 +176,7 @@
 
 <h2 id="selectedindex-활용-예시">selectedIndex 활용 예시</h2>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'운영체제'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'리눅스'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'OS'</span><span class="p">))</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'운영체제'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'리눅스'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'OS'</span><span class="p">))</span> <span class="p">{</span>
       <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'id_category'</span><span class="p">).</span><span class="nx">selectedIndex</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'알고리즘'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'자료구조'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'Algorithm'</span><span class="p">))</span> <span class="p">{</span>
@@ -188,8 +188,7 @@
     <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'데이터베이스'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'SQL'</span><span class="p">)</span> <span class="o">||</span> <span class="nx">title</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">'DB'</span><span class="p">))</span> <span class="p">{</span>
       <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'id_category'</span><span class="p">).</span><span class="nx">selectedIndex</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
     <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><code class="highlighter-rouge">title.include('...☆')</code> 책 제목에 ‘…☆’에 해당하는 문자열이 존재하면,</li>
@@ -219,6 +218,13 @@
           </a>
         </li>
         
+        
+        <li class="prev-or-next" align="right" style="float: right;">
+          <a href="/javascript/2018/01/03/function-declarations-expressions.html">
+            [JS Function] 함수 선언과 함수...
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
         
       </ul>
       <!-- <section class="my-intro">

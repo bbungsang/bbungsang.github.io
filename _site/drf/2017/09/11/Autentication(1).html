@@ -175,15 +175,14 @@
 
 <p>기본 인증 스키마는 <code class="highlighter-rouge">settings</code>에서 <code class="highlighter-rouge">DEFAULT_AUTHENTICATION_CLASSES</code>를 사용하여 설정할 수 있다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'DEFAULT_AUTHENTICATION_CLASSES'</span><span class="p">:</span> <span class="p">(</span>
         <span class="s">'rest_framework.authentication.BasicAuthentication'</span><span class="p">,</span>
         <span class="s">'rest_framework.authentication.SessionAuthentication'</span><span class="p">,</span>
         <span class="p">[</span><span class="o">...</span> <span class="err">여러</span> <span class="err">종류의</span> <span class="err">인증</span> <span class="err">스키마</span><span class="p">]</span>
     <span class="p">)</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="api-뷰에-authentication-적용하기">API 뷰에 Authentication 적용하기</h2>
 
@@ -191,15 +190,14 @@
 
 <p><code class="highlighter-rouge">APIView</code>에서 <code class="highlighter-rouge">authentication_classes</code>를 통해 튜플 형태의 단위별 Authentication을 설정할 수 있다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
 	<span class="c"># 첫 번째 인증 클래스는 응답 유형을 결정할 때 사용한다.</span>
     <span class="n">authentication_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">SessionAuthentication</span><span class="p">,</span> <span class="n">BasicAuthentication</span><span class="p">)</span>
     <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">IsAuthenticated</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
     	<span class="p">[</span><span class="o">...</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>DEFAULT_AUTHENTICATION_CLASSES를 설정하면, 설정한 기본 인증 제도 하에 이 DRF를 실행하겠다는 의미를 전제하고 있다. 즉, 기본적으로 SessionAuthentication(모든 페이지에 세션 인증 반영)을 설정했고, 특정 페이지만 TokenAuthentication으로 인증할 경우, 해당 View에 별도로 선언해야 한다.</li>
@@ -209,13 +207,12 @@
 
 <p>또는 <code class="highlighter-rouge">@api_view</code> 데코레이터를 통해 FBV에서 설정할 수도 있다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nd">@api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">])</span>
 <span class="nd">@authentication_classes</span><span class="p">((</span><span class="n">SessionAuthentication</span><span class="p">,</span> <span class="n">BasicAuthentication</span><span class="p">))</span>
 <span class="nd">@permission_classes</span><span class="p">((</span><span class="n">IsAuthenticated</span><span class="p">,))</span>
 <span class="k">def</span> <span class="nf">example_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 	<span class="p">[</span><span class="o">...</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="인증되지-않고-거부된-요청에-따른-응답">인증되지 않고 거부된 요청에 따른 응답</h2>
 <p>인증되지 않은 요청으로 권한이 거부될 때, 2개의 에러코드가 발생할 수 있다.</p>
@@ -224,10 +221,9 @@
   <li><strong>HTTP 401 Unauthorized</strong> : <code class="highlighter-rouge">WWW-Authenticate</code> 헤더가 항상 포함, 클라이언트에 인증 방법 제시한다.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/ 1.1 401 Unauthorized
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/ 1.1 401 Unauthorized
 WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><strong>HTTp 403 Permissions Denied</strong> : <code class="highlighter-rouge">WWW-Authenticate</code> 헤더가 포함되지 않는다. 요청은 성공적으로 인증됐지만 요청을 수행할 수 있는 사용 권한이 거부 된 경우 사용된다.</li>
@@ -287,12 +283,11 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
 <p><br />
 <strong>1. 토큰 인증 체계를 사용하기 위해서는 <code class="highlighter-rouge">settings</code>의 <code class="highlighter-rouge">INSTALLED_APPS 설정</code>에 <code class="highlighter-rouge">rest_framework.authtoken</code>을 추가해야 한다.</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>INSTALLED_APPS = (
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSTALLED_APPS = (
     [...]
     'rest_framework.authtoken'
 )
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br />
 <strong>2. rest_framework.authtoken 앱은 <code class="highlighter-rouge">Django 데이터베이스 마이그레이션을 제공</code>하기 때문에 설정을 변경한 후에 <code class="highlighter-rouge">migrate를 실행</code>해야 한다.</strong></p>
@@ -320,17 +315,16 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
 
 <p>[MyUser 모델]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyUser</span><span class="p">(</span><span class="n">AbstractUser</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyUser</span><span class="p">(</span><span class="n">AbstractUser</span><span class="p">):</span>
 	<span class="p">[</span><span class="o">...</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">get_user_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_pk</span><span class="p">):</span>
     	<span class="k">return</span> <span class="n">Token</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_pk</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[Login 시리얼라이저]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoginSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">Serializer</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoginSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">Serializer</span><span class="p">):</span>
     <span class="s">""" 로그인 """</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">36</span><span class="p">,</span> <span class="n">write_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">password</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">write_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -350,12 +344,11 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
             <span class="p">}</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">ret</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[Login 뷰]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoginView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoginView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
     <span class="s">""" 로그인 """</span>
 
     <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -363,8 +356,7 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
         <span class="k">if</span> <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">raise_exception</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
             <span class="n">ret</span> <span class="o">=</span> <span class="n">serializer</span><span class="o">.</span><span class="n">validated_data</span>
         <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br />
 <img src="http://localhost:4000/assets/login_token_value.png" alt="" class="center-image" /></p>
@@ -379,20 +371,18 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
 <p><br />
 <strong>4. 클라이언트가 인증하려면 토큰 키가 인증 HTTP 헤더에 포함되어야한다. 키에는 두 문자열을 공백으로 구분하여 문자열 리터럴 “Token”을 접두어로 사용해야한다.</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b
+</code></pre></div></div>
 
 <p><br />
 <strong>5. View에서 토큰 기반 인증을 사용하기 위해서는 Settings에 토큰 기반  인증을 사용할 것임을 선언해야 한다. 그렇지 않다면 Header에 아무리 토큰을 실어도 request.user가 AnonymousUser로 인식된다.</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>REST_FRAMEWORK = {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     )
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br />
 <strong>6. 인증이 필요한 뷰 실행</strong></p>
@@ -410,7 +400,7 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
 
 <p>[login.js]</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code> 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 
  <span class="err">$</span><span class="o">(</span><span class="s">"#loginForm"</span><span class="o">).</span><span class="na">submit</span><span class="o">(</span><span class="n">function</span><span class="o">(</span><span class="n">event</span><span class="o">){</span>
     <span class="n">var</span> <span class="n">username</span> <span class="o">=</span> <span class="err">$</span><span class="o">(</span><span class="s">"input#username"</span><span class="o">).</span><span class="na">val</span><span class="o">();</span>
     <span class="n">var</span> <span class="n">password</span> <span class="o">=</span> <span class="err">$</span><span class="o">(</span><span class="s">"input#password"</span><span class="o">).</span><span class="na">val</span><span class="o">();</span>
@@ -439,8 +429,7 @@ WWW-Authenticate: Basic realm="api" # 이 부분으로 인증 종류 판별
     <span class="n">event</span><span class="o">.</span><span class="na">preventDefault</span><span class="o">();</span>
   <span class="o">}</span>
   
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>submit을 할 경우, 폼의 value를 ‘username’, ‘password’ 변수에 각각 할당하고, 이를 인자로 logIn() 메서드를 실행한다.</li>

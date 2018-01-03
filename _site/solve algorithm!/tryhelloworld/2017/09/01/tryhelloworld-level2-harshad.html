@@ -178,7 +178,7 @@
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
 
 
 <span class="k">def</span> <span class="nf">Harshad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -186,12 +186,11 @@
 
 <span class="c"># 실행을 위한 코드입니다.</span>
 <span class="k">print</span><span class="p">(</span><span class="n">Harshad</span><span class="p">(</span><span class="mi">18</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[자바]</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HarshadNumber</span><span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HarshadNumber</span><span class="o">{</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isHarshad</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
         <span class="n">String</span> <span class="n">str_num</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
         <span class="n">String</span><span class="o">[]</span> <span class="n">num_arr</span> <span class="o">=</span> <span class="n">str_num</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
@@ -207,21 +206,19 @@
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sn</span><span class="o">.</span><span class="na">isHarshad</span><span class="o">(</span><span class="mi">11</span><span class="o">));</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="다른-사람-풀이">다른 사람 풀이</h3>
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Harshad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Harshad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[자바]</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HarshadNumber</span><span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HarshadNumber</span><span class="o">{</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isHarshad</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
         <span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">temp</span><span class="o">=</span><span class="n">num</span><span class="o">;</span>
@@ -237,8 +234,7 @@
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sn</span><span class="o">.</span><span class="na">isHarshad</span><span class="o">(</span><span class="mi">110</span><span class="o">));</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="느낀점">느낀점</h3>
 

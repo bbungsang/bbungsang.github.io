@@ -256,13 +256,12 @@
   <li>Jinja2 템플릿에 CSRF를 포함시키기 위해 특별한 HTML이 있다.</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display:none"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"csrfmiddlewaretoken"</span> <span class="na">value=</span><span class="s">"{{ csrf_token }}"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="http://localhost:4000" class="a-tag-deco">CSRF</a></p>
 
@@ -279,7 +278,7 @@
 
 <p>[core/jinja2.py]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># [...] import 생략</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># [...] import 생략</span>
 
 <span class="k">def</span> <span class="nf">environment</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">):</span>
 	<span class="c"># jinja2에서 Environment 클래스 인스턴스화 : 이후 해당 객체를 변형하지 말자!</span>
@@ -291,12 +290,11 @@
 		<span class="s">'dj'</span><span class="p">:</span> <span class="n">defaultfilters</span>
 	<span class="p">})</span>
 	<span class="k">return</span> <span class="n">env</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[Jinja2에서 장고 템플릿 필터 사용 예시]</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nt">&lt;table&gt;&lt;tbody&gt;</span>
 {% for purchase in purchase_list %}
 	<span class="nt">&lt;tr&gt;</span>
@@ -309,8 +307,7 @@
 {% endfor %}
 <span class="nt">&lt;/tbody&gt;&lt;/table&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="jinja2-템플릿에서는-콘텍스트-프로세서가-호출되지-않음에-유의하자">Jinja2 템플릿에서는 콘텍스트 프로세서가 호출되지 않음에 유의하자</h2>
 <ul>
@@ -321,7 +318,7 @@
 
 <p>[advertisements/middleware.py]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># [...] import 생략</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># [...] import 생략</span>
 
 <span class="k">def</span> <span class="nf">AdvertisementMiddleware</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 	<span class="k">def</span> <span class="nf">process_request</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
@@ -335,12 +332,11 @@
 		<span class="n">request</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
 			<span class="s">'ad'</span><span class="p">:</span> <span class="n">ads</span><span class="p">[</span><span class="n">random</span><span class="p">,</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="p">)]</span>
 		<span class="p">})</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[미들웨어를 이용해 구현한 콘텍스트를 템플릿에 사용]</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 {% set ctx = request.context %}
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ice-cream-advertisement"</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ ctx.ad.url }}"</span><span class="nt">&gt;</span>
@@ -348,8 +344,7 @@
 	<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
     </section>
     <br><br>

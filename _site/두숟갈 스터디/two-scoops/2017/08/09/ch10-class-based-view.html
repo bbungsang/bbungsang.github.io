@@ -227,7 +227,7 @@
 
 <p>[데코레이터 사용]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
 <span class="kn">from</span> <span class="nn">django.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
 <span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
 
@@ -240,12 +240,11 @@
 	<span class="nd">@method_decorator</span><span class="p">(</span><span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s">'/member/login/'</span><span class="p">))</span>
 	<span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">PostCreate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[믹스인 사용]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
 <span class="kn">from</span> <span class="nn">brace.views</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span>
 
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
@@ -253,8 +252,7 @@
 
 <span class="k">class</span> <span class="nc">PostCreate</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
 	<span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -263,7 +261,7 @@
   <li>클래스 기반 뷰에서도 중복되는 폼 코드 사용 시, 장고 폼을 활용할 수 있다. 해당 폼 유효성 검사를 하기 위해서 <code class="highlighter-rouge">form_valid()</code>가 자리잡게 된다.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span>
 <span class="kn">from</span> <span class="nn">brace.views</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span>
 
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
@@ -276,8 +274,7 @@
 	<span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
 		<span class="c"># 커스텀 로직</span>
 		<span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">PostCrate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>form_valid()는 유효한 폼 양식 데이터가 POST 요청일 때 호출된다.</li>

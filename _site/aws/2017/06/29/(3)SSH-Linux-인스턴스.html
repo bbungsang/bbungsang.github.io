@@ -179,11 +179,10 @@
 <p><code class="highlighter-rouge">ssh -i /path/key_pair_name.pem ubuntu@ec2-198-51-100-1.compute-1.amazonaws.com(형태의 public_dns_name)</code>
 <br /><br />
 [UNPROTECTED PRIVATE KEY FILE ERROR]</p>
-<div class="language-text highlighter-rouge"><pre class="highlight"><code>WARNING: UNPROTECTED PRIVATE KEY FILE!
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WARNING: UNPROTECTED PRIVATE KEY FILE!
 
 [...]
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li>이와 같은 에러를 뿜뿜할 경우, chmod 400 으로 소유주만 읽을 수 있도록 권한을 설정한다.</li>
   <li><code class="highlighter-rouge">chmod 400 bbungsang.pem</code></li>
@@ -222,12 +221,11 @@
 </blockquote>
 
 <blockquote>
-  <div class="language-text highlighter-rouge"><pre class="highlight"><code>AWS Access Key ID : 생성된 access key
+  <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AWS Access Key ID : 생성된 access key
 AWS Secret Access Key : 생성된 secret key
 Default region name : ap-northeast-2
 Default output format : json
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 </blockquote>
 
     </section>
@@ -243,7 +241,7 @@ Default output format : json
       <ul class="other-posts">
         
         <li class="prev-or-next">
-          <a href="/aws/2017/06/29/(2)EC2-%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%B3%E1%84%90%E1%85%A5%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.html">
+          <a href="/aws/2017/06/29/(2)EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.html">
             <span class="glyphicon glyphicon-chevron-left"></span>
             [AWS] 2. EC2 인스턴스 생성하기...
           </a>

@@ -184,15 +184,15 @@
 <h3 id="블로그에-어떤-내용을-저장할-것인지-설계하기">블로그에 어떤 내용을 저장할 것인지 설계하기</h3>
 <p>다음은 모델 클래스명, 사용할 필드, 필드 목적에 대하여 설계한 것이다.</p>
 
-<pre><code class="language-docker">Post        # 저장 단위에 대한 이름(모델명)
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Post        <span class="c"># 저장 단위에 대한 이름(모델명)</span>
 --- 속성 ---
-title       # 제목(필드명)
-text        # 내용
-author      # 작성자
-created_at  # 생성 날짜
-pub_at      # 발행 날짜
+title       <span class="c"># 제목(필드명)</span>
+text        <span class="c"># 내용</span>
+author      <span class="c"># 작성자</span>
+created_at  <span class="c"># 생성 날짜</span>
+pub_at      <span class="c"># 발행 날짜</span>
 
-</code></pre>
+</code></pre></div></div>
 
 <h3 id="어플리케이션-제작하기">어플리케이션 제작하기</h3>
 
@@ -203,19 +203,18 @@ pub_at      # 발행 날짜
 <p>manage.py 명령어를 입력할 시, 항상 <code class="highlighter-rouge">manage.py가 있는 디렉토리</code>에서 입력해야 한다.</p>
 
 <p><strong>[settings.py]</strong></p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
   <span class="s">'django.contrib.admin'</span><span class="p">,</span>
   <span class="s">'django.contrib.auth'</span><span class="p">,</span> <span class="o">...</span>
   <span class="s">'blog'</span><span class="p">,</span> <span class="c"># 반드시 ,(콤마)를 붙이자</span>
 <span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>어플리케이션 생성후, <code class="highlighter-rouge">settings</code>의 <code class="highlighter-rouge">INSTALLED_APPS</code>에 명시함으로써 Django에게 해당 어플리케이션을 사용할 것임을 알려줘야 한다.</p>
 
 <p><strong>[models.py]</strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
 
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -231,8 +230,7 @@ pub_at      # 발행 날짜
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>코드를 작성했다고 해서 데이터베이스가 바로 생성되는 것은 아니다. 반드시 마이그레이션 작업을 해야 데이터베이스가 생성된다.</p>
 
@@ -254,12 +252,11 @@ pub_at      # 발행 날짜
 
 <p><strong>[blog/admin.py]</strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span> <span class="c"># 같은 경로의 models.py에서 Post 테이블을 불러옴.</span>
 
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Post</span><span class="p">)</span> <span class="c"># 이 등록만으로도 장고 Admin에서 Post 모델을 사용할 수 있다.</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><code class="highlighter-rouge">python manage.py runserver 0:9000</code> : 9000번 포트에서 열겠다는 표현.</li>

@@ -146,66 +146,28 @@
     <section class="markdown">
   <article class="md-head">
     <div class="title">
-      [Try Hello World] Level1 x만큼 간격이 있는 n개의 숫자
+      [JS Function] 함수 선언과 함수 리터럴
     </div>
     <div class="tag-wrap">
       
       
-        <a href="/tags/#Alogorithm">
+        <a href="/tags/#JavaScript">
           <img src="/images/tag_img.png">
-          Alogorithm
-        </a>
-      
-        <a href="/tags/#Level1">
-          <img src="/images/tag_img.png">
-          Level1
+          JavaScript
         </a>
       
     </div>
   </article>
   <article class="markdown-body">
     <section class="post-content">
-      <h2 id="x만큼-간격이-있는-n개의-숫자">x만큼 간격이 있는 n개의 숫자</h2>
-<p>number_generator함수는 x와 n을 입력 받습니다.</p>
+      <p>함수는 모든 언어에서 핵심 개념이지만 자바스크립트에서 특히 강력하다고 한다. 어떤 점이 강력하다는 것일까?</p>
 
-<p>2와 5를 입력 받으면 2부터 시작해서 2씩 증가하는 숫자를 5개 가지는 리스트를 만들어서 리턴합니다.</p>
-
-<p>[2,4,6,8,10]</p>
-
-<p>4와 3을 입력 받으면 4부터 시작해서 4씩 증가하는 숫자를 3개 가지는 리스트를 만들어서 리턴합니다.</p>
-
-<p>[4,8,12]</p>
-
-<p>이를 일반화 하면 x부터 시작해서 x씩 증가하는 숫자를 n개 가지는 리스트를 리턴하도록 함수 number_generator를 완성하면 됩니다.</p>
-
-<ul>
-  <li>내가 푼 것</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">number_generator</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">list</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">number_generator</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-</code></pre></div></div>
-
-<ul>
-  <li>다른 사람 풀이</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">number_generator</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">x</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">number_generator</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h3 id="소감"><em>소감</em></h3>
-<ul>
-  <li>컴프리헨션 공부하자!</li>
-</ul>
+<blockquote>
+  <ul>
+    <li>(…)</li>
+    <li><a href="">프로토타입</a> 객체를 통해 공통되는 동작을 공유한다.</li>
+  </ul>
+</blockquote>
 
     </section>
     <br><br>
@@ -219,10 +181,17 @@
 
       <ul class="other-posts">
         
+        <li class="prev-or-next">
+          <a href="/javascript/2017/10/12/select-tag-default.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            select 태그의 selected 옵션 차등...
+          </a>
+        </li>
+        
         
         <li class="prev-or-next" align="right" style="float: right;">
-          <a href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-2.html">
-            [Try Hello World] Level1 핸드폰...
+          <a href="/javascript/2018/01/03/prototype.html">
+            [JS Function] 프로토타입에 대해서
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
         </li>

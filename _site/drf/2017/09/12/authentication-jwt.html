@@ -194,18 +194,17 @@
   <li>하지만 JSON은 ‘\n’ 등의 개행문자가 포함되어 있기 떄문에 Header에 넣기가 불편하다. 따라서 해당 JSON 문자열을 BASE64 인코딩을 통해서 하나의 문자열로 변환해야 한다.</li>
 </ul>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbungsang"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbungsang@bbungsang.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"뿡상"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbungsang"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbungsang@bbungsang.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"뿡상"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>BASE64 인코딩 결과</p>
 
-<pre><code class="language-docker">EAACcwd4rQBgBAOpQkOqdHp3Iqywfwqky25QnbJe0TJnQQlrB5AferqBq43CXmgrkRIO6yK22DHckc7G3WHUqGSZC9
-</code></pre>
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EAACcwd4rQBgBAOpQkOqdHp3Iqywfwqky25QnbJe0TJnQQlrB5AferqBq43CXmgrkRIO6yK22DHckc7G3WHUqGSZC9
+</code></pre></div></div>
 
 <h3 id="왜-사용할까">왜 사용할까?</h3>
 
@@ -229,23 +228,21 @@
 <h4 id="header">Header</h4>
 <p>헤더는 일반적으로 HMACSHA256 또는 RSA의 해시 알고리즘과 Base64 URL로 인코딩되어 있는 토큰, 두 부분으로 구성된다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"alg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HS256"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JWT"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "alg": "HS256",
+    "typ": "JWT"
+}
+</code></pre></div></div>
 
 <h4 id="payload">Payload</h4>
 <p>Claim이 들어있으며, Claim은 Entity와 추가 메타데이터에 대한 설명으로 Reserved, Public, Private 3가지 유형이 존재한다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbungsang"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "sub": "1234567890",
+    "username": "bbungsang",
+    "admin": true
+}
+</code></pre></div></div>
 
 <h4 id="signature">Signature</h4>
 <ul>
@@ -253,12 +250,11 @@
   <li>해당 Signature는 JWT 발신자를 확인하고 메세지가 변경되었는지 여부를 확인하는데 사용된다.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>HMACSHA256(
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
   secret)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br />
 <img src="/assets/jwt-example.png" alt="" class="center-image" /></p>
