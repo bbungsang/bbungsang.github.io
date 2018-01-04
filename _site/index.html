@@ -174,6 +174,34 @@
 <section class="post-wrap">
   
   <article class="posts">
+    <a class="post-title" href="/javascript/2018/01/04/global-local-variable.html">[JS Variable] 전역 변수와 지역 변수</a>
+    <p class="post-content">전역 변수
+전역 변수란 제일 바깥 범위, 함수 안에 포함되지 않은 변수를 뜻한다. 즉, window 객체에 변수를 만드는 것이다.
+
+
+  window 객체와 document 객체
+  
+    window 객체는 브라우저 전체를 담당한다.
+    document 객체는 window 객체의 속성으로 웹사이트만 담당하여 html에 관한 것들을 다룬다. 즉, html 태그를 선택하고 조작할 수 있다. (window 객체 &lt;– document...</p>
+    <small class="post-date">04 Jan 2018</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/javascript/2018/01/04/execution-context.html">[JS Execution] 실행 컨텍스트</a>
+    <p class="post-content">실행 컨텍스란?
+자바스크립트에서 코드는 크게 global 코드, function 코드, eval 코드 세 가지로 분류되며, 이 모든 코드는 실행 컨텍스트에서 실행이 된다.
+
+
+
+실행 컨텍스트에 진입하기 이전에 전역 객체가 생성되며 전역 객체의 프로퍼티는 코드의 어떠한 곳에서든지 접근할 수 있다.
+
+global 컨텍스트는 오직 하나만 존재하는 반면에 function, eval 컨텍스트는 하나의 프로그램 내에서 다수로 존재할 수 있다.
+
+fu...</p>
+    <small class="post-date">04 Jan 2018</small>
+  </article>
+  
+  <article class="posts">
     <a class="post-title" href="/javascript/2018/01/03/prototype.html">[JS Function] 프로토타입에 대해서</a>
     <p class="post-content">자바스크립트는 클래스 기반 언어는 아니지만 클래스의 개념은 존재한다고 한다. 이유인 즉, 프로토타입을 통해 클래스를 구현할 수 있기 때문에 자바스크립트를 흔히 프로토타입 기반 언어라고 한다. 프로토타입이 도대체 뭘까?
 
@@ -182,7 +210,9 @@
 - 네이버 지식 백과에서 발췌
 
 
-</p>
+프로토타입 기반 프로그래밍?
+
+  클래스 기반 언어에서는 클래스 안에 기술된 내용에 대하여 인스턴스를 생성하여 객...</p>
     <small class="post-date">03 Jan 2018</small>
   </article>
   
@@ -196,7 +226,11 @@
     프로토타입 객체를 통해 공통되는 동작을 공유한다.
   
 
-</p>
+
+함수선언(Function Declaration)
+함수 문장(Function Statement)으로, 실행 가능한 코드 블럭이 아니다.
+함수의 정의를 나타내는 문장으로 코드 해석에 따른 수행 경로가 존재하지 않는다.
+실행하여도 어떠한 결과도 반환되...</p>
     <small class="post-date">03 Jan 2018</small>
   </article>
   
@@ -287,30 +321,25 @@ JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 �
     <small class="post-date">18 Nov 2017</small>
   </article>
   
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/11/tryhelloworld-level4-hopscotch.html">[Try Hello World] Level4 땅따먹기 게임</a>
-    <p class="post-content">땅따먹기 게임
-
-영희는 땅따먹기 게임에 푹 빠졌습니다. 땅따먹기 게임의 땅은 총 N행 4열로 나누어져 있고, 모든 칸에는 점수가 쓰여 있습니다. 땅을 밟으면서 한 행씩 내려올 때, 영희는 각 행의 4칸 중 1칸만 밟으면서 내려올 수 있습니다. 땅따먹기 게임에는 같은 열을 연속해서 밟을 수가 없는 특수 규칙이 있습니다. 즉, 1행에서 (5)를 밟았다면, 2행의 (8)은 밟을 수가 없게 됩니다. 마지막 행까지 모두 내려왔을 때, 점수가 가장 ...</p>
-    <small class="post-date">11 Nov 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/10/tryhelloworld-level4-bestset.html">[Try Hello World] Level4 최고의 집합</a>
-    <p class="post-content">최고의 집합
-자연수 N개로 이루어진 집합 중에, 각 원소의 합이 S가 되는 수의 집합은 여러 가지가 존재합니다. 최고의 집합은, 위의 조건을 만족하는 집합 중 각 원소의 곱이 최대가 되는 집합을 의미합니다.
-
-집합 원소의 개수 n과 원소들의 합 s가 주어지면, 최고의 집합을 찾아 원소를 오름차순으로 반환해주는 bestSet 함수를 만들어 보세요.
-
-만약 조건을 만족하는 집합이 없을 때는 배열 맨 앞에 –1을 담아 반환하면 됩니다. 예를 들...</p>
-    <small class="post-date">10 Nov 2017</small>
-  </article>
-  
 </section>
 
 <!-- <section class="banner_wrap">
   <article class="r_post_title">
     최근 포스트 목록
+  </article>
+  
+  <article class="posts">
+    <a class="post_title" href="/javascript/2018/01/04/global-local-variable.html">
+      - [JS Variable] 전역 변수와 지역 변수
+      <small class="post-date" style="font-size: 12px; color: #aed9da;">04 Jan 2018</small>
+    </a>
+  </article>
+  
+  <article class="posts">
+    <a class="post_title" href="/javascript/2018/01/04/execution-context.html">
+      - [JS Execution] 실행 컨텍스트
+      <small class="post-date" style="font-size: 12px; color: #aed9da;">04 Jan 2018</small>
+    </a>
   </article>
   
   <article class="posts">
@@ -345,20 +374,6 @@ JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 �
     <a class="post_title" href="/typescript/2017/12/30/about-typescript.html">
       - [TypeScript] About TypeScript
       <small class="post-date" style="font-size: 12px; color: #aed9da;">30 Dec 2017</small>
-    </a>
-  </article>
-  
-  <article class="posts">
-    <a class="post_title" href="/solve%20algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html">
-      - [Try Hello World] Level5 124 나라의 숫자
-      <small class="post-date" style="font-size: 12px; color: #aed9da;">23 Nov 2017</small>
-    </a>
-  </article>
-  
-  <article class="posts">
-    <a class="post_title" href="/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/css/2017/11/21/call-by.html">
-      - Call By Value, Call By Reference, Call By Assignment
-      <small class="post-date" style="font-size: 12px; color: #aed9da;">21 Nov 2017</small>
     </a>
   </article>
   
@@ -1191,6 +1206,20 @@ JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 �
     
       <h3 id="javascript"><a>JavaScript</a></h3>
       <ul class="tags-expo-posts">
+        
+        <a class="post-title" href="/javascript/2018/01/04/global-local-variable.html">
+          <li>
+            [JS Variable] 전역 변수와 지역 변수
+          <small class="post-date">04 Jan 2018</small>
+          </li>
+        </a>
+        
+        <a class="post-title" href="/javascript/2018/01/04/execution-context.html">
+          <li>
+            [JS Execution] 실행 컨텍스트
+          <small class="post-date">04 Jan 2018</small>
+          </li>
+        </a>
         
         <a class="post-title" href="/javascript/2018/01/03/prototype.html">
           <li>

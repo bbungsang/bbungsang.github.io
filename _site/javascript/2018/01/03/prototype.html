@@ -167,6 +167,36 @@
 <em>- 네이버 지식 백과에서 발췌</em></p>
 </blockquote>
 
+<h2 id="프로토타입-기반-프로그래밍">프로토타입 기반 프로그래밍?</h2>
+<ul>
+  <li>클래스 기반 언어에서는 클래스 안에 기술된 내용에 대하여 인스턴스를 생성하여 객체를 사용한다.</li>
+  <li>프로토타입은 <code class="highlighter-rouge">원형, 원본</code>이라는 의미를 가지고 있으며, 자바스크립트에서 프로토타입은 <code class="highlighter-rouge">객체의 원형</code>이라는 뜻이다. 즉, 객체지향 언어의 클래스와 같은 역할을 한다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Ryan</span><span class="p">()</span> <span class="p">{};</span>
+<span class="kd">let</span> <span class="nx">ryan</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Ryan</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ryan</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><img src="" alt="" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">__proto__</code>: Ryan 객체를 만들어내기 위해 사용된 객체 원형으로의 연결고리, 해당 객체의 프로토타입.</li>
+  <li><code class="highlighter-rouge">constructor</code>: 생성자는 f Ryan()이다.</li>
+  <li>즉, new 연산자를 통해 만들어진 인스턴스는 f Ryan() 자신의 프로토타입을 사용하여 만들어졌다는 의미이다.</li>
+</ul>
+
+<p><code class="highlighter-rouge">__proto__.constructor</code>의 값이 함수 형태가 아니면 new 연산자를 통해 객체를 만들어 낼 수 없다. ??</p>
+
+<p>프로토타입 오브젝트
+host object의 복사본, constructor</p>
+
+<p>프로토타입 프로퍼티
+모든 함수 객체의 constructor는 prototype 이름의 속성을 가지고 있다. 이 prototype 프로퍼티는 다른 객체 생성시 객체 자신의 원형이 될 prototype 객체를 가리킨다. 즉, 자신을 통해 만들어질 객체의 원형으로 사용할 객체이다.</p>
+
+<p>Prototype Object
+Prototype Link</p>
+
 
     </section>
     <br><br>
@@ -187,6 +217,13 @@
           </a>
         </li>
         
+        
+        <li class="prev-or-next" align="right" style="float: right;">
+          <a href="/javascript/2018/01/04/execution-context.html">
+            [JS Execution] 실행 컨텍스트
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
         
       </ul>
       <!-- <section class="my-intro">

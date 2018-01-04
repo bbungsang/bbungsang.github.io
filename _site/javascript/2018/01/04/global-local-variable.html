@@ -146,7 +146,7 @@
     <section class="markdown">
   <article class="md-head">
     <div class="title">
-      [JS Function] 함수 선언과 함수 리터럴
+      [JS Variable] 전역 변수와 지역 변수
     </div>
     <div class="tag-wrap">
       
@@ -160,28 +160,33 @@
   </article>
   <article class="markdown-body">
     <section class="post-content">
-      <p>함수는 모든 언어에서 핵심 개념이지만 자바스크립트에서 특히 강력하다고 한다. 어떤 점이 강력하다는 것일까?</p>
+      <h2 id="전역-변수">전역 변수</h2>
+<p>전역 변수란 제일 바깥 범위, 함수 안에 포함되지 않은 변수를 뜻한다. 즉, <code class="highlighter-rouge">window 객체</code>에 변수를 만드는 것이다.</p>
 
 <blockquote>
+  <h4 id="window-객체와-document-객체">window 객체와 document 객체</h4>
   <ul>
-    <li>(…)</li>
-    <li><a href="">프로토타입</a> 객체를 통해 공통되는 동작을 공유한다.</li>
+    <li>window 객체는 브라우저 전체를 담당한다.</li>
+    <li>document 객체는 <code class="highlighter-rouge">window 객체의 속성</code>으로 웹사이트만 담당하여 html에 관한 것들을 다룬다. 즉, html 태그를 선택하고 조작할 수 있다. (window 객체 &lt;– document 객체)</li>
+    <li>window는 글로벌 객체로서 모든 객체를 다 포함하고 있기 때문에 생략이 가능하다. 즉, <code class="highlighter-rouge">window.alert("Hi")</code>의 경우, <code class="highlighter-rouge">alert("Hi")</code>만 써도 무방하다.</li>
   </ul>
+
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nb">global</span> <span class="o">=</span> <span class="s2">"전역 변수"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nb">global</span><span class="p">);</span>
+<span class="c1">// "전역 변수"</span>
+</code></pre></div>  </div>
 </blockquote>
 
-<h2 id="함수선언function-declaration">함수선언(Function Declaration)</h2>
-<p>함수 문장(Function Statement)으로, <code class="highlighter-rouge">실행 가능한 코드 블럭이 아니다.</code>
-함수의 정의를 나타내는 문장으로 코드 해석에 따른 <code class="highlighter-rouge">수행 경로가 존재하지 않는다.</code>
-실행하여도 어떠한 결과도 반환되지 않는다는 의미로 함수선언문을 클래스와 동일한 개념으로 이해해도 된다.</p>
+<h3 id="전역-변수를-만드는-일은-최대한-지양하자-why">전역 변수를 만드는 일은 최대한 지양하자. Why?</h3>
+<ul>
+  <li>전역 변수가 많이 선언될 수록 메모리 누수율이 높아지게 되고 이는 애플리케이션의 성능 문제를 초래할 수 있다.</li>
+  <li>여러 함수의 접근으로 값이 변경될 경우, 의도치 않은 결과값을 얻을 수 있다.</li>
+  <li>협업을 할 때, 우연의 일치로 같은 변수 이름을 사용해서 이전의 변수를 덮어쓰는 불상사를 일으킬 수 있다.</li>
+</ul>
 
-<p>함수 호이스팅 o</p>
+<h2 id="지역-변수">지역 변수</h2>
+<p>지역 변수란 함수 안에 변수를 선언하는 것이며, 함수 내부에서 return하거나 전역 변수에 할당하는 것이 아니라면 해당 함수 범위 내에서만 유효하다.</p>
 
-<h2 id="함수표현function-expression">함수표현(Function Expression)</h2>
-<p>변수에 저장
-다른 함수에 전달
-정의하여 바로 호출</p>
-
-<p>함수 호이스팅 x, 호이스팅에 영향을 받지 않는다, 클로저로 사용, 콜백으로 사용</p>
 
     </section>
     <br><br>
@@ -196,19 +201,12 @@
       <ul class="other-posts">
         
         <li class="prev-or-next">
-          <a href="/javascript/2017/10/12/select-tag-default.html">
+          <a href="/javascript/2018/01/04/execution-context.html">
             <span class="glyphicon glyphicon-chevron-left"></span>
-            select 태그의 selected 옵션 차등...
+            [JS Execution] 실행 컨텍스트
           </a>
         </li>
         
-        
-        <li class="prev-or-next" align="right" style="float: right;">
-          <a href="/javascript/2018/01/03/prototype.html">
-            [JS Function] 프로토타입에 대해서
-            <span class="glyphicon glyphicon-chevron-right"></span>
-          </a>
-        </li>
         
       </ul>
       <!-- <section class="my-intro">
