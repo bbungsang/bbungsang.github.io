@@ -177,18 +177,19 @@
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
 <span class="k">def</span> <span class="nf">bestSet</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="o">//</span><span class="n">n</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">s</span><span class="o">%</span><span class="n">n</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">s</span><span class="o">//</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">rem</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="o">%</span><span class="n">n</span><span class="p">)]</span>
 
 <span class="c"># 테스트를 위한 실행 코드</span>
 <span class="k">print</span><span class="p">(</span><span class="n">bestSet</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[자바1]</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
 <span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BestSet</span> <span class="o">{</span>
@@ -213,11 +214,12 @@
     <span class="o">}</span>
 <span class="o">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[자바2] : System.arraycopy() 사용</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
 <span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BestSet</span> <span class="o">{</span>
@@ -243,7 +245,8 @@
     <span class="o">}</span>
 <span class="o">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="느낀점">느낀점</h3>
 <p>자바로 처음에 System.arraycopy()를 사용하여 풀었다. 파이썬에서 풀었던 방식을 적용하려 하다보니 배열을 병합할 방식을 찾았고, 그 방식 중 하나가 System.arraycopy()로 복사하는 형식으로 병합된 형태의 배열을 만드는 방법이 있었다.</p>

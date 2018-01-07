@@ -172,7 +172,7 @@
 </ul>
 
 <p>[post/views.py]</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
 
 <span class="c"># 1. Post 모델을 호출할 것이므로 models.py 의 Post 를 임포트한다.</span>
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
@@ -194,7 +194,8 @@
     <span class="s">'post/post_list.html'</span><span class="p">,</span>
     <span class="n">context</span>
   <span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="첫번째-url-구상하기">첫번째 URL 구상하기</h3>
 <ul>
@@ -202,16 +203,17 @@
 </ul>
 
 <p>[config/urls.py]</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span><span class="p">,</span> <span class="n">include</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span><span class="p">,</span> <span class="n">include</span>
 <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">url</span><span class="p">(</span><span class="s">r'^admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
     <span class="n">url</span><span class="p">(</span><span class="s">r'^post/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'post.urls'</span><span class="p">)),</span>
 <span class="p">]</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <p>[post/urls.py]</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
 <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
 
 <span class="c"># 뷰의 key로 앱 이름 'post'를 지정해준다.</span>
@@ -221,7 +223,8 @@
   <span class="c"># /post/의 URL로 post_list라는 이름의 뷰가 할당되고, 뷰를 식별하기 위해 이름을 붙임</span>
   <span class="n">url</span><span class="p">(</span><span class="s">r'^$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">post_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">post_list</span><span class="p">),</span>
 <span class="p">]</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="첫번째-템플릿-구상하기">첫번째 템플릿 구상하기</h3>
 <ul>
@@ -229,7 +232,7 @@
 </ul>
 
 <p>[config/settins.py]</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">...</span>
 <span class="c"># root-dir/templates</span>
 <span class="n">TEMPLATE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'templates'</span><span class="p">)</span>
 
@@ -242,7 +245,8 @@
     <span class="c">#...</span>
   <span class="p">}</span>
   <span class="c">#...</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <ul>
   <li>이제 /post/ 의 URL로 접속하면 화면이 잘 뜬다. 하지만 이미지를 못 불러온다. 이미지를 불러올 수 있도록 몇 가지 설정해야 할 부분이 있다.</li>
 </ul>
@@ -267,22 +271,24 @@ libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk</li>
 </ol>
 
 <p>[config/settings.py]</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">...</span>
 <span class="c"># root-dir/media</span>
 <span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'media'</span><span class="p">)</span>
 
 <span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s">'/media/'</span>
 <span class="o">...</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <p>[config/urls.py]</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">...</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">...</span>
 <span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
 <span class="kn">from</span> <span class="nn">django.conf.urls.static</span> <span class="kn">import</span> <span class="n">static</span>
 
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
   <span class="o">...</span>
 <span class="p">]</span> <span class="o">+</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <ul>
   <li>이미지 출력 성공!</li>
 </ul>

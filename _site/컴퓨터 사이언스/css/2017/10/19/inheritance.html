@@ -165,10 +165,10 @@
 
 <h2 id="is-a">is-a</h2>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A laptop is a computer (O)
+<pre><code class="language-docker">A laptop is a computer (O)
 A desktop is a computer (O)
 A laptop is a desktop (X)
-</code></pre></div></div>
+</code></pre>
 
 <p>노트북은 컴퓨터의 일종으로 컴퓨터가 가지고 있는 모든 속성을 가지고 있다. 데스크탑과 노트북은 많은 특성들을 공유하지만 공유하지 않는 부분도 존재하기 때문에 <strong>데스크탑을 노트북이라고 할 수 없다.</strong> <br />
 따라서 <strong>laptop은 desktop의 클래스를 상속받을 수 없다.</strong></p>
@@ -188,7 +188,7 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
 
 <h4 id="in-파이썬">in 파이썬</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Computer</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Computer</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cpu</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">hard_disk</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ram</span> <span class="o">=</span> <span class="n">ram</span>
@@ -203,7 +203,8 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
 <span class="n">com</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">(</span><span class="s">"i7"</span><span class="p">,</span> <span class="s">"12GB"</span><span class="p">,</span> <span class="s">"1TB"</span><span class="p">)</span>
 <span class="n">com</span><span class="o">.</span><span class="n">calculate</span><span class="p">()</span>
 <span class="n">com</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[결과]</p>
 
@@ -213,7 +214,7 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
 
 <h4 id="in-자바">in 자바</h4>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Computer</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Computer</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">calculrate</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"computer calculating"</span><span class="o">);</span>
     <span class="o">}</span>
@@ -230,7 +231,8 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
         <span class="n">com</span><span class="o">.</span><span class="na">calculrate</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[결과]</p>
 
@@ -239,7 +241,7 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
 <h3 id="오버라이딩">오버라이딩</h3>
 <p>오버라이딩 같은 이름의 함수가 존재한다면 상속받는 함수보다는 현재 객체에서 정의하고 있는 함수의 우선 순위가 더 높다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Computer</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Computer</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cpu</span><span class="p">,</span> <span class="n">ram</span><span class="p">,</span> <span class="n">hard_disk</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cpu</span> <span class="o">=</span> <span class="n">cpu</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ram</span> <span class="o">=</span> <span class="n">ram</span>
@@ -256,7 +258,8 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
 
     <span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"laptop calculating, a little bit slow"</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>Computer의 속성을 정의하지 않아도 상속받았기 때문에 calculator()가 존재한다.</li>
@@ -265,20 +268,21 @@ The last method overwrites any previous method 마지막에 정의한 메소드�
 
 <p>[결과]</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; l1 = Laptop("i7", "12GB", "1TB")
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; l1 = Laptop("i7", "12GB", "1TB")
 &gt;&gt;&gt; l1.calculate()
 laptop calculating, a little bit slow
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="has-a">has-a</h2>
 <p>현재는 잘 쓰이지 않지만 옛날에는 이 조건에서도 상속을 사용했었음을 알아야 할 필요가 있다.</p>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A policeman has a gun
-</code></pre></div></div>
+<pre><code class="language-docker">A policeman has a gun
+</code></pre>
 
 <p>경찰관은 총을 가지고 있다, 총을 상속받으면 위 문장을 표현할 수 있다. 하지만 경찰관은 총을 가지고 있기도, 가지고 있지 않기도 하다는 것을 고려해야한다. 이럴 때 사용하는 것이 바로 <code class="highlighter-rouge">객체 합성</code>이다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Gun</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Gun</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">kind</span>
 
@@ -307,11 +311,12 @@ laptop calculating, a little bit slow
                 <span class="bp">self</span><span class="o">.</span><span class="n">gun</span><span class="o">.</span><span class="n">bbangya</span><span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">print</span><span class="p">(</span><span class="s">"총을 소지하고 있지 않습니다."</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[결과]</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; p1 = Police("리볼버")
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; p1 = Police("리볼버")
 &gt;&gt;&gt; p1.shoot()
 빵야~ 빵야~
 
@@ -322,7 +327,8 @@ laptop calculating, a little bit slow
 &gt;&gt;&gt; p2.get_gun("기관총")
 &gt;&gt;&gt; p2.shoot()
 빵야~ 빵야~
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>위와 같이 객체를 핸들링하는 것을 <code class="highlighter-rouge">객체 합성</code>이라고 하며 이럴 경우(has-a) 상속을 사용하는 것은 부적절하다.</p>
 

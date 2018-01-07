@@ -186,11 +186,11 @@
   </li>
   <li>
     <p><code class="highlighter-rouge">_includes</code> 디렉토리에 comments.html 을 생성하고 얻은 코드를
-<code class="highlighter-rouge">{% if page.comments %}</code> 와 <code class="highlighter-rouge">{% endif %}</code> 사이에 붙여넣는다.</p>
+<code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page.comments</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> 와 <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> 사이에 붙여넣는다.</p>
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
 <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">comments</span> <span class="o">%</span><span class="p">}</span>
   <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s">"disqus_thread"</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
@@ -212,31 +212,34 @@
 
 </span><span class="s">{</span><span class="si">% </span><span class="s">endif </span><span class="si">%</span><span class="s">}</span><span class="err">
 
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <ul>
   <li><code class="highlighter-rouge">_layouts</code> 디렉토리의 <code class="highlighter-rouge">post.html</code> 에서 댓글 기능을 붙일 위치에 다음과 같이 include를 한다.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
 <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
   <span class="p">{{</span> <span class="n">content</span> <span class="p">}}</span>
   <span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="n">comments</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
 <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="step4-포스트에-disqus-사용하기">Step4) 포스트에 Disqus 사용하기</h3>
 <p>Disqus를 사용하려면, YAML frontmatter에 아래와 같이 comments: true를 삽입하면 된다. comments: false나 comments: 자체를 넣지 않으면 Disqus가 나타나지 않는다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>
 <span class="o">---</span>
 <span class="n">layout</span><span class="p">:</span> <span class="n">default</span>
 <span class="n">comments</span><span class="p">:</span> <span class="n">true</span>
 <span class="c"># other options</span>
 <span class="o">---</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
     </section>
     <br><br>

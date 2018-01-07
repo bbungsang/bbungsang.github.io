@@ -289,10 +289,11 @@
 <strong>해결 방법 :</strong> 자바스크립트 정규표현식 활용</p>
 </blockquote>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="kr">eval</span><span class="p">(</span><span class="s2">"("</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'input:checkbox:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">"("</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'input:checkbox:checked'</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">title</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">&lt;</span><span class="se">/</span><span class="sr">b&gt;</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'title'</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><code class="highlighter-rouge">/[&lt;/b&gt;]/g</code> : 대괄호 안의 &lt;, /, b, &gt; 에 해당하는 모든 문자, <code class="highlighter-rouge">g</code>는 전역 검색을 의미. 즉, 첫 번째 일치 결과에서 멈추지 않고 전체 문자열에 대해 패턴을 검색하는 것을 의미한다.</p>
 

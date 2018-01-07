@@ -31,8 +31,8 @@
         .markdown .md-head .tag-wrap a:hover {
           background: #f37931; }
   .markdown .center-image {
-    width: 70%;
-    max-width: 445px;
+    width: 85%;
+    max-width: 600px;
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -252,7 +252,7 @@
     .markdown pre .cp {
       color: #859900; }
     .markdown pre .c1 {
-      color: #586E75; }
+      color: #EDD200; }
     .markdown pre .cs {
       color: #859900; }
     .markdown pre .gd {
@@ -316,7 +316,7 @@
     .markdown pre .nn {
       color: #93A1A1; }
     .markdown pre .nx {
-      color: #555; }
+      color: #EAEAEA; }
     .markdown pre .py {
       color: #93A1A1; }
     .markdown pre .nt {

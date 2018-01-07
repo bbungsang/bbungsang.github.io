@@ -172,7 +172,7 @@
 
 <p>[core/validators.py]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
 
 
 <span class="k">def</span> <span class="nf">validate_tasty</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -180,7 +180,8 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'Tasty'</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s">'Must start with Tasty'</span>
         <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="모델-상속model-inheritance">모델 상속(Model Inheritance)</h3>
 <ul>
@@ -196,7 +197,7 @@
 
 <p>[config/models.py]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 <span class="kn">from</span> <span class="nn">.validators</span> <span class="kn">import</span> <span class="n">validate_tasty</span>
 
@@ -210,7 +211,8 @@
 	<span class="c"># TastyTitleAbstractModel 을 추상화 모델로 만들어 준다.</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">abstract</span> <span class="o">=</span> <span class="bp">True</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>부모 모델인 TastyTitleAbstractModel 이 실제로 또는 물리적으로 존재하지 않는 가상 클래스가 된다.</li>
@@ -219,14 +221,15 @@
   <li>공통된 필드가 많이 있는 모델 클래스들이 있을 때 유용하다.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 <span class="kn">from</span> <span class="nn">core.models</span> <span class="kn">import</span> <span class="n">TastyTitleAbstractModel</span>
 
 
 <span class="k">class</span> <span class="nc">Cake</span><span class="p">(</span><span class="n">TastyTitleAbstractModel</span><span class="p">):</span>
     <span class="n">color</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>TastyTitleAbstractModel 클래스를 상속받는 모델들은 <code class="highlighter-rouge">title</code> 이 ‘Tasty’로 시작되지 않을 경우 유효성 검사 에러를 발생시킨다.</li>
@@ -240,7 +243,7 @@
 
 <p>[flavors/forms.py]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CakeForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CakeForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
     <span class="s">""" 커스텀 폼 """</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">CakeForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -249,11 +252,12 @@
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Cake</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[flavors/views.py]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CakeActionMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CakeActionMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Cake</span>
     <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s">'title'</span><span class="p">,</span>
@@ -281,7 +285,8 @@
 
 <span class="k">class</span> <span class="nc">CakeDetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Cake</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>CakeCreateView, CakeUpdateView 에서 입력된 데이터 유효성 검사를 위해 CakeForm 이용</li>
@@ -312,7 +317,7 @@
 
 <h4 id="myuser-model">MyUser Model</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyUser</span><span class="p">(</span><span class="n">AbstractUser</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyUser</span><span class="p">(</span><span class="n">AbstractUser</span><span class="p">):</span>
 	<span class="n">my_photo</span> <span class="o">=</span> <span class="n">CustomImageField</span><span class="p">(</span>
         <span class="n">upload_to</span><span class="o">=</span><span class="s">'user/</span><span class="si">%</span><span class="s">Y/</span><span class="si">%</span><span class="s">m/</span><span class="si">%</span><span class="s">d'</span><span class="p">,</span>
         <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
@@ -324,7 +329,8 @@
         <span class="n">max_length</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span>
         <span class="n">blank</span><span class="o">=</span><span class="bp">True</span>
     <span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>ModelForm 에서 사용자가 기본으로 username, password 필드를 입력해야하지만,</li>
@@ -337,18 +343,19 @@
 
 <p>[나쁜 예제] - 따라하지 말 것! 모델 필드 정의를 반복해서 이용</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TutorRegisterForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TutorRegisterForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
 	<span class="n">my_photo</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 	<span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 	<span class="n">nickname</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 	<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
 		<span class="n">model</span> <span class="o">=</span> <span class="n">MyUser</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[좋은 예제] - ModelForm __init__() 메서드에서 새로운 속성을 적용</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TutorRegisterForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TutorRegisterForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
 	<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
 		<span class="n">model</span> <span class="o">=</span> <span class="n">MyUser</span>
 
@@ -358,11 +365,12 @@
 		<span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s">"my_photo"</span><span class="p">]</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="bp">True</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s">"email"</span><span class="p">]</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="bp">True</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s">"nickname"</span><span class="p">]</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="bp">True</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h4 id="상속을-통해-코드-줄이기">상속을 통해 코드 줄이기</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SignUpForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SignUpForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
 	<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
 		<span class="n">model</span> <span class="o">=</span> <span class="n">MyUser</span>
 		<span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">)</span>
@@ -376,18 +384,20 @@
 
 	<span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="n">SignUpForm</span><span class="o">.</span><span class="n">Meta</span><span class="p">):</span>
 		<span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">,</span> <span class="s">'my_photo'</span><span class="p">,</span> <span class="s">'email'</span><span class="p">,</span> <span class="s">'nickname'</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h4 id="폼-클래스를-이용한-뷰">폼 클래스를 이용한 뷰</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SignUpView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SignUpView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
 	<span class="n">model</span> <span class="o">=</span> <span class="n">MyUser</span>
 	<span class="n">form_class</span> <span class="o">=</span> <span class="n">SignUpForm</span>
 
 <span class="k">class</span> <span class="nc">TutorRegisterView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
 	<span class="n">model</span> <span class="o">=</span> <span class="n">MyUser</span>
 	<span class="n">form_class</span> <span class="o">=</span> <span class="n">TutorRegisterForm</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
     </section>
     <br><br>

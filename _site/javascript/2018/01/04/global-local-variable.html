@@ -171,10 +171,11 @@
     <li>window는 글로벌 객체로서 모든 객체를 다 포함하고 있기 때문에 생략이 가능하다. 즉, <code class="highlighter-rouge">window.alert("Hi")</code>의 경우, <code class="highlighter-rouge">alert("Hi")</code>만 써도 무방하다.</li>
   </ul>
 
-  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nb">global</span> <span class="o">=</span> <span class="s2">"전역 변수"</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nb">global</span><span class="p">);</span>
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">global</span> <span class="o">=</span> <span class="s2">"전역 변수"</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">global</span><span class="p">);</span>
 <span class="c1">// "전역 변수"</span>
-</code></pre></div>  </div>
+</code></pre>
+  </div>
 </blockquote>
 
 <h3 id="전역-변수를-만드는-일은-최대한-지양하자-why">전역 변수를 만드는 일은 최대한 지양하자. Why?</h3>

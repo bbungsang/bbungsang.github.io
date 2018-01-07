@@ -177,13 +177,13 @@
 #3. 프로토타입 객체의 생성자 호출 후, <code class="highlighter-rouge">this 포인터</code>로 새로 만든 객체에 전달 <br />
 #4. 생성자는 전달 인자에 따라 객체를 초기화한다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 프로토타입 생성</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// 프로토타입 생성</span>
 <span class="kd">function</span> <span class="nx">A</span><span class="p">(</span><span class="nx">member</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">this</span><span class="p">.</span><span class="nx">member</span> <span class="o">=</span> <span class="nx">member</span>
 <span class="p">}</span>
 
 <span class="c1">// 인스턴스 생성</span>
-<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">(</span><span class="s2">"Ryan"</span><span class="p">)</span> <span class="c1">// A {name: "Ryan"}</span>
+<span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">(</span><span class="s2">"Ryan"</span><span class="p">)</span> <span class="c1">// A {name: "Ryan"}</span>
 
 <span class="cm">/* 
 * 인스턴스 생성 과정
@@ -192,7 +192,8 @@
 * 3. A가 실행되며 A의 this 키워드가 a를 가리킨다.
 * 4. A {name: "Ryan"}
 */</span> 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>new 없이 인스턴스를 생성했다면 생성자 내부 this가 전역을 가리킨다. 생성자 내부에 this.member 와 같이 정의했을 경우, 전역 객체에 member라는 새로운 프로퍼티가 생성된다.</p>
 
@@ -200,14 +201,15 @@
   <h4 id="3-this-포인터로-새로-만든-객체에-전달">3. this 포인터로 새로 만든 객체에 전달</h4>
   <p>this 포인터가 가리키는 프로퍼티만 new 연산자로 만든 인스턴스에 전달된다.</p>
 
-  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">A</span><span class="p">()</span> <span class="p">{</span>
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">A</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"피카츄"</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">"yellow"</span>
 <span class="p">}</span>
 <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">()</span> <span class="c1">// A {color: "yellow"}</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">name</span> <span class="c1">// undefined</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// yellow</span>
-</code></pre></div>  </div>
+</code></pre>
+  </div>
 </blockquote>
 
 <h2 id="객체-리터럴-vs-new-연산자">객체 리터럴 VS new 연산자</h2>

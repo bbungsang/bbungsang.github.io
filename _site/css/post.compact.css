@@ -12,7 +12,7 @@
 
 .markdown .md-head .tag-wrap a:hover { background: #f37931; }
 
-.markdown .center-image { width: 70%; max-width: 445px; display: table; margin-left: auto; margin-right: auto; margin-bottom: 35px; }
+.markdown .center-image { width: 85%; max-width: 600px; display: table; margin-left: auto; margin-right: auto; margin-bottom: 35px; }
 
 .markdown table { margin: 20px 5%; border-collapse: collapse; }
 
@@ -96,7 +96,7 @@
 
 .markdown pre .cp { color: #859900; }
 
-.markdown pre .c1 { color: #586E75; }
+.markdown pre .c1 { color: #EDD200; }
 
 .markdown pre .cs { color: #859900; }
 
@@ -158,7 +158,7 @@
 
 .markdown pre .nn { color: #93A1A1; }
 
-.markdown pre .nx { color: #555; }
+.markdown pre .nx { color: #EAEAEA; }
 
 .markdown pre .py { color: #93A1A1; }
 

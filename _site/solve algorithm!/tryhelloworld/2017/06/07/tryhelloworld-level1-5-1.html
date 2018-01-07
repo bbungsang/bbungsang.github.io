@@ -186,7 +186,7 @@
   <li>내가 푼 것</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sort_dictionary</span><span class="p">(</span><span class="n">dic</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sort_dictionary</span><span class="p">(</span><span class="n">dic</span><span class="p">):</span>
     <span class="n">re_arrange</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">sort_name</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">dic</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sort_name</span><span class="p">)):</span>
@@ -194,15 +194,17 @@
     <span class="k">return</span> <span class="n">re_arrange</span>
 
 <span class="k">print</span><span class="p">(</span> <span class="n">sort_dictionary</span><span class="p">(</span> <span class="p">{</span><span class="s">"김철수"</span><span class="p">:</span><span class="mi">78</span><span class="p">,</span> <span class="s">"이하나"</span><span class="p">:</span><span class="mi">97</span><span class="p">,</span> <span class="s">"정진원"</span><span class="p">:</span><span class="mi">88</span><span class="p">}</span> <span class="p">))</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>다른 사람 풀이</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sort_dictionary</span><span class="p">(</span><span class="n">dic</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sort_dictionary</span><span class="p">(</span><span class="n">dic</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
     </section>
     <br><br>

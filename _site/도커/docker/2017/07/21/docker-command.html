@@ -170,13 +170,15 @@
   <li>root가 아닌 사용자가 sudo 없이 명령어를 사용하려면 해당 사용자를 docker 그룹에 추가해야한다.</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; sudo usermod -aG docker $USER(현재 사용자) / bbungsang('bbungsang'이라는 사용자)
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; sudo usermod -aG docker $USER(현재 사용자) / bbungsang('bbungsang'이라는 사용자)
+</code></pre>
+</div>
 
 <h3 id="설치-확인하기">설치 확인하기</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; docker version
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; docker version
+</code></pre>
+</div>
 
 <ul>
   <li><code class="highlighter-rouge">Client</code>와 <code class="highlighter-rouge">Server</code>가 각각 존재하고 있음을 확인할 수 있다.</li>
@@ -189,14 +191,15 @@
   <li>docker 실행 명령어</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+</code></pre>
+</div>
 
 <ul>
   <li>‘ubuntu:16.04 컨테이너를 생성하고 컨테이너 내부에 진입하기</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; docker run ubuntu:16.04
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; docker run ubuntu:16.04
 # 정상적으로 실행됐지만 무엇을 하라고 명령어를 따로 전달하지 않았기 때문에 생성 혹은 (존재할 경우)실행되자마자 종료된다.
 
 &gt;&gt;&gt; docker run --rm -it ubuntu:16.04 /bin/bash
@@ -206,11 +209,12 @@
 
 &gt;&gt;&gt; exit
 # bash 쉘 종료, 컨테이너도 같이 종료된다.
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="기본-명령어">기본 명령어</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; docker ps
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; docker ps
 # 컨테이너 목록 확인
 
 &gt;&gt;&gt; docker stop [OPTIONS] CONTAINER [CONTAINER...]
@@ -227,7 +231,8 @@
 
 &gt;&gt;&gt; docker rmi [OPTIONS] IMAGE [IMAGE...]
 # 이미지 삭제
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="도커-실행-후-자동-서버-실행-스크립트">도커 실행 후 자동 서버 실행 스크립트</h2>
 
@@ -237,69 +242,69 @@
   <li>해당 스크립트에서는 y/n 에 대해 대답할 수 없기 때문에 -y 옵션을 줘야한다.</li>
 </ul>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ubuntu 에서 시작</span>
-<span class="k">FROM</span><span class="s">            ubuntu:16.04</span>
-<span class="c"># 관리자</span>
-<span class="k">MAINTAINER</span><span class="s">      bbungsang@gmail.com</span>
+<pre><code class="language-docker"># ubuntu 에서 시작
+FROM            ubuntu:16.04
+# 관리자
+MAINTAINER      bbungsang@gmail.com
 
-<span class="k">RUN             </span>apt-get <span class="nt">-y</span> update
-<span class="k">RUN             </span>apt-get install <span class="nt">-y</span> python-pip
-<span class="k">RUN             </span>apt install <span class="nt">-y</span> git vim
-</code></pre></div></div>
+RUN             apt-get -y update
+RUN             apt-get install -y python-pip
+RUN             apt install -y git vim
+</code></pre>
 
 <ul>
   <li>의존성 패키지 설치 후, pyenv 설치</li>
 </ul>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">RUN             </span>apt-get install <span class="nt">-y</span> make build-essential libssl-dev zlib1g-dev libbz2-dev <span class="se">\
-</span>libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
-<span class="k">RUN             </span>curl <span class="nt">-L</span> https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-</code></pre></div></div>
+<pre><code class="language-docker">RUN             apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
+RUN             curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+</code></pre>
 
 <ul>
   <li>~/.bash_profile 파일 설정 추가 후, 파이썬 3.6.1 설치</li>
 </ul>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">RUN             </span><span class="nb">echo</span> <span class="s1">'export PATH="/home/ubuntu/.pyenv/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
-<span class="k">RUN             </span><span class="nb">echo</span> <span class="s1">'eval "$(pyenv init -)"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
-<span class="k">RUN             </span><span class="nb">echo</span> <span class="s1">'eval "$(pyenv virtualenv-init -)"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
-<span class="k">RUN             </span><span class="nb">.</span> ~/.bash_profile
-<span class="k">ENV</span><span class="s">             PATH /root/.pyenv/bin:$PATH</span>
+<pre><code class="language-docker">RUN             echo 'export PATH="/home/ubuntu/.pyenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
+RUN             echo 'eval "$(pyenv init -)"' &gt;&gt; ~/.bash_profile
+RUN             echo 'eval "$(pyenv virtualenv-init -)"' &gt;&gt; ~/.bash_profile
+RUN             . ~/.bash_profile
+ENV             PATH /root/.pyenv/bin:$PATH
 
-<span class="k">RUN             </span>pyenv install 3.6.1
-</code></pre></div></div>
+RUN             pyenv install 3.6.1
+</code></pre>
 
 <ul>
   <li>zhs 설치 후, pyenv를 ~/.zshrc 에 적용, 가상환경 생성</li>
 </ul>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">RUN             </span>apt-get <span class="nt">-y</span> install zsh
-<span class="k">RUN             </span>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh <span class="nt">-O</span> - | zsh <span class="o">||</span> <span class="nb">true</span>
-<span class="k">RUN             </span>chsh <span class="nt">-s</span> /usr/bin/zsh
+<pre><code class="language-docker">RUN             apt-get -y install zsh
+RUN             wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+RUN             chsh -s /usr/bin/zsh
 
-<span class="k">RUN             </span><span class="nb">echo</span> <span class="s1">'export PATH="/home/ubuntu/.pyenv/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
-<span class="k">RUN             </span><span class="nb">echo</span> <span class="s1">'eval "$(pyenv init -)"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
-<span class="k">RUN             </span><span class="nb">echo</span> <span class="s1">'eval "$(pyenv virtualenv-init -)"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
+RUN             echo 'export PATH="/home/ubuntu/.pyenv/bin:$PATH"' &gt;&gt; ~/.zshrc
+RUN             echo 'eval "$(pyenv init -)"' &gt;&gt; ~/.zshrc
+RUN             echo 'eval "$(pyenv virtualenv-init -)"' &gt;&gt; ~/.zshrc
 
-<span class="c"># 가상환경 'elass' 생성</span>
-<span class="k">RUN             </span>pyenv virtualenv 3.6.1 elass
-</code></pre></div></div>
+# 가상환경 'elass' 생성
+RUN             pyenv virtualenv 3.6.1 elass
+</code></pre>
 
 <ul>
   <li>uWSGI, Nginx, supervisor 설치</li>
 </ul>
 
-<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">##</span>
-<span class="c"># uWSGI install</span>
-<span class="c">#   virtualenv 내부에서 pip isntall 을 해줘야한다.</span>
-<span class="c">#   local 에서는 pyenv virtualenv elass 명령어를 실행하면 자동으로 가상환경이 적용되었지만,</span>
-<span class="c">#   도커에서는 그럴 수 없으므로, 직접 찾아서 작업할 수 있도록 경로를 다 기입해야 한다.</span>
-<span class="c">#   가상환경 내부 binary 의 pip 를 실행해서 install uwsgi</span>
-<span class="c">##</span>
-<span class="k">RUN             </span>/root/.pyenv/versions/elass/bin/pip install uwsgi
-<span class="k">RUN             </span>apt-get <span class="nt">-y</span> install nginx
-<span class="k">RUN             </span>apt-get <span class="nt">-y</span> install supervisor
-</code></pre></div></div>
+<pre><code class="language-docker">##
+# uWSGI install
+#   virtualenv 내부에서 pip isntall 을 해줘야한다.
+#   local 에서는 pyenv virtualenv elass 명령어를 실행하면 자동으로 가상환경이 적용되었지만,
+#   도커에서는 그럴 수 없으므로, 직접 찾아서 작업할 수 있도록 경로를 다 기입해야 한다.
+#   가상환경 내부 binary 의 pip 를 실행해서 install uwsgi
+##
+RUN             /root/.pyenv/versions/elass/bin/pip install uwsgi
+RUN             apt-get -y install nginx
+RUN             apt-get -y install supervisor
+</code></pre>
 
 <blockquote>
   <p><strong>[dockerfile 작성후 이미지 빌드 명령어]</strong> <br />
