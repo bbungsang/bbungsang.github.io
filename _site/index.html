@@ -174,6 +174,16 @@
 <section class="post-wrap">
   
   <article class="posts">
+    <a class="post-title" href="/javascript/2018/01/05/create-object.html">[JS Object] 객체 리터럴과 new 연산자</a>
+    <p class="post-content">new 연산자
+객체지향 언어에서 new 연산자(Java를 예로 들어보자.)
+
+  기본 타입과 참조 타입은 이미 기본으로 있는 것이지만, 사용자 정의 클래스의 경우는 Runtime 환경에서 생성되는 데이터 타입이기 때문에 Heap 영역에 할당된다.
+  new 연산자는 인스턴스를 생성해주는 역할을 하고, 이 방법으로 변수에 인스턴스를 할당하면 해당 객체의 실제 데이터가 아닌 참조값을 갖는다. 즉, Heap 영역에 데이터를 저장할 공간을 할당받...</p>
+    <small class="post-date">05 Jan 2018</small>
+  </article>
+  
+  <article class="posts">
     <a class="post-title" href="/javascript/2018/01/04/global-local-variable.html">[JS Variable] 전역 변수와 지역 변수</a>
     <p class="post-content">전역 변수
 전역 변수란 제일 바깥 범위, 함수 안에 포함되지 않은 변수를 뜻한다. 즉, window 객체에 변수를 만드는 것이다.
@@ -189,30 +199,29 @@
   <article class="posts">
     <a class="post-title" href="/javascript/2018/01/04/execution-context.html">[JS Execution] 실행 컨텍스트</a>
     <p class="post-content">실행 컨텍스란?
-자바스크립트에서 코드는 크게 global 코드, function 코드, eval 코드 세 가지로 분류되며, 이 모든 코드는 실행 컨텍스트에서 실행이 된다.
+자바스크립트 코드는 크게 global 코드, function 코드, eval 코드 세 가지로 분류되며, 이 모든 코드는 실행 컨텍스트에서 실행이 된다.
 
 
 
-실행 컨텍스트에 진입하기 이전에 전역 객체가 생성되며 전역 객체의 프로퍼티는 코드의 어떠한 곳에서든지 접근할 수 있다.
+전역 실행 컨텍스트(Global Execution Context)
 
-global 컨텍스트는 오직 하나만 존재하는 반면에 function, eval 컨텍스트는 하나의 프로그램 내에서 다수로 존재할 수 있다.
-
-fu...</p>
+  프로그램이 실행되면, 최초로 window 객체의 속성들(전역 변수, 함수 포함)이 모두 GEC로 들어오게 된다.
+  GEC는 Stack의 최하단에 오직 하나만 존재하며 프로그램이 끝날 때까지 존재하...</p>
     <small class="post-date">04 Jan 2018</small>
   </article>
   
   <article class="posts">
     <a class="post-title" href="/javascript/2018/01/03/prototype.html">[JS Function] 프로토타입에 대해서</a>
-    <p class="post-content">자바스크립트는 클래스 기반 언어는 아니지만 클래스의 개념은 존재한다고 한다. 이유인 즉, 프로토타입을 통해 클래스를 구현할 수 있기 때문에 자바스크립트를 흔히 프로토타입 기반 언어라고 한다. 프로토타입이 도대체 뭘까?
+    <p class="post-content">자바스크립트는 OOP(객체지향 언어)는 아니지만 클래스의 개념은 존재한다고 한다. 프로토타입을 통해 클래스와 유사한 형태를 구현할 수 있기 때문에 자바스크립트를 흔히 프로토타입 기반 언어라고 한다. 프로토타입이 도대체 뭘까?
 
 
   사전적 의미: 대량 생산에 앞서 미리 제작해보는 원형 또는 시제품. 
-- 네이버 지식 백과에서 발췌
+네이버 지식 백과에서 발췌
 
 
 프로토타입 기반 프로그래밍?
 
-  클래스 기반 언어에서는 클래스 안에 기술된 내용에 대하여 인스턴스를 생성하여 객...</p>
+  프로토타입은 원형, 원본이라는 의미를 가지고 있으며, 자바스크립트에서 프로토...</p>
     <small class="post-date">03 Jan 2018</small>
   </article>
   
@@ -314,18 +323,18 @@ JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 �
     <small class="post-date">21 Nov 2017</small>
   </article>
   
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html">[Try Hello World] Level4 공항 건설하기</a>
-    <p class="post-content">공항 건설하기
-1보다 큰 N개의 도시 중 한 곳에 공항을 지을 예정입니다. 사람들의 편의를 위해 공항으로부터 각 사람들까지의 도시간 이동 거리가 최소가 되는 도시에 짓기로 하였습니다. 편의상 도시는 일직선상에 놓여있다고 가정하며 좌표의 범위는 음수가 포함됩니다. 또한 좌표는 정렬되어 있지 않습니다. 직선상의 위치와 그 도시에 사는 사람들의 수가 주어질 때, 공항을 지을 도시의 위치를 반환해주는 함수 chooseCity 함수를 완성하세요. ...</p>
-    <small class="post-date">18 Nov 2017</small>
-  </article>
-  
 </section>
 
 <!-- <section class="banner_wrap">
   <article class="r_post_title">
     최근 포스트 목록
+  </article>
+  
+  <article class="posts">
+    <a class="post_title" href="/javascript/2018/01/05/create-object.html">
+      - [JS Object] 객체 리터럴과 new 연산자
+      <small class="post-date" style="font-size: 12px; color: #aed9da;">05 Jan 2018</small>
+    </a>
   </article>
   
   <article class="posts">
@@ -367,13 +376,6 @@ JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 �
     <a class="post_title" href="/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/css/2018/01/01/cpu-cycle.html">
       - CPU Cycle
       <small class="post-date" style="font-size: 12px; color: #aed9da;">01 Jan 2018</small>
-    </a>
-  </article>
-  
-  <article class="posts">
-    <a class="post_title" href="/typescript/2017/12/30/about-typescript.html">
-      - [TypeScript] About TypeScript
-      <small class="post-date" style="font-size: 12px; color: #aed9da;">30 Dec 2017</small>
     </a>
   </article>
   
@@ -1206,6 +1208,13 @@ JavaScript는 Java 또는 Python과 같은 Class 기반 객체지향 언어에 �
     
       <h3 id="javascript"><a>JavaScript</a></h3>
       <ul class="tags-expo-posts">
+        
+        <a class="post-title" href="/javascript/2018/01/05/create-object.html">
+          <li>
+            [JS Object] 객체 리터럴과 new 연산자
+          <small class="post-date">05 Jan 2018</small>
+          </li>
+        </a>
         
         <a class="post-title" href="/javascript/2018/01/04/global-local-variable.html">
           <li>
