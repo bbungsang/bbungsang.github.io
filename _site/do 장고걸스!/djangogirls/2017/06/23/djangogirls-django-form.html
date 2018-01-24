@@ -173,13 +173,14 @@
 
 <h3 id="blog-디렉토리-안에-폼-파일-만들기">blog 디렉토리 안에 폼 파일 만들기</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blog
+<div class="highlighter-rouge"><pre class="highlight"><code>blog
 └── forms.py
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[blog/forms.py]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
 
 <span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
 
@@ -188,7 +189,8 @@
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
         <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s">'title'</span><span class="p">,</span> <span class="s">'text'</span><span class="p">,)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>PostForm은 만들 폼의 이름이고, ModelForm을 사용하기 위해 (forms.ModelForm)을 상속받는다.</li>

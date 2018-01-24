@@ -181,12 +181,13 @@
 
 <p>아래 명령어를 통해 <code class="highlighter-rouge">장고 Rule</code>에 따른 새로운 프로젝트 디렉토리와 파일들을 생성해준다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; django-admin startproject &lt;프로젝트명&gt; .
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; django-admin startproject &lt;프로젝트명&gt; .
+</code></pre>
+</div>
 
 <p>디렉토리와 파일명은 중요하기 때문에 <strong>마음대로 변경하거나 다른 곳으로 옮겨서는 안된다.</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>djangogirls
+<div class="highlighter-rouge"><pre class="highlight"><code>djangogirls
 ├── [...]
 ├── manage.py
 └── mysite
@@ -194,7 +195,8 @@
         urls.py
         wsgi.py
         __init__.py
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li><strong>manage.py :</strong> 사이트 관리를 도와준다. 다른 설치 작업 없이 바로 웹 서버를 시작할 수 있다.</li>
@@ -207,11 +209,12 @@
 
 <p><strong>[project-directory/mysite/settings.py]</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">join</span>
 
 <span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">'..'</span><span class="p">,</span> <span class="s">'..'</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li><strong>__file__</strong> : /home/bbungsang/projects/django/djangogirls/djangogirls/mysite/settings.py</li>
@@ -223,14 +226,16 @@
 
 <p>django 내에서 날짜/시간을 보여주고 저장할 때 반영할 시간을 지정해준다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TIME_ZONE = 'Asia/Soeul'
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>TIME_ZONE = 'Asia/Soeul'
+</code></pre>
+</div>
 
 <p style="font-weight: bold; color: #8d8d8d; margin: 25px 0;">정적파일 경로 추가</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STATIC_URL = '/static' &lt;br&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>STATIC_URL = '/static' &lt;br&gt;
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')&lt;br&gt;
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>위와 같이 이 경로는 <code class="highlighter-rouge">/home/bbungsang/projects/django/djangogirls/djangogirls/static</code> 을 의미한다.</p>
 
@@ -238,13 +243,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')&lt;br&gt;
 
 <p>(sqlite3 사용 전제)</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
         <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.sqlite3'</span><span class="p">,</span>
         <span class="s">'NAME'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">'db.sqlite3'</span><span class="p">),</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h3 id="설정이-다-끝났다면-단-3step-만으로-웹어플리케이션을-실행할-수-있다">설정이 다 끝났다면, 단 <em>3step</em> 만으로 웹어플리케이션을 실행할 수 있다.</h3>
 

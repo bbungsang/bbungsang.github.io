@@ -45,8 +45,8 @@
 }
 
 .markdown .center-image {
-  width: 70%;
-  max-width: 445px;
+  width: 85%;
+  max-width: 600px;
   display: table;
   margin-left: auto;
   margin-right: auto;
@@ -350,7 +350,7 @@
 }
 
 .markdown pre .c1 {
-  color: #5CD1E5;
+  color: #EDD200;
 }
 
 .markdown pre .cs {
@@ -468,7 +468,7 @@
 }
 
 .markdown pre .nl {
-  color: #FFE08C;
+  color: #93A1A1;
 }
 
 .markdown pre .nn {
@@ -476,7 +476,7 @@
 }
 
 .markdown pre .nx {
-  color: #E8D9FF;
+  color: #EAEAEA;
 }
 
 .markdown pre .py {

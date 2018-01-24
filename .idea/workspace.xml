@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c3ac760-f0ad-4796-8c77-75c8f9410517" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/javascript/typescript/2018-01-08-interface.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_site/typescript/2018/01/08/interface.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/javascript/typescript/2017-12-30-about-typescript.md" afterPath="$PROJECT_DIR$/_posts/javascript/typescript/2017-12-30-about-typescript.md" />
       <change beforePath="$PROJECT_DIR$/_posts/javascript/typescript/2018-01-01-class.md" afterPath="$PROJECT_DIR$/_posts/javascript/typescript/2018-01-01-class.md" />
       <change beforePath="$PROJECT_DIR$/_site/2017/05/31/jekyll-blog-tags.html" afterPath="$PROJECT_DIR$/_site/2017/05/31/jekyll-blog-tags.html" />
       <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/29/(1)django-settings-설정하기.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/29/(1)django-settings-설정하기.html" />
       <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/29/(2)EC2-인스턴스-생성하기.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/29/(2)EC2-인스턴스-생성하기.html" />
       <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/29/(3)SSH-Linux-인스턴스.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/29/(3)SSH-Linux-인스턴스.html" />
       <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/30/(4)Amazon-linux-server.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/30/(4)Amazon-linux-server.html" />
+      <change beforePath="$PROJECT_DIR$/_site/css/post.compact.css" afterPath="$PROJECT_DIR$/_site/css/post.compact.css" />
       <change beforePath="$PROJECT_DIR$/_site/css/post.css" afterPath="$PROJECT_DIR$/_site/css/post.css" />
+      <change beforePath="$PROJECT_DIR$/_site/css/post.min.css" afterPath="$PROJECT_DIR$/_site/css/post.min.css" />
+      <change beforePath="$PROJECT_DIR$/_site/css/post.nested.css" afterPath="$PROJECT_DIR$/_site/css/post.nested.css" />
       <change beforePath="$PROJECT_DIR$/_site/django project/used book store/2017/10/02/facebook-login-of-django.html" afterPath="$PROJECT_DIR$/_site/django project/used book store/2017/10/02/facebook-login-of-django.html" />
       <change beforePath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/28/djangogirs-first-project.html" afterPath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/28/djangogirs-first-project.html" />
       <change beforePath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/30/djangogirls-models.html" afterPath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/30/djangogirls-models.html" />
@@ -21,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/_site/drf/2017/09/13/drf-permissions.html" afterPath="$PROJECT_DIR$/_site/drf/2017/09/13/drf-permissions.html" />
       <change beforePath="$PROJECT_DIR$/_site/files/etc/aws.html" afterPath="$PROJECT_DIR$/_site/files/etc/aws.html" />
       <change beforePath="$PROJECT_DIR$/_site/files/etc/jekyll.html" afterPath="$PROJECT_DIR$/_site/files/etc/jekyll.html" />
+      <change beforePath="$PROJECT_DIR$/_site/files/js.html" afterPath="$PROJECT_DIR$/_site/files/js.html" />
       <change beforePath="$PROJECT_DIR$/_site/files/server.html" afterPath="$PROJECT_DIR$/_site/files/server.html" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
       <change beforePath="$PROJECT_DIR$/_site/it/기본개념/basic-concept/2017/10/28/csrf-cors.html" afterPath="$PROJECT_DIR$/_site/it/기본개념/basic-concept/2017/10/28/csrf-cors.html" />
@@ -28,6 +33,10 @@
       <change beforePath="$PROJECT_DIR$/_site/javascript/2017/08/29/matchMedia.html" afterPath="$PROJECT_DIR$/_site/javascript/2017/08/29/matchMedia.html" />
       <change beforePath="$PROJECT_DIR$/_site/javascript/2017/10/12/javascript_regexp.html" afterPath="$PROJECT_DIR$/_site/javascript/2017/10/12/javascript_regexp.html" />
       <change beforePath="$PROJECT_DIR$/_site/javascript/2017/10/12/select-tag-default.html" afterPath="$PROJECT_DIR$/_site/javascript/2017/10/12/select-tag-default.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/03/function-declarations-expressions.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/03/function-declarations-expressions.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/04/execution-context.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/04/execution-context.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/04/global-local-variable.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/04/global-local-variable.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/05/create-object.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/05/create-object.html" />
       <change beforePath="$PROJECT_DIR$/_site/scss/post.scss" afterPath="$PROJECT_DIR$/_site/scss/post.scss" />
       <change beforePath="$PROJECT_DIR$/_site/search.json" afterPath="$PROJECT_DIR$/_site/search.json" />
       <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/2017/07/18/programmers-coding-test1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/2017/07/18/programmers-coding-test1.html" />
@@ -69,7 +78,6 @@
       <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html" />
       <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html" />
       <change beforePath="$PROJECT_DIR$/_site/tags/index.html" afterPath="$PROJECT_DIR$/_site/tags/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/typescript/2017/12/30/about-typescript.html" afterPath="$PROJECT_DIR$/_site/typescript/2017/12/30/about-typescript.html" />
       <change beforePath="$PROJECT_DIR$/_site/typescript/2018/01/01/class.html" afterPath="$PROJECT_DIR$/_site/typescript/2018/01/01/class.html" />
       <change beforePath="$PROJECT_DIR$/_site/데이터베이스/database/2017/10/08/anomaly-and-fucntional-dependency.html" afterPath="$PROJECT_DIR$/_site/데이터베이스/database/2017/10/08/anomaly-and-fucntional-dependency.html" />
       <change beforePath="$PROJECT_DIR$/_site/도커/docker/2017/07/03/what-is-docker.html" afterPath="$PROJECT_DIR$/_site/도커/docker/2017/07/03/what-is-docker.html" />
@@ -94,7 +102,10 @@
       <change beforePath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/05/27/python-basic-string-list-tuple.html" afterPath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/05/27/python-basic-string-list-tuple.html" />
       <change beforePath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-comprehension.html" afterPath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-comprehension.html" />
       <change beforePath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-generator.html" afterPath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-generator.html" />
+      <change beforePath="$PROJECT_DIR$/css/post.compact.css" afterPath="$PROJECT_DIR$/css/post.compact.css" />
       <change beforePath="$PROJECT_DIR$/css/post.css" afterPath="$PROJECT_DIR$/css/post.css" />
+      <change beforePath="$PROJECT_DIR$/css/post.min.css" afterPath="$PROJECT_DIR$/css/post.min.css" />
+      <change beforePath="$PROJECT_DIR$/css/post.nested.css" afterPath="$PROJECT_DIR$/css/post.nested.css" />
       <change beforePath="$PROJECT_DIR$/scss/post.scss" afterPath="$PROJECT_DIR$/scss/post.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,13 +116,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="post.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/post.css">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_site/tags/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="346" column="0" lean-forward="false" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
+            <state relative-caret-position="8409">
+              <caret line="1812" column="7" lean-forward="false" selection-start-line="1812" selection-start-column="7" selection-end-line="1812" selection-end-column="7" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_site/search.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="886" column="1" lean-forward="false" selection-start-line="886" selection-start-column="1" selection-end-line="886" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_site/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="1437" column="7" lean-forward="false" selection-start-line="1437" selection-start-column="7" selection-end-line="1437" selection-end-column="7" />
+              <folding>
+                <element signature="e#7112#7116#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,6 +167,9 @@
       <list>
         <option value="$PROJECT_DIR$/scss/post.scss" />
         <option value="$PROJECT_DIR$/css/post.css" />
+        <option value="$PROJECT_DIR$/_site/tags/index.html" />
+        <option value="$PROJECT_DIR$/_site/search.json" />
+        <option value="$PROJECT_DIR$/_site/index.html" />
       </list>
     </option>
   </component>
@@ -144,10 +180,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="593" />
-    <option name="y" value="-1057" />
+    <option name="x" value="320" />
+    <option name="y" value="23" />
     <option name="width" value="960" />
-    <option name="height" value="1057" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -174,19 +210,20 @@
             <path>
               <item name="bbungsang.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="bbungsang.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="_site" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bbungsang.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="bbungsang.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
+              <item name="_site" type="462c0819:PsiDirectoryNode" />
+              <item name="tags" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,17 +259,18 @@
       <updated>1504773595125</updated>
       <workItem from="1514873791205" duration="217000" />
       <workItem from="1514874047350" duration="103000" />
+      <workItem from="1516793666450" duration="184000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320000" />
+    <option name="totallyTimeSpent" value="504000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="593" y="-1057" width="960" height="1057" extended-state="0" />
+    <frame x="320" y="23" width="960" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18530351" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3919063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -265,11 +303,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/post.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scss/post.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="283" column="45" lean-forward="false" selection-start-line="283" selection-start-column="45" selection-end-line="283" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -278,6 +323,32 @@
         <state relative-caret-position="221">
           <caret line="346" column="0" lean-forward="false" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/tags/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8409">
+          <caret line="1812" column="7" lean-forward="false" selection-start-line="1812" selection-start-column="7" selection-end-line="1812" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/search.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="886" column="1" lean-forward="false" selection-start-line="886" selection-start-column="1" selection-end-line="886" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="1437" column="7" lean-forward="false" selection-start-line="1437" selection-start-column="7" selection-end-line="1437" selection-end-column="7" />
+          <folding>
+            <element signature="e#7112#7116#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

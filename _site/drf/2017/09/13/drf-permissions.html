@@ -195,25 +195,27 @@
   <li>하지만 성능상의 이유로 제네릭 뷰는 object-level permissions를 자동으로 적용하지 않는다. 그렇기 때문에 object-level permissions를 사용하려면 쿼리셋을 적절하게 필터링해야 한다.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">obj</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">())</span>
 
     <span class="c"># View에서 get_object()를 override하여 내용을 변경할 때,</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">check_object_permissions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span> <span class="c"># 를 명시적으로 호출해야 한다.</span>
 
     <span class="k">return</span> <span class="n">obj</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="permissions-적용하기">Permissions 적용하기</h2>
 
 <p><strong>1. 우선 <code class="highlighter-rouge">settings</code>에 Permissions를 사용할 것이라는 내용을 선언해야 한다.</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'DEFAULT_PERMISSION_CLASSES'</span><span class="p">:</span> <span class="p">(</span>
         <span class="s">'rest_framework.permissions.IsAuthenticated'</span><span class="p">,</span>
     <span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><br />
 <strong>2-1. CBV인 APIView에서 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
@@ -222,7 +224,7 @@
   <li><code class="highlighter-rouge">DEFAULT_PERMISSION_CLASSES</code>를 설정하면, 설정한 permission을 기본으로 사용 권한 검사를 하겠다는 의미이며, 특정 페이지에 대해서 다른 사용 권한을 부여하고 싶다면, 해당 View에 별도로 선언해야 한다.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
     <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">IsAuthenticated</span><span class="p">,)</span>
 
     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -230,19 +232,21 @@
             <span class="s">'status'</span><span class="p">:</span> <span class="s">'request was permitted'</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><br />
 <strong>2-2. FBV인 경우, <code class="highlighter-rouge">@api_view</code> 데코레이터를 활용하여 다음과 같이 사용 권한을 반영할 수 있다.</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nd">@api_view</span><span class="p">([</span><span class="s">'GET'</span><span class="p">])</span>
 <span class="nd">@permission_classes</span><span class="p">((</span><span class="n">IsAuthenticated</span><span class="p">,</span> <span class="p">))</span>
 <span class="k">def</span> <span class="nf">example_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">'status'</span><span class="p">:</span> <span class="s">'request was permitted'</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><br />
 <img src="http://localhost:4000/assets/non_permission.png" alt="" class="center-image" /></p>
@@ -285,7 +289,7 @@
 
 <p>위 메서드는 액세스가 허용되면 True를 그렇지 않으면 False를 반환한다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">BlacklistPermission</span><span class="p">(</span><span class="n">permissions</span><span class="o">.</span><span class="n">BasePermission</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">BlacklistPermission</span><span class="p">(</span><span class="n">permissions</span><span class="o">.</span><span class="n">BasePermission</span><span class="p">):</span>
     <span class="s">"""
     Global permission check for blacklisted IPs.
     """</span>
@@ -296,16 +300,18 @@
 		<span class="n">ip_addr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">[</span><span class="s">'REMOTE_ADDR'</span><span class="p">]</span>
 		<span class="n">blacklisted</span> <span class="o">=</span> <span class="n">Blacklist</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">ip_addr</span><span class="o">=</span><span class="n">ip_addr</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 		<span class="k">return</span> <span class="ow">not</span> <span class="n">blacklisted</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><br />
 요청이 읽기 모드인지 쓰기모드인지 테스트하고자 한다면, ‘GET’, ‘OPTIONS’와 ‘HEAD’와 같은 튜플 형태의 <code class="highlighter-rouge">SAVE_METHODS</code>와 비교하여 요청 메서드를 점검해야 한다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">permissions</span><span class="o">.</span><span class="n">SAFE_METHODS</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="n">permissions</span><span class="o">.</span><span class="n">SAFE_METHODS</span><span class="p">:</span>
     <span class="c"># Check permissions for read-only request</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="c"># Check permissions for write request</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="참고자료">참고자료</h2>
 <ul>

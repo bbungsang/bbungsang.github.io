@@ -185,7 +185,7 @@
 <h4 id="fbv">FBV</h4>
 <p>뷰 자체에서 페이스북 사용자 정보를 받고, 로그인까지 실행한다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">facebook_login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">facebook_login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 
     <span class="n">code</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'code'</span><span class="p">)</span>
 
@@ -209,11 +209,12 @@
         <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
         <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">error_message_and_redirect_referer</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h4 id="cbv">CBV</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FaceBookLogin</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FaceBookLogin</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
         <span class="n">code</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'code'</span><span class="p">)</span>
 
@@ -237,7 +238,8 @@
             <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
             <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">error_message_and_redirect_referer</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>클래스 기반 뷰는 GET, POST 등 HTTP 메서드에 따른 처리를 if 함수 대신에 메서드 명으로 대체함으로써 코드 구조가 깔끔하다.</li>
@@ -264,7 +266,7 @@
 <h4 id="느슨한-결합-유지하기">느슨한 결합 유지하기</h4>
 <p>[app-name/views.py]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="k">import</span><span class="o">...</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">import</span><span class="o">...</span><span class="p">]</span>
 <span class="k">class</span> <span class="nc">TasteListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
 	<span class="n">model</span> <span class="o">=</span> <span class="n">Tasting</span>
 
@@ -272,11 +274,12 @@
 	<span class="n">model</span> <span class="o">=</span> <span class="n">Tasting</span>
 
 <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>[app-name/urls.py]</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="k">import</span><span class="o">...</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">import</span><span class="o">...</span><span class="p">]</span>
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">url</span><span class="p">(</span>
         <span class="n">regex</span><span class="o">=</span><span class="s">r'^$'</span><span class="p">,</span>
@@ -284,13 +287,14 @@
         <span class="n">name</span><span class="o">=</span><span class="s">'list'</span><span class="p">,</span>
     <span class="p">),</span>
     <span class="n">url</span><span class="p">(</span>
-        <span class="n">regex</span><span class="o">=</span><span class="s">r'^(?P&lt;pk&gt;\d+)/$'</span><span class="p">,</span>
+        <span class="n">regex</span><span class="o">=</span><span class="s">r'^(?P&lt;pk&gt;</span><span class="err">\</span><span class="s">d+)/$'</span><span class="p">,</span>
         <span class="n">view</span><span class="o">=</span><span class="n">views</span><span class="o">.</span><span class="n">TasteDetailVeiw</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span>
         <span class="n">name</span><span class="o">=</span><span class="s">'detail'</span><span class="p">,</span>
     <span class="p">),</span>
     <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 <span class="p">]</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <ul>
   <li>이로써 파일이 분리됐고, 오히려 코드는 더 늘어났다.</li>
 </ul>
@@ -333,7 +337,7 @@
 
 <h4 id="뷰의-기본-형태">뷰의 기본 형태</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 함수 기반 뷰</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># 함수 기반 뷰</span>
 <span class="k">def</span> <span class="nf">function_based_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"FBV"</span><span class="p">)</span>
 
@@ -342,7 +346,8 @@
     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="c"># 비지니스 로직</span>
         <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"CBV"</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <ul>
   <li>클래스 기반 뷰를 이용할 때 객체 상속을 이용함으로써 코드를 재사용하기 쉬워지고 디자인을 좀 더 유연하게 할 수 있다.</li>
 </ul>
