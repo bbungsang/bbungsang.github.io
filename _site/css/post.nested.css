@@ -1,12 +1,12 @@
 .markdown {
   height: auto;
-  padding-top: 80px;
+  padding-top: 45px;
   font-size: 15px;
   background: #fff;
   /* Post */
   /*-- Code --*/ }
   .markdown .md-head {
-    padding: 0 15px; }
+    padding: 0 5%; }
     .markdown .md-head .title {
       margin: 10px;
       font-size: 36px;
@@ -71,7 +71,7 @@
     border: 1px solid #ddd;
     margin: 50px 20px; }
   .markdown .markdown-body {
-    padding: 30px; }
+    padding: 5px 5%; }
     .markdown .markdown-body .post-content {
       font-family: 'NanumSquareRound';
       line-height: 25px; }

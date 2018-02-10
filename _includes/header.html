@@ -1,5 +1,32 @@
-<button class="menu-btn" id="menuBtn" title="메뉴토글버튼"><img src="/images/code.png" alt=""></button>
+<section class="top-wrap">
+  <article class="logo">
+    <a href="#">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="{{site.baseurl}}/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <button class="menu-btn" id="menuBtn" title="메뉴토글버튼"><img src="/images/code.png"></button>
+  </article>
+</section>
+<section class="desc">
+</section>
 
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (let i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
 <!-- <ul class="top_menu">
   <li class=" menu_list sidebar-toggle-box">
     <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">

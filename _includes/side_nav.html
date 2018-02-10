@@ -58,7 +58,7 @@
 
 <script>
   function sideNavBtnClickHandler(e) {
-    document.getElementById("mySidenav").style.left = "0px";
+    document.getElementById("mySidenav").style.right = "0px";
     e.stopPropagation();
   }
 
@@ -72,7 +72,7 @@
 
     for(var i=0; i<sidenav.length; i++){
       var closeSidenav = sidenav[i];
-      closeSidenav.style.left = "-240px";
+      closeSidenav.style.right = "-240px";
     }
   });
 </script>

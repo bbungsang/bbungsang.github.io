@@ -1,6 +1,6 @@
-.markdown { height: auto; padding-top: 80px; font-size: 15px; background: #fff; /* Post */ /*-- Code --*/ }
+.markdown { height: auto; padding-top: 45px; font-size: 15px; background: #fff; /* Post */ /*-- Code --*/ }
 
-.markdown .md-head { padding: 0 15px; }
+.markdown .md-head { padding: 0 5%; }
 
 .markdown .md-head .title { margin: 10px; font-size: 36px; font-weight: bold; position: relative; }
 
@@ -32,7 +32,7 @@
 
 .markdown hr { border: 1px solid #ddd; margin: 50px 20px; }
 
-.markdown .markdown-body { padding: 30px; }
+.markdown .markdown-body { padding: 5px 5%; }
 
 .markdown .markdown-body .post-content { font-family: 'NanumSquareRound'; line-height: 25px; }
 

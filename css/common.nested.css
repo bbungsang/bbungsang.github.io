@@ -10,6 +10,9 @@ li {
   padding: 0;
   list-style: none; }
 
+a {
+  text-decoration: none; }
+
 @font-face {
   font-family: NanumBarunpen;
   src: url("/font/NanumBarunpen.woff") format("woff"); }

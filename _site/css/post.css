@@ -1,6 +1,6 @@
 .markdown {
   height: auto;
-  padding-top: 80px;
+  padding-top: 45px;
   font-size: 15px;
   background: #fff;
   /* Post */
@@ -8,7 +8,7 @@
 }
 
 .markdown .md-head {
-  padding: 0 15px;
+  padding: 0 5%;
 }
 
 .markdown .md-head .title {
@@ -105,7 +105,7 @@
 }
 
 .markdown .markdown-body {
-  padding: 30px;
+  padding: 5px 5%;
 }
 
 .markdown .markdown-body .post-content {

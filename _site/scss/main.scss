@@ -1,7 +1,7 @@
 .menu-btn {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 5px;
+  right: 5px;
   padding: 7px 10px;
   background: #333;
   border: none;
@@ -10,50 +10,71 @@
   z-index: 3;
 
   img {
-    width: 30px;
+    width: 24px;
   }
 }
 
 .top-wrap {
-  position: relative;
-  height: 400px;
+  border-top: 1px solid #cc99cc;
+  border-image-slice: 1;
+  height: 49px;
 
-  .background {
-    height: 380px;
-    background: #f2f2f2;
-    color: #f37931;
+  .logo {
+    width: 200px;
+    height: 50px;
+    line-height: 40px;
+    text-align: center;
+    font-family: 'Patrick Hand SC';
+    font-weight: 600;
+    font-size: 26px;
+    float: left;
 
-    .words {
-      position: absolute;
-      top: 190px;
-      left: 30px;
-
-      .en {
-        margin: 0;
-        font-size: 36px;
-        font-weight: 900;
-
-        p {
-          margin: 0;
-        }
-      }
-
-      .ko {
-        font-family: 'NanumSquareRound';
-        font-size: 28px;
-        font-weight: 600;
-      }
-
-      a {
-        font-family: 'Bubbler One';
-        font-weight: 600;
-        display: inline-block;
-        margin: 10px 5px;
-        color: #f37931;
-        text-decoration: none;
-      }
+    a {
+      background: -webkit-linear-gradient(#f1f1f1, #7d5886);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
+
+  .top-menu {
+    float: left;
+    padding: 0 10px;
+    font-size: 14px;
+
+    li {
+      padding: 10px;
+      line-height: 30px;
+      text-align: center;
+      display: inline-block;
+
+      a {
+        color: #555555;
+
+        &:hover {
+          color: #cc99cc;
+          transition: 0.2s;
+        }
+      }
+    }
+
+    .active a {
+      color: #cc99cc;
+    }
+  }
+
+  .btn-wrap {
+    width: 56px;
+    height: 49px;
+    background: #333;
+    float: right;
+  }
+}
+
+.desc {
+  height: 180px;
+  background-image: url('../images/jekyll-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .post-wrap {

@@ -1,11 +1,12 @@
 .markdown {
   height: auto;
-  padding-top: 80px;
+  padding-top: 45px;
+
   font-size: 15px;
   background: #fff;
 
   .md-head {
-    padding: 0 15px;
+    padding: 0 5%;
 
     .title {
       margin: 10px;
@@ -103,7 +104,7 @@
   }
 
   .markdown-body {
-    padding: 30px;
+    padding: 5px 5%;
 
     .post-content {
       font-family: 'NanumSquareRound';

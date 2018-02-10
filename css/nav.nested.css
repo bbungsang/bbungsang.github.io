@@ -5,10 +5,10 @@
   transition: 0.3s;
   z-index: 5;
   top: 0;
-  left: -240px;
+  right: -240px;
   background-color: #fafafa;
   overflow-x: hidden;
-  border-right: 1px solid #ddd; }
+  border-left: 1px solid #ddd; }
   .sidenav .intro-me {
     height: 239px;
     background: #f2f2f2;
@@ -34,10 +34,10 @@
         height: 25px;
         line-height: 25px;
         margin-top: 20px;
-        border: 1px solid #f37931;
+        border: 1px solid #cc99cc;
         border-radius: 16px;
         background: #fafafa;
-        color: #f37931;
+        color: #cc99cc;
         font-size: 14px;
         font-family: 'Nanumbarunpen';
         text-decoration: none;
@@ -53,11 +53,11 @@
         color: #333;
         font-family: 'Nanumbarunpen'; }
         .sidenav ul.menu-ele li a:hover {
-          color: #f37931;
+          color: #cc99cc;
           transition: 0.2s; }
           .sidenav ul.menu-ele li a:hover span {
             display: inline-block;
             width: 30px;
-            border-bottom: 1px solid #f37931;
+            border-bottom: 1px solid #cc99cc;
             margin: 0 5px 5px 5px;
             transition: 0.2s; }

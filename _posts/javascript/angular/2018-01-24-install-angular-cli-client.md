@@ -19,7 +19,7 @@ $ npm install -g @angular/cli
 ```
 
 > Angular CLI 1.0.0 이전 버전의 경우 패키지명이 `angular-cli`였으나, 그 이후 버전부터 `@angular/cli`로 변경되었다.
- 
+
 설치가 완료되면 `ng` 명령어를 사용할 수 있다. 설치가 성공적으로 완료되었는지 버전을 확인하여 보자.
 
 ```
@@ -86,7 +86,7 @@ Project/
 ## .angular-cli.json 설정 변경
 ng 명령어를 실행하는 데 있어 Angular의 전반적인 환경을 설정하는 파일이다.
 
-```
+```json
 "apps": [ // 어플리케이션 관련 설정
   {
     "root": "client", // 빌드된 결과물 소스가 생성될 경로[string]
@@ -130,7 +130,7 @@ client/
 
 **[core/nav/nav.component.html]**
 
-```
+```html
 <section class="header-yellow">
   <article class="row">
     <input type="text" placeholder="검색어를 입력해 주세요">
@@ -143,7 +143,7 @@ client/
 nav 컴포넌트를 core 모듈에 등록하고 최종적으로 app 모듈에 등록을 해줘야 한다.
 app 모듈에 대한 코드는 하단에 있다.
 
-```
+```typescript
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
@@ -169,7 +169,7 @@ export class CoreModule {
 
 **[main/main.component.ts]**
 
-```
+```typescript
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavComponent } from '../core/nav/nav.component';
 
@@ -196,7 +196,7 @@ export class MainComponent implements OnInit {
 
 **[main/main.component.html]**
 
-```
+```html
 <app-nav></app-nav>
 <router-outlet></router-outlet>
 ```
@@ -209,7 +209,7 @@ export class MainComponent implements OnInit {
 **[app.routes.ts]** <br />
 해당 컴포넌트들을 url을 통해 브라우저에서 접근할 수 있도록 라우팅 모듈 추가
 
-```
+```typescript
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
@@ -220,7 +220,7 @@ export const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      {path: '', component: HomeComponent} 
+      {path: '', component: HomeComponent}
     ]
   }
 ];
@@ -233,7 +233,7 @@ export const AppRouterModule = RouterModule.forRoot(routes, {
 **[app.module.ts]** <br />
 생성된 모든 컴포넌트를 취합하여 app.module.ts 파일에 등록한다.
 
-```
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRouterModule } from './app.routes';
@@ -270,7 +270,7 @@ export class AppModule { }
 
 **[app.component.html]** <br />
 
-```
+```html
 <!-- Main view/routes wrapper-->
 <router-outlet></router-outlet>
 ```
