@@ -18,7 +18,9 @@
 
 .top-wrap .top-menu .active a { color: #cc99cc; }
 
-.top-wrap .btn-wrap { width: 56px; height: 49px; background: #333; float: right; }
+.top-wrap .btn-wrap { width: 56px; height: 49px; float: right; }
+
+.top-wrap .btn-wrap i { font-size: 35px; position: fixed; top: 4px; padding: 7px 10px; cursor: pointer; z-index: 3; background: -webkit-linear-gradient(#99ffff, #cc66cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 .desc { height: 180px; background-image: url("../images/jekyll-bg.jpg"); background-repeat: no-repeat; background-size: cover; }
 
