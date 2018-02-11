@@ -122,3 +122,9 @@
   color: #aed9da;
   line-height: 20px;
 }
+
+@media (max-width: 400px) {
+  .top-wrap .top-menu {
+    display: none;
+  }
+}

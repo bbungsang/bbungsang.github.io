@@ -10,7 +10,7 @@
 
 .markdown .md-head .tag-wrap a img { width: 20px; margin: 3px 5px 3px 0; float: left; }
 
-.markdown .md-head .tag-wrap a:hover { background: #f37931; }
+.markdown .md-head .tag-wrap a:hover { background: #cc99cc; }
 
 .markdown .center-image { width: 85%; max-width: 600px; display: table; margin-left: auto; margin-right: auto; margin-bottom: 35px; }
 
@@ -26,7 +26,7 @@
 
 .markdown h3 { width: 100%; color: #78757a; margin: 35px 0 20px 0; font-size: 22px; }
 
-.markdown h4 { color: #f37931; font-size: 17px; margin-top: 25px; }
+.markdown h4 { color: #2aa198; font-size: 17px; margin-top: 25px; }
 
 .markdown a { color: #2096ba; text-decoration: none; }
 

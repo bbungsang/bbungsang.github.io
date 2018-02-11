@@ -41,7 +41,7 @@
 }
 
 .markdown .md-head .tag-wrap a:hover {
-  background: #f37931;
+  background: #cc99cc;
 }
 
 .markdown .center-image {
@@ -89,7 +89,7 @@
 }
 
 .markdown h4 {
-  color: #f37931;
+  color: #2aa198;
   font-size: 17px;
   margin-top: 25px;
 }

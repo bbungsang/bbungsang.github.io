@@ -14,7 +14,7 @@
 
 .list-container .post-list .post-wrap .tag-wrap { height: 21px; line-height: 21px; }
 
-.list-container .post-list .post-wrap .tag-wrap a { display: inline-block; color: #fafafa; text-decoration: none; font-size: 14px; padding: 0 5px; border-radius: 5px; background: #f37931; }
+.list-container .post-list .post-wrap .tag-wrap a { display: inline-block; color: #fafafa; text-decoration: none; font-size: 14px; padding: 0 5px; border-radius: 5px; background: #7d5886; }
 
 .list-container .post-list .post-wrap .tag-wrap a img { width: 16px; margin: 3px 5px 3px 0; float: left; }
 
@@ -30,6 +30,6 @@
 
 .tag-container .tag-category .tag-category-list .post-date { color: #828282; font-size: 12px; margin: 0; }
 
-.tag-container .tag-category .tag-category-list .post-title { display: block; margin: 15px 0; color: #f37931; font-size: 17px; text-decoration: none; margin: 10px 0; }
+.tag-container .tag-category .tag-category-list .post-title { display: block; margin: 15px 0; color: #cc99cc; font-size: 17px; text-decoration: none; margin: 10px 0; }
 
 .tag-container .tag-category .tag-category-list .post-title:hover { color: #2C3E50; }

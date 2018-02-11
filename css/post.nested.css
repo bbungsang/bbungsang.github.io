@@ -29,7 +29,7 @@
           margin: 3px 5px 3px 0;
           float: left; }
         .markdown .md-head .tag-wrap a:hover {
-          background: #f37931; }
+          background: #cc99cc; }
   .markdown .center-image {
     width: 85%;
     max-width: 600px;
@@ -61,7 +61,7 @@
     margin: 35px 0 20px 0;
     font-size: 22px; }
   .markdown h4 {
-    color: #f37931;
+    color: #2aa198;
     font-size: 17px;
     margin-top: 25px; }
   .markdown a {

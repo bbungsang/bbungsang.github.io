@@ -35,3 +35,5 @@
 .post-wrap .posts .post-content { font-size: 16px; line-height: 1.5; font-weight: lighter; color: #666665; }
 
 .post-wrap .posts .post-date { font-size: 14px; color: #aed9da; line-height: 20px; }
+
+@media (max-width: 400px) { .top-wrap .top-menu { display: none; } }

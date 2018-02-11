@@ -50,7 +50,7 @@
   font-size: 14px;
   padding: 0 5px;
   border-radius: 5px;
-  background: #f37931;
+  background: #7d5886;
 }
 
 .list-container .post-list .post-wrap .tag-wrap a img {
@@ -93,7 +93,7 @@
 .tag-container .tag-category .tag-category-list .post-title {
   display: block;
   margin: 15px 0;
-  color: #f37931;
+  color: #cc99cc;
   font-size: 17px;
   text-decoration: none;
   margin: 10px 0;
