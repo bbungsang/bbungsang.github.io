@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>뿡상의 개발공부로그</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="#">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <i id="menuBtn" class="im im-diamond-o"></i>
+  </article>
+</section>
+<section class="desc">
+</section>
+
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (let i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<!-- <ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    <a href="/">
+      bbungsang
+      <i>devlog</i>
+    </a>
+  </li>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
+  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
+</ul> -->
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [인스타그램] 로그인 기능 구현하기
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Django">
+          <img src="/images/tag_img.png">
+          Django
+        </a>
+      
+        <a href="/tags/#instargram">
+          <img src="/images/tag_img.png">
+          instargram
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <h1 id="로그인-기능-구현하기">로그인 기능 구현하기</h1>
+<p>폼 -&gt; 뷰 -&gt; URL -&gt; 템플릿 순서로 구현하려고 한다.</p>
+
+<blockquote>
+  <p>고려해야할 부분</p>
+  <ol>
+    <li>아이디와 비밀번호를 입력할 폼 작성</li>
+    <li>POST 요청이 아닐 경우, 빈 로그인 폼을 받아서 로그인 페이지에 넘긴다.</li>
+    <li>사용자가 폼을 입력하지 않으면, 입력 요청 메세지를 띄우며 다음 페이지로 이동을 막는다.</li>
+    <li>입력한 아이디와 비밀번호가 데이터베이스의 데이터와 일치하지 않을 경우, 에러 메세지를 뿜뿜하며 다음 페이지로 이동을 막고, 일치할 경우, 장고 로그인 메서드를 실행하고 post_list 페이지로 이동.</li>
+    <li>이미 로그인한 상태에서 로그인 페이지로 이동한 것이라면 post_list 페이지로 되돌린다.</li>
+  </ol>
+</blockquote>
+
+<h3 id="1-장고-폼에서-위젯을-생성하고-데이터-유효성-및-하자-여부-검사하기">1. 장고 폼에서 위젯을 생성하고, 데이터 유효성 및 하자 여부 검사하기</h3>
+<ul>
+  <li>LoginForm, SignupForm과 앞으로 더 필요할 수 있는 폼들을 파이썬 패키지를 생성하여 하위 항목으로 둔다. 왜? 하나의 파일에 모든 폼 클래스를 작성하면, 코드가 길어져서 보기에 불편함을 겪을 수 있기 때문이다.</li>
+  <li>member 앱 디렉토리에 forms 패키지를 생성하고 login.py를 생성하여 아래와 같이 작성한다.</li>
+</ul>
+
+<p>[forms/login.py] : 폼 위젯 만들기</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="k">class</span> <span class="nc">LoginForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+
+  <span class="c"># 문자열을 받는 폼 필드에 최대 길이 30자, 문자열을 받는 위젯의 속성을 포함하여 username 에 할당</span>
+  <span class="c"># 즉, username 이 곧 하나의 필드가 된다.</span>
+  <span class="n">username</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+    <span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">TextInput</span><span class="p">(</span>
+      <span class="n">attrs</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">'placeholder'</span><span class="p">:</span> <span class="s">'아이디를 입력해주세요.'</span>
+      <span class="p">}</span>
+    <span class="p">)</span>
+  <span class="p">)</span> <span class="c"># 이 괄호 끝에 튜플이나 딕셔너리처럼 습관적으로 ','을 넣었었는데, 그 뒤 password 필드를 무시하게 되는 일이 발생했었다.</span>
+
+  <span class="c"># username 과 같이 입력 받을 password 필드 정의, 위젯의 경우, 패스워드는 문자열이 드러나면 곤란하기 때문에 forms.PasswordInput() 을 통해 문자열을 가려준다.</span>
+  <span class="n">password</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+      <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">(</span>
+          <span class="n">attrs</span><span class="o">=</span><span class="p">{</span>
+              <span class="s">'placeholder'</span><span class="p">:</span> <span class="s">'비밀번호를 입력해주세요.'</span>
+          <span class="p">}</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+</code></pre>
+</div>
+
+<h4 id="장고가-제공하는-유효성-검사기">장고가 제공하는 유효성 검사기</h4>
+<ul>
+  <li>clean() 메서드는 단일 인수를 사용하여 잘못된 입력에 대해 ValidationError를 발생시키는 간단한 함수이다.</li>
+  <li>일반적으로 <code class="highlighter-rouge">is_valid()</code> 를 호출할 때 실행되고, <code class="highlighter-rouge">cleaned_data</code> 에 딕셔너리 { ‘html-form-name’: ‘html-form-value’ } 의 형태로 할당된다.</li>
+  <li>양식을 처리하면서 세 가지 유형 to_python(), validate(), run_validators() 을 순차적으로 실행한다.</li>
+  <li>처리 중인 데이터에 문제가 있으면 ValidationError 생성자에 관련 정보를 전달하여 클리닝 메서드가 ValidationError 를 발생시킨다.</li>
+  <li>
+    <p>ValidationError 가 발생하지 않으면 정리된 데이터를 파이썬 객체로 반환해야 한다.</p>
+  </li>
+  <li><strong>clean() 메서드</strong>
+    <ul>
+      <li>to_python(), validate(), run_validators() 를 올바른 순서로 실행하고 오류 전파</li>
+      <li>ValidationError를 발생시키는 메서드가 있으면 유효성 검사가 중지되고 해당 오류가 발생, 깨끗한 데이터를 반환한 다음 폼의 cleaned_data 사전에 삽입</li>
+      <li>self.cleaned_data에서 필드 값을 찾고 이 시점에 파이썬 객체가 된다.</li>
+    </ul>
+  </li>
+  <li><strong>authenticate() 메서드</strong>
+    <ul>
+      <li>자격 증명이 유효한 경우, User 객체를 반환, 유효하지 않으면 None을 반환한다.</li>
+      <li>request 는 authenticate() 를 통과한 옵션 HttpRequest 다.</li>
+    </ul>
+  </li>
+  <li>authenticate() 를 통해 인증에 성공하면, cleaned_data 에 ‘user’ 를 키값으로 User 객체를 할당한다.</li>
+</ul>
+
+<p>[forms/login.py] : 데이터 유효성 및 하자 여부 검사하기</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#...</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">authenticate</span>
+
+<span class="c">#...</span>
+<span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="c"># is_valid() 가 실행되면서 사용자로 부터 폼에서 입력 받은 {'username': '사용자가 입력한 값', 'password': '사용자가 입력한 값'}이 cleaned_data 사전에 삽입될 것이다.</span>
+    <span class="c"># cleaned_data 사전으로 부터 username 과 password key 의 value 를 각각의 변수에 할당한다.  </span>
+    <span class="n">username</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"username"</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"password"</span><span class="p">)</span>
+
+    <span class="c"># value 가 유효하면 User 객체를 user 에 할당하고 유효하지 않으면 None 이 할당된다.</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">authenticate</span><span class="p">(</span>
+        <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span>
+        <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c"># None 이 아니면(무효하지 않으면), cleaned_data 사전에 'user' 를 key 로 User 객체를 value 로 삽입한다.</span>
+    <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">forms</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span>
+            <span class="s">'Login credentials not valid!'</span>
+        <span class="p">)</span>
+
+    <span class="c"># {'username': '사용자가 입력한 값', 'password': '사용자가 입력한 값', 'user': User 객체} 를 반환한다.    </span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span>
+</code></pre>
+</div>
+
+<h3 id="2-post-요청이-아닐-경우-빈-로그인-폼을-받아서-로그인-페이지로-넘기기">2. POST 요청이 아닐 경우, 빈 로그인 폼을 받아서 로그인 페이지로 넘기기</h3>
+<ul>
+  <li>이 부분은 뷰가 처리한다.</li>
+</ul>
+
+<p>[member/views.py] 에서 로그인을 위해 사용된 모듈</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span>
+<span class="kn">from</span> <span class="nn">member.forms.login</span> <span class="kn">import</span> <span class="n">LoginForm</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">login</span> <span class="k">as</span> <span class="n">django_login</span><span class="p">,</span> <span class="n">logout</span> <span class="k">as</span> <span class="n">django_logout</span><span class="p">,</span>
+</code></pre>
+</div>
+
+<p>[member/views.py]</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+    <span class="k">pass</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">LoginForm</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s">'form'</span><span class="p">:</span> <span class="n">form</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'member/login.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="3-사용자가-폼을-입력하지-않으면-입력-요청-메세지를-띄우며-다음-페이지-이동-막기">3. 사용자가 폼을 입력하지 않으면, 입력 요청 메세지를 띄우며 다음 페이지 이동 막기</h3>
+<ul>
+  <li>이 부분은 장고에서 알아서 해준다. 친절한 장고씨♡</li>
+</ul>
+
+<h3 id="4-입력한-아이디와-비밀번호가-데이터베이스-데이터와-일치하지-않으면-에러-메세지-뿜뿜-하지만-일치하면-로그인-하기">4. 입력한 아이디와 비밀번호가 데이터베이스 데이터와 일치하지 않으면, 에러 메세지 뿜뿜! 하지만 일치하면, 로그인 하기</h3>
+<ul>
+  <li>뷰에서 is_valid() 가 실행되면서 폼의 authenticate() 를 통해 데이터가 일치하면 User 객체를, 데이터가 없거나 일치하지 않으면 None 을 반환한다.</li>
+  <li>None 일 경우 ‘Login credentials not valid!’ 메세지를 띄우며 에러를 일으킨다.</li>
+</ul>
+
+<p>[member/views.py]</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">LoginForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">post</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+
+      <span class="c"># User 객체를 얻어서</span>
+      <span class="n">user</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span>
+
+      <span class="c"># 장고 로그인 메서드의 인자로 전달하여 로그인을 실행한다.</span>
+      <span class="n">django_login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'post:post_list'</span><span class="p">)</span>
+    <span class="c">#...</span>
+</code></pre>
+</div>
+
+<h3 id="5-이미-로그인한-상태에서-로그인-페이지로-이동한-것이라면-post_list-페이지로-튕겨내기">5. 이미 로그인한 상태에서 로그인 페이지로 이동한 것이라면 post_list 페이지로 튕겨내기</h3>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="n">form</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">LoginForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">post</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+    <span class="c">#...</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">():</span>
+      <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'post:post_list'</span><span class="p">)</span>
+    <span class="c">#...</span>
+</code></pre>
+</div>
+
+    </section>
+    <br><br>
+    <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
+      <ul class="other-posts">
+        
+        <li class="prev-or-next">
+          <a href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/15/instargram-postapp-view-url-template(2).html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [인스타그램] post앱 뷰, URL, 템플릿(2)...
+          </a>
+        </li>
+        
+        
+      </ul>
+      <!-- <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section> -->
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>

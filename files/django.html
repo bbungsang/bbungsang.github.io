@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<section class="list-container">
+  <!-- djangogirls -->
+  <p class="post-head">Do 장고걸스!</p>
+  <ul class="post-list">
+    {% for post in site.categories.djangogirls %}
+    <li class="post-wrap">
+      <p class="post-date">
+        {{ post.date | date_to_string }}
+      </p>
+      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <div class="tag-wrap">
+        {% if post %}
+          {% assign tags = post.tags %}
+        {% else %}
+          {% assign tags = page.tags %}
+        {% endif %}
+        {% for tag in tags %}
+          <a href="/tags/#{{tag|slugize}}">
+            <img src="{{ site.baseurl }}/images/tag_img2.png">
+            {{tag}}
+          </a>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <!-- instargram -->
+  <p class="post-head">인스타그램</p>
+  <ul class="post-list">
+    {% for post in site.categories.instargram %}
+    <li class="post-wrap">
+      <p class="post-date">
+        {{ post.date | date_to_string }}
+      </p>
+      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <div class="tag-wrap">
+        {% if post %}
+          {% assign tags = post.tags %}
+        {% else %}
+          {% assign tags = page.tags %}
+        {% endif %}
+        {% for tag in tags %}
+          <a href="/tags/#{{tag|slugize}}">
+            <img src="{{ site.baseurl }}/images/tag_img2.png">
+            {{tag}}
+          </a>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

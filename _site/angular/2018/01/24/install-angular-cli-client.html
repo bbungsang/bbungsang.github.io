@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>뿡상의 개발공부로그</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="#">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <i id="menuBtn" class="im im-diamond-o"></i>
+  </article>
+</section>
+<section class="desc">
+</section>
+
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (let i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<!-- <ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    <a href="/">
+      bbungsang
+      <i>devlog</i>
+    </a>
+  </li>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
+  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
+</ul> -->
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [Angular] Angular CLI, 클라이언트 구성하기
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#JavaScript">
+          <img src="/images/tag_img.png">
+          JavaScript
+        </a>
+      
+        <a href="/tags/#Angular">
+          <img src="/images/tag_img.png">
+          Angular
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <h2 id="angular-cli란">Angular CLI란?</h2>
+<p>간단한 명령어를 사용하여 엥귤러 프로젝트를 생성, 실행, 빌드할 수 있으며 다양한 구성 요소를 선택적으로 추가할 수 있는 커맨드 라인 인터페이스이다.</p>
+
+<h2 id="angular-cli-설치">Angular CLI 설치</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install -g @angular/cli
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Angular CLI 1.0.0 이전 버전의 경우 패키지명이 <code class="highlighter-rouge">angular-cli</code>였으나, 그 이후 버전부터 <code class="highlighter-rouge">@angular/cli</code>로 변경되었다.</p>
+</blockquote>
+
+<p>설치가 완료되면 <code class="highlighter-rouge">ng</code> 명령어를 사용할 수 있다. 설치가 성공적으로 완료되었는지 버전을 확인하여 보자.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ng version
+
+    _                      _                 ____ _     ___
+   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+ / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+               |___/
+
+Angular CLI: 1.6.3
+Node: 8.9.3
+OS: darwin x64
+Angular:
+</code></pre>
+</div>
+
+<h2 id="프로젝트-생성">프로젝트 생성</h2>
+<p><code class="highlighter-rouge">ng new</code> 명령어를 사용하여 프로젝트를 생성한다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ng new &lt;project-name&gt;
+</code></pre>
+</div>
+
+<h2 id="프로젝트-실행">프로젝트 실행</h2>
+<p><code class="highlighter-rouge">ng serve</code> 명령어를 실행하면 Webpack을 사용하여 소스코드와 의존 모듈을 번들링하고 Angular CLI가 내장하고 있는 개발용 서버를 실행한다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd &lt;project-name&gt;
+$ ng serve --open
+</code></pre>
+</div>
+
+<h2 id="client-구성하기">Client 구성하기</h2>
+<p>클라이언트와 서버를 함께 구축할 것이므로,
+개발 편의를 위해 CLI로 생성된 디렉토리 <code class="highlighter-rouge">src</code>의 이름을 <code class="highlighter-rouge">client</code>로 변경한다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ mv src client
+</code></pre>
+</div>
+
+<h2 id="변경될-디렉토리-구조">변경될 디렉토리 구조</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Project/
+  client/
+    apps/
+    assets/
+    environments/
+    index.html
+    main.ts
+    [...]
+  e2e/
+  node_modules/
+  server/
+    Server.ts
+    app.ts
+  .angular-cli.json
+  [...]
+</code></pre>
+</div>
+
+<ul>
+  <li>src 디렉토리 기준으로 설정 파일(.angular-cli.json)이 작성되어 있기 때문에 에러가 발생할 것이다.</li>
+</ul>
+
+<h2 id="angular-clijson-설정-변경">.angular-cli.json 설정 변경</h2>
+<p>ng 명령어를 실행하는 데 있어 Angular의 전반적인 환경을 설정하는 파일이다.</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"apps"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">어플리케이션</span><span class="w"> </span><span class="err">관련</span><span class="w"> </span><span class="err">설정</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"client"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">빌드된</span><span class="w"> </span><span class="err">결과물</span><span class="w"> </span><span class="err">소스가</span><span class="w"> </span><span class="err">생성될</span><span class="w"> </span><span class="err">경로[string]</span><span class="w">
+    </span><span class="err">[...]</span><span class="w">
+  </span><span class="err">}</span><span class="w">
+</span><span class="p">]</span><span class="err">,</span><span class="w">
+</span><span class="p">[</span><span class="err">...</span><span class="p">]</span><span class="err">,</span><span class="w">
+</span><span class="s2">"lint"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"project"</span><span class="p">:</span><span class="w"> </span><span class="s2">"client/tsconfig.app.json"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**/node_modules/**"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+</div>
+
+<h2 id="클라이언트-구조">클라이언트 구조</h2>
+<p>client/app 디렉토리 여러 개의 컴포넌트</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ng g c core/nav &amp;&amp; ng g c home &amp;&amp; ng g c main
+</code></pre>
+</div>
+
+<p>위와 같은 컴포넌트 생성 명령어를 통해 클라이언트 구조를 구성한다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>client/
+  app/
+    core/
+      nav/
+    core.module.ts
+    home/
+    main/
+    app.component.css
+    app.component.html
+    app.module.ts
+    app.routes.ts
+</code></pre>
+</div>
+
+<h3 id="core-디렉토리">core 디렉토리</h3>
+<p><code class="highlighter-rouge">core</code> 디렉토리는 기타 기능의 집합소이다. 예를 들어 네비게이션 메뉴의 경우, 하나의 주 컴포넌트가 되기에는 적합하지 않다. 따라서 이러한 부수적인 요소를 core에 모아놓고 필요할 때 꺼내어 쓰면 된다.</p>
+
+<p><strong>[core/nav/nav.component.html]</strong></p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"header-yellow"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"검색어를 입력해 주세요"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"../../../assets/images/kmong_logo.png"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>[core/core.module.ts]</strong> <br />
+nav 컴포넌트를 core 모듈에 등록하고 최종적으로 app 모듈에 등록을 해줘야 한다.
+app 모듈에 대한 코드는 하단에 있다.</p>
+
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CommonModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/common'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NavComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./nav/nav.component'</span><span class="p">;</span>
+
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">CommonModule</span><span class="p">,</span>
+  <span class="p">],</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">NavComponent</span><span class="p">],</span>
+  <span class="na">exports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">NavComponent</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kr">class</span> <span class="nx">CoreModule</span> <span class="p">{</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<h3 id="main-디렉토리">main 디렉토리</h3>
+<p><code class="highlighter-rouge">main</code> 디렉토리는 네비게이션 메뉴와 같이 모든 페이지가 공통으로 쓰는 부분을 구성한다.</p>
+
+<p><strong>[main/main.component.ts]</strong></p>
+
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NavComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'../core/nav/nav.component'</span><span class="p">;</span>
+
+
+<span class="err">@</span><span class="nx">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="s1">'app-main'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./main.component.html'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./main.component.css'</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kr">class</span> <span class="nx">MainComponent</span> <span class="k">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+  <span class="err">@</span><span class="nx">ViewChild</span><span class="p">(</span><span class="nx">NavComponent</span><span class="p">)</span>
+  <span class="nl">navComponent</span><span class="p">:</span> <span class="nx">NavComponent</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="viewchildclassname">@ViewChild(ClassName)</h4>
+<ul>
+  <li>자식 엘리먼트롤 호출 및 탐색하는 방벙중 하나로, 지시자를 통해 child에서의 엘리먼트 값을 가지고 온다.</li>
+  <li>가져온 엘리먼트는 selector 태그로 html 파일에서 사용된다.</li>
+</ul>
+
+<p><strong>[main/main.component.html]</strong></p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;app-nav&gt;&lt;/app-nav&gt;</span>
+<span class="nt">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+</code></pre>
+</div>
+
+<h4 id="router-outlet">router-outlet</h4>
+<p><code class="highlighter-rouge">router-outlet</code> 태그는 라우트가 설정된 url에 해당하는 컴포넌트를 보여준다.</p>
+
+<h2 id="생성된-컴포넌트-등록하기">생성된 컴포넌트 등록하기</h2>
+
+<p><strong>[app.routes.ts]</strong> <br />
+해당 컴포넌트들을 url을 통해 브라우저에서 접근할 수 있도록 라우팅 모듈 추가</p>
+
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">RouterModule</span><span class="p">,</span> <span class="nx">Routes</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/router'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">MainComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./main/main.component'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HomeComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./home/home.component'</span><span class="p">;</span>
+
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">routes</span><span class="err">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="na">component</span><span class="p">:</span> <span class="nx">MainComponent</span><span class="p">,</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span><span class="na">path</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">HomeComponent</span><span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">AppRouterModule</span> <span class="o">=</span> <span class="nx">RouterModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">(</span><span class="nx">routes</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">useHash</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p><strong>[app.module.ts]</strong> <br />
+생성된 모든 컴포넌트를 취합하여 app.module.ts 파일에 등록한다.</p>
+
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/platform-browser'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AppRouterModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./app.routes'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CoreModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./core/core.module'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./app.component'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HomeComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./home/home.component'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">MainComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./main/main.component'</span><span class="p">;</span>
+
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">AppComponent</span><span class="p">,</span>
+    <span class="nx">HomeComponent</span><span class="p">,</span> <span class="c1">// HomeComponent 등록</span>
+    <span class="nx">MainComponent</span>
+  <span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">CoreModule</span><span class="p">,</span>
+    <span class="nx">AppRouterModule</span> <span class="c1">// 라우터 모듈 임포트</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kr">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+
+</code></pre>
+</div>
+
+<h4 id="browsermodule">BrowserModule</h4>
+<p>브라우저 상에서 동작한다면 반드시 포함해야 하며, 컴포넌트나 지시자, 파이프 같은 구성 요소를 템플릿에 나타나게 한다.</p>
+
+<h4 id="commonmodule">CommonModule</h4>
+<p>템플릿에서 사용하는 ngIf, ngFor와 관련된 기능을 포함한다. (브라우저 모듈에 포함)</p>
+
+<p><strong>[app.component.html]</strong> <br /></p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- Main view/routes wrapper--&gt;</span>
+<span class="nt">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<p><img src="/assets/kmong_home.png" alt="" class="center-image" /></p>
+
+    </section>
+    <br><br>
+    <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
+      <ul class="other-posts">
+        
+        
+      </ul>
+      <!-- <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section> -->
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>

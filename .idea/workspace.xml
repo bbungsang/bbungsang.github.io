@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0c3ac760-f0ad-4796-8c77-75c8f9410517" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/javascript/typescript/2018-01-08-interface.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_site/typescript/2018/01/08/interface.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/_posts/javascript/typescript/2018-01-01-class.md" afterPath="$PROJECT_DIR$/_posts/javascript/typescript/2018-01-01-class.md" />
+      <change beforePath="$PROJECT_DIR$/_site/2017/05/31/jekyll-blog-tags.html" afterPath="$PROJECT_DIR$/_site/2017/05/31/jekyll-blog-tags.html" />
+      <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/29/(1)django-settings-설정하기.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/29/(1)django-settings-설정하기.html" />
+      <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/29/(2)EC2-인스턴스-생성하기.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/29/(2)EC2-인스턴스-생성하기.html" />
+      <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/29/(3)SSH-Linux-인스턴스.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/29/(3)SSH-Linux-인스턴스.html" />
+      <change beforePath="$PROJECT_DIR$/_site/aws/2017/06/30/(4)Amazon-linux-server.html" afterPath="$PROJECT_DIR$/_site/aws/2017/06/30/(4)Amazon-linux-server.html" />
+      <change beforePath="$PROJECT_DIR$/_site/css/post.compact.css" afterPath="$PROJECT_DIR$/_site/css/post.compact.css" />
+      <change beforePath="$PROJECT_DIR$/_site/css/post.css" afterPath="$PROJECT_DIR$/_site/css/post.css" />
+      <change beforePath="$PROJECT_DIR$/_site/css/post.min.css" afterPath="$PROJECT_DIR$/_site/css/post.min.css" />
+      <change beforePath="$PROJECT_DIR$/_site/css/post.nested.css" afterPath="$PROJECT_DIR$/_site/css/post.nested.css" />
+      <change beforePath="$PROJECT_DIR$/_site/django project/used book store/2017/10/02/facebook-login-of-django.html" afterPath="$PROJECT_DIR$/_site/django project/used book store/2017/10/02/facebook-login-of-django.html" />
+      <change beforePath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/28/djangogirs-first-project.html" afterPath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/28/djangogirs-first-project.html" />
+      <change beforePath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/30/djangogirls-models.html" afterPath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/30/djangogirls-models.html" />
+      <change beforePath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/30/djangogirls-url&amp;view.html" afterPath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/05/30/djangogirls-url&amp;view.html" />
+      <change beforePath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/06/23/djangogirls-django-form.html" afterPath="$PROJECT_DIR$/_site/do 장고걸스!/djangogirls/2017/06/23/djangogirls-django-form.html" />
+      <change beforePath="$PROJECT_DIR$/_site/drf/2017/09/11/Autentication(1).html" afterPath="$PROJECT_DIR$/_site/drf/2017/09/11/Autentication(1).html" />
+      <change beforePath="$PROJECT_DIR$/_site/drf/2017/09/12/authentication-jwt.html" afterPath="$PROJECT_DIR$/_site/drf/2017/09/12/authentication-jwt.html" />
+      <change beforePath="$PROJECT_DIR$/_site/drf/2017/09/13/drf-permissions.html" afterPath="$PROJECT_DIR$/_site/drf/2017/09/13/drf-permissions.html" />
+      <change beforePath="$PROJECT_DIR$/_site/files/etc/aws.html" afterPath="$PROJECT_DIR$/_site/files/etc/aws.html" />
+      <change beforePath="$PROJECT_DIR$/_site/files/etc/jekyll.html" afterPath="$PROJECT_DIR$/_site/files/etc/jekyll.html" />
+      <change beforePath="$PROJECT_DIR$/_site/files/js.html" afterPath="$PROJECT_DIR$/_site/files/js.html" />
+      <change beforePath="$PROJECT_DIR$/_site/files/server.html" afterPath="$PROJECT_DIR$/_site/files/server.html" />
+      <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
+      <change beforePath="$PROJECT_DIR$/_site/it/기본개념/basic-concept/2017/10/28/csrf-cors.html" afterPath="$PROJECT_DIR$/_site/it/기본개념/basic-concept/2017/10/28/csrf-cors.html" />
+      <change beforePath="$PROJECT_DIR$/_site/it/기본개념/basic-concept/2017/10/29/csrf-cors.html" afterPath="$PROJECT_DIR$/_site/it/기본개념/basic-concept/2017/10/29/csrf-cors.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2017/08/29/matchMedia.html" afterPath="$PROJECT_DIR$/_site/javascript/2017/08/29/matchMedia.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2017/10/12/javascript_regexp.html" afterPath="$PROJECT_DIR$/_site/javascript/2017/10/12/javascript_regexp.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2017/10/12/select-tag-default.html" afterPath="$PROJECT_DIR$/_site/javascript/2017/10/12/select-tag-default.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/03/function-declarations-expressions.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/03/function-declarations-expressions.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/04/execution-context.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/04/execution-context.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/04/global-local-variable.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/04/global-local-variable.html" />
+      <change beforePath="$PROJECT_DIR$/_site/javascript/2018/01/05/create-object.html" afterPath="$PROJECT_DIR$/_site/javascript/2018/01/05/create-object.html" />
+      <change beforePath="$PROJECT_DIR$/_site/scss/post.scss" afterPath="$PROJECT_DIR$/_site/scss/post.scss" />
+      <change beforePath="$PROJECT_DIR$/_site/search.json" afterPath="$PROJECT_DIR$/_site/search.json" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/2017/07/18/programmers-coding-test1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/2017/07/18/programmers-coding-test1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/2017/07/18/programmers-coding-test2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/2017/07/18/programmers-coding-test2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-3.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-3.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-4.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-4.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-3.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-3.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-3.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-3.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-4.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-4.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/19/tryhelloworld-level2-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/06/19/tryhelloworld-level2-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/08/31/tryhelloworld-level2-2.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/08/31/tryhelloworld-level2-2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level2-harshad.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level2-harshad.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level5-1.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level5-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-4.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-4.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-5.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-5.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/01/tryhelloword-collatz.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/01/tryhelloword-collatz.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/01/tryhelloword-getminsum.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/01/tryhelloword-getminsum.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/02/tryhelloword-noovertime.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/02/tryhelloword-noovertime.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/03/tryhelloword-caesar.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/03/tryhelloword-caesar.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/08/tryhelloworld-level3-nlcm.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/08/tryhelloworld-level3-nlcm.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level3-jumpcase.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level3-jumpcase.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/10/tryhelloworld-level4-bestset.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/10/tryhelloworld-level4-bestset.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/11/tryhelloworld-level4-hopscotch.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/11/tryhelloworld-level4-hopscotch.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html" />
+      <change beforePath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html" afterPath="$PROJECT_DIR$/_site/solve algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html" />
+      <change beforePath="$PROJECT_DIR$/_site/tags/index.html" afterPath="$PROJECT_DIR$/_site/tags/index.html" />
+      <change beforePath="$PROJECT_DIR$/_site/typescript/2018/01/01/class.html" afterPath="$PROJECT_DIR$/_site/typescript/2018/01/01/class.html" />
+      <change beforePath="$PROJECT_DIR$/_site/데이터베이스/database/2017/10/08/anomaly-and-fucntional-dependency.html" afterPath="$PROJECT_DIR$/_site/데이터베이스/database/2017/10/08/anomaly-and-fucntional-dependency.html" />
+      <change beforePath="$PROJECT_DIR$/_site/도커/docker/2017/07/03/what-is-docker.html" afterPath="$PROJECT_DIR$/_site/도커/docker/2017/07/03/what-is-docker.html" />
+      <change beforePath="$PROJECT_DIR$/_site/도커/docker/2017/07/21/docker-command.html" afterPath="$PROJECT_DIR$/_site/도커/docker/2017/07/21/docker-command.html" />
+      <change beforePath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/02/ch8-fbv-and-cbv.html" afterPath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/02/ch8-fbv-and-cbv.html" />
+      <change beforePath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/09/ch10-class-based-view.html" afterPath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/09/ch10-class-based-view.html" />
+      <change beforePath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/23/ch12-django-form-patterns.html" afterPath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/23/ch12-django-form-patterns.html" />
+      <change beforePath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/30/ch15-dtl-jinja2.html" afterPath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/08/30/ch15-dtl-jinja2.html" />
+      <change beforePath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/09/20/ch11-django-form.html" afterPath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/09/20/ch11-django-form.html" />
+      <change beforePath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/09/21/ch14-template-tag-filter.html" afterPath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/09/21/ch14-template-tag-filter.html" />
+      <change beforePath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/10/15/python-test.html" afterPath="$PROJECT_DIR$/_site/두숟갈 스터디/two-scoops/2017/10/15/python-test.html" />
+      <change beforePath="$PROJECT_DIR$/_site/서버/server/2017/07/20/nginx-1.html" afterPath="$PROJECT_DIR$/_site/서버/server/2017/07/20/nginx-1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/14/instargram-custom-user.html" afterPath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/14/instargram-custom-user.html" />
+      <change beforePath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/14/instargram-postapp-models.html" afterPath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/14/instargram-postapp-models.html" />
+      <change beforePath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/15/instargram-postapp-view-url-template(1).html" afterPath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/15/instargram-postapp-view-url-template(1).html" />
+      <change beforePath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/15/instargram-postapp-view-url-template(2).html" afterPath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/15/instargram-postapp-view-url-template(2).html" />
+      <change beforePath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/16/instargram-memberapp-login.html" afterPath="$PROJECT_DIR$/_site/인스타그램/instargram/2017/06/16/instargram-memberapp-login.html" />
+      <change beforePath="$PROJECT_DIR$/_site/지킬 블로그 꾸미기/jekyll/2017/06/06/jekyll-blog-comment.html" afterPath="$PROJECT_DIR$/_site/지킬 블로그 꾸미기/jekyll/2017/06/06/jekyll-blog-comment.html" />
+      <change beforePath="$PROJECT_DIR$/_site/컴퓨터 사이언스/css/2017/10/19/inheritance.html" afterPath="$PROJECT_DIR$/_site/컴퓨터 사이언스/css/2017/10/19/inheritance.html" />
+      <change beforePath="$PROJECT_DIR$/_site/컴퓨터 사이언스/css/2017/11/21/call-by.html" afterPath="$PROJECT_DIR$/_site/컴퓨터 사이언스/css/2017/11/21/call-by.html" />
+      <change beforePath="$PROJECT_DIR$/_site/파이썬 라이브러리/library/2017/05/27/python-beautifulsoup1.html" afterPath="$PROJECT_DIR$/_site/파이썬 라이브러리/library/2017/05/27/python-beautifulsoup1.html" />
+      <change beforePath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/05/27/python-basic-string-list-tuple.html" afterPath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/05/27/python-basic-string-list-tuple.html" />
+      <change beforePath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-comprehension.html" afterPath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-comprehension.html" />
+      <change beforePath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-generator.html" afterPath="$PROJECT_DIR$/_site/파이썬 문법/basic/2017/06/09/python-basic-generator.html" />
+      <change beforePath="$PROJECT_DIR$/css/post.compact.css" afterPath="$PROJECT_DIR$/css/post.compact.css" />
+      <change beforePath="$PROJECT_DIR$/css/post.css" afterPath="$PROJECT_DIR$/css/post.css" />
+      <change beforePath="$PROJECT_DIR$/css/post.min.css" afterPath="$PROJECT_DIR$/css/post.min.css" />
+      <change beforePath="$PROJECT_DIR$/css/post.nested.css" afterPath="$PROJECT_DIR$/css/post.nested.css" />
+      <change beforePath="$PROJECT_DIR$/scss/post.scss" afterPath="$PROJECT_DIR$/scss/post.scss" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_site/tags/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8409">
+              <caret line="1812" column="7" lean-forward="false" selection-start-line="1812" selection-start-column="7" selection-end-line="1812" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_site/search.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="886" column="1" lean-forward="false" selection-start-line="886" selection-start-column="1" selection-end-line="886" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_site/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="1437" column="7" lean-forward="false" selection-start-line="1437" selection-start-column="7" selection-end-line="1437" selection-end-column="7" />
+              <folding>
+                <element signature="e#7112#7116#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ddd</find>
+      <find>nx</find>
+      <find>nl</find>
+      <find>c1</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/scss/post.scss" />
+        <option value="$PROJECT_DIR$/css/post.css" />
+        <option value="$PROJECT_DIR$/_site/tags/index.html" />
+        <option value="$PROJECT_DIR$/_site/search.json" />
+        <option value="$PROJECT_DIR$/_site/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="320" />
+    <option name="y" value="23" />
+    <option name="width" value="960" />
+    <option name="height" value="777" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bbungsang.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bbungsang.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bbungsang.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bbungsang.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="_site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bbungsang.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bbungsang.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="_site" type="462c0819:PsiDirectoryNode" />
+              <item name="tags" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.python" />
+    <property name="last_opened_file_path" value="/usr/local/var/pyenv/shims/python" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c3ac760-f0ad-4796-8c77-75c8f9410517" name="Default" comment="" />
+      <created>1504773595125</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1504773595125</updated>
+      <workItem from="1514873791205" duration="217000" />
+      <workItem from="1514874047350" duration="103000" />
+      <workItem from="1516793666450" duration="184000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="504000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="320" y="23" width="960" height="777" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3919063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/post.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scss/post.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="283" column="45" lean-forward="false" selection-start-line="283" selection-start-column="45" selection-end-line="283" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/post.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="346" column="0" lean-forward="false" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/tags/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8409">
+          <caret line="1812" column="7" lean-forward="false" selection-start-line="1812" selection-start-column="7" selection-end-line="1812" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/search.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="886" column="1" lean-forward="false" selection-start-line="886" selection-start-column="1" selection-end-line="886" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="1437" column="7" lean-forward="false" selection-start-line="1437" selection-start-column="7" selection-end-line="1437" selection-end-column="7" />
+          <folding>
+            <element signature="e#7112#7116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

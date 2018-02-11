@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>뿡상의 개발공부로그</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="#">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <i id="menuBtn" class="im im-diamond-o"></i>
+  </article>
+</section>
+<section class="desc">
+</section>
+
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (let i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<!-- <ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    <a href="/">
+      bbungsang
+      <i>devlog</i>
+    </a>
+  </li>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
+  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
+</ul> -->
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [Try Hello World] Level1 짝수와 홀수
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Alogorithm">
+          <img src="/images/tag_img.png">
+          Alogorithm
+        </a>
+      
+        <a href="/tags/#Level1">
+          <img src="/images/tag_img.png">
+          Level1
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <h2 id="짝수와-홀수">짝수와 홀수</h2>
+<p>evenOrOdd 메소드는 int형 num을 매개변수로 받습니다. num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하도록 evenOrOdd에 코드를 작성해 보세요.</p>
+
+<p>num은 0이상의 정수이며, num이 음수인 경우는 없습니다.</p>
+
+<ul>
+  <li>내가 푼 것</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">evenOrOdd</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+  <span class="k">return</span> <span class="s">"Even"</span> <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s">"Odd"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"결과 : "</span> <span class="o">+</span> <span class="n">evenOrOdd</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"결과 : "</span> <span class="o">+</span> <span class="n">evenOrOdd</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>다른 사람 풀이</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">evenOrOdd</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="ow">and</span> <span class="s">"Odd"</span> <span class="ow">or</span> <span class="s">"Even"</span>
+</code></pre>
+</div>
+
+    </section>
+    <br><br>
+    <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
+      <ul class="other-posts">
+        
+        <li class="prev-or-next">
+          <a href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-4.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [Try Hello World] Level1 자릿수...
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right" style="float: right;">
+          <a href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-2.html">
+            [Try Hello World] Level1 제일...
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <!-- <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section> -->
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<section class="list-container">
+  <!-- python -->
+  <p class="post-head">파이썬 문법</p>
+  <ul class="post-list">
+    {% for post in site.categories.basic %}
+    <li class="post-wrap">
+      <p class="post-date">
+        {{ post.date | date_to_string }}
+      </p>
+      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <div class="tag-wrap">
+        {% if post %}
+          {% assign tags = post.tags %}
+        {% else %}
+          {% assign tags = page.tags %}
+        {% endif %}
+        {% for tag in tags %}
+          <a href="/tags/#{{tag|slugize}}">
+            <img src="{{ site.baseurl }}/images/tag_img2.png">
+            {{tag}}
+          </a>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <!-- python library -->
+  <p class="post-head">파이썬 라이브러리</p>
+  <ul class="post-list">
+    {% for post in site.categories.library %}
+    <li class="post-wrap">
+      <p class="post-date">
+        {{ post.date | date_to_string }}
+      </p>
+      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <div class="tag-wrap">
+        {% if post %}
+          {% assign tags = post.tags %}
+        {% else %}
+          {% assign tags = page.tags %}
+        {% endif %}
+        {% for tag in tags %}
+          <a href="/tags/#{{tag|slugize}}">
+            <img src="{{ site.baseurl }}/images/tag_img2.png">
+            {{tag}}
+          </a>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>뿡상의 개발공부로그</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="#">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <i id="menuBtn" class="im im-diamond-o"></i>
+  </article>
+</section>
+<section class="desc">
+</section>
+
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (let i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<!-- <ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    <a href="/">
+      bbungsang
+      <i>devlog</i>
+    </a>
+  </li>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
+  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
+</ul> -->
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <!-- <div class="tags">
+  <div class="tag-cloud">
+    
+      <span style="font-size: 80%">
+        <a href="#Python">
+          Python
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 167%">
+        <a href="#Alogorithm">
+          Alogorithm
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 118%">
+        <a href="#Level1">
+          Level1
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 121%">
+        <a href="#Django">
+          Django
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 80%">
+        <a href="#Djangogirls">
+          Djangogirls
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Jekyll">
+          Jekyll
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 82%">
+        <a href="#instargram">
+          instargram
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 87%">
+        <a href="#Level2">
+          Level2
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#Docker">
+          Docker
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#Nginx">
+          Nginx
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#WSGI">
+          WSGI
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Paas">
+          Paas
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Elastic Beanstalk">
+          Elastic Beanstalk
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 100%">
+        <a href="#JavaScript">
+          JavaScript
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#CSS">
+          CSS
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 77%">
+        <a href="#Django Template">
+          Django Template
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Jinja2">
+          Jinja2
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#Level5">
+          Level5
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#REST API">
+          REST API
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Authentication">
+          Authentication
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Token">
+          Token
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Django Form">
+          Django Form
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Social Login">
+          Social Login
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#데이터베이스">
+          데이터베이스
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#정규화">
+          정규화
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#이상(Anomaly)">
+          이상(Anomaly)
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#함수적 종속">
+          함수적 종속
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#정규표현식">
+          정규표현식
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#selectedIndex">
+          selectedIndex
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#OOP">
+          OOP
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#CORS">
+          CORS
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#CSRF">
+          CSRF
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 75%">
+        <a href="#HTTP">
+          HTTP
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 80%">
+        <a href="#Level3">
+          Level3
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 80%">
+        <a href="#Level4">
+          Level4
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Parameter">
+          Parameter
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 77%">
+        <a href="#TypeScript">
+          TypeScript
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#CPU">
+          CPU
+        </a> &nbsp;&nbsp;
+      </span>
+    
+      <span style="font-size: 72%">
+        <a href="#Angular">
+          Angular
+        </a> &nbsp;&nbsp;
+      </span>
+    
+  </div>
+</div> -->
+
+<section class="tag-container">
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Python">Python</p>
+      <a name="Python"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          09 Jun 2017
+        </p>
+        <a class="post-title" href="/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%AC%B8%EB%B2%95/basic/2017/06/09/python-basic-generator.html">제너레이터(Generator)</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          09 Jun 2017
+        </p>
+        <a class="post-title" href="/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%AC%B8%EB%B2%95/basic/2017/06/09/python-basic-comprehension.html">컴프리헨션(Comprehension)</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          27 May 2017
+        </p>
+        <a class="post-title" href="/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/library/2017/05/27/python-beautifulsoup1.html">파이썬 크롤링 라이브러리 - 뷰티풀수프</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          27 May 2017
+        </p>
+        <a class="post-title" href="/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%AC%B8%EB%B2%95/basic/2017/05/27/python-basic-string-list-tuple.html">문자열, List, Tuple</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Alogorithm">Alogorithm</p>
+      <a name="Alogorithm"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          23 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html">[Try Hello World] Level5 124 나라의 숫자</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          18 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html">[Try Hello World] Level4 공항 건설하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/11/tryhelloworld-level4-hopscotch.html">[Try Hello World] Level4 땅따먹기 게임</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          10 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/10/tryhelloworld-level4-bestset.html">[Try Hello World] Level4 최고의 집합</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          09 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html">[Try Hello World] Level4 숫자의 표현</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          09 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level3-jumpcase.html">[Try Hello World] Level3 멀리 뛰기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/08/tryhelloworld-level3-nlcm.html">[Try Hello World] Level3 N개의 최소공배수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          03 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/03/tryhelloword-caesar.html">[Try Hello World] Level3 시저 암호</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/02/tryhelloword-noovertime.html">[Try Hello World] Level3 야근 지수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/01/tryhelloword-getminsum.html">[Try Hello World] Level2 최솟값 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/01/tryhelloword-collatz.html">[Try Hello World] Level2 콜라츠 추측</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-5.html">[Try Hello World] Level2 이상한 문자 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-4.html">[Try Hello World] Level2 자연수를 뒤집어 리스트로 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level5-1.html">[Try Hello World] Level5 2 x n 타일링</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level2-harshad.html">[Try Hello World] Level2 하샤드수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          31 Aug 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/08/31/tryhelloworld-level2-2.html">[Try Hello World] Level2 JadenCase문자열 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          18 Jul 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/2017/07/18/programmers-coding-test2.html">[Programmers Summer Coding] 직사각형 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          18 Jul 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/2017/07/18/programmers-coding-test1.html">[Programmers Summer Coding] 원형으로 연결되어 있는 n개의 스티커</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          19 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/19/tryhelloworld-level2-1.html">[Try Hello World] Level2 2016년</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-2.html">[Try Hello World] Level1 약수의 합</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-1.html">[Try Hello World] Level1 피보나치 수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-2.html">[Try Hello World] Level1 행렬의 덧셈</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-1.html">[Try Hello World] Level1 최대공약수와 최소공배수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          07 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-2.html">[Try Hello World] Level1 같은 숫자는 싫어</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          07 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-1.html">[Try Hello World] Level1 딕셔너리 정렬</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          06 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-2.html">[Try Hello World] Level1 문자열 내 p와 y의 개수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          06 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-1.html">[Try Hello World] Level1 문자열 다루기 기본</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-4.html">[Try Hello World] Level1 삼각형 출력하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-3.html">[Try Hello World] Level1 서울에서 김서방 찾기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-2.html">[Try Hello World] Level1 수박수박수박수박수박수?</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-1.html">[Try Hello World] Level1 스트링을 숫자로 바꾸기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-3.html">[Try Hello World] Level1 정수제곱근 판별하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-2.html">[Try Hello World] Level1 제일 작은 수 제거하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-1.html">[Try Hello World] Level1 짝수와 홀수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-4.html">[Try Hello World] Level1 자릿수 더하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-3.html">[Try Hello World] Level1 평균 구하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-2.html">[Try Hello World] Level1 핸드폰 번호 가리기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-1.html">[Try Hello World] Level1 x만큼 간격이 있는 n개의 숫자</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Level1">Level1</p>
+      <a name="Level1"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-2.html">[Try Hello World] Level1 약수의 합</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-1.html">[Try Hello World] Level1 피보나치 수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-2.html">[Try Hello World] Level1 행렬의 덧셈</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-1.html">[Try Hello World] Level1 최대공약수와 최소공배수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          07 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-2.html">[Try Hello World] Level1 같은 숫자는 싫어</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          07 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-1.html">[Try Hello World] Level1 딕셔너리 정렬</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          06 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-2.html">[Try Hello World] Level1 문자열 내 p와 y의 개수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          06 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-1.html">[Try Hello World] Level1 문자열 다루기 기본</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-4.html">[Try Hello World] Level1 삼각형 출력하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-3.html">[Try Hello World] Level1 서울에서 김서방 찾기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-2.html">[Try Hello World] Level1 수박수박수박수박수박수?</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/30/tryhelloworld-level1-3-1.html">[Try Hello World] Level1 스트링을 숫자로 바꾸기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-3.html">[Try Hello World] Level1 정수제곱근 판별하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-2.html">[Try Hello World] Level1 제일 작은 수 제거하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/29/tryhelloworld-level1-2-1.html">[Try Hello World] Level1 짝수와 홀수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-4.html">[Try Hello World] Level1 자릿수 더하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-3.html">[Try Hello World] Level1 평균 구하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-2.html">[Try Hello World] Level1 핸드폰 번호 가리기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/05/28/tryhelloworld-level1-1-1.html">[Try Hello World] Level1 x만큼 간격이 있는 n개의 숫자</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Django">Django</p>
+      <a name="Django"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          15 Oct 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/10/15/python-test.html">[22장] 테스트, 정말 거추장스럽고 낭비일까?</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Oct 2017
+        </p>
+        <a class="post-title" href="/django%20project/used%20book%20store/2017/10/02/facebook-login-of-django.html">페이스북 로그인 플로우 직접 빌드 in Django</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          21 Sep 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/09/21/ch14-template-tag-filter.html">[14장] 템플릿 태그와 필터</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          20 Sep 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/09/20/ch11-django-form.html">[11장] 장고 폼의 기초</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          13 Sep 2017
+        </p>
+        <a class="post-title" href="/drf/2017/09/13/drf-permissions.html">[DRF] Permissions</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Sep 2017
+        </p>
+        <a class="post-title" href="/drf/2017/09/11/Autentication(1).html">[DRF] Authentication</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 Aug 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">[15장] 장고 템플릿과 Jinja2</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          23 Aug 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/23/ch12-django-form-patterns.html">[12장] 폼 패턴들</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          09 Aug 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/09/ch10-class-based-view.html">[10장] 클래스 기반 뷰</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Aug 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/02/ch9-func-based-view.html">[9장] 함수 기반 뷰</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Aug 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/02/ch8-fbv-and-cbv.html">[8장] 함수 기반 뷰와 클래스 기반 뷰</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          23 Jun 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/06/23/djangogirls-django-form.html">장고 폼</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          16 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/16/instargram-memberapp-login.html">[인스타그램] 로그인 기능 구현하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          15 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/15/instargram-postapp-view-url-template(2).html">[인스타그램] post앱 뷰, URL, 템플릿(2) - post_detail</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          15 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/15/instargram-postapp-view-url-template(1).html">[인스타그램] post앱 뷰, URL, 템플릿(1) - post_list</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          14 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/14/instargram-postapp-models.html">[인스타그램] post앱 모델</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          14 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/14/instargram-custom-user.html">[인스타그램] 커스텀 유저 돌리기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/30/djangogirls-url&view.html">장고 URL과 뷰</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/30/djangogirls-models.html">장고 모델</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/28/djangogirs-first-project.html">첫 장고 프로젝트!</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Djangogirls">Djangogirls</p>
+      <a name="Djangogirls"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          23 Jun 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/06/23/djangogirls-django-form.html">장고 폼</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/30/djangogirls-url&view.html">장고 URL과 뷰</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 May 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/30/djangogirls-models.html">장고 모델</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 May 2017
+        </p>
+        <a class="post-title" href="/do%20%EC%9E%A5%EA%B3%A0%EA%B1%B8%EC%8A%A4!/djangogirls/2017/05/28/djangogirs-first-project.html">첫 장고 프로젝트!</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Jekyll">Jekyll</p>
+      <a name="Jekyll"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          06 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%A7%80%ED%82%AC%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EA%BE%B8%EB%AF%B8%EA%B8%B0/jekyll/2017/06/06/jekyll-blog-comment.html">[지킬 블로그] Disqus 댓글 기능 달기</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#instargram">instargram</p>
+      <a name="instargram"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          16 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/16/instargram-memberapp-login.html">[인스타그램] 로그인 기능 구현하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          15 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/15/instargram-postapp-view-url-template(2).html">[인스타그램] post앱 뷰, URL, 템플릿(2) - post_detail</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          15 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/15/instargram-postapp-view-url-template(1).html">[인스타그램] post앱 뷰, URL, 템플릿(1) - post_list</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          14 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/14/instargram-postapp-models.html">[인스타그램] post앱 모델</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          14 Jun 2017
+        </p>
+        <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/14/instargram-custom-user.html">[인스타그램] 커스텀 유저 돌리기</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Level2">Level2</p>
+      <a name="Level2"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/01/tryhelloword-getminsum.html">[Try Hello World] Level2 최솟값 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/01/tryhelloword-collatz.html">[Try Hello World] Level2 콜라츠 추측</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-5.html">[Try Hello World] Level2 이상한 문자 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-4.html">[Try Hello World] Level2 자연수를 뒤집어 리스트로 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level2-harshad.html">[Try Hello World] Level2 하샤드수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          31 Aug 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/08/31/tryhelloworld-level2-2.html">[Try Hello World] Level2 JadenCase문자열 만들기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          19 Jun 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/19/tryhelloworld-level2-1.html">[Try Hello World] Level2 2016년</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Docker">Docker</p>
+      <a name="Docker"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          21 Jul 2017
+        </p>
+        <a class="post-title" href="/%EB%8F%84%EC%BB%A4/docker/2017/07/21/docker-command.html">도커 명령어</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          03 Jul 2017
+        </p>
+        <a class="post-title" href="/%EB%8F%84%EC%BB%A4/docker/2017/07/03/what-is-docker.html">도커(Docker)란?</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Nginx">Nginx</p>
+      <a name="Nginx"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          20 Jul 2017
+        </p>
+        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/wsgi.html">WSGI와 uWSGI</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          20 Jul 2017
+        </p>
+        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/nginx-1.html">NGINX (1)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#WSGI">WSGI</p>
+      <a name="WSGI"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          20 Jul 2017
+        </p>
+        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/wsgi.html">WSGI와 uWSGI</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          20 Jul 2017
+        </p>
+        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/nginx-1.html">NGINX (1)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Paas">Paas</p>
+      <a name="Paas"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          22 Jul 2017
+        </p>
+        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/22/cloud-service.html">클라우드 서비스(Paas, Saas, Iaas)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Elastic Beanstalk">Elastic Beanstalk</p>
+      <a name="Elastic Beanstalk"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          22 Jul 2017
+        </p>
+        <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/22/cloud-service.html">클라우드 서비스(Paas, Saas, Iaas)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#JavaScript">JavaScript</p>
+      <a name="JavaScript"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          24 Jan 2018
+        </p>
+        <a class="post-title" href="/angular/2018/01/24/install-angular-cli-client.html">[Angular] Angular CLI, 클라이언트 구성하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Jan 2018
+        </p>
+        <a class="post-title" href="/typescript/2018/01/08/interface.html">[TypeScript] Interface</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          05 Jan 2018
+        </p>
+        <a class="post-title" href="/javascript/2018/01/05/create-object.html">[JS Object] 객체 리터럴과 new 연산자</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          04 Jan 2018
+        </p>
+        <a class="post-title" href="/javascript/2018/01/04/global-local-variable.html">[JS Variable] 전역 변수와 지역 변수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          04 Jan 2018
+        </p>
+        <a class="post-title" href="/javascript/2018/01/04/execution-context.html">[JS Execution] 실행 컨텍스트</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          03 Jan 2018
+        </p>
+        <a class="post-title" href="/javascript/2018/01/03/prototype.html">[JS Function] 프로토타입에 대해서</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          03 Jan 2018
+        </p>
+        <a class="post-title" href="/javascript/2018/01/03/function-declarations-expressions.html">[JS Function] 함수 선언과 함수 리터럴</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Jan 2018
+        </p>
+        <a class="post-title" href="/typescript/2018/01/01/class.html">[TypeScript] Class</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 Dec 2017
+        </p>
+        <a class="post-title" href="/typescript/2017/12/30/about-typescript.html">[TypeScript] About TypeScript</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Oct 2017
+        </p>
+        <a class="post-title" href="/javascript/2017/10/12/select-tag-default.html">select 태그의 selected 옵션 차등 부여하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Oct 2017
+        </p>
+        <a class="post-title" href="/javascript/2017/10/12/javascript_regexp.html">자바스크립트 정규표현식</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 Aug 2017
+        </p>
+        <a class="post-title" href="/javascript/2017/08/29/matchMedia.html">자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#CSS">CSS</p>
+      <a name="CSS"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 Aug 2017
+        </p>
+        <a class="post-title" href="/javascript/2017/08/29/matchMedia.html">자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Django Template">Django Template</p>
+      <a name="Django Template"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          15 Oct 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/10/15/python-test.html">[22장] 테스트, 정말 거추장스럽고 낭비일까?</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          21 Sep 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/09/21/ch14-template-tag-filter.html">[14장] 템플릿 태그와 필터</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 Aug 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">[15장] 장고 템플릿과 Jinja2</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Jinja2">Jinja2</p>
+      <a name="Jinja2"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 Aug 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">[15장] 장고 템플릿과 Jinja2</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Level5">Level5</p>
+      <a name="Level5"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          23 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/23/tryhelloworld-level5-change124.html">[Try Hello World] Level5 124 나라의 숫자</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Sep 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level5-1.html">[Try Hello World] Level5 2 x n 타일링</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#REST API">REST API</p>
+      <a name="REST API"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          13 Sep 2017
+        </p>
+        <a class="post-title" href="/drf/2017/09/13/drf-permissions.html">[DRF] Permissions</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Sep 2017
+        </p>
+        <a class="post-title" href="/drf/2017/09/11/Autentication(1).html">[DRF] Authentication</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Authentication">Authentication</p>
+      <a name="Authentication"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Sep 2017
+        </p>
+        <a class="post-title" href="/drf/2017/09/12/authentication-jwt.html">[DRF] JWT(Json Web Token)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Token">Token</p>
+      <a name="Token"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Sep 2017
+        </p>
+        <a class="post-title" href="/drf/2017/09/12/authentication-jwt.html">[DRF] JWT(Json Web Token)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Django Form">Django Form</p>
+      <a name="Django Form"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          20 Sep 2017
+        </p>
+        <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/09/20/ch11-django-form.html">[11장] 장고 폼의 기초</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Social Login">Social Login</p>
+      <a name="Social Login"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Oct 2017
+        </p>
+        <a class="post-title" href="/django%20project/used%20book%20store/2017/10/02/facebook-login-of-django.html">페이스북 로그인 플로우 직접 빌드 in Django</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#데이터베이스">데이터베이스</p>
+      <a name="데이터베이스"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Oct 2017
+        </p>
+        <a class="post-title" href="/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/database/2017/10/08/anomaly-and-fucntional-dependency.html">[데이터베이스] 이상과 함수적 종속</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#정규화">정규화</p>
+      <a name="정규화"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Oct 2017
+        </p>
+        <a class="post-title" href="/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/database/2017/10/08/anomaly-and-fucntional-dependency.html">[데이터베이스] 이상과 함수적 종속</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#이상(Anomaly)">이상(Anomaly)</p>
+      <a name="이상(Anomaly)"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Oct 2017
+        </p>
+        <a class="post-title" href="/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/database/2017/10/08/anomaly-and-fucntional-dependency.html">[데이터베이스] 이상과 함수적 종속</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#함수적 종속">함수적 종속</p>
+      <a name="함수적 종속"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Oct 2017
+        </p>
+        <a class="post-title" href="/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/database/2017/10/08/anomaly-and-fucntional-dependency.html">[데이터베이스] 이상과 함수적 종속</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#정규표현식">정규표현식</p>
+      <a name="정규표현식"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Oct 2017
+        </p>
+        <a class="post-title" href="/javascript/2017/10/12/javascript_regexp.html">자바스크립트 정규표현식</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#selectedIndex">selectedIndex</p>
+      <a name="selectedIndex"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          12 Oct 2017
+        </p>
+        <a class="post-title" href="/javascript/2017/10/12/select-tag-default.html">select 태그의 selected 옵션 차등 부여하기</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#OOP">OOP</p>
+      <a name="OOP"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          19 Oct 2017
+        </p>
+        <a class="post-title" href="/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/css/2017/10/19/inheritance.html">상속(Inheritance)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#CORS">CORS</p>
+      <a name="CORS"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 Oct 2017
+        </p>
+        <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/29/csrf-cors.html">CORS와 CSRF(2)</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 Oct 2017
+        </p>
+        <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/28/csrf-cors.html">CORS와 CSRF(1)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#CSRF">CSRF</p>
+      <a name="CSRF"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 Oct 2017
+        </p>
+        <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/29/csrf-cors.html">CORS와 CSRF(2)</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 Oct 2017
+        </p>
+        <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/28/csrf-cors.html">CORS와 CSRF(1)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#HTTP">HTTP</p>
+      <a name="HTTP"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          29 Oct 2017
+        </p>
+        <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/29/csrf-cors.html">CORS와 CSRF(2)</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          28 Oct 2017
+        </p>
+        <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/28/csrf-cors.html">CORS와 CSRF(1)</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Level3">Level3</p>
+      <a name="Level3"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          09 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level3-jumpcase.html">[Try Hello World] Level3 멀리 뛰기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/08/tryhelloworld-level3-nlcm.html">[Try Hello World] Level3 N개의 최소공배수</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          03 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/03/tryhelloword-caesar.html">[Try Hello World] Level3 시저 암호</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          02 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/02/tryhelloword-noovertime.html">[Try Hello World] Level3 야근 지수</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Level4">Level4</p>
+      <a name="Level4"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          18 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html">[Try Hello World] Level4 공항 건설하기</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          11 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/11/tryhelloworld-level4-hopscotch.html">[Try Hello World] Level4 땅따먹기 게임</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          10 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/10/tryhelloworld-level4-bestset.html">[Try Hello World] Level4 최고의 집합</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          09 Nov 2017
+        </p>
+        <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html">[Try Hello World] Level4 숫자의 표현</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Parameter">Parameter</p>
+      <a name="Parameter"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          21 Nov 2017
+        </p>
+        <a class="post-title" href="/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/css/2017/11/21/call-by.html">Call By Value, Call By Reference, Call By Assignment</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#TypeScript">TypeScript</p>
+      <a name="TypeScript"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          08 Jan 2018
+        </p>
+        <a class="post-title" href="/typescript/2018/01/08/interface.html">[TypeScript] Interface</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Jan 2018
+        </p>
+        <a class="post-title" href="/typescript/2018/01/01/class.html">[TypeScript] Class</a>
+      </li>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          30 Dec 2017
+        </p>
+        <a class="post-title" href="/typescript/2017/12/30/about-typescript.html">[TypeScript] About TypeScript</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#CPU">CPU</p>
+      <a name="CPU"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          01 Jan 2018
+        </p>
+        <a class="post-title" href="/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/css/2018/01/01/cpu-cycle.html">CPU Cycle</a>
+      </li>
+      
+    </ul>
+  
+    <ul class="tag-category">
+      
+      <p class="tag-category-title" id="#Angular">Angular</p>
+      <a name="Angular"></a>
+      
+      <li class="tag-category-list">
+        <p class="post-date">
+          24 Jan 2018
+        </p>
+        <a class="post-title" href="/angular/2018/01/24/install-angular-cli-client.html">[Angular] Angular CLI, 클라이언트 구성하기</a>
+      </li>
+      
+    </ul>
+  
+</section>
+
+  </div>
+</body>
+</html>

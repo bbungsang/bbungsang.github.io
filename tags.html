@@ -1,0 +1,35 @@
+---
+layout: default
+permalink: /tags/
+title: Tags
+---
+
+<!-- <div class="tags">
+  <div class="tag-cloud">
+    {% for tag in site.tags %}
+      <span style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%">
+        <a href="#{{ tag | first | slugize }}">
+          {{ tag | first }}
+        </a> &nbsp;&nbsp;
+      </span>
+    {% endfor %}
+  </div>
+</div> -->
+
+<section class="tag-container">
+  {% for tag in site.tags %}
+    <ul class="tag-category">
+      {% capture tag_name %}{{ tag | first }}{% endcapture %}
+      <p class="tag-category-title" id="#{{ tag_name | slugize }}">{{ tag_name }}</p>
+      <a name="{{ tag_name | slugize }}"></a>
+      {% for post in site.tags[tag_name] %}
+      <li class="tag-category-list">
+        <p class="post-date">
+          {{ post.date | date_to_string }}
+        </p>
+        <a class="post-title" href="{{ root_url }}{{ post.url }}">{{post.title}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</section>

@@ -1,0 +1,11 @@
+body { margin: 0; padding: 0; }
+
+ul { padding: 0; margin: 0; }
+
+li { padding: 0; list-style: none; }
+
+a { text-decoration: none; }
+
+@font-face { font-family: NanumBarunpen; src: url("/font/NanumBarunpen.woff") format("woff"); }
+
+@font-face { font-family: NanumSquareRound; src: url("/font/NanumSquareRoundL.ttf") format("ttf"); }

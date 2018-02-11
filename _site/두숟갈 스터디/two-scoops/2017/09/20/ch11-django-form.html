@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>뿡상의 개발공부로그</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/nav.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/css/post.css" />
+	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="#">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <i id="menuBtn" class="im im-diamond-o"></i>
+  </article>
+</section>
+<section class="desc">
+</section>
+
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (let i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<!-- <ul class="top_menu">
+  <li class=" menu_list sidebar-toggle-box">
+    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
+      <i class="im im-menu"></i>
+    </button>
+  </li>
+
+  <li class="menu_list logo">
+    <a href="/">
+      bbungsang
+      <i>devlog</i>
+    </a>
+  </li>
+  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
+  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
+</ul> -->
+
+<!-- 사이드 메뉴바 -->
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [11장] 장고 폼의 기초
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Django">
+          <img src="/images/tag_img.png">
+          Django
+        </a>
+      
+        <a href="/tags/#Django Form">
+          <img src="/images/tag_img.png">
+          Django Form
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <h2 id="장고-폼을-이용하여-입력-데이터에-대한-유효성-검사하기">장고 폼을 이용하여 입력 데이터에 대한 유효성 검사하기</h2>
+<p>장고 폼은 파이썬 딕셔너리의 <strong>유효성을 검사</strong> (딕셔너리 안에 해당 key와 value 여부, input 조건등 검사)에 최상의 도구이다.</p>
+
+<pre><code class="language-docker">유효성 검사는 3단계의 메서드 실행으로 이뤄지는데, form 객체를 is_valid()할 때 검사가 실행된다.
+
+[1단계] to_python()
+	- 유효성 검사의 첫 번째 단계로서, 값을 올바른 데이터 유형으로 강제 변환하고, 가능하지 않을 경우 	ValidationError를 발생시킨다. 즉 FloatField일 경우, 데이터를 Python float 타입으로 강제 	변환시킨다.
+
+[2단계] validate()
+	-  올바른 데이터 유형으로 변환된 값을 유효성 검사기에 적합한지 검사한다. 리턴되는 값은 없다.
+
+[3단계] run_validators()
+	- 위 단계를 거친 후, 유효성 검사기를 통해 잘못 입력된 값에 대하여 ValidationError를 일으킨다.
+
+clean()은 위 3단계를 올바른 순서로 실행하고 오류를 전파한다. 유효성 검사를 통과한 깨끗한 데이터를 반환한 다음 폼의 cleaned_data 사전에 삽입한다.
+</code></pre>
+
+<p>뷰 단에서 유효성 검사 코드를 추가할 수 있지만, 매번 데이터가 바뀔 때마다 복잡한 유효성 검사 코드를 필요에 맞게 유지 관리하는 것은 매우 번거로운 일이다.</p>
+
+<h3 id="html-폼에서-post-메서드-이용하기">HTML 폼에서 POST 메서드 이용하기</h3>
+<ul>
+  <li>모든 HTML 폼은 POST 메서드를 이용하여 데이터를 전송하게 된다.</li>
+  <li>폼에서 POST 메서드를 이용하지 않는 유일한 경우는 <code class="highlighter-rouge">검색 폼</code>이다. 검색 폼은 일반적으로 <code class="highlighter-rouge">어떤 데이터도 변경하지 않기 때문</code>이다. 이럴 경우 GET 메서드를 이용할 수 있다.</li>
+</ul>
+
+<h3 id="데이터를-변경하는-http-폼은-언제나-csrf-보안을-이용해야-한다">데이터를 변경하는 HTTP 폼은 언제나 <a href="">CSRF</a> 보안을 이용해야 한다.</h3>
+<p><code class="highlighter-rouge">CSRF(Cross SIte Request Forgery protection), 교차 사이트 요청 위조 방지</code>는 사용자가 로그아웃하지 않고 유효한 세션을 계속 유지할 때 발생할 수 있는 공격으로부터 보호하는 메커니즘이다. 
+CSRF 보안을 사용하지 않으면 치명적인 보안 문제를 일으킬 수 있으므로 항상 <a href="https://docs.djangoproject.com/en/1.11/ref/csrf/">장고의 CSRF</a> 보안을 이용할 것을 충고한다.
+장고의 <code class="highlighter-rouge">CsrfViewMiddleware</code>를 사이트 전체에 대한 보호막으로 이용함으로써 일일이 손으로 csrf_protect를 뷰에 데코레이팅하지 않아도 된다.
+CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 들 수 있다. django-tastypie나 django-rest-framework의 API 프레임워크에서는 이러한 처리를 자동으로 다해주기 때문이다.</p>
+
+<h3 id="ajax를-통해-데이터-추가하기">AJAX를 통해 데이터 추가하기</h3>
+<ul>
+  <li><a href="">AJAX</a>를 통해 데이터를 추가할 때는 반드시 장고의 <a href="">CSRF</a> 보안을 이용해야 한다.</li>
+  <li><a href="">CSRF</a> 보안을 이용하기 위해서는 먼저 CSRF 토큰을 얻어야 하는데, 이를 수행하는 방법은 CSRF_USE_SESSIONS 설정 사용 여부에 따라 다르다.</li>
+</ul>
+
+<p><strong>1. CSRF_USE_SESSIONS = False</strong></p>
+
+<ul>
+  <li>처음으로 사이트에 방문하면 쿠키를 저장하게 되는데, 이 쿠키는 <code class="highlighter-rouge">csrftoken</code>에 대한 정보도 저장되어있다. 그리고 그 이후부터는 데이터를 전송할 때, HTTP Header에 이 쿠키 정보를 포함하여 전송한다.</li>
+  <li>장고는 <code class="highlighter-rouge">csrftoken</code> 쿠키에 <code class="highlighter-rouge">csrfmiddlewaretoken</code>에 저장된 값과 동일한 값이 저장된다.</li>
+</ul>
+
+<h4 id="csrftoken-cookie-가져오기">csrftoken cookie 가져오기</h4>
+
+<p>jQuery를 사용할 경우</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="n">function</span> <span class="nf">getCookie</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">var</span> <span class="n">cookieValue</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">document</span><span class="o">.</span><span class="na">cookie</span> <span class="o">&amp;&amp;</span> <span class="n">document</span><span class="o">.</span><span class="na">cookie</span> <span class="o">!=</span> <span class="err">''</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">var</span> <span class="n">cookies</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">cookie</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="sc">';'</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cookies</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">var</span> <span class="n">cookie</span> <span class="o">=</span> <span class="n">jQuery</span><span class="o">.</span><span class="na">trim</span><span class="o">(</span><span class="n">cookies</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">cookie</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">name</span><span class="o">.</span><span class="na">length</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">==</span> <span class="o">(</span><span class="n">name</span> <span class="o">+</span> <span class="sc">'='</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">cookieValue</span> <span class="o">=</span> <span class="n">decodeURIComponent</span><span class="o">(</span><span class="n">cookie</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">length</span> <span class="o">+</span> <span class="mi">1</span><span class="o">));</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">cookieValue</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="n">jQuery</span><span class="o">.</span><span class="na">ajax</span><span class="o">({</span>
+    <span class="nl">type:</span> <span class="err">'</span><span class="n">PUT</span><span class="err">'</span><span class="o">,</span>
+    <span class="nl">url:</span> <span class="n">host</span><span class="o">+</span><span class="err">'</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="err">'</span><span class="o">+</span><span class="n">id</span><span class="o">+</span><span class="sc">'/'</span><span class="o">,</span>
+    <span class="nl">dataType:</span> <span class="err">'</span><span class="n">json</span><span class="err">'</span><span class="o">,</span>
+    <span class="nl">contentType:</span> <span class="err">'</span><span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="o">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="err">'</span><span class="o">,</span>
+    <span class="nl">data:</span> <span class="n">JSON</span><span class="o">.</span><span class="na">stringify</span><span class="o">(</span><span class="n">data</span><span class="o">),</span>
+    <span class="nl">beforeSend:</span> <span class="n">function</span> <span class="o">(</span><span class="n">xhr</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">xhr</span><span class="o">.</span><span class="na">setRequestHeader</span><span class="o">(</span><span class="s">"X-CSRFToken"</span><span class="o">,</span> <span class="n">getCookie</span><span class="o">(</span><span class="err">'</span><span class="n">csrftoken</span><span class="err">'</span><span class="o">));</span>
+    <span class="o">},</span>
+    <span class="nl">success:</span> <span class="n">function</span><span class="o">(</span><span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        
+    <span class="o">},</span>
+    <span class="nl">error:</span> <span class="n">function</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        
+    <span class="o">}</span>
+<span class="o">});</span>
+
+</code></pre>
+</div>
+
+<p><a href="https://github.com/js-cookie/js-cookie/">JavaScript Cookie 라이브러리</a>를 통해 csrftoken 쿠키를 얻을 경우</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">var</span> <span class="n">csrftoken</span> <span class="o">=</span> <span class="n">Cookies</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="err">'</span><span class="n">csrftoken</span><span class="err">'</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p><strong>2. CSRF_USE_SESSIONS = True</strong></p>
+
+<ul>
+  <li>CSRF_USE_SESSIONS를 활성화한 경우, HTML에 CSRF 토큰을 포함시키고 자바스크립트를 통하여 DOM으로부터 토큰을 읽어야한다.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="o">{%</span> <span class="n">csrf_token</span> <span class="o">%}</span>
+<span class="o">&lt;</span><span class="n">script</span> <span class="n">type</span><span class="o">=</span><span class="s">"text/javascript"</span><span class="o">&gt;</span>
+<span class="c1">// using jQuery</span>
+<span class="n">var</span> <span class="n">csrftoken</span> <span class="o">=</span> <span class="n">jQuery</span><span class="o">(</span><span class="s">"[name=csrfmiddlewaretoken]"</span><span class="o">).</span><span class="na">val</span><span class="o">();</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li>마지막으로 AJAX 요청에 헤더를 설정해야하며 jQuery 1.5.1 이상의 settings.crossDomain을 사용하여 요청을 다른 도메인으로 보내지 않도록 보호해야 한다.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="n">function</span> <span class="nf">csrfSafeMethod</span><span class="o">(</span><span class="n">method</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 이 HTTP 메서드는 CSRF 보호를 요청하지 않는다.</span>
+    <span class="k">return</span> <span class="o">(/^(</span><span class="n">GET</span><span class="o">|</span><span class="n">HEAD</span><span class="o">|</span><span class="n">OPTIONS</span><span class="o">|</span><span class="n">TRACE</span><span class="o">)</span><span class="err">$</span><span class="o">/.</span><span class="na">test</span><span class="o">(</span><span class="n">method</span><span class="o">));</span>
+<span class="o">}</span>
+<span class="err">$</span><span class="o">.</span><span class="na">ajaxSetup</span><span class="o">({</span>
+    <span class="nl">beforeSend:</span> <span class="n">function</span><span class="o">(</span><span class="n">xhr</span><span class="o">,</span> <span class="n">settings</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">csrfSafeMethod</span><span class="o">(</span><span class="n">settings</span><span class="o">.</span><span class="na">type</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">this</span><span class="o">.</span><span class="na">crossDomain</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">xhr</span><span class="o">.</span><span class="na">setRequestHeader</span><span class="o">(</span><span class="s">"X-CSRFToken"</span><span class="o">,</span> <span class="n">csrftoken</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="장고-폼에-인스턴스-속성-추가하기">장고 폼에 인스턴스 속성 추가하기</h2>
+<p>때때로 장고 폼의 clean(), clean_<field-name>(), save() 메서드에 추가로 폼 이스턴스 속성이 필여할 경우가 있다. 이럴 경우에는 `request.user` 객체를 이용하면 된다.</field-name></p>
+
+<p><strong>[Form]</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">TasterForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+	<span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+		<span class="n">model</span> <span class="o">=</span> <span class="n">Taster</span>
+		
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="c"># user 속성을 폼에 추가하기</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'user'</span><span class="p">)</span>
+		<span class="nb">super</span><span class="p">(</span><span class="n">TasterForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">super()</code>를 호출하기 이전에 <code class="highlighter-rouge">self.user</code>와 <code class="highlighter-rouge">kwargs</code>를 호출했다. 크리스토퍼 램배커(Christopher Lambacher)에 의하면 이러한 방식이 폼을 더 강력하게, 특히 다중 상속을 이용할 때 강력한 효과를 발휘한다고 한다.</p>
+
+<p><strong>[View]</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">TasterUpdateView</span><span class="p">(</span><span class="n">LoginRequireMixin</span><span class="p">,</span> <span class="n">UpdateVeiw</span><span class="p">):</span>
+	<span class="n">model</span> <span class="o">=</span> <span class="n">Taster</span>
+	<span class="n">form_class</span> <span class="o">=</span> <span class="n">TasterForm</span>
+	<span class="n">success_url</span> <span class="o">=</span> <span class="s">"/someplace/"</span>
+	
+	<span class="k">def</span> <span class="nf">get_form_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+	<span class="s">""" 키워드 인자로 폼 추가 """</span>
+		<span class="c"># 폼 kwargs 가져오기</span>
+		<span class="n">kwargs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">TasterUpdateVIew</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_form_kwargs</span><span class="p">()</span>
+		<span class="c"># kwargs의 user 업데이트</span>
+		<span class="n">kwargs</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+		<span class="k">return</span> <span class="n">kwargs</span>	
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="폼-유효성-검사하는-방법">폼 유효성 검사하는 방법</h2>
+<p><code class="highlighter-rouge">form.is_valid()</code>가 호출될 때, 여러가지 일이 다음 순서로 진행된다.</p>
+
+<p><strong>1.</strong> 폼이 데이터를 받으면 form.is_valid()는 form.full_clean()을 호출한다. <br />
+<strong>2.</strong> form.full_clean()은 폼 필드들과 각각의 필드 유효성을 하나하나 검사하면서 다음과 같은 과정을 수행한다.</p>
+
+<pre><code class="language-docker">a. 필드에 들어온 데이터에 대해 to_python()을 이용하여 파이썬 형식으로 변환하거나 변활할 때 문제가 생기면 ValidationError를 일으킨다.
+b. 커스텀 유효성 검사기를 포함한 각 필드에 특별한 유효성을 검사하고 문제가 있으면 ValidationError를 일으킨다.
+c. 폼에 clean_&lt;field-name&gt;()이 있으면 이를 실행한다.
+</code></pre>
+
+<p><strong>3.</strong> form.furll_clean()이 form.clean()을 실행한다. 참고로 ModelForm의 경우, form 데이터를 자동으로 모델 인스턴스로 설정하는데, ORM을 통해 모델 인스턴스를 저장할 때는 해당 모델의 clean() 메서드가 호출되지 않는다.</p>
+
+<h3 id="modelform-데이터는-폼에-먼저-저장되-이후-모델-인스턴스에-저장된다">ModelForm 데이터는 폼에 먼저 저장되 이후 모델 인스턴스에 저장된다.</h3>
+<p>ModelForm에서 폼 데이터는 두 가지 각기 다른 단계를 통해 저장된다.</p>
+
+<ol>
+  <li>먼저 폼데이터가 폼 인스턴스에 저장된다.</li>
+  <li>그 다음에 폼 데이터가 모델 인스턴스에 저장된다.</li>
+</ol>
+
+<p>form.save()가 적용되기 전까지는 ModelForm이 모델 인스턴스로 저장되지 않기 때문에 이렇게 분리된 과정 자체를 장점으로 활용할 수 있다.</p>
+
+<h2 id="참고자료">참고자료</h2>
+<ul>
+  <li>장고 공식문서 https://docs.djangoproject.com/en/1.11/ref/csrf/</li>
+</ul>
+
+    </section>
+    <br><br>
+    <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
+      <ul class="other-posts">
+        
+        <li class="prev-or-next">
+          <a href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [15장] 장고 템플릿과 Jinja2
+          </a>
+        </li>
+        
+        
+        <li class="prev-or-next" align="right" style="float: right;">
+          <a href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/09/21/ch14-template-tag-filter.html">
+            [14장] 템플릿 태그와 필터
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </li>
+        
+      </ul>
+      <!-- <section class="my-intro">
+        <img src="/images/itsme.png">
+        <article>
+          <p>뿡상</p>
+          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
+        </article>
+      </section> -->
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>
