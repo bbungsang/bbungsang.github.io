@@ -213,7 +213,7 @@
 </ul>
 
 <p>[forms/login.py] : 폼 위젯 만들기</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
 
 <span class="k">class</span> <span class="nc">LoginForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
 
@@ -236,8 +236,7 @@
           <span class="p">}</span>
       <span class="p">)</span>
     <span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="장고가-제공하는-유효성-검사기">장고가 제공하는 유효성 검사기</h4>
 <ul>
@@ -265,7 +264,7 @@
 </ul>
 
 <p>[forms/login.py] : 데이터 유효성 및 하자 여부 검사하기</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#...</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#...</span>
 <span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">authenticate</span>
 
 <span class="c">#...</span>
@@ -292,8 +291,7 @@
 
     <span class="c"># {'username': '사용자가 입력한 값', 'password': '사용자가 입력한 값', 'user': User 객체} 를 반환한다.    </span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="2-post-요청이-아닐-경우-빈-로그인-폼을-받아서-로그인-페이지로-넘기기">2. POST 요청이 아닐 경우, 빈 로그인 폼을 받아서 로그인 페이지로 넘기기</h3>
 <ul>
@@ -301,14 +299,13 @@
 </ul>
 
 <p>[member/views.py] 에서 로그인을 위해 사용된 모듈</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">redirect</span>
 <span class="kn">from</span> <span class="nn">member.forms.login</span> <span class="kn">import</span> <span class="n">LoginForm</span>
 <span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">login</span> <span class="k">as</span> <span class="n">django_login</span><span class="p">,</span> <span class="n">logout</span> <span class="k">as</span> <span class="n">django_logout</span><span class="p">,</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[member/views.py]</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
     <span class="k">pass</span>
   <span class="k">else</span><span class="p">:</span>
@@ -317,8 +314,7 @@
       <span class="s">'form'</span><span class="p">:</span> <span class="n">form</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'member/login.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="3-사용자가-폼을-입력하지-않으면-입력-요청-메세지를-띄우며-다음-페이지-이동-막기">3. 사용자가 폼을 입력하지 않으면, 입력 요청 메세지를 띄우며 다음 페이지 이동 막기</h3>
 <ul>
@@ -332,7 +328,7 @@
 </ul>
 
 <p>[member/views.py]</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
     <span class="n">form</span> <span class="o">=</span> <span class="n">LoginForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">post</span><span class="p">)</span>
 
@@ -345,11 +341,10 @@
       <span class="n">django_login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
       <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'post:post_list'</span><span class="p">)</span>
     <span class="c">#...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="5-이미-로그인한-상태에서-로그인-페이지로-이동한-것이라면-post_list-페이지로-튕겨내기">5. 이미 로그인한 상태에서 로그인 페이지로 이동한 것이라면 post_list 페이지로 튕겨내기</h3>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
   <span class="n">form</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">LoginForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">post</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
     <span class="c">#...</span>
@@ -357,8 +352,7 @@
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">():</span>
       <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'post:post_list'</span><span class="p">)</span>
     <span class="c">#...</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
     </section>
     <br><br>

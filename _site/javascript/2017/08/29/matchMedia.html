@@ -206,16 +206,14 @@
 
 <h3 id="javascript에도-css-미디어쿼리를-처리할-수-있는-matchmedia-함수가-존재한다">JavaScript에도 CSS 미디어쿼리를 처리할 수 있는 matchMedia 함수가 존재한다.</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var m = matchMedia("CSS 미디어쿼리");
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var m = matchMedia("CSS 미디어쿼리");
+</code></pre></div></div>
 
 <p>위와 같이 CSS에서 사용하는 미디어쿼리문을 그대로 사용할 수 있다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>m.media // "CSS 미디어쿼리"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m.media // "CSS 미디어쿼리"
 m.matches // true
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><code class="highlighter-rouge">matchMedia()</code> 는 <strong>MediaQueryList</strong> 를 반환하는데 이 객체는 <code class="highlighter-rouge">media</code> 와 <code class="highlighter-rouge">metches</code> 라는 두 프로퍼티를 갖고있다.</li>
@@ -224,7 +222,7 @@ m.matches // true
 
 <p>[예제]</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">if</span> <span class="o">(</span><span class="n">matchMedia</span><span class="o">(</span><span class="s">"(max-width: 768px)"</span><span class="o">).</span><span class="na">matches</span><span class="o">){</span>
   <span class="err">$</span><span class="o">(</span><span class="err">'</span><span class="o">.</span><span class="na">fa</span><span class="o">-</span><span class="n">bars</span><span class="err">'</span><span class="o">).</span><span class="na">click</span><span class="o">(</span><span class="n">function</span> <span class="o">()</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="err">$</span><span class="o">(</span><span class="err">'#</span><span class="n">sidebar</span> <span class="o">&gt;</span> <span class="n">ul</span><span class="err">'</span><span class="o">).</span><span class="na">is</span><span class="o">(</span><span class="s">":visible"</span><span class="o">)</span> <span class="o">===</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
@@ -275,8 +273,7 @@ m.matches // true
   <span class="o">});</span>
 <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
     </section>
     <br><br>

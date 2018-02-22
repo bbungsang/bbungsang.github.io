@@ -203,7 +203,7 @@
   <p>1부터 5까지 정수 리스트를 만드는 데에는 아래와 같은 방법들이 있다.</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># 1. 일반 루프 방식</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. 일반 루프 방식</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
 <span class="o">...</span>   <span class="n">num_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
@@ -214,8 +214,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li>이들 접근 방식은 동일한 결과를 생성한다. 하지만 <strong>리스트 컴프리헨션</strong> 을 사용해서 리스트를 만드는 것이 조금 더 파이써닉한 방법이라고 할 수 있다.</li>
 </ul>
@@ -224,9 +223,8 @@
   <p>[표현식 for 항목 in 순회 가능한 객체]</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+</code></pre></div></div>
 <ul>
   <li>리스트에 대한 값을 생성하는 <code class="highlighter-rouge">첫 번째 num</code> 변수(표현식)는 루프의 결과에 주어진 연산식을 적용하여 num_list 변수에 넣어준다.</li>
   <li><code class="highlighter-rouge">두 번째 num</code> 변수는 단순히 for문의 일부이다.</li>
@@ -236,11 +234,10 @@
   <p>[표현식 for 항목 in 순회 가능한 객체 if 조건]</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">num_list</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li><code class="highlighter-rouge">num % 2 == 1</code> 은 홀수일 때 True 짝수일 때 False를 도출하여 True 값인 홀수를 생성한다.</li>
 </ul>
@@ -249,7 +246,7 @@
   <p>하나 이상의 중첩 for문도 사용할 수 있다.</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">rows</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">rows</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">cols</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">cells</span> <span class="o">=</span> <span class="p">[(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">:</span>
@@ -260,8 +257,7 @@
 <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="딕셔너리-컴프리헨션">딕셔너리 컴프리헨션</h4>
 <ul>
@@ -272,17 +268,16 @@
   <p>{키표현식 : 값표현식 for 항목 in 순회 가능한 객체}</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">word</span> <span class="o">=</span> <span class="s">'letters'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">word</span> <span class="o">=</span> <span class="s">'letters'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">letter_counts</span> <span class="o">=</span> <span class="p">{</span><span class="n">letter</span><span class="p">:</span> <span class="n">word</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">}</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">letter_counts</span>
 <span class="p">{</span><span class="s">'l'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'e'</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'t'</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'r'</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'s'</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li>첫 번째 letter 변수는 Key로서 for문으로부터 순차적으로 문자열을 받는다.</li>
   <li>word.count(letter) 는 Value로서 첫 번째 letter 변수에서 받은 문자열을 세어 정수로 반환한다.</li>
   <li>하지만 이 방식으로 문자열을 셀 경우, ‘e’와 ‘t’는 두 번씩 순회하며 세기 때문에 시간 낭비를 초래할 수 있다.</li>
-  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">letter:</span><span class="w"> </span><span class="err">word.count(letter)</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">letter</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">set(word)</span><span class="p">}</span></code> 면 시간 낭비를 줄이고 조금 더 파이써닉하게 처리할 수 있다.</li>
+  <li><code class="highlighter-rouge">{letter: word.count(letter) for letter in set(word)}</code> 면 시간 낭비를 줄이고 조금 더 파이써닉하게 처리할 수 있다.</li>
 </ul>
 
 <h4 id="결론"><em>결론</em></h4>

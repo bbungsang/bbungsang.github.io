@@ -200,7 +200,7 @@
 <p>test_forms.py, test_models.py, test_views.py 모듈을 직접 새로 생성한다.
 다음과 같은 구조가 생성될 것이다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>application/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>application/
     __init__.py
     admin.py
     forms.py
@@ -209,8 +209,7 @@
     test_models.py
     test_views.py
     views.py
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>물론 forms.py, models.py, views.py 외에 다른 종류의 파일들이 있다면 그에 해당하는 테스트 파일을 같은 방식으로 생성하자. 이는 ‘파이썬의 도’의 ‘수평적인 것이 중첩된 것보다 낫다(Flat is better than nested)’ 철학에 기반을 두고 구성한 것이다. 이렇게 구성하면 장고 앱을 훨씬 쉽게 살펴볼 수 있다.</p>
 
@@ -231,7 +230,7 @@
 
 <p>이에 대한 방법은 특별한 테스트에 대한 환경을 완전히 최소한으로 구성하는 것이다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># flavors/test_api.py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># flavors/test_api.py</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
@@ -249,12 +248,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>아래 코드는 좀 더 확장된 예제이다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># flavors/test_api.py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># flavors/test_api.py</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
@@ -295,8 +293,7 @@
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">read_update_delete_url</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">204</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">Falvor</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>    
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="2222-뷰에-대해서는-가능하면-요청-팩터리를-이용하자">22.2.2 뷰에 대해서는 가능하면 요청 팩터리를 이용하자</h3>
 <ul>
@@ -307,7 +304,7 @@
 
 <p>테스트하고자 하는 뷰가 세션을 필요로 할 때는 다음과 같이 작성할 수 있다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">AnonymousUser</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">AnonymousUser</span>
 <span class="kn">from</span> <span class="nn">django.contrib.sessions.middleware</span> <span class="kn">import</span> <span class="n">SessionMiddleware</span>
 <span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span><span class="p">,</span> <span class="n">RequestFactory</span>
 
@@ -338,8 +335,7 @@
         <span class="c"># 요청에 대한 처리와 테스트를 진행한다.</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">cheese_flavors</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertContains</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s">"bleah!"</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="2223-테스트가-필요한-테스트-코드는-작성하지-말자">22.2.3 테스트가 필요한 테스트 코드는 작성하지 말자</h3>
 <p>테스트는 가능한 한 단순하게 작성해야한다. 테스트 케이스 안의 코드가 복잡하거나 추상적이라면 문제가 있는 것이다.</p>
@@ -405,7 +401,7 @@
 
 <p>이는 우리가 외부 API에 대한 유효성을 테스트하는 것이 아닌 우리 코드의 로직에 대한 검사를 하게 되는 것이다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mock</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mock</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
 
 <span class="kn">import</span> <span class="nn">icecreamapi</span>
@@ -429,8 +425,7 @@
             <span class="n">falvors</span><span class="p">,</span>
             <span class="p">[</span><span class="s">'chocolate'</span><span class="p">,</span> <span class="s">'strawberry'</span><span class="p">,</span> <span class="s">'vanilla'</span><span class="p">,</span> <span class="p">]</span>
         <span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="2229-좀-더-고급스러운-단언-메서드-사용하기">22.2.9 좀 더 고급스러운 단언 메서드 사용하기</h3>
 <p>두 개의 리스트(또는 튜플)를 서로 비교하는 것은 흔히 보는 테스트 케이스다. 하지만 <code class="highlighter-rouge">두 리스트가 서로 다른 정렬 형식</code>을 가지고 있다면 리스트를 매치하기 위해 <code class="highlighter-rouge">재정렬</code>해야 한다.</p>

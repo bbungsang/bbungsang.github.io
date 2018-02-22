@@ -214,11 +214,10 @@
 <h2 id="nginx">NGINX</h2>
 <h3 id="서버인스턴스-nginx-uwsgi-django-동작-구조">서버인스턴스-Nginx-<a href="http://localhost:4000/server/2017/07/20/wsgi.html">uWSGI</a>-Django 동작 구조</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>EC2 -(http)-&gt; Django
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EC2 -(http)-&gt; Django
 EC2 -(http)-&gt; uwsgi -(WSGI)-&gt; Django
 EC2 -(http)-&gt; Nginx -(uWSGI's UnixSocket)-&gt; uWSGI -(WSGI)-&gt; Django
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="http://localhost:4000/assets/nginx_uwsgi.png" alt="" class="center-image" /></p>
 
@@ -235,11 +234,10 @@ EC2 -(http)-&gt; Nginx -(uWSGI's UnixSocket)-&gt; uWSGI -(WSGI)-&gt; Django
   <li><strong>ini(initialization)</strong> : 설정 파일에 대한 표준, 텍스트 파일로 이루어져 있고, .ini 라는 파일 확장자가 따라오지만 .cfg 또는 .conf 등의 다른 확장자를 사용하기도 한다.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>매개변수 : 이름 = 값
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>매개변수 : 이름 = 값
 섹션 : [섹션] 매개 변수는 임의의 이름으로 지정된 여러 개의 섹션으로 구분할 수 있다.
 주석 : ;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="서버에서-nginx-관련-설정하기">서버에서 Nginx 관련 설정하기</h3>
 <ul>
@@ -256,7 +254,7 @@ EC2 -(http)-&gt; Nginx -(uWSGI's UnixSocket)-&gt; uWSGI -(WSGI)-&gt; Django
 
 <h4 id="가상서버-설정-파일-작성">가상서버 설정 파일 작성</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># sudo vi /etc/nginx/sites-available/mysite</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># sudo vi /etc/nginx/sites-available/mysite</span>
 
 <span class="c">##</span>
 <span class="c"># server 블록</span>
@@ -279,8 +277,7 @@ EC2 -(http)-&gt; Nginx -(uWSGI's UnixSocket)-&gt; uWSGI -(WSGI)-&gt; Django
         <span class="n">include</span>     <span class="n">uwsgi_params</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><code class="highlighter-rouge">uwsgi_pass  unix:///tmp/ec2.sock</code> : socket 요청을 받겠다고 설정한 것, Nginx가 socket에 정보를 전달하고 해당 정보를 socket이 uWSGI에 전달</li>

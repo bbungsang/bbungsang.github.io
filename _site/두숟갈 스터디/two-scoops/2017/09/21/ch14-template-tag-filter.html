@@ -194,23 +194,21 @@
     <section class="post-content">
       <p>장고 템플릿은 단순히 장고 템플릿 언어를 사용하여 마크업된 <code class="highlighter-rouge">파이썬 문자열</code>이다. 장고는 수십 가지 기본 템플릿 <a href="https://docs.djangoproject.com/en/1.11/topics/templates/#tags">태그</a>와 <a href="https://docs.djangoproject.com/en/1.11/topics/templates/#filters">필터</a>를 제공한다.</p>
 
-<p>템플릿 태그는 <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span></code> 와 <code class="highlighter-rouge">%}</code>로 둘러쌓인다.</p>
+<p>템플릿 태그는 <code class="highlighter-rouge">{%</code> 와 <code class="highlighter-rouge">%}</code>로 둘러쌓인다.</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 {% if user.is_authenticated %}
 	Hello, {{ user.username }}.
 {% endif %}
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>필터는 변수 및 태그 인수의 값을 변환한다.</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 {{ django|title }}
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>템플릿 태그를 커스텀할 경우 참고할 만한 최고의 방법론</strong></p>
 
@@ -229,7 +227,7 @@
 
 <p>즉 예를 들어 <code class="highlighter-rouge">django.template.defaultfilters.slugify</code>를 임포트할 필요 없이 <code class="highlighter-rouge">django.utils.text.slugify</code>를 바로 임포트하여 사용하면 된다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># /template/defaultfilters.py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># /template/defaultfilters.py</span>
 
 <span class="kn">from</span> <span class="nn">django.utils.text</span> <span class="kn">import</span> <span class="n">slugify</span> <span class="k">as</span> <span class="n">_slugify</span>
 
@@ -237,10 +235,9 @@
 <span class="nd">@stringfilter</span>
 <span class="k">def</span> <span class="nf">slugify</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">_slugify</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># /utils/text.py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># /utils/text.py</span>
 
 <span class="nd">@keep_lazy</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">SafeText</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">slugify</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">allow_unicode</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
@@ -249,10 +246,9 @@
         <span class="n">value</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s">'NFKC'</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s">'NFKD'</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">,</span> <span class="s">'ignore'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'ascii'</span><span class="p">)</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r'[^</span><span class="err">\</span><span class="s">w</span><span class="err">\</span><span class="s">s-]'</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">mark_safe</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r'[-</span><span class="err">\</span><span class="s">s]+'</span><span class="p">,</span> <span class="s">'-'</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
-</code></pre>
-</div>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r'[^\w\s-]'</span><span class="p">,</span> <span class="s">''</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">mark_safe</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r'[-\s]+'</span><span class="p">,</span> <span class="s">'-'</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+</code></pre></div></div>
 
 <blockquote>
   <p>필터 자체를 임포트하면 코드에서 추상화된 레벨이 하나 더해지므로 훗날 디버깅이 필요할 때 약간 복잡해질 우려도 있다.</p>
@@ -294,7 +290,7 @@
 
 <p>템플릿 태그 라이브러리 작명 관례는 <code class="highlighter-rouge">&lt;app_name&gt;_tags.py</code>다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># django_app/book/book_tags.py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># django_app/book/book_tags.py</span>
 
 <span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
 
@@ -309,12 +305,11 @@
 <span class="nd">@register.filter</span>
 <span class="k">def</span> <span class="nf">hide_username</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">4</span><span class="p">:],</span> <span class="s">"*****"</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>settings에 해당 템플릿 태그를 사용할 것임을 선언해야 한다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># django_app/config/settings.py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># django_app/config/settings.py</span>
 
 <span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -330,12 +325,11 @@
         <span class="p">},</span>
     <span class="p">},</span>
 <span class="p">]</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>HTML에서 사용하기</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 {% extends 'common/base.html' %}
 
 {% load book_tags %}
@@ -364,8 +358,7 @@
 <span class="nt">&lt;/section&gt;</span>
 {% endblock %}
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -373,7 +366,7 @@
 
 <p>파이썬 파일을 만들고 settings에 별도로 선언하는 이전 버전과 달리 사용하려는 앱에 <code class="highlighter-rouge">templatetags</code>라는 이름의 파이썬 패키지를 생성하고 파일을 작성하면, 장고 자체에서 자동으로 인식하여 해당 템플릿 태그를 사용할 수 있도록 한다.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># django_app/book/templatetags/comment.py</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># django_app/book/templatetags/comment.py</span>
 
 <span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span>
 
@@ -388,20 +381,18 @@
 <span class="nd">@register.filter</span>
 <span class="k">def</span> <span class="nf">hide_username</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">4</span><span class="p">:],</span> <span class="s">"*****"</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>HTML에서 사용하기</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 {% extends 'common/base.html' %}
 
 {% load comment %}
 
 #...[위 코드와 동일]
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="마치며">마치며…</h2>
 <p>지금 시중에 번역되어 있는 책은 장고 1.8 버전이다. 그렇기 때문에 최신 버전의 장고에 적용하는 면에 있어서 적합하지 않는 부분이 많은 것 같다.</p>

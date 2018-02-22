@@ -195,7 +195,7 @@
       <h2 id="장고-폼을-이용하여-입력-데이터에-대한-유효성-검사하기">장고 폼을 이용하여 입력 데이터에 대한 유효성 검사하기</h2>
 <p>장고 폼은 파이썬 딕셔너리의 <strong>유효성을 검사</strong> (딕셔너리 안에 해당 key와 value 여부, input 조건등 검사)에 최상의 도구이다.</p>
 
-<pre><code class="language-docker">유효성 검사는 3단계의 메서드 실행으로 이뤄지는데, form 객체를 is_valid()할 때 검사가 실행된다.
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>유효성 검사는 3단계의 메서드 실행으로 이뤄지는데, form 객체를 is_valid()할 때 검사가 실행된다.
 
 [1단계] to_python()
 	- 유효성 검사의 첫 번째 단계로서, 값을 올바른 데이터 유형으로 강제 변환하고, 가능하지 않을 경우 	ValidationError를 발생시킨다. 즉 FloatField일 경우, 데이터를 Python float 타입으로 강제 	변환시킨다.
@@ -207,7 +207,7 @@
 	- 위 단계를 거친 후, 유효성 검사기를 통해 잘못 입력된 값에 대하여 ValidationError를 일으킨다.
 
 clean()은 위 3단계를 올바른 순서로 실행하고 오류를 전파한다. 유효성 검사를 통과한 깨끗한 데이터를 반환한 다음 폼의 cleaned_data 사전에 삽입한다.
-</code></pre>
+</code></pre></div></div>
 
 <p>뷰 단에서 유효성 검사 코드를 추가할 수 있지만, 매번 데이터가 바뀔 때마다 복잡한 유효성 검사 코드를 필요에 맞게 유지 관리하는 것은 매우 번거로운 일이다.</p>
 
@@ -240,7 +240,7 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
 
 <p>jQuery를 사용할 경우</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="n">function</span> <span class="nf">getCookie</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">var</span> <span class="n">cookieValue</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">document</span><span class="o">.</span><span class="na">cookie</span> <span class="o">&amp;&amp;</span> <span class="n">document</span><span class="o">.</span><span class="na">cookie</span> <span class="o">!=</span> <span class="err">''</span><span class="o">)</span> <span class="o">{</span>
@@ -273,14 +273,12 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
     <span class="o">}</span>
 <span class="o">});</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="https://github.com/js-cookie/js-cookie/">JavaScript Cookie 라이브러리</a>를 통해 csrftoken 쿠키를 얻을 경우</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">var</span> <span class="n">csrftoken</span> <span class="o">=</span> <span class="n">Cookies</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="err">'</span><span class="n">csrftoken</span><span class="err">'</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">csrftoken</span> <span class="o">=</span> <span class="n">Cookies</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="err">'</span><span class="n">csrftoken</span><span class="err">'</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p><strong>2. CSRF_USE_SESSIONS = True</strong></p>
 
@@ -288,21 +286,20 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
   <li>CSRF_USE_SESSIONS를 활성화한 경우, HTML에 CSRF 토큰을 포함시키고 자바스크립트를 통하여 DOM으로부터 토큰을 읽어야한다.</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="o">{%</span> <span class="n">csrf_token</span> <span class="o">%}</span>
 <span class="o">&lt;</span><span class="n">script</span> <span class="n">type</span><span class="o">=</span><span class="s">"text/javascript"</span><span class="o">&gt;</span>
 <span class="c1">// using jQuery</span>
 <span class="n">var</span> <span class="n">csrftoken</span> <span class="o">=</span> <span class="n">jQuery</span><span class="o">(</span><span class="s">"[name=csrfmiddlewaretoken]"</span><span class="o">).</span><span class="na">val</span><span class="o">();</span>
 <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>마지막으로 AJAX 요청에 헤더를 설정해야하며 jQuery 1.5.1 이상의 settings.crossDomain을 사용하여 요청을 다른 도메인으로 보내지 않도록 보호해야 한다.</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="n">function</span> <span class="nf">csrfSafeMethod</span><span class="o">(</span><span class="n">method</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// 이 HTTP 메서드는 CSRF 보호를 요청하지 않는다.</span>
     <span class="k">return</span> <span class="o">(/^(</span><span class="n">GET</span><span class="o">|</span><span class="n">HEAD</span><span class="o">|</span><span class="n">OPTIONS</span><span class="o">|</span><span class="n">TRACE</span><span class="o">)</span><span class="err">$</span><span class="o">/.</span><span class="na">test</span><span class="o">(</span><span class="n">method</span><span class="o">));</span>
@@ -315,8 +312,7 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
     <span class="o">}</span>
 <span class="o">});</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -325,7 +321,7 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
 
 <p><strong>[Form]</strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">TasterForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
@@ -336,14 +332,13 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
 		<span class="c"># user 속성을 폼에 추가하기</span>
 		<span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'user'</span><span class="p">)</span>
 		<span class="nb">super</span><span class="p">(</span><span class="n">TasterForm</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><code class="highlighter-rouge">super()</code>를 호출하기 이전에 <code class="highlighter-rouge">self.user</code>와 <code class="highlighter-rouge">kwargs</code>를 호출했다. 크리스토퍼 램배커(Christopher Lambacher)에 의하면 이러한 방식이 폼을 더 강력하게, 특히 다중 상속을 이용할 때 강력한 효과를 발휘한다고 한다.</p>
 
 <p><strong>[View]</strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">TasterUpdateView</span><span class="p">(</span><span class="n">LoginRequireMixin</span><span class="p">,</span> <span class="n">UpdateVeiw</span><span class="p">):</span>
@@ -358,8 +353,7 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
 		<span class="c"># kwargs의 user 업데이트</span>
 		<span class="n">kwargs</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
 		<span class="k">return</span> <span class="n">kwargs</span>	
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <hr />
 
@@ -369,10 +363,10 @@ CSRF 보안을 잠시 꺼 두어도 되는 경우로는 API를 제작할 때를 
 <p><strong>1.</strong> 폼이 데이터를 받으면 form.is_valid()는 form.full_clean()을 호출한다. <br />
 <strong>2.</strong> form.full_clean()은 폼 필드들과 각각의 필드 유효성을 하나하나 검사하면서 다음과 같은 과정을 수행한다.</p>
 
-<pre><code class="language-docker">a. 필드에 들어온 데이터에 대해 to_python()을 이용하여 파이썬 형식으로 변환하거나 변활할 때 문제가 생기면 ValidationError를 일으킨다.
+<div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a. 필드에 들어온 데이터에 대해 to_python()을 이용하여 파이썬 형식으로 변환하거나 변활할 때 문제가 생기면 ValidationError를 일으킨다.
 b. 커스텀 유효성 검사기를 포함한 각 필드에 특별한 유효성을 검사하고 문제가 있으면 ValidationError를 일으킨다.
 c. 폼에 clean_&lt;field-name&gt;()이 있으면 이를 실행한다.
-</code></pre>
+</code></pre></div></div>
 
 <p><strong>3.</strong> form.furll_clean()이 form.clean()을 실행한다. 참고로 ModelForm의 경우, form 데이터를 자동으로 모델 인스턴스로 설정하는데, ORM을 통해 모델 인스턴스를 저장할 때는 해당 모델의 clean() 메서드가 호출되지 않는다.</p>
 

@@ -203,7 +203,7 @@
   <li>내 풀이 1</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Jaden_Case</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Jaden_Case</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
 	<span class="n">li</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 	<span class="n">result</span> <span class="o">=</span> <span class="n">li</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">li</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">::]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">li</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -212,14 +212,13 @@
 	<span class="k">return</span> <span class="n">result</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">Jaden_Case</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>     
 
 <span class="k">print</span><span class="p">(</span><span class="n">Jaden_Case</span><span class="p">(</span><span class="s">"3people unFollowed me for the last week"</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>내 풀이 2</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Jaden_Case</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Jaden_Case</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">test</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">test</span><span class="p">:</span>
@@ -230,22 +229,20 @@
     <span class="k">return</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">Jaden_Case</span><span class="p">(</span><span class="s">"3people is not sTudent"</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>다른 사람 풀이</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Jaden_Case</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Jaden_Case</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">answer</span> <span class="o">=</span><span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">())):</span>
         <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()[</span><span class="mi">1</span><span class="p">:])</span>
     <span class="k">return</span> <span class="s">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">Jaden_Case</span><span class="p">(</span><span class="s">"3people unFollowed me for the last week"</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="소감"><em>소감</em></h3>
 <ul>

@@ -3,16 +3,15 @@
   <li>이 tags.md 는 모든 태그들을 출력해준다.</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bbungsang.github.io
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bbungsang.github.io
 ├─── _includes
 ├─── _layouts
 ├─── _posts
 ├─── css
 ├─── [tags.md]
 └─── ...
-</code></pre>
-</div>
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+</code></pre></div></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 ---
 layout: page
 permalink: /tags/
@@ -29,8 +28,7 @@ title: Tags
 {% endfor %}
 <span class="nt">&lt;/ul&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br /></p>
 <h3 id="2-_includestagshtml-추가해주기">2. _includes/tags.html 추가해주기</h3>
@@ -38,7 +36,7 @@ title: Tags
   <li>포스트 상단에 태그들을 출력해 주는 페이지다.</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/tag-256.png"</span> <span class="na">alt=</span><span class="s">"Tags: "</span> <span class="na">class=</span><span class="s">"tag-img"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-tags"</span><span class="nt">&gt;</span>
   {% if post %}
@@ -51,8 +49,7 @@ title: Tags
   {% endfor %}
 <span class="nt">&lt;/div&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br /></p>
 <h3 id="3-_layoutsposthtml-에-include-해주기">3. _layouts/post.html 에 include 해주기</h3>
@@ -60,7 +57,7 @@ title: Tags
   <li>포스트에 태그가 나오도록 위의 tags.html 파일을 include 해준다.</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 ---
 layout: default
 ---
@@ -73,8 +70,7 @@ layout: default
   {{ content }}
 <span class="nt">&lt;/div&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><br /></p>
 <h3 id="4-사용하기">4. 사용하기</h3>

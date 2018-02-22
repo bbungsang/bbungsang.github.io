@@ -206,7 +206,7 @@
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">string</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">string</span>
 
 
 <span class="k">def</span> <span class="nf">caesar</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
@@ -230,12 +230,11 @@
 
 <span class="c"># 실행을 위한 테스트 코드입니다.</span>
 <span class="k">print</span><span class="p">(</span><span class="n">caesar</span><span class="p">(</span><span class="s">"a B z"</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[자바]</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
 
 <span class="kd">class</span> <span class="nc">Caesar</span> <span class="o">{</span>
     <span class="n">String</span> <span class="nf">caesar</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
@@ -268,14 +267,13 @@
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">caesar</span><span class="o">(</span><span class="s">"a B z"</span><span class="o">,</span> <span class="mi">31</span><span class="o">));</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="다른-사람-풀이">다른 사람 풀이</h3>
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">caesar</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">caesar</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="s">""</span>
     <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="s">' '</span><span class="p">:</span>
@@ -289,12 +287,11 @@
         <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="nb">chr</span><span class="p">(</span><span class="n">enc</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">result</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[자바]</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Caesar</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Caesar</span> <span class="o">{</span>
     <span class="n">String</span> <span class="nf">caesar</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">26</span><span class="o">;</span>
@@ -316,30 +313,27 @@
     <span class="o">}</span>
 <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>파이썬 내장 함수</strong> <br /><br />
 <code class="highlighter-rouge">ord()</code> <br />
 문자의 아스키 코드 값을 리턴</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt; ord('a)
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; ord('a)
 97
 &gt;&gt; ord('0')
 48
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 
   <p><code class="highlighter-rouge">chr()</code> <br />
 아스키 코드 값을 입력받아 그 코드에 해당하는 문자를 출력</p>
 
-  <div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt; chr(97)
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; chr(97)
 a
 &gt;&gt; chr(48)
 0
-</code></pre>
-  </div>
+</code></pre></div>  </div>
 </blockquote>
 
 <blockquote>

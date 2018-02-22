@@ -204,7 +204,7 @@
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">change_zero</span><span class="p">(</span><span class="n">li</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">change_zero</span><span class="p">(</span><span class="n">li</span><span class="p">):</span>
     <span class="n">li</span><span class="p">[</span><span class="n">li</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">li</span><span class="p">))]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="n">li</span>
     
@@ -214,12 +214,11 @@
 <span class="c"># 테스트를 위한 실행 코드</span>
 <span class="n">board</span> <span class="o">=</span>  <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">hopscotch</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>[자바]</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">class</span> <span class="nc">Hopscotch</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">get_max</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">li</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
@@ -257,8 +256,7 @@
     <span class="o">}</span>
 <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>위 코드는 다른 사람의 파이썬 풀이 방식을 적용하여 푼 것이다.</p>
 
@@ -266,7 +264,7 @@
 
 <p>[파이썬]</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hopscotch</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hopscotch</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
     <span class="n">accum</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">board</span><span class="p">:</span>
@@ -274,8 +272,7 @@
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)):</span>
         <span class="n">accum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">tmp</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">accum</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="느낀점">느낀점</h3>
 <p>나는 알고리즘을 풀 때 수학적으로 접근하기 보다는 직관적으로 접근하는 경향이 짙다. 다른 사람의 풀이에서 i가 자기의 열일 경우를 제외하고 더하여 최대값을 구하는 식의 사고가 감탄스러웠다. 나도 그러한 사고를 하도록 노력해야겠다.</p>

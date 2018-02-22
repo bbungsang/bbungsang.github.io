@@ -230,7 +230,7 @@
 
 <h3 id="내-풀이">내 풀이</h3>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
 
 <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">array_list</span><span class="p">):</span>
     <span class="n">sum_value</span> <span class="o">=</span> <span class="mi">0</span>
@@ -262,8 +262,7 @@
 <span class="n">array_list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">array_list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">(</span><span class="n">array_list1</span><span class="p">),</span> <span class="n">solution</span><span class="p">(</span><span class="n">array_list2</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>코드가 굉장히 길고 if문과 for문 남용…</li>
@@ -271,13 +270,12 @@
 
 <h3 id="다른-사람-풀이">다른 사람 풀이</h3>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_max_sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>    
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_max_sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>    
     <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">num_list</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]],</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">num_list</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]],</span> <span class="n">key</span><span class="o">=</span><span class="nb">sum</span><span class="p">)</span>
 
 <span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="n">get_max_sum</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>코드가 짧고 보기 좋다. 존경스럽다.</li>

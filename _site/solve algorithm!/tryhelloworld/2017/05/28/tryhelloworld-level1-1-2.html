@@ -206,30 +206,28 @@
   <li>내가 푼 것</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">hide</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span>
     <span class="n">change</span> <span class="o">=</span> <span class="s">'*'</span> <span class="o">*</span> <span class="n">hide</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">hide</span><span class="p">],</span> <span class="n">change</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"결과 : "</span> <span class="o">+</span> <span class="n">hide_numbers</span><span class="p">(</span><span class="s">'01033334444'</span><span class="p">));</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>다른 사람 풀이</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
 
 <span class="k">def</span> <span class="nf">hide_numbers</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'</span><span class="err">\</span><span class="s">d(?=</span><span class="err">\</span><span class="s">d{4})'</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">r'\d(?=\d{4})'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">"*"</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="c"># 아래는 테스트로 출력해 보기 위한 코드입니다.</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"결과 : "</span> <span class="o">+</span> <span class="n">hide_numbers</span><span class="p">(</span><span class="s">'01033334444'</span><span class="p">));</span>
 <span class="k">print</span><span class="p">(</span><span class="s">"결과 : "</span> <span class="o">+</span> <span class="n">hide_numbers</span><span class="p">(</span><span class="s">'027778888'</span><span class="p">));</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="소감"><em>소감</em></h3>
 <ul>
