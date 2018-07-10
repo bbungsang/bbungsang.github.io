@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
 	<script>
@@ -10,21 +10,21 @@
 	  gtag('config', 'UA-100042262-1');
 	</script>
 
-	<title>뿡상의 개발공부로그</title>
+	<title>bbungsang's devlog</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- 파비콘 -->
-	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/common.css" />
-	<link rel="stylesheet" href="/css/nav.css" />
-	<link rel="stylesheet" href="/css/main.css" />
-	<link rel="stylesheet" href="/css/post.css" />
-	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!--external css-->
@@ -33,7 +33,6 @@
 
 	<!-- font -->
 	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
-
 	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
@@ -57,7 +56,7 @@
     </li>
   </ul>
   <article class="btn-wrap">
-    <i id="menuBtn" class="im im-diamond-o"></i>
+    <i id="menuBtn" class="fa fa-diamond"></i>
   </article>
 </section>
 <section class="desc">
@@ -65,36 +64,18 @@
 
 <script>
   var menuList = document.getElementsByClassName("menu-list");
-  for (let i = 0; i < menuList.length; i++) {
-    menuList[i].addEventListener("click", function() {
+  for (var i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active");
       current[0].className = current[0].className.replace("active", "");
       this.className += " active";
     });
   }
 </script>
-<!-- <ul class="top_menu">
-  <li class=" menu_list sidebar-toggle-box">
-    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
-      <i class="im im-menu"></i>
-    </button>
-  </li>
-
-  <li class="menu_list logo">
-    <a href="/">
-      bbungsang
-      <i>devlog</i>
-    </a>
-  </li>
-  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
-  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul> -->
-
-<!-- 사이드 메뉴바 -->
 <div id="mySidenav" class="sidenav">
   <div class="intro-me">
     <div class="my-photo">
-      <img src="/images/itsme.png">
+      <img src="/static/images/itsme.png">
     </div>
     <div class="my-content">
       Please contact me if you have any questions
@@ -173,31 +154,31 @@
     <!-- <div class="tags">
   <div class="tag-cloud">
     
-      <span style="font-size: 79%">
+      <span style="font-size: 80%">
         <a href="#Python">
           Python
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 158%">
+      <span style="font-size: 167%">
         <a href="#Alogorithm">
           Alogorithm
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 114%">
+      <span style="font-size: 118%">
         <a href="#Level1">
           Level1
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 116%">
+      <span style="font-size: 121%">
         <a href="#Django">
           Django
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 79%">
+      <span style="font-size: 80%">
         <a href="#Djangogirls">
           Djangogirls
         </a> &nbsp;&nbsp;
@@ -209,31 +190,31 @@
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 81%">
+      <span style="font-size: 82%">
         <a href="#instargram">
           instargram
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 86%">
+      <span style="font-size: 87%">
         <a href="#Level2">
           Level2
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#Docker">
           Docker
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#Nginx">
           Nginx
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#WSGI">
           WSGI
         </a> &nbsp;&nbsp;
@@ -251,7 +232,7 @@
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 97%">
+      <span style="font-size: 100%">
         <a href="#JavaScript">
           JavaScript
         </a> &nbsp;&nbsp;
@@ -263,7 +244,7 @@
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 76%">
+      <span style="font-size: 77%">
         <a href="#Django Template">
           Django Template
         </a> &nbsp;&nbsp;
@@ -275,13 +256,13 @@
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#Level5">
           Level5
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#REST API">
           REST API
         </a> &nbsp;&nbsp;
@@ -353,31 +334,31 @@
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#CORS">
           CORS
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#CSRF">
           CSRF
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 74%">
+      <span style="font-size: 75%">
         <a href="#HTTP">
           HTTP
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 79%">
+      <span style="font-size: 80%">
         <a href="#Level3">
           Level3
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 79%">
+      <span style="font-size: 80%">
         <a href="#Level4">
           Level4
         </a> &nbsp;&nbsp;
@@ -389,7 +370,7 @@
         </a> &nbsp;&nbsp;
       </span>
     
-      <span style="font-size: 76%">
+      <span style="font-size: 77%">
         <a href="#TypeScript">
           TypeScript
         </a> &nbsp;&nbsp;
@@ -404,30 +385,6 @@
       <span style="font-size: 72%">
         <a href="#Angular">
           Angular
-        </a> &nbsp;&nbsp;
-      </span>
-    
-      <span style="font-size: 72%">
-        <a href="#Inheritance">
-          Inheritance
-        </a> &nbsp;&nbsp;
-      </span>
-    
-      <span style="font-size: 72%">
-        <a href="#Interface">
-          Interface
-        </a> &nbsp;&nbsp;
-      </span>
-    
-      <span style="font-size: 72%">
-        <a href="#Abstract Class">
-          Abstract Class
-        </a> &nbsp;&nbsp;
-      </span>
-    
-      <span style="font-size: 72%">
-        <a href="#Encapsulation">
-          Encapsulation
         </a> &nbsp;&nbsp;
       </span>
     
@@ -1292,35 +1249,35 @@
         <p class="post-date">
           05 Jan 2018
         </p>
-        <a class="post-title" href="/javascript/2018/01/05/create-object.html">[JS Object] 객체 리터럴과 new 연산자</a>
+        <a class="post-title" href="/javascript/2018/01/05/create-object.html">[Javascript Core] 객체 리터럴과 new 연산자</a>
       </li>
       
       <li class="tag-category-list">
         <p class="post-date">
           04 Jan 2018
         </p>
-        <a class="post-title" href="/javascript/2018/01/04/global-local-variable.html">[JS Variable] 전역 변수와 지역 변수</a>
+        <a class="post-title" href="/javascript/2018/01/04/global-local-variable.html">[Javascript Core] 전역 변수와 지역 변수</a>
       </li>
       
       <li class="tag-category-list">
         <p class="post-date">
           04 Jan 2018
         </p>
-        <a class="post-title" href="/javascript/2018/01/04/execution-context.html">[JS Execution] 실행 컨텍스트</a>
+        <a class="post-title" href="/javascript/2018/01/04/execution-context.html">[Javascript Core] 실행 컨텍스트</a>
       </li>
       
       <li class="tag-category-list">
         <p class="post-date">
           03 Jan 2018
         </p>
-        <a class="post-title" href="/javascript/2018/01/03/prototype.html">[JS Function] 프로토타입에 대해서</a>
+        <a class="post-title" href="/javascript/2018/01/03/prototype.html">[Javascript Core] 프로토타입에 대해서</a>
       </li>
       
       <li class="tag-category-list">
         <p class="post-date">
           03 Jan 2018
         </p>
-        <a class="post-title" href="/javascript/2018/01/03/function-declarations-expressions.html">[JS Function] 함수 선언과 함수 리터럴</a>
+        <a class="post-title" href="/javascript/2018/01/03/function-declarations-expressions.html">[Javascript Core] 함수 선언과 함수 리터럴</a>
       </li>
       
       <li class="tag-category-list">
@@ -1811,62 +1768,6 @@
           24 Jan 2018
         </p>
         <a class="post-title" href="/angular/2018/01/24/install-angular-cli-client.html">[Angular] Angular CLI, 클라이언트 구성하기</a>
-      </li>
-      
-    </ul>
-  
-    <ul class="tag-category">
-      
-      <p class="tag-category-title" id="#Inheritance">Inheritance</p>
-      <a name="Inheritance"></a>
-      
-      <li class="tag-category-list">
-        <p class="post-date">
-          21 Feb 2018
-        </p>
-        <a class="post-title" href="/design%20patterns/2018/02/21/strategy-pattern.html">[Design Patterns] 상속과 인터페이스(+ 캡슐화)</a>
-      </li>
-      
-    </ul>
-  
-    <ul class="tag-category">
-      
-      <p class="tag-category-title" id="#Interface">Interface</p>
-      <a name="Interface"></a>
-      
-      <li class="tag-category-list">
-        <p class="post-date">
-          21 Feb 2018
-        </p>
-        <a class="post-title" href="/design%20patterns/2018/02/21/strategy-pattern.html">[Design Patterns] 상속과 인터페이스(+ 캡슐화)</a>
-      </li>
-      
-    </ul>
-  
-    <ul class="tag-category">
-      
-      <p class="tag-category-title" id="#Abstract Class">Abstract Class</p>
-      <a name="Abstract Class"></a>
-      
-      <li class="tag-category-list">
-        <p class="post-date">
-          21 Feb 2018
-        </p>
-        <a class="post-title" href="/design%20patterns/2018/02/21/strategy-pattern.html">[Design Patterns] 상속과 인터페이스(+ 캡슐화)</a>
-      </li>
-      
-    </ul>
-  
-    <ul class="tag-category">
-      
-      <p class="tag-category-title" id="#Encapsulation">Encapsulation</p>
-      <a name="Encapsulation"></a>
-      
-      <li class="tag-category-list">
-        <p class="post-date">
-          21 Feb 2018
-        </p>
-        <a class="post-title" href="/design%20patterns/2018/02/21/strategy-pattern.html">[Design Patterns] 상속과 인터페이스(+ 캡슐화)</a>
       </li>
       
     </ul>

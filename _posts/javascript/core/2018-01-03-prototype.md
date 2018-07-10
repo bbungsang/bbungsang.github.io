@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[JS Function] 프로토타입에 대해서"
+title:  "[Javascript Core] 프로토타입에 대해서"
 category: [JavaScript, javascript]
 tags:
   - JavaScript

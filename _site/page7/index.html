@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>bbungsang's devlog</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="/">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <i id="menuBtn" class="fa fa-diamond"></i>
+  </article>
+</section>
+<section class="desc">
+</section>
+
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (var i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/static/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="post-wrap">
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/19/tryhelloworld-level2-1.html">[Try Hello World] Level2 2016년</a>
+    <p class="post-content">2016년
+
+2016년 1월 1일은 금요일입니다. 2016년 A월 B일은 무슨 요일일까요? 두 수 A,B를 입력받아 A월 B일이 무슨 요일인지 출력하는 getDayName 함수를 완성하세요.
+
+요일의 이름은 일요일부터 토요일까지 각각
+
+SUN,MON,TUE,WED,THU,FRI,SAT
+
+를 출력해주면 됩니다. 예를 들어 A=5, B=24가 입력된다면 5월 24일은 화요일이므로 TUE 를 반환하면 됩니다.
+
+
+  내 풀이
+
+
+from dat...</p>
+    <small class="post-date">19 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/16/instargram-memberapp-login.html">[인스타그램] 로그인 기능 구현하기</a>
+    <p class="post-content">로그인 기능 구현하기
+폼 -&gt; 뷰 -&gt; URL -&gt; 템플릿 순서로 구현하려고 한다.
+
+
+  고려해야할 부분
+  
+    아이디와 비밀번호를 입력할 폼 작성
+    POST 요청이 아닐 경우, 빈 로그인 폼을 받아서 로그인 페이지에 넘긴다.
+    사용자가 폼을 입력하지 않으면, 입력 요청 메세지를 띄우며 다음 페이지로 이동을 막는다.
+    입력한 아이디와 비밀번호가 데이터베이스의 데이터와 일치하지 않을 경우, 에러 메세지...</p>
+    <small class="post-date">16 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/15/instargram-postapp-view-url-template(2).html">[인스타그램] post앱 뷰, URL, 템플릿(2) - post_detail</a>
+    <p class="post-content">post_detail 뷰 구상하기
+
+  Post 모델에 해당 데이터가 존재하면, 인자로 받은 pk와 동일한 값이 포함된 Row 데이터를 post 변수에 할당한다.
+  데이터가 존재하지 않으면, post/post_list.html 로 돌아간다.
+  render() 를 통하여 post 의 값을 딕셔너리 형태로 post_detail.html 에 전달한다.
+
+
+def post_detail(request, post_pk):
+    try:
+    ...</p>
+    <small class="post-date">15 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/15/instargram-postapp-view-url-template(1).html">[인스타그램] post앱 뷰, URL, 템플릿(1) - post_list</a>
+    <p class="post-content">첫번째 뷰, URL, 템플릿 설정하기
+첫번째 뷰 구상하기
+
+  Post 모델의 데이터를 전부 불러와서 리스트 형태로 화면에 순차적으로 출력
+
+
+[post/views.py]
+from django.shortcuts import render
+
+# 1. Post 모델을 호출할 것이므로 models.py 의 Post 를 임포트한다.
+from .models import Post
+
+# 2. url 로 부터 전달되어 실행할 함수를 작성한다.
+def po...</p>
+    <small class="post-date">15 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/14/instargram-postapp-models.html">[인스타그램] post앱 모델</a>
+    <p class="post-content">0. 어플리케이션 ‘post’를 생성하고, settings.py에 등록
+
+1. 모델 설계하기
+
+  Click!
+
+
+from django.db import models
+
+
+class User(models.Model):
+    name = models.CharField(max_length=36)
+
+    def __str__(self):
+        return self.name
+
+
+class Post(models.Model):
+    au...</p>
+    <small class="post-date">14 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8/instargram/2017/06/14/instargram-custom-user.html">[인스타그램] 커스텀 유저 돌리기</a>
+    <p class="post-content">
+  기존 User 모델 VS 커스텀 User 모델 
+장고가 제공하는 User 모델을 활용하기 위해 기존 User 모델을 그대로 활용하는 방법, 커스텀 User를 활용하는 방법이 있다. 
+기존 User 모델을 그대로 활용하는 방법 중 User에 OneToOneField를 거는 방식은 유저 정보(필드)가 방대할 때, 인증에 필요한 최소한의 필수 정보만 사용하다가 필요한 시기에 필요한 정보만 활용할 수 있도록 다른 모델에 몰아넣거나(OneTo...</p>
+    <small class="post-date">14 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-2.html">[Try Hello World] Level1 약수의 합</a>
+    <p class="post-content">약수의 합
+어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요.
+
+예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.
+
+
+  내 풀이
+
+
+from functools import reduce
+
+def sumDivisor(num):
+    divisor = []
+    for i in range(num):
+      ...</p>
+    <small class="post-date">12 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-1.html">[Try Hello World] Level1 피보나치 수</a>
+    <p class="post-content">피보나치 수
+피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.
+
+2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.
+
+예를 들어 n = 3이라면 2를 반환해주면 됩니다.
+
+
+  내 풀이
+
+
+def fibonacci(num):
+    a, b = 0, 1
+    i = 0
+    while Tr...</p>
+    <small class="post-date">12 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-2.html">[Try Hello World] Level1 행렬의 덧셈</a>
+    <p class="post-content">행렬의 덧셈
+행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다.
+2개의 행렬을 입력받는 sumMatrix 함수를 완성하여 행렬 덧셈의 결과를 반환해 주세요.
+
+예를 들어 2x2 행렬인 A = ((1, 2), (2, 3)), B = ((3, 4), (5, 6)) 가 주어지면, 같은 2x2 행렬인 ((4, 6), (7, 9))를 반환하면 됩니다.(어떠한 행렬에도 대응하는 함수를 완성해주세요.)...</p>
+    <small class="post-date">11 Jun 2017</small>
+  </article>
+  
+
+  
+  <div class="pagination">
+    
+    <a class="cusInnerPage" href="/page6/">&laquo;</a>
+    
+
+    
+    
+    <a class="cusInnerPage" href="/">1</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page2">2</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page3">3</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page4">4</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page5">5</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page6">6</a>
+    
+    
+    
+    <em class="cusInnerPage" style="background: #cc99cc; color: #fafafa; border-radius: 100%;">7</em>
+    
+    
+    
+    <a class="cusInnerPage" href="/page8">8</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page9">9</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page10">10</a>
+    
+    
+
+    
+    <a class="cusInnerPage" href="/page8/">&raquo;</a>
+    
+  </div>
+  
+</section>
+
+  </div>
+</body>
+</html>

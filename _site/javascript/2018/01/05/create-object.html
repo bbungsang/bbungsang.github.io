@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
 	<script>
@@ -10,21 +10,21 @@
 	  gtag('config', 'UA-100042262-1');
 	</script>
 
-	<title>뿡상의 개발공부로그</title>
+	<title>bbungsang's devlog</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- 파비콘 -->
-	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/common.css" />
-	<link rel="stylesheet" href="/css/nav.css" />
-	<link rel="stylesheet" href="/css/main.css" />
-	<link rel="stylesheet" href="/css/post.css" />
-	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!--external css-->
@@ -33,7 +33,6 @@
 
 	<!-- font -->
 	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
-
 	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
@@ -57,7 +56,7 @@
     </li>
   </ul>
   <article class="btn-wrap">
-    <i id="menuBtn" class="im im-diamond-o"></i>
+    <i id="menuBtn" class="fa fa-diamond"></i>
   </article>
 </section>
 <section class="desc">
@@ -65,36 +64,18 @@
 
 <script>
   var menuList = document.getElementsByClassName("menu-list");
-  for (let i = 0; i < menuList.length; i++) {
-    menuList[i].addEventListener("click", function() {
+  for (var i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active");
       current[0].className = current[0].className.replace("active", "");
       this.className += " active";
     });
   }
 </script>
-<!-- <ul class="top_menu">
-  <li class=" menu_list sidebar-toggle-box">
-    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
-      <i class="im im-menu"></i>
-    </button>
-  </li>
-
-  <li class="menu_list logo">
-    <a href="/">
-      bbungsang
-      <i>devlog</i>
-    </a>
-  </li>
-  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
-  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul> -->
-
-<!-- 사이드 메뉴바 -->
 <div id="mySidenav" class="sidenav">
   <div class="intro-me">
     <div class="my-photo">
-      <img src="/images/itsme.png">
+      <img src="/static/images/itsme.png">
     </div>
     <div class="my-content">
       Please contact me if you have any questions
@@ -173,13 +154,13 @@
     <section class="markdown">
   <article class="md-head">
     <div class="title">
-      [JS Object] 객체 리터럴과 new 연산자
+      [Javascript Core] 객체 리터럴과 new 연산자
     </div>
     <div class="tag-wrap">
       
       
         <a href="/tags/#JavaScript">
-          <img src="/images/tag_img.png">
+          <img src="/static/images/tag_img.png">
           JavaScript
         </a>
       
@@ -212,13 +193,13 @@
 <span class="c1">// 인스턴스 생성</span>
 <span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">(</span><span class="s2">"Ryan"</span><span class="p">)</span> <span class="c1">// A {name: "Ryan"}</span>
 
-<span class="cm">/* 
+<span class="cm">/*
 * 인스턴스 생성 과정
 * 1. a = {}
 * 2. a.__proto__ = A.prototype
 * 3. A가 실행되며 A의 this 키워드가 a를 가리킨다.
 * 4. A {name: "Ryan"}
-*/</span> 
+*/</span>
 </code></pre></div></div>
 
 <p>new 없이 인스턴스를 생성했다면 생성자 내부 this가 전역을 가리킨다. 생성자 내부에 this.member 와 같이 정의했을 경우, 전역 객체에 member라는 새로운 프로퍼티가 생성된다.</p>
@@ -266,29 +247,22 @@
         <li class="prev-or-next">
           <a href="/javascript/2018/01/04/global-local-variable.html">
             <span class="glyphicon glyphicon-chevron-left"></span>
-            [JS Variable] 전역 변수와 지역...
+            [Javascript Core] 전역 변수와 지역...
           </a>
         </li>
         
         
       </ul>
-      <!-- <section class="my-intro">
-        <img src="/images/itsme.png">
-        <article>
-          <p>뿡상</p>
-          궁금하시거나 틀린 부분이 있다면 언제든 문의주세요:D
-        </article>
-      </section> -->
       
   <div id="disqus_thread"></div>
   <script>
 
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
+  (function() {
+  var d = document, s = d.createElement('script')
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js'
+  s.setAttribute('data-timestamp', +(new Date())
+  (d.head || d.body).appendChild(s)
+  })()
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 

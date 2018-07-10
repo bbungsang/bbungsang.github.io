@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>bbungsang's devlog</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="/">bbungsang devlog</a>
+  </article>
+  <ul class="top-menu">
+    <li class="menu-list active">
+      <a href="/">Posts</a>
+    </li>
+    <li class="menu-list">
+      <a href="#">About</a>
+    </li>
+  </ul>
+  <article class="btn-wrap">
+    <i id="menuBtn" class="fa fa-diamond"></i>
+  </article>
+</section>
+<section class="desc">
+</section>
+
+<script>
+  var menuList = document.getElementsByClassName("menu-list");
+  for (var i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/static/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/js.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/python.html">
+        <span class="bar-left"></span>
+        파이썬
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/django.html">
+        <span class="bar-left"></span>
+        장고
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/server.html">
+        <span class="bar-left"></span>
+        서버
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/study.html">
+        <span class="bar-left"></span>
+        스터디
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="post-wrap">
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-4.html">[Try Hello World] Level2 자연수를 뒤집어 리스트로 만들기</a>
+    <p class="post-content">자연수를 뒤집어 리스트로 만들기
+digit_reverse함수는 양의 정수 n을 매개변수로 입력받습니다.
+
+n을 뒤집어 숫자 하나하나를 list로 표현해주세요.
+
+예를 들어 n이 12345이면 [5,4,3,2,1]을 리턴하면 됩니다.
+
+
+  내 풀이
+
+
+def digit_reverse(n):
+	return [n % 10**i // 10**(i-1) for i in range(1, len(str(n))+1)]
+
+print("결과 : {}".f...</p>
+    <small class="post-date">02 Sep 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level5-1.html">[Try Hello World] Level5 2 x n 타일링</a>
+    <p class="post-content">1x1 정사각형 2개가 붙어 있는 타일이 있습니다. 이 타일을 이용하여 총 2xN 의 보드판을 채우려고 합니다.
+
+타일은 가로, 세로 두 가지 방향으로 배치할 수 있습니다.
+
+보드판의 길이 N이 주어질 때, 2xN을 타일로 채울 수 있는 경우의 수를 반환하는 tiling 함수를 완성하세요.
+
+예를들어 N이 7일 경우 아래 그림이 타일을 배치할 수 있는 한 경우입니다.
+
+
+
+단, 리턴하는 숫자가 매우 커질 수도 있으므로 숫자가 5자리를 넘어...</p>
+    <small class="post-date">01 Sep 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level2-harshad.html">[Try Hello World] Level2 하샤드수</a>
+    <p class="post-content">하샤드수
+양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다.
+
+예를들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다.
+
+Harshad함수는 양의 정수 n을 매개변수로 입력받습니다. 이 n이 하샤드수인지 아닌지 판단하는 함수를 완성하세요.
+
+예를들어 n이 10, 12, 18이면 True를 리턴 11, 13이면 False를 리턴하면 됩니다.
+
+내 풀이
+
+[파이썬]
+
+fro...</p>
+    <small class="post-date">01 Sep 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/08/31/tryhelloworld-level2-2.html">[Try Hello World] Level2 JadenCase문자열 만들기</a>
+    <p class="post-content">JadenCase문자열 만들기
+Jaden_Case함수는 문자열 s을 매개변수로 입력받습니다.
+
+s에 모든 단어의 첫 알파벳이 대문자이고, 그 외의 알파벳은 소문자인 문자열을 리턴하도록 함수를 완성하세요
+
+예를 들어 s가 “3people unFollowed me for the last week”라면 “3people Unfollowed Me For The Last Week”를 리턴하면 됩니다.
+
+
+  내 풀이 1
+
+
+def Jaden_Case...</p>
+    <small class="post-date">31 Aug 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">[15장] 장고 템플릿과 Jinja2</a>
+    <p class="post-content">장고 템플릿과 Jinja2
+
+  장고 템플릿 시스템에서 장고 템플릿 언어(Django Template Language, DTL)과 Jinja2를 내장하여 지원하고 있다.
+
+
+문법적 차이점
+
+  Jinja2는 DTL의 영향을 많이 받았기 때문에 문법적으로 매우 유사하다.
+  하지만 차이도 반드시 존재한다.
+
+
+
+  
+    
+      용례
+      DTL
+      Jinja2
+    
+  
+  
+    
+      메서드 호출
+    ...</p>
+    <small class="post-date">30 Aug 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/javascript/2017/08/29/matchMedia.html">자바스크립트에 미디어쿼리를 사용하는 법, matchMedia()</a>
+    <p class="post-content">
+  웹 사이트를 반응형으로 만들기위해서 CSS 미디어쿼리를 사용해야 하는데, CSS 미디어쿼리는 다양한 크기의 디바이스가 존재하는 상황에서도 모두 적절한 화면을 제공하게 해준다.
+
+
+
+  oo 사이즈에서는 A 자바스크립트가 적용돼야하지만 xx 사이즈에서도 동일한 자바스크립트가 적용될 경우, 화면이 굉장히 부자연스러워질 수 있다.
+  내 블로그의 경우, 사이드바가 화면(15인치 풀스크린)에 나타나면 그 만큼 본문이 옆으로 밀리고, 사이드바...</p>
+    <small class="post-date">29 Aug 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/23/ch12-django-form-patterns.html">[12장] 폼 패턴들</a>
+    <p class="post-content">패턴 1: 간단한 모델폼과 기본 유효성 검사기
+
+제네릭 뷰
+
+  뷰에서 모델에 기반을 둔 ModelForm 을 자동 생성한다.
+  생성된 ModelForm 이 모델의 기본 필드 유효성 검사기를 이용하게 된다.
+
+
+유효성 검사기
+
+[core/validators.py]
+
+from django.core.exceptions import ValidationError
+
+
+def validate_tasty(value):
+    """ 단어가 'Tast...</p>
+    <small class="post-date">23 Aug 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/09/ch10-class-based-view.html">[10장] 클래스 기반 뷰</a>
+    <p class="post-content">장고의 뷰
+
+  장고의 뷰는 요청 객체를 받고 응답 객체를 반환하는 내장 함수이다.
+  함수 기반 뷰는 뷰 함수 자체가 내장 함수이고,
+  클래스 기반 뷰는 뷰 클래스가 내장 함수를 반환하는 as_view() 클래스 메서드를 제공한다.
+  요즘 대부분의 웹 프로젝트에서 제네릭 클래스 기반 뷰(GCBV)를 이용하여 장고의 장점을 최대한 살리고 있다.
+
+
+클래스 기반 뷰를 이용할 때 가이드 라인
+
+  뷰 코드 양은 적으면 적을수록 좋다. 즉,...</p>
+    <small class="post-date">09 Aug 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/02/ch9-func-based-view.html">[9장] 함수 기반 뷰</a>
+    <p class="post-content">
+  함수 기반 뷰는 클래스 기반 뷰처럼 슈퍼클래스로부터 상속하는 기능이 없다. 하지만 함수 기반 뷰는 그 태생에서 오는 함수적인 특징이 장점이다.
+
+
+함수 기반 뷰 가이드 라인
+
+  뷰 코드는 작을수록 좋다.
+  뷰에서 절대 코드를 반보해서 사용하지 말자.
+  뷰는 프레젠테이션 로직에서 처리해야한다. (모델은 비즈니스 로직에서 처리해야한다.)
+  403, 404, 500을 처리하는 커스텀 코드를 쓰는 데 이용하라.
+  복잡하게 중첩된 i...</p>
+    <small class="post-date">02 Aug 2017</small>
+  </article>
+  
+
+  
+  <div class="pagination">
+    
+    <a class="cusInnerPage" href="/page4/">&laquo;</a>
+    
+
+    
+    
+    <a class="cusInnerPage" href="/">1</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page2">2</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page3">3</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page4">4</a>
+    
+    
+    
+    <em class="cusInnerPage" style="background: #cc99cc; color: #fafafa; border-radius: 100%;">5</em>
+    
+    
+    
+    <a class="cusInnerPage" href="/page6">6</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page7">7</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page8">8</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page9">9</a>
+    
+    
+    
+    <a class="cusInnerPage" href="/page10">10</a>
+    
+    
+
+    
+    <a class="cusInnerPage" href="/page6/">&raquo;</a>
+    
+  </div>
+  
+</section>
+
+  </div>
+</body>
+</html>

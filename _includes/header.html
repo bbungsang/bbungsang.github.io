@@ -1,17 +1,17 @@
 <section class="top-wrap">
   <article class="logo">
-    <a href="{{site.baseurl}}/">bbungsang devlog</a>
+    <a href="{{ site.baseurl }}/">bbungsang devlog</a>
   </article>
   <ul class="top-menu">
     <li class="menu-list active">
-      <a href="{{site.baseurl}}/">Posts</a>
+      <a href="{{ site.baseurl }}/">Posts</a>
     </li>
     <li class="menu-list">
       <a href="#">About</a>
     </li>
   </ul>
   <article class="btn-wrap">
-    <i id="menuBtn" class="im im-diamond-o"></i>
+    <i id="menuBtn" class="fa fa-diamond"></i>
   </article>
 </section>
 <section class="desc">
@@ -19,29 +19,12 @@
 
 <script>
   var menuList = document.getElementsByClassName("menu-list");
-  for (let i = 0; i < menuList.length; i++) {
-    menuList[i].addEventListener("click", function() {
+  for (var i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active");
       current[0].className = current[0].className.replace("active", "");
       this.className += " active";
     });
   }
 </script>
-<!-- <ul class="top_menu">
-  <li class=" menu_list sidebar-toggle-box">
-    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
-      <i class="im im-menu"></i>
-    </button>
-  </li>
-
-  <li class="menu_list logo">
-    <a href="{{site.baseurl}}/">
-      bbungsang
-      <i>devlog</i>
-    </a>
-  </li>
-  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
-  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul> -->
-
 {% include side_nav.html %}

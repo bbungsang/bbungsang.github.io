@@ -1,6 +1,7 @@
 # Site settings
 name: bbugnsang's boaring blog
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: ""
+url: https://bbungsang.github.io
 
 # Build settings
 markdown: kramdown
@@ -16,10 +17,9 @@ comments: true
 google_analytics:
   id: UA-100042262-1
 
-Search:
-  - '/search/'
-
-url: https://bbungsang.github.io
-
-# paginate: 7
-# paginate_path: /page:num/
+plugins:
+  - jekyll-paginate-v2
+pagination:
+  enabled: true
+  per_page: 9
+  sort_reverse: true

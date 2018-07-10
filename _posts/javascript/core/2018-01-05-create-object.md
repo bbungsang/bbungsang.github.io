@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[JS Object] 객체 리터럴과 new 연산자"
+title:  "[Javascript Core] 객체 리터럴과 new 연산자"
 category: [JavaScript, javascript]
 tags:
   - JavaScript
@@ -31,13 +31,13 @@ function A(member) {
 // 인스턴스 생성
 const a = new A("Ryan") // A {name: "Ryan"}
 
-/* 
+/*
 * 인스턴스 생성 과정
 * 1. a = {}
 * 2. a.__proto__ = A.prototype
 * 3. A가 실행되며 A의 this 키워드가 a를 가리킨다.
 * 4. A {name: "Ryan"}
-*/ 
+*/
 ```
 
 new 없이 인스턴스를 생성했다면 생성자 내부 this가 전역을 가리킨다. 생성자 내부에 this.member 와 같이 정의했을 경우, 전역 객체에 member라는 새로운 프로퍼티가 생성된다.
@@ -58,9 +58,9 @@ a.color // yellow
 ## 객체 리터럴 VS new 연산자
 
 ### 객체 리터럴
-- 객체 리터럴로 객체생성 방법으로는 prototype 영역 정의를 할 수 없다. 
+- 객체 리터럴로 객체생성 방법으로는 prototype 영역 정의를 할 수 없다.
 - 선언과 동시에 인스턴스를 생성한다. (즉, new 연산자가 필요없다.)
 
 ### new 연산자
-- prototype 영역을 사용하기 위해 객체 생성 전에 정의를 미리 해야한다. 
+- prototype 영역을 사용하기 위해 객체 생성 전에 정의를 미리 해야한다.
 - 생성된 객체(인스턴스)가 공유하는 메소드를 정의하기 위해서는 prototype 영역을 사용해야한다.

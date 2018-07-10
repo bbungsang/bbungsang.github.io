@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
 	<script>
@@ -10,21 +10,21 @@
 	  gtag('config', 'UA-100042262-1');
 	</script>
 
-	<title>뿡상의 개발공부로그</title>
+	<title>bbungsang's devlog</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- 파비콘 -->
-	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="shortcut icon" href="/static/images/favicon.ico">
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="/css/common.css" />
-	<link rel="stylesheet" href="/css/nav.css" />
-	<link rel="stylesheet" href="/css/main.css" />
-	<link rel="stylesheet" href="/css/post.css" />
-	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
 	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
 
 	<!--external css-->
@@ -33,7 +33,6 @@
 
 	<!-- font -->
 	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
-
 	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
@@ -57,7 +56,7 @@
     </li>
   </ul>
   <article class="btn-wrap">
-    <i id="menuBtn" class="im im-diamond-o"></i>
+    <i id="menuBtn" class="fa fa-diamond"></i>
   </article>
 </section>
 <section class="desc">
@@ -65,36 +64,18 @@
 
 <script>
   var menuList = document.getElementsByClassName("menu-list");
-  for (let i = 0; i < menuList.length; i++) {
-    menuList[i].addEventListener("click", function() {
+  for (var i = 0; i < menuList.length; i++) {
+    menuList[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active");
       current[0].className = current[0].className.replace("active", "");
       this.className += " active";
     });
   }
 </script>
-<!-- <ul class="top_menu">
-  <li class=" menu_list sidebar-toggle-box">
-    <button class="menu_btn" id="menuBtn" title="메뉴토글버튼">
-      <i class="im im-menu"></i>
-    </button>
-  </li>
-
-  <li class="menu_list logo">
-    <a href="/">
-      bbungsang
-      <i>devlog</i>
-    </a>
-  </li>
-  <a href="https://www.facebook.com/profile.php?id=100003805377149"><li class="menu_ele">Facebook</li></a>
-  <a href="https://github.com/bbungsang"><li class="menu_ele">GitHub</li></a>
-</ul> -->
-
-<!-- 사이드 메뉴바 -->
 <div id="mySidenav" class="sidenav">
   <div class="intro-me">
     <div class="my-photo">
-      <img src="/images/itsme.png">
+      <img src="/static/images/itsme.png">
     </div>
     <div class="my-content">
       Please contact me if you have any questions
@@ -186,12 +167,12 @@
         
         
           <a href="/tags/#Paas">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             Paas
           </a>
         
           <a href="/tags/#Elastic Beanstalk">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             Elastic Beanstalk
           </a>
         
@@ -209,12 +190,12 @@
         
         
           <a href="/tags/#Nginx">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             Nginx
           </a>
         
           <a href="/tags/#WSGI">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             WSGI
           </a>
         
@@ -232,12 +213,12 @@
         
         
           <a href="/tags/#Nginx">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             Nginx
           </a>
         
           <a href="/tags/#WSGI">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             WSGI
           </a>
         

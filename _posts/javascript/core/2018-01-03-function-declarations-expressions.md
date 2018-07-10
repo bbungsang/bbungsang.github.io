@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[JS Function] 함수 선언과 함수 리터럴"
+title:  "[Javascript Core] 함수 선언과 함수 리터럴"
 category: [JavaScript, javascript]
 tags:
   - JavaScript
