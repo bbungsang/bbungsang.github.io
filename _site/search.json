@@ -844,6 +844,10 @@
   
    {
      
+   } ,
+  
+   {
+     
         "title"    : "Tags",
         "category" : "",
         "tags"     : "",
@@ -859,100 +863,33 @@
   
    {
      
-        "title"    : " - page 2",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page2/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
+   } ,
+  
+   {
      
    } ,
   
    {
      
-        "title"    : " - page 3",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page3/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
+   } ,
+  
+   {
      
    } ,
   
    {
      
-        "title"    : " - page 4",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page4/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
+   } ,
+  
+   {
      
    } ,
   
    {
      
-        "title"    : " - page 5",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page5/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
-     
    } ,
   
    {
-     
-        "title"    : " - page 6",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page6/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
-     
-   } ,
-  
-   {
-     
-        "title"    : " - page 7",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page7/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
-     
-   } ,
-  
-   {
-     
-        "title"    : " - page 8",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page8/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
-     
-   } ,
-  
-   {
-     
-        "title"    : " - page 9",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page9/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
-     
-   } ,
-  
-   {
-     
-        "title"    : " - page 10",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/page10/index.html",
-        "date"     : "",
-        "content"  : "<section class=\"post-wrap\">\n  {% for post in paginator.posts %}\n  <article class=\"posts\">\n    <a class=\"post-title\" href=\"{{ site.baseurl }}{{ post.url }}\">{{ post.title }}</a>\n    <p class=\"post-content\">{{ post.content | strip_html | truncate: \"250\" }}</p>\n    <small class=\"post-date\">{{ post.date | date_to_string }}</small>\n  </article>\n  {% endfor %}\n\n  {% if paginator.total_pages > 1 %}\n  <div class=\"pagination\">\n    {% if paginator.previous_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&laquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\">&laquo;</span>\n    {% endif %}\n\n    {% for page in (1..paginator.total_pages) %}\n    {% if page == paginator.page %}\n    <em class=\"cusInnerPage\" style=\"background: #cc99cc; color: #fafafa; border-radius: 100%;\">{{ page }}</em>\n    {% elsif page == 1 %}\n    <a class=\"cusInnerPage\" href=\"/\">{{ page }}</a>\n    {% else %}\n    <a class=\"cusInnerPage\" href=\"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}\">{{ page }}</a>\n    {% endif %}\n    {% endfor %}\n\n    {% if paginator.next_page %}\n    <a class=\"cusInnerPage\" href=\"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}\">&raquo;</a>\n    {% else %}\n    <span class=\"cusInnerPage\" >&raquo;</span>\n    {% endif %}\n  </div>\n  {% endif %}\n</section>\n"
      
    } 
   

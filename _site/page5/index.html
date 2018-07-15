@@ -154,78 +154,6 @@
     <section class="post-wrap">
   
   <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-4.html">[Try Hello World] Level2 자연수를 뒤집어 리스트로 만들기</a>
-    <p class="post-content">자연수를 뒤집어 리스트로 만들기
-digit_reverse함수는 양의 정수 n을 매개변수로 입력받습니다.
-
-n을 뒤집어 숫자 하나하나를 list로 표현해주세요.
-
-예를 들어 n이 12345이면 [5,4,3,2,1]을 리턴하면 됩니다.
-
-
-  내 풀이
-
-
-def digit_reverse(n):
-	return [n % 10**i // 10**(i-1) for i in range(1, len(str(n))+1)]
-
-print("결과 : {}".f...</p>
-    <small class="post-date">02 Sep 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level5-1.html">[Try Hello World] Level5 2 x n 타일링</a>
-    <p class="post-content">1x1 정사각형 2개가 붙어 있는 타일이 있습니다. 이 타일을 이용하여 총 2xN 의 보드판을 채우려고 합니다.
-
-타일은 가로, 세로 두 가지 방향으로 배치할 수 있습니다.
-
-보드판의 길이 N이 주어질 때, 2xN을 타일로 채울 수 있는 경우의 수를 반환하는 tiling 함수를 완성하세요.
-
-예를들어 N이 7일 경우 아래 그림이 타일을 배치할 수 있는 한 경우입니다.
-
-
-
-단, 리턴하는 숫자가 매우 커질 수도 있으므로 숫자가 5자리를 넘어...</p>
-    <small class="post-date">01 Sep 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level2-harshad.html">[Try Hello World] Level2 하샤드수</a>
-    <p class="post-content">하샤드수
-양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다.
-
-예를들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다.
-
-Harshad함수는 양의 정수 n을 매개변수로 입력받습니다. 이 n이 하샤드수인지 아닌지 판단하는 함수를 완성하세요.
-
-예를들어 n이 10, 12, 18이면 True를 리턴 11, 13이면 False를 리턴하면 됩니다.
-
-내 풀이
-
-[파이썬]
-
-fro...</p>
-    <small class="post-date">01 Sep 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/08/31/tryhelloworld-level2-2.html">[Try Hello World] Level2 JadenCase문자열 만들기</a>
-    <p class="post-content">JadenCase문자열 만들기
-Jaden_Case함수는 문자열 s을 매개변수로 입력받습니다.
-
-s에 모든 단어의 첫 알파벳이 대문자이고, 그 외의 알파벳은 소문자인 문자열을 리턴하도록 함수를 완성하세요
-
-예를 들어 s가 “3people unFollowed me for the last week”라면 “3people Unfollowed Me For The Last Week”를 리턴하면 됩니다.
-
-
-  내 풀이 1
-
-
-def Jaden_Case...</p>
-    <small class="post-date">31 Aug 2017</small>
-  </article>
-  
-  <article class="posts">
     <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/30/ch15-dtl-jinja2.html">[15장] 장고 템플릿과 Jinja2</a>
     <p class="post-content">장고 템플릿과 Jinja2
 
@@ -319,11 +247,87 @@ def validate_tasty(value):
     <small class="post-date">02 Aug 2017</small>
   </article>
   
+  <article class="posts">
+    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/08/02/ch8-fbv-and-cbv.html">[8장] 함수 기반 뷰와 클래스 기반 뷰</a>
+    <p class="post-content">함수 기반 뷰(FBV)와 클래스 기반 뷰(CBV)는 각각 언제 사용할까?
+뷰를 구현할 때 마다 함수 기반 뷰로 하는 게 나을지, 클래스 기반 뷰로 하는 게 더 나을지를 고민하자
+
+클래스 기반 뷰를 사용할 때
+
+  대부분의 경우 선호
+  널리 사용되는 클래스 뷰들 중 하나가 이미 머리에 떠올랐다.
+  속성을 오버라이딩 하는 것만으로 클래스 기반 뷰가 가능하다.
+  다른 뷰를 생성하기 위해 서브클래스 를 만들어야 한다.
+
+
+함수 기반 뷰를 사...</p>
+    <small class="post-date">02 Aug 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/22/cloud-service.html">클라우드 서비스(Paas, Saas, Iaas)</a>
+    <p class="post-content">클라우드 서비스
+클라우드 컴퓨팅 서비스를 크게 3가지 형태로 구분할 수 있으며, 그 기준은 어디까지가 직접 관리해야하는 영역인가 로 나누어진다.
+
+
+
+IaaS(Infrastructure as a Service)
+
+  서버에서 머신영역인 가상화, 서버, 스토리지, 네트워크 를 제공한다. 예) EC2
+
+
+SaaS(Software as a Servise)
+
+  머신영역 + 운영체제 + 애플리케이션 ➜ 장고 애플리케이션만 만들어서 업로드시키면 된...</p>
+    <small class="post-date">22 Jul 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EB%8F%84%EC%BB%A4/docker/2017/07/21/docker-command.html">도커 명령어</a>
+    <p class="post-content">
+  Project Root Directory 바로 하위 Dockerfile 은 eb deploy 할 때, 자동으로 docker build 가 실행된다.
+
+
+sudo 없이 명령어 사용하기
+
+  docker는 기본적으로 root 권한이 필요하다.
+  root가 아닌 사용자가 sudo 없이 명령어를 사용하려면 해당 사용자를 docker 그룹에 추가해야한다.
+
+
+&gt;&gt;&gt; sudo usermod -aG docker $USER(현재 ...</p>
+    <small class="post-date">21 Jul 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/wsgi.html">WSGI와 uWSGI</a>
+    <p class="post-content">CGI(Common Gateway Interface)
+
+  웹 서버는 Static Contents, 즉 내용에 변화가 없는 그대로의 정적인 것을 전달하는 역할을 한다.
+  만약 클라이언트로부터 요청을 전달받을 때마다 달라지는 현재 시간 혹은 예약 현황 등 (Dynamic Contents)을 응답해야한다면, 해당 요청에 맞게 데이터를 만들어주는 백엔드에게 요청을 전달해야한다.
+  요청에 따라서 데이터를 만들어주는 것을 프로그램(장고 어플리케...</p>
+    <small class="post-date">20 Jul 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/%EC%84%9C%EB%B2%84/server/2017/07/20/nginx-1.html">NGINX (1)</a>
+    <p class="post-content">웹(Web)이란?
+
+  www 는 ‘World Wide Web’의 약자로 네트워크 체계 중 하나인 인터넷 에서 동작하는 통신 규약 중 하나이다.
+  즉 인터넷은 네트워크 체계 중 하나이고, 웹은 인터넷에서 작동되는 하나의 개념인 것이다. (인터넷에서 작동되는 규약으로는 FTP, EMAIL 등이 있다.)
+  인터넷 != 웹 이지만 대부분 인터넷 == 웹 으로 알고 있는 까닭은 웹이 가장 성공한 인터넷 서비스이기 때문이다.
+
+
+HTTP
+
+  ...</p>
+    <small class="post-date">20 Jul 2017</small>
+  </article>
+  
 
   
   <div class="pagination">
     
-    <a class="cusInnerPage" href="/page4/">&laquo;</a>
+    <a class="cusInnerPage" href="/page4">&laquo;</a>
     
 
     
@@ -363,13 +367,9 @@ def validate_tasty(value):
     <a class="cusInnerPage" href="/page9">9</a>
     
     
-    
-    <a class="cusInnerPage" href="/page10">10</a>
-    
-    
 
     
-    <a class="cusInnerPage" href="/page6/">&raquo;</a>
+    <a class="cusInnerPage" href="/page6">&raquo;</a>
     
   </div>
   

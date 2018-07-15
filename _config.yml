@@ -18,8 +18,5 @@ google_analytics:
   id: UA-100042262-1
 
 plugins:
-  - jekyll-paginate-v2
-pagination:
-  enabled: true
-  per_page: 7
-  sort_reverse: true
+  - jekyll-paginate
+paginate: 10
