@@ -1,5 +1,5 @@
 # Site settings
-name: bbugnsang's boaring blog
+name: bbugnsang's devlog
 baseurl: ""
 url: https://bbungsang.github.io
 
@@ -21,5 +21,5 @@ plugins:
   - jekyll-paginate-v2
 pagination:
   enabled: true
-  per_page: 9
+  per_page: 7
   sort_reverse: true
