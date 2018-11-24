@@ -63,14 +63,14 @@
 </section>
 
 <script>
-  var menuList = document.getElementsByClassName("menu-list");
-  for (var i = 0; i < menuList.length; i++) {
-    menuList[i].addEventListener("click", function () {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace("active", "");
-      this.className += " active";
-    });
-  }
+  const menuList = document.getElementsByClassName("menu-list")
+  menuList.forEach((menu) => {
+    menu.addEventListener("click", () => {
+      const current = document.getElementsByClassName("active")
+      current[0].className = current[0].className.replace("active", "")
+      this.className += " active"
+    })
+  })
 </script>
 <div id="mySidenav" class="sidenav">
   <div class="intro-me">
@@ -242,7 +242,7 @@
         
         
           <a href="/tags/#Docker">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             Docker
           </a>
         
@@ -260,7 +260,7 @@
         
         
           <a href="/tags/#Docker">
-            <img src="/images/tag_img2.png">
+            <img src="/static/images/tag_img2.png">
             Docker
           </a>
         
