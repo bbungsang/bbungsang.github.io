@@ -48,12 +48,12 @@
     <a href="/">bbungsang devlog</a>
   </article>
   <ul class="top-menu">
-    <li class="menu-list active">
-      <a href="/">Posts</a>
-    </li>
-    <li class="menu-list">
-      <a href="#">About</a>
-    </li>
+    <!--<li class="menu-list active">-->
+      <!--<a href="/">Posts</a>-->
+    <!--</li>-->
+    <!--<li class="menu-list">-->
+      <!--<a href="#">About</a>-->
+    <!--</li>-->
   </ul>
   <article class="btn-wrap">
     <i id="menuBtn" class="fa fa-diamond"></i>
@@ -154,6 +154,19 @@
     <section class="post-wrap">
   
   <article class="posts">
+    <a class="post-title" href="/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/database/2018/11/25/table-partitioning.html">[PostgreSQL] Table Partitioning</a>
+    <p class="post-content">테이블 파티셔닝
+한 테이블에 데이터 양이 많아지면(1000만 로우를 돌파하게 되면), 데이터베이스의 쿼리 성능은 현저히 떨어진다. 
+따라서 큰 서비스이고, 방대한 데이터가 쌓일 가능성이 있다면 테이블 파티셔닝을 고려해야 한다. 
+테이블 파티셔닝은 논리적으로 하나의 큰 테이블을 더 작은 물리적 조각으로 분할하는 것을 의미한다.
+PostgreSQL은 테이블 상속을 통한 파티셔닝을 지원한다.
+
+테이블 상속
+테이블 상속의 개념은 객체 지향 프로그...</p>
+    <small class="post-date">25 Nov 2018</small>
+  </article>
+  
+  <article class="posts">
     <a class="post-title" href="/angular/2018/01/24/install-angular-cli-client.html">[Angular] Angular CLI, 클라이언트 구성하기</a>
     <p class="post-content">Angular CLI란?
 간단한 명령어를 사용하여 엥귤러 프로젝트를 생성, 실행, 빌드할 수 있으며 다양한 구성 요소를 선택적으로 추가할 수 있는 커맨드 라인 인터페이스이다.
@@ -169,20 +182,6 @@ $ npm install -g @angular/cli
 
 설치가 완료되면 ng 명령...</p>
     <small class="post-date">24 Jan 2018</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/typescript/2018/01/08/interface.html">[TypeScript] Interface</a>
-    <p class="post-content">About Interface
-
-  인터페이스에 언언된 프로퍼티 또는 메소드의 구현을 강제하여 구조적으로 견고하게 해준다.
-  어플리케이션에 필요한 커스텀 타입 추가가 가능하다.
-  ES6는 인터페이스를 지원하지 않지만 TypeScript는 인터페이스를 지원한다.
-
-
-제네릭은 선언 시점이 아니라 생성 시점에 타입을 명시하여 하나의 타입만이 아닌 다양한 타입을 사용할 수 있도록 하는 기법이다.
-</p>
-    <small class="post-date">08 Jan 2018</small>
   </article>
   
   <article class="posts">

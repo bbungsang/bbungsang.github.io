@@ -15,7 +15,8 @@
 }
 
 .top-wrap {
-  border-top: 1px solid #cc99cc;
+  /*border-top: 1px solid #cc99cc;*/
+  border-top: 1px solid #3ddad7;
   border-image-slice: 1;
   height: 49px;
 }
@@ -32,7 +33,8 @@
 }
 
 .top-wrap .logo a {
-  background: -webkit-linear-gradient(#f1f1f1, #7d5886);
+  /*background: -webkit-linear-gradient(#f1f1f1, #7d5886);*/
+  background: -webkit-linear-gradient(#99ffff, #7d5886);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -73,18 +75,19 @@
   font-size: 30px;
   font-weight: 600;
   position: fixed;
-  top: 3px;
+  top: 10px;
   padding: 5px 10px;
   cursor: pointer;
   z-index: 3;
-  background: -webkit-linear-gradient(#99ffff, #cc66cc);
+  /*background: -webkit-linear-gradient(#99ffff, #cc66cc);*/
+  background: -webkit-linear-gradient(#0366d6, #99ffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .desc {
-  height: 180px;
-  background-image: url("../images/jekyll-bg.jpg");
+  height: 400px;
+  background-image: url("../images/watercolor-whale-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
