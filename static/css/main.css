@@ -18,17 +18,18 @@
   /*border-top: 1px solid #cc99cc;*/
   border-top: 1px solid #3ddad7;
   border-image-slice: 1;
-  height: 49px;
+  height: 54px;
 }
 
 .top-wrap .logo {
+  padding: 0 10px;
   width: 200px;
   height: 50px;
   line-height: 40px;
   text-align: center;
   font-family: 'Patrick Hand SC';
   font-weight: 600;
-  font-size: 26px;
+  font-size: 30px;
   float: left;
 }
 
@@ -67,7 +68,7 @@
 
 .top-wrap .btn-wrap {
   width: 60px;
-  height: 49px;
+  height: 50px;
   float: right;
 }
 
@@ -75,7 +76,7 @@
   font-size: 30px;
   font-weight: 600;
   position: fixed;
-  top: 10px;
+  top: 15px;
   padding: 5px 10px;
   cursor: pointer;
   z-index: 3;
