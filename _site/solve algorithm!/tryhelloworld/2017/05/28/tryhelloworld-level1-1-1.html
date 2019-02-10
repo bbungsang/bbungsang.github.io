@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- 파비콘 -->
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="shortcut icon" href="/static/images/no_face.ico">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="/static/css/common.css" />
@@ -43,25 +43,18 @@
 
 <body>
   <div id="container" class="container">
-    <section class="top-wrap">
-  <article class="logo">
-    <a href="/">bbungsang devlog</a>
-  </article>
-  <ul class="top-menu">
-    <!--<li class="menu-list active">-->
-      <!--<a href="/">Posts</a>-->
-    <!--</li>-->
-    <!--<li class="menu-list">-->
-      <!--<a href="#">About</a>-->
-    <!--</li>-->
-  </ul>
-  <article class="btn-wrap">
-    <!--<i id="menuBtn" class="fa fa-diamond"></i>-->
-    <i id="menuBtn" class="fa fa-snowflake-o"></i>
-  </article>
-</section>
-<section class="desc">
-</section>
+    <div class="bg">
+  <section class="top-wrap">
+    <article class="logo">
+      <a href="/">bbungsang devlog</a>
+    </article>
+    <ul class="top-menu">
+    </ul>
+    <article class="btn-wrap">
+      <i id="menuBtn" class="fa fa-bars"></i>
+    </article>
+  </section>
+</div>
 
 <script>
   const menuList = document.getElementsByClassName("menu-list")
@@ -86,23 +79,9 @@
   </div>
   <ul class="menu-ele">
     <li>
-      <a href="/files/js.html">
+      <a href="/files/database.html">
         <span class="bar-left"></span>
-        자바스크립트
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/python.html">
-        <span class="bar-left"></span>
-        파이썬
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/django.html">
-        <span class="bar-left"></span>
-        장고
+        데이터베이스
         <span class="bar-right"></span>
       </a>
     </li>
@@ -110,20 +89,6 @@
       <a href="/files/algorithm.html">
         <span class="bar-left"></span>
         알고리즘
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/server.html">
-        <span class="bar-left"></span>
-        서버
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/study.html">
-        <span class="bar-left"></span>
-        스터디
         <span class="bar-right"></span>
       </a>
     </li>

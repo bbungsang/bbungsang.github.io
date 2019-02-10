@@ -17,7 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- 파비콘 -->
-	<link rel="shortcut icon" href="/static/images/favicon.ico">
+	<link rel="shortcut icon" href="/static/images/no_face.ico">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="/static/css/common.css" />
@@ -43,25 +43,18 @@
 
 <body>
   <div id="container" class="container">
-    <section class="top-wrap">
-  <article class="logo">
-    <a href="/">bbungsang devlog</a>
-  </article>
-  <ul class="top-menu">
-    <!--<li class="menu-list active">-->
-      <!--<a href="/">Posts</a>-->
-    <!--</li>-->
-    <!--<li class="menu-list">-->
-      <!--<a href="#">About</a>-->
-    <!--</li>-->
-  </ul>
-  <article class="btn-wrap">
-    <!--<i id="menuBtn" class="fa fa-diamond"></i>-->
-    <i id="menuBtn" class="fa fa-snowflake-o"></i>
-  </article>
-</section>
-<section class="desc">
-</section>
+    <div class="bg">
+  <section class="top-wrap">
+    <article class="logo">
+      <a href="/">bbungsang devlog</a>
+    </article>
+    <ul class="top-menu">
+    </ul>
+    <article class="btn-wrap">
+      <i id="menuBtn" class="fa fa-bars"></i>
+    </article>
+  </section>
+</div>
 
 <script>
   const menuList = document.getElementsByClassName("menu-list")
@@ -86,23 +79,9 @@
   </div>
   <ul class="menu-ele">
     <li>
-      <a href="/files/js.html">
+      <a href="/files/database.html">
         <span class="bar-left"></span>
-        자바스크립트
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/python.html">
-        <span class="bar-left"></span>
-        파이썬
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/django.html">
-        <span class="bar-left"></span>
-        장고
+        데이터베이스
         <span class="bar-right"></span>
       </a>
     </li>
@@ -110,20 +89,6 @@
       <a href="/files/algorithm.html">
         <span class="bar-left"></span>
         알고리즘
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/server.html">
-        <span class="bar-left"></span>
-        서버
-        <span class="bar-right"></span>
-      </a>
-    </li>
-    <li>
-      <a href="/files/study.html">
-        <span class="bar-left"></span>
-        스터디
         <span class="bar-right"></span>
       </a>
     </li>
@@ -155,174 +120,187 @@
     <section class="post-wrap">
   
   <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/01/tryhelloword-getminsum.html">[Try Hello World] Level2 최솟값 만들기</a>
-    <p class="post-content">최솟값 만들기
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-2.html">[Try Hello World] Level1 약수의 합</a>
+    <p class="post-content">약수의 합
+어떤 수를 입력받아 그 수의 약수를 모두 더한 수 sumDivisor 함수를 완성해 보세요.
 
-자연수로 이루어진 길이가 같은 수열 A,B가 있습니다. 최솟값 만들기는 A, B에서 각각 한 개의 숫자를 뽑아 두 수를 곱한 값을 누적하여 더합니다. 이러한 과정을 수열의 길이만큼 반복하여 최종적으로 누적된 값이 최소가 되도록 만드는 것이 목표입니다.
+예를 들어 12가 입력된다면 12의 약수는 [1, 2, 3, 4, 6, 12]가 되고, 총 합은 28이 되므로 28을 반환해 주면 됩니다.
 
-예를 들어 A = [1, 2] , B = [3, 4] 라면 
-1. A에서 1, B에서 4를 뽑아 곱하여 더합니다. 
-2. A에서 2, B에서 3을 뽑아 곱하여 더합니다.
 
+  내 풀이
+
+
+from functools import reduce
+
+def sumDivisor(num):
+    divisor = []
+    for i in range(num):
+      ...</p>
+    <small class="post-date">12 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/12/tryhelloworld-level1-7-1.html">[Try Hello World] Level1 피보나치 수</a>
+    <p class="post-content">피보나치 수
+피보나치 수는 F(0) = 0, F(1) = 1일 때, 2 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 점화식입니다.
+
+2 이상의 n이 입력되었을 때, fibonacci 함수를 제작하여 n번째 피보나치 수를 반환해 주세요.
+
+예를 들어 n = 3이라면 2를 반환해주면 됩니다.
+
+
+  내 풀이
+
+
+def fibonacci(num):
+    a, b = 0, 1
+    i = 0
+    while Tr...</p>
+    <small class="post-date">12 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-2.html">[Try Hello World] Level1 행렬의 덧셈</a>
+    <p class="post-content">행렬의 덧셈
+행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다.
+2개의 행렬을 입력받는 sumMatrix 함수를 완성하여 행렬 덧셈의 결과를 반환해 주세요.
+
+예를 들어 2x2 행렬인 A = ((1, 2), (2, 3)), B = ((3, 4), (5, 6)) 가 주어지면, 같은 2x2 행렬인 ((4, 6), (7, 9))를 반환하면 됩니다.(어떠한 행렬에도 대응하는 함수를 완성해주세요.)...</p>
+    <small class="post-date">11 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/11/tryhelloworld-level1-6-1.html">[Try Hello World] Level1 최대공약수와 최소공배수</a>
+    <p class="post-content">최대공약수와 최소공배수
+두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환해주는 gcdlcm 함수를 완성해 보세요.
+
+배열의 맨 앞에 최대공약수, 그 다음 최소공배수를 넣어 반환하면 됩니다.
+
+예를 들어 gcdlcm(3,12) 가 입력되면, [3, 12]를 반환해주면 됩니다.
+
+
+  내 풀이
+
+
+from fractions import gcd
+
+def gcdlcm(a, b):
+    return [gcd(a,b), a*b/gcd(a,b...</p>
+    <small class="post-date">11 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-2.html">[Try Hello World] Level1 같은 숫자는 싫어</a>
+    <p class="post-content">같은 숫자는 싫어
+no_continuous함수는 스트링 s를 매개변수로 입력받습니다.
+
+s의 글자들의 순서를 유지하면서, 글자들 중 연속적으로 나타나는 아이템은 제거된 배열(파이썬은 list)을 리턴하도록 함수를 완성하세요.
+예를들어 다음과 같이 동작하면 됩니다.
+
+s가 ‘133303’이라면 [‘1’, ‘3’, ‘0’, ‘3’]를 리턴
+
+s가 ‘47330’이라면 [4, 7, 3, 0]을 리턴
+
+
+  내가 푼 것
+
+
+def no_contin...</p>
+    <small class="post-date">07 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/07/tryhelloworld-level1-5-1.html">[Try Hello World] Level1 딕셔너리 정렬</a>
+    <p class="post-content">딕셔너리 정렬
+딕셔너리는 들어있는 값에 순서가 없지만, 키를 기준으로 정렬하고 싶습니다. 그래서 키와 값을 튜플로 구성하고, 이를 순서대로 리스트에 넣으려고 합니다.
+
+예를 들어 {“김철수”:78, “이하나”:97, “정진원”:88}이 있다면, 각각의 키와 값을
+
+
+  (“김철수”, 78)
+  (“이하나”, 97)
+  (“정진원”, 88)
+
+
+과 같이 튜플로 분리하고 키를 기준으로 정렬해서 다음과 같은 리스트를 만들면 됩니다.
+
+예: [ ...</p>
+    <small class="post-date">07 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-2.html">[Try Hello World] Level1 문자열 내 p와 y의 개수</a>
+    <p class="post-content">문자열 내 p와 y의 개수
+numPY함수는 대문자와 소문자가 섞여있는 문자열 s를 매개변수로 입력받습니다.
+
+s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 리턴하도록 함수를 완성하세요. ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다.
+
+예를들어 s가 “pPoooyY”면 True를 리턴하고 “Pyy”라면 False를 리턴합니다.
+
+
+  내가 푼 것
+
+
+def numPY(s):
+	p_c...</p>
+    <small class="post-date">06 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/06/tryhelloworld-level1-4-1.html">[Try Hello World] Level1 문자열 다루기 기본</a>
+    <p class="post-content">문자열 다루기 기본
+alpha_string46함수는 문자열 s를 매개변수로 입력받습니다.
+
+s의 길이가 4혹은 6이고, 숫자로만 구성되있는지 확인해주는 함수를 완성하세요.
+
+예를들어 s가 “a234”이면 False를 리턴하고 “1234”라면 True를 리턴하면 됩니다.
+
+
+  내가 푼 것
+
+
+def alpha_string46(s):
+    num_list = []
+    for i in range(0, 10):
+        num_lis...</p>
+    <small class="post-date">06 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-4.html">[Try Hello World] Level1 삼각형 출력하기</a>
+    <p class="post-content">삼각형 출력하기
+printTriangle 메소드는 양의 정수 num을 매개변수로 입력받습니다.
+다음을 참고해 *(별)로 높이가 num인 삼각형을 문자열로 리턴하는 printTriangle 메소드를 완성하세요.
+printTriangle이 return하는 String은 개행문자(‘\n’)로 끝나야 합니다.
+
+
+  내가 푼 것
+
+
+def printTriangle(num):
+	star_list = []
+	for i in range(1, num +...</p>
+    <small class="post-date">01 Jun 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/06/01/tryhelloworld-level1-3-3.html">[Try Hello World] Level1 서울에서 김서방 찾기</a>
+    <p class="post-content">서울에서 김서방 찾기
+findKim 함수는 String형 배열 seoul을 매개변수로 받습니다.
+
+seoul의 element중 “Kim”의 위치 x를 찾아, “김서방은 x에 있다”는 String을 반환하세요.
+
+seoul에 “Kim”은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.
+
+
+  내가 푼 것
+
+
+def findKim(seoul):
+    kimIdx = 0
+    for i in range(len(seoul)):
 ...</p>
-    <small class="post-date">01 Nov 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/01/tryhelloword-collatz.html">[Try Hello World] Level2 콜라츠 추측</a>
-    <p class="post-content">콜라츠 추측
-
-1937년 Collatz란 사람에 의해 제기된 이 추측은, 입력된 수가 짝수라면 2로 나누고, 홀수라면 3을 곱하고 1을 더한 다음, 결과로 나온 수에 같은 작업을 1이 될 때까지 반복할 경우 모든 수가 1이 된다는 추측입니다.
-
-예를 들어, 입력된 수가 6이라면 6→3→10→5→16→8→4→2→1 이 되어 총 8번 만에 1이 됩니다. collatz 함수를 만들어 입력된 수가 몇 번 만에 1이 되는지 반환해 주세요. 단, 5...</p>
-    <small class="post-date">01 Nov 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/29/csrf-cors.html">CORS와 CSRF(2)</a>
-    <p class="post-content">
-  CORS와 CSRF, 완전히 다른 개념임에도 불구하고 비슷한 이름으로 헷갈렸었다. 이 포스트에서 CSRF의 개념을 정리하고 장고에 적용하는 방법 및 예시를 작성하려 한다.
-
-
-CSRF(Cross Site Reuqest Forgery)
-사이트 간 요청 위조, 웹사이트의 취약점 공격의 하나로 CSRF 공격은 특정 웹 사이트가 사용자의 웹 브라우저를 신용하는 상태를 노린 것이다. 즉 사용자의 권한을 이용하여 서버에 부정적인 요청을 일으키는...</p>
-    <small class="post-date">29 Oct 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/it/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%85%90/basic-concept/2017/10/28/csrf-cors.html">CORS와 CSRF(1)</a>
-    <p class="post-content">
-  CORS와 CSRF, 완전히 다른 개념임에도 불구하고 비슷한 이름으로 헷갈렸었다. 이 포스트에서 CORS의 개념을 정리하고 장고에 적용하는 방법 및 예시를 작성하려 한다.
-
-
-CORS(Cross Origin Resourc Sharing)
-단어 그대로, 전송되는 도메인(내 사이트)으로부터 다른 도메인의 CSS, 이미지 등의 리소스를 요청하기 위해 cross-origin HTTP 요청을 사용한다.
-
-이전에는 보안상의 이유로 브라우저들은 ...</p>
-    <small class="post-date">28 Oct 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/css/2017/10/19/inheritance.html">상속(Inheritance)</a>
-    <p class="post-content">상속은 자식 클래스가 부모 클래스의 모든 멤버와 메소드를 이어받는것을 의미한다. 
-하지만 상속은 아무때나 쓰면 안됀다. 언제 상속을 쓰고 언제 상속을 쓰면 안됄까?
-
-is-a
-
-A laptop is a computer (O)
-A desktop is a computer (O)
-A laptop is a desktop (X)
-
-
-노트북은 컴퓨터의 일종으로 컴퓨터가 가지고 있는 모든 속성을 가지고 있다. 데스크탑과 노트북은 많은 특성들을 공유하지...</p>
-    <small class="post-date">19 Oct 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/%EB%91%90%EC%88%9F%EA%B0%88%20%EC%8A%A4%ED%84%B0%EB%94%94/two-scoops/2017/10/15/python-test.html">[22장] 테스트, 정말 거추장스럽고 낭비일까?</a>
-    <p class="post-content">충분한 테스트가 이루어지지 않는다면 직장, 돈 그리고 심하게는 생명까지도 한순간에 위험에 처할 수 있다. 오늘날 장고가 다양한 어플리케이션이 쓰이면서 자동화된 테스트에 대한 요구가 중요한 문제로 대두되었다.
-
-22.1 어떻게 테스트를 구축할 것인가
-우선 해야할 일은 django-admin startapp 명령으로 기본 생성되었던 불필요한 test.py 모듈을 지우는 것이다.
-
-test_forms.py, test_models.py, test...</p>
-    <small class="post-date">15 Oct 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/javascript/2017/10/12/select-tag-default.html">select 태그의 selected 옵션 차등 부여하기</a>
-    <p class="post-content">
-  배경 : 책 카테고리에 대해서 select, option 태그 적용
-이슈 : 어떤 책이든지 상관없이 첫 번째 option의 value인 ‘언어’만 세팅된다.
-하려는 일 : 책 제목에 따라서 option의 value를 다르게 세팅
-해결 방법 : if문 분기 처리 + include() + selectedIndex 활용
-
-
-
-
-selectedIndex 활용 예시
-
-if (title.includes('운영체제') || title.includ...</p>
-    <small class="post-date">12 Oct 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/javascript/2017/10/12/javascript_regexp.html">자바스크립트 정규표현식</a>
-    <p class="post-content">
-  자바스크립트에서 정규표현식 패턴은 여는 /와 닫는 / 사이에 기술하면 된다.
-  [주의] 정규표현식 패턴은 문자열이 아니기 때문에 작은따옴표나 큰따옴표를 사용하면 안된다.
-
-
-정규표현식 특수 문자
-
-  예제에 사용할 문자 : “hellllo1234!”
-
-
-
-  
-    
-      문자
-      일치
-      예제
-    
-  
-  
-    
-      ^
-      입력한 값의 시작
-      /^hello/ “hello” 와 ...</p>
-    <small class="post-date">12 Oct 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/database/2017/10/08/anomaly-and-fucntional-dependency.html">[데이터베이스] 이상과 함수적 종속</a>
-    <p class="post-content">이상(Anomaly)
-테이블에서 속성들의 종속으로 인해 중복이 발생하고, 이 중복으로 인해 테이블 조작시 발생하는 문제
-
-
-  수강 테이블
-
-
-
-  
-    
-      학번
-      과목번호
-      성적
-      학년
-    
-  
-  
-    
-      100
-      C413
-      A
-      4
-    
-    
-      100
-      E421
-      A
-      4
-    
-    
-      200
-...</p>
-    <small class="post-date">08 Oct 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/django%20project/used%20book%20store/2017/10/02/facebook-login-of-django.html">페이스북 로그인 플로우 직접 빌드 in Django</a>
-    <p class="post-content">
-  facebook for developers의 Facebook 로그인 문서를 참고하여 작성하였습니다. 
-틀린 내용이 있다면 언제든 문의주세요:D
-
-
-로그인 대화 상자 호출 및 리다이렉션 URL 설정하기
-
-
-&lt;a href="https://www.facebook.com/v2.9/dialog/oauth?client_id={{ facebook_app_id }}&amp;redirect_uri={{ site_url }}{% url 'memb...</p>
-    <small class="post-date">02 Oct 2017</small>
+    <small class="post-date">01 Jun 2017</small>
   </article>
   
 
@@ -347,26 +325,6 @@ if (title.includes('운영체제') || title.includ...</p>
     
     
     <a class="cusInnerPage" href="/page4">4</a>
-    
-    
-    
-    <a class="cusInnerPage" href="/page5">5</a>
-    
-    
-    
-    <a class="cusInnerPage" href="/page6">6</a>
-    
-    
-    
-    <a class="cusInnerPage" href="/page7">7</a>
-    
-    
-    
-    <a class="cusInnerPage" href="/page8">8</a>
-    
-    
-    
-    <a class="cusInnerPage" href="/page9">9</a>
     
     
 
