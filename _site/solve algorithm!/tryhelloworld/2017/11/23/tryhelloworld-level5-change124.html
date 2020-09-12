@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>bbungsang's devlog</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/static/images/no_face.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="/">BBUNGSANG'S DEVLOG</a>
+  </article>
+  <i id="menuBtn" class="fa fa-bars"></i>
+</section>
+
+<script>
+  const menuList = document.getElementsByClassName("menu-list")
+  menuList.forEach((menu) => {
+    menu.addEventListener("click", () => {
+      const current = document.getElementsByClassName("active")
+      current[0].className = current[0].className.replace("active", "")
+      this.className += " active"
+    })
+  })
+</script>
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/static/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/database.html">
+        <span class="bar-left"></span>
+        데이터베이스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [Try Hello World] Level5 124 나라의 숫자
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Alogorithm">
+          <img src="/static/images/tag_img.png">
+          Alogorithm
+        </a>
+      
+        <a href="/tags/#Level5">
+          <img src="/static/images/tag_img.png">
+          Level5
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <h2 id="124-나라의-숫자">124 나라의 숫자</h2>
+
+<p>1,2,4 세 개의 숫자만 쓰는 124나라가 있습니다. 124나라에서 사용하는 숫자는 다음과 같이 변환됩니다.</p>
+
+<p>10진법의 1 → 1 <br />
+10진법의 2 → 2 <br />
+10진법의 3 → 4 <br />
+10진법의 4 → 11 <br />
+10진법의 5 → 12 <br />
+10진법의 6 → 14 <br />
+10진법의 7 → 21 <br /></p>
+
+<p>10진법의 수 N이 입력될 때, 124나라에서 쓰는 숫자로 변환하여 반환해주는 change124 함수를 완성해 보세요. 예를 들어 N = 10이면 “41”를 반환해주면 됩니다.</p>
+
+<p>리턴 타입은 문자열입니다.</p>
+
+<h3 id="내-풀이">내 풀이</h3>
+
+<p><strong>[파이썬]</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_change124</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">li</span> <span class="o">=</span> <span class="p">[</span><span class="s">'4'</span><span class="p">,</span> <span class="s">'1'</span><span class="p">,</span> <span class="s">'2'</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s">''</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">li</span><span class="p">[</span><span class="n">n</span><span class="o">%</span><span class="mi">3</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">n</span> <span class="o">//=</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c"># 테스트를 위한 실행 코드</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_change124</span><span class="p">(</span><span class="mi">13</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="느낀점">느낀점</h3>
+<p>규칙은 진즉 찾았지만 그걸 표현하는 것이 어려웠다(…) <br />
+4, 1, 2 순으로 리스트를 만들고 3으로 나눈 나머지 인덱스를 활용하면 될 것 같다고 생각하여 대수롭지 않게 여겼는데 풀다보니 큰 장애 요소가 존재했었다. <br />
+n이 3의 제곱이면 3의 배수인 조건까지 충족하게 된다. 즉, <code class="highlighter-rouge">n//3=3의 배수</code>, <code class="highlighter-rouge">n%3=0</code>을 반복하게 되어 9면 <code class="highlighter-rouge">9//3=반복 3회</code>, 결과값으로 <code class="highlighter-rouge">144</code>를 출력하는 큰 오답이 발생한다. <br />
+따라서 <code class="highlighter-rouge">3//3=1</code> 이라는 요인을 제거하고 <code class="highlighter-rouge">3의 배수%3=0</code>이라는 점을 고려하여 만약 n이 3의 배수이면 <code class="highlighter-rouge">n=n-1</code> 이라는 조건을 더하여 해결하였다.</p>
+
+    </section>
+    <br><br>
+    <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
+      <ul class="other-posts">
+        
+        <li class="prev-or-next">
+          <a href="/solve%20algorithm!/tryhelloworld/2017/11/18/tryhelloworld-level4-choosecity.html">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            [Try Hello World] Level4 공항...
+          </a>
+        </li>
+        
+        
+      </ul>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() {
+  var d = document, s = d.createElement('script')
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js'
+  s.setAttribute('data-timestamp', +(new Date())
+  (d.head || d.body).appendChild(s)
+  })()
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>

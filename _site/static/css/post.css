@@ -1,0 +1,594 @@
+.markdown {
+  height: auto;
+  padding-top: 45px;
+  font-size: 15px;
+  background: #fff;
+}
+
+.markdown .md-head {
+  padding: 0 5%;
+}
+
+.markdown .md-head .title {
+  margin: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  position: relative;
+}
+
+.markdown .md-head .tag-wrap {
+  margin: 10px;
+  height: 27px;
+  line-height: 27px;
+}
+
+.markdown .md-head .tag-wrap a {
+  display: inline-block;
+  color: #fafafa;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.markdown .md-head .tag-wrap a img {
+  width: 20px;
+  margin: 3px 5px 3px 0;
+  float: left;
+}
+
+.markdown .md-head .tag-wrap a:hover {
+  background: #cc99cc;
+}
+
+.markdown .center-image {
+  width: 85%;
+  max-width: 600px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+}
+
+.markdown .left-image {
+  width: 85%;
+  max-width: 600px;
+  display: table;
+  margin-bottom: 35px;
+}
+
+.markdown table {
+  margin: 20px 5%;
+  border-collapse: collapse;
+}
+
+.markdown table th {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+}
+
+.markdown table td {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+}
+
+.markdown a {
+  color: #9a9a9a;
+}
+
+.markdown h2 {
+  color: #444444;
+  font-size: 28px;
+  margin: 50px 0 25px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown h3 {
+  width: 100%;
+  color: #78757a;
+  margin: 35px 0 20px 0;
+  font-size: 22px;
+}
+
+.markdown h4 {
+  color: #2aa198;
+  font-size: 17px;
+  margin-top: 25px;
+}
+
+.markdown a {
+  color: #2096ba;
+  text-decoration: none;
+}
+
+.markdown hr {
+  border: 1px solid #ddd;
+  margin: 50px 20px;
+}
+
+.markdown .markdown-body {
+  padding: 5px 5%;
+}
+
+.markdown .markdown-body .post-content {
+  font-family: 'NanumSquareRound';
+  line-height: 30px;
+}
+
+.markdown .markdown-body .post-content p {
+  color: #5d5d5d;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.markdown .markdown-body .post-content p em {
+  color: #333;
+}
+
+.markdown .markdown-body .post-content ul {
+  margin: 0 25px;
+  color: #818181;
+  font-size: 16px;
+}
+
+.markdown .markdown-body .post-content ul li {
+  list-style-type: disc;
+  margin: 10px 0;
+}
+
+.markdown blockquote {
+  line-height: 25px;
+  background: #fafafa;
+  border-left: 5px solid #ddd;
+  padding: 5px 15px;
+  margin: 15px 0;
+}
+
+.markdown .quote {
+  height: auto;
+  background: #edfafd;
+  border-left: 5px solid #56b1bf;
+  font-size: 15px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.markdown footer {
+  font-family: 'Nanumbarunpen';
+}
+
+.markdown footer .my-intro {
+  width: 100%;
+  height: auto;
+  margin: 15px 0;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  float: left;
+}
+
+.markdown footer .my-intro img {
+  width: 10%;
+  border-radius: 100%;
+  margin: 0 1.5%;
+  float: left;
+}
+
+.markdown footer .my-intro article {
+  width: 87%;
+  padding: 0.5% 0 0 1.5%;
+  float: left;
+}
+
+.markdown footer .my-intro article p {
+  margin: 0;
+  font-size: 18px;
+  color: #444444;
+}
+
+.markdown footer .other-posts {
+  width: 100%;
+  height: 65px;
+  margin: 30px 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+
+.markdown footer .other-posts .prev-or-next {
+  width: 50%;
+  float: left;
+}
+
+.markdown footer .other-posts .prev-or-next a {
+  display: inline-block;
+  padding: 5px 9px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  color: #797979;
+  cursor: pointer;
+}
+
+.markdown footer .other-posts .prev-or-next a span {
+  color: #ddd;
+  font-size: 18px;
+}
+
+.markdown footer .other-posts .prev-or-next a:hover {
+  text-decoration: none;
+  color: #3ddad7;
+  border: 1px solid #3ddad7;
+  transition: 0.3s;
+}
+
+.markdown footer .other-posts .prev-or-next a:hover span {
+  color: #3ddad7;
+}
+
+.markdown pre {
+  border-radius: 3px;
+  background-color: #222;
+  padding: 10px 20px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  /* Comment */
+  /* Error */
+  /* Generic */
+  /* Keyword */
+  /* Literal */
+  /* Name */
+  /* Operator */
+  /* Other */
+  /* Punctuation */
+  /* Comment.Multiline */
+  /* Comment.Preproc */
+  /* Comment.Single */
+  /* Comment.Special */
+  /* Generic.Deleted */
+  /* Generic.Emph */
+  /* Generic.Error */
+  /* Generic.Heading */
+  /* Generic.Inserted */
+  /* Generic.Output */
+  /* Generic.Prompt */
+  /* Generic.Strong */
+  /* Generic.Subheading */
+  /* Generic.Traceback */
+  /* Keyword.Constant */
+  /* Keyword.Declaration */
+  /* Keyword.Namespace */
+  /* Keyword.Pseudo */
+  /* Keyword.Reserved */
+  /* Keyword.Type */
+  /* Literal.Date */
+  /* Literal.Number */
+  /* Literal.String */
+  /* Name.Attribute */
+  /* Name.Builtin */
+  /* Name.Class */
+  /* Name.Constant */
+  /* Name.Decorator */
+  /* Name.Entity */
+  /* Name.Exception */
+  /* Name.Function */
+  /* Name.Label */
+  /* Name.Namespace */
+  /* Name.Other */
+  /* Name.Property */
+  /* Name.Tag */
+  /* Name.Variable */
+  /* Operator.Word */
+  /* Text.Whitespace */
+  /* Literal.Number.Float */
+  /* Literal.Number.Hex */
+  /* Literal.Number.Integer */
+  /* Literal.Number.Oct */
+  /* Literal.String.Backtick */
+  /* Literal.String.Char */
+  /* Literal.String.Doc */
+  /* Literal.String.Double */
+  /* Literal.String.Escape */
+  /* Literal.String.Heredoc */
+  /* Literal.String.Interpol */
+  /* Literal.String.Other */
+  /* Literal.String.Regex */
+  /* Literal.String.Single */
+  /* Literal.String.Symbol */
+  /* Name.Builtin.Pseudo */
+  /* Name.Variable.Class */
+  /* Name.Variable.Global */
+  /* Name.Variable.Instance */
+  /* Literal.Number.Integer.Long */
+}
+
+.markdown pre code {
+  font-family: 'Courier', monospace;
+  font-size: 15px;
+  color: #999;
+}
+
+.markdown pre .c, .markdown pre .highlight .c1 {
+  color: #586E75;
+}
+
+.markdown pre .err {
+  color: #93A1A1;
+}
+
+.markdown pre .g {
+  color: #93A1A1;
+}
+
+.markdown pre .k {
+  color: #859900;
+}
+
+.markdown pre .l {
+  color: #93A1A1;
+}
+
+.markdown pre .n {
+  color: #93A1A1;
+}
+
+.markdown pre .o {
+  color: #859900;
+}
+
+.markdown pre .x {
+  color: #CB4B16;
+}
+
+.markdown pre .p {
+  color: #93A1A1;
+}
+
+.markdown pre .cm {
+  color: #586E75;
+}
+
+.markdown pre .cp {
+  color: #859900;
+}
+
+.markdown pre .c1 {
+  color: #EDD200;
+}
+
+.markdown pre .cs {
+  color: #859900;
+}
+
+.markdown pre .gd {
+  color: #2AA198;
+}
+
+.markdown pre .ge {
+  color: #93A1A1;
+  font-style: italic;
+}
+
+.markdown pre .gr {
+  color: #DC322F;
+}
+
+.markdown pre .gh {
+  color: #CB4B16;
+}
+
+.markdown pre .gi {
+  color: #859900;
+}
+
+.markdown pre .go {
+  color: #93A1A1;
+}
+
+.markdown pre .gp {
+  color: #93A1A1;
+}
+
+.markdown pre .gs {
+  color: #93A1A1;
+  font-weight: bold;
+}
+
+.markdown pre .gu {
+  color: #CB4B16;
+}
+
+.markdown pre .gt {
+  color: #93A1A1;
+}
+
+.markdown pre .kc {
+  color: #CB4B16;
+}
+
+.markdown pre .kd {
+  color: #268BD2;
+}
+
+.markdown pre .kn {
+  color: #859900;
+}
+
+.markdown pre .kp {
+  color: #859900;
+}
+
+.markdown pre .kr {
+  color: #268BD2;
+}
+
+.markdown pre .kt {
+  color: #DC322F;
+}
+
+.markdown pre .ld {
+  color: #93A1A1;
+}
+
+.markdown pre .m {
+  color: #2AA198;
+}
+
+.markdown pre .s {
+  color: #2AA198;
+}
+
+.markdown pre .na {
+  color: #93A1A1;
+}
+
+.markdown pre .nb {
+  color: #B58900;
+}
+
+.markdown pre .nc {
+  color: #268BD2;
+}
+
+.markdown pre .no {
+  color: #CB4B16;
+}
+
+.markdown pre .nd {
+  color: #268BD2;
+}
+
+.markdown pre .ni {
+  color: #CB4B16;
+}
+
+.markdown pre .ne {
+  color: #CB4B16;
+}
+
+.markdown pre .nf {
+  color: #268BD2;
+}
+
+.markdown pre .nl {
+  color: #93A1A1;
+}
+
+.markdown pre .nn {
+  color: #93A1A1;
+}
+
+.markdown pre .nx {
+  color: #EAEAEA;
+}
+
+.markdown pre .py {
+  color: #93A1A1;
+}
+
+.markdown pre .nt {
+  color: #268BD2;
+}
+
+.markdown pre .nv {
+  color: #268BD2;
+}
+
+.markdown pre .ow {
+  color: #859900;
+}
+
+.markdown pre .w {
+  color: #93A1A1;
+}
+
+.markdown pre .mf {
+  color: #2AA198;
+}
+
+.markdown pre .mh {
+  color: #2AA198;
+}
+
+.markdown pre .mi {
+  color: #2AA198;
+}
+
+.markdown pre .mo {
+  color: #2AA198;
+}
+
+.markdown pre .sb {
+  color: #586E75;
+}
+
+.markdown pre .sc {
+  color: #2AA198;
+}
+
+.markdown pre .sd {
+  color: #93A1A1;
+}
+
+.markdown pre .s2 {
+  color: #2AA198;
+}
+
+.markdown pre .se {
+  color: #CB4B16;
+}
+
+.markdown pre .sh {
+  color: #93A1A1;
+}
+
+.markdown pre .si {
+  color: #2AA198;
+}
+
+.markdown pre .sx {
+  color: #2AA198;
+}
+
+.markdown pre .sr {
+  color: #DC322F;
+}
+
+.markdown pre .s1 {
+  color: #2AA198;
+}
+
+.markdown pre .ss {
+  color: #2AA198;
+}
+
+.markdown pre .bp {
+  color: #268BD2;
+}
+
+.markdown pre .vc {
+  color: #268BD2;
+}
+
+.markdown pre .vg {
+  color: #268BD2;
+}
+
+.markdown pre .vi {
+  color: #268BD2;
+}
+
+.markdown pre .il {
+  color: #2AA198;
+}
+
+.markdown .highlighter-rouge {
+  color: #8041D9;
+  font-weight: normal;
+  font-family: 'Courier';
+  font-size: 15px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  margin: 0 5px;
+}
