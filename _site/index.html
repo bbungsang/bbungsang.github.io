@@ -73,9 +73,23 @@
   </div>
   <ul class="menu-ele">
     <li>
+      <a href="/files/computer-science.html">
+        <span class="bar-left"></span>
+        컴퓨터 사이언스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
       <a href="/files/database.html">
         <span class="bar-left"></span>
         데이터베이스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/javascript.html">
+        <span class="bar-left"></span>
+        자바스크립트
         <span class="bar-right"></span>
       </a>
     </li>
@@ -114,7 +128,7 @@
     <section class="post-wrap">
   
   <article class="posts">
-    <a class="post-title" href="/2020/09/13/prototype.html">[Javascript] Prototype - 1</a>
+    <a class="post-title" href="/javascript/2020/09/13/prototype.html">[Javascript] Prototype 객체</a>
     <p class="post-content">자바스크립트는 함수형 프로그래밍 언어?
 어느 날, 이 아무개 친구가 나에게 물었다.
 “Javascript는 함수형 프로그래밍 언어잖아, 다른 객체지향 프로그래밍 언어와 비교해서 말해줄 수 있어?”
@@ -125,7 +139,60 @@
   </article>
   
   <article class="posts">
-    <a class="post-title" href="/2020/09/02/taum-and-bday.html">[Hacker Rank] Taum And B'day</a>
+    <a class="post-title" href="/hackerrank/2020/09/13/bomberman.html">[Hacker Rank] The Bomberman Game</a>
+    <p class="post-content">The Bomberman Game | Medium
+
+Bomberman lives in a rectangular grid. Each cell in the grid either contains a bomb or nothing at all.
+
+Each bomb can be planted in any cell of the grid but once planted, it will detonate after exactly 3 seconds.
+Once ...</p>
+    <small class="post-date">13 Sep 2020</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/redis/2020/09/12/incr-and-expire.html">[Redis] INCR 명령어와 INCRBYFLOAT 명령어</a>
+    <p class="post-content">INCR
+
+  숫자를 1씩 증가시킨다.
+  데이터베이스에 KEY가 없을 경우, KEY를 SET하고 0을 기준으로 1을 더한다.
+  단, VALUE가 레디스의 가장 큰 야의 정수 범위(2^63 − 1)를 초과했을 경우 에러가 발생한다.
+
+
+&gt; SET count 0
+OK
+&gt; INCR count
+1
+&gt; INCR count
+2
+&gt; GET count
+"2"
+&gt; DEL count
+1
+&gt; INCR count
+1
+&gt;...</p>
+    <small class="post-date">12 Sep 2020</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/redis/2020/09/12/in-memory-database.html">[Redis] In-Memory 데이터베이스</a>
+    <p class="post-content">인-메모리 데이터베이스
+인-메모리 데이터베이스는 NoSQL 방식에 속하며, 데이터 스토리지가 메인 메모리에 설치되어 운영되는 방식의 데이터베이스 시스템이다.
+
+디스크(전통) 데이터베이스 VS 인-메모리 데이터베이스
+
+
+
+디스크 데이터베이스
+
+  데이터 스토리지가 디스크이다.
+  디스크에 저장된 데이터를 대상으로 쿼리를 수행한다.
+  디스크에 저장된 블록의 내용을 메인 메모리상으로 버퍼링하여 디스크 입출력(횟수)을 줄임으로써 빠른 데이터 관...</p>
+    <small class="post-date">12 Sep 2020</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/hackerrank/2020/09/02/taum-and-bday.html">[Hacker Rank] Taum And B'day</a>
     <p class="post-content">Taum And B’day | Easy
 
 Taum is planning to celebrate the birthday of his friend, Diksha. There are two types of gifts that Diksha wants from Taum: one is black and the other is white.
@@ -134,7 +201,7 @@ To make her happy, Taum has to buy b black gifts and w white gi...</p>
   </article>
   
   <article class="posts">
-    <a class="post-title" href="/2020/08/30/kangaroo.html">[Hacker Rank] Kangaroo</a>
+    <a class="post-title" href="/hackerrank/2020/08/30/kangaroo.html">[Hacker Rank] Kangaroo</a>
     <p class="post-content">Kangaroo | Easy
 
 You are choreographing a circus show with various animals.
@@ -146,7 +213,7 @@ For one act, you are given two kangaroos on a number line ready to jump in the p
   </article>
   
   <article class="posts">
-    <a class="post-title" href="/2019/03/03/hardware.html">[CS50] 컴퓨터와 컴퓨팅</a>
+    <a class="post-title" href="/cs/2019/03/03/hardware.html">컴퓨터와 컴퓨팅</a>
     <p class="post-content">하드웨어
 컴퓨터의 하드웨어는 중앙 처리 장치(CPU), 기억 장치, 입출력 장치 크게 3가지로 구성된다.
 
@@ -164,7 +231,7 @@ For one act, you are given two kangaroos on a number line ready to jump in the p
   </article>
   
   <article class="posts">
-    <a class="post-title" href="/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/database/2019/02/10/table-partitioning.html">[PostgreSQL] Table Partitioning</a>
+    <a class="post-title" href="/postgresql/2019/02/10/table-partitioning.html">[PostgreSQL] Table Partitioning</a>
     <p class="post-content">
   최근 포켓몬고라는 게임을 즐기고 있다. 해당 게임의 데이터 구조를 설계하는 상상을 해 보았다. 우선 게임을 이용하는 유저와 포켓몬의 관계를 성립해야 할 것이다. 
 한 유저는 무수히 많은 수의 포켓몬을 포획할 수 있다. 무수히 많은 수의 포켓몬을 pokemon_storage라는 하나의 테이블에 삽입하게 되고, 
@@ -196,37 +263,6 @@ For one act, you are given two kangaroos on a number line ready to jump in the p
     <p class="post-content">공항 건설하기
 1보다 큰 N개의 도시 중 한 곳에 공항을 지을 예정입니다. 사람들의 편의를 위해 공항으로부터 각 사람들까지의 도시간 이동 거리가 최소가 되는 도시에 짓기로 하였습니다. 편의상 도시는 일직선상에 놓여있다고 가정하며 좌표의 범위는 음수가 포함됩니다. 또한 좌표는 정렬되어 있지 않습니다. 직선상의 위치와 그 도시에 사는 사람들의 수가 주어질 때, 공항을 지을 도시의 위치를 반환해주는 함수 chooseCity 함수를 완성하세요. ...</p>
     <small class="post-date">18 Nov 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/11/tryhelloworld-level4-hopscotch.html">[Try Hello World] Level4 땅따먹기 게임</a>
-    <p class="post-content">땅따먹기 게임
-
-영희는 땅따먹기 게임에 푹 빠졌습니다. 땅따먹기 게임의 땅은 총 N행 4열로 나누어져 있고, 모든 칸에는 점수가 쓰여 있습니다. 땅을 밟으면서 한 행씩 내려올 때, 영희는 각 행의 4칸 중 1칸만 밟으면서 내려올 수 있습니다. 땅따먹기 게임에는 같은 열을 연속해서 밟을 수가 없는 특수 규칙이 있습니다. 즉, 1행에서 (5)를 밟았다면, 2행의 (8)은 밟을 수가 없게 됩니다. 마지막 행까지 모두 내려왔을 때, 점수가 가장 ...</p>
-    <small class="post-date">11 Nov 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/10/tryhelloworld-level4-bestset.html">[Try Hello World] Level4 최고의 집합</a>
-    <p class="post-content">최고의 집합
-자연수 N개로 이루어진 집합 중에, 각 원소의 합이 S가 되는 수의 집합은 여러 가지가 존재합니다. 최고의 집합은, 위의 조건을 만족하는 집합 중 각 원소의 곱이 최대가 되는 집합을 의미합니다.
-
-집합 원소의 개수 n과 원소들의 합 s가 주어지면, 최고의 집합을 찾아 원소를 오름차순으로 반환해주는 bestSet 함수를 만들어 보세요.
-
-만약 조건을 만족하는 집합이 없을 때는 배열 맨 앞에 –1을 담아 반환하면 됩니다. 예를 들...</p>
-    <small class="post-date">10 Nov 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html">[Try Hello World] Level4 숫자의 표현</a>
-    <p class="post-content">숫자의 표현
-수학을 공부하던 민지는 재미있는 사실을 발견하였습니다. 그 사실은 바로 연속된 자연수의 합으로 어떤 숫자를 표현하는 방법이 여러 가지라는 것입니다. 예를 들어, 15를 표현하는 방법은 
-(1+2+3+4+5) 
-(4+5+6) 
-(7+8) 
-(15) 
-로 총 4가지가 존재합니다. 숫자를 입력받아 연속된 수로 표현하는 방법을 반환하는 number_expression 함수를 만들어 민지를 도와주세요. 예를 들어 15가 입력된다면 4를...</p>
-    <small class="post-date">09 Nov 2017</small>
   </article>
   
 

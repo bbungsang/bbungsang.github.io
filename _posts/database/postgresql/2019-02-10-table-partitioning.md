@@ -1,9 +1,11 @@
 ---
 layout: post
 title:  "[PostgreSQL] Table Partitioning"
-category: [데이터베이스, database]
+category: [postgresql]
 tags:
-  - postgresql
+  - Database
+  - RDBMS
+  - PostgreSQL
 comments: true
 ---
 

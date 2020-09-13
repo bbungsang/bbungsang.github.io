@@ -73,9 +73,23 @@
   </div>
   <ul class="menu-ele">
     <li>
+      <a href="/files/computer-science.html">
+        <span class="bar-left"></span>
+        컴퓨터 사이언스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
       <a href="/files/database.html">
         <span class="bar-left"></span>
         데이터베이스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/javascript.html">
+        <span class="bar-left"></span>
+        자바스크립트
         <span class="bar-right"></span>
       </a>
     </li>
@@ -114,93 +128,81 @@
     <section class="markdown">
   <article class="md-head">
     <div class="title">
-      [Hacker Rank] Kangaroo
+      [Redis] INCR 명령어와 INCRBYFLOAT 명령어
     </div>
     <div class="tag-wrap">
       
       
-        <a href="/tags/#Algorithm">
+        <a href="/tags/#Database">
           <img src="/static/images/tag_img.png">
-          Algorithm
+          Database
         </a>
       
-        <a href="/tags/#HackerRank">
+        <a href="/tags/#NoSQL">
           <img src="/static/images/tag_img.png">
-          HackerRank
+          NoSQL
         </a>
       
-        <a href="/tags/#Javascript">
+        <a href="/tags/#Redis">
           <img src="/static/images/tag_img.png">
-          Javascript
+          Redis
         </a>
       
     </div>
   </article>
   <article class="markdown-body">
     <section class="post-content">
-      <h2 id="kangaroo--easy"><a href="https://www.hackerrank.com/challenges/kangaroo/problem">Kangaroo</a> | Easy</h2>
-
-<p>You are choreographing a circus show with various animals.
-For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).</p>
-
+      <h2 id="incr">INCR</h2>
 <ul>
-  <li>The first kangaroo starts at location x1 and moves at a rate of v1 meters per jump.</li>
-  <li>The second kangaroo starts at location x2 and moves at a rate of v2 meters per jump.</li>
+  <li>숫자를 1씩 증가시킨다.</li>
+  <li>데이터베이스에 KEY가 없을 경우, KEY를 SET하고 0을 기준으로 1을 더한다.</li>
+  <li>단, VALUE가 레디스의 가장 큰 야의 정수 범위(2^63 − 1)를 초과했을 경우 에러가 발생한다.</li>
 </ul>
 
-<p>You have to figure out a way to get both kangaroos at the same location at the same time as part of the show.
-If it is possible, return YES, otherwise return NO.</p>
+<pre><code class="language-redis">&gt; SET count 0
+OK
+&gt; INCR count
+1
+&gt; INCR count
+2
+&gt; GET count
+"2"
+&gt; DEL count
+1
+&gt; INCR count
+1
+&gt; GET count
+"1"
+&gt; SET count 234293482390480948029348230948
+OK
+&gt; INCR count
+ERR value is not an integer or out of range
+</code></pre>
 
-<p>For example, kangaroo 1 starts at x1 = 2 with a jump distance v1 = 1 and kangaroo 2 starts at x2 = 1 with a jump distance of v2 = 2.
-After one jump, they are both at x = 3, (x1 + v1 = 2 + 1, x2 + v2 = 1 + 2), so our answer is YES.</p>
-
-<h4 id="function-description">Function Description</h4>
-
-<p>Complete the function kangaroo in the editor below.
-It should return YES if they reach the same position at the same time, or NO if they don’t.</p>
-
-<p>kangaroo has the following parameter(s):</p>
-
+<h2 id="incrbyfloat">INCRBYFLOAT</h2>
 <ul>
-  <li>x1, v1: integers, starting position and jump distance for kangaroo 1</li>
-  <li>x2, v2: integers, starting position and jump distance for kangaroo 2</li>
+  <li>지정한 숫자만큼 증가시킨다.</li>
+  <li>데이터베이스에 KEY가 없을 경우, KEY를 SET하고 0을 기준으로 지정한 숫자만큼 더한다.</li>
+  <li>음수도 지정할 수 있다.</li>
 </ul>
 
-<h4 id="output-format">Output Format</h4>
-
-<p>Print YES if they can land on the same location at the same time; otherwise, print NO.</p>
-
-<p><strong>Note:</strong> The two kangaroos must land at the same location after making the same number of jumps.</p>
-
-<h4 id="sample-input">Sample Input</h4>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 3 4 2
-</code></pre></div></div>
-
-<h4 id="sample-output">Sample Output</h4>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>YES
-</code></pre></div></div>
-
-<h4 id="explanation">Explanation</h4>
-
-<p>The two kangaroos jump through the following sequence of locations:</p>
-
-<p><img src="/assets/kangaroo.png" alt="" /></p>
-
-<p>From the image, it is clear that the kangaroos meet at the same location (number 12 on the number line) after same number of jumps (4 jumps), and we print YES.</p>
-
-<h3 id="my-solution-javascript">My Solution (Javascript)</h3>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">kangaroo</span><span class="p">(</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">v1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">,</span> <span class="nx">v2</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">((</span><span class="nx">v1</span> <span class="o">&lt;=</span> <span class="nx">v2</span><span class="p">)</span> <span class="o">||</span> <span class="p">((</span><span class="nx">x2</span> <span class="o">-</span> <span class="nx">x1</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="nx">v1</span> <span class="o">-</span> <span class="nx">v2</span><span class="p">)))</span> <span class="p">?</span> <span class="s1">'NO'</span> <span class="p">:</span> <span class="s1">'YES'</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">r1</span> <span class="o">=</span> <span class="nx">kangaroo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`실행 결과: </span><span class="p">${</span><span class="nx">r1</span><span class="p">}</span><span class="s2">, 기대값: YES`</span><span class="p">)</span>
-<span class="kd">const</span> <span class="nx">r2</span> <span class="o">=</span> <span class="nx">kangaroo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`실행 결과: </span><span class="p">${</span><span class="nx">r2</span><span class="p">}</span><span class="s2">, 기대값: NO`</span><span class="p">)</span>
-</code></pre></div></div>
+<pre><code class="language-redis">&gt; SET count 0
+OK
+&gt; INCRBYFLOAT count 0.3
+"0.3"
+&gt; INCRBYFLOAT count 0.3
+"0.6"
+&gt; DEL count
+1
+&gt; INCRBYFLOAT count 0.3
+"0.3"
+&gt; INCRBYFLOAT count 0.3
+"0.6"
+&gt; INCRBYFLOAT count -0.3
+"0.3"
+&gt; INCRBYFLOAT count -0.3
+"0"
+</code></pre>
 
     </section>
     <br><br>

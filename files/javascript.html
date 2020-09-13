@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<section class="list-container">
+  <p class="post-head">Javascript Basic</p>
+  <ul class="post-list">
+    {% for post in site.categories.javascript %}
+    <li class="post-wrap">
+      <p class="post-date">
+        {{ post.date | date_to_string }}
+      </p>
+      <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+      <div class="tag-wrap">
+        {% if post %}
+        {% assign tags = post.tags %}
+        {% else %}
+        {% assign tags = page.tags %}
+        {% endif %}
+        {% for tag in tags %}
+        <a href="/tags/#{{tag|slugize}}">
+          <img src="{{ site.baseurl }}/static/images/tag_img2.png">
+          {{tag}}
+        </a>
+        {% endfor %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

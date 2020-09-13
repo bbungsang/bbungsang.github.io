@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[Javascript] Prototype - 1"
-category: []
+title:  "[Javascript] Prototype 객체"
+category: [javascript]
 tags:
   - Javascript
   - OOP

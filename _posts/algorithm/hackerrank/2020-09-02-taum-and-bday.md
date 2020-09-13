@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Hacker Rank] Taum And B'day"
-category: []
+category: [hackerrank]
 tags:
   - Algorithm
   - HackerRank

@@ -73,9 +73,23 @@
   </div>
   <ul class="menu-ele">
     <li>
+      <a href="/files/computer-science.html">
+        <span class="bar-left"></span>
+        컴퓨터 사이언스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
       <a href="/files/database.html">
         <span class="bar-left"></span>
         데이터베이스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/javascript.html">
+        <span class="bar-left"></span>
+        자바스크립트
         <span class="bar-right"></span>
       </a>
     </li>
@@ -112,6 +126,37 @@
 
 
     <section class="post-wrap">
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/11/tryhelloworld-level4-hopscotch.html">[Try Hello World] Level4 땅따먹기 게임</a>
+    <p class="post-content">땅따먹기 게임
+
+영희는 땅따먹기 게임에 푹 빠졌습니다. 땅따먹기 게임의 땅은 총 N행 4열로 나누어져 있고, 모든 칸에는 점수가 쓰여 있습니다. 땅을 밟으면서 한 행씩 내려올 때, 영희는 각 행의 4칸 중 1칸만 밟으면서 내려올 수 있습니다. 땅따먹기 게임에는 같은 열을 연속해서 밟을 수가 없는 특수 규칙이 있습니다. 즉, 1행에서 (5)를 밟았다면, 2행의 (8)은 밟을 수가 없게 됩니다. 마지막 행까지 모두 내려왔을 때, 점수가 가장 ...</p>
+    <small class="post-date">11 Nov 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/10/tryhelloworld-level4-bestset.html">[Try Hello World] Level4 최고의 집합</a>
+    <p class="post-content">최고의 집합
+자연수 N개로 이루어진 집합 중에, 각 원소의 합이 S가 되는 수의 집합은 여러 가지가 존재합니다. 최고의 집합은, 위의 조건을 만족하는 집합 중 각 원소의 곱이 최대가 되는 집합을 의미합니다.
+
+집합 원소의 개수 n과 원소들의 합 s가 주어지면, 최고의 집합을 찾아 원소를 오름차순으로 반환해주는 bestSet 함수를 만들어 보세요.
+
+만약 조건을 만족하는 집합이 없을 때는 배열 맨 앞에 –1을 담아 반환하면 됩니다. 예를 들...</p>
+    <small class="post-date">10 Nov 2017</small>
+  </article>
+  
+  <article class="posts">
+    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level4-number-expression.html">[Try Hello World] Level4 숫자의 표현</a>
+    <p class="post-content">숫자의 표현
+수학을 공부하던 민지는 재미있는 사실을 발견하였습니다. 그 사실은 바로 연속된 자연수의 합으로 어떤 숫자를 표현하는 방법이 여러 가지라는 것입니다. 예를 들어, 15를 표현하는 방법은 
+(1+2+3+4+5) 
+(4+5+6) 
+(7+8) 
+(15) 
+로 총 4가지가 존재합니다. 숫자를 입력받아 연속된 수로 표현하는 방법을 반환하는 number_expression 함수를 만들어 민지를 도와주세요. 예를 들어 15가 입력된다면 4를...</p>
+    <small class="post-date">09 Nov 2017</small>
+  </article>
   
   <article class="posts">
     <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/11/09/tryhelloworld-level3-jumpcase.html">[Try Hello World] Level3 멀리 뛰기</a>
@@ -199,61 +244,6 @@ toWeirdCase 함수는 문자열 s를 매개변수로 입력받습니다.
 
 주의 문자열 전...</p>
     <small class="post-date">02 Sep 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/02/tryhelloworld-level2-4.html">[Try Hello World] Level2 자연수를 뒤집어 리스트로 만들기</a>
-    <p class="post-content">자연수를 뒤집어 리스트로 만들기
-digit_reverse함수는 양의 정수 n을 매개변수로 입력받습니다.
-
-n을 뒤집어 숫자 하나하나를 list로 표현해주세요.
-
-예를 들어 n이 12345이면 [5,4,3,2,1]을 리턴하면 됩니다.
-
-
-  내 풀이
-
-
-def digit_reverse(n):
-	return [n % 10**i // 10**(i-1) for i in range(1, len(str(n))+1)]
-
-print("결과 : {}".f...</p>
-    <small class="post-date">02 Sep 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level5-1.html">[Try Hello World] Level5 2 x n 타일링</a>
-    <p class="post-content">1x1 정사각형 2개가 붙어 있는 타일이 있습니다. 이 타일을 이용하여 총 2xN 의 보드판을 채우려고 합니다.
-
-타일은 가로, 세로 두 가지 방향으로 배치할 수 있습니다.
-
-보드판의 길이 N이 주어질 때, 2xN을 타일로 채울 수 있는 경우의 수를 반환하는 tiling 함수를 완성하세요.
-
-예를들어 N이 7일 경우 아래 그림이 타일을 배치할 수 있는 한 경우입니다.
-
-
-
-단, 리턴하는 숫자가 매우 커질 수도 있으므로 숫자가 5자리를 넘어...</p>
-    <small class="post-date">01 Sep 2017</small>
-  </article>
-  
-  <article class="posts">
-    <a class="post-title" href="/solve%20algorithm!/tryhelloworld/2017/09/01/tryhelloworld-level2-harshad.html">[Try Hello World] Level2 하샤드수</a>
-    <p class="post-content">하샤드수
-양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다.
-
-예를들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다.
-
-Harshad함수는 양의 정수 n을 매개변수로 입력받습니다. 이 n이 하샤드수인지 아닌지 판단하는 함수를 완성하세요.
-
-예를들어 n이 10, 12, 18이면 True를 리턴 11, 13이면 False를 리턴하면 됩니다.
-
-내 풀이
-
-[파이썬]
-
-fro...</p>
-    <small class="post-date">01 Sep 2017</small>
   </article>
   
 
