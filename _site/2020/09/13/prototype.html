@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>bbungsang's devlog</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/static/images/no_face.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="/">BBUNGSANG'S DEVLOG</a>
+  </article>
+  <i id="menuBtn" class="fa fa-bars"></i>
+</section>
+
+<script>
+  const menuList = document.getElementsByClassName("menu-list")
+  menuList.forEach((menu) => {
+    menu.addEventListener("click", () => {
+      const current = document.getElementsByClassName("active")
+      current[0].className = current[0].className.replace("active", "")
+      this.className += " active"
+    })
+  })
+</script>
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/static/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/database.html">
+        <span class="bar-left"></span>
+        데이터베이스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [Javascript] Prototype - 1
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Javascript">
+          <img src="/static/images/tag_img.png">
+          Javascript
+        </a>
+      
+        <a href="/tags/#OOP">
+          <img src="/static/images/tag_img.png">
+          OOP
+        </a>
+      
+        <a href="/tags/#Functional Programming">
+          <img src="/static/images/tag_img.png">
+          Functional Programming
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <h3 id="자바스크립트는-함수형-프로그래밍-언어">자바스크립트는 함수형 프로그래밍 언어?</h3>
+<p>어느 날, 이 아무개 친구가 나에게 물었다.
+“Javascript는 함수형 프로그래밍 언어잖아, 다른 객체지향 프로그래밍 언어와 비교해서 말해줄 수 있어?”
+그 질문을 듣고 나는 Javascript가 함수형 프로그래밍 언어라고 생각하면서 사용한 적이 없는데 왜 저런 질문을 할까?라는 생각이 들었다.</p>
+
+<p>사실 나는 함수형 프로그래밍 언어에 대해 잘 모른다. 그런데 어떻게 Javascript는 함수형 프로그래밍 언어라고 생각하고 사용한 적이 없다고 결단을 내렸을까?
+함수형 프로그래밍 언어의 <code class="highlighter-rouge">언어</code>를 <code class="highlighter-rouge">사고</code>로 치환해서 생각해 보았다.
+그렇다. 그 동안 나는 Javascript를 객체지향 프로그래밍 사고에 입각해서 사용해 왔던 것이다.</p>
+
+<p>Javascript에는 함수형 프로그래밍을 할 수 있도록 도와주는 기능이 있지만 나는 함수형으로 사고하여 프로그래밍을 한 적이 없다.
+어떻게 Javascript에서 객체지향 프로그래밍을 했던 걸까? 객체지향 프로그래밍을 할 수 있도록 해준 <code class="highlighter-rouge">프로토타입</code>에 대해 알아보고자 한다.</p>
+
+<h3 id="프로토타입">프로토타입</h3>
+<p>우리가 흔히 알고 있는 Java나 C++는 클래스를 기반으로 객체지향 프로그래밍이 가능하다. 이와 달리 자바스크립트는 프로토타입을 기반으로 객체지향 프로그래밍을 할 수 있다.
+Javascript는 클래스를 통해 객체를 생성하지 않고 클래스 없이 객체를 생성할 수 있다. (하지만 ES2015부터 class 키워드를 지원하기 시작했으나, 문법적인 양념일 뿐이며 자바스크립트는 여전히 프로토타입 기반의 언어다.)</p>
+
+<p>Javascript의 모든 객체는 자신의 부모 역할을 담당하고 있는 객체와 연결되어 있고, 부모 역할을 담당하고 있는 객체의 프로퍼티를 상송 받아 사용할 수 있다.
+부모 역할을 담당하는 객체를 일컫어 <code class="highlighter-rouge">프로토타입</code>이라고 한다.</p>
+
+<h3 id="prototype">[[Prototype]]</h3>
+<p>각각의 객체는 <code class="highlighter-rouge">[[Prototype]]</code>이라는 속성을 가지는데 자신의 프로토타입이 되는 다른 객체를 가리킨다.
+<code class="highlighter-rouge">[[Prototype]]</code>의 값은 null 또는 <code class="highlighter-rouge">[[Prototype]]</code> 객체이며 <code class="highlighter-rouge">__proto__</code> accessor property로 접근할 수 있다.</p>
+
+<p>아래 코드를 보자.
+pockmon 객체는 <code class="highlighter-rouge">__proto__</code> 프로퍼티로 자신의 부모 객체인 <code class="highlighter-rouge">Object.prototype</code>을 가리킨다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pokemon</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="s1">'피카츄'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>도대체 <code class="highlighter-rouge">__proto__</code>는 무엇일까?</p>
+
+<p>우리가 pokemon 객체의 프로퍼티에 접근할 때, 우선 pokemon 객체가 프로퍼티를 갖고 있는지 확인한다.
+프로퍼티를 갖고 있지 않을 때에는 pokemon 객체의 <code class="highlighter-rouge">__proto__</code>가 프로퍼티를 갖고 있는지 확인한다.
+만약 프로퍼티를 pokemon 객체의 <code class="highlighter-rouge">__proto__</code>에서 찾을 수 없다면 그 다음엔 pokemon 객체의 <code class="highlighter-rouge">__proto__</code>의 <code class="highlighter-rouge">__proto__</code>에서 찾을 것이다.</p>
+
+<p>이와 같이 계속 <code class="highlighter-rouge">__proto__</code> 에서 값을 찾고 <code class="highlighter-rouge">__proto__</code>가 없을 때 비로소 프로토타입 체이닝 검사를 마치고 프로퍼티의 값이 <code class="highlighter-rouge">undfined</code>라고 결론 짓는다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pokemon</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="s1">'피카츄'</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="nx">pokemon</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="s1">'전기'</span> <span class="p">}</span>
+<span class="nx">pokemon</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="p">{</span> <span class="na">attack</span><span class="p">:</span> <span class="s1">'10만볼트'</span> <span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="c1">// 피카츄</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="c1">// 전기</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">attack</span><span class="p">)</span> <span class="c1">// 10만볼트</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemon</span><span class="p">.</span><span class="nx">gender</span><span class="p">)</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>객체를 생성할 때 프로토타입은 결정된다. 결정된 프로토타입 객체는 다른 임의의 객체로 변경할 수 있다. 이것은 부모 객체인 프로토타입을 동적으로 변경할 수 있다는 것을 의미한다.
+이러한 특징을 활용하여 객체의 상속을 구현할 수 있다.</p>
+
+<h3 id="함수-객체의-prototype-프로퍼티">함수 객체의 prototype 프로퍼티</h3>
+<p>함수도 객체이므로 <code class="highlighter-rouge">[[Prototype]]</code>을 갖는다. 그러나 함수 객체는 일반 객체와 달리 <code class="highlighter-rouge">prototype</code> 프로퍼티도 갖는다.</p>
+
+<h4 id="prototype-1">[[Prototype]]</h4>
+<ul>
+  <li>함수를 포함한 모든 객체가 가지고 있다.</li>
+  <li>객체의 입장에서 자신의 부모 역할을 하는 프로토타입 객체를 가리키며 함수 객체의 경우 <code class="highlighter-rouge">Function.prototype</code>을 가리킨다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Pokemon</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Pokemon</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h4 id="prototype-프로퍼티">prototype 프로퍼티</h4>
+<ul>
+  <li>함수 객체만 가지고 있는 프로퍼티이다.</li>
+  <li>함수 객체가 생성자로 사용될 때 생성된 인스턴스의 부모 역할을 하는 객체(프로토타입)를 가리킨다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Pokemon</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">pikachu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pokemon</span><span class="p">(</span><span class="s1">'피카츄'</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">Pokemon</span><span class="p">)</span> <span class="c1">// prototype 프로퍼티가 있다.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">pikachu</span><span class="p">)</span> <span class="c1">// prototype 프로퍼티가 없다.</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Pokemon</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">===</span> <span class="nx">pikachu</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+<ul>
+  <li><a href="https://poiemaweb.com/js-prototype">Poiemaweb - 5.14 Prototype</a></li>
+  <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain">MDN - 상속과 프로토타입</a></li>
+</ul>
+
+    </section>
+    <br><br>
+    <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
+      <ul class="other-posts">
+        
+        
+      </ul>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() {
+  var d = document, s = d.createElement('script')
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js'
+  s.setAttribute('data-timestamp', +(new Date())
+  (d.head || d.body).appendChild(s)
+  })()
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>
