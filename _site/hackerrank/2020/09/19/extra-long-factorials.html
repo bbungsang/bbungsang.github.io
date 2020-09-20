@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100042262-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-100042262-1');
+	</script>
+
+	<title>bbungsang's devlog</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 파비콘 -->
+	<link rel="shortcut icon" href="/static/images/no_face.ico">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/nav.css" />
+	<link rel="stylesheet" href="/static/css/main.css" />
+	<link rel="stylesheet" href="/static/css/post.css" />
+	<link rel="stylesheet" href="/static/css/list.css" />
+	<link rel="stylesheet" href="https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css">
+
+	<!--external css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://cdn.iconmonstr.com/1.2.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet'>
+
+	<!-- font -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bungee Hairline' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Patrick Hand SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <section class="top-wrap">
+  <article class="logo">
+    <a href="/">BBUNGSANG'S DEVLOG</a>
+  </article>
+  <i id="menuBtn" class="fa fa-bars"></i>
+</section>
+
+<script>
+  const menuList = document.getElementsByClassName("menu-list")
+  menuList.forEach((menu) => {
+    menu.addEventListener("click", () => {
+      const current = document.getElementsByClassName("active")
+      current[0].className = current[0].className.replace("active", "")
+      this.className += " active"
+    })
+  })
+</script>
+<div id="mySidenav" class="sidenav">
+  <div class="intro-me">
+    <div class="my-photo">
+      <img src="/static/images/itsme.png">
+    </div>
+    <div class="my-content">
+      Please contact me if you have any questions
+      <p>- Elena.Kim -</p>
+      <a href="/" class="home">홈으로</a>
+    </div>
+  </div>
+  <ul class="menu-ele">
+    <li>
+      <a href="/files/computer-science.html">
+        <span class="bar-left"></span>
+        컴퓨터 사이언스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/database.html">
+        <span class="bar-left"></span>
+        데이터베이스
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/javascript.html">
+        <span class="bar-left"></span>
+        자바스크립트
+        <span class="bar-right"></span>
+      </a>
+    </li>
+    <li>
+      <a href="/files/algorithm.html">
+        <span class="bar-left"></span>
+        알고리즘
+        <span class="bar-right"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function sideNavBtnClickHandler(e) {
+    document.getElementById("mySidenav").style.right = "0px";
+    e.stopPropagation();
+  }
+
+  document.getElementById("menuBtn").addEventListener(
+    "click",
+    sideNavBtnClickHandler
+  );
+
+  window.addEventListener("click", function () {
+    var sidenav = document.getElementsByClassName("sidenav");
+
+    for(var i=0; i<sidenav.length; i++){
+      var closeSidenav = sidenav[i];
+      closeSidenav.style.right = "-240px";
+    }
+  });
+</script>
+
+
+    <section class="markdown">
+  <article class="md-head">
+    <div class="title">
+      [Hacker Rank] Extra Long Factorials
+    </div>
+    <div class="tag-wrap">
+      
+      
+        <a href="/tags/#Algorithm">
+          <img src="/static/images/tag_img.png">
+          Algorithm
+        </a>
+      
+        <a href="/tags/#HackerRank">
+          <img src="/static/images/tag_img.png">
+          HackerRank
+        </a>
+      
+        <a href="/tags/#Javascript">
+          <img src="/static/images/tag_img.png">
+          Javascript
+        </a>
+      
+    </div>
+  </article>
+  <article class="markdown-body">
+    <section class="post-content">
+      <h2 id="extra-long-factorials--medium"><a href="https://www.hackerrank.com/challenges/extra-long-factorials/problem">Extra Long Factorials</a> | Medium</h2>
+
+<p>The factorial of the integer n, written n!, is defined as:</p>
+
+<blockquote>
+  <p>n! = n X (n - 1) X (n - 2) X … X 3 X 2 X 1</p>
+</blockquote>
+
+<p>Calculate and print the factorial of a given integer.</p>
+
+<p>For example, if n = 30, we calculate 30 X 29 X 28 X … X 2 X 1 and get 265252859812191058636308480000000.</p>
+
+<h4 id="function-description">Function Description</h4>
+
+<p>Complete the extraLongFactorials function in the editor below. It should print the result and return.</p>
+
+<p>extraLongFactorials has the following parameter(s):</p>
+
+<ul>
+  <li>n: an integer</li>
+</ul>
+
+<p><strong>Note:</strong> Factorials of n &gt; 20 can’t be stored even in a 64 - bit long long variable.
+Big integers must be used for such calculations. Languages like Java, Python, Ruby etc. can handle big integers, but we need to write additional code in C/C++ to handle huge values.</p>
+
+<p>We recommend solving this challenge using BigIntegers.</p>
+
+<h4 id="input-format">Input Format</h4>
+
+<p>Input consists of a single integer n</p>
+
+<h3 id="output-format">Output Format</h3>
+
+<p>Print the factorial of n.</p>
+
+<h3 id="sample-input">Sample Input</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>25
+</code></pre></div></div>
+
+<h3 id="sample-output">Sample Output</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15511210043330985984000000
+</code></pre></div></div>
+
+<h3 id="my-solution">My Solution</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">extraLongFactorials</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">[...</span><span class="nb">Array</span><span class="p">(</span><span class="nx">n</span><span class="p">)].</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">BigInt</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="nx">n</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">r1</span> <span class="o">=</span> <span class="nx">extraLongFactorials</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`실행 결과: </span><span class="p">${</span><span class="nx">r1</span><span class="p">}</span><span class="s2">, 기대값: 15511210043330985984000000`</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">r2</span> <span class="o">=</span> <span class="nx">extraLongFactorials</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`실행 결과: </span><span class="p">${</span><span class="nx">r2</span><span class="p">}</span><span class="s2">, 기대값: 119622220865480194561963161495657715064383733760000000000`</span><span class="p">)</span>
+</code></pre></div></div>
+
+    </section>
+    <br><br>
+    <footer>
+
+      <!-- option to limit page -->
+      
+      
+
+      
+
+      <ul class="other-posts">
+        
+        
+      </ul>
+      
+  <div id="disqus_thread"></div>
+  <script>
+
+  (function() {
+  var d = document, s = d.createElement('script')
+  s.src = 'https://https-bbungsang-github-io.disqus.com/embed.js'
+  s.setAttribute('data-timestamp', +(new Date())
+  (d.head || d.body).appendChild(s)
+  })()
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </footer>
+  </article>
+</section>
+
+  </div>
+</body>
+</html>
