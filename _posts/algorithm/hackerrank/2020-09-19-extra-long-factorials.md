@@ -36,17 +36,17 @@ We recommend solving this challenge using BigIntegers.
 
 Input consists of a single integer n
 
-### Output Format
+#### Output Format
 
 Print the factorial of n.
 
-### Sample Input
+#### Sample Input
 
 ```
 25
 ```
 
-### Sample Output
+#### Sample Output
 
 ```
 15511210043330985984000000
